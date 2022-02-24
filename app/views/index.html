@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Welcome to Trade Remedies System Prototype
+        <span class="govuk-caption-xl">Release 1</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        This is the prototype for the Trade Remedies System for Internal and External users 
+
+      <p>
+        It's gonna be very cool but complicated :)
+        <br>
+      <a href="start.html">Testing testing</a>
+
+      <h2 class="govuk-heading-m">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
+        </li>
+        <li>
+          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
