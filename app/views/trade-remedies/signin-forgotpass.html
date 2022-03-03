@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Forgotten Password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  href: "signin",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Forgotten password      
+      </h1>
+
+      <p>To reset your password please enter below the email address used for this account.</p>
+
+      <form action="signin-forgotpass-sent" method="get" id="forgotpass-form">
+    
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          classes: "govuk-input--width-20",
+          id: "forgotpass-email",
+          name: "forgotpass-email",
+          autocomplete: "email"
+        }) }}
+
+        {{ govukButton({
+          text: "Reset password"
+        }) }}
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
+

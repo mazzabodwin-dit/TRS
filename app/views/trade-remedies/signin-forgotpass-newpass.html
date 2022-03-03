@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Reset your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      {% call govukFieldset({
+        legend: {
+          text: "Reset your password",
+          classes: "govuk-fieldset__legend--xl",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>Enter the new password for this account</p>
+      
+        {{ govukInput({
+          label: {
+            text: "New password"
+          },
+          classes: "govuk-input--width-20",
+          id: "new-password",
+          name: "new-forgotpass",
+          type: "password"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Password"
+          },
+          classes: "govuk-input--width-20",
+          id: "confirm-forgotpass",
+          name: "confirm-forgotpassw",
+          type: "password"
+        }) }}
+
+        {{ govukButton({
+          text: "Save password"
+        }) }}
+        {% endcall %}
+    </div>
+  </div>
+{% endblock %}
+

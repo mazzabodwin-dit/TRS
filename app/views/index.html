@@ -7,31 +7,53 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Welcome to Trade Remedies System Prototype
-        <span class="govuk-caption-xl">Version 2</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This is the prototype for the Trade Remedies System for Internal and External users 
+<div class="govuk-width-container">
 
-      <p>
-        It's gonna be very cool but complicated :)
-        <br>
-      <a href="start.html">Testing testing</a>
+  <main class="govuk-main-wrapper">
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Trade Remedies Prototype
+        </h1>
+      </div>
     </div>
-  </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        </h1>{{releaseVersion | log }}
+        <p>This is the prototype for the Trade Remedies System for Caseworker and public users.
+        </p>
+  
+        <h2 class="govuk-heading-m">Public TRS journeys</h2>
+  
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/trade-remedies/start">Create an account</a></li>
+          <li><a href="/trade-remedies/start">Sign in</a></li>
+
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <p></p> <a class="link" href="/trs-layout">Template with all items</a></p>
+          <h2 class="govuk-heading-m" id="subsection-title">Use Public TRS pages</h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a class="link" href="/trade-remedies/start">Trade Remedies Start page</a> 
+              </li>   
+              <li>
+                <a class="link" href="/trade-remedies/sign-in">Create account/ Sign in</a> 
+              </li>      
+            </ul>
+          </nav>
+        </aside>
+  
+      </div>
+    </div>
+
+  </main>
+</div>
 
 {% endblock %}

@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block bodyStart %}
+  {{ govukCookieBanner({
+    ariaLabel: "Cookies on Trade Remedies",
+    messages: [
+      {
+        headingText: "Cookies on Trade Remedies",
+        html: "<p>We use some essential cookies to make this service work.</p>
+               <p>We'd also like to use analytics cookies so we can understand how you use the service and make improvements.</p>",
+        actions: [
+          {
+            text: "Accept analytics cookies",
+            type: "button",
+            name: "cookies",
+            value: "accept"
+          },
+          {
+            text: "Reject analytics cookies",
+            type: "button",
+            name: "cookies",
+            value: "reject"
+          },
+          {
+            text: "View cookies",
+            href: "#"
+          }
+        ]
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Proto: Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Need to consider IA for this Service in the overall gov site</a>
+      </li>
+    </ol>
+  </div>
+  {{ govukBackLink({
+    href: "/index",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Trade Remedies template
+      </h1>
+
+      <p>This template should contain all key GDS template items and overrides that are being used.</p>
+
+      <h2 class="govuk-heading-m">
+        Medium header
+      </h2>
+      <p>Lots of lovely text should you need it</p>
+      <p><a class="link" href="#">Very nice link</a></p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+      </ul>
+      <p>Lots of lovely text should you need it.</p>
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          More information
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="link" href="#">Link (opens in a new window or tab)</a> 
+            </li>
+            <li>
+              <a class="link" href="#">Link</a> 
+            </li>
+            <li>
+              <a class="link" href="#">Link</a>
+            </li>      
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+      ]
+    }
+  }) }}
+{% endblock %}
+
+<a class="govuk-footer__link" href="/prototype-admin/clear-data">
+  Clear data
+</a>
