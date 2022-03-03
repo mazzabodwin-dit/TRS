@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Forgotten Password – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Password has been reset – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,11 +12,6 @@
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
-{{ govukBackLink({
-  href: "signin",
-  text: "Back"
-}) }}
-
 {% endblock %}
 
 {% block content %}
@@ -24,10 +19,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Forgotten password email
+        Password has been reset
       </h1>
 
-      <p>Click on this <a href="signin-forgotpass-newpass">link</a></p>
+      <p>The password for this account has been reset. Please <a href="signin">sign in</a></p>
 
 
     </div>
@@ -53,8 +48,7 @@
         {
           href: "#4",
           text: "Terms and conditions"
-        }
-        ,
+        },
         {
           href: "/prototype-admin/clear-data",
           text: "Clear data"

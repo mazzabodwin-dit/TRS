@@ -29,7 +29,7 @@
 
       <p>To reset your password please enter below the email address used for this account.</p>
 
-      <form action="signin-forgotpass-sent" method="get" id="forgotpass-form">
+      <form action="signin-forgotpass-sent" method="post" id="forgotpass-form">
     
         {{ govukInput({
           label: {
@@ -70,8 +70,7 @@
         {
           href: "#4",
           text: "Terms and conditions"
-        }
-        ,
+        },
         {
           href: "/prototype-admin/clear-data",
           text: "Clear data"

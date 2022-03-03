@@ -27,7 +27,8 @@
       }) %}
 
       <p>Enter the new password for this account</p>
-      
+
+      <form action="signin-forgotpass-complete" method="post" id="forgotpass-newpass">
         {{ govukInput({
           label: {
             text: "New password"
@@ -52,6 +53,7 @@
           text: "Save password"
         }) }}
         {% endcall %}
+        </form>
     </div>
   </div>
 {% endblock %}
@@ -75,8 +77,7 @@
         {
           href: "#4",
           text: "Terms and conditions"
-        }
-        ,
+        },
         {
           href: "/prototype-admin/clear-data",
           text: "Clear data"
