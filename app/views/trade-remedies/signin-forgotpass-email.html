@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Password reset email sent – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Forgotten Password – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,6 +12,11 @@
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
+{{ govukBackLink({
+  href: "signin",
+  text: "Back"
+}) }}
+
 {% endblock %}
 
 {% block content %}
@@ -19,9 +24,12 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Password reset email sent     
+        Forgotten password email
       </h1>
-      <p>Please check your email. If the email address you entered is registered to an account you will shortly recieve an email. This email will allow you to reset your password for this account.</p>
+
+      <p>Click on this <a href="signin-forgotpass-newpass">link</a></p>
+
+
     </div>
   </div>
 {% endblock %}
@@ -45,14 +53,11 @@
         {
           href: "#4",
           text: "Terms and conditions"
-        },
+        }
+        ,
         {
           href: "/prototype-admin/clear-data",
           text: "Clear data"
-        },
-        {
-          href: "signin-forgotpass-email",
-          text: "Go to email"
         }
       ]
     }

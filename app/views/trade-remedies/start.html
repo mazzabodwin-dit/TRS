@@ -37,7 +37,7 @@
       <h2 class="govuk-heading-m">
         Trade Remedies Service
       </h2>
-      <p>Select Start below to create an account or sign in. You can use this service to:</p>
+      <p>Select Start to create an account or sign in. You can use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>Request a new trade remedy investigation</li>
@@ -78,4 +78,34 @@
 
     </div>
   </div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        }
+        ,
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
 {% endblock %}

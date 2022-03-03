@@ -31,6 +31,7 @@
   }) }}
 {% endblock %}
 
+
 {% block pageTitle %}
   Proto: Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -54,7 +55,7 @@
         <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+        <a class="govuk-breadcrumbs__link" href="/index">Section</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
         <a class="govuk-breadcrumbs__link">Need to consider IA for this Service in the overall gov site</a>
@@ -145,7 +146,12 @@
         {
           href: "#4",
           text: "Terms and conditions"
-        },
+        }
+        ,
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
       ]
     }
   }) }}
