@@ -21,3 +21,7 @@ router.post('/juggling-balls-answer', function (req, res) {
     }
   
   })
+
+// can i use this somehow: var firstName = req.session.data['first-name']
+
+
