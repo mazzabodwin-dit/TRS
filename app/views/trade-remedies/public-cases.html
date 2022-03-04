@@ -5,12 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+{% include "includes/beta-banner.html"%}
 
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
@@ -45,30 +40,5 @@
 {% endblock %}
 
 {% block footer %}
-  {{ govukFooter({
-    meta: {
-      items: [
-        {
-          href: "#1",
-          text: "Help"
-        },
-        {
-          href: "#2",
-          text: "Cookies"
-        },
-        {
-          href: "#3",
-          text: "Privacy"
-        },
-        {
-          href: "#4",
-          text: "Terms and conditions"
-        },
-        {
-          href: "/prototype-admin/clear-data",
-          text: "Clear data"
-        }
-      ]
-    }
-  }) }}
+{%include "includes/footer.html" %}
 {% endblock %}

@@ -1,71 +1,33 @@
 {% extends "layout.html" %}
 
 {% block bodyStart %}
-  {{ govukCookieBanner({
-    ariaLabel: "Cookies on Trade Remedies",
-    messages: [
-      {
-        headingText: "Cookies on Trade Remedies",
-        html: "<p>We use some essential cookies to make this service work.</p>
-               <p>We'd also like to use analytics cookies so we can understand how you use the service and make improvements.</p>",
-        actions: [
-          {
-            text: "Accept analytics cookies",
-            type: "button",
-            name: "cookies",
-            value: "accept"
-          },
-          {
-            text: "Reject analytics cookies",
-            type: "button",
-            name: "cookies",
-            value: "reject"
-          },
-          {
-            text: "View cookies",
-            href: "#"
-          }
-        ]
-      }
-    ]
-  }) }}
+{%include "includes/cookies.html" %}
 {% endblock %}
 
 
 {% block pageTitle %}
-  Proto: Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Template: Layout and components – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
  
 {% block header %}
-
-{%include "includes/header.html" %}
-
+{% include "includes/header.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+{% include "includes/beta-banner.html"%}
 
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        <a class="govuk-breadcrumbs__link" href="index">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/index">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Need to consider IA for this Service in the overall gov site</a>
+        Template: Layout and components
       </li>
     </ol>
   </div>
   {{ govukBackLink({
-    href: "/index",
+    href: "index",
     text: "Back"
   }) }}
 {% endblock %}
@@ -77,7 +39,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Trade Remedies template
+        Template: Layout and components
       </h1>
 
       <p>This template should contain all key GDS template items and overrides that are being used.</p>
@@ -130,35 +92,5 @@
 {% endblock %}
 
 {% block footer %}
-  {{ govukFooter({
-    meta: {
-      items: [
-        {
-          href: "#1",
-          text: "Help"
-        },
-        {
-          href: "#2",
-          text: "Cookies"
-        },
-        {
-          href: "#3",
-          text: "Privacy"
-        },
-        {
-          href: "#4",
-          text: "Terms and conditions"
-        }
-        ,
-        {
-          href: "/prototype-admin/clear-data",
-          text: "Clear data"
-        }
-      ]
-    }
-  }) }}
+{%include "includes/footer.html" %}
 {% endblock %}
-
-<a class="govuk-footer__link" href="/prototype-admin/clear-data">
-  Clear data
-</a>
