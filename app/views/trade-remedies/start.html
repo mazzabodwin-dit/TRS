@@ -10,6 +10,9 @@
 {% endblock %}
 
 {% block beforeContent %}
+
+{% include "includes/signed-out.html" %}
+
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
