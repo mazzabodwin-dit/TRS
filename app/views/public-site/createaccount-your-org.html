@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Your organisation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+{{ govukBackLink({
+  href: "createaccount-your-account",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="createaccount-more-org-dets" method="post" id="createaccount-email-form">  
+        
+        {% call govukFieldset({
+          legend: {
+            text: "Your organisation",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            text: "Your organisation's name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This is your direct employer and not someone you represent as a third party."
+          },
+          classes: "govuk-input--width-20",
+          id: "createaccount-org-name",
+          name: "createaccount-org-name",
+          type: "text"
+        }) }}
+  
+        {{ govukSelect({
+          id: "createaccount-country",
+          name: "createaccount-country",
+          label: {
+            text: "What country is your organisation registered in?",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-!-width-one-third",
+          items: [
+            {
+              value: "uk",
+              text: "United Kingdom",
+              selected: true
+            },
+            {
+              value: "afganistan",
+              text: "Afganistan"
+              
+            },
+            {
+              value: "belgium",
+              text: "Belgium"
+            },
+            {
+              value: "canada",
+              text: "Canada"
+            },
+            {
+              value: "etc",
+              text: "ETC"
+            }
+          ]
+        }) }}
+
+        {{ govukTextarea({
+          label: {
+            text: "Your organisations registered address",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This is typically where your head office is registered, and not necessarily the address of where you work day-to-day"
+          },
+          classes: "govuk-input--width-20",
+          id: "createaccount-reg-address",
+          name: "createaccount-reg-address",
+          type: "email"
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "createaccount-reg-equals-work",
+          name: "createaccount-reg-equals-work",
+          fieldset: {
+            legend: {
+              text: "Is this the address above where you work day-to-day?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "This is so that we can contact you if necessary."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        {% endcall %} 
+
+        </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

@@ -8,7 +8,7 @@
 {% include "includes/beta-banner.html"%}
 
 {{ govukBackLink({
-  href: "createaccount-auth-password",
+  href: "createaccount-password",
   text: "Back"
 }) }}
 {% endblock %}
@@ -19,12 +19,12 @@
     
     
 
-      <form action="createaccount-2fa" method="post" id="forgotpass-newpass">   
+      <form action="createaccount-your-org" method="post" id="forgotpass-newpass">   
         
         {% call govukFieldset({
           legend: {
             text: "Two-factor authentication",
-            classes: "govuk-fieldset__legend--l",
+            classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
@@ -55,7 +55,7 @@
             legend: {
               text: "How would you like to recieve your code?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           items: [

@@ -8,7 +8,7 @@
 {% include "includes/beta-banner.html"%}
 
 {{ govukBackLink({
-  href: "signin",
+  href: "createaccount-email",
   text: "Back"
 }) }}
 
@@ -17,11 +17,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-l">
         Verify your email address     
       </h1>
-      <p>To confirm [email address] is your email address we will send you an email.</p>
-      <p>Open the email and click on the link inside to continue with account creation.</p>
+      <p>To confirm [email address] is your email address we have sent you an email.</p>
+      <p>Open the email and click on the link inside to continue with creating your account.</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -31,7 +31,8 @@
         </summary>
         <div class="govuk-details__text">
           <p>Please check the message above to ensure that the email address you entered is correct and check your email spam folders.</p>
-          <p>If you can't find the email, then please click below to enter your email address again.</p>
+          <p>If you have made mistake, then please click below to enter your email address again.</p>
+          <p>If the email still hasn't arrived then.....???????</p>
           <p><a href="createaccount-email">Re-enter email address</a></p>
         </div>
       </details>
