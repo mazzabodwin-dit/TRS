@@ -27,6 +27,10 @@
 
       <form action="signin-2fa" method="post" id="signin-form">
 
+ <!-- This text is only shown to screen readers and informs the user that the password is / isn't hidden -->
+        <p aria-live="polite" id="password-text" class="sr-only">Password hidden.</p>
+
+
         {% call govukFieldset({
           legend: {
             text: "Sign in",
@@ -45,15 +49,25 @@
             autocomplete: "email"
           }) }}
         
-          {{ govukInput({
-            label: {
-              text: "Password"
-            },
-            classes: "govuk-input--width-20",
-            id: "password",
-            name: "password",
-            type: "password"
-          }) }}
+
+          <div class="input-with-button">
+            <button id="show-password" type="button" role="switch" aria-pressed="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              <span class="show-text">Show</span>
+            </button>
+            
+            {{ govukInput({
+              label: {
+                text: "Enter password"
+              },
+              classes: "govuk-input--width-15",
+              id: "password",
+              name: "password",
+              type: "password",
+              describedBy: "password-hints",
+              autocomplete: "new-password" 
+            }) }}
+          
+          </div>
 
         <p><a href="signin-forgotpass" class="govuk-link govuk-link--no-visited-state">Forgotten password</a></p>
 
