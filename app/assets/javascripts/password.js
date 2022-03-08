@@ -1,4 +1,4 @@
-/* global $ 
+/* global $ */
 
 /* Reset password - conditions */
 
@@ -62,16 +62,14 @@ myInput.onkeyup = function() {
   } 
 }
 
-
-
-/* global $ */
+/* Show / hide password */
 
 let srPasswordText = document.querySelector("#password-text");
-let passwordInput = document.querySelector("input");
+let passwordInput = document.querySelector("#password");
 let showPasswordButton = document.querySelector("#show-password");
-let toggleImage = document.querySelector(".show-icon");
-let showPasswordImage = "Show password";
-let hidePasswordImage = "Hide password";
+let toggleText = document.querySelector(".show-text");
+let showPasswordText = "Show";
+let hidePasswordText = "Hide";
 
 let handleTogglePasswordVisibility = (e) => {
 let buttonState = showPasswordButton.getAttribute("aria-pressed");
@@ -83,8 +81,33 @@ buttonState === "false" ? "true" : "false"
 srPasswordText.innerText =
 buttonState === "true" ? "Password hidden" : "Password shown";
 passwordInput.type = buttonState === "true" ? "password" : "text";
-toggleImage.innerText =
-buttonState === "true" ? showPasswordImage : hidePasswordImage;
+toggleText.innerText =
+buttonState === "true" ? showPasswordText : hidePasswordText;
 };
 
 showPasswordButton.addEventListener("click", handleTogglePasswordVisibility);
+
+
+
+/* Show / hide password 2*/
+
+let passwordInput2 = document.querySelector("#password-confirm");
+let showConfirmButton = document.querySelector("#show-confirm");
+let toggleText2 = document.querySelector(".show-text2");
+let showConfirmText = "Show";
+let hideConfirmText = "Hide";
+
+
+let handleToggleConfirmVisibility = (e) => {
+  let buttonState2 = showConfirmButton.getAttribute("aria-pressed");
+  
+  showConfirmButton.setAttribute(
+  "aria-pressed",
+  buttonState2 === "false" ? "true" : "false"
+  );
+  passwordInput2.type = buttonState2 === "true" ? "password" : "text";
+  toggleText2.innerText =
+  buttonState2 === "true" ? showConfirmText : hideConfirmText;
+  };
+  
+  showConfirmButton.addEventListener("click", handleToggleConfirmVisibility);
