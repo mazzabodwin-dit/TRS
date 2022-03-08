@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Verify your email address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+{{ govukBackLink({
+  href: "signin",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Verify your email address     
+      </h1>
+      <p>To confirm [email address] is your email address we will send you an email.</p>
+      <p>Open the email and click on the link inside to continue with account creation.</p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have not received an email
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Please check the message above to ensure that the email address you entered is correct and check your email spam folders.</p>
+          <p>If you can't find the email, then please click below to enter your email address again.</p>
+          <p><a href="createaccount-email">Re-enter email address</a></p>
+        </div>
+      </details>
+
+
+      
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+        },
+        {
+        },
+        {
+          href: "email/email-createaccount-verify-email",
+          text: "For user testing: Go to email"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
