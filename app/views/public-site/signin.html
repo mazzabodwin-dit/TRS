@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Sign in or create account – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+{{ govukBackLink({
+  href: "start",
+  text: "Back"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Trade Remedies Service
+      </h1>
+
+      <p>To request a Trade Remedies investigation or participate in an existing case, create an account or sign in to the Trade Remedies Service.</p>
+
+      <p><a href="createaccount-auth-email">Create an account</a></p>
+
+      <form action="signin-2fa" method="post" id="signin-form">
+
+        {% call govukFieldset({
+          legend: {
+            text: "Sign in",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: false
+          }
+        }) %}
+        
+          {{ govukInput({
+            label: {
+              text: "Email address"
+            },
+            classes: "govuk-input--width-20",
+            id: "signin-email",
+            name: "signin-email",
+            autocomplete: "email"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Password"
+            },
+            classes: "govuk-input--width-20",
+            id: "password",
+            name: "password",
+            type: "password"
+          }) }}
+
+        <p><a href="signin-forgotpass" class="govuk-link govuk-link--no-visited-state">Forgotten password</a></p>
+
+        {{ govukButton({
+          text: "Sign in"
+        }) }}
+
+        {% endcall %}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

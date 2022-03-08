@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Two factor authentication – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+{{ govukBackLink({
+  href: "signin",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Two factor authentication      
+      </h1>
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          We have sent you a new authetication code
+        </p>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
+      <p>We have sent you an authentication code to [email address].  </p>
+
+      <p>This code will only be valid for [x period of time], after that you will need to request a new code.</p>
+
+      <form action="/public-site/dashboard" method="post" id="forgotpass-request-form">
+    
+        {{ govukInput({
+          label: {
+            text: "Enter the code"
+          },
+          classes: "govuk-input--width-5",
+          id: "signin-code",
+          name: "signin-code"
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I have not received a code - do we want to change how this works at all?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>If you have not received your code you can request a new code using the link below. </p>
+              <p> Note you will have a limited number attempts before your account is temporarily locked. It will however be automatically re-enabled after a set period of time. <br>Do we want this??  How can we improve this copy? E.g. rather than send a diff code send the same one? How many goes do you have? What about 60 sec before sending new code etc etc
+                </p>
+            <p><a href="">Send new code</a></p>
+            <p>If you chose to receive your code by SMS it can sometimes be slow or unreliable. Click the link below to get your authentication code sent to your email  address:[Email address]</p>
+            <p><a href="">Email me instead</a></p>
+          </div>
+        </details>
+
+        {{ govukButton({
+          text: "Submit code"
+        }) }}
+
+        </form>
+  
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+        },
+        {
+        },
+        {
+          href: "email/email-signin-2fa",
+          text: "For user testing: Go to email"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

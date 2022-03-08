@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Trade Remedies
+      </h1>
+
+      <p>The UK’s Trade Remedies Authority (TRA) investigates whether new trade remedies are needed to prevent injury to UK industries caused by unfair trading practices and unforeseen surges in imports. </p>
+
+      <h2 class="govuk-heading-m">
+        Active cases
+      </h2>
+      <p>We publish all active trade remedy cases so that anyone can view and track existing case progress. </p>
+      <p><a class="link" href="public-cases">View active cases on the public file </a></p>
+      <h2 class="govuk-heading-m">
+        Trade Remedies Service
+      </h2>
+      <p>Select Start to create an account or sign in. You can use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Request a new trade remedy investigation</li>
+        <li>Participate in an existing trade remedy case</li>
+        <li>Add work colleagues or 3rd parties to your case</li>
+      </ul>
+      <p>Registering takes around 10 minutes. Please have ready any information that will help us confirm your organisation.</p>
+
+      <a href="signin" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          More information
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="link" href="https://www.gov.uk/government/organisations/trade-remedies-authority" target="_blank">Trade Remedies Authority news (opens in a new window or tab)</a> 
+            </li>
+            <li>
+              <a class="link" href="https://www.gov.uk/government/organisations/trade-remedies-authority/about" target="_blank">Who is the Trade Remedies Authority (opens in a new window or tab)</a> 
+            </li>
+            <li>
+              <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+            </li>      
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
