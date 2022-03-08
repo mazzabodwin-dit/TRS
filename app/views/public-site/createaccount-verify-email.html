@@ -21,7 +21,7 @@
         Verify your email address     
       </h1>
       <p>To confirm [email address] is your email address we have sent you an email.</p>
-      <p>Open the email and click on the link inside to continue with creating your account.</p>
+      <p>Open the email and click on the link inside to finish creating your account.</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -36,6 +36,13 @@
           <p><a href="createaccount-email">Re-enter email address</a></p>
         </div>
       </details>
+
+      <form action="dashboard" method="post" id="createaccount-email-form">  
+
+      {{ govukButton({
+        text: "Continue to dashboard"
+      }) }}
+    </form>
 
 
       
