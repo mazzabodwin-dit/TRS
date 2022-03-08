@@ -1,8 +1,8 @@
-/* global $ */
+/* global $ 
 
-// Password conditions
+/* Reset password - conditions */
 
-var myInput = document.getElementById("new-password");
+var myInput = document.getElementById("password");
 var letter = document.getElementById("letter");
 var captial = document.getElementById("captial");
 var special = document.getElementById("special");
@@ -59,8 +59,32 @@ myInput.onkeyup = function() {
   } else {
     special.classList.remove("valid");
     special.classList.add("invalid");
-  }
-
-
-  
+  } 
 }
+
+
+
+/* global $ */
+
+let srPasswordText = document.querySelector("#password-text");
+let passwordInput = document.querySelector("input");
+let showPasswordButton = document.querySelector("#show-password");
+let toggleImage = document.querySelector(".show-icon");
+let showPasswordImage = "Show password";
+let hidePasswordImage = "Hide password";
+
+let handleTogglePasswordVisibility = (e) => {
+let buttonState = showPasswordButton.getAttribute("aria-pressed");
+
+showPasswordButton.setAttribute(
+"aria-pressed",
+buttonState === "false" ? "true" : "false"
+);
+srPasswordText.innerText =
+buttonState === "true" ? "Password hidden" : "Password shown";
+passwordInput.type = buttonState === "true" ? "password" : "text";
+toggleImage.innerText =
+buttonState === "true" ? showPasswordImage : hidePasswordImage;
+};
+
+showPasswordButton.addEventListener("click", handleTogglePasswordVisibility);
