@@ -62,7 +62,7 @@ myInput.onkeyup = function() {
   } 
 }
 
-/* Show / hide password */
+/* Show / hide 1st password */
 
 let srPasswordText = document.querySelector("#password-text");
 let passwordInput = document.querySelector("#password");
@@ -89,8 +89,9 @@ showPasswordButton.addEventListener("click", handleTogglePasswordVisibility);
 
 
 
-/* Show / hide password 2*/
+/* Show / hide 2nd password */
 
+let srPasswordText2 = document.querySelector("#password-text2");
 let passwordInput2 = document.querySelector("#password-confirm");
 let showConfirmButton = document.querySelector("#show-confirm");
 let toggleText2 = document.querySelector(".show-text2");
@@ -105,6 +106,8 @@ let handleToggleConfirmVisibility = (e) => {
   "aria-pressed",
   buttonState2 === "false" ? "true" : "false"
   );
+  srPasswordText2.innerText =
+  buttonState2 === "true" ? "Confirm password hidden" : "Confirm password shown";
   passwordInput2.type = buttonState2 === "true" ? "password" : "text";
   toggleText2.innerText =
   buttonState2 === "true" ? showConfirmText : hideConfirmText;
