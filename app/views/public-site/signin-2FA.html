@@ -22,17 +22,25 @@
         Two factor authentication      
       </h1>
 
-      {% set html %}
-        <p class="govuk-notification-banner__heading">
-          We have sent you a new authetication code
-        </p>
-      {% endset %}
+      {% if (data['rerequest2FA'] == "yes") %}
 
-      {{ govukNotificationBanner({
-        html: html
-      }) }}
+        {% set html %}
+          <p>
+            We have sent a new authetication code to [email/mobile].</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html
+        }) }}
+
+
+      {% else %}
 
       <p>We have sent you an authentication code to [email address].  </p>
+
+      
+      {% endif %}
+
 
       <p>This code will only be valid for [x period of time], after that you will need to request a new code.</p>
 
@@ -57,7 +65,7 @@
             <p>If you have not received your code you can request a new code using the link below. </p>
               <p> Note you will have a limited number attempts before your account is temporarily locked. It will however be automatically re-enabled after a set period of time. <br>Do we want this??  How can we improve this copy? E.g. rather than send a diff code send the same one? How many goes do you have? What about 60 sec before sending new code etc etc
                 </p>
-            <p><a href="">Send new code</a></p>
+            <p><a href="signin?">Send new code</a></p>
             <p>If you chose to receive your code by SMS it can sometimes be slow or unreliable. Click the link below to get your authentication code sent to your email  address:[Email address]</p>
             <p><a href="">Email me instead</a></p>
           </div>
