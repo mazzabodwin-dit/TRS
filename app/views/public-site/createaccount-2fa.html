@@ -49,6 +49,10 @@
 
         {% endset -%}
 
+        {% set emailText %}
+          Email address: <strong>{{ data['account-email'] }}</strong>
+        {% endset -%}
+
         {{ govukRadios({
           idPrefix: "contact",
           name: "contact",
@@ -62,7 +66,7 @@
           items: [
             {
               value: "email",
-              text: "Email address used for this account",
+              html: emailText,
               checked: true
             },
             {

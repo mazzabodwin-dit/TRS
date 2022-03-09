@@ -22,6 +22,7 @@ module.exports = {
   // Insert values here
 
   "first-name": "Devi",
-  "last-name": "Lakhia"
+  "last-name": "Lakhia",
+  "account-email": "myemail@email.com"
 
 }

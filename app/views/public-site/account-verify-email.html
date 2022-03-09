@@ -4,6 +4,10 @@
   Proto: Verify your email address – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
