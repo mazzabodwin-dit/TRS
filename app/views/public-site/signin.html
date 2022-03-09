@@ -15,14 +15,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        Trade Remedies Service
-      </h1>
-
-      <p>To request a Trade Remedies investigation or participate in an existing case, create an account or sign in to the Trade Remedies Service.</p>
-
-      <p><a href="createaccount-your-account">Create an account</a></p>
-
       <form action="signin-2fa?rerequest2FA=no" method="post" id="signin-form">
 
  <!-- This text is only shown to screen readers and informs the user that the password is / isn't hidden -->
@@ -31,11 +23,14 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Sign in",
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: false
+            text: "Sign in to Trade Remedies",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
           }
         }) %}
+
+        <p>To request a Trade Remedies investigation or participate in an existing case, sign in to the Trade Remedies Service.</p>
+        <p><a href="createaccount-your-account">Create an account</a></p>
         
           {{ govukInput({
             label: {
