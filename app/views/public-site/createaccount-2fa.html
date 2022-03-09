@@ -54,8 +54,8 @@
         {% endset -%}
 
         {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
+          idPrefix: "2fa",
+          name: "2fa",
           fieldset: {
             legend: {
               text: "How would you like to receive your code?",
@@ -67,7 +67,7 @@
           {
             value: "mobile",
             text: "Mobile",
-            checked: true,
+            checked: false,
             conditional: {
               html: mobileHtml
             }
