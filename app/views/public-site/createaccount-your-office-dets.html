@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Your place of work – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Your work contact details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,13 +23,13 @@
         
         {% call govukFieldset({
           legend: {
-            text: "Your place of work",
+            text: "Your work contact details",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
 
-        <p>Provide contact details for the place of work or office that we can contact you at.</p>
+        <p>Provide contact details for your day-to-day place of work so that we can contact you when needed.</p>
 
         {{ govukInput({
           label: {
