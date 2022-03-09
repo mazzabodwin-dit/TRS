@@ -7,10 +7,7 @@
 {% block beforeContent %}
 {% include "includes/beta-banner.html"%}
 
-{{ govukBackLink({
-  href: "createaccount-2fa",
-  text: "Back"
-}) }}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 
 {% endblock %}
 
