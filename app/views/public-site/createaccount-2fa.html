@@ -58,32 +58,27 @@
           name: "contact",
           fieldset: {
             legend: {
-              text: "How would you like to recieve your code?",
+              text: "How would you like to receive your code?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
           },
           items: [
-            {
+          {
+            value: "mobile",
+            text: "Mobile",
+            checked: true,
+            conditional: {
+              html: mobileHtml
+            }
+          },
+          {
               value: "email",
-              html: emailText,
-              checked: true
-            },
-            {
-              value: "mobile",
-              text: "Mobile",
-              conditional: {
-                html: mobileHtml
-              }
+              html: emailText
             }
           ]
         }) }}
         
-
-
-
-
-
         {{ govukButton({
           text: "Continue"
         }) }}
