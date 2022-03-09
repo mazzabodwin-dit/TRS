@@ -21,20 +21,17 @@
 
       {% if (data['rerequest2FA'] == "yes") %}
 
-        {% set html %}
-          <p>
-            We have sent a new authetication code to [email/mobile].</p>
+        {% set requestSent %}
+            We have sent a new authetication code to [email/mobile].
         {% endset %}
 
-        {{ govukNotificationBanner({
-          html: html
+        {{ govukInsetText({
+          text: requestSent
         }) }}
-
 
       {% else %}
 
-      <p>We have sent you an authentication code to [email address].  </p>
-
+        <p>We have sent you an authentication code to [email/mobile].  </p>
 
       {% endif %}
 
