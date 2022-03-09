@@ -70,15 +70,6 @@
           type: "text"
         }) }}
 
-<!-- This uses includes/country-list to change title and font of country select -->
-        {% set countryHtml %}
-          Country
-        {% endset -%}  
-
-        {% set classHTML %}
-          govuk-label--s
-        {% endset -%} 
-
         {% include "includes/country-list.html" %} 
 
         {{ govukRadios({
