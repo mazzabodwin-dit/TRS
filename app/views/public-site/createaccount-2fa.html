@@ -31,20 +31,27 @@
 
         <p>When you sign in, we will send you a code as part of our two-factor authentication. This helps ensure that your account is kept safe and secure.</p>
 
-        {% set mobileHtml %}
+   
         
-        {{ govukInput({
-          id: "2FA-mobile",
-          name: "2FA-mobile",
-          type: "tel",
-          autocomplete: "tel",
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Enter your mobile number"
-          }
-        }) }}
+        {% set mobileHtml %} 
         
-        {% include "includes/country-list.html" %}
+          {{ govukInput({
+            id: "2FA-mobile",
+            name: "2FA-mobile",
+            type: "tel",
+            autocomplete: "tel",
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: "Enter your mobile number"
+            }
+          }) }}
+
+<!-- This uses includes/country-list to change title and font of country select -->
+          {% set countryHtml %}
+            Select where your mobile is registered
+          {% endset -%}
+          
+          {% include "includes/country-list.html" %}    
 
         {% endset -%}
 

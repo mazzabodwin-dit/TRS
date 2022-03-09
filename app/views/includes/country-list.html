@@ -1,9 +1,10 @@
 {{ govukSelect({
+  label: {
+    html: countryHtml,
+    classes: classHTML
+  },
   id: "country",
   name: "country",
-  label: {
-    text: "Select where your mobile is registered"
-  },
   classes: "govuk-!-width-one-third",
   items: [
     {

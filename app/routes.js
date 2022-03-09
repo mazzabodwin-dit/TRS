@@ -5,23 +5,23 @@ const router = express.Router()
 
 module.exports = router
 
-// Run this code when a form is submitted to 'juggling-balls-answer'
-router.post('/juggling-balls-answer', function (req, res) {
 
-    // Make a variable and give it the value from 'how-many-balls'
-    var howManyBalls = req.session.data['how-many-balls']
-  
-    // Check whether the variable matches a condition
-    if (howManyBalls == "2"){
-      // Send user to next page
-      res.redirect('/juggling-trick')
-    } else {
-      // Send user to ineligible page
-      res.redirect('/ineligible')
-    }
-  
-  })
+// Run this code during create account - is org address the same as contact address?
+router.post('/createaccount-contact-address-answer', function (req, res) {
 
-// can i use this somehow: var firstName = req.session.data['first-name']
+  // Make a variable and give it the value from 'createaccount-contact-address'
+  var createaccountContactAdd = req.session.data['createaccount-contact-address']
+
+  // Check whether the variable matches a condition
+  if (createaccountContactAdd == "no"){
+    // Send user to next page
+    res.redirect('/public-site/createaccount-your-office-dets')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/public-site/createaccount-your-org-dets')
+  }
+
+})
+
 
 

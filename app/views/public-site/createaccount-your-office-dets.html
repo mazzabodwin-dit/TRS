@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Your organisation – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Your place of work – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+
 {% include "includes/beta-banner.html"%}
 
 {{ govukBackLink({
@@ -18,15 +19,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/createaccount-contact-address-answer" method="post" id="createaccount-email-form">  
+      <form action="createaccount-your-org-dets" method="post" id="createaccount-email-form">  
         
         {% call govukFieldset({
           legend: {
-            text: "Your organisations details",
+            text: "Your place of work",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
+
+        <p>Provide contact details for the place of work or office that we can contact you at.</p>
 
         {{ govukInput({
           label: {
@@ -35,26 +38,23 @@
             isPageHeading: false
           },
           hint: {
-            text: "This is your direct employer and not someone you represent as a third party."
+            text: "If this differs from the parent org."
           },
           classes: "govuk-input--width-20",
           id: "createaccount-org-name",
           name: "createaccount-org-name",
           type: "text"
-        }) }}   
+        }) }}
 
         {{ govukTextarea({
           label: {
-            text: "Your organisations street address",
+            text: "Street address",
             classes: "govuk-label--s",
             isPageHeading: false
           },
-          hint: {
-            text: "This is typically where your main office is located or registered, and not necessarily the address of where you work day-to-day"
-          },
           classes: "govuk-input--width-20",
-          id: "createaccount-org-address",
-          name: "createaccount-org-address",
+          id: "createaccount-office-street",
+          name: "createaccount-office-street",
           type: "email"
         }) }}
 
@@ -65,12 +65,12 @@
             isPageHeading: false
           },
           classes: "govuk-input--width-5",
-          id: "createaccount-org-zip",
-          name: "createaccount-org-zip",
+          id: "createaccount-office-zip",
+          name: "createaccount-office-zip",
           type: "text"
         }) }}
 
-<!-- This uses includes/country-list to change title and font of country select -->
+  <!-- This uses includes/country-list to change title and font of country select -->
         {% set countryHtml %}
           Country
         {% endset -%}  
@@ -79,34 +79,7 @@
           govuk-label--s
         {% endset -%} 
 
-        {% include "includes/country-list.html" %} 
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "createaccount-contact-address",
-          name: "createaccount-contact-address",
-          fieldset: {
-            legend: {
-              text: "Is this address the office that you work in day-to-day?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "This is so that we can contact you if necessary."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
+        {% include "includes/country-list.html" %}    
 
         {{ govukButton({
           text: "Continue"
