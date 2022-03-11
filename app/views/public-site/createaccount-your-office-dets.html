@@ -26,26 +26,11 @@
           }
         }) %}
 
-        <p>Provide contact details for your day-to-day place of work so that we can contact you when needed.</p>
-
-        {{ govukInput({
-          label: {
-            text: "Your organisations name",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          hint: {
-            text: "If this differs from the parent org."
-          },
-          classes: "govuk-input--width-20",
-          id: "createaccount-org-name",
-          name: "createaccount-org-name",
-          type: "text"
-        }) }}
+        <p>Provide contact details for your day-to-day place of work so that we can contact you if needed.</p>
 
         {{ govukTextarea({
           label: {
-            text: "Street address of where you work",
+            text: "Address of where you work",
             classes: "govuk-label--s",
             isPageHeading: false
           },

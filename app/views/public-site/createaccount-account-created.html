@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Verify your email address – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Your account has been created – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,9 +17,10 @@
       <h1 class="govuk-heading-l">
         Your account has been created     
       </h1>
-      <p>You can visit your dashboard, however, you will need to verify your email address before you can take part in any trade remedy investigations.</p>
-      <p>To verify <strong>{{ data['account-email'] }}</strong> we have sent you an email.</p>
-      <p>Open the email and click on the link inside to finish creating your account.</p>
+      <p>You can now access your account, however, you need to verify your email address before you can take part in a trade remedy investigation.</p>
+      <p>We have sent an email to <strong>{{ data['account-email'] }}</strong>.</p>
+      <p>Open the email and click on the link to active your account.</p>
+      <p>The link in the email is only valid for [x period of time], after that you will need to request a new activation email.</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -28,16 +29,28 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Please check the message above to ensure that the email address you entered is correct and check your email spam folders.</p>
-          <p>If the email still hasn't arrived then.....???????</p>
-          <p><a href="createaccount-email">Re-enter email address</a></p>
+          <p>Please check the email address above to ensure that you entered it correctly. If it is incorrect you will need to create the account again using the correct email address. </p>
+          <p>Check your email spam folders and add our email address to your contact list: trade.remedies.service@notifications.service.gov.uk.</p>
+          <p>If the email still hasn't arrived <a href="">click here to resend the email</a>.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            The link in my email has expired
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>The link in the email is only valid for [x period of time], after that you will need to request a new activation email.</p>
+          <p><a href="">Click here to resend the email</a>.</p>
         </div>
       </details>
 
       <form action="dashboard" method="post" id="createaccount-verify-email-form">  
 
       {{ govukButton({
-        text: "Continue to dashboard"
+        text: "Sign in"
       }) }}
     </form>
 
