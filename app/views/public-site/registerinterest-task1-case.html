@@ -1,0 +1,93 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find Trade Remedies case – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">1. Which case are you interested in?</span>
+    <h1 class="govuk-heading-xl">Find Trade Remedies case</h1>
+
+    {{ govukInsetText({
+      text: "If you register after the first 15 days?????? of what?????, you may not be eligible to receive a questionnaire. Registering later may restrict your opportunities to participate in the process."
+    }) }}
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+
+    <table class="govuk-table {{ tableCSS }}">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular">Table caption here</caption>
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header column-full" scope="col">
+          Ref.
+        </th>
+        <th class="govuk-table__header column-full" scope="col">
+          Case
+        </th>
+        <th class="govuk-table__header column-full" scope="col">
+          Type
+        </th>
+        <th class="govuk-table__header column-full" scope="col">
+          Start date
+        </th>
+        <th class="govuk-table__header column-full" scope="col">
+          Registration date
+        </th>
+        <th class="govuk-table__header column-full" scope="col">
+          <span class="govuk-visually-hidden--desktop td-header">Action</span>
+        </th>
+      </tr>
+      </thead>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span>
+          <span class="idm-table__cell--access-level-content">AD0004</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span>
+          <span class="idm-table__cell--access-level-content">Garnets from Gabon</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span>
+          <span class="idm-table__cell--service-name-content">Anti-dumping investigation</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Start date: </span>
+          <span class="idm-table__cell--service-role-name-content">11 May 2021</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Registration date: </span>
+          <span class="idm-table__cell--service-role-name-content">26 May 2021</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="/manage/dashboard-all?orgName=Acme Org Ltd&numUsers=5&numAgents=0&numServices=3&numLocations=1&multiOrg=no&parentChild=parent" class="govuk-link--no-visited-state"> Select case <span class="govuk-visually-hidden td-header">AD0004</span></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+

@@ -27,106 +27,101 @@ Register your interest in a case – GOV.UK Trade Remedies Prototype
 
 {% block content %}
 
-<div class="govuk-width-container">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl">
+    Register interest in a case
+  </h1>
 
-  <main class="govuk-main-wrapper">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+  <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
+  <p class="govuk-body govuk-!-margin-bottom-7">If you leave or sign out before you complete everything, we will save your application so that you can return and continue.
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-          Register interest in a case
-        </h1>
-  
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 8 sections.</p>
-  
-        <ol class="app-task-list">
-          <li>
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">1. </span> 
-              Which case are you interested in?
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="#" aria-describedby="eligibility-status">
-                    Find Trade Remedies case
-                  </a>
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-              </li>
-            </ul>
-          </li>
-  
-          <li>
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Which company is registering interest?
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="#" aria-describedby="company-information-status">
-                    Company information
-                  </a>
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">3. </span> Registration documentation
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  Download registration documentation
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-              </li>
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  Upload registration documentation
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-              </li>
-            </ul>
-          </li>
-  
-          <li>
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">4. </span> Register interest
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  Check and submit
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-              </li>
-            </ul>
-          </li>
-        </ol>
-      </div>
+  </p>
 
-      <div class="govuk-grid-column-one-third">
+  <ol class="app-task-list">
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span> 
+        Which case are you interested in?
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="registerinterest-task1-case" aria-describedby="eligibility-status">
+              Find Trade Remedies case
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+        </li>
+      </ul>
+    </li>
 
-        <aside class="app-related-items" role="complementary">
-          <p></p> <a class="link" href="/trs-layout">Template with components</a></p>
-          <h2 class="govuk-heading-m" id="subsection-title">Use Public TRS pages</h2>
-          <nav role="navigation" aria-labelledby="subsection-title">
-            <ul class="govuk-list govuk-!-font-size-16">
-              <li>
-                <a class="link" href="/public-site/start">Trade Remedies Start page</a> 
-              </li>         
-            </ul>
-          </nav>
-        </aside>
-  
-      </div>
-    </div>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2. </span> Which company is registering interest?
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="#" aria-describedby="company-information-status">
+              Company information
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">3. </span> Registration documentation
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Download registration documentation
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+        </li>
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Upload registration documentation
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+        </li>
+      </ul>
+    </li>
 
-  </main>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">4. </span> Register interest
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Check and submit
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+        </li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+  <aside class="app-related-items" role="complementary">
+    <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+    <nav role="navigation" aria-labelledby="subsection-title">
+      <ul class="govuk-list govuk-!-font-size-16">
+        <li>
+          <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+        </li>         
+      </ul>
+    </nav>
+  </aside>
+
+</div>
 </div>
 
 {% endblock %}
