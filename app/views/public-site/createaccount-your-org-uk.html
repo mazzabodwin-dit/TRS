@@ -15,7 +15,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+<!-- Removing this for now as we think the usewrs office details are no necessary 
       <form action="/createaccount-contact-address-answer" method="post" id="createaccount-your-org-uk-form">  
+-->
+
+      <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-uk-form">  
+
         
         {% call govukFieldset({
           legend: {
@@ -56,9 +61,9 @@
             isPageHeading: false
           },
           classes: "govuk-input--width-10",
-          id: "createaccount-reg-org-number",
-          name: "createaccount-reg-org-number",
-          value: data['createaccount-reg-org-number'],
+          id: "createaccount-reg-number",
+          name: "createaccount-reg-number",
+          value: data['createaccount-reg-number'],
           type: "text"
         }) }} 
 
@@ -74,7 +79,7 @@
           classes: "govuk-input--width-20",
           id: "createaccount-org-address",
           name: "createaccount-org-address",
-          value: data['createaccount-reg-org-address'],
+          value: data['createaccount-org-address'],
           type: "text"
         }) }}
 
@@ -87,11 +92,13 @@
           classes: "govuk-input--width-5",
           id: "createaccount-org-zip",
           name: "createaccount-org-zip",
-          value: data['createaccount-reg-org-zip'],
+          value: data['createaccount-org-zip'],
           type: "text"
         }) }}
 
         {% include "includes/country-list.html" %}
+
+<!-- Removing this for now as we think it unnecessary        
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
@@ -110,14 +117,18 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: checked("createaccount-contact-address", "yes")
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+              checked: checked("createaccount-contact-address", "no")
             }
           ]
         }) }}
+
+        --> 
 
 
         {{ govukButton({

@@ -32,57 +32,105 @@ Find Trade Remedies case – GOV.UK Trade Remedies Prototype
 
   <div class="govuk-grid-column-full">
 
-    <table class="govuk-table {{ tableCSS }}">
+    <table class="govuk-table sortable" id="teamMembers" role="grid">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular">Table caption here</caption>
       <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th class="govuk-table__header column-full" scope="col">
-          Ref.
-        </th>
-        <th class="govuk-table__header column-full" scope="col">
-          Case
-        </th>
-        <th class="govuk-table__header column-full" scope="col">
-          Type
-        </th>
-        <th class="govuk-table__header column-full" scope="col">
-          Start date
-        </th>
-        <th class="govuk-table__header column-full" scope="col">
-          Registration date
-        </th>
-        <th class="govuk-table__header column-full" scope="col">
-          <span class="govuk-visually-hidden--desktop td-header">Action</span>
-        </th>
-      </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Ref. <i class="A-to-Z"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Start date <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Registration due by <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
+            <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort"></i>
+          </th>
+        </tr>
       </thead>
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span>AD0004
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span>Garnets from Gabon
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-dumping investigation
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Start date: </span>01 Dec 2019
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Registration due by: </span>15 Dec 2019
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="registerinterest-tasks?case-ref=AD0004&case-name=Garnets from Gabon&case-type=Anti-dumping investigation" class="govuk-link--no-visited-state"> Select case <span class="govuk-visually-hidden td-header">AD0004</span></a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Ref: </span>
-          <span class="idm-table__cell--access-level-content">AD0004</span>
+          <span class="idm-table__cell--access-level-content">AG0404</span>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Case: </span>
-          <span class="idm-table__cell--access-level-content">Garnets from Gabon</span>
+          <span class="idm-table__cell--access-level-content">Farnets from Fabon</span>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Type: </span>
-          <span class="idm-table__cell--service-name-content">Anti-dumping investigation</span>
+          <span class="idm-table__cell--service-name-content">Anti-subsidy investigation</span>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Start date: </span>
-          <span class="idm-table__cell--service-role-name-content">11 May 2021</span>
+          <span class="idm-table__cell--service-role-name-content">12 April 2021</span>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Registration date: </span>
-          <span class="idm-table__cell--service-role-name-content">26 May 2021</span>
+          <span class="govuk-visually-hidden--desktop td-header">Registration due by: </span>
+          <span class="idm-table__cell--service-role-name-content">26 April 2021</span>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="/manage/dashboard-all?orgName=Acme Org Ltd&numUsers=5&numAgents=0&numServices=3&numLocations=1&multiOrg=no&parentChild=parent" class="govuk-link--no-visited-state"> Select case <span class="govuk-visually-hidden td-header">AD0004</span></a>
+          <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="registerinterest-tasks?case-ref=AG0404&case-name=Farnets from Fabon&case-type=Anti-subsidy investigation" class="govuk-link--no-visited-state"> Select case <span class="govuk-visually-hidden td-header">AG0404</span></a>
         </td>
       </tr>
-    </table>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span>
+          <span class="idm-table__cell--access-level-content">BA0005</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span>
+          <span class="idm-table__cell--access-level-content">Barnets from Tabon</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span>
+          <span class="idm-table__cell--service-name-content">Safeguarding investigation</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Start date: </span>
+          <span class="idm-table__cell--service-role-name-content">12 May 2022</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Registration due by: </span>
+          <span class="idm-table__cell--service-role-name-content">26 May 2022</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="registerinterest-tasks?case-ref=BA0005&case-name=Barnets from Tabon&case-type=Safeguarding investigation" class="govuk-link--no-visited-state"> Select case <span class="govuk-visually-hidden td-header">BA0005</span></a>
+        </td>
+      </tr>
+
+    </table>  
   </div>
 
 </div>

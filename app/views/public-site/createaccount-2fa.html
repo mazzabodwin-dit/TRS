@@ -36,6 +36,7 @@
           {{ govukInput({
             id: "2FA-mobile",
             name: "2FA-mobile",
+            value: data['2FA-mobile'],
             type: "tel",
             autocomplete: "tel",
             classes: "govuk-!-width-one-third",
@@ -52,9 +53,9 @@
           Email address: <strong>{{ data['account-email'] }}</strong>
         {% endset -%}
 
+
         {{ govukRadios({
-          idPrefix: "2fa",
-          name: "2fa",
+          name: "2fa-choice",
           fieldset: {
             legend: {
               text: "How would you like to receive your code?",
@@ -66,14 +67,17 @@
           {
             value: "mobile",
             text: "Mobile",
-            checked: false,
+            id: "mobile",
+            checked: checked("2fa-choice", "mobile"),
             conditional: {
               html: mobileHtml
             }
           },
           {
               value: "email",
-              html: emailText
+              html: emailText,
+              id: "email",
+              checked: checked("2fa-choice", "email")
             }
           ]
         }) }}

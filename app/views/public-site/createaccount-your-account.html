@@ -37,22 +37,26 @@
           classes: "govuk-input--width-20",
           id: "createaccount-name",
           name: "createaccount-name",
-          type: "text"
+          type: "text",
+          autocomplete: "name",
+          value: data['createaccount-name']
+
         }) }}
   
         {{ govukInput({
           label: {
-            text: "Enter your email address",
-            classes: "govuk-label--s",
-            isPageHeading: false
+            text: "Your email address",
+            classes: "govuk-label--s"
           },
           hint: {
-            text: "This will be used to sign in to your account and must be your professional email address, for example yourname@company.com"
+            text: "This will be used to sign in to your account and must be your professional email address, for example yourname@company.com."
           },
+          id: "account-email",
+          name: "account-email",
           classes: "govuk-input--width-20",
-          id: "createaccount-email",
-          name: "createaccount-email",
-          type: "email"
+          type: "email",
+          autocomplete: "email",
+          value: data['account-email']
         }) }}
 
         {{ govukButton({
