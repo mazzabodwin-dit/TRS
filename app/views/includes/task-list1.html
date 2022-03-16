@@ -1,0 +1,30 @@
+{% if (data['case-ref'] == null) %}
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="reginterest-case" aria-describedby="eligibility-status">
+      Find Trade Remedies case
+    </a>
+  </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+</li>
+
+{% else %}
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="reginterest-case" aria-describedby="eligibility-status">
+      Find Trade Remedies case
+    </a>
+  </span>
+  <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Complete</strong>
+</li>
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="reginterest-case" aria-describedby="eligibility-status">
+      {{ data['case-ref'] }}: {{ data['case-name'] }}
+    </a>
+  </span>
+  <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Complete</strong>
+</li>
+
+{% endif %}
