@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Your organisation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/createaccount-contact-address-answer" method="post" id="createaccount-your-org-uk-form">  
+        
+        {% call govukFieldset({
+          legend: {
+            text: "Your company",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>This should be your direct employer and not someone you represent as a third party. You should have permission to create this account on behalf of your company.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Registered company name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Enter your company name or registered company number and select the matching details"
+          },
+          classes: "govuk-input--width-20",
+          id: "createaccount-org-name",
+          name: "createaccount-org-name",
+          value: data['createaccount-org-name'],
+          type: "search"
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "I can't find my company",
+          html: ' <p class="govuk-body">You can search for your organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
+          <p>If the organisation is not on the register you need to return to the previous page and select "No" your organisation is not registered in the UK.</p>'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your copmany details",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-10",
+          id: "createaccount-reg-org-number",
+          name: "createaccount-reg-org-number",
+          value: data['createaccount-reg-org-number'],
+          type: "text"
+        }) }} 
+
+        {{ govukTextarea({
+          label: {
+            text: "Your companies registered address",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This is typically where your main office is located and not necessarily the address of where you work day-to-day"
+          },
+          classes: "govuk-input--width-20",
+          id: "createaccount-org-address",
+          name: "createaccount-org-address",
+          value: data['createaccount-reg-org-address'],
+          type: "text"
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "createaccount-contact-address",
+          name: "createaccount-contact-address",
+          fieldset: {
+            legend: {
+              text: "Is this address the office that you work at day-to-day?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "This is so that we can contact you if necessary."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        {% endcall %} 
+
+        </form>        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

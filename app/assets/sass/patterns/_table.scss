@@ -1,0 +1,115 @@
+
+
+/*** Small viewports ***/
+//@media all and (max-width: 40.0625em) {
+
+@include govuk-media-query($until: tablet) {
+
+      /*  Turn table in blocks */
+      tr,
+      th,
+      td {
+      display: block;
+      }
+
+      .td-header {
+        display: block !important;
+        font-weight: bold;
+      }
+
+      //Create a striped effect across rows
+      tr {
+      padding: 0.7em 0;
+      background-color: govuk-colour("light-grey");
+
+      }
+
+      tr:nth-child(even) {
+      background-color: govuk-colour("turquoise");
+      }
+
+      tr::before {
+        @extend .govuk-body;
+        display: block !important;
+        color: govuk-colour("light-purple");
+      }
+
+      //Forcing the header column width on small screens to be full width
+      .column-full {
+        width: auto !important;
+      }
+      
+      .govuk-visually-hidden--mobile {
+        @include govuk-visually-hidden();
+      } 
+
+}
+
+/**** Normal size viewport ****/
+
+//Forcing cell aligment
+
+td,
+th {
+  vertical-align: text-top;
+}
+
+//Visibly hiding certain fields on desktop only
+.govuk-visually-hidden--desktop {
+    @include govuk-media-query($from: tablet) {
+    @include govuk-visually-hidden();
+  }
+}
+
+//Sortable table headers / buttons
+
+.sortable-button[role="button"]:hover, .sortable-button[role="button"]:focus {
+    background-color: govuk-colour("white");
+    cursor: default;
+}
+
+.sortable th i {
+    font-size: 1.1em;
+    padding-left: 6px;
+    width: 10px;
+    color: govuk-colour("dark-grey");
+    font-style: normal;
+}
+
+
+.no-sort:after {
+    content: "";
+}
+
+.A-to-Z:after {
+    content: "\25B2";
+}
+
+.Z-to-A:after {
+    content: "\25BC";
+}
+
+// In a parent/child list show the parent make a distinction between the last child and the next parent
+.govuk-table__row.top-row .govuk-table__cell{
+  border-top-style: solid;
+  border-top-color: #808080;
+  border-top-width: 1px;
+  border-bottom: 1px solid #fff;
+}
+// In a parent/child list don't show borders between services for the same organisation
+.govuk-table__row.no-border .govuk-table__cell{
+  // border-top:1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+// The identifier to use to indicate an organisation is a child
+.child-identifier:after{
+  content: " >  ";
+  font-size: 0.8em;
+  color: #808080;
+}
+@media all and (max-width: 40.0625em) {
+  .govuk-table__row.top-rowlast-row .govuk-table__cell,.govuk-table__row.no-borderlast-row .govuk-table__cell,.govuk-table__row.top-row .govuk-table__cell, .govuk-table__row.no-border .govuk-table__cell{
+    border-top: none;
+    border-bottom: none;
+  }
+}

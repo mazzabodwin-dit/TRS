@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find Trade Remedies case – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Registration date is overdue</h1>
+    <p>The registration date for the case {{data['case-name']}} was {{data['register-date']}}
+    <p>If you register your interest in a case after the registration due date, you may not be eligible to receive a questionnaire. Registering later may restrict your opportunities to participate in the process.</p>
+   
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+
