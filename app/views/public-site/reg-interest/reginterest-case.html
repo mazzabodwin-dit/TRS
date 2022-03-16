@@ -25,6 +25,11 @@ Find Trade Remedies case – GOV.UK Trade Remedies Prototype
     <h1 class="govuk-heading-xl">Find Trade Remedies case</h1>
     <p>To register your interest in an existing Trade Remedies case, select the relevant case below.</p>
 
+    {{ govukDetails({
+      summaryText: "The registration due date",
+      html: "<p>Organisations can normally register their interest in a case up to [x days] after the case has started. This is known as the registration due date.</p><p> If you wish to register your interest but the due date has passed be aware that you may not be eligible to receive a questionnaire and your opportunities to participate in the process may be restricted.</p>"
+    }) }}
+
   </div>
 
   <div class="govuk-grid-column-full">
