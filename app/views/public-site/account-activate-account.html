@@ -21,6 +21,18 @@
       <h1 class="govuk-heading-l">
         Activate your account    
       </h1>
+      {% if (data['rerequestEmail'] == "yes") %}
+
+      {% set requestSent %}
+          We have sent a new account activation email link to {{data['account-email']}}.
+      {% endset %}
+
+      {{ govukInsetText({
+        text: requestSent
+      }) }}
+
+      {% endif %}
+
       <p>You need to verify your email address before you can take part in a trade remedy investigation.</p>
       <p>We sent an email to <strong>{{ data['account-email'] }}</strong> when your account was created.</p>
       <p>Open the email and click on the link to active your account.</p>
@@ -35,7 +47,7 @@
         <div class="govuk-details__text">
           <p>Please check the email address above to ensure that you entered it correctly. If it is incorrect you will need to create the account again using the correct email address. </p>
           <p>Check your email spam folders and add our email address to your contact list: trade.remedies.service@notifications.service.gov.uk.</p>
-          <p>If the email still hasn't arrived <a href="">click here to resend the email</a>.</p>
+          <p>If the email still hasn't arrived <a href="account-activate-account?rerequestEmail=yes">click here to resend the email</a>.</p>
         </div>
       </details>
 
@@ -47,11 +59,11 @@
         </summary>
         <div class="govuk-details__text">
           <p>The link in the email is only valid for 24 hours, after that you will need to request a new activation email.</p>
-          <p><a href="">Click here to resend the email</a>.</p>
+          <p><a href="account-activate-account?rerequestEmail=yes">Click here to resend the email</a>.</p>
         </div>
       </details>
 
-      <form action="dashboard" method="post" id="account-verify-email">  
+      <form action="dashboard-new?rerequestEmail=no" method="post">  
 
       {{ govukButton({
         text: "Back to dashboard"
@@ -94,7 +106,7 @@
         {
         },
         {
-          href: "email/email-createaccount-verify-email",
+          href: "email/email-createaccount-activate-account",
           text: "For user testing: Go to email"
         }
       ]
