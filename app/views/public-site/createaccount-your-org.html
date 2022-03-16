@@ -15,8 +15,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+<!-- Removing this for now as we think the usewrs office details are no necessary 
       <form action="/createaccount-contact-address-answer" method="post" id="createaccount-your-org-uk-form">  
-        
+-->
+
+<form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-uk-form">          
         {% call govukFieldset({
           legend: {
             text: "Your organisation",
@@ -84,6 +87,8 @@
 
         {% include "includes/country-list.html" %}
 
+<!-- Removing this for now as we think it unnecessary        
+
         {{ govukRadios({
           classes: "govuk-radios--inline",
           idPrefix: "createaccount-contact-address",
@@ -101,14 +106,18 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: checked("createaccount-contact-address", "yes")
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+              checked: checked("createaccount-contact-address", "no")
             }
           ]
         }) }}
+
+        --> 
 
 
         {{ govukButton({
