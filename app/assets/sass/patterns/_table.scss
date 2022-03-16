@@ -12,28 +12,39 @@
       display: block;
       }
 
+      th {
+        background-color: govuk-colour("light-grey");
+      }
+
       .td-header {
         display: block !important;
         font-weight: bold;
       }
 
+      tr.govuk-table__row th {
+        padding-left: 0.7em;
+
+      }
+
       //Create a striped effect across rows
-      tr {
-      padding: 0.7em 0;
-      background-color: govuk-colour("light-grey");
+      tr.govuk-table__row td {
+      padding: 0.7em;
 
       }
 
       tr:nth-child(even) {
-      background-color: govuk-colour("turquoise");
+      background-color: govuk-colour("light-grey");
+      border-top: 1px govuk-colour("mid-grey") solid;
+      border-bottom: 1px govuk-colour("mid-grey") solid;
+
       }
 
-      tr::before {
+ /*     tr::before {
         @extend .govuk-body;
         display: block !important;
         color: govuk-colour("light-purple");
       }
-
+*/
       //Forcing the header column width on small screens to be full width
       .column-full {
         width: auto !important;

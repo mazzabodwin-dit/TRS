@@ -20,10 +20,28 @@ Find Trade Remedies case – GOV.UK Trade Remedies Prototype
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Registration date is overdue</h1>
-    <p>The registration date for the case {{data['case-name']}} was {{data['register-date']}}
-    <p>If you register your interest in a case after the registration due date, you may not be eligible to receive a questionnaire. Registering later may restrict your opportunities to participate in the process.</p>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">1. Which case are you interested in?</span>
+    <h1 class="govuk-heading-xl">Find Trade Remedies case</h1>
+    {{ govukWarningText({
+      text: "The registration due date for this case has passed",
+      iconFallbackText: "Warning"
+    }) }}
+    <ul class="govuk-list">
+      <li>Case: {{data['case-name']}}</li>
+     <li>Registration due date: {{data['register-date']}}</li>
+    </ul>
+    <p>If you continue to register your interest in this case you may not be eligible to receive a questionnaire and your opportunities to participate in the process may be restricted.</p>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue registering interest",
+        href: "reginterest-tasks"
+      }) }}
+    
+      <a class="govuk-link" href="/public-site/dashboard">Cancel</a>
+
+    </div>
    
 
   </div>
