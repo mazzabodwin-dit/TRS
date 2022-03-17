@@ -72,10 +72,10 @@ let showPasswordText = "Show";
 let hidePasswordText = "Hide";
 
 let handleTogglePasswordVisibility = (e) => {
-let buttonState = showPasswordButton.getAttribute("aria-pressed");
+let buttonState = showPasswordButton.getAttribute("aria-checked");
 
 showPasswordButton.setAttribute(
-"aria-pressed",
+"aria-checked",
 buttonState === "false" ? "true" : "false"
 );
 srPasswordText.innerText =
