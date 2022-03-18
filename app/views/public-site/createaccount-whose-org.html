@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Is your organisation registered in the UK – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Registering pre-requisites – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
       <form action="/createaccount-uk-reg-route" method="post" id="createaccount-uk-reg-form"> 
                
         {{ govukRadios({
-          classes: "govuk-radios",
+          classes: "govuk-radios--inline",
           idPrefix: "createaccount-uk-reg",
           name: "createaccount-uk-reg",
           fieldset: {

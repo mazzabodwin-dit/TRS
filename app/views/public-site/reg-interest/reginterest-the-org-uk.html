@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: The company you are representing – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-xl">2.  Who is registering interest</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="reginterest-the-org-dets" method="post" id="reginterest-the-org-uk-form">  
+
+        
+        {% call govukFieldset({
+          legend: {
+            text: "Organisation  details",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>This is the company that you have been asked to represent. You should have permission to register interest in this case on behalf of this company.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Registered company name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Enter the company name and select the matching details to pre-fill the information below"
+          },
+          classes: "govuk-input--width-20",
+          id: "reginterest-org-name",
+          name: "reginterest-org-name",
+          value: data['reginterest-org-name'],
+          type: "search"
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "I can't find the organisation I am representing",
+          html: ' <p class="govuk-body">You can search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
+          <p>If the organisation is not on the register you need to return to the previous page and select "No" the organisation I am representing is not registered in the UK.</p>'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Registered company number",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-10",
+          id: "reginterest-reg-number",
+          name: "reginterest-reg-number",
+          value: data['reginterest-reg-number'],
+          type: "text"
+        }) }} 
+
+        {{ govukTextarea({
+          label: {
+            text: "Company registered address",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This is typically where the main office is located"
+          },
+          classes: "govuk-input--width-20",
+          id: "reginterest-org-address",
+          name: "reginterest-org-address",
+          value: data['reginterest-org-address'],
+          type: "text"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or Zipcode",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-5",
+          id: "reginterest-org-zip",
+          name: "reginterest-org-zip",
+          value: data['reginterest-org-zip'],
+          type: "text"
+        }) }}
+
+        {% include "includes/country-list.html" %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        {% endcall %} 
+
+        </form>        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

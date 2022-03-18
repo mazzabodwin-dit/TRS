@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Is the organisation registered in the UK? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-xl">2.  Who is registering interest</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/reginterest-uk-reg-route" method="post" id="reginterest-uk-reg-form"> 
+               
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "reginterest-uk-reg",
+          name: "reginterest-uk-reg",
+          fieldset: {
+            legend: {
+              text: "Is this organisation a registered UK company?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("reginterest-uk-reg", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("reginterest-uk-reg", "no")
+            }
+          ]
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "How do I find out if the organisation I am representing is registered in the UK?",
+          html: ' <p class="govuk-body">You can search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
+          <p>If you cannot find the organisation on the register you need to select "No" the organisation is not registered in the UK.</p>'
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

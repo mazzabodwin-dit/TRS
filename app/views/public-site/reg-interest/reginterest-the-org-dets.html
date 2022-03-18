@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Further details about your organisation – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Further details about the organisation – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,19 +13,20 @@
 
 {% block content %}
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-xl">2.  Who is registering interest</span>
+    </div>
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="createaccount-account-complete" method="post" id="createaccount-your-org-dets-form">  
+      <form action="reginterest-account-complete" method="post" id="reginterest-your-org-dets-form">  
         
         {% call govukFieldset({
           legend: {
-            text: "Further details about your organisation",
+            text: "Further details about the organisation",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
-
-        <p>Please provide as much of the following information as you can to ensure we are communicating with you correctly.</p>
 
         {{ govukInput({
           label: {
@@ -34,13 +35,13 @@
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation will have a VAT number if registerd for Value Added Tax"
+            text: "The organisation will have a VAT number if registered for Value Added Tax"
           },
           classes: "govuk-input--width-20",
-          id: "createaccount-vat",
-          name: "createaccount-vat",
+          id: "reginterest-vat",
+          name: "reginterest-vat",
           type: "text",
-          value: data['createaccount-vat']
+          value: data['reginterest-vat']
         }) }}
 
         {{ govukInput({
@@ -50,13 +51,13 @@
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation will have an EORI number if you have brought goods into the UK or EU"
+            text: "The organisation will have an EORI number if they have brought goods into the UK or EU"
           },
           classes: "govuk-input--width-20",
-          id: "createaccount-eori",
-          name: "createaccount-eori",
+          id: "reginterest-eori",
+          name: "reginterest-eori",
           type: "text",
-          value: data['createaccount-eori']          
+          value: data['reginterest-eori']          
         }) }}
 
         {{ govukInput({
@@ -66,18 +67,18 @@
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation might have a 9 digit Data Universal Numbering System identifier"
+            text: "The organisation might have a 9 digit Data Universal Numbering System identifier"
           },
           classes: "govuk-input--width-20",
-          id: "createaccount-duns",
-          name: "createaccount-duns",
+          id: "reginterest-duns",
+          name: "reginterest-duns",
           type: "text",
-          value: data['createaccount-duns']  
+          value: data['reginterest-duns']  
         }) }}
 
         {{ govukInput({
           label: {
-            text: "The organisations website (Optional)",
+            text: "Organisation website (Optional)",
             classes: "govuk-label--s",
             isPageHeading: false
           },
@@ -85,10 +86,10 @@
             text: "For example mycompany.com"
           },
           classes: "govuk-input--width-20",
-          id: "createaccount-web",
-          name: "createaccount-web",
+          id: "reginterest-web",
+          name: "reginterest-web",
           type: "text",
-          value: data['createaccount-web']  
+          value: data['reginterest-web']  
         }) }}
   
         {{ govukButton({
