@@ -13,10 +13,10 @@ router.post('/createaccount-uk-reg-route', function (req, res) {
   // Check whether the variable matches a condition
   if (createaccountUKReg == "yes"){
     // Send user to next page
-    res.redirect('/public-site/createaccount-your-org-uk-alt')
+    res.redirect('/public-site/create-account/createaccount-your-org-uk-alt')
   } else {
     // Send user to ineligible page
-    res.redirect('/public-site/createaccount-your-org')
+    res.redirect('/public-site/create-account/createaccount-your-org')
   }
 })
 
