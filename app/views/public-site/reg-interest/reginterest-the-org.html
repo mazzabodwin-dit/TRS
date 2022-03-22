@@ -18,6 +18,9 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
+      Test data: {{ data['reginterest-what-org']}}
+
+
   <form action="reginterest-the-org-dets" method="post" id="reginterest-the-org-form">          
         {% call govukFieldset({
           legend: {
@@ -86,9 +89,13 @@
 
         {% include "includes/country-list.html" %}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
+
         {% endcall %} 
 
         </form>

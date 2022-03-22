@@ -16,7 +16,7 @@
         background-color: govuk-colour("light-grey");
       }
 
-      .td-header {
+ /**     .td-header {
         display: block !important;
         font-weight: bold;
       }
@@ -24,13 +24,13 @@
       tr.govuk-table__row th {
         padding-left: 0.7em;
 
-      }
+      }  
 
       //Create a striped effect across rows
       tr.govuk-table__row td {
       padding: 0.7em;
 
-      }
+      } **/
 
       tr:nth-child(even) {
       background-color: govuk-colour("light-grey");
@@ -39,12 +39,6 @@
 
       }
 
- /*     tr::before {
-        @extend .govuk-body;
-        display: block !important;
-        color: govuk-colour("light-purple");
-      }
-*/
       //Forcing the header column width on small screens to be full width
       .column-full {
         width: auto !important;
@@ -65,6 +59,21 @@ th {
   vertical-align: text-top;
 }
 
+tr.govuk-table__row th {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+
+tr.govuk-table__row td {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+th {
+  background-color: govuk-colour("light-grey");
+}
+
 //Visibly hiding certain fields on desktop only
 .govuk-visually-hidden--desktop {
     @include govuk-media-query($from: tablet) {
@@ -75,7 +84,7 @@ th {
 //Sortable table headers / buttons
 
 .sortable-button[role="button"]:hover, .sortable-button[role="button"]:focus {
-    background-color: govuk-colour("white");
+    background-color: govuk-colour("light-grey");
     cursor: default;
 }
 
@@ -83,21 +92,24 @@ th {
     font-size: 1.1em;
     padding-left: 6px;
     width: 10px;
-    color: govuk-colour("dark-grey");
+    color: govuk-colour("black");
     font-style: normal;
 }
 
-
 .no-sort:after {
-    content: "";
+    content: "\25C6";
+    color: govuk-colour("mid-grey");
+
 }
 
 .A-to-Z:after {
     content: "\25B2";
+    font-size: 0.9em;
 }
 
 .Z-to-A:after {
     content: "\25BC";
+    font-size: 0.9em;
 }
 
 // In a parent/child list show the parent make a distinction between the last child and the next parent

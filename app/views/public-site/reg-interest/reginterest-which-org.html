@@ -12,7 +12,7 @@ Find Trade Remedies case – GOV.UK Trade Remedies Prototype
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+ <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
 
 {% endblock %}
 
@@ -27,6 +27,10 @@ Find Trade Remedies case – GOV.UK Trade Remedies Prototype
   <div class="govuk-grid-column-two-thirds">
 
     <form action="/reginterest-which-org-route" method="post" id="reginterest-which-org-form">
+
+      <!-- Test data: {{ data['which-org-started']}}
+      Test data: {{ data['reginterest-what-org']}} -->
+
       
       {% set myorgHTML %}
       My organisation: {{data['createaccount-org-name']}}
@@ -66,7 +70,7 @@ Find Trade Remedies case – GOV.UK Trade Remedies Prototype
         {{ govukButton({
           text: "Continue"
         }) }}    
-        <a class="govuk-link" href="javascript: history.back()">Back</a>
+        <a class="govuk-link" href="reginterest-tasks">Back</a>
       </div>
 
     </form>

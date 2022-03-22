@@ -47,6 +47,9 @@ Register your interest in a case – GOV.UK Trade Remedies Prototype
       </h2>
       <ul class="app-task-list__items">
 
+        <!--Started: {{ data['case-started']}}
+        Test data: {{ data['case-ref'] }} -->
+
         {% include "includes/task-list1.html" %}
 
       </ul>
@@ -59,6 +62,9 @@ Register your interest in a case – GOV.UK Trade Remedies Prototype
       </h2>
       <ul class="app-task-list__items">
 
+        <!-- Started: {{ data['which-org-started']}} 
+        Test data: {{ data['reginterest-what-org']}} -->
+
         {% include "includes/task-list2.html" %}
         
       </ul>
@@ -68,18 +74,13 @@ Register your interest in a case – GOV.UK Trade Remedies Prototype
         <span class="app-task-list__section-number">3. </span> Registration documentation
       </h2>
       <ul class="app-task-list__items">
-        <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
-            Download registration documentation
-          </span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-        </li>
-        <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
-            Upload registration documentation
-          </span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-        </li>
+
+        Started: {{ data['']}}
+        Download test data: {{ data['']}}
+        Upload test data: {{ data['']}}
+
+        {% include "includes/task-list3.html" %}
+
       </ul>
     </li>
 
@@ -88,6 +89,9 @@ Register your interest in a case – GOV.UK Trade Remedies Prototype
         <span class="app-task-list__section-number">4. </span> Register interest
       </h2>
       <ul class="app-task-list__items">
+
+      Test data: {{ data['']}}
+
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             Check and submit
