@@ -1,0 +1,110 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find Trade Remedies case – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">2.  Who is registering interest</span>
+    <h1 class="govuk-heading-xl">Organisation details</h1>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="reginterest-tasks?reginterest-what-org=existing" method="post" id="reginterest-existing-org-form">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="reginterest-existing-org">
+          Choose the organisation you are representing
+        </label>
+        <select class="govuk-select" id="reginterest-existing-org" name="reginterest-existing-org">
+          <option value="opt0" class="selected"></option>
+          <option value="opt1">PARASITE INTERNATIONAL LIMITED</option>
+          <option value="opt2">INTERNATIONAL CORPORATE SECRETARIAT LIMITED</option>
+          <option value="opt3">FENCING AND DECKING (SOUTH WALES) LIMITED</option>
+        </select>
+      </div>
+ 
+      <div id="opt0">
+      </div>
+
+      {% set opt1html %}
+        <h3 class="govuk-heading-s">PARASITE INTERNATIONAL LIMITED</h3>
+        <p>Company number: 10086985</p>
+        <p>Ingles Manor, Castle Hill Avenue, Folkestone, CT20 2RD, United Kingdom</p>
+      {% endset -%}
+
+      <div id="opt1">
+        {{ govukInsetText({
+          html: opt1html
+        }) }}
+        <p>Check the organisation details below carefully. If the details do not match those of the organisation you are representing, you should choose the new organisation option and add the correct details.</p>
+
+      </div>
+
+      {% set opt2html %}
+        <h3 class="govuk-heading-s">INTERNATIONAL CORPORATE SECRETARIAT LIMITED</h3>
+        <p>Company number: 07410672</p>
+        <p>17 Dartmouth Street, St. James's Park, London, SW1H 9BL, United Kingdon</p>
+      {% endset -%} 
+
+      <div id="opt2">
+        {{ govukInsetText({
+          html: opt2html
+        }) }}
+        
+        <p>Check the organisation details below carefully. If the details do not match those of the organisation you are representing, you should return to the previous page and choose the "New organisation" option.</p>
+
+      </div>
+
+      {% set opt3html %}
+        <h3 class="govuk-heading-s">FENCING AND DECKING (SOUTH WALES) LIMITED</h3>
+        <p>Company number: 08929610</p>
+        <p>Unit 26 Rassau Industrial Estate, Ebbw Vale, NP23 5SD, United Kingdon</p>
+      {% endset -%} 
+
+      <div id="opt3">
+        {{ govukInsetText({
+          html: opt3html
+        }) }}
+        <p>Check the organisation details above carefully. If the details do not match those of the organisation you are representing, you should choose the new organisation option and add the correct details.</p>
+
+      </div>
+    
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "I confirm these are the correct details"
+        }) }}
+      
+        <a class="govuk-link" href="javascript: history.back()">Back</a>
+
+      </div>
+
+    </form>
+    
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+

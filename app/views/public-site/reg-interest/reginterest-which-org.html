@@ -1,0 +1,84 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find Trade Remedies case – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">2.  Who is registering interest</span>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/reginterest-which-org-route" method="post" id="reginterest-which-org-form">
+      
+      {% set myorgHTML %}
+      My organisation: {{data['createaccount-org-name']}}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "reginterest-what-org",
+        name: "reginterest-what-org",
+        fieldset: {
+          legend: {
+            text: "Which organisation is registering interest in this case?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "my-org",
+            html: myorgHTML,
+            checked: checked("reginterest-what-org", "my-org")
+          },
+          {
+            value: "existing-org",
+            text: "An organisation I have represented before on a trade remedies case",
+            checked: checked("reginterest-what-org", "existing-org")
+
+          },
+          {
+            value: "new-org",
+            text: "A new organisation I have not represented before on a trade remedies case",
+            checked: checked("reginterest-what-org", "new-org")
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      
+        <a class="govuk-link" href="javascript: history.back()">Back</a>
+
+      </div>
+
+    </form>
+    
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+

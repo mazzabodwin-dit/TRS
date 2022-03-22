@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Your company – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Your copmany – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="createaccount-your-org-confirm" method="post" id="createaccount-your-org-confirm-form">  
+      <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-uk-form">  
 
         
         {% call govukFieldset({
@@ -51,8 +51,6 @@
           html: ' <p class="govuk-body">You can search for your company on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
           <p>If the company is not on the register you need to return to the previous page and select "No" your organisation is not registered in the UK.</p>'
         }) }}
-
-       <p> Show me {{data ['search-reg-org']}} this </p>
 
    
         {{ govukButton({

@@ -21,5 +21,6 @@ module.exports = {
 
   // Insert values here
 
-  "name": "Devi Lakhia"
+  "name": "Devi Lakhia",
+  "accountOrg": "Devi",
 }
