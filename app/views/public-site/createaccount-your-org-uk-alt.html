@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Your company – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Your employers registered details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,21 +16,20 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="createaccount-your-org-confirm" method="post" id="createaccount-your-org-confirm-form">  
-
-        
+    
         {% call govukFieldset({
           legend: {
-            text: "Your company",
+            text: "Your employers registered details",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
 
-        <p>This should be <strong>your direct employer</strong> and not someone you represent as a third party. You should have permission to create this account on behalf of your company.</p>
+        <p>Organisations registered in the UK are on the Companies House register. </p>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="search-reg-org">
-            Search for your company
+          <label class="govuk-heading-s" for="search-reg-org">
+            Search the register for your employer
           </label>
           <select class="govuk-select" id="search-reg-org" name="search-reg-org">
             <option value="opt0" class="selected"></option>
@@ -47,20 +46,20 @@
         </div>
 
         {{ govukDetails({
-          summaryText: "I can't find my company",
-          html: ' <p class="govuk-body">You can search for your company on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
-          <p>If the company is not on the register you need to return to the previous page and select "No" your organisation is not registered in the UK.</p>'
+          summaryText: "I can't find my employer",
+          html: ' <p class="govuk-body">You can search for your organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
+          <p>If the organisation is not on the register you need to return to the previous page and select "No" your employer is not registered in the UK.</p>'
         }) }}
-
-       <p> Show me {{data ['search-reg-org']}} this </p>
-
    
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
         {% endcall %} 
 
-        </form>        
+      </form>        
     </div>
   </div>
 {% endblock %}

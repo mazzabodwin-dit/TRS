@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Further details about your organisation – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Further details about your employer – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
         
         {% call govukFieldset({
           legend: {
-            text: "Further details about your organisation",
+            text: "Further details about your employer",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
@@ -34,7 +34,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation will have a VAT number if registerd for Value Added Tax"
+            text: "Your organisation will have a VAT number if registered for Value Added Tax"
           },
           classes: "govuk-input--width-20",
           id: "createaccount-vat",
@@ -91,12 +91,16 @@
           value: data['createaccount-web']  
         }) }}
   
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
+        
         {% endcall %} 
 
-        </form>
+      </form>
         
     </div>
   </div>

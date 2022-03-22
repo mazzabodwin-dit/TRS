@@ -48,9 +48,12 @@
           <p>If you cannot find your organisation on the register you need to select "No" your organisation is not registered in the UK.</p>'
         }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
 
         </form>
         

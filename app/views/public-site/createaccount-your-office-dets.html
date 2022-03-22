@@ -63,9 +63,13 @@
 
         {% include "includes/country-list.html" %}    
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
+
         {% endcall %} 
 
         </form>

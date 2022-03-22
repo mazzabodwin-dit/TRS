@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Your organisation – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Your employer – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,13 +22,13 @@
 <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-form">          
         {% call govukFieldset({
           legend: {
-            text: "Your organisation",
+            text: "Your employer",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
 
-        <p>This should be your direct employer and not someone you represent as a third party. You should have permission to create this account on behalf of your company.</p>
+        <p>This should be your direct employer and not an organisation you are representing. You should have permission to create this account on behalf of your company.</p>
 
         {{ govukInput({
           label: {
@@ -120,12 +120,15 @@
         --> 
 
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
         {% endcall %} 
 
-        </form>
+      </form>
         
     </div>
   </div>

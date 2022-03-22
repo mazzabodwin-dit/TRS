@@ -30,7 +30,7 @@
           }
         }) %}
 
-        <p>This should be your direct employer and not someone you represent as a third party. You should have permission to create this account on behalf of your company.</p>
+        <p>This must be <strong>your direct employer</strong> and not someone you represent as a third party. You should have permission to create this account on behalf of your company.</p>
 
         {{ govukInput({
           label: {
@@ -129,10 +129,12 @@
         }) }}
 
         --> 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-        {% endcall %} 
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "I confirm that this is my employer"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
 
         </form>        
     </div>
