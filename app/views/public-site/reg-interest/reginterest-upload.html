@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Download registration documentation – GOV.UK Trade Remedies Prototype
+  Proto: Upload registration documentation – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
 {% block header %}
@@ -22,14 +22,10 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">3.  Registration documentation</span>
     <h1 class="govuk-heading-xl">
-      Download registration documentation
+      Upload registration documentation
     </h1>
 
     <form action="reginterest-tasks?upload-complete=yes" method="post" id="reginterest-which-org-form">
-
-      Test data: {{ data['uploads-started']}}
-      Test data: {{ data['upload-complete']}}
-
      
       <div class="govuk-button-group">
         {{ govukButton({
