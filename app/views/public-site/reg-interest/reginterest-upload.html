@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Download registration documentation – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">3.  Registration documentation</span>
+    <h1 class="govuk-heading-xl">
+      Download registration documentation
+    </h1>
+
+    <form action="reginterest-tasks?upload-complete=yes" method="post" id="reginterest-which-org-form">
+
+      Test data: {{ data['uploads-started']}}
+      Test data: {{ data['upload-complete']}}
+
+     
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="reginterest-tasks">Back</a>
+      </div>
+
+    </form>
+
+    <!-- Test data -->
+    <div class="govuk-inset-text">
+      Test data: <br>
+      Upload started:{{ data['upload-started']}}<br>
+      Type of org: {{data['reginterest-what-org']}}<br>
+      Upload sample doc: {{data['sample-download']}}<br>
+      Upload loa doc: {{data['loa-download']}}
+    </div>
+    
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+

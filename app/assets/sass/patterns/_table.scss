@@ -59,18 +59,18 @@ th {
   vertical-align: text-top;
 }
 
-tr.govuk-table__row th {
+#cases-table tr.govuk-table__row th {
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
 
 
-tr.govuk-table__row td {
+#cases-table tr.govuk-table__row td {
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
 
-th {
+#cases-table th {
   background-color: govuk-colour("light-grey");
 }
 

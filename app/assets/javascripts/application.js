@@ -9,8 +9,12 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
   let selectElement = document.querySelector('#search-reg-org')
 
-accessibleAutocomplete.enhanceSelectElement({
-  defaultValue: '',
-  selectElement: selectElement
-})
+  // AccessibleAutocomplete orignal 
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#search-reg-org'),
+    onConfirm: function(data){
+      $('#selected_company').html(data);
+    }
+  })
 })

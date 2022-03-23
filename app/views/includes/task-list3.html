@@ -1,37 +1,106 @@
-<!-- If the user has not finsihed section 2 show: -->
-{% if (data['reginterest-what-org'] == null) %}
+<!-- If the user has completed Downloads show: -->
+{% if (data['download-complete'] == "yes")  %}
   <li class="app-task-list__item">
-    <span class="app-task-list__task-name" aria-describedby="download-status">
-      Download registration documentation
+    <span class="app-task-list__task-name">
+      <a href="reginterest-download" aria-describedby="download-status">
+        Download registration documentation
+      </a>
     </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="download-status">Cannot start yet</strong>
-  </li>
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name" aria-describedby="upload-status">
-      Upload registration documentation
-    </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="upload-status">Cannot start yet</strong>
+    <strong class="govuk-tag app-task-list__tag" id="download-status">Complete</strong>
   </li>
 
   {% else %}
+    <!-- If the user has visited Downloads show: -->
+    {% if (data['download-started'] == "yes")  %}
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-download" aria-describedby="download-status">
+            Download registration documentation
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="download-status">In progress</strong>
+      </li>
 
-  <!-- If the user has completed all of section 2 show: -->
-  {% if (data['reginterest-what-org'] != null)  %}
-      
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="reginterest-which-org" aria-describedby="download-status">
-          Download registration documentation
-        </a>
-      </span>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="download-status">Not started yet</strong>
-    </li>
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name" aria-describedby="upload-status">
-        Upload registration documentation
-      </span>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="upload-status">Cannot start yet</strong>
-    </li>
+      {% else %}
+        <!-- If the user has not started Downloads but has completed section 2 show: -->
+        {% if (data['reginterest-what-org'] != null)  %}
+        <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="reginterest-download?download-started=yes" aria-describedby="download-status">
+                Download registration documentation
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="download-status">Not started</strong>
+          </li>
+
+          {% else %}
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name" aria-describedby="download-status">              
+                    Download registration documentation
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="download-status">Cannot start yet</strong>
+              </li>
+
+        {% endif %}
 
     {% endif %}
+
 {% endif %}
+
+<!-- If the user has completed Uploads show: -->
+<!-- If the user has completed Uploads show: -->
+{% if (data['upload-complete'] == "yes")  %}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="reginterest-upload" aria-describedby="upload-status">
+        Upload registration documentation
+      </a>
+    </span>
+    <strong class="govuk-tag app-task-list__tag" id="upload-status">Complete</strong>
+  </li>
+
+  {% else %}
+    <!-- If the user has visited Uploads show: -->
+    {% if (data['upload-started'] == "yes")  %}
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-upload" aria-describedby="upload-status">
+            Upload registration documentation
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="upload-status">In progress</strong>
+      </li>
+
+      {% else %}
+        <!-- If the user has not started Uploads but has completed section 2 show: -->
+        {% if (data['download-complete'] == "yes")  %}
+          <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reginterest-upload?upload-started=yes" aria-describedby="upload-status">
+                  Upload registration documentation
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="upload-status">Not started</strong>
+            </li>
+
+            {% else %}
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name" aria-describedby="upload-status">
+                  Upload registration documentation
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="upload-status">Cannot start yet</strong>
+              </li>
+
+        {% endif %}
+
+    {% endif %}
+
+{% endif %}
+
+
+
+
+
+
+
+
