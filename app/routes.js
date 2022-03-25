@@ -42,9 +42,9 @@ router.get('/public-site/reg-interest/reginterest-which-org', function (req, res
 
   if (req.session.data['createaccount-org-name'] == null) {
     // store it in session
-    req.session.data['createaccount-org-name'] = "Cheesy Chips"
+    req.session.data['createaccount-org-name'] = "Cheesy Chips Ltd"
     // send it to the current page
-    res.locals.data['createaccount-org-name'] = "Cheesy Chips"
+    res.locals.data['createaccount-org-name'] = "Cheesy Chips Ltd"
   }
   res.render('public-site/reg-interest/reginterest-which-org')
  
