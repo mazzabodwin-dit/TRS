@@ -7,29 +7,36 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your interest in the case has been registered     
-      </h1>
 
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Application complete
+        </h1>
+        <div class="govuk-panel__body">
+          Case number:<br><strong>{{data ['case-ref']}}</strong>
+        </div>
+      </div>
   
-      <p>Thank you for registering your interest in the above case. We have sent confirmation to <strong>{{ data['account-email'] }}</strong>.</p>
+      <p>Thank you for registering your interest in the following case. We have sent confirmation to <strong>{{ data['account-email'] }}</strong>.</p>
       
-      <p>{{data ['case-ref']}} - {{data ['case-name']}} <br> {{data ['case-type']}}</p>
+      <p><strong>{{data ['case-ref']}} - {{data ['case-name']}}</strong><br>
+        12 May 2022
+      </p>
         
-      <h2 class="govuk-heading-m">Next steps</h2>
+      <h2 class="govuk-heading-m">What happens next</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li>The information you have provided will determine whether you are granted entry to the case. You will be contacted with the results of this initial assessment.</li>
         <li>Your answers will determine whether your company will receive a questionnaire to complete. We will contact you if your company is selected for this.</li>
         <li>The list of companies that receive a questoinnaire will be placed on the Public record of this case.</li>
       </ul>
-      
-      <form action="../dashboard?reginterest=complete" method="post" id="createaccount-verify-email-form">  
+      <p>If you need to make any changes to your application please contact us as quickly as possible at  <strong>{{data ['case-ref']}}@traderemedies.gov.uk</strong>.</p>
+
+      <form action="../dashboard?reginterest-complete=yes" method="post" id="createaccount-verify-email-form">  
 
         {{ govukButton({
           text: "Go to my dashboard"

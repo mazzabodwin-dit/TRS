@@ -14,7 +14,7 @@
  <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="dashboard">Dashboard</a>
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       Register interest in a case
@@ -113,24 +113,7 @@
       </li>
     </ol>
 
-    {% if (data['check-complete'] == "yes") %}
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Submit my application",
-          href: ""
-        }) }}    
-      </div>
-      
-      {% else%}
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Submit my application",
-            disabled: true,
-            href: ""
-          }) }}    
-        </div>
-        
-    {% endif %}
+    <a class="govuk-link" href="../dashboard">Back to Dashboard</a>
 
   </div>
 

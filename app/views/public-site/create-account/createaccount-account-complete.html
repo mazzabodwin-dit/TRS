@@ -7,16 +7,17 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Your account has been created     
-      </h1>
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Account created
+        </h1>
+       
+      </div>
 
       {% if (data['rerequestEmail'] == "yes") %}
 
@@ -60,7 +61,7 @@
         </div>
       </details>
 
-      <form action="dashboard-new" method="post" id="createaccount-verify-email-form">  
+      <form action="../dashboard-new" method="post" id="createaccount-verify-email-form">  
 
         {{ govukButton({
           text: "Sign in"
