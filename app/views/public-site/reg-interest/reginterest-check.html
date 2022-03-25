@@ -46,7 +46,7 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registering on behalf of
+          Registering for
         </dt>
         <dd class="govuk-summary-list__value">
           {% if (data['reginterest-what-org'] == "my-org") %}
@@ -86,7 +86,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="#">
             Change
-            <span class="govuk-visually-hidden"> who is registering interest/span>
+            <span class="govuk-visually-hidden"> organisation/span>
           </a>
         </dd>
       </div>
@@ -97,12 +97,12 @@
         <dd class="govuk-summary-list__value">
               VAT number: 68593069894<br>
               DUNS number: 123456789<br>
-              Website: www.orglongnameurlthatisannoying.com
+              www.orglongnameurlthatisannoying.com
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="#">
             Change
-            <span class="govuk-visually-hidden"> who is registering interest/span>
+            <span class="govuk-visually-hidden"> organisation details/span>
           </a>
         </dd>
       </div>
@@ -111,53 +111,76 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Download documentation
+          Downloaded documentation
         </dt>
         <dd class="govuk-summary-list__value">
-          You downloaded:<br>
-          document 1<br>
-          download 2
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-    </dl>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Uploaded documentation
-        </dt>
-        <dd class="govuk-summary-list__value">
-          You uploaded:<br>
-          document 1<br>
-          document 2<br>
-          document 3<br>
-          download 4
+          document 1.docx<br>
+          download 2.docx
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="#">
             Change
-            <span class="govuk-visually-hidden"> case</span>
+            <span class="govuk-visually-hidden"> downloaded documents</span>
           </a>
         </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Confidential uploads
+        </dt>
+        <dd class="govuk-summary-list__value">
+          confidentialdocument 1.docx<br>
+          confidentialdocument 2.docx
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> uploaded documents</span>
+          </a>
+        </dd>
+      </div>   
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unconfidential uploads
+        </dt>
+        <dd class="govuk-summary-list__value">
+          unconfidentialdocument 3.docx<br>
+          unconfidentialdocument 4.docx
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> uploaded documents</span>
+          </a>
+        </dd>
+      </div>    
     </dl>
 
     <h2 class="govuk-heading-m">Now send your application</h2>
 
-    <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              I have the authority to provide this information on behalf of my organisation.
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
 
-    <form action="reginterest-tasks?check-complete=yes" method="post" id="reginterest-which-org-form">
-      <p>Information that you submit needs to be uploaded in two formats: confidential and non-confidential documents. The non-confidential documents are displayed on public file.</p>
 
      
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue"
-        }) }}    
-        <a class="govuk-link" href="reginterest-tasks">Back</a>
-      </div>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Confirm and submit application",
+        href: "reginterest-complete"
+      }) }}    
+      <a class="govuk-link" href="reginterest-tasks">Back</a>
+
+    </div>
 
     </form>
 
@@ -170,6 +193,27 @@
       Upload loa doc: {{data['loa-download']}}
     </div>
 
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+          </li>  
+          
+          {% if data['case-ref'] != null %}
+          <li>
+            <br>
+            <strong>Email the case team</strong>        
+            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+          </li>     
+          {% endif %}    
+        </ul>
+      </nav>
+    </aside>
   </div>
 </div>
 {% endblock %}

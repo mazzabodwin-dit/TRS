@@ -13,12 +13,8 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <span class="govuk-caption-xl">2.  Who is registering interest</span>
-    </div>
     <div class="govuk-grid-column-two-thirds">
-      Test data: {{ data['reginterest-what-org']}}
-
+      <span class="govuk-caption-xl">2.  Who is registering interest</span>
 
       <form action="/reginterest-uk-reg-route" method="post" id="reginterest-uk-reg-form"> 
                
@@ -53,11 +49,21 @@
           <p>If you cannot find the organisation on the register you need to select "No" the organisation is not registered in the UK.</p>'
         }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
 
         </form>
+
+         <!-- Test data -->
+        <div class="govuk-inset-text">
+          Test data: <br>
+          Org type : {{ data['reginterest-what-org']}}
+          <br>
+        </div>
         
     </div>
 
@@ -72,6 +78,7 @@
             
             {% if data['case-ref'] != null %}
             <li>
+              <br>
               <strong>Email the case team</strong>        
               <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
             </li>     
@@ -80,6 +87,7 @@
         </nav>
       </aside>
     </div>
+
   </div>
 {% endblock %}
 

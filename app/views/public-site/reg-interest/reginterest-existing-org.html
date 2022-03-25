@@ -19,13 +19,9 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2.  Who is registering interest</span>
     <h1 class="govuk-heading-xl">Organisation details</h1>
-  </div>
-
-
-  <div class="govuk-grid-column-two-thirds">
 
     <form action="reginterest-tasks?reginterest-what-org=existing" method="post" id="reginterest-existing-org-form">
 
@@ -93,9 +89,7 @@
         {{ govukButton({
           text: "I confirm these are the correct details"
         }) }}
-      
         <a class="govuk-link" href="javascript: history.back()">Back</a>
-
       </div>
 
     </form>
@@ -109,8 +103,27 @@
     
   </div>
 
-</div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+          </li>  
+          
+          {% if data['case-ref'] != null %}
+          <li>
+            <br><strong>Email the case team</strong>        
+            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+          </li>     
+          {% endif %}    
+        </ul>
+      </nav>
+    </aside>
+  </div>
 
+</div>
 
 {% endblock %}
 {% block footer %}

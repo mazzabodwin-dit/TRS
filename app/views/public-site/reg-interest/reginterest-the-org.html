@@ -18,89 +18,114 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-      Test data: {{ data['reginterest-what-org']}}
+    <form action="reginterest-the-org-dets" method="post" id="reginterest-the-org-form">          
+      {% call govukFieldset({
+        legend: {
+          text: "Organisation  details",
+          classes: "govuk-fieldset__legend--xl",
+          isPageHeading: true
+        }
+      }) %}
 
+      <p>This is the company that you have been asked to represent. You should have permission to register interest in this case on behalf of this company.</p>
 
-  <form action="reginterest-the-org-dets" method="post" id="reginterest-the-org-form">          
-        {% call govukFieldset({
-          legend: {
-            text: "Organisation  details",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+      {{ govukInput({
+        label: {
+          text: "Organisation name",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "reginterest-org-name",
+        name: "reginterest-org-name",
+        value: data['reginterest-org-name'],
+        type: "text"
+      }) }}
 
-        <p>This is the company that you have been asked to represent. You should have permission to register interest in this case on behalf of this company.</p>
+      {{ govukInput({
+        label: {
+          text: "Registered company number (Optional)",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-10",
+        id: "reginterest-reg-org-number",
+        name: "reginterest-reg-org-number",
+        value: data['reginterest-reg-org-number'],
+        type: "text"
+      }) }} 
 
-        {{ govukInput({
-          label: {
-            text: "Organisation name",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          classes: "govuk-input--width-20",
-          id: "reginterest-org-name",
-          name: "reginterest-org-name",
-          value: data['reginterest-org-name'],
-          type: "text"
-        }) }}
+      {{ govukTextarea({
+        label: {
+          text: "The organisations address",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "This is typically where the main office is located"
+        },
+        classes: "govuk-input--width-20",
+        id: "reginterest-org-address",
+        name: "reginterest-org-address",
+        value: data['reginterest-reg-org-address'],
+        type: "text"
+      }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Registered company number (Optional)",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          classes: "govuk-input--width-10",
-          id: "reginterest-reg-org-number",
-          name: "reginterest-reg-org-number",
-          value: data['reginterest-reg-org-number'],
-          type: "text"
-        }) }} 
+      {{ govukInput({
+        label: {
+          text: "Postcode or Zipcode",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-5",
+        id: "reginterest-org-zip",
+        name: "reginterest-org-zip",
+        value: data['reginterest-reg-org-zip'],
+        type: "text"
+      }) }}
 
-        {{ govukTextarea({
-          label: {
-            text: "The organisations address",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          hint: {
-            text: "This is typically where the main office is located"
-          },
-          classes: "govuk-input--width-20",
-          id: "reginterest-org-address",
-          name: "reginterest-org-address",
-          value: data['reginterest-reg-org-address'],
-          type: "text"
-        }) }}
+      {% include "includes/country-list.html" %}
 
-        {{ govukInput({
-          label: {
-            text: "Postcode or Zipcode",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          classes: "govuk-input--width-5",
-          id: "reginterest-org-zip",
-          name: "reginterest-org-zip",
-          value: data['reginterest-reg-org-zip'],
-          type: "text"
-        }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="javascript: history.back()">Back</a>
+      </div>
 
-        {% include "includes/country-list.html" %}
+      {% endcall %} 
 
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Continue"
-          }) }}    
-          <a class="govuk-link" href="javascript: history.back()">Back</a>
-        </div>
+      </form>
 
-        {% endcall %} 
-
-        </form>
+      <!-- Test data -->
+      <div class="govuk-inset-text">
+        Test data: <br>
+        Org type : {{ data['reginterest-what-org']}}
+        <br>
+      </div>
         
     </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+            </li>  
+            
+            {% if data['case-ref'] != null %}
+            <li>
+              <br>
+              <strong>Email the case team</strong>        
+              <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+            </li>     
+            {% endif %}    
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
   </div>
 {% endblock %}
 
