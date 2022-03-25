@@ -7,6 +7,7 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+
   let selectElement = document.querySelector('#search-reg-org')
 
   // AccessibleAutocomplete orignal 
@@ -18,3 +19,4 @@ $(document).ready(function () {
     }
   })
 })
+

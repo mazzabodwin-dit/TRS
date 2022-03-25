@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Upload registration documentation – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop"><span class="govuk-caption-xl">4.  Register interest</span>
+    <h1 class="govuk-heading-xl">
+      Check your answers before sending your application
+    </h1>
+
+    <h2 class="govuk-heading-m">Which case are you interested in?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['case-ref']}} - {{data ['case-name']}} <br>
+          {{data ['case-type']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> case</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Who is registering interest?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Registering on behalf of
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if (data['reginterest-what-org'] == "my-org") %}
+            My employer<br><br>
+              {% else %}
+              Another organisation.<br>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> who is registering interest/span>
+          </a>
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if (data['reginterest-what-org'] == "my-org") %}
+            Cheesy chips Ltd<br>
+            Company number: 595934925<br>
+              Address<br>
+              Postcode/ zip<br>
+              Country
+            {% else %}
+              Another Org Ltd<br>
+              Company number: 595934925<br>
+              Address<br>
+              Postcode/ zip<br>
+              Country
+          {% endif %}
+              {{data ['']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> who is registering interest/span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation details 
+        </dt>
+        <dd class="govuk-summary-list__value">
+              VAT number: 68593069894<br>
+              DUNS number: 123456789<br>
+              Website: www.orglongnameurlthatisannoying.com
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> who is registering interest/span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">Registration documentation</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Download documentation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          You downloaded:<br>
+          document 1<br>
+          download 2
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+    </dl>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Uploaded documentation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          You uploaded:<br>
+          document 1<br>
+          document 2<br>
+          document 3<br>
+          download 4
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> case</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your application</h2>
+
+    <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+    <form action="reginterest-tasks?check-complete=yes" method="post" id="reginterest-which-org-form">
+      <p>Information that you submit needs to be uploaded in two formats: confidential and non-confidential documents. The non-confidential documents are displayed on public file.</p>
+
+     
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="reginterest-tasks">Back</a>
+      </div>
+
+    </form>
+
+    <!-- Test data -->
+    <div class="govuk-inset-text">
+      Test data: <br>
+      Upload started:{{ data['upload-started']}}<br>
+      Type of org: {{data['reginterest-what-org']}}<br>
+      Upload sample doc: {{data['sample-download']}}<br>
+      Upload loa doc: {{data['loa-download']}}
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+

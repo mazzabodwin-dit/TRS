@@ -1,0 +1,48 @@
+<!-- If the user has completed Check and submit show: -->
+{% if (data['check-complete'] == "yes")  %}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="reginterest-check" aria-describedby="check-status">
+        Check and submit
+      </a>
+    </span>
+    <strong class="govuk-tag app-task-list__tag" id="check-status">Complete</strong>
+  </li>
+
+  {% else %}
+  <!-- If the user has started Check and submit show: -->
+    {% if (data['check-started'] == "yes")  %}
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-check" aria-describedby="check-status">
+            Check and submit
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="check-status">In progress</strong>
+      </li>
+  
+      {% else %}
+      <!-- If the user not started Check -->
+        {% if (data['check-started'] == null) and (data['upload-complete'] == "yes") %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="reginterest-check?check-started=yes" aria-describedby="check-status">
+                Check and submit
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-status">Not started</strong>
+          </li>
+
+          {% else %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Check and submit
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-status">Cannot start yet</strong>
+            </li>
+
+        {% endif %}
+          
+    {% endif %}
+
+{% endif %}

@@ -26,8 +26,6 @@
 
 
   <div class="govuk-grid-column-two-thirds">
-    Test data: {{ data['reginterest-what-org']}}
-
 
     <form action="reginterest-tasks?reginterest-what-org=existing" method="post" id="reginterest-existing-org-form">
 
@@ -36,12 +34,15 @@
           Choose the organisation you are representing
         </label>
         <select class="govuk-select" id="reginterest-existing-org" name="reginterest-existing-org">
-          <option value="opt0" class="selected"></option>
-          <option value="PARASITE INTERNATIONAL LIMITED">PARASITE INTERNATIONAL LIMITED</option>
-          <option value="INTERNATIONAL CORPORATE SECRETARIAT LIMITED">INTERNATIONAL CORPORATE SECRETARIAT LIMITED</option>
-          <option value="FENCING AND DECKING (SOUTH WALES) LIMITED">FENCING AND DECKING (SOUTH WALES) LIMITED</option>
+          <option value="opt0"></option>
+          <option value="opt1">PARASITE INTERNATIONAL LIMITED</option>
+          <option value="opt2">INTERNATIONAL CORPORATE SECRETARIAT LIMITED</option>
+          <option value="opt3">FENCING AND DECKING (SOUTH WALES) LIMITED</option>
         </select>
       </div>
+
+      <div id="selected_company"></div>
+
  
       <div id="opt0">
       </div>
@@ -98,9 +99,15 @@
       </div>
 
     </form>
-    
 
-  </div>
+       <!-- Test data -->
+       <div class="govuk-inset-text">
+        Test data: <br>
+        Type of org: {{data['reginterest-what-org']}}<br>
+        Type of org: {{data['reginterest-existing-org']}}<br>
+      </div>
+    
+\  </div>
 
 </div>
 

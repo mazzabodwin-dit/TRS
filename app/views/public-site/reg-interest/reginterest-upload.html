@@ -25,7 +25,14 @@
       Upload registration documentation
     </h1>
 
-    <form action="reginterest-tasks?upload-complete=yes" method="post" id="reginterest-which-org-form">
+    {% if ((data['reginterest-what-org'] == "my-org") and (data['sample-download'] == "yes")) or ((data['loa-download'] == "yes") and (data['sample-download'] == "yes")) %}
+      <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">
+      {% else %}
+        <form action="reginterest-tasks?upload-complete=no" method="post" id="upload-form">
+    {% endif %}
+
+      <p>Information that you submit needs to be uploaded in two formats: confidential and non-confidential documents. The non-confidential documents are displayed on public file.</p>
+
      
       <div class="govuk-button-group">
         {{ govukButton({
@@ -45,6 +52,24 @@
       Upload loa doc: {{data['loa-download']}}
     </div>
     
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#how-we-handle-confidential-information" target="_blank">Creating confidential and non-confidential documents (opens in a new window or tab)</a>
+          </li>  
+          <li>
+            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#about-our-questionnaires" target="_blank">About our questionnaires (opens in a new window or tab)</a>
+          </li>         
+        </ul>
+      </nav>
+    </aside>
 
   </div>
 

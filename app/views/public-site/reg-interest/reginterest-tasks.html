@@ -31,7 +31,7 @@
     <h1 class="govuk-heading-xl">
       Register interest in a case
     </h1>
-    <p class="govuk-body govuk-!-margin-bottom-7">If you leave or sign out before you complete everything, we will save your application so that you can return and continue.
+    <p class="govuk-body govuk-!-margin-bottom-7">If you leave or sign out before you complete everything, we will save your application so that you can return to your dashboard and continue.
 
     </p>
 
@@ -98,21 +98,40 @@
         </h2>
         <ul class="app-task-list__items">
 
-          <!-- Test data -->
+          <!-- 
+          Test data 
           <div class="govuk-inset-text">
             Test data:<br>
-            Section started: {{ data['']}}<br>
+            Check started: {{ data['check-started']}}<br>
+            Upload complete: {{ data['upload-complete']}}
           </div>
+          -->
 
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              Check and submit
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-          </li>
+          {% include "includes/task-list4.html" %}
+
         </ul>
       </li>
     </ol>
+
+    {% if (data['check-complete'] == "yes") %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Submit my application",
+          href: ""
+        }) }}    
+      </div>
+      
+      {% else%}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Submit my application",
+            disabled: true,
+            href: ""
+          }) }}    
+        </div>
+        
+    {% endif %}
+
   </div>
 
   <div class="govuk-grid-column-one-third">

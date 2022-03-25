@@ -26,10 +26,6 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="/reginterest-which-org-route" method="post" id="reginterest-which-org-form">
-
-      <!-- Test data: {{ data['which-org-started']}}
-      Test data: {{ data['reginterest-what-org']}} -->
-
       
       {% set myorgHTML %}
       My organisation: {{data['createaccount-org-name']}}
@@ -73,8 +69,13 @@
       </div>
 
     </form>
-    
-
+      <!-- Test data -->
+          <!--<div class="govuk-inset-text">
+            Test data: <br>
+            Which org started?: {{ data['which-org-started']}}<br> 
+            Type of reg org: {{ data['reginterest-what-org']}}
+          </div> 
+        -->
   </div>
 
 </div>
