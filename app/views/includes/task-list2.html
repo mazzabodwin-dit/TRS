@@ -1,40 +1,30 @@
-<!-- If the user has not started section 1 show: -->
-{% if (data['case-ref'] == null) %}
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name" aria-describedby="organisation-selected-status">
-      Organisation details
-    </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Cannot start yet</strong>
-  </li>
+  <!-- If the user has completed section 2 show: -->
+  {% if (data['reginterest-what-org'] != null)  %}
 
-  {% else %}
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
+          Organisation details
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+    </li>
 
-    <!-- If the user has completed section 2 show: -->
-    {% if (data['reginterest-what-org'] != null)  %}
+    {% else %}
+    {% if (data['which-org-started'] == "yes")  %}
+      <!-- If the user has started section 2 show: -->
 
-      <li class="app-task-list__item">
+        <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
             Organisation details
           </a>
         </span>
-        <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
-      </li>
-
-      {% else %}
-      {% if (data['which-org-started'] == "yes")  %}
-       <!-- If the user has started section 2 show: -->
-
-          <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
-            <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
-              Organisation details
-            </a>
-          </span>
-          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
-          </li>
-
-          {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+        </li>
+        
+        {% else %}
+        {% if (data['case-ref'] != null)  %}
           <!-- If the user has not started section 2 show -->
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -43,6 +33,15 @@
               </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+          </li>
+
+          {% else %}
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name" aria-describedby="organisation-selected-status">
+                Organisation details
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Cannot start yet</strong>
             </li>
 
         {% endif %}

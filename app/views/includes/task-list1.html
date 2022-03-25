@@ -1,32 +1,34 @@
-{% if (data['case-started'] == null) %}
+{% if (data['case-selected'] != null) %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
       <a href="reginterest-case?case-started=yes" aria-describedby="case-selected-status">
         Find Trade Remedies case
       </a>
     </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="case-selected-status">Not started</strong>
+    <strong class="govuk-tag app-task-list__tag" id="case-selected-status">Complete</strong>
   </li>
 
   {% else %}
-    {% if (data['case-selected'] != null) %}
+
+    {% if (data['case-started'] == "yes") %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-case?case-started=yes" aria-describedby="case-selected-status">
             Find Trade Remedies case
           </a>
         </span>
-        <strong class="govuk-tag app-task-list__tag" id="case-selected-status">Complete</strong>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="case-selected-status">In progress</strong>
       </li>
 
       {% else %}
+
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="reginterest-case?case-started=yes" aria-describedby="case-selected-status">
               Find Trade Remedies case
             </a>
           </span>
-          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="case-selected-status">In progress</strong>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="case-selected-status">Not started</strong>
         </li>
 
     {% endif %}
