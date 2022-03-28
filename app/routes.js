@@ -92,9 +92,9 @@ router.post('/reginterest-uk-reg-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestUKReg == "yes"){
     // Send user to next page
-    res.redirect('/public-site/reg-interest/reginterest-the-org-uk')
+    res.redirect('/public-site/reg-interest/reginterest-org-uk-search')
   } else {
-    // Send user to ineligible page
+    // Send user to no page
     res.redirect('/public-site/reg-interest/reginterest-the-org')
   }
 })
