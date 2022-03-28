@@ -19,7 +19,7 @@
       <form action="/reginterest-uk-reg-route" method="post" id="reginterest-uk-reg-form"> 
                
         {{ govukRadios({
-          classes: "govuk-radios",
+          classes: "govuk-radios--inline",
           idPrefix: "reginterest-uk-reg",
           name: "reginterest-uk-reg",
           fieldset: {
@@ -44,7 +44,7 @@
         }) }}
 
         {{ govukDetails({
-          summaryText: "How do I find out if the organisation I am representing is registered in the UK?",
+          summaryText: "How do I find out if the organisation is registered in the UK?",
           html: ' <p class="govuk-body">You can search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
           <p>If you cannot find the organisation on the register you need to select "No" the organisation is not registered in the UK.</p>'
         }) }}

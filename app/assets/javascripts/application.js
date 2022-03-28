@@ -10,13 +10,15 @@ $(document).ready(function () {
 
   let selectElement = document.querySelector('#search-reg-org')
 
-  // AccessibleAutocomplete orignal 
-  accessibleAutocomplete.enhanceSelectElement({
-    defaultValue: '',
-    selectElement: document.querySelector('#search-reg-org'),
-    onConfirm: function(data){
-      $('#selected_company').html(data);
-    }
-  })
-})
+  if ($('#search-reg-org').length) {
+    // AccessibleAutocomplete orignal
+    accessibleAutocomplete.enhanceSelectElement({
+      defaultValue: '',
+      selectElement: document.querySelector('#search-reg-org'),
+      onConfirm: function (data) {
+        $('#selected_company').html(data)
+      }
+    })
+  }
 
+})

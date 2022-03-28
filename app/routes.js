@@ -46,6 +46,14 @@ router.get('/public-site/reg-interest/reginterest-which-org', function (req, res
     // send it to the current page
     res.locals.data['createaccount-org-name'] = "Cheesy Chips Ltd"
   }
+
+  if (req.session.data['account-email'] == null) {
+    // store it in session
+    req.session.data['account-email'] = "myemail@email.com"
+    // send it to the current page
+    res.locals.data['account-email'] = "myemail@email.com"
+  }
+
   res.render('public-site/reg-interest/reginterest-which-org')
  
 })
