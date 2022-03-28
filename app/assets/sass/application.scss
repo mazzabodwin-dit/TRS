@@ -21,6 +21,19 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+/* createaccount / reginterest - autocomplete on new company */
+
 .autocomplete__wrapper * {
     @include govuk-typography-common();
+  }
+
+
+/* Reginterest - selecting existing company */
+#hidden_div {
+  display: none;
+}
+
+/* Reginterest - upload remove file button*/
+  .remove-link {
+    margin-top: 40px;
   }
