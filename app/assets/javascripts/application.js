@@ -14,11 +14,13 @@ $(document).ready(function () {
     // AccessibleAutocomplete orignal
     accessibleAutocomplete.enhanceSelectElement({
       defaultValue: '',
+      placeholder: "Enter the registered company name or number",
       selectElement: document.querySelector('#search-reg-org'),
       onConfirm: function (data) {
         $('#selected_company').html(data)
       }
     })
   }
+
 
 })

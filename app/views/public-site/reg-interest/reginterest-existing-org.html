@@ -21,14 +21,16 @@
 
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2.  Who is registering interest</span>
-    <h1 class="govuk-heading-xl">Organisation details</h1>
 
     <form action="reginterest-tasks?reginterest-what-org=existing" method="post" id="reginterest-existing-org-form">
 
       <div class="govuk-form-group">
-        <label class="govuk-heading-s" for="reginterest-existing-org">
-          Choose the organisation you are representing
-        </label>
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="search-reg-org">
+            Who are you representing?
+          </label>
+        </h1>
+       
         <select class="govuk-select" id="reginterest-existing-org" name="reginterest-existing-org" onchange="showDiv('hidden_div', this); update()">
           <option value="0" class="selected">Select organisation</option>
           <option value="ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ">ALUMINUM TRADE LTD</option>
