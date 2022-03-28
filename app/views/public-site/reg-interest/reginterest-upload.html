@@ -44,16 +44,35 @@
                   <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
 
               </span>
+              {% if data['addconfi-doc'] == "yes" %}
+                <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
+                  Remove
+                  <span class="govuk-visually-hidden"> file</span>
+                </a>
+              {% endif%}
+            </li>
+
+            {% if data['addconfi-doc'] == "yes" %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                
+                  <label class="govuk-label" for="file-upload-1">
+                    Upload a file
+                  </label>
+                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+              </span>
               <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
                 Remove
                 <span class="govuk-visually-hidden"> file</span>
               </a>
             </li>
+            {% endif %}
             <br>
             {{ govukButton({
               text: "Add another document",
               classes: "govuk-button--secondary",
-              href: "reginterest-upload?add-doc=yes"
+              href: "reginterest-upload?addconfi-doc=yes"
             }) }}  
             
           </ul>
@@ -71,20 +90,41 @@
               <span class="app-task-list__task-name">
                 
                   <label class="govuk-label" for="file-upload-1">
-                    Document 1
+                    Upload a file
                   </label>
                   <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+              </span>
+              {% if data['addunconfi-doc'] == "yes" %}
+                <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
+                  Remove
+                  <span class="govuk-visually-hidden"> file</span>
+                </a>
+              {% endif%}
+            </li>  
+
+            {% if data['addunconfi-doc'] == "yes" %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                
+                  <label class="govuk-label" for="file-upload-1">
+                    Upload a file
+                  </label>
+                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
               </span>
               <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
                 Remove
                 <span class="govuk-visually-hidden"> file</span>
               </a>
-            </li>  
+            </li>
+            {% endif %}
+
+
             <br>
             {{ govukButton({
               text: "Add another document",
               classes: "govuk-button--secondary",
-              href: "reginterest-upload?add-doc=yes"
+              href: "reginterest-upload?addunconfi-doc=yes"
             }) }}  
           </ul>
         </li>
@@ -104,7 +144,7 @@
       Test data: <br>
       Upload started:{{ data['upload-started']}}<br>
       Type of org: {{data['reginterest-what-org']}}<br>
-      Upload sample doc: {{data['sample-download']}}<br>
+      Addconfi doc: {{data['addconfi-doc']}}<br>
       Upload loa doc: {{data['loa-download']}}
     </div>
     
