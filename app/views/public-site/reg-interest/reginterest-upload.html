@@ -24,112 +24,75 @@
     <h1 class="govuk-heading-xl">
       Upload documentation
     </h1>
-
-      <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">
      
-      <p>Information that you submit needs to be uploaded in two formats: <strong>confidential</strong> and <strong>non-confidential</strong> documents. The non-confidential documents are displayed on public file.</p>
-      <h2 class="govuk-heading-m">
-        Confidential documentation
-      </h2>
+    <p>Information that you submit needs to be uploaded in two formats: <strong>confidential</strong> and <strong>non-confidential</strong> documents. The non-confidential documents are displayed on public file.</p>
+    <h2 class="govuk-heading-m">
+      Confidential documentation
+    </h2>
 
-      <ol class="app-task-list">
-        <li>
-          <ul class="app-task-list__items govuk-!-margin-bottom-6">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                
-                  <label class="govuk-label" for="file-upload-1">
-                    Upload a file
-                  </label>
-                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-
-              </span>
-              {% if data['addconfi-doc'] == "yes" %}
-                <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
-                  Remove
-                  <span class="govuk-visually-hidden"> file</span>
-                </a>
-              {% endif%}
-            </li>
-
-            {% if data['addconfi-doc'] == "yes" %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                
-                  <label class="govuk-label" for="file-upload-1">
-                    Upload a file
-                  </label>
-                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-
-              </span>
-              <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
-                Remove
-                <span class="govuk-visually-hidden"> file</span>
-              </a>
-            </li>
-            {% endif %}
-            <br>
-            {{ govukButton({
-              text: "Add another document",
-              classes: "govuk-button--secondary",
-              href: "reginterest-upload?addconfi-doc=yes"
-            }) }}  
-            
-          </ul>
+    <ol class="app-task-list">
+      <li>
+        <ul class="app-task-list__items govuk-!-margin-bottom-6">
           
-        </li>
-      </ol>
+          {% include "includes/uploads-confi.html" %}
+          
+        </ul>
+        
+      </li>
+    </ol>
 
-      <ol class="app-task-list">
-        <li>
-          <h2 class="govuk-heading-m">
-            Unconfidential documentation
-          </h2>
-          <ul class="app-task-list__items govuk-!-margin-bottom-6">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                
-                  <label class="govuk-label" for="file-upload-1">
-                    Upload a file
-                  </label>
-                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-              </span>
-              {% if data['addunconfi-doc'] == "yes" %}
-                <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
-                  Remove
-                  <span class="govuk-visually-hidden"> file</span>
-                </a>
-              {% endif%}
-            </li>  
-
+    <ol class="app-task-list">
+      <li>
+        <h2 class="govuk-heading-m">
+          Unconfidential documentation
+        </h2>
+        <ul class="app-task-list__items govuk-!-margin-bottom-6">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              
+                <label class="govuk-label" for="file-upload-1">
+                  Upload a file
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </span>
             {% if data['addunconfi-doc'] == "yes" %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                
-                  <label class="govuk-label" for="file-upload-1">
-                    Upload a file
-                  </label>
-                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-
-              </span>
               <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
                 Remove
                 <span class="govuk-visually-hidden"> file</span>
               </a>
-            </li>
-            {% endif %}
+            {% endif%}
+          </li>  
+
+          {% if data['addunconfi-doc'] == "yes" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              
+                <label class="govuk-label" for="file-upload-1">
+                  Upload a file
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+            </span>
+            <a href="#" class="app-task-list__tag remove-link" id="case-selected-status">
+              Remove
+              <span class="govuk-visually-hidden"> file</span>
+            </a>
+          </li>
+          {% endif %}
 
 
-            <br>
-            {{ govukButton({
-              text: "Add another document",
-              classes: "govuk-button--secondary",
-              href: "reginterest-upload?addunconfi-doc=yes"
-            }) }}  
-          </ul>
-        </li>
-      </ol>
-   
+          <br>
+          {{ govukButton({
+            text: "Add another document",
+            classes: "govuk-button--secondary",
+            href: "reginterest-upload?addunconfi-doc=yes"
+          }) }}  
+        </ul>
+      </li>
+    </ol>
+    
+    <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">
+
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Upload documentation"
