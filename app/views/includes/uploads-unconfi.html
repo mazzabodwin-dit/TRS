@@ -10,8 +10,8 @@
         mydocumentation.docx
       </a>
     </span>
-    <a href="#" class="app-task-list__tag remove-link govuk-link--no-visited-state" id="case-selected-status">
-        Remove
+    <a href="reginterest-upload?upload3-complete=no" class="app-task-list__tag remove-link govuk-link--no-visited-state">
+      Remove
     <span class="govuk-visually-hidden"> file</span>
     </a>
   </li>
@@ -88,8 +88,8 @@
         myotherdocumentation.docx
       </a>
     </span>
-    <a href="#" class="app-task-list__tag remove-link govuk-link--no-visited-state" id="case-selected-status">
-        Remove
+    <a href="reginterest-upload?upload4-complete=no" class="app-task-list__tag remove-link govuk-link--no-visited-state">
+      Remove
     <span class="govuk-visually-hidden"> file</span>
     </a>
   </li>
@@ -153,13 +153,14 @@
 
 {% endif %}
 
-{% if data['upload3-complete'] == "yes" %}
+{% if (data['upload3-complete'] == "yes") or (data['upload4-complete'] == "yes") %}
+
   <br>
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showDiv10()">
     Add another document
   </button>
 
-  {% endif %}
+{% endif %}
 
 
 <script type="text/javascript">
