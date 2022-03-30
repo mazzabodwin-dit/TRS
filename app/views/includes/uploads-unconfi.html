@@ -72,6 +72,11 @@
 
     </li>
   </div>
+
+  <br>
+  <button class="govuk-button govuk-button--secondary" id="add-unconfi-button" data-module="govuk-button" onclick="showDiv7()">
+    Add another document
+  </button>
      
 {% endif %}
 
@@ -187,12 +192,15 @@
 
   function showDiv7() {
     document.getElementById("div7").style.display = "block";
+   document.getElementById("unconfi-button").style.display = "none";
   }
 
   function showDiv8() {
     document.getElementById("div7").style.display = "none";
     document.getElementById("div8").style.display = "block";
     document.getElementById("div9").style.display = "none";
+    document.getElementById("add-unconfi-button").style.display = "block";
+
   }
 
   function showDiv9() {

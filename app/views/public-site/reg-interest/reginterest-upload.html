@@ -26,38 +26,39 @@
     </h1>
      
     <p>Information that you submit needs to be uploaded in two formats: <strong>confidential</strong> and <strong>non-confidential</strong> documents.</p>
-    <h2 class="govuk-heading-m">
-      Confidential documentation
-    </h2>
-
+    
     <ol class="app-task-list">
+
       <li>
-        <ul class="app-task-list__items">
+        <h2 class="app-task-list__section">
+          Confidential documentation
+        </h2>
+        <ul class="app-task-list__items govuk-!-margin-bottom-6">
+          {% if (data['upload1-complete'] !=  "yes") and (data['upload2-complete'] != "yes") %}
+          <button class="govuk-button govuk-button--secondary" id="confi-button" data-module="govuk-button" onclick="showDiv1()">
+            Add confidential document
+          </button>
+          {% endif %}
           
           {% include "includes/uploads-confi.html" %}
-          
         </ul>
-        
       </li>
-    </ol>
 
-    <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
           Unconfidential documentation
         </h2>
-        <p>This should include redacted versions of the Confidential documentation as it will be published on the public register.</p>
+        <ul class="app-task-list__items govuk-!-margin-bottom-6">
+          {% if (data['upload3-complete'] !=  "yes") and (data['upload4-complete'] != "yes") %}
+          <button class="govuk-button govuk-button--secondary" id="unconfi-button" data-module="govuk-button" onclick="showDiv7()">
+            Add confidential document
+          </button>
+          {% endif %}
+          {% include "includes/uploads-unconfi.html" %}            
+        </ul>
+      </li>
 
-        <ol class="app-task-list">
-          <li>
-            <ul class="app-task-list__items">
-              
-              {% include "includes/uploads-unconfi.html" %}
-              
-            </ul>
-            
-          </li>
-        </ol>
+    </ol>
        
 
     <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">

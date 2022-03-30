@@ -17,6 +17,7 @@
   </li>
   
   {% else %}
+
        
     <div id="div3">
       <li class="app-task-list__item">
@@ -73,12 +74,17 @@
       </li>
     </div>
 
-    <br>
-    <button class="govuk-button govuk-button--secondary" id="add-confi-button" data-module="govuk-button" onclick="showDiv2()">
-      Add another ffdocument
-    </button>
-
 {% endif %}
+
+{% if (data['upload1-complete'] == "no") or (data['upload2-complete'] == "yes") %}
+  <br>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showDiv4()">
+    Add another document
+  </button>
+{% endif %}
+
+
+
 
 <!-- Upload confidential docs 2 -->
 {% if data['upload2-complete'] == "yes" %}
@@ -151,18 +157,17 @@
           <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
         </span>
         <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout2()" value="Submit">
+
     </li>
   </div>
 
 {% endif %}
 
-{% if (data['upload1-complete'] == "yes")  %}
-
+{% if (data['upload1-complete'] == "yes") or (data['upload2-complete'] == "yes") %}
   <br>
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showDiv4()">
     Add another document
   </button>
-
 {% endif %}
 
 
@@ -190,17 +195,10 @@
     location.href = "reginterest-upload?upload2-complete=yes";
   }
 
-  function showDiv1() {
-   document.getElementById("div1").style.display = "block";
-   document.getElementById("confi-button").style.display = "none";
-  }
-
   function showDiv2() {
     document.getElementById("div1").style.display = "none";
     document.getElementById("div2").style.display = "block";
     document.getElementById("div3").style.display = "none";
-    document.getElementById("add-confi-button").style.display = "block";
-
   }
 
   function showDiv3() {
