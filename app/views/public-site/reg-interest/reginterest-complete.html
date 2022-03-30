@@ -36,12 +36,12 @@
       </ul>
       <p>If you need to make any changes to your application please contact us as quickly as possible at  <strong>{{data ['case-ref']}}@traderemedies.gov.uk</strong>.</p>
 
-      <form action="../dashboard?reginterest-complete=yes" method="post" id="createaccount-verify-email-form">  
 
         {{ govukButton({
-          text: "Go to my dashboard"
+          text: "Go to my dashboard",
+          href: "../dashboard"
         }) }}
-      </form>  
+
     </div>
   </div>
 {% endblock %}
