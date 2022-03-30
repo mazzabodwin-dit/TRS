@@ -1,13 +1,4 @@
 <h2 class="govuk-heading-m">
   Active cases
 </h2>
-<!-- If the user has completed section 2 show: -->
-  {% if (data['reginterest-complete'] == "yes")  %}
-
-  <p><a href="">{{data ['case-ref']}} - {{data ['case-name']}}</a><br>
-    12 May 2022</p>
-
-    {% else %}
-    <p>You have no active cases</p>
-
-{% endif %}
+<p>You have no active cases</p>
