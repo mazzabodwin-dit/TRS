@@ -100,5 +100,35 @@ router.post('/reginterest-uk-reg-route', function (req, res) {
 })
 
 
+// Register interest
+// Run this code during reginterest-upload
+router.get('/public-site/reg-interest/reginterest-upload', function (req, res) {
+
+  if (req.session.data['upload2-started'] == "yes") {
+    // store it in session
+    req.session.data['upload2-complete'] = "yes"
+    // send it to the current page
+    res.locals.data['upload2-complete'] = "yes"
+  }
+
+  if (req.session.data['upload3-started'] == "yes") {
+    // store it in session
+    req.session.data['upload3-complete'] = "yes"
+    // send it to the current page
+    res.locals.data['upload3-complete'] = "yes"
+  }
+
+  if (req.session.data['upload4-started'] == "yes") {
+    // store it in session
+    req.session.data['upload4-complete'] = "yes"
+    // send it to the current page
+    res.locals.data['upload4-complete'] = "yes"
+  }
+
+  res.render('public-site/reg-interest/reginterest-upload')
+ 
+})
+
+
 
 module.exports = router

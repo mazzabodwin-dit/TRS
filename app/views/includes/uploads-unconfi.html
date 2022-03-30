@@ -1,5 +1,5 @@
-<!-- Upload confidential docs 1 -->
-{% if data['upload1-complete'] == "yes" %}
+<!-- Upload confidential docs 3 -->
+{% if data['upload3-complete'] == "yes" %}
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
@@ -18,7 +18,7 @@
   
   {% else %}
         
-  <div id="div3">
+  <div id="div9">
     <li class="app-task-list__item">
       <span class="app-task-list__task-name ">
         <label class="govuk-label" for="progress">
@@ -39,7 +39,7 @@
     </li>
   </div>
 
-  <div id="div2">
+  <div id="div8">
     <li class="app-task-list__item">
       <span class="app-task-list__task-name ">
         <label class="govuk-label" for="progress">
@@ -60,7 +60,7 @@
     </li>
   </div>
 
-  <div id="div1">
+  <div id="div7">
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">   
           <label class="govuk-label" for="file-upload-1">
@@ -68,7 +68,7 @@
           </label>
           <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
         </span>
-        <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout1()" value="Submit">
+        <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout3()" value="Submit">
 
     </li>
   </div>
@@ -76,8 +76,8 @@
 {% endif %}
 
 
-<!-- Upload confidential docs 2 -->
-{% if data['upload2-complete'] == "yes" %}
+<!-- Upload confidential docs 4 -->
+{% if data['upload4-complete'] == "yes" %}
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
@@ -96,11 +96,11 @@
 
   {% else %}
      
-  <div id="div6">
+  <div id="div12">
     <li class="app-task-list__item">
       <span class="app-task-list__task-name ">
         <label class="govuk-label" for="progress">
-          Uploading 80%: mydocumentation.docx
+          Uploading 80%: mypublicdocumentation.docx
         </label>
         
         <progress id="progress" max="100" value="80">
@@ -117,11 +117,11 @@
     </li>
   </div>
 
-  <div id="div5">
+  <div id="div11">
     <li class="app-task-list__item">
       <span class="app-task-list__task-name ">
         <label class="govuk-label" for="progress">
-          Uploading 10%: myotherdocumentation.docx
+          Uploading 10%: myotherpublicdocumentation.docx
         </label>
         
         <progress id="progress" max="100" value="10">
@@ -138,7 +138,7 @@
     </li>
   </div>
 
-  <div id="div4">
+  <div id="div10">
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">   
           <label class="govuk-label" for="file-upload-1">
@@ -146,16 +146,16 @@
           </label>
           <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
         </span>
-        <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout2()" value="Submit">
+        <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout4()" value="Submit">
 
     </li>
   </div>
 
 {% endif %}
 
-{% if data['upload1-complete'] == "yes" %}
+{% if data['upload3-complete'] == "yes" %}
   <br>
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showDiv4()">
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="showDiv10()">
     Add another document
   </button>
 
@@ -164,48 +164,56 @@
 
 <script type="text/javascript">
 
-  function setTimeout1() {
-    setTimeout("showDiv2()", 0); // after 0 sec
-    setTimeout("showDiv3()", 1000); // after 2 sec
-    setTimeout("upload1start()", 2000); // after 3 sec
+   function setTimeout3() {
+    setTimeout("showDiv8()", 0); // after 0 sec
+    setTimeout("showDiv9()", 1000); // after 2 sec
+    setTimeout("upload3start()", 2000); // after 3 sec
   }
 
-  function upload1start() {
-    location.href = "reginterest-upload?upload1-complete=yes";
+    function setTimeout4() {
+    setTimeout("showDiv11()", 0); // after 0 sec
+    setTimeout("showDiv12()", 1000); // after 2 sec
+    setTimeout("upload4start()", 2000); // after 3 sec
   }
 
-  function setTimeout2() {
-    setTimeout("showDiv5()", 0); // after 0 sec
-    setTimeout("showDiv6()", 1000); // after 2 sec
-    setTimeout("upload2start()", 2000); // after 3 sec
+  function upload3start() {
+    location.href = "reginterest-upload?upload3-complete=yes";
   }
 
-  function upload2start() {
-    location.href = "reginterest-upload?upload2-complete=yes";
+  function upload4start() {
+    location.href = "reginterest-upload?upload4-complete=yes";
   }
 
-  function showDiv2() {
-    document.getElementById("div1").style.display = "none";
-    document.getElementById("div2").style.display = "block";
-    document.getElementById("div3").style.display = "none";
+  function showDiv7() {
+    document.getElementById("div7").style.display = "block";
   }
 
-  function showDiv3() {
-    document.getElementById("div1").style.display = "none";
-    document.getElementById("div2").style.display = "none";
-    document.getElementById("div3").style.display = "block";
+  function showDiv8() {
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div8").style.display = "block";
+    document.getElementById("div9").style.display = "none";
   }
 
-  function showDiv5() {
-    document.getElementById("div4").style.display = "none";
-    document.getElementById("div5").style.display = "block";
-    document.getElementById("div6").style.display = "none";
+  function showDiv9() {
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div8").style.display = "none";
+    document.getElementById("div9").style.display = "block";
   }
 
-  function showDiv6() {
-    document.getElementById("div4").style.display = "none";
-    document.getElementById("div5").style.display = "none";
-    document.getElementById("div6").style.display = "block";
+  function showDiv10() {
+    document.getElementById("div10").style.display = "block";
+  }
+
+  function showDiv11() {
+    document.getElementById("div10").style.display = "none";
+    document.getElementById("div11").style.display = "block";
+    document.getElementById("div12").style.display = "none";
+  }
+
+  function showDiv12() {
+    document.getElementById("div10").style.display = "none";
+    document.getElementById("div11").style.display = "none";
+    document.getElementById("div12").style.display = "block";
   }
 
   
