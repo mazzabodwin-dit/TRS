@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Activate your account – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="cases-all">My cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Case details: {{data['case-ref']}} - {{data['case-name']}}
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Case details</h1>
+
+      
+
+      <p>{{data['case-ref']}} - {{data['case-name']}}</p>
+      <p>Type: {{data['case-type']}}</p>
+      <p>Start date: {{data['case-startdate']}}</p>
+      <p>Reg date: {{data['case-regdate']}}</p>
+      <p>Case status: {{data['case-status']}}</p>
+      {{ govukButton({
+        text: "Invite 3rd party"
+      }) }}   
+
+      <h2 class="govuk-heading-m">My uploaded documentation</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Confidential uploads
+        </dt>
+        <dd class="govuk-summary-list__value">
+          confidentialdocument 1.docx<br>
+          confidentialdocument 2.docx
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            View
+            <span class="govuk-visually-hidden"> uploaded documents</span>
+          </a>
+        </dd>
+      </div>   
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unconfidential uploads
+        </dt>
+        <dd class="govuk-summary-list__value">
+          unconfidentialdocument 3.docx<br>
+          unconfidentialdocument 4.docx
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            View
+            <span class="govuk-visually-hidden"> uploaded documents</span>
+          </a>
+        </dd>
+      </div>    
+    </dl>
+ 
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">Downloads for this case</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="link" href="">Register Interest pack</a>
+            </li>  
+            <li>
+              <a class="link" href="">ANOther pack</a>
+            </li>  
+            <li>
+              <a class="link" href="">Letter of Authority (LOA)</a>
+            </li>     
+            <li>
+              <br>
+              <strong>Email the case team</strong>        
+              <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+            </li>        
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {%include "includes/footer.html" %}
+{% endblock %}

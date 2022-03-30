@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: My cases – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-signedin.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      My cases
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">My cases</h1>
+
+
+    <table class="govuk-table sortable" id="cases-table" role="grid">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Ref. <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Start date <i class="no-sort"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Registration due by <i class="Z-to-A"></i>
+          </th>
+        </tr>
+      </thead>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span>BA0005
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span>
+          <a href="case-details?case-ref=BA0005&case-name=Barnets from Tabon&case-type=Safeguarding investigation&case-startdate=12 May 2022&case-regdate=26 May 2022">Barnets from Tabon</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span>Safeguarding investigation
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Start date: </span>12 May 2022
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Registration due by: </span>26 May 2022
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span>AG0404
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span>
+          <a href="case-details?case-ref=AG0404&case-name=Farnets from Fabon&case-type=Anti-subsidy investigation&case-startdate=12 April 2021&case-regdate=26 April 2021">Farnets from Fabon</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-subsidy investigation
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Start date: </span>12 April 2021
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Registration due by: </span>26 April 2021
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span>AD0004
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span>
+          <a href="case-details?case-ref=AD0004&case-name=Garnets from Gabon&case-type=Anti-dumping investigation&case-startdate=01 Dec 2019&case-regdate=15 Dec 2019">Garnets from Gabon</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-dumping investigation
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Start date: </span>01 Dec 2019
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Registration due by: </span>15 Dec 2019
+        </td>
+      </tr>
+
+    </table>     
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
