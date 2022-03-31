@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="createaccount-your-org-confirm" method="post" id="createaccount-your-org-confirm-form">  
+      <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-confirm-form">  
     
         {% call govukFieldset({
           legend: {
@@ -35,7 +35,7 @@
             <option value="opt0" class="selected"></option>
             <option value="opt1">ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ</option>
             <option value="opt2">ALUMINUM ELECTRICS LIMITED (05337101) 20 Highbury Place, Bramley, Leeds, United Kingdom, LS13 4PW</option>
-            <option value="opt3">ALUMINUM SQUIRREL LIMITED (SOUTH WALES) (08199303)16 Bracken Park, Bingley, United Kingdom, BD16 3LG</option>
+            <option value="opt3">ALUMINUM SQUIRREL LIMITED (SOUTH WALES) (08199303) 16 Bracken Park, Bingley, United Kingdom, BD16 3LG</option>
             <option value="opt4">ALUMINIUM PROFILE SERVICES LIMITED (09849849) Clock Cottage, Corneybury Farm, Royston Road, Buntingford, Hertfordshire, England, SG9 9RS</option>
             <option value="opt5">ALUMINIUM INTEGRATED SOLUTIONS LIMITED (09424974) 61 Great North Road, Newcastle Upon Tyne, Tyne And Wear, United Kingdom, NE3 2DQ</option>
             <option value="opt6">ALUMINIUM STAR LIMITED (07751077) 21 Princess Mary House, Vincent Street Westminster, London, England, SW1P 4HL</option>
@@ -45,7 +45,7 @@
           </select>
         </div>
 
-        <div id="selected_company"></div>
+        <p id="selected_company"></p>
 
         {{ govukDetails({
           summaryText: "I can't find my employer",
@@ -55,7 +55,7 @@
    
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Continue"
+            text: "I confirm these are the correct details"
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>
