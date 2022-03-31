@@ -36,6 +36,21 @@ router.post('/createaccount-contact-address-route', function (req, res) {
   }
 })
 
+// Create Account 
+// Run this code during createaccount-account-complete - If there is not an email use a default one
+router.get('/public-site/create-account/createaccount-account-complete', function (req, res) {
+
+  if (req.session.data['account-email'] == null) {
+    // store it in session
+    req.session.data['account-email'] = "myemail@email.com"
+    // send it to the current page
+    res.locals.data['account-email'] = "myemail@email.com"
+  }
+
+  res.render('public-site/create-account/createaccount-account-complete')
+ 
+})
+
 // Register interest
 // Run this code during reginterest-which-org - If there is not an org name already use a default one
 router.get('/public-site/reg-interest/reginterest-which-org', function (req, res) {
@@ -57,6 +72,7 @@ router.get('/public-site/reg-interest/reginterest-which-org', function (req, res
   res.render('public-site/reg-interest/reginterest-which-org')
  
 })
+
 
 // Run this code on reginterest-which-org: what org is registering interest?
 router.post('/reginterest-which-org-route', function (req, res) {
