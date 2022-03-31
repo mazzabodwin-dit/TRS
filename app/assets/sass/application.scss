@@ -21,6 +21,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+/* CHANGING THE HEADER COLOUR BETWEEN PUBLIC AND CASEWORKER */
+.caseworker.govuk-header__container {
+    border-bottom: 10px solid #df3034;
+  }
+
+
 /* createaccount / reginterest - autocomplete on new company */
 
 .autocomplete__wrapper * {
@@ -71,5 +77,3 @@ $govuk-assets-path: '/govuk/assets/';
     display: block;
     text-indent: -9999px;
   }
-
-

@@ -22,7 +22,6 @@
         <p>Please <a href="/prototype-admin/clear-data">clear data</a> to delete all stored data and re-set the prototype between journeys.</p>
   
         <h2 class="govuk-heading-m">Public TRS journeys</h2>
-        <h3 class="govuk-heading-s">TRD-4: Create account, sign in, forgotten password</h3>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">          
@@ -50,13 +49,35 @@
             </ol>
           </div>
         </div>
+
+        <h2 class="govuk-heading-m">Caseworker TRS journeys</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">          
+            <ol class="app-task-list">
+              <li>
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/signin" aria-describedby="create-status">
+                        Sign in
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="create-status">Not started</span>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+        
+
       </div>
 
       <div class="govuk-grid-column-one-third">
 
         <aside class="app-related-items" role="complementary">
           <p><a class="link" href="/trs-layout">Template with components</a></p>
-          <h2 class="govuk-heading-m" id="subsection-title">Use Public TRS pages</h2>
+          <h2 class="govuk-heading-m" id="subsection-title">Public key pages</h2>
           <nav role="navigation" aria-labelledby="subsection-title">
             <ul class="govuk-list govuk-!-font-size-16">
               <li>
@@ -74,6 +95,17 @@
               <li>
                 <a class="link" href="/public-site/reg-interest/reginterest-tasks">Register interest in a case</a> 
               </li> 
+            </ul>
+          </nav>
+          <h2 class="govuk-heading-m" id="subsection-title">Caseworker key pages</h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a class="link" href="/caseworker/sign in">Caseworker sign in</a> 
+              </li>
+              <li>
+                <a class="link" href="/caseworker/dashboard">Caseworker dashboard</a> 
+              </li>   
             </ul>
           </nav>
         </aside>

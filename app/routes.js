@@ -36,6 +36,16 @@ router.post('/createaccount-contact-address-route', function (req, res) {
   }
 })
 
+// Headerss
+// Setting a few spoecfic header to not use logged in user
+router.get('/public-site/public-cases', function (req, res) {
+  if (req.session.data['signin'] == null) {
+    // store it in session
+    req.session.data['signin'] = "no"
+  }
+  res.render('public-site/public-cases')
+})
+
 // Create Account 
 // Run this code during createaccount-account-complete - If there is not an email use a default one
 router.get('/public-site/create-account/createaccount-account-complete', function (req, res) {
