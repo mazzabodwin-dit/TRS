@@ -11,6 +11,9 @@
  
 {% block header %}
 {% include "includes/public-header.html" %}
+
+{% include "includes/caseworker-header.html" %}
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -48,7 +51,7 @@
         Medium header
       </h2>
       <p>Lots of lovely text should you need it</p>
-      <p><a class="link" href="public/signin-errors">View a form with error messages</a></p>
+      <p><a class="link" href="public-site/signin-errors">View a form with error messages</a></p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>List</li>
@@ -57,12 +60,76 @@
       </ul>
       <p>Lots of lovely text should you need it.</p>
 
-      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-        Start now
-        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-        </svg>
-      </a>
+      {% include "includes/country-list.html" %}
+
+      <div class="govuk-form-group">
+        <label class="govuk-heading-s" for="search-reg-org">
+          Autocomplete component
+        </label>
+        <select class="govuk-select" id="search-reg-org" name="search-reg-org">
+          <option value="opt0" class="selected"></option>
+          <option value="opt1">ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ</option>
+          <option value="opt2">ALUMINUM ELECTRICS LIMITED (05337101) 20 Highbury Place, Bramley, Leeds, United Kingdom, LS13 4PW</option>
+          <option value="opt3">ALUMINUM SQUIRREL LIMITED (SOUTH WALES) (08199303) 16 Bracken Park, Bingley, United Kingdom, BD16 3LG</option>
+          <option value="opt4">ALUMINIUM PROFILE SERVICES LIMITED (09849849) Clock Cottage, Corneybury Farm, Royston Road, Buntingford, Hertfordshire, England, SG9 9RS</option>
+          <option value="opt5">ALUMINIUM INTEGRATED SOLUTIONS LIMITED (09424974) 61 Great North Road, Newcastle Upon Tyne, Tyne And Wear, United Kingdom, NE3 2DQ</option>
+          <option value="opt6">ALUMINIUM STAR LIMITED (07751077) 21 Princess Mary House, Vincent Street Westminster, London, England, SW1P 4HL</option>
+          <option value="opt7">ALUMINUMNOW LIMITED (07650927) 29 Belfont Walk, London, 29 Belfont Walk, London, Greater London, England, N7 0SN</option>
+          <option value="opt8">ALUMINUMNOW MARITIME SOLUTIONS LTD. (08567105) 29 Belfont Walk 29 Belfont Walk, London, Greater London, England, N7 0SN</option>
+          <option value="opt9">AEROSPACE ALUMINUM CO., LTD (08667181) Unit G25 Waterfront Studios, 1 Dock Road, London, United Kingdom, E16 1AH</option>
+        </select>
+      </div>
+
+      <p id="selected_company"></p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Sign in",
+          href: "signin",
+          isStartButton: true
+        }) }}
+        <a class="govuk-link" href="create-account/createaccount-your-account">Create an account</a>
+      </div>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> 
+            Which case are you interested in?
+          </h2>
+          <ul class="app-task-list__items">
+  
+             <!-- Test data -->
+             <!--<div class="govuk-inset-text">
+              Test data: <br>
+              Case started: {{ data['case-started']}}<br>
+              Case ref: {{ data['case-ref'] }}
+            </div> -->
+  
+            {% include "includes/task-list1.html" %}
+  
+          </ul>
+        </li>
+      </ol>
+
+      <h2 class="govuk-heading-m">Which case are you interested in?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data ['case-ref']}} - {{data ['case-name']}} <br>
+            {{data ['case-type']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> case</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
 
     </div>
 

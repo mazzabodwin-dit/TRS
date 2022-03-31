@@ -38,6 +38,16 @@ router.post('/createaccount-contact-address-route', function (req, res) {
 
 // Headerss
 // Setting a few spoecfic header to not use logged in user
+router.get('/caseworker/signin', function (req, res) {
+  if (req.session.data['signin'] == null) {
+    // store it in session
+    req.session.data['signin'] = "no"
+  }
+  res.render('caseworker/signin')
+})
+
+// Headerss
+// Setting a few spoecfic header to not use logged in user
 router.get('/public-site/public-cases', function (req, res) {
   if (req.session.data['signin'] == null) {
     // store it in session
