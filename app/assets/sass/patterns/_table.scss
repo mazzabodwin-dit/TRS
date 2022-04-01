@@ -59,18 +59,18 @@ th {
   vertical-align: text-top;
 }
 
-#cases-table tr.govuk-table__row th {
+#table-header tr.govuk-table__row th {
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
 
 
-#cases-table tr.govuk-table__row td {
+#table-header tr.govuk-table__row td {
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
 
-#cases-table th {
+#table-header th {
   background-color: govuk-colour("light-grey");
 }
 
@@ -90,7 +90,7 @@ th {
 
 .sortable th i {
     font-size: 1.1em;
-    padding-left: 6px;
+    padding-left: 2px;
     width: 10px;
     color: govuk-colour("black");
     font-style: normal;
@@ -110,6 +110,34 @@ th {
 .Z-to-A:after {
     content: "\25BC";
     font-size: 0.9em;
+}
+
+table.sortable th .sort-indicator:before {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-bottom: 7px solid govuk-colour("mid-grey");
+}
+
+table.sortable th .sort-indicator:after {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-top: 7px solid govuk-colour("mid-grey");
+}
+
+table.sortable th .sort-indicator {
+  margin: 1px 0 0 5px;
+  position: absolute;
+  padding-top: 2px;
+}
+
+.pull-left {
+  float: left;
 }
 
 // In a parent/child list show the parent make a distinction between the last child and the next parent
