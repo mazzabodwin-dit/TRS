@@ -17,10 +17,8 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <span class="govuk-caption-xl">2.  Who is registering interest</span>
-    </div>
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">2.  Who is registering interest</span>
 
       <form action="reginterest-the-org-dets" method="post" id="createaccount-your-org-confirm-form"> 
         
@@ -30,9 +28,9 @@
               Who are you representing?
             </label>
           </h1>
-           <!--<div id="sort-hint" class="govuk-hint">
-            Search for the organisation on the Companies House register
-          </div> -->
+           <div id="sort-hint" class="govuk-hint">
+            Search the Companies House register for your employer
+          </div>
           <select class="govuk-select" id="search-reg-org" name="search-reg-org" onchange="showDiv('hidden_div', this); update()">
             <option value="0" class="selected"></option>
             <option value="ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ">ALUMINUM TRADE LTD (05850450)</option>
@@ -48,10 +46,9 @@
         </div>
 
        <!-- <div id="hidden_div"> -->
-        <div >
+        <div>
           <p>Check the organisation details below carefully. If the details do not match those of the organisation you are representing, you should return to the previous step and choose the "New" organisation option.</p>
           <div class="govuk-inset-text" id="selected_company"></div>
-
         </div>
   
         <script type="text/javascript">

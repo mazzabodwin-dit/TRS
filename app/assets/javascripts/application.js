@@ -17,7 +17,7 @@ $(document).ready(function () {
       placeholder: "Enter the registered company name or number",
       selectElement: document.querySelector('#search-reg-org'),
       onConfirm: function (data) {
-        $('#selected_company').html(data)
+        $('#selected_company').html($("option:contains(" + data + ")").val())
       }
     })
   }
