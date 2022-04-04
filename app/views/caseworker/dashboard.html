@@ -16,19 +16,16 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-page">
+    <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
         Welcome
       </h1>
 
-      <p>This is your dashboard for trade remedies investigations.</p>
-
-
+      <p>This is your dashboard for trade remedy investigations you are involved in.</p>
 
       {% set regInterestHTML %}
-        <h2 class="govuk-heading-s">Registration of interest (3 new)</h2>
-
+        <p>There are <strong>5</strong> applications waiting for verification</p>
         <table class="govuk-table sortable" id="table-header" role="grid">
           <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
           <thead class="govuk-table__head">
@@ -50,6 +47,42 @@
               </th>
             </tr>
           </thead>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-dumping investigation">AD</span>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AD2224</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Steel plate from Russia</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Steel UK</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Requested: </span>12 May 2022
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">SI943005</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Electric Bikes</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Cheesy Chips Ltd</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Requested: </span>01 Feb 2022
+            </td>
+          </tr>
     
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
@@ -65,7 +98,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Requested: </span>12 May 2022
+              <span class="govuk-visually-hidden--desktop td-header">Requested: </span>23 Mar 2022
             </td>
           </tr>
     
@@ -83,7 +116,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Farnets First Ltd</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Requested: </span>13 April 2021
+              <span class="govuk-visually-hidden--desktop td-header">Requested: </span>13 Apr 2021
             </td>
           </tr>
     
@@ -109,7 +142,8 @@
       {% endset %}
 
       {% set submissionsHTML %}
-      <h2 class="govuk-heading-s">Submissions (23 new)</h2>
+      <p>There are <strong>3</strong> sumbissions waiting for review</p>
+
       <table class="govuk-table sortable" id="table-header" role="grid">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
         <thead class="govuk-table__head">
@@ -134,27 +168,6 @@
             </th>
           </tr>
         </thead>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">BA0005</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span><a href="#" class="govuk-link--no-visited-state">Pre-sampling pack</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
-          </td>
-        </tr>
   
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
@@ -197,46 +210,33 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
           </td>           
         </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-dumping investigation">AD</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AD2224</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Steel plate from Russia</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Steel UK</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span><a href="#" class="govuk-link--no-visited-state">Questionnaires</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
+          </td>           
+        </tr>
   
       </table>   
       {% endset %}
 
       {% set newCasesHTML %}
-      <h2 class="govuk-heading-s">New cases (1 new)</h2>
-      {% endset %}
-
-      
-
-      {{ govukTabs ({
-        items: [
-        { 
-          label: "Registration of interest (5)",
-          id: "reg-interest",
-          panel: {
-            html: regInterestHTML
-          }
-        },
-        { 
-          label: "Submissions (23)",
-          id: "new-submissions",
-          panel: {
-            html: submissionsHTML
-          }
-        }
-        ,
-        { 
-          label: "New cases (1)",
-          id: "new-cases",
-          panel: {
-            html: newCasesHTML
-            
-          }
-        }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m">My Cases</h2>
-
+      <p>There is <strong>1</strong> new case waiting for review</p>
       <table class="govuk-table sortable" id="table-header" role="grid">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
         <thead class="govuk-table__head">
@@ -254,16 +254,7 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next action<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Due by <i class="Z-to-A"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
             </th>
           </tr>
         </thead>
@@ -279,19 +270,55 @@
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Secretary of State</a>
+            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>12 May 2022
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
+          </td>
+        </tr>
+      </table>
+      
+      {% endset %}
+
+      {% set newOrgsHTML %}
+      <p>There are <strong>6</strong> unverified organisations</p>
+      <table class="govuk-table sortable" id="table-header" role="grid">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation<i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
+            </th>
+          </tr>
+        </thead>
+  
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Case information finalised
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">BA0005</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Publish initiation notices
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>26 May 2022
+            <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
           </td>
         </tr>
   
@@ -306,19 +333,10 @@
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Farnets from Fabon</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">First Law Firm</a>
+            <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="#" class="govuk-link--no-visited-state">Farnets First Ltd</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 April 2021
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Case initiated
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Issue questionnaires
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>26 April 2021
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>13 April 2021
           </td>
         </tr>
   
@@ -333,25 +351,66 @@
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Garnets from Gabon</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Secretary of State</a>
+            <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>01 Dec 2019
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
+          </td>           
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-dumping investigation">AD</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Case initiated
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AD2224</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Issue questionnaires
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Steel plate from Russia</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>15 Dec 2019
+            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Steel UK</a>
           </td>
-         
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
+          </td>           
         </tr>
   
       </table>   
-      
+      {% endset %}
+
+      {{ govukTabs ({
+        items: [
+        { 
+          label: "Registration of interest (5)",
+          id: "reg-interest",
+          panel: {
+            html: regInterestHTML
+          }
+        },
+        { 
+          label: "Submissions (3)",
+          id: "new-submissions",
+          panel: {
+            html: submissionsHTML
+          }
+        },
+        { 
+          label: "New cases (1)",
+          id: "new-cases",
+          panel: {
+            html: newCasesHTML
+          }
+        },
+        { 
+          label: "Organisations (4)",
+          id: "new-orgs",
+          panel: {
+            html: newOrgsHTML
+          }
+        }
+        ]
+      }) }}
       
     </div>
 
