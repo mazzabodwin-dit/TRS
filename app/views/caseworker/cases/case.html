@@ -3,26 +3,40 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Dashboard – {{ serviceName }} – GOV.UK Prototype Kit
+  Proto: Cases: Steel plate from Russia – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set bodyClasses = 'caseworker' %}
 
 {% block header %}
  {% include "includes/caseworker-header.html" %}
- {% include "includes/caseworker-nav.html" %}
+ {% include "includes/caseworker-nav-case.html" %}
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a href="../cases/cases-all">Cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      AD2224: Steel plate from Russia
+    </li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
+{% set bodyClasses = 'caseworker' %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Welcome
+        AD2224: Steel plate from Russia
       </h1>
 
       <p>This is your dashboard for trade remedy investigations you are involved in.</p>
@@ -56,10 +70,10 @@
               <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-dumping investigation">AD</span>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="cases/case" class="govuk-link--no-visited-state">AD2224</a>
+              <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AD2224</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="cases/case" class="govuk-link--no-visited-state">Steel plate from Russia</a>
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Steel plate from Russia</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Steel UK</a>
@@ -414,6 +428,8 @@
         }
         ]
       }) }}
+      
+      
       
     </div>
 
