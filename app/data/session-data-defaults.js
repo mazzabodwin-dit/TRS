@@ -23,4 +23,13 @@ module.exports = {
 
   "name": "Devi Lakhia",
   "accountOrg": "Devi",
+  "case-ref1": "AD2224",
+  "case-name1": "Steel plate from Russia",
+  "case-typeabr1": "AD",
+  "case-type1": "Anti-dumping",
+  "party1": "Steel UK",
+  "user1": "BobHoskins",
+  "submission1": "Registration of Interest",
+  "register-date1": "01 April 2021"
+
 }
