@@ -48,7 +48,7 @@
         </div>
 
        <!-- <div id="hidden_div"> -->
-        <div >
+        <div>
           <p>Check the organisation details below carefully. If the details do not match those of the organisation you are representing, you should return to the previous step and choose the "New" organisation option.</p>
           <div class="govuk-inset-text" id="selected_company"></div>
 
@@ -63,8 +63,8 @@
           function update() {
             var select = document.getElementById('search-reg-org');
             var option = select.options[select.selectedIndex];
-            
             document.getElementById('selected_company').innerHTML = option.value;
+
           }
   
           update();
