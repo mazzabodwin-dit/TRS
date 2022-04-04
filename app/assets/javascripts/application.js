@@ -17,10 +17,17 @@ $(document).ready(function () {
       placeholder: "Enter the registered company name or number",
       selectElement: document.querySelector('#search-reg-org'),
       onConfirm: function (data) {
-        $('#selected_company').html($("option:contains(" + data + ")").val())
+        if (data !== undefined){
+          // We only want to hide if the variable is defined
+            if (data){
+              $('#selected_company').html($("option:contains(" + data + ")").val());
+              $('#selected_company_wrapper').show();
+            } else {
+              $('#selected_company_wrapper').hide();
+          }
+        }
       }
     })
   }
-
 
 })
