@@ -181,7 +181,7 @@
       {% endset %}
       
       {% set newPartyHTML %}
-      <p>There are <strong>3</strong> unverified parties</p>
+      <p>There are <strong>4</strong> unverified parties</p>
       <table class="govuk-table sortable" id="table-header" role="grid">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
         <thead class="govuk-table__head">
@@ -224,24 +224,6 @@
   
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Farnets First Ltd</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">JessRabbit</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span><a href="#" class="govuk-link--no-visited-state">Questionnaire</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>13 April 2021
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">Farnets First Ltd</span></a>
-          </td>
-        </tr>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
           </td>
           <td class="govuk-table__cell">
@@ -258,6 +240,42 @@
             </span></a>
           </td>        
         </tr> 
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">TEA ADVISORY LIMITED</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">PGTips</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span><a href="#" class="govuk-link--no-visited-state">Assign user to case</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from TEA ADVISORY LIMITED</span></a>
+          </td>               
+        </tr>
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">ArnieSwarts</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span><a href="#" class="govuk-link--no-visited-state">3rd party invite</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
+          </td>  
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from Glorious Gabon Plc</span></a>
+          </td>             
+        </tr>
+
       </table>   
       {% endset %}
 
@@ -309,14 +327,14 @@
           }
         },
         { 
-          label: "Parties to verify (3)",
+          label: "Parties to verify (4)",
           id: "new-party",
           panel: {
             html: newPartyHTML
           }
         },
         { 
-          label: "Applicants (1)",
+          label: "Applicants/ Reg interest?? (1)",
           id: "new-applicants",
           panel: {
             html: newApplicantsHTML
