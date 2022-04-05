@@ -1,0 +1,230 @@
+<!-- Upload confidential docs 1 -->
+{% if (data['upload3-complete'] !=  "yes") and (data['upload3-complete'] != "yes") %}
+<li class="app-task-list__item" id="confi2-button">
+  <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-2" id="confi2-button" data-module="govuk-button" onclick="showDiv7()">
+  Add Confidential document
+  </button>
+</li>
+{% endif %}
+
+{% if data['upload3-complete'] == "yes" %}
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <label class="govuk-label" for="file-upload-1">
+        Confidential document
+      </label>
+      <a href="#" class="govuk-link--no-visited-state">
+        mydocumentation.docx
+      </a>
+    </span>
+    <a href="reginterest-upload2?upload3-complete=no" class="app-task-list__tag remove-link govuk-link--no-visited-state">
+        Remove
+    <span class="govuk-visually-hidden"> file</span>
+    </a>
+  </li>
+  
+  {% else %}
+       
+    <div id="div9">
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name ">
+          <label class="govuk-label" for="progress">
+            Uploading 80%: mydocumentation.docx
+          </label>
+            
+          <progress id="progress" max="100" value="80">
+            <div class="progress-bar">
+                <span style="width: 80%;">Progress: 80%</span>
+            </div>
+          </progress>
+        </span>
+        <a href="#" class="app-task-list__tag remove-link govuk-link--no-visited-state" id="case-selected-status">
+          Cancel
+          <span class="govuk-visually-hidden"> file</span>
+        </a>
+      </li>
+    </div>
+
+    <div id="div8">
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name ">
+          <label class="govuk-label" for="progress">
+            Uploading 10%: mydocumentation.docx
+          </label>
+          
+          <progress id="progress" max="100" value="10">
+            <div class="progress-bar">
+                <span style="width: 10%;">Progress: 10%</span>
+            </div>
+        </progress>
+      
+        </span>
+        <a href="#" class="app-task-list__tag remove-link govuk-link--no-visited-state" id="case-selected-status">
+          Cancel
+          <span class="govuk-visually-hidden"> file</span>
+        </a>
+      </li>
+    </div>
+
+    <div id="div7">
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">   
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </span>
+          <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout3()" value="Submit">
+
+      </li>
+    </div>
+
+{% endif %}
+
+
+<!-- Upload non-confidential docs 3 -->
+{% if (data['upload4-complete'] !=  "yes") and (data['upload4-complete'] != "yes") %}
+<li class="app-task-list__item" id="unconfi2-button">
+  <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-2" data-module="govuk-button" onclick="showDiv10()">
+    Add non-confidential document
+  </button>
+</li>
+{% endif %}
+
+{% if data['upload4-complete'] == "yes" %}
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <label class="govuk-label" for="file-upload-1">
+        Non-confidential document
+      </label>
+      <a href="#" class="govuk-link--no-visited-state">
+        nonconfidocumentation.docx
+      </a>
+    </span>
+    <a href="reginterest-upload2?upload4-complete=no" class="app-task-list__tag remove-link govuk-link--no-visited-state">
+      Remove
+    <span class="govuk-visually-hidden"> file</span>
+    </a>
+  </li>
+  
+  {% else %}
+        
+  <div id="div12">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name ">
+        <label class="govuk-label" for="progress">
+          Uploading 80%: nonconfidocumentation.docx
+        </label>
+        
+        <progress id="progress" max="100" value="80">
+          <div class="progress-bar">
+              <span style="width: 80%;">Progress: 80%</span>
+          </div>
+      </progress>
+    
+      </span>
+      <a href="#" class="app-task-list__tag remove-link govuk-link--no-visited-state" id="case-selected-status">
+        Cancel
+        <span class="govuk-visually-hidden"> file</span>
+      </a>
+    </li>
+  </div>
+
+  <div id="div11">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name ">
+        <label class="govuk-label" for="progress">
+          Uploading 10%: nonconfidocumentation.docx
+        </label>
+        
+        <progress id="progress" max="100" value="10">
+          <div class="progress-bar">
+              <span style="width: 10%;">Progress: 10%</span>
+          </div>
+      </progress>
+    
+      </span>
+      <a href="#" class="app-task-list__tag remove-link govuk-link--no-visited-state" id="case-selected-status">
+        Cancel
+        <span class="govuk-visually-hidden"> file</span>
+      </a>
+    </li>
+  </div>
+
+  <div id="div10">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">   
+          <label class="govuk-label" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+        </span>
+        <input class="govuk-label app-task-list__tag remove-link" type="button" onclick="setTimeout4()" value="Submit">
+
+    </li>
+  </div>
+     
+{% endif %}
+
+
+<script type="text/javascript">
+
+   function setTimeout3() {
+    setTimeout("showDiv8()", 0); // after 0 sec
+    setTimeout("showDiv9()", 1000); // after 2 sec
+    setTimeout("upload3start()", 2000); // after 3 sec
+  }
+
+    function setTimeout4() {
+    setTimeout("showDiv11()", 0); // after 0 sec
+    setTimeout("showDiv12()", 1000); // after 2 sec
+    setTimeout("upload4start()", 2000); // after 3 sec
+  }
+
+  function upload3start() {
+    location.href = "reginterest-upload2?upload3-complete=yes";
+  }
+
+  function upload4start() {
+    location.href = "reginterest-upload2?upload4-complete=yes";
+  }
+
+  function showDiv7() {
+    document.getElementById("div7").style.display = "block";
+   document.getElementById("confi2-button").style.display = "none";
+  }
+
+  function showDiv8() {
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div8").style.display = "block";
+    document.getElementById("div9").style.display = "none";
+  }
+
+  function showDiv9() {
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div8").style.display = "none";
+    document.getElementById("div9").style.display = "block";
+  }
+
+  function showDiv10() {
+    document.getElementById("div10").style.display = "block";
+    document.getElementById("unconfi2-button").style.display = "none";
+
+  }
+
+  function showDiv11() {
+    document.getElementById("div10").style.display = "none";
+    document.getElementById("div11").style.display = "block";
+    document.getElementById("div12").style.display = "none";
+  }
+
+  function showDiv12() {
+    document.getElementById("div10").style.display = "none";
+    document.getElementById("div11").style.display = "none";
+    document.getElementById("div12").style.display = "block";
+  }
+
+  
+</script>
