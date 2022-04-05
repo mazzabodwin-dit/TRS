@@ -33,24 +33,38 @@
 {% set bodyClasses = 'caseworker' %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         {{data['case-ref1']}}: {{data['case-name1']}}
       </h1>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-s" id="subsection-title">Case status</h2>
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              Status: Questionnaires issued
+            </li>
+            <li>
+              Next task: Process questionnaires
+            </li>
+            <li>
+              Next notice due: 23 May 2022
+            </li>
+          </ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
       <ul class="govuk-list">
         <li>
           Applicant: <a href="">Farnets First Ltd</a>
         </li>
         <li>
-          Type: <a href="">Anti-dumping</a>
-        </li>
-        <li>
-          Status: <a href="">Questionnaire</a>
-          <li>
-            Next task: <a href="">Review questionnaires</a>
-          </li>
+          Type: <a href="">Anti-dumping
         </li>
       </ul>
       <!-- {{data['case-ref1']}}
@@ -119,7 +133,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>13 April 2021
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from Farnets First Ltd</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from Farnets First Ltd</span></a>
           </td>    
         </tr>
   
@@ -137,7 +151,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from Glorious Gabon Plc</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from Glorious Gabon Plc</span></a>
           </td>             
         </tr>
 
@@ -155,7 +169,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from {{data['party1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from {{data['party1']}}
             </span></a>
           </td>    
         </tr>
@@ -174,7 +188,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from TEA ADVISORY LIMITED</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from TEA ADVISORY LIMITED</span></a>
           </td>               
         </tr>
       </table>   
@@ -236,7 +250,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
           </td>   
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">{{data['party1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="../reg-interest/reginterest-tasks" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">{{data['party1']}}
             </span></a>
           </td>        
         </tr> 
@@ -255,7 +269,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from TEA ADVISORY LIMITED</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">TEA ADVISORY LIMITED</span></a>
           </td>               
         </tr>
         <tr class="govuk-table__row no-border">
@@ -272,7 +286,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission<span class="govuk-visually-hidden td-header">from Glorious Gabon Plc</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
           </td>             
         </tr>
 
