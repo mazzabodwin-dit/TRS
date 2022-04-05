@@ -46,15 +46,16 @@
 
       <li>
         <h2 class="app-task-list__section">
-          Unconfidential documentation
+          Non-confidential documentation for the public record
         </h2>
         <p>This should include redacted versions of the Confidential documentation as it will be published on the public register.</p>
         <ul class="app-task-list__items govuk-!-margin-bottom-6">
           {% if (data['upload3-complete'] !=  "yes") and (data['upload4-complete'] != "yes") %}
           <button class="govuk-button govuk-button--secondary" id="unconfi-button" data-module="govuk-button" onclick="showDiv7()">
-            Add Unconfidential document
+            Add non-confidential document
           </button>
           {% endif %}
+
           {% include "includes/uploads-unconfi.html" %}            
         </ul>
       </li>
