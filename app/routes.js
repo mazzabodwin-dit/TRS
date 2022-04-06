@@ -36,7 +36,7 @@ router.post('/createaccount-contact-address-route', function (req, res) {
   }
 })
 
-// Headerss
+// Headers
 // Setting a few spoecfic header to not use logged in user
 router.get('/caseworker/signin', function (req, res) {
   if (req.session.data['signin'] == null) {
@@ -46,7 +46,7 @@ router.get('/caseworker/signin', function (req, res) {
   res.render('caseworker/signin')
 })
 
-// Headerss
+// Headers
 // Setting a few spoecfic header to not use logged in user
 router.get('/public-site/public-cases', function (req, res) {
   if (req.session.data['signin'] == null) {
@@ -54,6 +54,16 @@ router.get('/public-site/public-cases', function (req, res) {
     req.session.data['signin'] = "no"
   }
   res.render('public-site/public-cases')
+})
+
+// Headers
+// Setting a few spoecfic header to not use logged in user
+router.get('/public-site/start', function (req, res) {
+  if (req.session.data['signin'] == null) {
+    // store it in session
+    req.session.data['signin'] = "no"
+  }
+  res.render('public-site/start')
 })
 
 // Create Account 
