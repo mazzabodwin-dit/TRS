@@ -29,10 +29,14 @@
     
     <ol class="app-task-list" id="docs1">
       <li>
-        <h2 class="govuk-heading-s">
-          Document 1
-        </h2>
         <ul class="app-task-list__items govuk-!-margin-bottom-0">
+          <li class="upload-header app-task-list__item doc-header">
+            <span class="app-task-list__task-name">
+              <h2 class="govuk-heading-s">
+                Document 1
+              </h2>
+            </span>
+          </li>
           {% include "includes/uploads-doc1.html" %}         
         </ul>
       </li>
@@ -43,11 +47,19 @@
       {% if (data['add-doc-button'] == "yes")  %}
       <ol class="app-task-list" id="docs2">
         <li id="doc2-panel">
-          <h2 class="govuk-heading-s">
-            Document 2
-          </h2>
-          
           <ul class="app-task-list__items govuk-!-margin-bottom-0">
+            <li class="upload-header app-task-list__item doc-header">
+              <span class="app-task-list__task-name">
+                <h2 class="govuk-heading-s">
+                  Document 2
+                </h2>
+              </span>
+              
+              <a href="reginterest-upload2?add-doc-button=no" alt="Remove Document 2 panel" class="app-task-list__tag remove-panel">
+                <img src="/public/images/cancel-icon.png" width="32px">
+              <span class="govuk-visually-hidden">Remove Document 2 panel</span>
+              </a>
+            </li>
             {% include "includes/uploads-doc2.html" %}    
           </ul>
       </li>

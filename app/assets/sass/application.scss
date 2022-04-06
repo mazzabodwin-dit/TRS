@@ -42,16 +42,20 @@ $govuk-assets-path: '/govuk/assets/';
   display: none;
 }
 
-/* Reginterest - upload remove file button*/
+/* Reginterest - upload remove button*/
   .remove-link {
-    margin-top: 37px;
+    margin-top: 30px;
   }
 
   .submit-button {
     margin-top: 30px;
   }
 
-  #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10, #div11, #div12, #add-confi-button, #add-unconfi-button  {
+  .remove-panel {
+    margin-top: 0px;
+  }
+
+  #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10, #div11, #div12 {
     display: none;
   }
 
@@ -94,6 +98,13 @@ $govuk-assets-path: '/govuk/assets/';
   #docs .app-task-list__item {
     border-bottom: 0px solid blue;
     border-top: 1px solid #b1b4b6;
+
+  }
+
+  .upload-header.app-task-list__item {
+    padding: 0px;
+    margin: 0px;
+    border-top: 0px solid blue;
 
   }
 
