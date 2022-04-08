@@ -23,13 +23,18 @@ module.exports = {
 
   "name": "Devi Lakhia",
   "accountOrg": "Devi",
+  
   "case-ref1": "AD2224",
   "case-name1": "Steel plate from Russia",
   "case-typeabr1": "AD",
   "case-type1": "Anti-dumping",
+  "applicant1": "Steelman Plc",
+  "created1": "12 May 2022",
   "party1": "Steel UK",
   "user1": "BobHoskins",
   "submission1": "Registration of Interest",
-  "register-date1": "01 April 2021"
-
+  "register-date1": "01 April 2021",
+  "status1": "Case information finalised",
+  "next-task1": "Publish initiation notices",
+  "next-notice1": "26 May 2022"
 }

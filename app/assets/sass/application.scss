@@ -59,7 +59,7 @@ $govuk-assets-path: '/govuk/assets/';
     display: none;
   }
 
-  /* Reginterest Progress bar */
+  /* Reginterest Upload Progress bar */
 
  progress {
    padding: 20px 0 10px 0; 
@@ -108,4 +108,25 @@ $govuk-assets-path: '/govuk/assets/';
 
   }
 
+/* Caseworker - Address card  */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+}
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 20px 15px;
+    margin: 15px 0 30px 0;
+  }
 
+  .verified-check {
+    margin: 0px 0px -10px 10px;
+  }
+
+  .verified-tick {
+    margin: 0px 0px -4px 10px;
+  }

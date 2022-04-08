@@ -43,13 +43,13 @@
         <h2 class="govuk-heading-s" id="subsection-title">Case status</h2>
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              Status: Questionnaires issued
+              Status: {{data['status1']}}
             </li>
             <li>
-              Next task: Process questionnaires
+              Next task: {{data['next-task1']}}
             </li>
             <li>
-              Next notice due: 23 May 2022
+              Next notice due: {{data['next-notice1']}}
             </li>
           </ul>
       </aside>
@@ -61,10 +61,12 @@
 
       <ul class="govuk-list">
         <li>
-          Applicant: <a href="">Farnets First Ltd</a>
+          Applicant: <a href="">{{data['applicant1']}}</a>
         </li>
         <li>
-          Type: <a href="">Anti-dumping
+          Type: <a href="">{{data['case-type1']}}</a>
+        </li>
+        <li>Created: {{data['created1']}}
         </li>
       </ul>
       <!-- {{data['case-ref1']}}
@@ -115,7 +117,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from Tabon Holdings</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">submission from Tabon Holdings</span></a>
           </td>    
         </tr>
   
@@ -133,7 +135,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>13 April 2021
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from Farnets First Ltd</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">submission from Farnets First Ltd</span></a>
           </td>    
         </tr>
   
@@ -151,7 +153,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from Glorious Gabon Plc</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">submission from Glorious Gabon Plc</span></a>
           </td>             
         </tr>
 
@@ -169,7 +171,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from {{data['party1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">submission from {{data['party1']}}
             </span></a>
           </td>    
         </tr>
@@ -188,7 +190,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify submission <span class="govuk-visually-hidden td-header">from TEA ADVISORY LIMITED</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">submission from TEA ADVISORY LIMITED</span></a>
           </td>               
         </tr>
       </table>   
@@ -232,7 +234,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">Tabon Holdings</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">Tabon Holdings</span></a>
           </td>
         </tr>
   
@@ -250,7 +252,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
           </td>   
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="../reg-interest/reginterest-tasks" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">{{data['party1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="../reg-interest/reginterest-tasks" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party1']}}
             </span></a>
           </td>        
         </tr> 
@@ -269,7 +271,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">TEA ADVISORY LIMITED</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">TEA ADVISORY LIMITED</span></a>
           </td>               
         </tr>
         <tr class="govuk-table__row no-border">
@@ -286,7 +288,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify party <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
           </td>             
         </tr>
 

@@ -3,7 +3,33 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// Create account
+// Headers
+// Setting a few spoecfic header to not use logged in user
+router.get('/public-site/public-cases', function (req, res) {
+  if (req.session.data['signin'] == null) {
+    // store it in session
+    req.session.data['signin'] = "no"
+  }
+  res.render('public-site/public-cases')
+})
+
+// Headers
+// Setting a few spoecfic header to not use logged in user
+router.get('/public-site/start', function (req, res) {
+  if (req.session.data['signin'] == null) {
+    // store it in session
+    req.session.data['signin'] = "no"
+  }
+  res.render('public-site/start')
+})
+
+// Pubic
+// Pubic
+// Pubic
+// Pubic
+// Pubic
+// Pubic - Create account
+
 // Run this code on createaccount-uk-org: - is org UK reg?
 router.post('/createaccount-uk-reg-route', function (req, res) {
 
@@ -34,36 +60,6 @@ router.post('/createaccount-contact-address-route', function (req, res) {
     // Send user to ineligible page
     res.redirect('/public-site/createaccount-your-org-dets')
   }
-})
-
-// Headers
-// Setting a few spoecfic header to not use logged in user
-router.get('/caseworker/signin', function (req, res) {
-  if (req.session.data['signin'] == null) {
-    // store it in session
-    req.session.data['signin'] = "no"
-  }
-  res.render('caseworker/signin')
-})
-
-// Headers
-// Setting a few spoecfic header to not use logged in user
-router.get('/public-site/public-cases', function (req, res) {
-  if (req.session.data['signin'] == null) {
-    // store it in session
-    req.session.data['signin'] = "no"
-  }
-  res.render('public-site/public-cases')
-})
-
-// Headers
-// Setting a few spoecfic header to not use logged in user
-router.get('/public-site/start', function (req, res) {
-  if (req.session.data['signin'] == null) {
-    // store it in session
-    req.session.data['signin'] = "no"
-  }
-  res.render('public-site/start')
 })
 
 // Create Account 
@@ -173,6 +169,39 @@ router.get('/public-site/reg-interest/reginterest-upload', function (req, res) {
 
   res.render('public-site/reg-interest/reginterest-upload')
  
+})
+
+// Caseworker
+// Caseworker
+// Caseworker
+// Caseworker
+// Caseworker
+
+// Headers
+// Setting a few specfic header to not use logged in user
+router.get('/caseworker/signin', function (req, res) {
+  if (req.session.data['signin'] == null) {
+    // store it in session
+    req.session.data['signin'] = "no"
+  }
+  res.render('caseworker/signin')
+})
+
+// Run this code on reginterest-party-employer - which option is chosen:
+router.post('/reginterest-valid-employer-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-party'
+  var reginterestValidEmployer = req.session.data['reginterest-valid-employer']
+
+  // Check whether the variable matches a condition
+  if (reginterestValidEmployer == "valid"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?party-employer-complete=yes')
+  } 
+  if (reginterestValidEmployer == "fraudulent"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-fraudulent')
+  } 
 })
 
 

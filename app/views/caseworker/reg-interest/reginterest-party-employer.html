@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Verify Registered Interest – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% set bodyClasses = 'caseworker' %}
+
+{% block header %}
+ {% include "includes/caseworker-header.html" %}
+ {% include "includes/caseworker-nav-case.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ <div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../cases-all">Cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../cases/case">{{data['case-ref1']}}: {{data['case-name1']}}</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Registration of Interest
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">1.  Interested parties</span>
+
+
+    <h1 class="govuk-heading-xl">
+      Registration of Interest
+    </h1>
+
+    <!--
+    <div class="govuk-inset-text">
+      <strong>{{data['party1']}}</strong><br>
+      Involvement in other cases: 3<br>
+      Verification in other cases: 1
+    </div>
+    -->
+    <div class="card">
+      <div class="container">
+          <span class="app-task-list__task-name">
+          <h2 class="govuk-heading-m"><a Href="">{{data['party1']}}</a>  
+          </h2> 
+        </span>
+        <a href="#" alt="Remove Document 2 panel" class="app-task-list__tag remove-panel">Edit details
+        <span class="govuk-visually-hidden"> of {{data['party1']}}</span>
+        </a>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__action">20 Highbury Place, Bramley, Leeds <br>
+              LS13 4PW<br>
+              United Kingdom
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Registered number: </dt>
+            <dd class="govuk-summary-action">068482855 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-action">n/a</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__action">n/a</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__action">n/a</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__action">n/a</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Cases directly involved in: </dt>
+            <dd class="govuk-summary-list__action">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    4 cases
+                  </span>
+                  (2 verified)
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li><a href="">Garnets from Gabon</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party on this case" title="Verified party on this case" width="32px"> </li>
+                    <li><a href="">cheese from Chad</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party on this case" title="Verified party on this case" width="32px"></li>
+                    <li><a href="">Jelly Tots from Japan</a></li>
+                    <li><a href="">Jellied desserts from Jamaica</a></li>
+                  </ul>
+                </div>
+              </details>
+           </dd> 
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Cases acting as a representative </dt>
+            <dd class="govuk-summary-list__action">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    2 cases
+                  </span>
+                  (1 verified)
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li><a href="">Electric Bikes</a></li>
+                    <li><a href="">Good Foods Ltd</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified representative on this case" title="Verified representative on this case" width="32px"></li>
+                  </ul>
+                </div>
+              </details>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Users: </dt>
+            <dd class="govuk-summary-list__action">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    1 user
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li><a href="">BobHoskins</a></li>
+                  </ul>
+                </div>
+              </details>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <form action="/reginterest-valid-employer-route" method="post" id="reginterest-valid-employer-form">
+
+    {% set validHTML %}
+    Can you verify {{data['party1']}}?
+    {% endset %}
+
+      {{ govukRadios({
+        idPrefix: "reginterest-valid-employer",
+        name: "reginterest-valid-employer",
+        fieldset: {
+          legend: {
+            html: validHTML,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "valid",
+            text: "They are a valid organisation",
+            checked: checked("reginterest-valid-party", "valid")
+          },
+          {
+            value: "fraudulent",
+            text: "They are a fraudulent organisation",
+            checked: checked("reginterest-valid-party", "fraudulent")
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="javascript: history.back()">Cancel</a>
+      </div>
+
+    </form>
+    
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Case overview</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <strong>Case</strong><br>
+            {{data['case-name1']}}
+          </li>
+          <li>
+            <strong>Applicant</strong><br>
+            {{data ['applicant1']}}           
+          </li>   
+          <li>
+            <strong>Party</strong><br>
+            {{data ['party1']}}
+          </li> 
+          <li>
+            <strong>User</strong><br>
+            {{data ['user1']}}
+          </li> 
+          
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+

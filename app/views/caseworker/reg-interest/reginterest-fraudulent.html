@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Verify Registered Interest – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% set bodyClasses = 'caseworker' %}
+
+{% block header %}
+ {% include "includes/caseworker-header.html" %}
+ {% include "includes/caseworker-nav-case.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ <div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../cases-all">Cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../cases/case">{{data['case-ref1']}}: {{data['case-name1']}}</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Registration of Interest
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">1.  Interested parties</span>
+
+
+    <h1 class="govuk-heading-xl">
+      Registration of Interest
+    </h1>
+
+    <!--
+    <div class="govuk-inset-text">
+      <strong>{{data['party1']}}</strong><br>
+      Involvement in other cases: 3<br>
+      Verification in other cases: 1
+    </div>
+  -->   
+
+    <form action="/reginterest-valid-employer-route" method="post" id="reginterest-valid-employer-form">
+      <h2 class="govuk-heading-m">Are you certain this organisation is fraudulent?</h2>
+
+
+      <p>Marking <strong> {{data['party1']}}</strong> as fraudulent is permanent and irreversible.</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>The organisation will be removed from this case.</li>
+        <li>No further submissions will be made visible to investigators from this organisation in this or any future cases</li>
+      </ul>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "I confirm the organsiation is fraudulent"
+        }) }}    
+        <a class="govuk-link" href="javascript: history.back()">Cancel</a>
+      </div>
+
+    </form>
+    
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Case overview</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <strong>Case</strong><br>
+            {{data['case-name1']}}
+          </li>
+          <li>
+            <strong>Applicant</strong><br>
+            {{data ['applicant1']}}           
+          </li>   
+          <li>
+            <strong>Party</strong><br>
+            {{data ['party1']}}
+          </li> 
+          
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+

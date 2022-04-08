@@ -1,0 +1,182 @@
+<!-- Caseworker - reginterest org - organisation -->
+  <!-- Caseworker - reginterest org - organisation -->
+    <!-- Caseworker - reginterest org - organisation -->
+
+
+<!-- Caseworker - reginterest org - duplicates only show if there is dup-->
+ 
+
+{% if (data['duplicate-org'] == "yes") %}
+
+  {% if (data[''] != null) %}
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+        Resolve duplicate organisations
+      </a>
+    </span>
+    <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+  </li>
+
+  {% else %}
+    {% if (data[''] == "yes")  %}
+     <!-- If the user has started section 2 show: -->
+
+      <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+          Resolve duplicate organisations
+        </a>
+      </span>
+      <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+      </li>
+      
+      {% else %}
+        <!-- If the user has not started section 2 show -->
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
+              Resolve duplicate organisations
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+        </li>
+
+    {% endif %}
+
+  {% endif %}
+{% endif %}
+
+
+<!-- LOA - reginterest org - only show if required e.g. 3rd party -->
+
+{% if (data['third-party'] == "yes") %}
+
+  {% if (data[''] != null) %}
+
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+            LOA
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+      </li>
+
+      {% else %}
+      {% if (data[''] == "yes")  %}
+        <!-- If the user has started section 2 show: -->
+
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+              LOA
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+          </li>
+          
+          {% else %}
+            <!-- If the user has not started section 2 show -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
+                  LOA
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+            </li>
+
+      {% endif %}
+
+  {% endif %}
+{% endif %}
+
+
+<!-- Verify first org which is the org the user is employed by NOT the representative-->
+<!-- Always show -->
+
+{% if (data['party-employer-complete'] != null) %}
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-party-employer" aria-describedby="organisation-selected-status">
+          Verify party
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+    </li>
+
+    {% else %}
+    {% if (data['party-employer-started'] == "yes")  %}
+      <!-- If the user has started section 2 show: -->
+
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-party-employer" aria-describedby="organisation-selected-status">
+            Verify party
+          </a>
+        </span>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+        </li>
+        
+        {% else %}
+          <!-- If the user has not started section 2 show -->
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="reginterest-party-employer?party-employer-started=yes" aria-describedby="organisation-selected-status">
+                Verify party
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+          </li>
+
+    {% endif %}
+
+{% endif %}
+
+<!-- Verify second party - this is the org the user is representing as a 3rd party-->
+<!-- Only show this if it is the right type of application e.g. 3rd party-->
+
+{% if (data['third-party'] == "yes") %}
+
+  {% if (data[''] != null) %}
+
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+            Verify party 2
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+      </li>
+
+      {% else %}
+      {% if (data[''] == "yes")  %}
+        <!-- If the user has started section 2 show: -->
+
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+              Verify party 2
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+          </li>
+          
+          {% else %}
+            <!-- If the user has not started section 2 show -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
+                  Verify party 2
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+            </li>
+
+      {% endif %}
+
+  {% endif %}
+{% endif %}

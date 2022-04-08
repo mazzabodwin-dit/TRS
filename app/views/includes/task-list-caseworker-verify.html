@@ -1,0 +1,105 @@
+<!-- Caseworker - reginterest org - verify -->
+  <!-- Caseworker - reginterest org - verify -->
+    <!-- Caseworker - reginterest org - verify -->
+
+
+{% if (data[''] != null) %}
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+          Accept/ decline registered interest
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+    </li>
+
+    {% else %}
+    {% if (data[''] == "yes")  %}
+      <!-- If the user has started section 2 show: -->
+
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+            Accept/ decline registration of interest
+          </a>
+        </span>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+        </li>
+        
+        {% else %}
+          {% if (data[''] == "yes")  %}
+            <!-- If the user has not started section 2 show -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
+                  Accept/ decline registered interest
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+            </li>
+
+            {% else %}
+              <!-- If the user has not complete section 1 show -->
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  Accept/ decline registered interest
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Cannot start yet</strong>
+              </li>
+          {% endif %}
+
+    {% endif %}
+
+{% endif %}
+
+{% if (data[''] != null) %}
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+          Notify contact
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+    </li>
+
+    {% else %}
+    {% if (data[''] == "yes")  %}
+      <!-- If the user has started section 2 show: -->
+
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-which-org" aria-describedby="organisation-selected-status">
+            Notify contact
+          </a>
+        </span>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+        </li>
+        
+        {% else %}
+          {% if (data[''] == "yes")  %}
+            <!-- If the user has not started section 2 show -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
+                  Notify contact
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+            </li>
+
+            {% else %}
+
+            <!-- If the user has not finished section 1 show -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Notify contact
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Cannot start yet</strong>
+            </li>
+          {% endif %}
+
+    {% endif %}
+
+{% endif %}

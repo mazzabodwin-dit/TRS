@@ -24,7 +24,7 @@
       <a class="govuk-breadcrumbs__link" href="../cases/case">{{data['case-ref1']}}: {{data['case-name1']}}</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      Verify Registered Interest
+      Registration of Interest
     </li>
   </ol>
 </div>
@@ -35,69 +35,37 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-xl">
-      Verify Registered Interest
+      Registration of Interest
     </h1>
+
+    <!--
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
       </div>
       <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          Activate 
-        </p>
-        <p>Some words here 
+        <p><strong>{{data['user1']}}</strong> has registered interest on-behalf of <strong>{{data ['party1']}}</strong>
         </p>
       </div>
     </div>
+    -->
+    <p class="govuk-body govuk-!-margin-bottom-7">This form will be saved if you leave or sign out before you complete everything.
+    </p>
+    <div class="govuk-inset-text">
+      <strong>{{data['case-name1']}}</strong><br><strong>{{data['user1']}}</strong> has registered interest on-behalf of <strong>{{data ['party1']}}</strong>
+    </div>
+
+   
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
-          Verify who is registering interest
+          <span class="app-task-list__section-number">1. </span>Interested parties
         </h2>
         <ul class="app-task-list__items">
 
-  {% if (data[''] != null) %}
+          {% include "includes/task-list-caseworker-org.html" %}
 
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-      <a href="reginterest-which-org?which-org-started=yes" aria-describedby="organisation-selected-status">
-        Organisation details
-      </a>
-    </span>
-    <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
-  </li>
-
-  {% else %}
-  {% if (data['org-started'] == "yes")  %}
-    <!-- If the user has started section 2 show: -->
-
-      <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="reginterest-which-org?" aria-describedby="organisation-selected-status">
-          Organisation details
-        </a>
-      </span>
-      <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
-      </li>
-      
-      {% else %}
-      
-        <!-- If the user has not started section 2 show -->
-        <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
-            <a href="reginterest-which-org?org-started=yes" aria-describedby="organisation-selected-status">
-              Organisation details
-            </a>
-          </span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
-        </li>       
-
-  {% endif %}
-
-{% endif %}
 
           <!-- Test data -->
           <!--<div class="govuk-inset-text">
@@ -107,20 +75,10 @@
           </div> -->          
         </ul>
       </li>
-      <li>
-        <h2 class="app-task-list__section">
-          Registration documentation
-        </h2>
-        <ul class="app-task-list__items">
-
-          {% include "includes/task-list3.html" %}
-
-        </ul>
-      </li>
 
       <li>
         <h2 class="app-task-list__section">
-          Verify interest
+          <span class="app-task-list__section-number">2. </span>Submit approval
         </h2>
         <ul class="app-task-list__items">
 
@@ -133,7 +91,7 @@
           </div>
           -->
 
-          {% include "includes/task-list4.html" %}
+          {% include "includes/task-list-caseworker-verify.html" %}
 
         </ul>
       </li>
@@ -144,20 +102,26 @@
   </div>
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+      <h2 class="govuk-heading-m" id="subsection-title">Case overview</h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+            <strong>Case</strong><br>
+            {{data['case-name1']}}
           </li>  
-          
-          {% if data['case-ref'] != null %}
           <li>
-            <br>
-            <strong>Email the case team</strong>        
-            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-          </li>     
-          {% endif %}    
+            <strong>Applicant</strong><br>
+            {{data ['applicant1']}}           
+          </li> 
+          <li>
+            <strong>Registration of Interest for</strong><br>
+            {{data ['party1']}}
+          </li> 
+          <li>
+            <strong>User</strong><br>
+            {{data ['user1']}}
+          </li>
+
         </ul>
       </nav>
     </aside>
