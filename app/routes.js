@@ -178,7 +178,7 @@ router.get('/public-site/reg-interest/reginterest-upload', function (req, res) {
 // Caseworker
 
 // Headers
-// Setting a few specfic header to not use logged in user
+// Setting specfic headers to not use logged in user
 router.get('/caseworker/signin', function (req, res) {
   if (req.session.data['signin'] == null) {
     // store it in session
@@ -188,19 +188,36 @@ router.get('/caseworker/signin', function (req, res) {
 })
 
 // Run this code on reginterest-party-employer - which option is chosen:
-router.post('/reginterest-valid-employer-route', function (req, res) {
+router.post('/reginterest-primary-party-route', function (req, res) {
 
-  // Make a variable and give it the value from 'reginterest-valid-party'
-  var reginterestValidEmployer = req.session.data['reginterest-valid-employer']
+  // Make a variable and give it the value from 'reginterest-valid-primary'
+  var reginterestValidPrimary = req.session.data['reginterest-valid-primary']
 
   // Check whether the variable matches a condition
-  if (reginterestValidEmployer == "valid"){
+  if (reginterestValidPrimary == "valid"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?party-employer-complete=yes')
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?primary-party-complete=yes')
   } 
-  if (reginterestValidEmployer == "fraudulent"){
+  if (reginterestValidPrimary == "fraudulent"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-fraudulent')
+    res.redirect('/caseworker/reg-interest/reginterest-fraudulent?primary-party-complete=yes')
+  } 
+})
+
+// Run this code on reginterest-verify - which option is chosen:
+router.post('/reginterest-accept-on-case-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-party'
+  var reginterestAccept = req.session.data['reginterest-accecpt-on-case']
+
+  // Check whether the variable matches a condition
+  if (reginterestAccept == "accept"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?accept-on-case-complete=yes&accept-on-case-result=accept')
+  } 
+  if (reginterestAccept == "decline"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?accept-on-case-complete=yes&accept-on-case-result=reject')
   } 
 })
 

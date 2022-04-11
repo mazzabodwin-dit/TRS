@@ -39,7 +39,8 @@
 
 
     <h1 class="govuk-heading-xl">
-      Registration of Interest
+      
+      Verify primary party
     </h1>
 
     <!--
@@ -52,10 +53,10 @@
     <div class="card">
       <div class="container">
           <span class="app-task-list__task-name">
-          <h2 class="govuk-heading-m"><a Href="">{{data['party1']}}</a>  
+          <h2 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
           </h2> 
         </span>
-        <a href="#" alt="Remove Document 2 panel" class="app-task-list__tag remove-panel">Edit details
+        <a href="#" alt="Remove Document 2 panel" class="app-task-list__tag remove-panel govuk-link--no-visited-state">Edit details
         <span class="govuk-visually-hidden"> of {{data['party1']}}</span>
         </a>
 
@@ -91,7 +92,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Cases directly involved in: </dt>
             <dd class="govuk-summary-list__action">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="case-details govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     4 cases
@@ -112,26 +113,13 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Cases acting as a representative </dt>
             <dd class="govuk-summary-list__action">
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    2 cases
-                  </span>
-                  (1 verified)
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list">
-                    <li><a href="">Electric Bikes</a></li>
-                    <li><a href="">Good Foods Ltd</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified representative on this case" title="Verified representative on this case" width="32px"></li>
-                  </ul>
-                </div>
-              </details>
+              0 cases
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Users: </dt>
             <dd class="govuk-summary-list__action">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="case-details govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     1 user
@@ -149,15 +137,14 @@
       </div>
     </div>
 
-    <form action="/reginterest-valid-employer-route" method="post" id="reginterest-valid-employer-form">
-
+    <form action="/reginterest-primary-party-route" method="post" id="reginterest-primary-party-form">
     {% set validHTML %}
     Can you verify {{data['party1']}}?
     {% endset %}
 
       {{ govukRadios({
-        idPrefix: "reginterest-valid-employer",
-        name: "reginterest-valid-employer",
+        idPrefix: "reginterest-valid-primary",
+        name: "reginterest-valid-primary",
         fieldset: {
           legend: {
             html: validHTML,
@@ -169,12 +156,12 @@
           {
             value: "valid",
             text: "They are a valid organisation",
-            checked: checked("reginterest-valid-party", "valid")
+            checked: checked("reginterest-valid-primary", "valid")
           },
           {
             value: "fraudulent",
             text: "They are a fraudulent organisation",
-            checked: checked("reginterest-valid-party", "fraudulent")
+            checked: checked("reginterest-valid-primary", "fraudulent")
           }
         ]
       }) }}
@@ -197,11 +184,7 @@
           <li>
             <strong>Case</strong><br>
             {{data['case-name1']}}
-          </li>
-          <li>
-            <strong>Applicant</strong><br>
-            {{data ['applicant1']}}           
-          </li>   
+          </li> 
           <li>
             <strong>Registration of Interest for</strong><br>
             {{data ['party1']}}

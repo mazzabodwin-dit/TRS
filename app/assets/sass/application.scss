@@ -120,7 +120,7 @@ $govuk-assets-path: '/govuk/assets/';
   
   .container {
     padding: 20px 15px;
-    margin: 15px 0 30px 0;
+    margin-bottom: 30px;
   }
 
   .verified-check {
@@ -130,3 +130,9 @@ $govuk-assets-path: '/govuk/assets/';
   .verified-tick {
     margin: 0px 0px -4px 10px;
   }
+
+@media (min-width: 40.0625em) {
+  .case-details.govuk-details {
+      margin-bottom: 10px;
+  }
+}

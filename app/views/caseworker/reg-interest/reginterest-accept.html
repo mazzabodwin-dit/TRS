@@ -35,63 +35,46 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">2.  Submit approval</span>
+    <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
 
-    <h1 class="govuk-heading-xl">
-      Registration of Interest
-    </h1>
+    {% set validHTML %}
+    Do you want to accect this registration of interest?
+    {% endset %}
 
-    <p class="govuk-body govuk-!-margin-bottom-7">This form will be saved if you leave or sign out before you complete everything.
-    </p>
+      {{ govukRadios({
+        idPrefix: "reginterest-accecpt-on-case",
+        name: "reginterest-accecpt-on-case",
+        fieldset: {
+          legend: {
+            html: "Accept registration of interest?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "accept",
+            text: "Accept on to case",
+            checked: checked("reginterest-accecpt-on-case", "accept")
+          },
+          {
+            value: "decline",
+            text: "Decline",
+            checked: checked("reginterest-accecpt-on-case", "decline")
+          }
+        ]
+      }) }}
 
-    <!-- 
-    <div class="govuk-inset-text">
-      <strong>{{data['case-name1']}}</strong><br><strong>{{data['user1']}}</strong> has registered interest on-behalf of <strong>{{data ['party1']}}</strong>
-    </div>
-    -->
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="javascript: history.back()">Cancel</a>
+      </div>
 
-   
-    <ol class="app-task-list">
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span>Interested parties
-        </h2>
-        <ul class="app-task-list__items">
-
-          {% include "includes/task-list-caseworker-org.html" %}
-
-
-          <!-- Test data -->
-          <!--<div class="govuk-inset-text">
-            Test data: <br>
-            Who reg started: {{ data['which-org-started']}}<br> 
-            Type of reg org: {{ data['reginterest-what-org']}}
-          </div> -->          
-        </ul>
-      </li>
-
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span>Submit approval
-        </h2>
-        <ul class="app-task-list__items">
-
-          <!-- 
-          Test data 
-          <div class="govuk-inset-text">
-            Test data:<br>
-            Check started: {{ data['check-started']}}<br>
-            Upload complete: {{ data['upload-complete']}}
-          </div>
-          -->
-
-          {% include "includes/task-list-caseworker-accept.html" %}
-
-        </ul>
-      </li>
-    </ol>
-
-    <a class="govuk-link" href="../cases/case">Back to Case</a>
-
+    </form>
+    
   </div>
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
@@ -101,7 +84,7 @@
           <li>
             <strong>Case</strong><br>
             {{data['case-name1']}}
-          </li>  
+          </li>
           <li>
             <strong>Registration of Interest for</strong><br>
             {{data ['party1']}}
@@ -110,7 +93,7 @@
             <strong>Registered by</strong><br>
             {{data ['user1']}}
           </li>
-
+          
         </ul>
       </nav>
     </aside>
