@@ -1,31 +1,36 @@
-<nav id="app-navigation" class="app-navigation govuk-clearfix" role="navigation" aria-labelledby="app-navigation-heading">
-  <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
-  <ul class="app-navigation__list app-width-container govuk-width-container" id="nav">
+<nav id="case-navigation" class="case-navigation govuk-clearfix" role="navigation" aria-labelledby="case-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="case-navigation-heading">Case menu</h2>
+  <ul class="case-nav case-navigation__list case-width-container govuk-width-container" id="case-nav">
     
-    <li class="app-navigation__list-item " >
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/caseworker/dashboard">
-        Dashboard
+    <li class="case-navigation__list-item" >
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="/caseworker/cases/case">
+        Case: {{data['case-ref1']}} 
       </a>
     </li>
-    <li class="app-navigation__list-item app-navigation__list-item--current" >
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/caseworker/cases/cases-all">
-        Cases
+    <li class="case-navigation__list-item " >
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="">
+        Parties
       </a>
     </li>
-    <li class="app-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/caseworker/organisations/organisations-all">
-        Organisations
+    <li class="case-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="">
+        Submissions
       </a>
     </li>
-    <li class="app-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link"  href="/caseworker/users/users-all">
-        Users
+    <li class="case-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link"  href="">
+        Files
       </a>    
     </li>
-    <li class="app-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="#">
+    <li class="case-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="#">
+        Workflow
+      </a>
+    </li>
+    <li class="case-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="#">
         Notices
       </a>
-      </li>
+    </li>
   </ul>
 </nav>

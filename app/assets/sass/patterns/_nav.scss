@@ -66,12 +66,13 @@
  /* Caseworker Navigation */
 
  #nav .govuk-link {
-  color: #df3034;
+  color: #fff;
 }
 
 @media (min-width: 40.0625em) {
 .app-navigation {
     display: block;
+    float: left;
 }
 
 .app-navigation__list {
@@ -80,7 +81,7 @@
 }
 
 .app-navigation__list-item--current {
-  border-bottom: 4px solid #df3034;
+  border-bottom: 4px solid #fff;
 }
 
 .app-navigation__list-item {
@@ -96,20 +97,13 @@
 .app-navigation__link:not([hidden]) {
   display: inline;
 }
-}
 
-@media (min-width: 40.0625em) and (min-width: 40.0625em) {
-.app-navigation__list-item {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 2.63158;
-}
+  .app-navigation__list-item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 2.63158;
+  }
 
-.app-navigation__list-item {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 2.63158;
-}
 }
 
 .app-navigation__link:after, .app-navigation__button:after {
@@ -119,11 +113,6 @@ top: 0;
 right: 0; 
 bottom: 0;
 left: 0;
-}
-
-.app-navigation {
-border-bottom: 1px solid #b1b4b6;
-background-color: #f8f8f8;
 }
 
 .app-navigation__list {
@@ -161,3 +150,86 @@ text-decoration: none;
 .app-navigation [hidden], .app-navigation[hidden] {
 display: none;
 }
+
+/* Case Navigation */
+/* Case Navigation */
+/* Case Navigation */
+
+
+
+@media (min-width: 40.0625em) {
+
+.case-navigation {
+    display: block;
+}
+
+.case-navigation__list {
+  position: relative;
+  left: -15px;
+}
+
+.case-navigation__list-item--current {
+  border-bottom: 2px solid #1d70b8;
+}
+
+.case-navigation__list-item {
+  padding: 0 15px;
+  float: left;
+}
+
+.case-navigation__link:not([hidden]) {
+  display: inline;
+}
+
+.case-navigation__list-item {
+  line-height: 2.63158;
+}
+}
+
+
+.case-navigation__link:after, .case-navigation__button:after {
+content: "";
+position: absolute;
+top: 0;
+right: 0; 
+bottom: 0;
+left: 0;
+}
+
+.case-navigation {
+border-bottom: 1px solid #b1b4b6;
+}
+
+.case-navigation__list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-navigation__list-item {
+  position: relative;
+}
+
+
+.case-navigation__link, .case-navigation__button {
+margin: 15px 0;
+padding: 0;
+}
+
+.case-navigation__link:after, .case-navigation__button:after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+.case-navigation__button:not(:hover):not(:active) {
+text-decoration: none;
+}
+.case-navigation [hidden], .case-navigation[hidden] {
+display: none;
+}
+

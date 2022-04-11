@@ -10,43 +10,7 @@
 
 {% block header %}
  {% include "includes/caseworker-header.html" %}
- <nav id="case-navigation" class="case-navigation govuk-clearfix" role="navigation" aria-labelledby="case-navigation-heading">
-  <h2 class="govuk-visually-hidden" id="case-navigation-heading">Case menu</h2>
-  <ul class="case-nav case-navigation__list case-width-container govuk-width-container" id="case-nav">
-    
-    <li class="case-navigation__list-item case-navigation__list-item--current">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="/caseworker/cases/case">
-        Case: {{data['case-ref1']}} 
-      </a>
-    </li>
-    <li class="case-navigation__list-item " >
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="">
-        Parties
-      </a>
-    </li>
-    <li class="case-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="">
-        Submissions
-      </a>
-    </li>
-    <li class="case-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link"  href="">
-        Files
-      </a>    
-    </li>
-    <li class="case-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="#">
-        Workflow
-      </a>
-    </li>
-    <li class="case-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline case-navigation__link" href="#">
-        Notices
-      </a>
-    </li>
-  </ul>
-</nav>
-
+ {% include "includes/caseworker-nav-case.html" %}
 {% endblock %}
 
 {% block beforeContent %}

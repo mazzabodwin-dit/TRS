@@ -36,20 +36,68 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2.  Submit approval</span>
+    <h1 class="govuk-heading-xl"> 
+     Accept registration of interest
+    </h1>
     <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
-
-    {% set validHTML %}
-    Do you want to accect this registration of interest?
-    {% endset %}
 
       {{ govukRadios({
         idPrefix: "reginterest-accecpt-on-case",
         name: "reginterest-accecpt-on-case",
         fieldset: {
           legend: {
-            html: "Accept registration of interest?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            html: "What type of party is this organsiation in this case?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "domestic_producer",
+            text: "Domestic Producer",
+            checked: checked("reginterest-accecpt-on-case", "domestic_producer")
+          },
+          {
+            value: "importer",
+            text: "Importer",
+            checked: checked("reginterest-accecpt-on-case", "importer")
+          },
+          {
+            value: "exporter",
+            text: "Exporter",
+            checked: checked("reginterest-accecpt-on-case", "exporter")
+          },
+          {
+            value: "foreign_government",
+            text: "Foreign Government",
+            checked: checked("reginterest-accecpt-on-case", "foreign_government")
+          },
+          {
+            value: "product_user",
+            text: "Industrial User of Product",
+            checked: checked("reginterest-accecpt-on-case", "product_user")
+          },
+          {
+            value: "trade_body",
+            text: "Trade Body",
+            checked: checked("reginterest-accecpt-on-case", "trade_body")
+          },
+          {
+            value: "contributor",
+            text: "Contributor",
+            checked: checked("reginterest-accecpt-on-case", "contributor")
+          }
+        ]
+      }) }}
+        
+      {{ govukRadios({
+        idPrefix: "reginterest-accecpt-on-case",
+        name: "reginterest-accecpt-on-case",
+        fieldset: {
+          legend: {
+            html: "Do you want to accept this registration of interest?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
@@ -65,6 +113,8 @@
           }
         ]
       }) }}
+
+     
 
       <div class="govuk-button-group">
         {{ govukButton({

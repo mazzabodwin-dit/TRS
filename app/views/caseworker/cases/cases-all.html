@@ -10,7 +10,6 @@
 
 {% block header %}
  {% include "includes/caseworker-header.html" %}
- {% include "includes/caseworker-nav-case.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +19,7 @@
       <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      Cases
+      All cases
     </li>
   </ol>
 </div>
@@ -32,9 +31,11 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Cases
+        All cases
       </h1>
 
+      {% set openCasesHTML %}
+      
       <table class="govuk-table sortable" id="table-header" role="grid">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
         <thead class="govuk-table__head">
@@ -49,19 +50,16 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next action<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Due by <i class="Z-to-A"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next action <i class="sort-indicator"></i>
             </th>
           </tr>
         </thead>
@@ -88,9 +86,6 @@
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next action: </span>{{data['next-task1']}}
           </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>{{data['next-notice1']}}
-          </td>
         </tr>
   
         <tr class="govuk-table__row no-border">
@@ -114,9 +109,6 @@
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Issue questionnaires
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>26 April 2021
           </td>
         </tr>
   
@@ -142,9 +134,6 @@
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Initiation
           </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>15 Jan 2021
-          </td>
         </tr>
 
         <tr class="govuk-table__row no-border">
@@ -168,9 +157,6 @@
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Process questionnaires
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>15 Jan 2021
           </td>
         </tr>
 
@@ -196,12 +182,162 @@
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next action: </span>Finalise case information
           </td>
+        </tr>
+  
+      </table>  
+
+      {% endset %}
+
+
+      {% set archviedCasestHTML %}
+      
+      <table class="govuk-table sortable" id="table-header" role="grid">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Closed <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Expiry <i class="sort-indicator"></i>
+            </th>
+          </tr>
+        </thead>
+  
+        <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Due by: </span>01 Feb 2022
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AG0404</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Farnets from Fabon</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 April 2021
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Closed: </span>13 April 2022
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>13 April 2025
           </td>
         </tr>
   
-      </table>   
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AS3464</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Garnets from Gabon</a>
+          </td>              
+         <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>24 Dec 2020
+          </td> 
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Closed: </span>24 Dec 2022
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>24 Dec 2025
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">BA0005</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 Nov 2020
+          </td> 
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Closed: </span>13 Nov 2022
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>13 Nov 2025
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">SI943005</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Electric Bikes</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>07 Nov 2021
+          </td> 
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Closed: </span>07 Nov 2022
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>07 Nov 2025
+          </td>
+        </tr>
+  
+      </table>  
+
+      {% endset %}
+      
+      
+      {{ govukTabs ({
+        items: [
+        { 
+          label: "Open cases",
+          id: "open-cases",
+          panel: {
+            html: openCasesHTML
+          }
+        },
+        { 
+          label: "Archived cases",
+          id: "archvied-interest",
+          panel: {
+            html: archviedCasestHTML
+          }
+        }
+        ]
+      }) }}
       
       
     </div>
