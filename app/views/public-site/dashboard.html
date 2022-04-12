@@ -23,14 +23,53 @@
         Welcome
       </h1>
 
+      {% if (data['account-activated'] != "yes")  %}
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Activate your account
+            </p>
+            <p>You need to verify your email address before you can take part in a trade remedy investigation. <a href="account-activate-account">Learn how to activate your account</a>
+            </p>
+          </div>
+        </div>
+
+      {% endif %}
+
       <p>This is your dashboard to interact with the Trade Remedies Authority (TRA) on trade remedies investigations.</p>
 
       <p>Cases you are involved in will display on your dashboard below. Clicking on a case will allow you to see more information relating to the case as well as your interactions with TRA. </p>
 
-      {% include "includes/dashboard-activecase.html" %}
-      {% include "includes/dashboard-reginterest.html" %}
-      {% include "includes/dashboard-appsinprogress.html" %}
+      <!-- Active cases interest -->
+      <h2 class="govuk-heading-m">
+        Active cases
+      </h2>
+      <p>You have no active cases</p>
 
+      <!-- Reg interest -->
+      {% if (data['reginterest-started'] == "yes") and (data['reginterest-complete'] == null)  %}
+        <h2 class="govuk-heading-m">
+          Draft applications
+        </h2>
+        <p><a href="reg-interest/reginterest-tasks?case-ref=BA0005&">{{data ['case-ref']}} - {{data ['case-name']}}</a><br>
+        02 June 2022</p>
+      {% endif %}
+
+      <!-- Applications in progress -->
+      {% if (data['reginterest-started'] == "yes") and (data['reginterest-complete'] == null)  %}
+
+        <h2 class="govuk-heading-m">
+          Draft applications
+        </h2>
+        <p><a href="reg-interest/reginterest-tasks?case-ref=BA0005&">{{data ['case-ref']}} - {{data ['case-name']}}</a><br>
+        02 June 2022</p>
+      {% endif %}
 
       
     </div>
