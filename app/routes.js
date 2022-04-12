@@ -39,7 +39,7 @@ router.post('/createaccount-uk-reg-route', function (req, res) {
   // Check whether the variable matches a condition
   if (createaccountUKReg == "yes"){
     // Send user to next page
-    res.redirect('/public-site/create-account/createaccount-your-org-uk-alt')
+    res.redirect('/public-site/create-account/createaccount-your-org-uk-search')
   } else {
     // Send user to ineligible page
     res.redirect('/public-site/create-account/createaccount-your-org')
@@ -134,7 +134,7 @@ router.post('/reginterest-uk-reg-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestUKReg == "yes"){
     // Send user to next page
-    res.redirect('/public-site/reg-interest/reginterest-org-uk-search')
+    res.redirect('/public-site/reg-interest/reginterest-the-org-uk-search')
   } else {
     // Send user to no page
     res.redirect('/public-site/reg-interest/reginterest-the-org')

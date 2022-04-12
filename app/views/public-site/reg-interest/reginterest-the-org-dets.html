@@ -23,6 +23,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="reginterest-tasks?reginterest-what-org=new" method="post" id="reginterest-your-org-dets-form">  
+
         
         {% call govukFieldset({
           legend: {
@@ -31,6 +32,24 @@
             isPageHeading: true
           }
         }) %}
+
+        <p>Please provide as much of the following information as you can to help us verify the orgnaisation.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Organisation website (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "For example mycompany.com"
+          },
+          classes: "govuk-input--width-20",
+          id: "reginterest-web",
+          name: "reginterest-web",
+          type: "text",
+          value: data['reginterest-web']  
+        }) }}
 
         {{ govukInput({
           label: {
@@ -78,22 +97,6 @@
           name: "reginterest-duns",
           type: "text",
           value: data['reginterest-duns']  
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Organisation website (optional)",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          hint: {
-            text: "For example mycompany.com"
-          },
-          classes: "govuk-input--width-20",
-          id: "reginterest-web",
-          name: "reginterest-web",
-          type: "text",
-          value: data['reginterest-web']  
         }) }}
   
         <div class="govuk-button-group">
