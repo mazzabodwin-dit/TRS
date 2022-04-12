@@ -8,40 +8,24 @@
 
 {% block header %}
  {% include "includes/header-caseworker.html" %}
- {% include "includes/caseworker-nav-case.html" %}
 {% endblock %}
 
 {% block beforeContent %}
- <div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../cases-all">Cases</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../cases/case">{{data['case-ref1']}}: {{data['case-name1']}}</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      Registration of Interest
-    </li>
-  </ol>
-</div>
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">1.  Interested parties</span>
-
-
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">1.  Review interested parties</span>
     <h1 class="govuk-heading-xl">
-      
       Verify primary party
     </h1>
+  </div>
+
+    <div class="govuk-grid-column-two-thirds">
 
     <!--
     <div class="govuk-inset-text">
@@ -170,7 +154,7 @@
         {{ govukButton({
           text: "Continue"
         }) }}    
-        <a class="govuk-link" href="javascript: history.back()">Cancel</a>
+        <a class="govuk-link" href="javascript: history.back()">Back</a>
       </div>
 
     </form>
@@ -178,22 +162,21 @@
   </div>
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Case overview</h2>
+      <h2 class="govuk-heading-m" id="subsection-title">Registration of Interest</h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
             <strong>Case</strong><br>
             {{data['case-name1']}}
-          </li> 
+          </li>
           <li>
-            <strong>Registration of Interest for</strong><br>
+            <strong>Primary party</strong><br>
             {{data ['party1']}}
           </li> 
           <li>
             <strong>Registered by</strong><br>
             {{data ['user1']}}
-          </li>
-          
+          </li>          
         </ul>
       </nav>
     </aside>

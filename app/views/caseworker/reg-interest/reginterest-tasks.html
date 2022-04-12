@@ -8,40 +8,23 @@
 
 {% block header %}
  {% include "includes/header-caseworker.html" %}
- {% include "includes/caseworker-nav-case.html" %}
 {% endblock %}
 
 {% block beforeContent %}
- <div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../cases-all">Cases</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../cases/case">{{data['case-ref1']}}: {{data['case-name1']}}</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      Registration of Interest
-    </li>
-  </ol>
-</div>
-
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
-      Registration of Interest
+      Confirm parties in case
     </h1>
+  </div>
 
-    <p class="govuk-body govuk-!-margin-bottom-7">This form will be saved if you leave or sign out before you complete everything.
-    </p>
+    <div class="govuk-grid-column-two-thirds">
 
     <!-- 
     <div class="govuk-inset-text">
@@ -53,7 +36,7 @@
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span>Interested parties
+          <span class="app-task-list__section-number">1. </span>Review interested parties
         </h2>
         <ul class="app-task-list__items">
 
@@ -71,7 +54,7 @@
 
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span>Submit approval
+          <span class="app-task-list__section-number">2. </span>Confirm
         </h2>
         <ul class="app-task-list__items">
 
@@ -95,7 +78,7 @@
   </div>
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Case overview</h2>
+      <h2 class="govuk-heading-m" id="subsection-title">Registration of Interest</h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
@@ -103,7 +86,7 @@
             {{data['case-name1']}}
           </li>  
           <li>
-            <strong>Registration of Interest for</strong><br>
+            <strong>Primary party</strong><br>
             {{data ['party1']}}
           </li> 
           <li>

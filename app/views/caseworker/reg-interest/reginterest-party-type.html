@@ -17,41 +17,61 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2.  Confirm decision</span>
     <h1 class="govuk-heading-xl"> 
-     Accept parties on case
+     Accept registration of interest
     </h1>
-  </div>
-  <div class="govuk-grid-column-two-thirds">
-
     <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
-        
+
       {{ govukRadios({
         idPrefix: "reginterest-accecpt-on-case",
         name: "reginterest-accecpt-on-case",
         fieldset: {
           legend: {
-            html: "Do you want to accept this registration of interest?",
+            html: "What type of party is this organsiation in this case?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
           {
-            value: "accept",
-            text: "Accept on to case",
-            checked: checked("reginterest-accecpt-on-case", "accept")
+            value: "domestic_producer",
+            text: "Domestic Producer",
+            checked: checked("reginterest-accecpt-on-case", "domestic_producer")
           },
           {
-            value: "decline",
-            text: "Decline",
-            checked: checked("reginterest-accecpt-on-case", "decline")
+            value: "importer",
+            text: "Importer",
+            checked: checked("reginterest-accecpt-on-case", "importer")
+          },
+          {
+            value: "exporter",
+            text: "Exporter",
+            checked: checked("reginterest-accecpt-on-case", "exporter")
+          },
+          {
+            value: "foreign_government",
+            text: "Foreign Government",
+            checked: checked("reginterest-accecpt-on-case", "foreign_government")
+          },
+          {
+            value: "product_user",
+            text: "Industrial User of Product",
+            checked: checked("reginterest-accecpt-on-case", "product_user")
+          },
+          {
+            value: "trade_body",
+            text: "Trade Body",
+            checked: checked("reginterest-accecpt-on-case", "trade_body")
+          },
+          {
+            value: "contributor",
+            text: "Contributor",
+            checked: checked("reginterest-accecpt-on-case", "contributor")
           }
         ]
-      }) }}
-
-     
+      }) }}   
 
       <div class="govuk-button-group">
         {{ govukButton({
