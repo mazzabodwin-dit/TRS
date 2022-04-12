@@ -18,18 +18,18 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">2.  Confirm decision</span>
+    <span class="govuk-caption-xl">1.  Review interested parties</span>
     <h1 class="govuk-heading-xl"> 
-     Accept registration of interest
+      Review primary party
     </h1>
-    <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
+    <form action="reginterest-tasks?primary-party-complete=yes" method="post" id="reginterest-accept-on-case-form">
 
       {{ govukRadios({
         idPrefix: "reginterest-accecpt-on-case",
         name: "reginterest-accecpt-on-case",
         fieldset: {
           legend: {
-            html: "What type of party is this organsiation in this case?",
+            html: "What type of party is this organsiation acting as in this case?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }

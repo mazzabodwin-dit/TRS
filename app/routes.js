@@ -196,7 +196,7 @@ router.post('/reginterest-primary-party-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestValidPrimary == "valid"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?primary-party-complete=yes')
+    res.redirect('/caseworker/reg-interest/reginterest-party-type')
   } 
   if (reginterestValidPrimary == "fraudulent"){
     // Send user to next page
