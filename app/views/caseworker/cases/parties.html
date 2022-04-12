@@ -6,21 +6,21 @@
   Proto: Cases: Steel plate from Russia – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set bodyClasses = 'caseworker' %}
+{% set bodyClasses = 'caseworker cases-nav party-nav' %}
+
 
 {% block header %}
  {% include "includes/header-caseworker.html" %}
- {% include "includes/caseworker-nav-case.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-
 {% endblock %}
 
 {% block content %}
 {% set bodyClasses = 'caseworker' %}
 
   <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         {{data['case-ref1']}}: {{data['case-name1']}}
@@ -36,16 +36,25 @@
             <li>
               Next task: {{data['next-task1']}}
             </li>
-            <li>
-              Next notice due: {{data['next-notice1']}}
-            </li>
           </ul>
       </aside>
     </div>
-  </div>
 
-  <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-full">
+      {% include "includes/caseworker-nav-case.html" %}
+<br>
+
+      <!-- {{data['case-ref1']}}
+      {{data['case-name1']}}
+      {{data['case-type1']}}
+      {{data['case-typeabr1']}}
+      {{data['party1']}}
+      {{data['user1']}}
+      {{data['submission1']}}
+      {{data['register-date1']}} -->
+
+     
 
       <ul class="govuk-list">
         <li>
@@ -57,295 +66,6 @@
         <li>Created: {{data['created1']}}
         </li>
       </ul>
-      <!-- {{data['case-ref1']}}
-      {{data['case-name1']}}
-      {{data['case-type1']}}
-      {{data['case-typeabr1']}}
-      {{data['party1']}}
-      {{data['user1']}}
-      {{data['submission1']}}
-      {{data['register-date1']}} -->
-
-      {% set submissionsHTML %}
-      <p>There are <strong>5</strong> sumbissions waiting for review</p>
-
-      <table class="govuk-table sortable" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
-              <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
-            </th>
-          </tr>
-        </thead>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from Tabon Holdings</span></a>
-          </td>    
-        </tr>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Farnets First Ltd</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">JessRabbit</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Questionnaire
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>13 April 2021
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from Farnets First Ltd</span></a>
-          </td>    
-        </tr>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">ArnieSwarts</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>3rd party invite
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
-          </td>  
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from Glorious Gabon Plc</span></a>
-          </td>             
-        </tr>
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['user1']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from {{data['party1']}}
-            </span></a>
-          </td>    
-        </tr>
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">TEA ADVISORY LIMITED</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">PGTips</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Assign user to case
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from TEA ADVISORY LIMITED</span></a>
-          </td>               
-        </tr>
-      </table>   
-      {% endset %}
-      
-      {% set newPartyHTML %}
-      <p>There are <strong>4</strong> unverified parties</p>
-      <table class="govuk-table sortable" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
-              <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
-            </th>
-          </tr>
-        </thead>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">Tabon Holdings</span></a>
-          </td>
-        </tr>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['user1']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
-          </td>   
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="../reg-interest/reginterest-tasks" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">{{data['party1']}}
-            </span></a>
-          </td>        
-        </tr> 
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">TEA ADVISORY LIMITED</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">PGTips</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Assign user to case
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">TEA ADVISORY LIMITED</span></a>
-          </td>               
-        </tr>
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">ArnieSwarts</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>3rd party invite
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
-          </td>  
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
-          </td>             
-        </tr>
-
-      </table>   
-      {% endset %}
-
-        {% set submissionsPublishHTML %}
-        <p>There is <strong>1</strong> party waiting for verification</p>
-        <table class="govuk-table sortable" id="table-header" role="grid">
-          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submisson <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Requested <i class="sort-indicator"></i>
-              </th>
-            </tr>
-          </thead>
-
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
-            </td>
-          </tr>
-        </table>   
-      {% endset %}
-
-      {{ govukTabs ({
-        items: [
-        { 
-          label: "Submissions to review (5)",
-          id: "new-submissions",
-          panel: {
-            html: submissionsHTML
-          }
-        },
-        { 
-          label: "Parties to confirm (4)",
-          id: "new-party",
-          panel: {
-            html: newPartyHTML
-          }
-        },
-        { 
-          label: "Submissions to publish (1)",
-          id: "submissions-publish",
-          panel: {
-            html: submissionsPublishHTML
-          }
-        }
-        ]
-      }) }}
       
       
       

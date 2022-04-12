@@ -20,11 +20,16 @@
 {% set bodyClasses = 'caseworker' %}
 
   <div class="govuk-grid-row">
-
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         {{data['case-ref1']}}: {{data['case-name1']}}
       </h1>
+      {% include "includes/caseworker-nav-case.html" %}
+
+    </div>
+
+    <!--
+    <div class="govuk-grid-column-two-thirds">
     </div>
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
@@ -39,13 +44,14 @@
           </ul>
       </aside>
     </div>
+  </div>
 
+  -->
 
     <div class="govuk-grid-column-full">
-      {% include "includes/caseworker-nav-case.html" %}
-<br>
-<br>
+      <br>
 
+     
       <!-- {{data['case-ref1']}}
       {{data['case-name1']}}
       {{data['case-type1']}}

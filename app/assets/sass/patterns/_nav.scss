@@ -80,17 +80,25 @@
   left: -15px;
 }
 
-.app-navigation__list-item--current {
-  border-bottom: 4px solid #fff;
+/* Main nav active states*/
+.dash-nav .app-navigation__list-item--dash {
+  border-bottom: 3px solid #fff;
 }
+
+.cases-nav .app-navigation__list-item--cases {
+  border-bottom: 3px solid #fff;
+}
+
+/*end */
+
 
 .app-navigation__list-item {
   font-family: "GDS Transport",arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 700;
   box-sizing: border-box;
-  height: 3.125rem;
-  padding: 0 15px;
+  height: 2.4rem;
+  margin: 0 15px 10px 15px;
   float: left;
 }
 
@@ -168,12 +176,36 @@ display: none;
   left: -15px;
 }
 
-.case-navigation__list-item--current {
+/* Case active nav */
+.case-nav .case-navigation__list-item--case {
   border-bottom: 2px solid #1d70b8;
 }
 
+.party-nav .case-navigation__list-item--party {
+  border-bottom: 2px solid #1d70b8;
+}
+
+.submission-nav .case-navigation__list-item--submission {
+  border-bottom: 2px solid #1d70b8;
+}
+
+.submission-nav .case-navigation__list-item--file {
+  border-bottom: 2px solid #1d70b8;
+}
+
+.workflow-nav .case-navigation__list-item--workflow {
+  border-bottom: 2px solid #1d70b8;
+}
+
+.notice-nav .case-navigation__list-item--notice {
+  border-bottom: 2px solid #1d70b8;
+}
+
+/*end*/
+
+
 .case-navigation__list-item {
-  padding: 0 15px;
+  margin: 0 15px;
   float: left;
 }
 
