@@ -2,7 +2,7 @@
 {% if (data['download-complete'] == "yes")  %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-      <a href="reginterest-download" aria-describedby="download-status">
+      <a href="reginterest-download" class="govuk-link--no-visited-state" aria-describedby="download-status">
         Download registration documentation
       </a>
     </span>
@@ -14,7 +14,7 @@
     {% if (data['download-started'] == "yes")  %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-download" aria-describedby="download-status">
+          <a href="reginterest-download" class="govuk-link--no-visited-state" aria-describedby="download-status">
             Download registration documentation
           </a>
         </span>
@@ -26,7 +26,7 @@
         {% if (data['reginterest-what-org'] != null)  %}
         <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="reginterest-download?download-started=yes" aria-describedby="download-status">
+              <a href="reginterest-download?download-started=yes" class="govuk-link--no-visited-state" aria-describedby="download-status">
                 Download registration documentation
               </a>
             </span>
@@ -52,7 +52,7 @@
 {% if (data['upload-complete'] == "yes")  %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-      <a href="reginterest-upload2" aria-describedby="upload-status">
+      <a href="reginterest-upload2" class="govuk-link--no-visited-state" aria-describedby="upload-status">
         Upload registration documentation
       </a>
     </span>
@@ -64,7 +64,7 @@
     {% if (data['upload-started'] == "yes")  %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-upload2" aria-describedby="upload-status">
+          <a href="reginterest-upload2" class="govuk-link--no-visited-state" aria-describedby="upload-status">
             Upload registration documentation
           </a>
         </span>
@@ -76,7 +76,7 @@
         {% if (data['download-complete'] == "yes")  %}
           <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="reginterest-upload2?upload-started=yes" aria-describedby="upload-status">
+                <a href="reginterest-upload2?upload-started=yes" class="govuk-link--no-visited-state" aria-describedby="upload-status">
                   Upload registration documentation
                 </a>
               </span>

@@ -2,7 +2,7 @@
 {% if (data['check-complete'] == "yes")  %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-      <a href="reginterest-check" aria-describedby="check-status">
+      <a href="reginterest-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
         Check and submit
       </a>
     </span>
@@ -14,7 +14,7 @@
     {% if (data['check-started'] == "yes")  %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-check" aria-describedby="check-status">
+          <a href="reginterest-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
             Check and submit
           </a>
         </span>
@@ -26,7 +26,7 @@
         {% if (data['check-started'] == null) and (data['upload-complete'] == "yes") %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="reginterest-check?check-started=yes" aria-describedby="check-status">
+              <a href="reginterest-check?check-started=yes" class="govuk-link--no-visited-state" aria-describedby="check-status">
                 Check and submit
               </a>
             </span>

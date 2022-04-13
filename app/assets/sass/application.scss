@@ -23,11 +23,11 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/table";
 
 /* CHANGING THE WIDTH and HEADER COLOUR BETWEEN PUBLIC AND CASEWORKER */
-.caseworker .govuk-header__container {
+.caseworker-red .govuk-header__container {
     border-bottom: 10px solid #df3034;
   }
 
-.caseworker .govuk-width-container {
+.caseworker-width .govuk-width-container {
  max-width: 1020px;
 }
 
