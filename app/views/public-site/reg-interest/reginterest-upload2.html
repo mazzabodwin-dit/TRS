@@ -29,7 +29,7 @@
     
     <ol class="app-task-list" id="docs1">
       <li>
-        <ul class="app-task-list__items govuk-!-margin-bottom-0">
+        <ul class="uploads app-task-list__items govuk-!-margin-bottom-0">
           <li class="upload-header app-task-list__item doc-header">
             <span class="app-task-list__task-name">
               <h2 class="govuk-heading-s">
@@ -47,7 +47,7 @@
       {% if (data['add-doc-button'] == "yes")  %}
       <ol class="app-task-list" id="docs2">
         <li id="doc2-panel">
-          <ul class="app-task-list__items govuk-!-margin-bottom-0">
+          <ul class="uploads app-task-list__items govuk-!-margin-bottom-0">
             <li class="upload-header app-task-list__item doc-header">
               <span class="app-task-list__task-name">
                 <h2 class="govuk-heading-s">
@@ -55,9 +55,9 @@
                 </h2>
               </span>
               
-              <a href="reginterest-upload2?add-doc-button=no" alt="Remove Document 2 panel" class="app-task-list__tag remove-panel">
+              <a href="reginterest-upload2?add-doc-button=no" alt="Delete panel" title="Delete panel" class="app-task-list__tag remove-panel">
                 <img src="/public/images/cancel-icon.png" width="32px">
-              <span class="govuk-visually-hidden">Remove Document 2 panel</span>
+              <span class="govuk-visually-hidden">Delete panel</span>
               </a>
             </li>
             {% include "includes/uploads-doc2.html" %}    

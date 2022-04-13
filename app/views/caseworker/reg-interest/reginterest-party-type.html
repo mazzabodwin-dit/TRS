@@ -17,11 +17,15 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">1.  Review interested parties</span>
     <h1 class="govuk-heading-xl"> 
       Review primary party
     </h1>
+  </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
     <form action="reginterest-tasks?primary-party-complete=yes" method="post" id="reginterest-accept-on-case-form">
 
       {{ govukRadios({

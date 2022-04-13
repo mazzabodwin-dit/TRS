@@ -72,27 +72,6 @@
         
     </div>
 
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
-            </li>  
-            
-            {% if data['case-ref'] != null %}
-            <li>
-              <br>
-              <strong>Email the case team</strong>        
-              <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-            </li>     
-            {% endif %}    
-          </ul>
-        </nav>
-      </aside>
-    </div>
-
   </div>
 {% endblock %}
 
