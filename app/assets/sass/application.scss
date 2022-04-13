@@ -14,12 +14,13 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/related-items";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
 @import "patterns/blue-panel";
 @import "patterns/nav";
 @import "patterns/password";
 @import "patterns/table";
-
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 /* CHANGING THE WIDTH and HEADER COLOUR BETWEEN PUBLIC AND CASEWORKER */
 .caseworker .govuk-header__container {
@@ -105,8 +106,14 @@ $govuk-assets-path: '/govuk/assets/';
     padding: 0px;
     margin: 0px;
     border-top: 0px solid blue;
-
   }
+
+  /* Task list when being used for other things */
+@media (min-width: 40.0625em) {
+  .uploads.app-task-list__items {
+      padding-left: 0px;
+  }}
+  
 
 /* Caseworker - Address card  */
 /* 
