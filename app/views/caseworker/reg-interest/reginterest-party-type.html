@@ -29,8 +29,8 @@
     <form action="reginterest-tasks?primary-party-complete=yes" method="post" id="reginterest-accept-on-case-form">
 
       {{ govukRadios({
-        idPrefix: "reginterest-accecpt-on-case",
-        name: "reginterest-accecpt-on-case",
+        idPrefix: "reginterest-party-type",
+        name: "reginterest-party-type",
         fieldset: {
           legend: {
             html: "What type of party is this organsiation acting as in this case?",
@@ -40,39 +40,39 @@
         },
         items: [
           {
-            value: "domestic_producer",
+            value: "Domestic Producer",
             text: "Domestic Producer",
-            checked: checked("reginterest-accecpt-on-case", "domestic_producer")
+            checked: checked("reginterest-party-type", "Domestic Producer")
           },
           {
-            value: "importer",
+            value: "Importer",
             text: "Importer",
-            checked: checked("reginterest-accecpt-on-case", "importer")
+            checked: checked("reginterest-party-type", "Importer")
           },
           {
-            value: "exporter",
+            value: "Exporter",
             text: "Exporter",
-            checked: checked("reginterest-accecpt-on-case", "exporter")
+            checked: checked("reginterest-party-type", "Exporter")
           },
           {
-            value: "foreign_government",
+            value: "Foreign Government",
             text: "Foreign Government",
-            checked: checked("reginterest-accecpt-on-case", "foreign_government")
+            checked: checked("reginterest-party-type", "Foreign Government")
           },
           {
-            value: "product_user",
+            value: "Industrial User of Product",
             text: "Industrial User of Product",
-            checked: checked("reginterest-accecpt-on-case", "product_user")
+            checked: checked("reginterest-party-type", "Industrial User of Product")
           },
           {
-            value: "trade_body",
+            value: "Trade Body",
             text: "Trade Body",
-            checked: checked("reginterest-accecpt-on-case", "trade_body")
+            checked: checked("reginterest-party-type", "Trade Body")
           },
           {
-            value: "contributor",
+            value: "Contributor",
             text: "Contributor",
-            checked: checked("reginterest-accecpt-on-case", "contributor")
+            checked: checked("reginterest-party-type", "Contributor")
           }
         ]
       }) }}   

@@ -77,7 +77,7 @@ router.get('/public-site/create-account/createaccount-account-complete', functio
  
 })
 
-// Register interest
+// Register interest - public
 // Run this code during reginterest-which-org - If there is not an org name already use a default one
 router.get('/public-site/reg-interest/reginterest-which-org', function (req, res) {
 
@@ -204,7 +204,7 @@ router.post('/reginterest-primary-party-route', function (req, res) {
   } 
 })
 
-// Run this code on reginterest-verify - which option is chosen:
+// Run this code on reginterest-confirm - which option is chosen:
 router.post('/reginterest-accept-on-case-route', function (req, res) {
 
   // Make a variable and give it the value from 'reginterest-valid-party'
@@ -213,11 +213,11 @@ router.post('/reginterest-accept-on-case-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestAccept == "accept"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?accept-on-case-complete=yes&accept-on-case-result=accept')
+    res.redirect('/caseworker/reg-interest/reginterest-complete?accept-on-case-complete=yes&accept-on-case-result=accept')
   } 
   if (reginterestAccept == "decline"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?accept-on-case-complete=yes&accept-on-case-result=reject')
+    res.redirect('/caseworker/reg-interest/reginterest-complete?accept-on-case-complete=yes&accept-on-case-result=reject')
   } 
 })
 

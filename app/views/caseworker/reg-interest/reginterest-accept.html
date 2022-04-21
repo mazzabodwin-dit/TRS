@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Verify Registered Interest – GOV.UK Trade Remedies Prototype
+  Proto: Confirm Registered Interest – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -40,12 +40,12 @@
         items: [
           {
             value: "accept",
-            text: "Accept on to case",
+            text: "Accept party on to case",
             checked: checked("reginterest-accecpt-on-case", "accept")
           },
           {
             value: "decline",
-            text: "Decline",
+            text: "Decline party",
             checked: checked("reginterest-accecpt-on-case", "decline")
           }
         ]
