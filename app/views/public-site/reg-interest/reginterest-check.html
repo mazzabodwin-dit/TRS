@@ -33,12 +33,7 @@
           {{data ['case-ref']}} - {{data ['case-name']}} <br>
           {{data ['case-type']}}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change
-            <span class="govuk-visually-hidden"> case</span>
-          </a>
-        </dd>
+        
       </div>
     </dl>
 
@@ -52,7 +47,7 @@
           {% if (data['reginterest-what-org'] == "my-org") %}
             My employer<br><br>
               {% else %}
-              Another organisation.<br>
+              An organisation I represent<br>
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -75,7 +70,7 @@
               Postcode/ zip<br>
               Country
             {% else %}
-              Another Org Ltd<br>
+              {{ data['reginterest-existing-org'] }}<br>
               Company number: 595934925<br>
               Address<br>
               Postcode/ zip<br>
@@ -114,8 +109,11 @@
           Downloaded documentation
         </dt>
         <dd class="govuk-summary-list__value">
-          document 1.docx<br>
-          download 2.docx
+          {% if (data['reginterest-what-org'] != "my-org") %}
+          letter-of-authority.docx
+          {% endif %}
+          document1.docx<br>
+          download2.docx
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="#">
@@ -124,13 +122,34 @@
           </a>
         </dd>
       </div>
+
+      {% if (data['reginterest-what-org'] != "my-org") %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Confidential uploads
+          Uploaded Letter of Authority
         </dt>
         <dd class="govuk-summary-list__value">
-          confidentialdocument 1.docx<br>
-          confidentialdocument 2.docx
+          loa.docx<br>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> uploaded documents</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Uploaded registration documentation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          confidentialdocument1.docx<br>
+          unconfidentialdocument1.docx<br><br>
+
+          confidentialdocument2.docx
+          unconfidentialdocument2.docx
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="#">
@@ -139,21 +158,6 @@
           </a>
         </dd>
       </div>   
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unconfidential uploads
-        </dt>
-        <dd class="govuk-summary-list__value">
-          unconfidentialdocument 3.docx<br>
-          unconfidentialdocument 4.docx
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change
-            <span class="govuk-visually-hidden"> uploaded documents</span>
-          </a>
-        </dd>
-      </div>    
     </dl>
 
     <h2 class="govuk-heading-m">Now send your application</h2>

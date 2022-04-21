@@ -33,13 +33,17 @@
         <form action="reginterest-tasks?download-complete=no" method="post" id="reginterest-which-org-form">
     {% endif %}
 
-      <p>Download the documentation below and fill it out to participate in this investigation. Once you have completed it you will need to upload it.</p>
-      <p>Information that you submit needs to be uploaded in two formats: confidential and non-confidential documents. The non-confidential documents are displayed on public file.</p>
+    <p>Download the documentation below and complete it out to request participaione in this case. </p>
+
+
+    <!-- Show this if they are acting on behalf of a 3rd party -->
+    {% if (data['reginterest-what-org'] == "existing") or (data['reginterest-what-org'] == "new")  %}
+      <p>The Letter of Authority gives you permission to act on behalf of <strong>ALUMINUM ELECTRICS LIMITED</strong> in this case only.</p>
+    {% endif %}
+
+    <p>Registration pre-sampling documents need to be uploaded in two formats: confidential and non-confidential documents. The non-confidential documents are displayed on public file.</p>
     
-      <!-- Show this if they are acting on behalf of a 3rd party -->
-      {% if (data['reginterest-what-org'] == "existing") or (data['reginterest-what-org'] == "new")  %}
-        <p>The letter of authority gives you permission to act on behalf of {{data['reginterest-existing-org']}} in this case only.</p>
-      {% endif %}
+
 
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">Documentation to download</caption>

@@ -24,7 +24,36 @@
 
     <form action="reginterest-tasks?reginterest-what-org=existing" method="post" id="reginterest-existing-org-form">
 
-      <div class="govuk-form-group">
+      {{ govukRadios({
+        idPrefix: "reginterest-existing-org",
+        name: "reginterest-existing-org",
+        fieldset: {
+          legend: {
+            html: "Who are you representing?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "ALUMINUM TRADE LTD",
+            text: "ALUMINUM TRADE LTD",
+            checked: checked("reginterest-existing-org", "ALUMINUM TRADE LTD")
+          },
+          {
+            value: "ALUMINUM ELECTRICS LIMITED",
+            text: "ALUMINUM ELECTRICS LIMITED",
+            checked: checked("reginterest-existing-org", "ALUMINUM ELECTRICS LIMITED")
+          },
+          {
+            value: "ALUMINUM SQUIRREL LIMITED",
+            text: "ALUMINUM SQUIRREL LIMITED",
+            checked: checked("reginterest-existing-org", "ALUMINUM SQUIRREL LIMITED")
+          }
+        ]
+      }) }} 
+
+     <!-- <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl" for="search-reg-org">
             Who are you representing?
@@ -60,15 +89,17 @@
         update();
     </script>
 
+    -->
+
       {{ govukDetails({
         summaryText: "The organisation is not listed",
-        html: ' <p class="govuk-body">This is only a list of organisations that you have previously represented using the Trade Remedy system. If the organisation has not been added to your account it will not appear here.</p>
+        html: ' <p class="govuk-body">This is only a list of organisations that you have previously represented using the Trade Remedy System. If the organisation has not been added to your account it will not appear here.</p>
         <p>To add a new organisation to your account please return to the previous page and select "New" organisation.</p>'
       }) }}
     
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "I confirm these are the correct details"
+          text: "Continue"
         }) }}
         <a class="govuk-link" href="javascript: history.back()">Back</a>
       </div>
