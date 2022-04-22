@@ -152,3 +152,76 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 
+/* Uploads test*/
+/* Uploads test*/
+/* Uploads test*/
+/* Uploads test*/
+/* Uploads test*/
+
+
+.upload-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  transition: 0.3s;
+  background-color: #f8f8f8;
+  height: 200px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.upload-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* Thisis just to show the hover state when drag and drop is working*/
+.upload-card-hover {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #f8f8f8;
+  height: 200px;
+}
+
+/* Add some padding inside the card container */
+.upload-container {
+  text-align: center;
+  padding: 10px 5px 10px 5px;
+  margin-bottom: 30px;
+}
+
+/* Doing clever things with the file browser button  https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way   
+https://css-tricks.com/drag-and-drop-file-uploading/  */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+/* /* "hand" cursor */
+.inputfile + label {
+	cursor: pointer; 
+}
+
+.inputfile + label * {
+	pointer-events: none;
+}
+
+
+/* Hiding the input itself in a correct manner was one thing, the other is indicating when the element is focused, i.e. rendering .inputfile:focus on the label:*/
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+  input.upload-button {    
+    display: initial;
+ }
+
+ .remove-doc-link {
+  margin-top: -40px;
+}
+ 
+
+
+

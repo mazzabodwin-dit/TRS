@@ -25,16 +25,36 @@
       Upload documentation
     </h1>
      
-    <p>Information that you submit needs to be uploaded in two formats: <strong>confidential</strong> and <strong>non-confidential</strong> documents.</p>
-    <p>Maximum file size is 30MB</p>
+    <p>Please upload the following documents. Maximum file size is 30MB</p>
+
+    <!-- Add LOA -->
+    {% if (data['loa-download'] == "yes")  %}
     
+      <ol class="app-task-list" id="docs1">
+        <li>
+          <ul class="uploads app-task-list__items govuk-!-margin-bottom-0">
+            <li class="upload-header app-task-list__item doc-header">
+              <span class="app-task-list__task-name">
+                <h2 class="govuk-heading-s">
+                  Letter of Authority
+                </h2>
+              </span>
+            </li>
+            {% include "includes/uploads-loa.html" %}         
+          </ul>
+        </li>
+      </ol>
+      <br>
+    {% endif %}
+
+       <!-- Add Reg doc -->
     <ol class="app-task-list" id="docs1">
       <li>
         <ul class="uploads app-task-list__items govuk-!-margin-bottom-0">
           <li class="upload-header app-task-list__item doc-header">
             <span class="app-task-list__task-name">
               <h2 class="govuk-heading-s">
-                Document 1
+                Registration Document
               </h2>
             </span>
           </li>
@@ -46,13 +66,14 @@
       <!-- Add another document panel -->
 
       {% if (data['add-doc-button'] == "yes")  %}
+      <br>
       <ol class="app-task-list" id="docs2">
         <li id="doc2-panel">
           <ul class="uploads app-task-list__items govuk-!-margin-bottom-0">
             <li class="upload-header app-task-list__item doc-header">
               <span class="app-task-list__task-name">
                 <h2 class="govuk-heading-s">
-                  Document 2
+                  Registration Document 2
                 </h2>
               </span>
               
