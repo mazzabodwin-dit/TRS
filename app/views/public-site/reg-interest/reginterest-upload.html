@@ -63,132 +63,83 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
-          Registration Document
-        </h2>
-      </div>
-    </div>
-    
-    <div class="govuk-grid-row">    
-      <div class="govuk-grid-column-one-half">
-        <div class="upload-card">
-          <div class="upload-container">
-            <br>
-            <h3 class="govuk-heading-s">
-              Private file
-            </h3>
-            <p><img src="/public/images/download.png"></p>
-            <p><input type="file" name="public-file" id="public-file" class="inputfile" />
-            <label for="public-file" class="govuk-link">Choose a file</label> or drag it here</p>
-          </div>
-        </div>
-      </div>
-    
-      <div class="govuk-grid-column-one-half">
-        <div class="upload-card">
-          <div class="upload-container">
-            <br>
-            <h3 class="govuk-heading-s">
-              Public file
-            </h3>
-            <p><img src="/public/images/download.png"></p>
-            <p><input type="file" name="public-file" id="public-file" class="inputfile" />
-            <label for="public-file" class="govuk-link">Choose a file</label> or drag it here</p>
-          </div>
-        </div>
-      </div>
-    </div><br><br>
-
-
-      <!-- Add another document panel -->
-
-      {% if (data['add-doc-button'] == "yes")  %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">
-            Registration Document 2
+              Registration Document
           </h2>
-          
-          <a href="reginterest-upload?add-doc-button=no" alt="Delete panel" title="Delete panel" class="app-task-list__tag remove-doc-link">
-            <img src="/public/images/cancel-icon.png" width="32px">
-          <span class="govuk-visually-hidden">Delete panel</span>
-          </a>
-        </div>
       </div>
-      
-      <div class="govuk-grid-row">    
-        <div class="govuk-grid-column-one-half">
-          <div class="upload-card">
-            <div class="upload-container">
-              <br>
-              <h3 class="govuk-heading-s">
-                Private file
-              </h3>
-              <p><img src="/public/images/download.png"></p>
-              <p><input type="file" name="public-file" id="public-file" class="inputfile" />
-              <label for="public-file" class="govuk-link">Choose a file</label> or drag it here</p>
-            </div>
-          </div>
-        </div>
-      
-        <div class="govuk-grid-column-one-half">
-          <div class="upload-card">
-            <div class="upload-container">
-              <br>
-              <h3 class="govuk-heading-s">
-                Public file
-              </h3>
-              <p><img src="/public/images/download.png"></p>
-              <p><input type="file" name="public-file" id="public-file" class="inputfile" />
-              <label for="public-file" class="govuk-link">Choose a file</label> or drag it here</p>
-            </div>
-          </div>
-        </div>
-      </div><br><br>
-      {% endif %} 
-    </ol>
+  </div>
 
-    <!-- Add another document button -->
-   
-    <div id="add-doc2-button">
-      <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2" id="add-doc-button" data-module="govuk-button" onclick="showDoc2Panel()">
-      Add another document
+  <div class="govuk-grid-row">
+      {% include 'includes/drag_drop_upload_private.html' %}
+      {% include 'includes/drag_drop_upload_public.html' %}
+  </div>
+  <br><br>
+
+
+  <!-- Add another document panel -->
+
+  {% if (data['add-doc-button'] == "yes") %}
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-m">
+                  Registration Document 2
+              </h2>
+
+              <a href="reginterest-upload?add-doc-button=no" alt="Delete panel" title="Delete panel"
+                 class="app-task-list__tag remove-doc-link">
+                  <img src="/public/images/cancel-icon.png" width="32px">
+                  <span class="govuk-visually-hidden">Delete panel</span>
+              </a>
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          {% include 'includes/drag_drop_upload_private.html' %}
+          {% include 'includes/drag_drop_upload_public.html' %}
+      </div>
+
+      <br><br>
+  {% endif %}
+  </ol>
+
+  <!-- Add another document button -->
+
+  <div id="add-doc2-button">
+      <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2" id="add-doc-button"
+              data-module="govuk-button" onclick="showDoc2Panel()">
+          Add another document
       </button>
-    </div>
+  </div>
 
   <script type="text/javascript">
-      function showDoc2Panel() {
-      location.href = "reginterest-upload?add-doc-button=yes";
+    function showDoc2Panel () {
+      location.href = 'reginterest-upload?add-doc-button=yes'
     }
   </script>
-        
 
-    <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">
+
+  <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">
 
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue"
-        }) }}    
-        <a class="govuk-link" href="reginterest-tasks">Back</a>
+          {{ govukButton({
+text: "Continue"
+}) }}
+          <a class="govuk-link" href="reginterest-tasks">Back</a>
       </div>
 
-    </form>
+  </form>
 
-    <!-- Test data 
-    <div class="govuk-inset-text">
-      Test data: <br>
-      Upload started:{{ data['upload-started']}}<br>
-      Type of org: {{data['reginterest-what-org']}}<br>
-      Upload1 complete: {{data['upload1-complete']}}<br>
-      Upload1 started: {{data['upload1-started']}}
-    </div>
 
-    -->
-    
+
+</div>
 
 
 {% endblock %}
 
 {% block footer %}
-{%include "includes/footer.html" %}
+{% include "includes/footer.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/drag_and_drop.js"></script>
 {% endblock %}
