@@ -19,19 +19,24 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">3.  Registration documentation</span>
     <h1 class="govuk-heading-xl">
       Upload documentation
     </h1>
      
     <p>Please upload the following documents. Maximum file size is 30MB</p>
+    <p><a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#how-we-handle-confidential-information" target="_blank">Creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
+
+  </div>
+</div>
+ 
 
     <!-- Add LOA -->
     {% if (data['reginterest-what-org'] == "existing") or (data['reginterest-what-org'] == "new")  %}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">
           Letter of Authority
         </h2>
@@ -44,7 +49,7 @@
           <div class="upload-container">
             <br>
             <h3 class="govuk-heading-s">
-              Private version
+              Private file
             </h3>
             <p><img src="/public/images/download.png"></p>
             <p><input type="file" name="public-file" id="public-file" class="inputfile" />
@@ -70,7 +75,7 @@
           <div class="upload-container">
             <br>
             <h3 class="govuk-heading-s">
-              Private version
+              Private file
             </h3>
             <p><img src="/public/images/download.png"></p>
             <p><input type="file" name="public-file" id="public-file" class="inputfile" />
@@ -84,7 +89,7 @@
           <div class="upload-container">
             <br>
             <h3 class="govuk-heading-s">
-              Public version
+              Public file
             </h3>
             <p><img src="/public/images/download.png"></p>
             <p><input type="file" name="public-file" id="public-file" class="inputfile" />
@@ -117,7 +122,7 @@
             <div class="upload-container">
               <br>
               <h3 class="govuk-heading-s">
-                Private version
+                Private file
               </h3>
               <p><img src="/public/images/download.png"></p>
               <p><input type="file" name="public-file" id="public-file" class="inputfile" />
@@ -131,7 +136,7 @@
             <div class="upload-container">
               <br>
               <h3 class="govuk-heading-s">
-                Public version
+                Public file
               </h3>
               <p><img src="/public/images/download.png"></p>
               <p><input type="file" name="public-file" id="public-file" class="inputfile" />
@@ -180,33 +185,6 @@
 
     -->
     
-
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#how-we-handle-confidential-information" target="_blank">Creating confidential and non-confidential documents (opens in a new window or tab)</a>
-          </li>  
-          <li>
-            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#about-our-questionnaires" target="_blank">About our questionnaires (opens in a new window or tab)</a>
-          </li> 
-          <li>
-            <br>
-            <strong>Email the case team</strong>        
-            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-          </li>          
-        </ul>
-      </nav>
-    </aside>
-
-  </div>
-
-</div>
 
 
 {% endblock %}
