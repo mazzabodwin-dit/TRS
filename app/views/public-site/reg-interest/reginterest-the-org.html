@@ -22,16 +22,17 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-    <form action="reginterest-the-org-dets" method="post" id="reginterest-the-org-form">          
+    <form action="reginterest-the-org-dets" method="post" id="reginterest-the-org-form"> 
+      
       {% call govukFieldset({
         legend: {
-          text: "Organisation  details",
+          text: "Your employer",
           classes: "govuk-fieldset__legend--xl",
           isPageHeading: true
         }
       }) %}
 
-      <p>This is the company that you have been asked to represent. You should have permission to register interest in this case on behalf of this company.</p>
+      <p>This is who employs you directly and not an organisation you are representing. You should have permission to create this account on behalf of your employer.</p>
 
       {{ govukInput({
         label: {
@@ -46,49 +47,61 @@
         type: "text"
       }) }}
 
+     
+      {% call govukFieldset({
+        legend: {
+          text: "What is your organisations address?",
+          classes: "govuk-fieldset__legend--s",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>This should be the place where your main office is located</p>
+
+        {{ govukTextarea({
+          label: {
+            text: "Your street address",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "reginterest-org-address",
+          name: "reginterest-org-address",
+          value: data['reginterest-org-address'],
+          type: "text"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or Zipcode",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-5",
+          id: "reginterest-org-zip",
+          name: "reginterest-org-zip",
+          value: data['reginterest-org-zip'],
+          type: "text"
+        }) }}
+      
+      {% endcall %}
+
+      {% include "includes/country-list.html" %}
       {{ govukInput({
         label: {
           text: "Registered company number",
           classes: "govuk-label--s",
           isPageHeading: false
         },
+        hint: {
+          text: "This is a unique number that is assigned to companies registered in their home country - not all organisations are registered in this way."
+        },
         classes: "govuk-input--width-10",
         id: "reginterest-reg-org-number",
         name: "reginterest-reg-org-number",
         value: data['reginterest-reg-org-number'],
         type: "text"
-      }) }} 
-
-      {{ govukTextarea({
-        label: {
-          text: "The organisations address",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        hint: {
-          text: "This is typically where the main office is located"
-        },
-        classes: "govuk-input--width-20",
-        id: "reginterest-org-address",
-        name: "reginterest-org-address",
-        value: data['reginterest-reg-org-address'],
-        type: "text"
       }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Postcode or Zipcode",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        classes: "govuk-input--width-5",
-        id: "reginterest-org-zip",
-        name: "reginterest-org-zip",
-        value: data['reginterest-reg-org-zip'],
-        type: "text"
-      }) }}
-
-      {% include "includes/country-list.html" %}
+      
+      {% endcall %} 
 
       <div class="govuk-button-group">
         {{ govukButton({
@@ -96,8 +109,6 @@
         }) }}    
         <a class="govuk-link" href="javascript: history.back()">Back</a>
       </div>
-
-      {% endcall %} 
 
       </form>
 

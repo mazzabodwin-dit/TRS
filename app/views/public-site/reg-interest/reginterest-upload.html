@@ -28,7 +28,7 @@
     <p>Please upload the following documents. Maximum file size is 30MB</p>
 
     <!-- Add LOA -->
-    {% if (data['loa-download'] == "yes")  %}
+    {% if (data['reginterest-what-org'] == "existing") or (data['reginterest-what-org'] == "new")  %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
