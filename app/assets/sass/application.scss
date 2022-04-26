@@ -163,32 +163,33 @@ $govuk-assets-path: '/govuk/assets/';
   /* Add shadows to create the "card" effect */
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   transition: 0.3s;
-  background-color: #f8f8f8;
-  height: 200px;
+  background-color: white;
+  margin-bottom: 20px;
+  height: 150px
 }
 
 /* On mouse-over, add a deeper shadow */
 .upload-card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+
 }
 
 /* Thisis just to show the hover state when drag and drop is working*/
 .upload-card-hover {
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
   transition: 0.3s;
-  background-color: #f8f8f8;
-  height: 200px;
+  background-color: govuk-colour("light-grey");
 }
 
 /* Add some padding inside the card container */
 .upload-container {
   text-align: center;
-  padding: 10px 5px 10px 5px;
-  margin-bottom: 30px;
+  padding: 20px 10px 10px 10px;
 }
 
 /* Doing clever things with the file browser button  https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way   
 https://css-tricks.com/drag-and-drop-file-uploading/  */
+
 .inputfile {
 	width: 0.1px;
 	height: 0.1px;
@@ -218,13 +219,25 @@ https://css-tricks.com/drag-and-drop-file-uploading/  */
    display: initial;
  }
 
- .remove-doc-link {
-  margin-top: -50px;
+.remove-doc-panel {
+  float: right;
+  top: -225px;
+  position: relative;
 }
+
 
 #input-js {
   margin: auto;
   max-width: 250px;
+}
+
+.row-colour {
+  background-color:  govuk-colour("light-grey")	;
+  padding-top: 15px;
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+  border: dashed 1px govuk-colour("mid-grey");
 }
  
 

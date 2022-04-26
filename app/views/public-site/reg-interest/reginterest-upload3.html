@@ -48,7 +48,7 @@
         <div class="row-colour">
           <div class="govuk-grid-column-one-half">      
             {% set id="5" %}
-            {% include 'includes/drag_drop_upload_private1.html' %}
+            {% include 'includes/drag_drop_upload_private.html' %}
 
           </div>
         </div>
@@ -71,18 +71,12 @@
     <div class="govuk-grid-column-full">
       <div class="row-colour">
         <div class="govuk-grid-column-one-half">
-          <h3 class="govuk-heading-s govuk-!-text-align-centre">
-            Private file
-        </h3>
           {% set id="1" %}
-          {% include 'includes/drag_drop_upload_private1.html' %}
+          {% include 'includes/drag_drop_upload_private.html' %}
         </div>
         <div class="govuk-grid-column-one-half">
-          <h3 class="govuk-heading-s govuk-!-text-align-centre">
-            Public file
-        </h3>
           {% set id="2" %}
-          {% include 'includes/drag_drop_upload_public1.html' %}
+          {% include 'includes/drag_drop_upload_public.html' %}
         </div>
       </div>
     </div>
@@ -95,28 +89,20 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           <div class="row-colour">
-             
-             <div class="govuk-grid-column-one-half">
-              <h3 class="govuk-heading-s govuk-!-text-align-centre">
-                Private file
-              </h3>
+            <div class="govuk-grid-column-one-half">
               {% set id="3" %}
-              {% include 'includes/drag_drop_upload_private1.html' %}
+              {% include 'includes/drag_drop_upload_private.html' %}
             </div>
             <div class="govuk-grid-column-one-half">
-              <h3 class="govuk-heading-s govuk-!-text-align-centre">
-                Public file
-              </h3>
               {% set id="4" %}
-              {% include 'includes/drag_drop_upload_public1.html' %}
+              {% include 'includes/drag_drop_upload_public.html' %}
             </div>
-            <div class="remove-doc-panel">
-              <a href="#doc-2" alt="Delete panel" title="Delete panel" onclick="hideDoc2Panel()"  >
-                <img src="/public/images/cancel-icon.png" width="32px">
-               <span class="govuk-visually-hidden">Delete panel</span>
-              </a>
-            </div> 
-           
+          </div>
+          <div class=" remove-panel-link">
+            <a href="reginterest-upload?add-doc-button=no" alt="Delete panel" title="Delete panel" >
+              <img src="/public/images/cancel-icon.png" width="32px">
+             <span class="govuk-visually-hidden">Delete panel</span>
+            </a>
           </div>
         </div>
       </div>
