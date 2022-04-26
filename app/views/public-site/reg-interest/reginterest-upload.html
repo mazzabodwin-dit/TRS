@@ -63,7 +63,7 @@
           <h2 class="govuk-heading-m">
               Registration Documents
           </h2>
-          <p>For each document you upload, you need to add two versions; a private file that will likely contain confidential information, and a Public version with all confidential information redacted.</p>
+          <p>For each document you upload, you need to add two versions; a Private version that will likely contain confidential information, and a Public version with all confidential information redacted.</p>
       </div>
     </div>
 
@@ -162,7 +162,40 @@
 {% endblock %}
 
 {% block footer %}
-{% include "includes/footer.html" %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+        },
+        {
+        },
+        {
+          href: "reginterest-upload-flow.html",
+          text: "Uploading flow"
+        }
+      ]
+    }
+  }) }}
 {% endblock %}
 
 {% block pageScripts %}
