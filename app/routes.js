@@ -187,20 +187,37 @@ router.get('/caseworker/signin', function (req, res) {
   res.render('caseworker/signin')
 })
 
-// Run this code on reginterest-party-employer - which option is chosen:
+// Run this code on reginterest-primary-party - which option is chosen:
 router.post('/reginterest-primary-party-route', function (req, res) {
 
   // Make a variable and give it the value from 'reginterest-valid-primary'
   var reginterestValidPrimary = req.session.data['reginterest-valid-primary']
 
   // Check whether the variable matches a condition
-  if (reginterestValidPrimary == "valid"){
+  if (reginterestValidPrimary == "verified"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-party-type')
   } 
-  if (reginterestValidPrimary == "fraudulent"){
+  if (reginterestValidPrimary == "unverified"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-fraudulent?primary-party-complete=yes')
+    res.redirect('/caseworker/reg-interest/reginterest-unverified?primary-party-complete=yes')
+  } 
+})
+
+// Run this code on reginterest-representative-party - which option is chosen:
+router.post('/reginterest-representative-party-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-primary'
+  var reginterestValidRepresentative = req.session.data['reginterest-valid-representative']
+
+  // Check whether the variable matches a condition
+  if (reginterestValidRepresentative == "verified"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?representative-party-complete=yes')
+  } 
+  if (reginterestValidRepresentative == "unverified"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-unverified?representative-party-complete=yes')
   } 
 })
 
@@ -218,6 +235,31 @@ router.post('/reginterest-accept-on-case-route', function (req, res) {
   if (reginterestAccept == "decline"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-complete?accept-on-case-complete=yes&accept-on-case-result=reject')
+  } 
+})
+
+// Run this code on reginterest-loa-existing - which option is chosen:
+router.post('/reginterest-loa-existing-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-primary'
+  var reginterestAuthChooseContact = req.session.data['reginterest-auth-choose-contact']
+
+  // Check whether the variable matches a condition
+  if (reginterestAuthChooseContact == "Simon Williams"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
+  } 
+  if (reginterestAuthChooseContact == "Robbie Cortina"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
+  } 
+  if (reginterestAuthChooseContact == "Tina Fray"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
+  } 
+  if (reginterestAuthChooseContact == "new-contact"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-loa-new')
   } 
 })
 

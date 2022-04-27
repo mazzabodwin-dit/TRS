@@ -114,16 +114,17 @@ $govuk-assets-path: '/govuk/assets/';
       padding-left: 0px;
   }}
   
+/* Caseworker */
+/* Caseworker */
+/* Caseworker */
+/* Caseworker */
+/* Caseworker */
+/* Caseworker */
+/* Caseworker */
+/* Caseworker */
+
 
 /* Caseworker - Address card  */
-/* 
-
-@media (min-width: 40.0625em) {
-  .case-details.govuk-details {
-      margin-bottom: 10px;
-  }
-}
-*/
 
 .address-card {
   /* Add shadows to create the "card" effect */
@@ -149,6 +150,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 .verified-tick {
   margin: 0px 0px -4px 10px;
+}
+
+/* Reg interest inset-text */
+
+.govuk-inset-text__reginterest {
+  margin-top: 0px;
 }
 
 

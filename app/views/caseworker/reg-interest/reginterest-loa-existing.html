@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Confirm parties on to case – GOV.UK Trade Remedies Prototype
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">1.  Review interested parties</span>
+    <h1 class="govuk-heading-xl">
+      Letter of Authority contact
+    </h1>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <p><a href="" class="govuk-link--no-visited-state"target="_blank">View the Letter of Authority (opens in a new tab)</a></p>
+      <p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
+    </div>
+
+    <form action="/reginterest-loa-existing-route" method="post" id="reginterest-loa-existing-form">
+
+      {{ govukRadios({
+        idPrefix: "reginterest-auth-choose-contact",
+        name: "reginterest-auth-choose-contact",
+        fieldset: {
+          legend: {
+            text: "Who is the authorised contact (signatory) in the Letter of Authority",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+               
+        items: [
+          {
+            value: "Robbie Cortina",
+            text: "Robbie Cortina - ortina@steeluk.org",
+            checked: checked("reginterest-auth-choose-contact", "Robbie Cortina")
+          },
+          {
+            value: "Simon Williams",
+            text: "Simon Williams - s.williams@steeluk.org",
+            checked: checked("reginterest-auth-choose-contact", "Simon Williams")
+          },
+          {
+            value: "Tina Fray",
+            text: "Tina Fray - tina.fray@steeluk.org",
+            checked: checked("reginterest-auth-choose-contact", "Tina Fray")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "new-contact",
+            text: "Add new contact",
+            checked: checked("reginterest-auth-choose-contact", "new-contact")
+          }
+        ]
+      }) }}  
+
+      
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="javascript: history.back()">Back</a>
+      </div>
+
+    </form>
+    
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Registration of Interest</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <strong>Case</strong><br>
+            {{data['case-ref1']}}: {{data['case-name1']}}
+          </li>
+          <li>
+            <strong>Primary party</strong><br>
+            {{data ['party1']}}
+          </li> 
+
+          <li>
+            <strong>Representative party</strong><br>
+            {{data ['representative1']}}
+          </li>
+
+          <li>
+            <strong>Registered by</strong><br>
+            {{data ['user1']}}
+          </li>          
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+
