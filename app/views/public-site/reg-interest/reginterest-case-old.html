@@ -23,12 +23,10 @@
     <span class="govuk-caption-xl">1. Which case are you interested in?</span>
     <h1 class="govuk-heading-xl">Find Trade Remedies case</h1>
     <h2 class="govuk-heading-m">{{data['case-name']}}</h2>
-    {{ govukWarningText({
-      text: "The registration due date for this case has passed",
-      iconFallbackText: "Warning"
-    }) }}
+    
     <p>Registration due date: {{data['register-date']}}</p>
-    <p>If you continue to register your interest in this case you may not be eligible to receive a questionnaire and your opportunities to participate in the process may be restricted.</p>
+    <p>The registration due date for this case has passed so your opportunities to participate in the process may be limited.</p>
+    <p> You are still welcome to register your interest in this case.</p>
 
    
 
