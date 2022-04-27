@@ -33,16 +33,13 @@
         <form action="reginterest-tasks?download-complete=no" method="post" id="reginterest-which-org-form">
     {% endif %}
 
-    <p>Download the documentation below and complete it out to request participaione in this case. </p>
+    <p>Download the documentation below and complete it to request participation in this case. </p>
 
 
     <!-- Show this if they are acting on behalf of a 3rd party -->
     {% if (data['reginterest-what-org'] == "existing") or (data['reginterest-what-org'] == "new")  %}
       <p>The Letter of Authority gives you permission to act on behalf of <strong>ALUMINUM ELECTRICS LIMITED</strong> in this case only.</p>
-    {% endif %}
-
-    <p>Registration pre-sampling documents need to be uploaded in two formats: confidential and non-confidential documents. The non-confidential documents are displayed on public file.</p>
-    
+    {% endif %}    
 
 
       <table class="govuk-table">
@@ -72,37 +69,6 @@
 
     </form>
 
-    <!-- Test data 
-    <div class="govuk-inset-text">
-      Test data: <br>
-      Download started:{{ data['download-started']}}<br>
-      Type of org: {{data['reginterest-what-org']}}<br>
-      Downloaded sample doc: {{data['sample-download']}}<br>
-      Downloaded loa doc: {{data['loa-download']}}
-    </div>
-    -->
-
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#how-we-handle-confidential-information" target="_blank">Creating confidential and non-confidential documents (opens in a new window or tab)</a>
-          </li>  
-          <li>
-            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#about-our-questionnaires" target="_blank">About our questionnaires (opens in a new window or tab)</a>
-          </li>   
-          <li>
-            <br>
-            <strong>Email the case team</strong>        
-            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-          </li>        
-        </ul>
-      </nav>
-    </aside>
   </div>
 
 </div>
