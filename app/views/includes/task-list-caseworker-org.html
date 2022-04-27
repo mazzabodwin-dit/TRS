@@ -57,7 +57,7 @@
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
         <a href="reginterest-primary-party" class="govuk-link--no-visited-state" aria-describedby="primary-party-status">
-          Review primary party
+          Verify primary party
         </a>
       </span>
       <strong class="govuk-tag app-task-list__tag" id="primary-party-status">Complete</strong>
@@ -70,7 +70,7 @@
         <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-primary-party" class="govuk-link--no-visited-state" aria-describedby="primary-party-status">
-            Review primary party
+            Verify primary party
           </a>
         </span>
         <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="primary-party-status">In progress</strong>
@@ -81,7 +81,7 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="reginterest-primary-party?primary-party-started=yes" class="govuk-link--no-visited-state" aria-describedby="primary-party-status">
-                Review primary party
+                Verify primary party
               </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="primary-party-status">Not started yet</strong>
@@ -95,25 +95,25 @@
 
 {% if (data['third-party'] == "yes") %}
 
-  {% if (data[''] != null) %}
+  {% if (data['loa-complete'] != null) %}
 
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-            LOA
+          <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+            Letter of Authority contact
           </a>
         </span>
         <strong class="govuk-tag app-task-list__tag" id="organisation-loa-status">Complete</strong>
       </li>
 
       {% else %}
-      {% if (data[''] == "yes")  %}
+      {% if (data['loa-started'] == "yes")  %}
         <!-- If the user has started section 2 show: -->
 
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-              LOA
+            <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+              Letter of Authority contact
             </a>
           </span>
           <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-loa-status">In progress</strong>
@@ -123,8 +123,8 @@
             <!-- If the user has not started section 2 show -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-                  LOA
+                <a href="reginterest-loa-existing?loa-started=yes" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+                  Letter of Authority contact
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
@@ -140,25 +140,25 @@
 
 {% if (data['third-party'] == "yes") %}
 
-  {% if (data[''] != null) %}
+  {% if (data['representative-party-complete'] != null) %}
 
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-third-party" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
-            Review representative party
+          <a href="reginterest-representative-party" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
+            Verify representative party
           </a>
         </span>
         <strong class="govuk-tag app-task-list__tag" id="third-party-status">Complete</strong>
       </li>
 
       {% else %}
-      {% if (data[''] == "yes")  %}
+      {% if (data['rep-party-started'] == "yes")  %}
         <!-- If the user has started section 2 show: -->
 
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="reginterest-third-party" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
-              Review representative party
+            <a href="reginterest-representative-party" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
+              Verify representative party
             </a>
           </span>
           <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="third-party-status">In progress</strong>
@@ -168,8 +168,8 @@
             <!-- If the user has not started section 2 show -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="reginterest-third-party" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
-                  Review representative party
+                <a href="reginterest-representative-party?rep-party-started=yes" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
+                  Verify representative party
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="third-party-status">Not started yet</strong>

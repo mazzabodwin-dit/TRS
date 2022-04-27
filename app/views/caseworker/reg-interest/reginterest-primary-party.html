@@ -21,31 +21,22 @@
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">1.  Review interested parties</span>
     <h1 class="govuk-heading-xl">
-      Review primary party
+      Verify primary party
     </h1>
   </div>
 
   <div class="govuk-grid-column-two-thirds">
 
-    <!-- 
-      <div class="govuk-inset-text">
-      <strong>{{data['party1']}}</strong> has been confirmed on 4 previous cases. <br>
-
-      The last confirmation was on 21 Feb 2020 by Tim Head
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <strong>{{data['party1']}}</strong> has been verified on 1 case <br>
+      The last confirmation was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
     </div>
-    -->
+   
   
     <div class="address-card">
       <div class="address-container">
         <h2 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
         </h2> 
-        
-        <!-- 
-        <a href="#" alt="Remove Document 2 panel" class="app-task-list__tag remove-panel govuk-link--no-visited-state">Edit details
-        <span class="govuk-visually-hidden"> of {{data['party1']}}</span>
-        </a> 
-        -->
-
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Address:</dt>
@@ -55,13 +46,13 @@
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Registered number: </dt>
+            <dt class="govuk-summary-list__key">Company number: </dt>
             <dd class="govuk-summary-action">068482855 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px">
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__action">www.steeluk.com</dd>
+            <dd class="govuk-summary-list__action"><a href="www.steeluk.com" target="_blank">www.steeluk.com</a></dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">EORI: </dt>
@@ -81,21 +72,17 @@
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Directly involved: 3 cases <img src="/public/images/verfied-tick.png" class="verified-check" alt="Confirmed party on 2 cases" title="Confirmed party on 2 cases" width="32px">
+                Primary party: 1 case
               </span>
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
-                <li><a href="cases/case" class="govuk-link--no-visited-state">AD3456: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Confirmed party" title="Confirmed party" width="32px"> 12 April 2021</li>
-                <li><a href="cases/case" class="govuk-link--no-visited-state">AD245: Gems from Guatamala</a> (Exporter)</li>
-                <li><a href="cases/case" class="govuk-link--no-visited-state">AD245: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Confirmed party" title="Confirmed party" width="32px"> 01 Jul 2020</li>
-
+                <li><a href="cases/case" class="govuk-link--no-visited-state">AD3456: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 12 April 2021</li>
               </ul>
-          </div>
-        </details>
+            </div>
           </details>
         </div>
-
+<!-- Hasn't acted as a rep in this scenario so hiding
         <div>
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -110,7 +97,7 @@
             </div>
           </details>
         </div>
-
+-->
         <div>
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -120,21 +107,21 @@
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
-                <li><a href="">BobHoskins (bobhoskins@steeluk.com)</a></li>
+                <li><a href="">Robbie Cortina - ortina@steeluk.org</a></li>
+                <li><a href="">Simon Williams - s.williams@steeluk.org</a></li>
+                <li><a href="">Tina Fray - tina.fray@steeluk.org</a></li>
               </ul>
             </div>
           </details>
-        </div>
-
-          
-        
+        </div>   
       </div>
     </div>
 
     <form action="/reginterest-primary-party-route" method="post" id="reginterest-primary-party-form">
-    {% set validHTML %}
-    Can you verify {{data['party1']}}?
-    {% endset %}
+
+      {% set validHTML %}
+        Can you verify {{data['party1']}}?
+      {% endset %}
 
       {{ govukRadios({
         idPrefix: "reginterest-valid-primary",
@@ -148,14 +135,14 @@
         },
         items: [
           {
-            value: "valid",
-            text: "They are a valid organisation",
-            checked: checked("reginterest-valid-primary", "valid")
+            value: "verified",
+            text: "Able to verify party",
+            checked: checked("reginterest-valid-primary", "verified")
           },
           {
-            value: "fraudulent",
-            text: "They are a fraudulent organisation",
-            checked: checked("reginterest-valid-primary", "fraudulent")
+            value: "unverified",
+            text: "Unable to verify party",
+            checked: checked("reginterest-valid-primary", "unverified")
           }
         ]
       }) }}
@@ -183,6 +170,14 @@
             <strong>Primary party</strong><br>
             {{data ['party1']}}
           </li> 
+
+          {% if data['third-party'] == "yes" %}
+          <li>
+            <strong>Representative party</strong><br>
+            {{data ['representative1']}}
+          </li>
+          {% endif %} 
+
           <li>
             <strong>Registered by</strong><br>
             {{data ['user1']}}

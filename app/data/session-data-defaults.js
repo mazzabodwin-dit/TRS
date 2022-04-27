@@ -31,6 +31,7 @@ module.exports = {
   "applicant1": "Steelman Plc",
   "created1": "12 May 2022",
   "party1": "Steel UK",
+  "representative1": "Blue Steel Lawyers",
   "user1": "BobHoskins",
   "submission1": "Registration of Interest",
   "register-date1": "01 April 2021",
