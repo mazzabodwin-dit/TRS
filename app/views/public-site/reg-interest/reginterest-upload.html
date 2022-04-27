@@ -48,7 +48,7 @@
         <div class="row-colour">
           <div class="govuk-grid-column-full">      
             {% set id="5" %}
-            {% include 'includes/drag_drop_upload_private1.html' %}
+            {% include 'includes/drag_drop_upload.html' %}
 
           </div>
         </div>
@@ -67,26 +67,28 @@
       </div>
     </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <div class="row-colour">
-        <div class="govuk-grid-column-one-half">
-          <h3 class="govuk-heading-s govuk-!-text-align-centre">
-            Private file
-        </h3>
-          {% set id="1" %}
-          {% include 'includes/drag_drop_upload_private1.html' %}
-        </div>
-        <div class="govuk-grid-column-one-half">
-          <h3 class="govuk-heading-s govuk-!-text-align-centre">
-            Public file
-        </h3>
-          {% set id="2" %}
-          {% include 'includes/drag_drop_upload_public1.html' %}
+    <div id="doc-1">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="row-colour">
+            <div class="govuk-grid-column-one-half">
+              <h3 class="govuk-heading-s govuk-!-text-align-centre">
+                Private file
+            </h3>
+              {% set id="1" %}
+              {% include 'includes/drag_drop_upload.html' %}
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <h3 class="govuk-heading-s govuk-!-text-align-centre">
+                Public file
+            </h3>
+              {% set id="2" %}
+              {% include 'includes/drag_drop_upload.html' %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Add another document panel -->
 
@@ -101,18 +103,18 @@
                 Private file
               </h3>
               {% set id="3" %}
-              {% include 'includes/drag_drop_upload_private1.html' %}
+              {% include 'includes/drag_drop_upload.html' %}
             </div>
             <div class="govuk-grid-column-one-half">
               <h3 class="govuk-heading-s govuk-!-text-align-centre">
                 Public file
               </h3>
               {% set id="4" %}
-              {% include 'includes/drag_drop_upload_public1.html' %}
+              {% include 'includes/drag_drop_upload.html' %}
             </div>
             <div class="remove-doc-panel">
               <a href="#doc-2" alt="Delete panel" title="Delete panel" onclick="hideDoc2Panel()"  class="govuk-link govuk-link--no-visited-state" >
-               Delete panel
+               Remove panel
               </a>
             </div> 
            
@@ -153,6 +155,15 @@
       var x = document.getElementById("doc-2");
       if (x.style.display === "block") {
         x.style.display = "none";
+      } 
+    }
+
+    function removeDoc() {
+      var x = document.getElementById("complete-upload-1");
+      var y = document.getElementById("waiting-upload-1");
+      if (x.style.display === "") {
+        x.style.display = "none";
+        y.style.display = "block";
       } 
     }
 
