@@ -53,9 +53,9 @@
       <p>You have no active cases</p>
 
       <!-- Reg interest -->
-      {% if (data['reginterest-started'] == "yes") and (data['reginterest-complete'] == null)  %}
+      {% if (data['reginterest-started'] == "yes") and (data['reginterest-complete'] == "yes")  %}
         <h2 class="govuk-heading-m">
-          Draft applications
+          Registration of Interest
         </h2>
         <p><a href="reg-interest/reginterest-tasks?case-ref=BA0005&">{{data ['case-ref']}} - {{data ['case-name']}}</a><br>
         02 June 2022</p>
@@ -67,7 +67,8 @@
         <h2 class="govuk-heading-m">
           Draft applications
         </h2>
-        <p><a href="reg-interest/reginterest-tasks?case-ref=BA0005&">{{data ['case-ref']}} - {{data ['case-name']}}</a><br>
+        <p>Regitration of Interest:<br>
+          <a href="reg-interest/reginterest-tasks?case-ref=BA0005&">{{data ['case-ref']}} - {{data ['case-name']}}</a><br>
         02 June 2022</p>
       {% endif %}
 
