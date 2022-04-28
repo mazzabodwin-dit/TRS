@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <span class="govuk-caption-xl">2.  Who is registering interest</span>
+      <span class="govuk-caption-xl">2. Who is registering interest</span>
     </div>
     <div class="govuk-grid-column-two-thirds">
 
@@ -26,13 +26,13 @@
       
       {% call govukFieldset({
         legend: {
-          text: "Your employer",
+          text: "Your clients details",
           classes: "govuk-fieldset__legend--xl",
           isPageHeading: true
         }
       }) %}
 
-      <p>This is who employs you directly and not an organisation you are representing. You should have permission to create this account on behalf of your employer.</p>
+      <p>You should have permission to register interest on behalf of your client.</p>
 
       {{ govukInput({
         label: {
@@ -50,17 +50,17 @@
      
       {% call govukFieldset({
         legend: {
-          text: "What is your organisations address?",
+          text: "What is the organisations address?",
           classes: "govuk-fieldset__legend--s",
           isPageHeading: true
         }
       }) %}
 
-      <p>This should be the place where your main office is located</p>
+      <p>This should be where the main office is located</p>
 
         {{ govukTextarea({
           label: {
-            text: "Your street address",
+            text: "Street address",
             isPageHeading: false
           },
           classes: "govuk-input--width-20",

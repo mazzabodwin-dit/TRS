@@ -33,7 +33,7 @@
         name: "reginterest-what-org",
         fieldset: {
           legend: {
-            text: "Which organisation is registering interest in this case?",
+            text: "Who is registering interest in this case?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -46,13 +46,13 @@
           },
           {
             value: "existing-org",
-            text: "Existing: An organisation I have represented before using the Trade Remedies system",
+            text: "Existing client: someone I have represented before using the Trade Remedies system",
             checked: checked("reginterest-what-org", "existing-org")
 
           },
           {
             value: "new-org",
-            text: "New: An organisation I have not represented before using the Trade Remedies system",
+            text: "New client: someone I have not represented before using the Trade Remedies system",
             checked: checked("reginterest-what-org", "new-org")
           }
         ]

@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">2.  Who is registering interest</span>
+      <span class="govuk-caption-xl">2. Who is registering interest</span>
 
       <form action="/reginterest-uk-reg-route" method="post" id="reginterest-uk-reg-form"> 
                
@@ -28,7 +28,7 @@
           name: "reginterest-uk-reg",
           fieldset: {
             legend: {
-              text: "Is this organisation a registered UK company?",
+              text: "Is your client a registered UK company?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -48,9 +48,9 @@
         }) }}
 
         {{ govukDetails({
-          summaryText: "How do I find out if the organisation is registered in the UK?",
-          html: ' <p class="govuk-body">You can search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
-          <p>If you cannot find the organisation on the register you need to select "No" the organisation is not registered in the UK.</p>'
+          summaryText: "How do I find out if my client is registered in the UK?",
+          html: ' <p class="govuk-body">You can search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House Register (opens in a new tab)</a>.</p>
+          <p>If you cannot find the organisation on the register select "<strong>No</strong>" my client is not registered in the UK.</p>'
         }) }}
 
         <div class="govuk-button-group">
