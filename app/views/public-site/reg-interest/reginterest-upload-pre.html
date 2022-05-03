@@ -22,12 +22,8 @@
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">3.  Registration documentation</span>
     <h1 class="govuk-heading-xl">
-      Upload documentation
+      Presampling documentation
     </h1>
-     
-    <p>Please upload the following documents. Maximum file size is 30MB</p>
-    <p><a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries" target="_blank">Creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
-
   </div>
 </div>
  
@@ -60,28 +56,37 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-          <h2 class="govuk-heading-m">
-              Registration Documents
-          </h2>
-          <p>For each document you upload, you need must add two versions; a <strong>Private version</strong> that contains confidential information, a <strong>Public version</strong> with all personal or confidential information removed.</p>
+        <p>Download and complete the documentation below. Upload a <strong>Private</strong> and <strong>Public</strong> version of each file you submit (maximum single file upload size is 30MB):</p> 
+        <ul class="govuk-list">
+          <li>
+            {% if (data['sample-download'] == "yes" ) %}
+            <a href="reginterest-upload2?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a><span>&#10003;</span>
+            {% else %}
+            <a href="reginterest-upload2?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a>
+            {% endif %}
+          </li>
+        </ul>      
       </div>
     </div>
 
     <div id="doc-1">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">
+            Document 1
+          </h2>
           <div class="row-colour">
             <div class="govuk-grid-column-one-half">
               <h3 class="govuk-heading-s govuk-!-text-align-centre">
                 Public file
-              </h3>
+            </h3>
               {% set id="1" %}
               {% include 'includes/drag_drop_upload.html' %}
             </div>
             <div class="govuk-grid-column-one-half">
               <h3 class="govuk-heading-s govuk-!-text-align-centre">
                 Private file
-              </h3>
+            </h3>
               {% set id="2" %}
               {% include 'includes/drag_drop_upload.html' %}
             </div>
@@ -96,6 +101,9 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">
+            Document 2
+          </h2>
           <div class="row-colour">
              
              <div class="govuk-grid-column-one-half">
@@ -114,7 +122,7 @@
             </div>
             <div class="remove-doc-panel">
               <a href="#doc-2" alt="Delete panel" title="Delete panel" onclick="hideDoc2Panel()"  class="govuk-link govuk-link--no-visited-state" >
-               Remove panel
+               Remove documents
               </a>
             </div> 
            
@@ -130,15 +138,17 @@
           Add another document
         </button>
 
-        <form action="reginterest-tasks?upload-complete=yes" method="post" id="upload-form">
+        <form action="reginterest-tasks2?upload-complete=yes" method="post" id="upload-form">
 
           <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue"
               }) }}
-              <a class="govuk-link" href="reginterest-tasks">Back</a>
+              <a class="govuk-link" href="reginterest-tasks2">Back</a>
+              
           </div>
        </form>
+      
       </div>
     </div>
 

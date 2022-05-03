@@ -73,7 +73,7 @@
 
       {% else %}
         <!-- If the user has not started Uploads but has completed section 2 show: -->
-        {% if (data['download-complete'] == "yes")  %}
+        {% if (data['download-started'] == "yes")  %}
           <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="reginterest-upload?upload-started=yes" class="govuk-link--no-visited-state" aria-describedby="upload-status">
