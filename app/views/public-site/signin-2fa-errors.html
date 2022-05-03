@@ -29,7 +29,7 @@
               The authentication code could not be sent, try again shortly.
             </li>
             <li>
-              <a href="#passport-issued-day">Resend authentication code</a>
+              <a href="signin-2FA?rerequest2FA=yes">Send new code</a>
             </li>
           </ul>
         </div>
@@ -42,21 +42,33 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              Please wait 20 seconds before requesting another authentication code
-            </li>
-            <li>
-              <a href="#passport-issued-day">Resend authentication code</a>
+              Please wait before requesting another authentication code: <br>
+              <strong><span id="countdown1"></span></strong>
             </li>
           </ul>
         </div>
       </div>
 
+    
+      <script>
+      var timeleft1 = 20;
+      var downloadTimer = setInterval(function(){
+        if(timeleft1 <= 0){
+          clearInterval(downloadTimer);
+          document.getElementById("countdown1").innerHTML = " <a href='signin-2FA?rerequest2FA=yes'>Send new code</a> ";
+        } else {
+          document.getElementById("countdown1").innerHTML = timeleft1 + " seconds";
+        }
+        timeleft1 -= 1;
+      }, 1000);
+
+      </script>
 
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [
           {
-            text: "You have entered the authentication code incorrectly too many times. Please wait 5 minutes before trying again",
+            text: "The authentication code is incorrect and your account has been temporarily locked. Try again in 5 minutes",
             href: "#signin-code"
           }
         ]
@@ -88,7 +100,7 @@
             text: "Enter the code"
           },
           errorMessage: {
-            text: "You have entered the authentication code incorrectly too many times. Please wait 5 minutes before trying again"
+            text: "The authentication code is incorrect and your account has been temporarily locked. Try again in 5 minutes"
           },
           classes: "govuk-input--width-5",
           id: "signin-code",
