@@ -1,7 +1,7 @@
-{% if (data['case-selected'] != null) %}
+{% if (data['case-task'] == "complete") %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-      <a href="reginterest-case?case-started=yes" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
+      <a href="reginterest-case" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
         Select Trade Remedies case
       </a>
     </span>
@@ -10,10 +10,10 @@
 
   {% else %}
 
-    {% if (data['case-started'] == "yes") %}
+    {% if (data['case-task'] == "started") %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-case?case-started=yes" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
+          <a href="reginterest-case" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
             Select Trade Remedies case
           </a>
         </span>
@@ -24,7 +24,7 @@
 
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="reginterest-case?case-started=yes" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
+            <a href="reginterest-case?case-task=started" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
               Select Trade Remedies case
             </a>
           </span>

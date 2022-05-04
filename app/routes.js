@@ -78,6 +78,7 @@ router.get('/public-site/create-account/createaccount-account-complete', functio
 })
 
 // Register interest - public
+// Register interest - public
 // Run this code during reginterest-which-org - If there is not an org name already use a default one
 router.get('/public-site/reg-interest/reginterest-which-org', function (req, res) {
 
@@ -109,7 +110,7 @@ router.post('/reginterest-which-org-route', function (req, res) {
     // Check whether the variable matches a condition
   if (reginterestWho == "my-org"){
     // Send user to next page
-    res.redirect('/public-site/reg-interest/reginterest-tasks')
+    res.redirect('/public-site/reg-interest/reginterest-tasks?which-org-task=complete')
   } 
 
   // Check whether the variable matches a condition

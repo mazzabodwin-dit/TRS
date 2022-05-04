@@ -2,7 +2,7 @@
     <!-- Public - reginterest org - organisation - if the user has completed section 2 show: -->
       <!-- Public - reginterest org - organisation - if the user has completed section 2 show: -->
 
-  {% if (data['reginterest-what-org'] != null) %}
+  {% if (data['which-org-task'] == "complete") %}
 
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
@@ -14,7 +14,7 @@
     </li>
 
     {% else %}
-    {% if (data['which-org-started'] == "yes")  %}
+    {% if (data['which-org-task'] == "started")  %}
       <!-- If the user has started section 2 show: -->
 
         <li class="app-task-list__item">
@@ -27,11 +27,11 @@
         </li>
         
         {% else %}
-        {% if (data['case-ref'] != null)  %}
+        {% if (data['case-task'] == "complete")  %}
           <!-- If the user has not started section 2 show -->
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="reginterest-which-org?which-org-started=yes" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+              <a href="reginterest-which-org?which-org-task=started" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
                 Organisation details
               </a>
             </span>

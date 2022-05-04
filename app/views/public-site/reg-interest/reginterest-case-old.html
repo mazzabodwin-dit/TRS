@@ -11,7 +11,7 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+ <a class="govuk-back-link govuk-link--no-visited-state" href="/reginterest-tasks">Back</a>
 
 {% endblock %}
 
@@ -33,10 +33,10 @@
     <div class="govuk-button-group">
       {{ govukButton({
         text: "Continue registering interest",
-        href: "reginterest-tasks?case-selected=yes"
+        href: "reginterest-tasks?case-task=complete"
       }) }}
     
-      <a class="govuk-link" href="javascript: history.back()">Cancel</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
 
     </div>
    

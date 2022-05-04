@@ -172,7 +172,7 @@ $govuk-assets-path: '/govuk/assets/';
   transition: 0.3s;
   background-color: white;
   margin-bottom: 16px;
-  height: 150px
+  max-height: 150px
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -247,7 +247,6 @@ https://css-tricks.com/drag-and-drop-file-uploading/  */
   margin-bottom: 20px;
   border: dashed 1px govuk-colour("mid-grey");
 }
- 
 
 
 

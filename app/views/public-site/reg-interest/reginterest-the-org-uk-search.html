@@ -11,7 +11,7 @@
 {% block beforeContent %}
 {% include "includes/beta-banner.html"%}
 
-<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()"></a>
 
 {% endblock %}
 
@@ -60,7 +60,7 @@
           {{ govukButton({
             text: "I confirm these are the correct details"
           }) }}    
-          <a class="govuk-link" href="javascript: history.back()">Back</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
         </div>
 
       </form>        

@@ -22,7 +22,7 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="reginterest-tasks" method="post" id="reginterest-your-org-dets-form">  
+      <form action="reginterest-tasks?which-org-task=complete" method="post" id="reginterest-your-org-dets-form">  
 
         
         {% call govukFieldset({
@@ -103,7 +103,7 @@
           {{ govukButton({
             text: "Continue"
           }) }}    
-          <a class="govuk-link" href="javascript: history.back()">Back</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
         </div>
 
         {% endcall %} 

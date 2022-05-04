@@ -18,7 +18,6 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">3.  Registration documentation</span>
     <h1 class="govuk-heading-xl">
@@ -26,110 +25,83 @@
     </h1>
   </div>
 </div>
- 
+<form action="reginterest-tasks?upload-pre-task=complete" method="post" id="upload-form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p>Download and complete the documentation below. Upload a <strong>Private</strong> and <strong>Public</strong> version of each file you submit (maximum single file upload size is 30MB):</p> 
+      <ul class="govuk-list">
+        <li>
+          {% if (data['sample-download'] == "yes" ) %}
+          <a href="reginterest-upload-pre?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a><span>&#10003;</span>
+          {% else %}
+          <a href="reginterest-upload-pre?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a>
+          {% endif %}
+        </li>
+      </ul>      
+    </div>
+  </div>
 
-    <!-- Add LOA -->
-    {% if (data['reginterest-what-org'] == "existing") or (data['reginterest-what-org'] == "new")  %}
-
+  <div id="doc-1">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m">
-          Letter of Authority
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          Upload document 1
         </h2>
-      </div>
-    </div>
-    
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
         <div class="row-colour">
-          <div class="govuk-grid-column-full">      
-            {% set id="5" %}
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
+              Public file
+          </h3>
+            {% set id="1" %}
             {% include 'includes/drag_drop_upload.html' %}
-
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
+              Private file
+          </h3>
+            {% set id="2" %}
+            {% include 'includes/drag_drop_upload.html' %}
           </div>
         </div>
       </div>
     </div>
-
-      
-    {% endif %}
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <p>Download and complete the documentation below. Upload a <strong>Private</strong> and <strong>Public</strong> version of each file you submit (maximum single file upload size is 30MB):</p> 
-        <ul class="govuk-list">
-          <li>
-            {% if (data['sample-download'] == "yes" ) %}
-            <a href="reginterest-upload2?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a><span>&#10003;</span>
-            {% else %}
-            <a href="reginterest-upload2?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a>
-            {% endif %}
-          </li>
-        </ul>      
-      </div>
-    </div>
-
-    <div id="doc-1">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <h2 class="govuk-heading-m">
-            Document 1
-          </h2>
-          <div class="row-colour">
-            <div class="govuk-grid-column-one-half">
-              <h3 class="govuk-heading-s govuk-!-text-align-centre">
-                Public file
-            </h3>
-              {% set id="1" %}
-              {% include 'includes/drag_drop_upload.html' %}
-            </div>
-            <div class="govuk-grid-column-one-half">
-              <h3 class="govuk-heading-s govuk-!-text-align-centre">
-                Private file
-            </h3>
-              {% set id="2" %}
-              {% include 'includes/drag_drop_upload.html' %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
   <!-- Add another document panel -->
 
-    <div id="doc-2" style="display:none">
+  <div id="doc-2" style="display:none">
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <h2 class="govuk-heading-m">
-            Document 2
-          </h2>
-          <div class="row-colour">
-             
-             <div class="govuk-grid-column-one-half">
-              <h3 class="govuk-heading-s govuk-!-text-align-centre">
-                Public file
-              </h3>
-              {% set id="3" %}
-              {% include 'includes/drag_drop_upload.html' %}
-            </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          Upload document 2
+        </h2>
+        <div class="row-colour">
+            
             <div class="govuk-grid-column-one-half">
-              <h3 class="govuk-heading-s govuk-!-text-align-centre">
-                Private file
-              </h3>
-              {% set id="4" %}
-              {% include 'includes/drag_drop_upload.html' %}
-            </div>
-            <div class="remove-doc-panel">
-              <a href="#doc-2" alt="Delete panel" title="Delete panel" onclick="hideDoc2Panel()"  class="govuk-link govuk-link--no-visited-state" >
-               Remove documents
-              </a>
-            </div> 
-           
+            <h3 class="govuk-heading-s govuk-!-text-align-centre">
+              Public file
+            </h3>
+            {% set id="3" %}
+            {% include 'includes/drag_drop_upload.html' %}
           </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-text-align-centre">
+              Private file
+            </h3>
+            {% set id="4" %}
+            {% include 'includes/drag_drop_upload.html' %}
+          </div>
+          <div class="remove-doc-panel">
+            <a href="#doc-2" alt="Delete panel" title="Delete panel" onclick="hideDoc2Panel()"  class="govuk-link govuk-link--no-visited-state" >
+              Remove documents
+            </a>
+          </div> 
+          
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Add another document button -->
     <div class="govuk-grid-row">    
@@ -137,47 +109,43 @@
         <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2" id="add-doc-button" data-module="govuk-button" onclick="showDoc2Panel()">
           Add another document
         </button>
-
-        <form action="reginterest-tasks2?upload-complete=yes" method="post" id="upload-form">
-
           <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue"
               }) }}
-              <a class="govuk-link" href="reginterest-tasks2">Back</a>
-              
-          </div>
-       </form>
-      
+              <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a> 
+          </div>      
       </div>
     </div>
 
-  <script type="text/javascript">
+</form>
 
-    function showDoc2Panel() {
-      var x = document.getElementById("doc-2");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } 
-    }
+<script type="text/javascript">
 
-    function hideDoc2Panel() {
-      var x = document.getElementById("doc-2");
-      if (x.style.display === "block") {
-        x.style.display = "none";
-      } 
-    }
+  function showDoc2Panel() {
+    var x = document.getElementById("doc-2");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+  }
 
-    function removeDoc() {
-      var x = document.getElementById("complete-upload-1");
-      var y = document.getElementById("waiting-upload-1");
-      if (x.style.display === "") {
-        x.style.display = "none";
-        y.style.display = "block";
-      } 
-    }
+  function hideDoc2Panel() {
+    var x = document.getElementById("doc-2");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } 
+  }
 
-  </script>
+  function removeDoc() {
+    var x = document.getElementById("complete-upload-1");
+    var y = document.getElementById("waiting-upload-1");
+    if (x.style.display === "") {
+      x.style.display = "none";
+      y.style.display = "block";
+    } 
+  }
+
+</script>
 
 
 {% endblock %}

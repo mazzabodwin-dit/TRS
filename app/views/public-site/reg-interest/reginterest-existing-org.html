@@ -22,7 +22,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2. Who is registering interest</span>
 
-    <form action="reginterest-tasks" method="post" id="reginterest-existing-org-form">
+    <form action="reginterest-tasks?which-org-task=complete" method="post" id="reginterest-existing-org-form">
 
       {{ govukRadios({
         idPrefix: "reginterest-existing-org",
@@ -101,7 +101,7 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-        <a class="govuk-link" href="javascript: history.back()">Back</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
       </div>
     
 

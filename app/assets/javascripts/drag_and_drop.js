@@ -23,10 +23,10 @@ function file_upload(upload_container, file_name){
           upload_container.find('.upload_percentage').html('Uploading 100%:')
           upload_container.find('.uploading_file').hide()
           upload_container.find('.upload_file_complete').show()
-        }, 1000)
-      }, 1000)
-    }, 1000)
-  }, 1000)
+        }, 2000)
+      }, 2000)
+    }, 2000)
+  }, 2000)
 }
 
 $('input[type="file"]').change(function(){
