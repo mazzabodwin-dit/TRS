@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Check and submit – GOV.UK Trade Remedies Prototype
+  Proto: Registration of Interest completed application – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
 {% block header %}
@@ -18,22 +18,29 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds-from-desktop"><span class="govuk-caption-xl">4.  Register interest</span>
+  <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-xl">
-      Check your answers before sending your application
+      Regitration of Interest
     </h1>
 
-    <h2 class="govuk-heading-m">Which case are you interested in</h2>
+    <h2 class="govuk-heading-m">Case</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Case details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data ['case-ref1']}} - {{data ['case-name1']}} <br>
-          {{data ['case-type1']}}
+          {{data ['case-ref']}} - {{data ['case-name']}} <br>
+          {{data ['case-type']}}
         </dd>
-        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          23rd May 2022
+        </dd>
       </div>
     </dl>
 
@@ -122,46 +129,6 @@
         </dd>
       </div>   
     </dl>
-
-    <h2 class="govuk-heading-m">Now send your application</h2>
-
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-            <label class="govuk-label govuk-checkboxes__label" for="waste">
-              I have the authority to provide this information on behalf of my organisation.
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-
-     
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Confirm and submit application",
-        href: "reginterest-complete?reginterest-complete=yes"
-      }) }}    
-      <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
-
-    </div>
-
-    </form>
-
-    <!-- Test data 
-    <div class="govuk-inset-text">
-      Test data: <br>
-      Upload started:{{ data['upload-started']}}<br>
-      Type of org: {{data['reginterest-what-org']}}<br>
-      Upload sample doc: {{data['sample-download']}}<br>
-      Upload loa doc: {{data['loa-download']}}
-    </div>
-  
-  -->
-
 </div>
 
   <div class="govuk-grid-column-one-third">
