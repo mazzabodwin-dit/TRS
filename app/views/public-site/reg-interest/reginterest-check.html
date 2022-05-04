@@ -89,32 +89,28 @@
     </dl>
     <h2 class="govuk-heading-m">Registration documentation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      {% if (data['reginterest-what-org'] != "my-org") %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Uploaded Letter of Authority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            loa.docx
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="reginterest-download">
+              Change
+              <span class="govuk-visually-hidden"> downloaded documents</span>
+            </a>
+          </dd>
+        </div>
+      {% endif %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Downloaded documentation
+          Uploaded Pre-sampling documentation
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if (data['reginterest-what-org'] != "my-org") %}
-          letter-of-authority.docx
-          {% endif %}
-          document1.docx<br>
-          download2.docx
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="reginterest-download">
-            Change
-            <span class="govuk-visually-hidden"> downloaded documents</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Uploaded documentation
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if (data['reginterest-what-org'] != "my-org") %}
-            loa.docx<br><br>
-          {% endif %}
           confidentialdocument1.docx<br>
           unconfidentialdocument1.docx<br><br>
 
