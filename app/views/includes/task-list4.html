@@ -1,5 +1,5 @@
 <!-- If the user has completed Check and submit show: -->
-{% if (data['check-complete'] == "yes")  %}
+{% if (data['check-task'] == "complete")  %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
       <a href="reginterest-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
@@ -11,7 +11,7 @@
 
   {% else %}
   <!-- If the user has started Check and submit show: -->
-    {% if (data['check-started'] == "yes")  %}
+    {% if (data['check-task'] == "started")  %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
@@ -23,10 +23,10 @@
   
       {% else %}
       <!-- If the user not started Check -->
-        {% if (data['upload-complete'] == "yes") %}
+        {% if (data['reginterest-what-org'] != "my-org") and (data['upload-loa-task'] == "complete") and (data['upload-pre-task'] == "complete") %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="reginterest-check?check-started=yes" class="govuk-link--no-visited-state" aria-describedby="check-status">
+              <a href="reginterest-check?check-task=started" class="govuk-link--no-visited-state" aria-describedby="check-status">
                 Check and submit
               </a>
             </span>
@@ -34,12 +34,27 @@
           </li>
 
           {% else %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                  Check and submit
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-status">Cannot start yet</strong>
-            </li>
+
+           {% if (data['reginterest-what-org'] == "my-org") and (data['upload-pre-task'] == "complete") %}
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="reginterest-check?check-task=started" class="govuk-link--no-visited-state" aria-describedby="check-status">
+                    Check and submit
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-status">Not started</strong>
+              </li>
+
+              {% else %}
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                      Check and submit
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-status">Cannot start yet</strong>
+                </li>
+
+            {% endif %}
 
         {% endif %}
           
