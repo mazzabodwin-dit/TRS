@@ -36,5 +36,6 @@ module.exports = {
   "register-date1": "01 June 2021",
   "status1": "Case information finalised",
   "next-task1": "Publish initiation notices",
-  "next-notice1": "26 May 2022"
+  "next-notice1": "26 May 2022",
+  "reginterest-app-status": "Application received"
 }

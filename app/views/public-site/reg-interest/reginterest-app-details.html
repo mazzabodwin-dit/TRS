@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Registration of Interest completed application – GOV.UK Trade Remedies Prototype
+  Proto: Check and submit – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
 {% block header %}
@@ -11,7 +11,7 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 
 {% endblock %}
 
@@ -20,44 +20,43 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-xl">
-      Regitration of Interest
+      Registration of Interest
     </h1>
 
-    <h2 class="govuk-heading-m">Case</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <h2 class="govuk-heading-m">Your application</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['reginterest-app-status']}}
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Case details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data ['case-ref']}} - {{data ['case-name']}} <br>
-          {{data ['case-type']}}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Submitted
-        </dt>
-        <dd class="govuk-summary-list__value">
-          23rd May 2022
+          {{data ['case-ref1']}} - {{data ['case-name1']}} <br>
+          {{data ['case-type1']}}
         </dd>
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m">Who is registering interest</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Registering for
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if (data['reginterest-what-org'] == "my-org") %}
-          My employer:<br><br>
+          {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
+          <p>My client:</p>
             {% else %}
-            My client:<br><br>
+            <p>My employer:</p>
           {% endif %}
 
-          {% if (data['reginterest-what-org'] == "my-org") %}
+          {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
             Cheesy chips Ltd<br>
               {% else %}
                 {% if (data['reginterest-what-org'] == "existing-org") %}
@@ -94,7 +93,6 @@
       </div>
     
     </dl>
-    <h2 class="govuk-heading-m">Registration documentation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
       {% if (data['reginterest-what-org'] != "my-org") %}

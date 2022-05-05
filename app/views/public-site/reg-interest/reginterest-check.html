@@ -43,13 +43,13 @@
           Registering for
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if (data['reginterest-what-org'] == "my-org") %}
-          My employer:<br><br>
+          {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
+          <p>My client:</p>
             {% else %}
-            My client:<br><br>
-          {% endif %}
+            <p>My employer:</p>
+            {% endif %}
 
-          {% if (data['reginterest-what-org'] == "my-org") %}
+          {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
             Cheesy chips Ltd<br>
               {% else %}
                 {% if (data['reginterest-what-org'] == "existing-org") %}
