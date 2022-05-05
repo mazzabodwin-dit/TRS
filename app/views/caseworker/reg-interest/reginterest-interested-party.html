@@ -19,9 +19,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  Review interested parties</span>
+    <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
-      Verify primary party
+      Verify interested party
     </h1>
   </div>
 
@@ -102,7 +102,7 @@
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Users: 1
+                Users: 3
               </span>
             </summary>
             <div class="govuk-details__text">
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <form action="/reginterest-primary-party-route" method="post" id="reginterest-primary-party-form">
+    <form action="/reginterest-interested-party-route" method="post" id="reginterest-interested-party-form">
 
       {% set validHTML %}
         Can you verify {{data['party1']}}?
@@ -151,7 +151,7 @@
         {{ govukButton({
           text: "Continue"
         }) }}    
-        <a class="govuk-link" href="javascript: history.back()">Back</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
       </div>
 
     </form>
