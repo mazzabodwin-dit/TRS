@@ -23,8 +23,8 @@
       Check your answers before sending your application
     </h1>
 
-    <h2 class="govuk-heading-m">Your application</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+    <h2 class="govuk-heading-m">Which case are you interested in</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Case details
@@ -35,9 +35,56 @@
         </dd>
         
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Registering for
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if (data['reginterest-what-org'] == "my-org") %}
+          My employer:<br><br>
+            {% else %}
+            My client:<br><br>
+          {% endif %}
+
+          {% if (data['reginterest-what-org'] == "my-org") %}
+            Cheesy chips Ltd<br>
+              {% else %}
+                {% if (data['reginterest-what-org'] == "existing-org") %}
+                  {{ data['reginterest-existing-org'] }}<br>
+                    {% else %}
+                      {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
+                        {{ data[''] }}ACompany<br>
+                          {% else %}
+                            {{ data['reginterest-org-name'] }}<br>
+                      {% endif %}
+                {% endif %}
+          {% endif %}
+          
+          
+          Company number: 595934925<br>
+          Address<br>
+          Postcode/ zip<br>
+          Country<br>
+          <br>
+          {% if data['reginterest-what-org'] == "new-org" %}
+            VAT number: 68593069894<br>
+            DUNS number: 123456789<br>
+            www.orglongnameurlthatisannoying.com
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="reginterest-which-org">
+            Change
+            <span class="govuk-visually-hidden"> who is registering interest</span>
+          </a>
+        </dd>
+        
+      </div>
     </dl>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+    <h2 class="govuk-heading-m">Who is registering interest</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Registering for
@@ -86,6 +133,7 @@
       </div>
     
     </dl>
+    <h2 class="govuk-heading-m">Registration documentation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
       {% if (data['reginterest-what-org'] != "my-org") %}

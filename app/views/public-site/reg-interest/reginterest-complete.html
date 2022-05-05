@@ -28,9 +28,15 @@
   
       <p>Thank you for registering your interest in the following case. We have sent confirmation to <strong>{{ data['account-email'] }}</strong>.</p>
       
-      <p><strong>{{data ['case-ref']}} - {{data ['case-name']}}</strong><br>
-        12 May 2022
+      <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong><br>
+        Submitted: <span id="date"></span>
       </p>
+
+    
+      <script>
+      const d = new Date();
+      document.getElementById("date").innerHTML = d.toDateString();
+      </script>
         
       <h2 class="govuk-heading-m">What happens next</h2>
       <ul class="govuk-list govuk-list--bullet">
