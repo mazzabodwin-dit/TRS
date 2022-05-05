@@ -188,8 +188,8 @@ router.get('/caseworker/signin', function (req, res) {
   res.render('caseworker/signin')
 })
 
-// Run this code on reginterest-primary-party - which option is chosen:
-router.post('/reginterest-primary-party-route', function (req, res) {
+// Run this code on reginterest-interested-party - which option is chosen:
+router.post('/reginterest-interested-party-route', function (req, res) {
 
   // Make a variable and give it the value from 'reginterest-valid-primary'
   var reginterestValidPrimary = req.session.data['reginterest-valid-primary']

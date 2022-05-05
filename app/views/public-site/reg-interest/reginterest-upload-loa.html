@@ -31,10 +31,10 @@
       <p>Download and complete the documentation below. Upload the finished document (maximum file upload size is 30MB):</p> 
       <ul class="govuk-list">
         <li>
-          {% if (data['sample-download'] == "yes" ) %}
-          <a href="reginterest-upload2?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> letter_of_authority.docx (344KB) </a><span>&#10003;</span>
+          {% if (data['loa-download'] == "yes" ) %}
+          <a href="reginterest-upload-loa?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> letter_of_authority.docx (344KB) </a><span>&#10003;</span>
           {% else %}
-          <a href="reginterest-upload2?sample-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> letter_of_authority.docx (344KB) </a>
+          <a href="reginterest-upload-loa?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> letter_of_authority.docx (344KB) </a>
           {% endif %}
         </li>
       </ul>      
