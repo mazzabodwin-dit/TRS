@@ -21,6 +21,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/nav";
 @import "patterns/password";
 @import "patterns/table";
+@import "patterns/uploads";
 
 /* CHANGING THE WIDTH and HEADER COLOUR BETWEEN PUBLIC AND CASEWORKER */
 .caseworker-red .govuk-header__container {
@@ -43,70 +44,6 @@ $govuk-assets-path: '/govuk/assets/';
   display: none;
 }
 
-/* Reginterest - upload remove button*/
-  .remove-link {
-    margin-top: 30px;
-  }
-
-  .submit-button {
-    margin-top: 30px;
-  }
-
-  .remove-panel {
-    margin-top: 0px;
-  }
-
-  #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10, #div11, #div12, #div13, #div14, #div15  {
-    display: none;
-  }
-
-  /* Reginterest Upload Progress bar */
-
- progress {
-   padding: 20px 0 10px 0; 
- }
-
-.progress-bar {
-    background-color: whiteSmoke;
-    border-radius: 2px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
-  
-    width: 250px;
-    height: 20px;
-    
-    position: relative;
-    display: block;
-  }
-    
-.progress-bar > span {
-    background-color: blue;
-    border-radius: 2px;
-  
-    display: block;
-    text-indent: -9999px;
-  }
-
-  /* Task list for downloads*/
-
-#docs1, #docs2 {
-    
-    padding: 20px 15px 0px 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #b1b4b6;
-  }
-
-  #docs .app-task-list__item {
-    border-bottom: 0px solid blue;
-    border-top: 1px solid #b1b4b6;
-
-  }
-
-  .upload-header.app-task-list__item {
-    padding: 0px;
-    margin: 0px;
-    border-top: 0px solid blue;
-  }
 
   /* Task list when being used for other things */
 @media (min-width: 40.0625em) {
@@ -157,96 +94,3 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-inset-text__reginterest {
   margin-top: 0px;
 }
-
-
-/* Uploads test*/
-/* Uploads test*/
-/* Uploads test*/
-/* Uploads test*/
-/* Uploads test*/
-
-
-.upload-card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  transition: 0.3s;
-  background-color: white;
-  margin-bottom: 16px;
-  max-height: 150px
-}
-
-/* On mouse-over, add a deeper shadow */
-.upload-card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-
-}
-
-/* Thisis just to show the hover state when drag and drop is working*/
-.upload-card-hover {
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
-  transition: 0.3s;
-  background-color: govuk-colour("light-grey");
-}
-
-/* Add some padding inside the card container */
-.upload-container {
-  text-align: center;
-  padding: 20px 10px 10px 10px;
-}
-
-/* Doing clever things with the file browser button  https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way   
-https://css-tricks.com/drag-and-drop-file-uploading/  */
-
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-/* /* "hand" cursor */
-.inputfile + label {
-	cursor: pointer; 
-}
-
-.inputfile + label * {
-	pointer-events: none;
-}
-
-
-/* Hiding the input itself in a correct manner was one thing, the other is indicating when the element is focused, i.e. rendering .inputfile:focus on the label:*/
-.inputfile:focus + label {
-	outline: 1px dotted #000;
-	outline: -webkit-focus-ring-color auto 5px;
-}
-
-  input.upload-button {    
-   display: initial;
- }
-
-.remove-doc-panel {
-  float: right;
-  top: -10px;
-  right: 15px;
-  position: relative;
-}
-
-
-#input-js {
-  margin: auto;
-  max-width: 250px;
-}
-
-.row-colour {
-  background-color:  govuk-colour("light-grey")	;
-  padding-top: 15px;
-  width: 100%;
-  float: left;
-  margin-bottom: 20px;
-  border: dashed 1px govuk-colour("mid-grey");
-}
-
-
-

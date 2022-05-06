@@ -38,11 +38,22 @@
           Case details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data ['case-ref1']}} - {{data ['case-name1']}} <br>
-          {{data ['case-type1']}}
+          <p><a href="">
+            {% if (data['regnterest-due-date'] == "current") %}
+              {{data ['case-ref1']}} - {{data ['case-name1']}}
+              {% else %}
+                {{data['case-ref']}} - {{data['case-name']}}
+            {% endif %}</a><br>
+            Submitted: <span id="date"></span>
+          </p>
         </dd>
       </div>
     </dl>
+
+    <script>
+      const d = new Date();
+      document.getElementById("date").innerHTML = d.toDateString();
+    </script>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">

@@ -30,10 +30,15 @@
           Case details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data ['case-ref1']}} - {{data ['case-name1']}} <br>
-          {{data ['case-type1']}}
+
+          {% if (data['regnterest-due-date'] == "current") %}
+            {{data ['case-ref1']}} - {{data ['case-name1']}}
+          {% else %}
+
+            {{data['case-ref']}} - {{data['case-name']}}
+          {% endif %}
         </dd>
-        
+         
       </div>
     </dl>
 
