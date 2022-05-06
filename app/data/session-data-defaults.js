@@ -33,7 +33,7 @@ module.exports = {
   "representative1": "Blue Steel Lawyers",
   "user1": "BobHoskins",
   "submission1": "Registration of Interest",
-  "register-date1": "01 June 2021",
+  "register-date1": "01 June 2022",
   "status1": "Case information finalised",
   "next-task1": "Publish initiation notices",
   "next-notice1": "26 May 2022",
