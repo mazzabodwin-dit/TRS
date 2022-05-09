@@ -4,6 +4,9 @@
   Proto: Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+{% set bodyClasses = 'dash-nav' %}
+
 {% block header %}
   {% include "includes/header-public-signedout.html" %}
 {% endblock %}
@@ -14,19 +17,27 @@
 
 {% block content %}
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-bluepanel govuk-bluepanel--confirmation">
+        <span class="govuk-caption-l inverse-header">Trade Remedies Authority</span> 
+        <h1 class="govuk-heading-l inverse-header">
+          Trade Remedies Service
+        </h1>
+      </div>
+      <p>The UK’s Trade Remedies Authority (TRA) investigates whether new trade remedies are needed to prevent injury to UK industries caused by unfair trading practices and unforeseen surges in imports. </p><br>
+
+    </div>
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        Trade Remedies
-      </h1>
-
-      <p>The UK’s Trade Remedies Authority (TRA) investigates whether new trade remedies are needed to prevent injury to UK industries caused by unfair trading practices and unforeseen surges in imports. </p>
 
       <h2 class="govuk-heading-m">
-        Active cases
+        Open investigations
       </h2>
-      <p>We publish all active trade remedy cases so that anyone can view and track existing case progress. </p>
-      <p><a class="link" href="public-cases">View active cases on the public file </a></p>
+      <p>We publish all investigations so that anyone can view or track case progress. </p>
+      <p><a class="link" href="cases/cases-all">View all investigations on the public file </a></p>
       <h2 class="govuk-heading-m">
         Trade Remedies Service
       </h2>
@@ -40,7 +51,7 @@
       </ul>
       <p>To create an account it take around 10 minutes. Have ready details that will help us confirm your organisation, such as address and company number.</p>
 
-<!-- Using two links on Start page as per most recent GDS guidance: https://design-system.service.gov.uk/patterns/start-using-a-service/ -->        
+      <!-- Using two links on Start page as per most recent GDS guidance: https://design-system.service.gov.uk/patterns/start-using-a-service/ -->        
 
       <div class="govuk-button-group">
         {{ govukButton({
@@ -53,8 +64,9 @@
 
     </div>
 
-    <div class="govuk-grid-column-one-third">
+    
 
+    <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
           More information
@@ -73,8 +85,8 @@
           </ul>
         </nav>
       </aside>
-
     </div>
+
   </div>
 {% endblock %}
 
