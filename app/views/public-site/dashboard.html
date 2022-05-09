@@ -66,7 +66,8 @@
             {% else %}
               {{data['case-ref']}} - {{data['case-name']}}
           {% endif %}</a><br>
-          Submitted: <span id="date"></span>
+          Submitted: <span id="date"></span><br>
+          Status: {{data ['reginterest-app-status']}}
         </p>
       {% endif %}
 
@@ -106,34 +107,42 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a class="link" href="reg-interest/reginterest-tasks">Register interest in a case</a> 
+              <a class="govuk-link--no-visited-state" href="reg-interest/reginterest-tasks">Register interest in a case</a> 
             </li>
             <li>
-              <a class="link" href="#">Apply for an investigation</a> 
+              <a class="govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
             </li>
             <li>
-              <a class="link" href="#">Manage your team</a>
+              <a class="govuk-link--no-visited-state" href="#">Manage your team</a>
             </li>  
             <li>
-              <a class="link" href="#">Invite a 3rd party representative</a>
-            </li>    
+              <a class="govuk-link--no-visited-state" href="#">Invite a 3rd party representative</a>
+            </li> 
+            <li>
+              <a class="govuk-link--no-visited-state" href="#">Letter of Authority (LOA)</a> 
+            </li>   
           </ul>
         </nav>
       </aside>
       <br>
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
-          Useful downloads
+          Read the guidance documents
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a class="link" href="#">Letter of Authority (LOA)</a> 
+              <a class="govuk-link--no-visited-state" href="https://www.gov.uk/government/organisations/trade-remedies-authority" target="_blank">Trade Remedies Authority news (opens in a new window or tab)</a> 
             </li>
+            <li>
+              <a class="govuk-link--no-visited-state" href="https://www.gov.uk/government/organisations/trade-remedies-authority/about" target="_blank">Who is the Trade Remedies Authority (opens in a new window or tab)</a> 
+            </li>
+            <li>
+              <a class="govuk-link--no-visited-state" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
+            </li>      
           </ul>
         </nav>
       </aside>
-
     </div>
   </div>
 {% endblock %}
