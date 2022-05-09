@@ -6,8 +6,11 @@
   Proto: Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'dash-nav' %}
+
 {% block header %}
-  {% include "includes/header-public.html" %}
+  {% include "includes/header-public-signedin.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -57,7 +60,12 @@
         <h2 class="govuk-heading-m">
           Registration of Interest
         </h2>
-        <p><a href="reg-interest/reginterest-app-details">{{data ['case-ref1']}} - {{data ['case-name1']}}</a><br>
+        <p><a href="reg-interest/reginterest-app-details">
+          {% if (data['regnterest-due-date'] == "current") %}
+            {{data ['case-ref1']}} - {{data ['case-name1']}}
+            {% else %}
+              {{data['case-ref']}} - {{data['case-name']}}
+          {% endif %}</a><br>
           Submitted: <span id="date"></span>
         </p>
       {% endif %}
@@ -71,9 +79,14 @@
         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
           Registration of Interest:
         </h3>
-        <p>
-          <a href="reg-interest/reginterest-tasks">{{data ['case-ref1']}} - {{data ['case-name1']}}</a><br>
+        <p><a href="reg-interest/reginterest-app-details">
+          {% if (data['regnterest-due-date'] == "current") %}
+            {{data ['case-ref1']}} - {{data ['case-name1']}}
+            {% else %}
+              {{data['case-ref']}} - {{data['case-name']}}
+          {% endif %}</a><br>
           Draft saved: <span id="date"></span>
+        </p>
       {% endif %}
 
       <script>
@@ -92,9 +105,6 @@
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a class="link" href="cases/cases-all">My cases</a> 
-            </li>
             <li>
               <a class="link" href="reg-interest/reginterest-tasks">Register interest in a case</a> 
             </li>
