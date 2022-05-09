@@ -4,31 +4,27 @@
   Proto: My cases – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'notices-nav' %}
+
+
 {% block header %}
- {% include "includes/header-public.html" %}
+  {% if (data['signedin'] == "no") %}
+   {% include "includes/header-public-signedout.html" %}
+  {% else %}
+    {% include "includes/header-public-signedin.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
-
- <div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      All cases
-    </li>
-  </ol>
-</div>
-
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">All Cases</h1>
+    <h1 class="govuk-heading-xl">Notices</h1>
 
     content yet to be done
 

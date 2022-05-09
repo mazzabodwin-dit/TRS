@@ -61,7 +61,7 @@
         </div>
       </details>
 
-      <form action="../dashboard" method="post" id="createaccount-verify-email-form">  
+      <form action="../dashboard?account-activated=no" method="post" id="createaccount-verify-email-form">  
 
         {{ govukButton({
           text: "Sign in"
@@ -100,7 +100,7 @@
         {
         },
         {
-          href: "email/email-createaccount-activate-account",
+          href: "/public-site/email/email-createaccount-activate-account",
           text: "For user testing: Go to email"
         }
       ]

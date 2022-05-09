@@ -4,31 +4,27 @@
   Proto: My cases – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'cases-nav' %}
+
+
 {% block header %}
- {% include "includes/header-public.html" %}
+  {% if (data['signedin'] == "no") %}
+   {% include "includes/header-public-signedout.html" %}
+  {% else %}
+    {% include "includes/header-public-signedin.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
-
- <div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      All cases
-    </li>
-  </ol>
-</div>
-
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">All Cases</h1>
+    <h1 class="govuk-heading-xl">All cases</h1>
 
     {% set openCasesHTML %}
       
@@ -36,9 +32,6 @@
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the active Trade Remedies investigations</caption>
       <thead class="govuk-table__head head-border">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
-          </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
           </th>
@@ -48,11 +41,14 @@
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Country <i class="sort-indicator"></i>
           </th>
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
           </th>
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Reg due date <i class="sort-indicator"></i>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Initiated <i class="sort-indicator"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Reg due <i class="sort-indicator"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Status <i class="sort-indicator"></i>
@@ -62,19 +58,19 @@
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr1']}}</span>
-        </td>
-        <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Country: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country1']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created1']}}
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr1']}}</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Initiated: </span>{{data['created1']}}
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>{{data['register-date1']}}
@@ -82,103 +78,101 @@
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status1']}}
         </td>
-        
       </tr>
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AG0404</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name3']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Farnets from Fabon</a>
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country3']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Country: </span><a href="#" class="govuk-link--no-visited-state">Farnets First UK</a>
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr3']}}</span>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 April 2021
+          <span class="govuk-visually-hidden--desktop td-header">Initiated: </span>{{data['created3']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>30 April 2021
+          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>{{data['register-date3']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Case initiated
-        </td>
-        
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AS3464</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Garnets from Gabon</a>
-        </td>              
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Country: </span><a href="#" class="govuk-link--no-visited-state">Secretary of State</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>24 Dec 2020
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>17 Jan 2021
-        </td> 
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Application received
+          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status3']}}
         </td>
       </tr>
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">BA0005</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country4']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Country: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr4']}}</span>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 Nov 2020
-        </td> 
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>31 Nov 2020
+          <span class="govuk-visually-hidden--desktop td-header">Initiated: </span>{{data['created4']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Questionnaires issued
+          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>{{data['register-date4']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
         </td>
       </tr>
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">SI943005</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Electric Bikes</a>
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country5']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Country: </span><a href="#" class="govuk-link--no-visited-state">Bikers Ltd</a>
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr5']}}</span>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>07 Nov 2021
-        </td> 
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>23 Nov 2021
+          <span class="govuk-visually-hidden--desktop td-header">Initiated: </span>{{data['created5']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Initiation prepared
+          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>{{data['register-date5']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status5']}}
+        </td>
+      </tr>
+
+       <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country6']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr6']}}</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Initiated: </span>{{data['created6']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Reg due date: </span>{{data['register-date6']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
         </td>
       </tr>
 
@@ -187,132 +181,59 @@
     {% endset %}
 
     {% set completedCasesHTML %}
-    
     <table class="govuk-table sortable" id="table-header" role="grid">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your Trade Remedies cases</caption>
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the active Trade Remedies investigations</caption>
       <thead class="govuk-table__head head-border">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
-          </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
           </th>
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Commodity <i class="sort-indicator"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Country <i class="sort-indicator"></i>
+          </th>  
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Case type <i class="sort-indicator"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Initiated <i class="sort-indicator"></i>
+          </th> 
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Status <i class="sort-indicator"></i>
-          </th>
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Closed <i class="sort-indicator"></i>
-          </th>
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Expiry <i class="sort-indicator"></i>
           </th>
         </tr>
       </thead>
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AG0404</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name2']}}</a>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Farnets from Fabon</a>
+          <span class="govuk-visually-hidden--desktop td-header">Commodity: </span><span title="{{data['case-type1']}}">{{data['commodity2']}}</span>
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 April 2021
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country2']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
+          <span class="govuk-visually-hidden--desktop td-header">Case type: </span>{{data['case-type2']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Closed: </span>13 April 2022
+          <span class="govuk-visually-hidden--desktop td-header">Initiated: </span>{{data['created2']}}
         </td>
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>13 April 2025
-        </td>
+          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated2']}}
+        </td>        
       </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AS3464</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Garnets from Gabon</a>
-        </td>              
-       <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>24 Dec 2020
-        </td> 
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Closed: </span>24 Dec 2022
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>24 Dec 2025
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">BA0005</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 Nov 2020
-        </td> 
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Closed: </span>13 Nov 2022
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>13 Nov 2025
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">SI943005</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Electric Bikes</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Created: </span>07 Nov 2021
-        </td> 
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>Closed
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Closed: </span>07 Nov 2022
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Measure expiry: </span>07 Nov 2025
-        </td>
-      </tr>
-
-    </table>  
+    </table>
+    
 
     {% endset %}
     
@@ -336,7 +257,7 @@
       }
       ]
     }) }}
-
+    
   </div>
 
 </div>

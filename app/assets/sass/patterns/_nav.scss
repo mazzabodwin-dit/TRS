@@ -61,9 +61,9 @@
 
 }
 
- /* Caseworker Navigation */
- /* Caseworker Navigation */
- /* Caseworker Navigation */
+ /*  Navigation */
+ /*  Navigation */
+ /*  Navigation */
 
  #nav .govuk-link {
   color: #fff;
@@ -86,6 +86,14 @@
 }
 
 .cases-nav .app-navigation__list-item--cases {
+  border-bottom: 3px solid #fff;
+}
+
+.notices-nav .app-navigation__list-item--notices {
+  border-bottom: 3px solid #fff;
+}
+
+.myorg-nav .app-navigation__list-item--myorgs {
   border-bottom: 3px solid #fff;
 }
 
