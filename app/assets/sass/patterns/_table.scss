@@ -98,10 +98,10 @@ th {
     padding-left: 2px;
 }
 
+/*
 .no-sort:after {
     content: "\25C6";
     color: govuk-colour("mid-grey");
-
 }
 
 .A-to-Z:after {
@@ -113,11 +113,48 @@ th {
     content: "\25BC";
     font-size: 0.9em;
 }
+*/
 
-table.sortable th .sort-indicator {
+table.sortable th .sort-indicator, table.sortable th .A-to-Z, table.sortable th .Z-to-A {
   margin: 1px 5px 0 5px;
   position: absolute;
   padding-top: 2px;
+}
+
+table.sortable th .A-to-Z:before {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-bottom: 7px solid govuk-colour("mid-grey");
+}
+
+table.sortable th .A-to-Z:after {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-top: 7px solid govuk-colour("black");
+}
+
+table.sortable th .Z-to-A:before {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-bottom: 7px solid govuk-colour("black");
+}
+
+table.sortable th .Z-to-A:after {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-top: 7px solid govuk-colour("mid-grey");
 }
 
 table.sortable th .sort-indicator:before {
