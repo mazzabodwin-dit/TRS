@@ -34,12 +34,12 @@
 
     {% set openCasesHTML %}
     <h2 class="govuk-heading-s">Open cases</h2>
-    <table class="govuk-table sortable" id="table-header" role="grid">
+    <table class="govuk-table sortable table-border" id="table-header" role="grid">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the open Trade Remedies investigations</caption>
       <thead class="govuk-table__head head-border">
         <tr class="govuk-table__row">
           <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
@@ -50,7 +50,7 @@
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Country <i class="sort-indicator"></i>
           </th>
-          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
@@ -112,30 +112,6 @@
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Commodity: </span><span title="{{data['case-type1']}}">{{data['commodity4']}}</span>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country4']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Type: </span><abbr title="{{data['case-type4']}}">{{data['case-typeabr4']}}</abbr>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated4']}}
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
         </td>
         <td class="govuk-table__cell">
@@ -155,6 +131,30 @@
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated5']}}
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Commodity: </span><span title="{{data['case-type1']}}">{{data['commodity4']}}</span>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country4']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Type: </span><abbr title="{{data['case-type4']}}">{{data['case-typeabr4']}}</abbr>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated4']}}
         </td>
       </tr>
 
@@ -188,12 +188,12 @@
 
     {% set completedCasesHTML %}
     <h2 class="govuk-heading-s">Closed cases</h2>
-    <table class="govuk-table sortable" id="table-header" role="grid">
+    <table class="govuk-table sortable table-border" id="table-header" role="grid">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the closed Trade Remedies investigations</caption>
       <thead class="govuk-table__head head-border">
         <tr class="govuk-table__row">
           <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>

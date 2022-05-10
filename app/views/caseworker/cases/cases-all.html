@@ -35,7 +35,7 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
@@ -47,10 +47,10 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task<i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task<i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
             </th>
           </tr>
         </thead>
@@ -69,13 +69,13 @@
             <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['initiated1']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status1']}}
           </td>
         </tr>
 
@@ -93,37 +93,13 @@
             <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant3']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created3']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status3']}}
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['initiated3']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task3']}}
           </td>
-        </tr>
-
-        <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr4']}}</span>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created4']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task4']}}
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status3']}}
           </td>
         </tr>
 
@@ -141,13 +117,37 @@
             <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant5']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created5']}}
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['initiated5']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task5']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status5']}}
           </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task5']}}
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr4']}}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['initiated4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
           </td>
         </tr>
 
@@ -165,13 +165,13 @@
             <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant6']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created6']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['initiated6']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
           </td>
         </tr>
       </table>   
@@ -188,7 +188,7 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
@@ -242,7 +242,7 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
@@ -251,13 +251,10 @@
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Updated <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task<i class="sort-indicator"></i>
             </th>
           </tr>
         </thead>
@@ -276,13 +273,10 @@
             <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant2']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created2']}}
+            <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated2']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status2']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task2']}}
           </td>
         </tr>
  

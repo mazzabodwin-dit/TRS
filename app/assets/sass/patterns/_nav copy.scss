@@ -64,7 +64,12 @@
 
 .govuk-header__nav {
   float: left;
-  clear: left;
+}
+
+
+
+.app-navigation__list-item {
+  display: list-item;
 }
 
 /* Main nav active states*/
@@ -73,29 +78,30 @@
   padding-left: 10px;
 }
 
-
-
 /* Full screen size */
 /* Full screen size */
 @media (min-width: 40.0625em) {
-
-  .govuk-list > li {
-    margin-bottom: 10px;
-  }
-
   .app-navigation__list-item {
-    float: left;
-    margin: 10px 30px 10px 0px;
-
+    margin: 0 15px 0px 0px;
+    line-height: 2.63158;
+    display: initial;
   }
 
+  .govuk-list {
+    margin-bottom: 5px
+  }
+
+  /* Main nav active states*/
   .dash-nav .app-navigation__list-item--dash, .cases-nav .app-navigation__list-item--cases, .notices-nav .app-navigation__list-item--notices, .myorg-nav .app-navigation__list-item--myorgs {
     border-bottom: 2px solid #fff;
     border-left: 0px;
-    padding: 0;
+    padding: 0px;
   }
 
  }
+
+/*end */
+
 
 /* Case Navigation */
 /* Case Navigation */

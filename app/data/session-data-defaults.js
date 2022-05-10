@@ -132,6 +132,24 @@ module.exports = {
   "next-task6": "Finalise case information",
   "next-notice6": "24 Sept 2021",
 
+  "case-ref7": "AD12234",
+  "case-name7": "Corn-on-cob from Alaska",
+  "case-typeabr7": "AD",
+  "case-type7": "Anti-dumping",
+  "commodity7": "Corn-on-cob, sweetcorn",
+  "applicant7": "Secretary of State",
+  "created7": "07 March 2022",
+  "initiated7": "n/a",
+  "register-date7": "n/a",
+  "updated7": "24 July 2021",
+  "party7": "?",
+  "representative7": "?",
+  "user7": "?",
+  "country7": "United States",
+  "status7": "DRAFT",
+  "next-task7": "n/a",
+  "next-notice7": "n/a/",
+
 
 
   "reginterest-app-status": "Application received"

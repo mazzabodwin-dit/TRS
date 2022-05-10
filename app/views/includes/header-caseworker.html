@@ -20,20 +20,24 @@
     <div class="govuk-header__content">
       <a href="/" class="govuk-header__link govuk-header__link--service-name">Trade Remedies Authority</a>
     </div>
-    <ul class="login-nav__list govuk-clearfix">
-      <li class="login-nav__list-item">{{ data['name'] }} |</li>
-      <li class="login-nav__list-item"><a href="#" class="govuk-link govuk-link govuk-link--inverse login-nav__link">Manage account</a>|</li>
-      <li class="login-nav__list-item"><a href="signin?signin=no" class="govuk-link govuk-link--inverse login-nav__link">Sign out</a></li>
-    </ul>
 
-    <nav id="app-navigation" class="app-navigation govuk-clearfix" role="navigation" aria-labelledby="app-navigation-heading">
-      <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
-      <ul class="app-navigation__list app-width-container govuk-width-container" id="nav">
+    <div class="govuk-header__account">
+      <ul class="login-nav__list">
+        <li class="login-nav__list-item">{{ data['name'] }} |</li>
+        <li class="login-nav__list-item"><a href="#" class="govuk-link govuk-link govuk-link--inverse login-nav__link">Manage account</a>|</li>
+        <li class="login-nav__list-item"><a href="signin?signin=no" class="govuk-link govuk-link--inverse login-nav__link">Sign out</a></li>
+      </ul>
+    </div>
+
+
+    
+    <nav class="govuk-header__nav" id="app-navigation"role="navigation" aria-labelledby="app-navigation-heading">
+      <h2 class="govuk-visually-hidden--desktop" id="app-navigation-heading">Menu</h2>
+      <ul class="govuk-list" id="nav">
         
         <li class="app-navigation__list-item app-navigation__list-item--dash" >
           <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/caseworker/dashboard">
-            Dashboard
-          </a>
+            Dashboard</a>
         </li>
         <li class="app-navigation__list-item app-navigation__list-item--cases" >
           <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/caseworker/cases/cases-all">
@@ -57,6 +61,7 @@
         </li>
       </ul>
     </nav>
+    
     
   </div>
 </header>
