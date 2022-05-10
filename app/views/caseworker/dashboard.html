@@ -6,6 +6,7 @@
   Proto: Dashboard – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
 {% set bodyClasses = 'caseworker-width dash-nav' %}
 
 {% block header %}
@@ -24,7 +25,7 @@
         Welcome
       </h1>
 
-      <p>This is your dashboard for trade remedy investigations you are involved in.</p>
+      <p>This is your dashboard for trade remedies you are involved in.</p>
 
       <table class="govuk-table sortable table-border" id="table-header" role="grid">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the public Trade Remedies cases</caption>
@@ -42,7 +43,7 @@
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
             </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
             </th>
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
@@ -51,12 +52,15 @@
             <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task<i class="sort-indicator"></i>
             </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Alerts<i class="sort-indicator"></i>
+            </th>
           </tr>
         </thead>
   
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-typeabr1']}}">{{data['case-typeabr1']}}</span>
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr1']}}</span>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
@@ -76,104 +80,64 @@
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task1']}}
           </td>
-        </tr>
-  
-        <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AG0404</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Farnets from Fabon</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Farnets First UK</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 April 2021
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Case initiated
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>Issue questionnaires
-          </td>
-        </tr>
-  
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Anti-subsidy investigation">AS</span>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">AS3464</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Garnets from Gabon</a>
-          </td>              
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Secretary of State</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>24 Dec 2020
-          </td> 
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Application received
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>Initiation
+            <span class="govuk-visually-hidden--desktop td-header">Things to check: </span>4
           </td>
         </tr>
 
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr4']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">BA0005</a>
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Barnets from Tabon</a>
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
+            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>13 Nov 2020
-          </td> 
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Questionnaires issued
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created4']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>Process questionnaires
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Things to check: </span>0
           </td>
         </tr>
 
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="Safeguarding investigation">SI</span>
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr6']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="#" class="govuk-link--no-visited-state">SI943005</a>
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">Electric Bikes</a>
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="cases/case" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">Bikers Ltd</a>
+            <span class="govuk-visually-hidden--desktop td-header">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant6']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Created: </span>07 Nov 2021
-          </td> 
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Initiation prepared
+            <span class="govuk-visually-hidden--desktop td-header">Created: </span>{{data['created6']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>Finalise case information
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Things to check: </span>0
           </td>
         </tr>
-  
       </table>   
 
      
