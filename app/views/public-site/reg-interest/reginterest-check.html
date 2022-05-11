@@ -36,7 +36,6 @@
           {% else %}
 
             {{data['case-ref']}} - {{data['case-name']}}
-            {{data['reginterest-client-name']}} - {{data['reginterest-client-email']}}
           {% endif %}
         </dd>
          
@@ -49,15 +48,18 @@
           Registering for
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
-          <p>My client:</p>
-            {% else %}
-            <p>My employer:</p>
+          {% if (data['reginterest-what-org'] == "my-org") %}
+            My employer<br><br>
+             {% else %}
+             My client<br><br>
             {% endif %}
 
-          {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
+          {% if (data['reginterest-what-org'] == "my-org") %}
             Cheesy chips Ltd<br>
               {% else %}
+              {{data['reginterest-client-name']}}<br>
+              {{data['reginterest-client-email']}}<br><br>
+
                 {% if (data['reginterest-what-org'] == "existing-org") %}
                   {{ data['reginterest-existing-org'] }}<br>
                     {% else %}
