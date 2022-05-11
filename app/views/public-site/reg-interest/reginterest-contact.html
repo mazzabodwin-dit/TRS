@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Contact name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="reginterest-tasks?which-org-task=complete" novalidate method="post" id="reginterest-contact-name-form">  
+        
+        {% call govukFieldset({
+          legend: {
+            text: "Clients contact details",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>Please provide details of your main contact for the client you are representing.</p>
+
+
+        {{ govukInput({
+          label: {
+            text: "Contact name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "reginterest-client-name",
+          name: "reginterest-client-name",
+          type: "text",
+          autocomplete: "name",
+          value: data['reginterest-client-name']
+
+        }) }}
+  
+        {{ govukInput({
+          label: {
+            text: "Contact email address",
+            classes: "govuk-label--s"
+          },
+          id: "reginterest-client-email",
+          name: "reginterest-client-email",
+          classes: "govuk-input--width-20",
+          type: "email",
+          autocomplete: "email",
+          value: data['reginterest-client-email']
+        }) }}
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
+
+
+
+        {% endcall %} 
+
+      </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
