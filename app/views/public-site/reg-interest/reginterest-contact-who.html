@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Contact name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/reginterest-tasks-contact-route" novalidate method="post" id="reginterest-which-contact-form">  
+        
+        
+        {{ govukRadios({
+          idPrefix: "reginterest-choose-contact",
+          name: "reginterest-choose-contact",
+          fieldset: {
+            legend: {
+              text: "Who is your primary client contact?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+                 
+          items: [
+            {
+              value: "Robbie Cortina - ortina@steeluk.org",
+              text: "Robbie Cortina - ortina@steeluk.org",
+              checked: checked("reginterest-choose-contact", "Robbie Cortina - ortina@steeluk.org")
+            },
+            {
+              value: "Simon Williams - s.williams@steeluk.org",
+              text: "Simon Williams - s.williams@steeluk.org",
+              checked: checked("reginterest-choose-contact", "Simon Williams - s.williams@steeluk.org")
+            },
+            {
+              value: "Tina Fray - tina.fray@steeluk.org",
+              text: "Tina Fray - tina.fray@steeluk.org",
+              checked: checked("reginterest-choose-contact", "Tina Fray - tina.fray@steeluk.org")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "new-contact",
+              text: "Add new contact",
+              checked: checked("reginterest-choose-contact", "new-contact")
+            }
+          ]
+        }) }}  
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
+
+      </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

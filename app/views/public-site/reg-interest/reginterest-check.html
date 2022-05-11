@@ -49,22 +49,26 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if (data['reginterest-what-org'] == "my-org") %}
-            My employer<br><br>
+            My employer:<br><br>
              {% else %}
-             My client<br><br>
+             My client:<br>
             {% endif %}
 
           {% if (data['reginterest-what-org'] == "my-org") %}
-            Cheesy chips Ltd<br>
+            Steel UK<br>
               {% else %}
-              {{data['reginterest-client-name']}}<br>
-              {{data['reginterest-client-email']}}<br><br>
+
+                {% if (data['reginterest-choose-contact'] == "new-contact") %}
+                  {{data['reginterest-client-name']}} - {{data['reginterest-client-email']}}<br><br>
+                  {% else %}
+                    {{data['reginterest-choose-contact']}}<br><br>
+                {% endif %}
 
                 {% if (data['reginterest-what-org'] == "existing-org") %}
                   {{ data['reginterest-existing-org'] }}<br>
                     {% else %}
                       {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
-                        {{ data[''] }}ACompany<br>
+                        {{data['reginterest-org-name']}}<br>
                           {% else %}
                             {{ data['reginterest-org-name'] }}<br>
                       {% endif %}

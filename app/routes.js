@@ -84,16 +84,16 @@ router.get('/public-site/reg-interest/reginterest-which-org', function (req, res
 
   if (req.session.data['createaccount-org-name'] == null) {
     // store it in session
-    req.session.data['createaccount-org-name'] = "Cheesy Chips Ltd"
+    req.session.data['createaccount-org-name'] = "BlueSteel Partners"
     // send it to the current page
-    res.locals.data['createaccount-org-name'] = "Cheesy Chips Ltd"
+    res.locals.data['createaccount-org-name'] = "BlueSteel Partners"
   }
 
   if (req.session.data['account-email'] == null) {
     // store it in session
-    req.session.data['account-email'] = "myemail@email.com"
+    req.session.data['account-email'] = "Bob.Hoskins@bluesteel.org"
     // send it to the current page
-    res.locals.data['account-email'] = "myemail@email.com"
+    res.locals.data['account-email'] = "Bob.Hoskins@bluesteel.org"
   }
 
   res.render('public-site/reg-interest/reginterest-which-org')
@@ -140,6 +140,31 @@ router.post('/reginterest-uk-reg-route', function (req, res) {
     // Send user to no page
     res.redirect('/public-site/reg-interest/reginterest-the-org')
   }
+})
+
+// Run this code on reginterest-loa-existing - which option is chosen:
+router.post('/reginterest-tasks-contact-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-primary'
+  var reginterestChooseContact = req.session.data['reginterest-choose-contact']
+
+  // Check whether the variable matches a condition
+  if (reginterestChooseContact == "Simon Williams - s.williams@steeluk.org"){
+    // Send user to next page
+    res.redirect('/public-site/reg-interest/reginterest-tasks?which-org-task=complete')
+  } 
+  if (reginterestChooseContact == "Robbie Cortina - ortina@steeluk.org"){
+    // Send user to next page
+    res.redirect('/public-site/reg-interest/reginterest-tasks?which-org-task=complete')
+  } 
+  if (reginterestChooseContact == "Tina Fray - tina.fray@steeluk.org"){
+    // Send user to next page
+    res.redirect('/public-site/reg-interest/reginterest-tasks?which-org-task=complete')
+  } 
+  if (reginterestChooseContact == "new-contact"){
+    // Send user to next page
+    res.redirect('/public-site/reg-interest/reginterest-contact')
+  } 
 })
 
 

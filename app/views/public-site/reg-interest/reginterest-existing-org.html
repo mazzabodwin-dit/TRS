@@ -22,7 +22,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2. Who is registering interest</span>
 
-    <form action="reginterest-contact" method="post" id="reginterest-existing-org-form">
+    <form action="reginterest-contact-who" method="post" id="reginterest-existing-org-form">
 
       {{ govukRadios({
         idPrefix: "reginterest-existing-org",
@@ -36,19 +36,19 @@
         },
         items: [
           {
-            value: "ALUMINUM TRADE LTD",
-            text: "ALUMINUM TRADE LTD",
-            checked: checked("reginterest-existing-org", "ALUMINUM TRADE LTD")
+            value: "Steel UK",
+            text: "Steel UK",
+            checked: checked("reginterest-existing-org", "Steel UK")
           },
           {
-            value: "ALUMINUM ELECTRICS LIMITED",
-            text: "ALUMINUM ELECTRICS LIMITED",
-            checked: checked("reginterest-existing-org", "ALUMINUM ELECTRICS LIMITED")
+            value: "Alummium Electrics Limited",
+            text: "Alummium Electrics Limited",
+            checked: checked("reginterest-existing-org", "Alummium Electrics Limited")
           },
           {
-            value: "ALUMINUM SQUIRREL LIMITED",
-            text: "ALUMINUM SQUIRREL LIMITED",
-            checked: checked("reginterest-existing-org", "ALUMINUM SQUIRREL LIMITED")
+            value: "Alummium Squirrel Limited",
+            text: "Alummium Squirrel Limited",
+            checked: checked("reginterest-existing-org", "Alummium Squirrel Limited")
           }
         ]
       }) }} 
