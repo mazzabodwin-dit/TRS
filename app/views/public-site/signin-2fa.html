@@ -36,7 +36,7 @@
       {% endif %}
 
 
-      <p>This code will only be valid for 30 minutes, after that you will need to request a new code.</p>
+      <p>This code will be valid for 30 minutes. You can request a new code if you need more time.</p>
 
       <form action="/public-site/dashboard?signedin=yes" method="post" id="signin-2fa-form">
     
@@ -52,15 +52,14 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              I'm having issues with my code
+              I have a problem with my code 
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p>If you have not received your code or your code has expired you can request a new code using the link below. </p>
-              <p> Note you will have a limited number attempts before your account is temporarily locked. It will however be automatically re-enabled after a set period of time.</p>
-            <p><a href="signin-2FA?rerequest2FA=yes">Send new code</a></p>
-            <p>If you chose to receive your code by SMS it can sometimes be slow or unreliable. Click the link below to get your authentication code sent to your email address: myemail@email.com</p>
-            <p><a href="signin-2FA?rerequest2FA=yes">Email me instead</a></p>
+            <p>If you have not received a code or it has expired, you can request a new code using this link: <a href="signin-2FA?rerequest2FA=yes">send a new code</a></p>
+            <p>If you request a new code too many times, your account may be temporarily locked. It will be automatically re-enabled shortly.</p>
+            <p>Receiving your code by text message is sometimes less reliable.<br>
+            <a href="signin-2FA?rerequest2FA=yes">Email my code</a></p>
           </div>
         </details>
 
