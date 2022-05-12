@@ -57,13 +57,8 @@
           {% if (data['reginterest-what-org'] == "my-org") %}
             Steel UK<br>
               {% else %}
-
-                {% if (data['reginterest-choose-contact'] == "new-contact") %}
-                  {{data['reginterest-client-name']}} - {{data['reginterest-client-email']}}<br><br>
-                  {% else %}
-                    {{data['reginterest-choose-contact']}}<br><br>
-                {% endif %}
-
+                {{data['reginterest-client-name']}} - {{data['reginterest-client-email']}}<br><br>
+                 
                 {% if (data['reginterest-what-org'] == "existing-org") %}
                   {{ data['reginterest-existing-org'] }}<br>
                     {% else %}
