@@ -9,7 +9,7 @@
 
 
 {% block header %}
-  {% if (data['signedin'] == "no") %}
+  {% if (data['signin'] == "no") %}
    {% include "includes/header-public-signedout.html" %}
   {% else %}
     {% include "includes/header-public.html" %}
