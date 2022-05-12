@@ -63,7 +63,7 @@
                   {{ data['reginterest-existing-org'] }}<br>
                     {% else %}
                       {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
-                        {{data['reginterest-org-name']}}<br>
+                        Org name<br>
                           {% else %}
                             {{ data['reginterest-org-name'] }}<br>
                       {% endif %}
@@ -74,9 +74,10 @@
           Company number: 595934925<br>
           Address<br>
           Postcode/ zip<br>
-          Country<br>
+          Country
           <br>
           {% if data['reginterest-what-org'] == "new-org" %}
+          <br>
             VAT number: 68593069894<br>
             DUNS number: 123456789<br>
             www.orglongnameurlthatisannoying.com
