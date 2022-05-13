@@ -18,9 +18,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  Review interested parties</span>
+    <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
-      Verify primary party
+      {% if data['party-type'] == "int" %}
+        Verify interested party
+          {% else %}
+            Verify representative party
+      {% endif %}
     </h1>
   </div>
   <div class="govuk-grid-column-two-thirds">
@@ -33,20 +37,25 @@
     </div>
   -->   
 
-    <form action="reginterest-tasks" method="post" id="reginterest-valid-employer-form">
-      <h2 class="govuk-heading-m">Are you certain this organisation is fraudulent?</h2>
+    <form action="reginterest-complete" method="post" id="reginterest-valid-employer-form">
+      <h2 class="govuk-heading-m">Are you certain this organisation cannot be verified?</h2>
 
+      {% if data['party-type'] == "int" %}
+        <p><strong> {{data['party1']}}</strong></p>
+        {% else %}
+          <p><strong> {{data['representative1']}}</strong></p>
+      {% endif %}
 
-      <p>Marking <strong> {{data['party1']}}</strong> as fraudulent is permanent and irreversible.</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>The organisation will be removed from this case.</li>
-        <li>No further submissions will be made visible to investigators from this organisation in this or any future cases</li>
+        <li>If this organisation cannot be verified this registration of interest will be declined</li>
+        <li>If the organisation is involved in other cases this decision will be flagged to relevant caseworkers</li>
+        <li>Should you find information that enables you to verify this orgnaisation you can change their status at a later date</li>
       </ul>
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "I confirm the organsiation is fraudulent"
+          text: "Confirm"
         }) }}    
         <a class="govuk-link" href="javascript: history.back()">Back</a>
       </div>
@@ -67,6 +76,14 @@
             <strong>Interested party</strong><br>
             {{data ['party1']}}
           </li> 
+
+          {% if data['third-party'] == "yes" %}
+          <li>
+            <strong>Representative party</strong><br>
+            {{data ['representative1']}}
+          </li>
+          {% endif %} 
+
           <li>
             <strong>Registered by</strong><br>
             {{data ['user1']}}

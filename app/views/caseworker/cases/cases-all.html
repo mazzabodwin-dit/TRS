@@ -60,7 +60,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr1']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
@@ -84,7 +84,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr3']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name3']}}</a>
@@ -108,7 +108,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr5']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
@@ -132,7 +132,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr4']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
@@ -156,7 +156,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr6']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
@@ -210,7 +210,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type2']}}">{{data['case-typeabr7']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref7']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref7']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name7']}}</a>
@@ -229,6 +229,60 @@
       </table>   
 
       {% endset %}
+
+      {% set transCasestHTML %}
+      <h2 class="govuk-heading-s">Transition cases</h2>
+
+      <table class="govuk-table sortable table-border" id="table-header" role="grid">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of the transition Trade Remedies cases</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Associated Transitional Review<i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Published <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Terminated <i class="sort-indicator"></i>
+            </th>
+          </tr>
+        </thead>
+  
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type2']}}">{{data['case-typeabr2']}}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name2']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Associated Transitional Review: </span><a href="#" class="govuk-link--no-visited-state">Old Transition Anti Dumping</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Published: </span>{{data['updated2']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Terminated: </span>{{data['updated2']}}
+          </td>
+        </tr>
+ 
+      </table>  
+      
+      {% endset %}
+
 
 
       {% set closedCasestHTML %}
@@ -264,7 +318,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type2']}}">{{data['case-typeabr2']}}</span>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Ref: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name2']}}</a>
@@ -299,11 +353,18 @@
         id: "draft-cases",
         panel: {
           html: draftCasesHTML
-        }
+          }
+        },
+        { 
+          label: "Transitioned cases",
+          id: "trans-case",
+          panel: {
+            html: transCasestHTML
+          }
         },
         { 
           label: "Closed cases",
-          id: "closed-interest",
+          id: "closed-case",
           panel: {
             html: closedCasestHTML
           }

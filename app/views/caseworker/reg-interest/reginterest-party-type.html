@@ -100,10 +100,18 @@
             <strong>Interested party</strong><br>
             {{data ['party1']}}
           </li> 
+
+          {% if data['third-party'] == "yes" %}
+          <li>
+            <strong>Representative party</strong><br>
+            {{data ['representative1']}}
+          </li>
+          {% endif %} 
+
           <li>
             <strong>Registered by</strong><br>
             {{data ['user1']}}
-          </li>
+          </li>          
         </ul>
       </nav>
     </aside>
