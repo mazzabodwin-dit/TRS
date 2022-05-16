@@ -21,7 +21,7 @@ module.exports = {
 
   // Insert values here
 
-  "name": "Bob Hoskins",
+  "publicname": "Bob Hoskins",
   "caseworkername": "Jonanna Barton",
   
   "case-ref1": "AD2224",
@@ -36,7 +36,9 @@ module.exports = {
   "updated1": "14 May 2022",
   "party1": "Steel UK",
   "representative1": "BlueSteel Partners",
-  "user1": "BobHoskins",
+  "user1": "Bob Hoskins",
+  "email1": "bobhoskins@BlueSteelLawyers.com",
+  "mobile1": "+44 7854329445",
   "country1": "Russia",
   "submission1": "Registration of Interest",
   "status1": "Questionnaires issued",
@@ -54,8 +56,8 @@ module.exports = {
   "register-date2": "01 June 2019",
   "updated2": "30 Nov 2021",
   "party2": "Steel UK",
-  "representative2": "Blue Steel Lawyers",
-  "user2": "BobHoskins",
+  "representative2": "BlueSteel Partners",
+  "user2": "Clay Akin",
   "country2": "Republic of Turkey",
   "status2": "	Final determination",
   "next-task2": "n/a",
