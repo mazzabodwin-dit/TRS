@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Proto: Manage my account – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Manage my account
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Manage my account
+      </h1>
+      <h2 class="govuk-heading-m">Your details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['createaccount-name'] != null %}
+              {{data['createaccount-name']}}
+              {% else %}
+                {{data['user1']}}
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['createaccount-email'] != null %}
+              {{data['createaccount-email']}}
+                {% else %}
+                  {{data['email1']}}
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Moble phone
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {% if data['createaccount-mobile'] != null %}
+            {{data['createaccount-mobile']}}
+            {% else %}
+              {{data['mobile1']}}
+          {% endif %}
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Your organisation</h2>
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Name:</dt>
+          <dd class="govuk-summary-list__value">
+          {% if data['createaccount-org-name'] != null %}
+            {{data['createaccount-org-name']}}
+            {% else %}
+              {{data['representative1']}}
+          {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address:</dt>
+          <dd class="govuk-summary-list__value">345, The Shard, London <br>
+            EC2 3TF<br>
+            United Kingdom
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Company details: </dt>
+          <dd class="govuk-summary-list__value">
+            Company number: 456794936 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px"><br>
+
+            VAT number: 68593069894<br>
+            DUNS number: 123456789<br>
+            <a href="">www.orglongnameurlthatisannoying.com</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="account-2fa">Change your Two-factor authentication</a>
+            </li>   
+            <li>
+              <a href="account-changepass">Change your password</a>
+            </li>    
+            
+            {% if data['case-ref'] != null %}
+            <li>
+              <br>
+              <strong>Email the case team</strong>        
+              <a class="govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+            </li>     
+            {% endif %}    
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+ {% include "includes/footer.html" %}
+{% endblock %}

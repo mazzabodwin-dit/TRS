@@ -23,8 +23,14 @@
 
     <div class="govuk-header__account">
       <ul class="login-nav__list">
-        <li class="login-nav__list-item">{{ data['name'] }} |</li>
-        <li class="login-nav__list-item"><a href="#" class="govuk-link govuk-link govuk-link--inverse login-nav__link">Manage account</a>|</li>
+        <li class="login-nav__list-item">
+          {% if data['createaccount-name'] != null %}
+              {{data['createaccount-name']}}
+              {% else %}
+                {{data['user1']}}
+            {% endif %}
+          |</li>
+        <li class="login-nav__list-item"><a href="/public-site/account/account" class="govuk-link govuk-link govuk-link--inverse login-nav__link">Manage account</a>|</li>
         <li class="login-nav__list-item"><a href="/public-site/start?signin=no" class="govuk-link govuk-link--inverse login-nav__link">Sign out</a></li>
       </ul>
     </div>

@@ -17,7 +17,7 @@
       <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a href="">Manage account</a>
+      <a href="account">Manage account</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       Two-factor authentication
@@ -33,7 +33,7 @@
     
     
 
-      <form action="#" method="post" id="account-2fa-form">   
+      <form action="account" method="post" id="account-2fa-form">   
         
         {% call govukFieldset({
           legend: {
@@ -48,25 +48,50 @@
    
         
         {% set mobileHtml %} 
-        
-          {{ govukInput({
-            id: "2FA-mobile",
-            name: "2FA-mobile",
-            type: "tel",
-            autocomplete: "tel",
-            classes: "govuk-!-width-one-third",
-            label: {
-              text: "Enter your mobile number"
-            }
-          }) }}
 
+          {% if data['2FA-mobile'] != null %}
+
+            {{ govukInput({
+              id: "2FA-mobile",
+              name: "2FA-mobile",
+              type: "tel",
+              autocomplete: "tel",
+              value: data['2FA-mobile'],
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "Enter your mobile number"
+              }
+            }) }}
+
+            {% else %}
+            
+              {{ govukInput({
+                id: "mobile1",
+                name: "mobile1",
+                type: "tel",
+                autocomplete: "tel",
+                value: data['mobile1'],
+                classes: "govuk-!-width-one-third",
+                label: {
+                  text: "Enter your mobile number"
+                }
+              }) }}
+
+          {% endif %}
           
           {% include "includes/country-code-list.html" %}    
 
         {% endset -%}
 
         {% set emailText %}
-          Email address: <strong>{{ data['account-email'] }}</strong>
+          Email address: 
+          <strong>
+            {% if data['account-email'] != null %}
+              {{data['account-email']}}
+              {% else %}
+                {{data['email1']}}
+            {% endif %}
+          </strong>
         {% endset -%}
 
         {{ govukRadios({
@@ -96,7 +121,7 @@
         }) }}
         
         {{ govukButton({
-          text: "Continue"
+          text: "Submit"
         }) }}
         {% endcall %}
         </form>
