@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: My cases – GOV.UK Trade Remedies Prototype
+  Proto: Manage my organisation – GOV.UK Trade Remedies Prototype
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
@@ -24,18 +24,15 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <div class="govuk-bluepanel govuk-bluepanel--confirmation">
-      <span class="govuk-caption-l inverse-header">Trade Remedies Authority</span> 
-      <h1 class="govuk-heading-l inverse-header">
-        All investigations
-      </h1>
-    </div>
+    <h1 class="govuk-heading-l inverse-header">
+      Manage my organisation
+    </h1>
       <p>This page contains a list of our open and closed investigations. Link through to each case to see Public versions of the documents submitted by registered participants in the case.</p>
 
     {% set openCasesHTML %}
-    <h2 class="govuk-heading-s">Open cases</h2>
+    <h2 class="govuk-heading-s">Organisation cases</h2>
     <table class="govuk-table sortable table-border" id="table-header" role="grid">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of the open Trade Remedies investigations</caption>
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your organisations case</caption>
       <thead class="govuk-table__head head-border">
         <tr class="govuk-table__row">
           <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
@@ -88,7 +85,7 @@
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name3']}}</a>
@@ -136,7 +133,7 @@
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
@@ -160,7 +157,7 @@
 
        <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
@@ -193,7 +190,7 @@
       <thead class="govuk-table__head head-border">
         <tr class="govuk-table__row">
           <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-            <span class="govuk-visually-hidden--desktop">Sort by: </span>Case No.. <i class="A-to-Z"></i>
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
           </th>
           <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
             <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
