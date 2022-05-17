@@ -24,13 +24,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l inverse-header">
+    <h1 class="govuk-heading-l">
       Manage my organisation
     </h1>
       <p>This page contains a list of our open and closed investigations. Link through to each case to see Public versions of the documents submitted by registered participants in the case.</p>
 
-    {% set openCasesHTML %}
-    <h2 class="govuk-heading-s">Organisation cases</h2>
+    {% set manageCasesHTML %}
+    <h2 class="govuk-heading-s">Manage cases</h2>
     <table class="govuk-table sortable table-border" id="table-header" role="grid">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your organisations case</caption>
       <thead class="govuk-table__head head-border">
@@ -183,8 +183,8 @@
 
     {% endset %}
 
-    {% set completedCasesHTML %}
-    <h2 class="govuk-heading-s">Closed cases</h2>
+    {% set manageTeamHTML %}
+    <h2 class="govuk-heading-s">Manage team</h2>
     <table class="govuk-table sortable table-border" id="table-header" role="grid">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of the closed Trade Remedies investigations</caption>
       <thead class="govuk-table__head head-border">
@@ -246,17 +246,17 @@
       items: [
       
       { 
-        label: "Open cases",
-        id: "open-cases",
+        label: "Manage cases",
+        id: "manage-team",
         panel: {
-          html: openCasesHTML
+          html: manageCasesHTML
         }
       },
       { 
-        label: "Closed cases",
-        id: "completed-cases",
+        label: "Manage Team",
+        id: "manage-team",
         panel: {
-          html: completedCasesHTML
+          html: manageTeamHTML
         }
       }
       ]
