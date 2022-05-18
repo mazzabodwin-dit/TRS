@@ -17,7 +17,7 @@
       <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      Manage my account
+      Manage account
     </li>
   </ol>
 </div>
@@ -69,11 +69,6 @@
           </dd>
         </div>
       </dl>
-      
-        {{ govukButton({
-          text: "Edit my details",
-          href: "account-details"
-        }) }}
 
       <h2 class="govuk-heading-m">Your organisation</h2>
       <dl class="govuk-summary-list">
@@ -114,8 +109,11 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
+              <a href="account-details">Change your account details</a>
+            </li> 
+            <li>
               <a href="account-2fa">Change your Two-factor authentication</a>
-            </li>   
+            </li>  
             <li>
               <a href="account-changepass">Change your password</a>
             </li>    

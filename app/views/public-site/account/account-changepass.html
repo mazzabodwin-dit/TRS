@@ -98,9 +98,13 @@
 
         </div>
 
-        {{ govukButton({
-          text: "Submit"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Submit"
+          }) }}    
+          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+        </div>
+
         {% endcall %} 
       </form>
         
