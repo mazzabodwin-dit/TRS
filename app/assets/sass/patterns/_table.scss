@@ -34,6 +34,8 @@
 
 /**** Normal size viewport ****/
 
+/* Changing table font size */
+/*
 @media (min-width: 40.0625em) {
   .govuk-table {
     font-size: 16px;
@@ -41,7 +43,7 @@
     line-height: 1.25;
   }
 }
-
+*/
 table.table-border {
   border: solid 1px govuk-colour("mid-grey");
   border-collapse: unset;

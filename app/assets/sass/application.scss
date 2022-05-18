@@ -49,7 +49,14 @@ $govuk-assets-path: '/govuk/assets/';
 @media (min-width: 40.0625em) {
   .uploads.app-task-list__items {
       padding-left: 0px;
-  }}
+  }
+}
+
+.invite-user-link {
+  float: right;
+}
+
+
   
 /* Caseworker */
 /* Caseworker */
