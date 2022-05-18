@@ -126,7 +126,7 @@
     <form action="/reginterest-interested-party-route" method="post" id="reginterest-interested-party-form">
 
       {% set validHTML %}
-        Can you verify {{data['party1']}}?
+        Have you been able to verify {{data['party1']}}?
       {% endset %}
 
       {{ govukRadios({
@@ -142,13 +142,13 @@
         items: [
           {
             value: "verified",
-            text: "Able to verify party",
-            checked: checked("reginterest-valid-primary", "verified")
+            text: "Yes I have verified the party",
+            checked: checked("reginterest-valid-representative", "verified")
           },
           {
             value: "unverified",
-            text: "Unable to verify party",
-            checked: checked("reginterest-valid-primary", "unverified")
+            text: "No I am unable to verify party",
+            checked: checked("reginterest-valid-representative", "unverified")
           }
         ]
       }) }}
