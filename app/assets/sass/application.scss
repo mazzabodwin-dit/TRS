@@ -44,17 +44,25 @@ $govuk-assets-path: '/govuk/assets/';
   display: none;
 }
 
+.invite-user-link {
+  float: none;
+  padding-top: 20px;
+}
+
 
   /* Task list when being used for other things */
 @media (min-width: 40.0625em) {
   .uploads.app-task-list__items {
       padding-left: 0px;
   }
+
+  .invite-user-link {
+    float: right;
+    padding-top: 0px;
+
+  }
 }
 
-.invite-user-link {
-  float: right;
-}
 
 
   

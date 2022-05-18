@@ -30,10 +30,10 @@
     <form>
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
         <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-!-display-inline" for="sort">
-            Sort by
+          <label class="govuk-label govuk-!-display-inline" for="sort-cases">
+            Sort your cases by
           </label>
-          <select class="govuk-select" id="sort" name="sort">
+          <select class="govuk-select" id="sort-cases" name="sort-cases">
             <option value="No." selected>Case No.</option>
             <option value="Case">Case</option>
             <option value="Type">Type</option>
@@ -42,13 +42,11 @@
             <option value="Status">Status</option>
             <option value="Alerts">Alerts</option>
           </select>
-        </div>
 
-        <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-visually-hidden" for="direction">
+          <label class="govuk-label govuk-visually-hidden" for="direction-cases">
             Direction
           </label>
-          <select class="govuk-select" id="direction" name="direction">
+          <select class="govuk-select" id="direction-cases" name="direction-cases">
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
@@ -61,7 +59,7 @@
       </div>
 
       <table class="govuk-table sortable table-border" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your open Trade Remedies cases</caption>
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your open Trade Remedies cases</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
