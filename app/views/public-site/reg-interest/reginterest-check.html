@@ -72,7 +72,7 @@
                 {{ data['reginterest-existing-org'] }}<br>
                   {% else %}
                     {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
-                      Org name<br>
+                      ACompany<br>
                         {% else %}
                           {{ data['reginterest-org-name'] }}<br>
                     {% endif %}
@@ -80,9 +80,9 @@
           {% endif %}
           <!----> 
           
-          Address<br>
-          Postcode/ zip<br>
-          Country
+          345, The Shard, London <br>
+          EC2 3TF<br>
+          United Kingdom
           <br><br>
           Company number: 595934925<br>
           {% if data['reginterest-what-org'] == "new-org" %}
