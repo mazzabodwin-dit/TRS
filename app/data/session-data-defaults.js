@@ -36,17 +36,19 @@ module.exports = {
   "updated1": "14 May 2022",
   "party1": "Steel UK",
   "representative1": "BlueSteel Partners",
-  "user1": "Bob Hoskins",
-  "contact1": "Demi Morre",
-  "email1": "bobhoskins@BlueSteelPartners.com",
-  "mobile1": "+44 7854329445",
   "country1": "Russia",
   "submission1": "Registration of Interest",
   "status1": "Questionnaires issued",
   "next-task1": "Publish questionnaires",
   "next-notice1": "26 July 2022",
-  "role1": "Domestic Producer",
-
+  "case-role1": "Domestic Producer",
+  "user1": "Bob Hoskins",
+  "user-email1": "bobhoskins@BlueSteelPartners.com",
+  "user-role1": "Primary Admin",
+  "user-mobile1": "+44 7854329445",
+  "contact1": "Demi Morre",
+  
+ 
   "case-ref2": "TS0002",
   "case-name2": "Rainbow Trout from Turkey",
   "case-typeabr2": "TAS",
@@ -65,7 +67,7 @@ module.exports = {
   "status2": "	Final determination",
   "next-task2": "n/a",
   "next-notice2": "n/a",
-  "role2": "Exporter",
+  "case-role2": "Exporter",
 
 
   "case-ref3": "AG0404",
@@ -86,7 +88,7 @@ module.exports = {
   "status3": "Case initiated",
   "next-task3": "Issue questionnaires",
   "next-notice3": "01 June 2022",
-  "role3": "Importer",
+  "case-role3": "Importer",
 
 
   "case-ref4": "BA0005",
@@ -107,7 +109,7 @@ module.exports = {
   "status4": "Questionnaires issued",
   "next-task4": "Process questionnaires",
   "next-notice4": "02 Feb 2021",
-  "role4": "Importer",
+  "case-role4": "Importer",
 
   "case-ref5": "AS3464",
   "case-name5": "Garnets from Gabon",
@@ -127,7 +129,7 @@ module.exports = {
   "status5": "Application received",
   "next-task5": "Initiation",
   "next-notice5": "01 Feb 2021",
-  "role5": "Declined",
+  "case-role5": "Declined",
 
   "case-ref6": "SI943005",
   "case-name6": "Electric Bikes",
@@ -146,7 +148,7 @@ module.exports = {
   "status6": "Initiation prepared",
   "next-task6": "Finalise case information",
   "next-notice6": "24 Sept 2021",
-  "role6": "Exporter",
+  "case-role6": "Exporter",
 
   "case-ref7": "AD12234",
   "case-name7": "Corn-on-cob from Alaska",
@@ -165,7 +167,7 @@ module.exports = {
   "status7": "DRAFT",
   "next-task7": "n/a",
   "next-notice7": "n/a/",
-  "role7": "Importer",
+  "case-role7": "Importer",
 
 
 

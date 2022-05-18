@@ -79,26 +79,6 @@ router.get('/public-site/create-account/createaccount-account-complete', functio
 
 // Register interest - public
 // Register interest - public
-// Run this code during reginterest-which-org - If there is not an org name already use a default one
-router.get('/public-site/reg-interest/reginterest-which-org', function (req, res) {
-
-  if (req.session.data['createaccount-org-name'] == null) {
-    // store it in session
-    req.session.data['createaccount-org-name'] = "BlueSteel Partners"
-    // send it to the current page
-    res.locals.data['createaccount-org-name'] = "BlueSteel Partners"
-  }
-
-  if (req.session.data['account-email'] == null) {
-    // store it in session
-    req.session.data['account-email'] = "Bob.Hoskins@bluesteel.org"
-    // send it to the current page
-    res.locals.data['account-email'] = "Bob.Hoskins@bluesteel.org"
-  }
-
-  res.render('public-site/reg-interest/reginterest-which-org')
- 
-})
 
 
 // Run this code on reginterest-which-org: what org is registering interest?

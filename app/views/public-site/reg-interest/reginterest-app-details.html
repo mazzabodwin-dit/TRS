@@ -62,13 +62,13 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
-          <p>My client:</p>
+          <p>My employer:</p>
             {% else %}
-            <p>My employer:</p>
+            <p>My client:</p>
           {% endif %}
 
           {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
-            Cheesy chips Ltd<br>
+            {{data['representative1']}}<br>
               {% else %}
                 {% if (data['reginterest-what-org'] == "existing-org") %}
                   {{ data['reginterest-existing-org'] }}<br>

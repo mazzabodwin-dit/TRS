@@ -24,8 +24,14 @@
 
     <form action="/reginterest-which-org-route" method="post" id="reginterest-which-org-form">
       
+
+      <!-- Set the name of the org if is is "my org" whether from regsitering or default-->
       {% set myorgHTML %}
-      My organisation: {{data['createaccount-org-name']}}
+        {% if data['createaccount-org-name'] != null %}
+          My organisation: {{data['createaccount-org-name']}}
+          {% else %}
+            My organisation: {{data['representative1']}}
+        {% endif %}
       {% endset -%}
 
       {{ govukRadios({

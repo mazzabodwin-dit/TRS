@@ -52,30 +52,39 @@
             My employer:<br><br>
              {% else %}
              My client:<br>
-            {% endif %}
-
-          {% if (data['reginterest-what-org'] == "my-org") %}
-            Steel UK<br>
-              {% else %}
-                {{data['reginterest-client-name']}} - {{data['reginterest-client-email']}}<br><br>
-                 
-                {% if (data['reginterest-what-org'] == "existing-org") %}
-                  {{ data['reginterest-existing-org'] }}<br>
-                    {% else %}
-                      {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
-                        Org name<br>
-                          {% else %}
-                            {{ data['reginterest-org-name'] }}<br>
-                      {% endif %}
-                {% endif %}
           {% endif %}
           
+          <!--Show the org who is reg for interest-->
+          {% if (data['reginterest-what-org'] == "my-org") %}
+            <!-- Show 'my org' name-->
+            {% if data['createaccount-org-name'] != null %}
+              {{data['createaccount-org-name']}}<br>
+              {% else %}
+                {{data['representative1']}}<br>
+            {% endif %}
           
-          Company number: 595934925<br>
+            {% else %}
+            <!-- Show client name-->
+              {{data['reginterest-client-name']}} - {{data['reginterest-client-email']}}<br><br>
+
+             <!-- And show new or existing org name-->     
+              {% if (data['reginterest-what-org'] == "existing-org") %}
+                {{ data['reginterest-existing-org'] }}<br>
+                  {% else %}
+                    {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
+                      Org name<br>
+                        {% else %}
+                          {{ data['reginterest-org-name'] }}<br>
+                    {% endif %}
+              {% endif %}
+          {% endif %}
+          <!----> 
+          
           Address<br>
           Postcode/ zip<br>
           Country
-          <br>
+          <br><br>
+          Company number: 595934925<br>
           {% if data['reginterest-what-org'] == "new-org" %}
           <br>
             VAT number: 68593069894<br>
