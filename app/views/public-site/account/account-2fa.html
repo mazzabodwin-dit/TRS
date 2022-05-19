@@ -56,7 +56,7 @@
               name: "2FA-mobile",
               type: "tel",
               autocomplete: "tel",
-              value: data['2FA-mobile'],
+              value: data['createaccount-mobile'],
               classes: "govuk-!-width-one-third",
               label: {
                 text: "Enter your mobile number"
@@ -70,7 +70,7 @@
                 name: "mobile1",
                 type: "tel",
                 autocomplete: "tel",
-                value: data['mobile1'],
+                value: data['user-mobile1'],
                 classes: "govuk-!-width-one-third",
                 label: {
                   text: "Enter your mobile number"
@@ -86,10 +86,10 @@
         {% set emailText %}
           Email address: 
           <strong>
-            {% if data['account-email'] != null %}
-              {{data['account-email']}}
-              {% else %}
-                {{data['user1-email']}}
+            {% if data['createaccount-email'] != null %}
+              {{data['createaccount-email']}}
+                {% else %}
+                  {{data['user-email1']}}
             {% endif %}
           </strong>
         {% endset -%}
@@ -120,9 +120,13 @@
           ]
         }) }}
         
-        {{ govukButton({
-          text: "Submit"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Submit"
+          }) }}    
+          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+        </div>
+
         {% endcall %}
         </form>
         
