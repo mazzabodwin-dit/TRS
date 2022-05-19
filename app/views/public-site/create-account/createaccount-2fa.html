@@ -30,6 +30,9 @@
         <p>When you sign in, we will send you a code as part of our two-factor authentication. This helps ensure that your account is kept safe and secure.</p>
         
         {% set mobileHtml %} 
+
+          {% include "includes/country-code-list.html" %}    
+
         
           {{ govukInput({
             id: "2FA-mobile",
@@ -43,8 +46,6 @@
               text: "Enter your mobile number"
             }
           }) }}
-
-          {% include "includes/country-code-list.html" %}    
 
         {% endset -%}
 

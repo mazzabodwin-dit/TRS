@@ -49,6 +49,8 @@
         
         {% set mobileHtml %} 
 
+          {% include "includes/country-code-list.html" %}    
+
           {% if data['2FA-mobile'] != null %}
 
             {{ govukInput({
@@ -66,11 +68,11 @@
             {% else %}
             
               {{ govukInput({
-                id: "mobile1",
-                name: "mobile1",
+                id: "user-mobile-national1",
+                name: "user-mobile-national1",
                 type: "tel",
                 autocomplete: "tel",
-                value: data['user-mobile1'],
+                value: data['user-mobile-national1'],
                 classes: "govuk-!-width-one-third",
                 label: {
                   text: "Enter your mobile number"
@@ -79,8 +81,6 @@
 
           {% endif %}
           
-          {% include "includes/country-code-list.html" %}    
-
         {% endset -%}
 
         {% set emailText %}
