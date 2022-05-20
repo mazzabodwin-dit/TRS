@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: Contact name – {{ serviceName }} – GOV.UK Prototype Kit
+  User details - {{service-name}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,8 +14,6 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">2.  Who is registering interest</span>
-
 
       <form action="reginterest-tasks?which-org-task=complete" novalidate method="post" id="reginterest-contact-name-form">  
         

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Proto: User permissions – {{ serviceName }} – GOV.UK Prototype Kit
+  User permissions - {{service-name}}
 {% endblock %}
 
 {% block header %}
@@ -21,7 +21,7 @@
     
     
 
-      <form action="invite-permissions" method="post" id="invite-permissions-form">   
+      <form action="invite-user-details" method="post" id="invite-permissions-form">   
         
         {{ govukRadios({
           idPrefix: "invite-user-permissions",
