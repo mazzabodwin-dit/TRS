@@ -269,6 +269,23 @@ router.post('/reginterest-loa-existing-route', function (req, res) {
   } 
 })
 
+// Run this code on invite-user-type - which option is chosen:
+router.post('/invite-type-route', function (req, res) {
+
+  // Make a variable and give it the value from 'invite-user-type'
+  var inviteUserType = req.session.data['invite-user-type']
+
+  // Check whether the variable matches a condition
+  if (inviteUserType == "own-org"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/invite-user-permissions')
+  } 
+  if (inviteUserType == "third-party"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/tasklist/invite-third-party-tasks')
+  } 
+})
+
 
 
 module.exports = router
