@@ -45,6 +45,30 @@
 
       {% endif %}
 
+      {% if (data['welcome-message'] == "no")  %}
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p>As the account administrator for your organisation you can: </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>apply to take part in open investigations</li>
+            <li>manage the users of this account and the cases they have access to</li>
+          </ul>
+          <p>To allow colleagues or 3rd party representatives to work on cases for your organisation you need to <a href="">invite</a> them to become a member of this account. </p>
+          {{ govukButton({
+            text: "Close",
+            href: "dashboard?welcome-message=close"
+          }) }}
+ 
+        </div>
+      </div>
+    {% endif %}
+
       <p>This is your Trade Remedies Service (TRS) dashboard.</p>
 
       <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
@@ -113,14 +137,11 @@
               <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
             </li>
             <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Manage your team</a>
+              <a class="govuk-link govuk-link--no-visited-state" href="account/manage-org#manage-team">Manange team</a>
             </li>  
             <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Invite a 3rd party representative</a>
-            </li> 
-            <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Letter of Authority (LOA)</a> 
-            </li>   
+              <a class="govuk-link govuk-link--no-visited-state" href="account/">Invite user to join this account</a>
+            </li>  
           </ul>
         </nav>
       </aside>
