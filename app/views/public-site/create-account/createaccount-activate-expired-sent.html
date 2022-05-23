@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Email verification email sent - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html"%}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Email verification link sent
+      </h1>
+      <p>We've sent an email to the email address you provided. Use the link in the email to verify your email address.</p>
+      <p>Email verification links are only valid for 24 hours, after that you will need to request a new one. </p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have not received an email
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Please check the email address above to ensure that you entered it correctly. If it is incorrect you will need to create the account again using the correct email address. </p>
+          <p>Check your email spam folders and add our email address to your contact list: trade.remedies.service@notifications.service.gov.uk.</p>
+          <p>If the email still hasn't arrived <a href="createaccount-account-complete?rerequestEmail=yes">click here to resend the email</a>.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            The link in my email has expired
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>The link in the email is only valid for 24 hours, after that you will need to request a new activation email.</p>
+          <p><a href="createaccount-account-complete?rerequestEmail=yes">Click here to resend the email</a>.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+        },
+        {
+        },
+        {
+          href: "../email/email-createaccount-activate-account",
+          text: "For user testing: Go to email"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
