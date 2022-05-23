@@ -10,17 +10,26 @@ You have a new password  - {{serviceName}}
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        You have a new password 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        You have a new password
       </h1>
-
-      <p>You have successfully reset your password. </p>
-        <p><a href="signin">Sign in</a> to your Trade Remedies Service account with your new password.</p>
     </div>
+
+    <p>You have successfully reset your password.</p>
+    <p>Sign in to your Trade Remedies Service account with your new password.</p>   
+    <form action="signin" method="post" id="forgotton-password-complete-form">              
+
+      {{ govukButton({
+        text: "Sign in"
+      }) }}
+
+    </form>
   </div>
+</div>
 {% endblock %}
 
 {% block footer %}
