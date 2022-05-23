@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Forgotten Password - {{serviceName}}
+Reset your password - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,11 +16,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Forgotten your password?      
+        Reset your password     
       </h1>
 
-      <p>We will send you a link in an email that you can use to reset your password.</p>
-      <p>You'll only receive a password reset email if that email address is registered with us.</p>
+      <p>Enter the email you used to sign up. We will send you a link to reset your password.  </p>
 
       <form action="signin-forgotpass-sent" method="post" id="signin-forgotpass-form">
     

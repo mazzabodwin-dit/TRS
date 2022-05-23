@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Password has been reset - {{serviceName}}
+You have a new password  - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,11 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Password has been reset
+        You have a new password 
       </h1>
 
-      <p>The password for this account has been reset. </p>
-        <p>To access your account <a href="signin">sign in</a> using your new password.</p>
-
-
+      <p>You have successfully reset your password. </p>
+        <p><a href="signin">Sign in</a> to your Trade Remedies Service account with your new password.</p>
     </div>
   </div>
 {% endblock %}

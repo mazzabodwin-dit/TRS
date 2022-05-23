@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Password reset link has expired - {{serviceName}}
+Your link has expired - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,9 +14,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Password reset link has expired
+        Your link has expired 
       </h1>
-      <p>Password reset links are only valid for 24 hours, after that you will need to request a new one. </p>
+      <p>Password reset links are valid for 24 hours. You can request a new link.</p>
 
       <div class="govuk-button-group">
         {{ govukButton({
