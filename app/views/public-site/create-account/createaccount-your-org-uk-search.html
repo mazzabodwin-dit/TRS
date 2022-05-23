@@ -24,7 +24,7 @@
             </label>
           </h1>
            <div id="sort-hint" class="govuk-hint">
-            Search the Companies House register for your employer
+            Search Companies House to find registered company details.
           </div>
           <select class="govuk-select" id="search-reg-org" name="search-reg-org">
             <option value="0" class="selected"></option>
@@ -46,14 +46,14 @@
         </div>
 
         {{ govukDetails({
-          summaryText: "I can't find my employer",
-          html: ' <p class="govuk-body">You can search for your organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
-          <p>If the organisation is not on the register you need to return to the previous page and select "No" your employer is not registered in the UK.</p>'
+          summaryText: "If you can’t find your employer",
+          html: ' <p class="govuk-body">Search for your organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
+          <p>If the organisation is not on the register, go back to the previous page and select "No". Your employer is not registered in the UK.</p>'
         }) }}
    
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "I confirm these are the correct details"
+            text: "I confirm these details are correct"
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>

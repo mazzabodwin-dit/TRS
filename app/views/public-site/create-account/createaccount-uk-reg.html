@@ -25,7 +25,7 @@
           }
         }) %}
 
-          <p>This is who employs you directly and not an organisation you are representing. You should have permission to create this account on behalf of your employer. </p>
+          <p>We ask for the details of your direct employer, not a company you may be representing. You should have permission to create this account on behalf of your employer.</p>
         
           {{ govukRadios({
             classes: "govuk-radios",
@@ -33,7 +33,7 @@
             name: "createaccount-uk-reg",
             fieldset: {
               legend: {
-                text: "Is your employer a registered UK company?",
+                text: "Is your employer a UK registered company?",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--s"
               }
@@ -53,9 +53,9 @@
           }) }}
 
           {{ govukDetails({
-            summaryText: "How do I find out if my employer is registered in the UK?",
-            html: ' <p class="govuk-body">You can find this on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>
-            <p>If you cannot find your organisation on the register you need to select "No" your employer is not registered in the UK.</p>'
+            summaryText: "How to find out if your company is registered in the UK",
+            html: ' <p class="govuk-body">Search the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>              
+            <p>If you cannot find your company in the register, it’s not registered in the UK.</p>'
           }) }}
 
           <div class="govuk-button-group">

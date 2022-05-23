@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your account - {{serviceName}}
+Create an account - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
         
         {% call govukFieldset({
           legend: {
-            text: "Create account",
+            text: "Create an account",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
@@ -49,7 +49,7 @@
             classes: "govuk-label--s"
           },
           hint: {
-            text: "This will be used to sign in to your account and must be your professional email address, for example yourname@company.com."
+            text: "Use your professional or company email to sign in."
           },
           id: "account-email",
           name: "account-email",
