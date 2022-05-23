@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your account has been activated - {{serviceName}}
+Email address is verified - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,12 +19,18 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          Account activated
+          Email address is verified
         </h1>
       </div>
 
-      <p>Your email address has been verified and your account is fully activated.</p>
-      <p>You can now apply to take part in a trade remedy investigation.</p>
+      <p>You can now: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>add a someone to your account or an open case</li>
+        <li>request a new trade investigation</li>
+        <li>ask to participate in an open trade remedy case</li>
+        <li>invite another party to represent you in an open case </li>
+      </ul>
+ 
      
       <form action="../signin" method="post" id="dashboard">              
 
