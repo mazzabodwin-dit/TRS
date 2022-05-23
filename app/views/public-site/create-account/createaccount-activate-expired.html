@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
   
-Email verification link has expired - {{serviceName}}
+Your link has expired - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,13 +15,13 @@ Email verification link has expired - {{serviceName}}
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Email verification link has expired
+        Your link has expired
       </h1>
-      <p>Email verification links are only valid for 24 hours, after that you will need to request a new one. </p>
+      <p>Email verification links are valid for 24 hours.</p>
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Request email verification link",
+          text: "Request a new link",
           href: "createaccount-activate-expired-sent"
         }) }}
         <a class="govuk-link" href="signin">Sign in</a>

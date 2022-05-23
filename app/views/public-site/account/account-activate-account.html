@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Activate your account – {{ serviceName }}
+Verify your email address – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -11,7 +11,7 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+ <a class="govuk-back-link govuk-link--no-visited-state" href="../dashboard?account-activated=yes">Back</a>
 
 {% endblock %}
 
@@ -19,7 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Activate your account    
+        Verify your email address   
       </h1>
       {% if (data['rerequestEmail'] == "yes") %}
 
@@ -33,10 +33,9 @@
 
       {% endif %}
 
-      <p>You need to verify your email address before you can take part in a trade remedy investigation.</p>
-      <p>We sent an email to <strong>{{ data['account-email'] }}</strong> when your account was created.</p>
-      <p>Open the email and click on the link to active your account.</p>
-      <p>The link in the email is only valid for 24 hours, after that you will need to request a new activation email.</p>
+      <p>Check the inbox of the email address you used to create your account. You will have received a verification email with a link.</p>
+      <p>Click the link in the email to verify your email address.</p>
+      <p>The link is valid for 24 hours. If it expires, you can request a new verification email.  </p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -45,9 +44,9 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Please check the email address above to ensure that you entered it correctly. If it is incorrect you will need to create the account again using the correct email address. </p>
-          <p>Check your email spam folders and add our email address to your contact list: trade.remedies.service@notifications.service.gov.uk.</p>
-          <p>If the email still hasn't arrived <a href="account-activate-account?rerequestEmail=yes">click here to resend the email</a>.</p>
+          <p>Check that you entered your email address correctly. If it is incorrect, create an account again with the correct email address.</p>
+          <p>Check your spam or junk mail folders.</p>
+          <p>If you still have not received your verification email, <a href="account-activate-account?rerequestEmail=yes">request new email</a>.</p>
         </div>
       </details>
 
@@ -58,12 +57,12 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>The link in the email is only valid for 24 hours, after that you will need to request a new activation email.</p>
-          <p><a href="account-activate-account?rerequestEmail=yes">Click here to resend the email</a>.</p>
+          <p><a href="account-activate-account?rerequestEmail=yes">Request a new verification email</a>.</p>
         </div>
       </details>
 
-      <form action="dashboard-new?rerequestEmail=no" method="post">  
+
+      <form action="../dashboard?account-activated=yes" method="post">  
 
       {{ govukButton({
         text: "Back to dashboard"

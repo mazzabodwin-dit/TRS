@@ -15,10 +15,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<!-- Removing this for now as we think the usewrs office details are no necessary 
-      <form action="/createaccount-contact-address-route" method="post" id="createaccount-your-org-uk-form">  
--->
-
 <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-form">          
         {% call govukFieldset({
           legend: {
@@ -28,11 +24,11 @@
           }
         }) %}
 
-        <p>This is who employs you directly and not an organisation you are representing. You should have permission to create this account on behalf of your employer.</p>
+        <p>We ask for the details of your direct employer, not a company you may be representing. You should have permission to create this account on behalf of your employer.</p>
 
         {{ govukInput({
           label: {
-            text: "Organisation name",
+            text: "Name of your organisation",
             classes: "govuk-label--s",
             isPageHeading: false
           },
@@ -45,13 +41,13 @@
        
         {% call govukFieldset({
           legend: {
-            text: "What is your organisations address?",
+            text: "Address of your organisation",
             classes: "govuk-fieldset__legend--s",
             isPageHeading: true
           }
         }) %}
 
-        <p>This should be where your main office is located</p>
+        <p>Provide the address of the main office.</p>
 
           {{ govukTextarea({
             label: {
@@ -87,7 +83,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "This is a unique number that is assigned to companies registered in their home country - not all organisations are registered in this way."
+            text: "Most companies have an official registration number from the country they are based in."
           },
           classes: "govuk-input--width-10",
           id: "createaccount-reg-org-number",

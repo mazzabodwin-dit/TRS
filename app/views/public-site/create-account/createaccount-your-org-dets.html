@@ -25,16 +25,16 @@
           }
         }) %}
 
-        <p>Please provide as much of the following information as you can to help us verify your organisation.</p>
+        <p>Provide as many details as you can to help us understand your organisation.</p>
 
         {{ govukInput({
           label: {
-            text: "Organisation website (optional)",
+            text: "Wwebsite (optional)",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "For example mycompany.com"
+            text: "Provide your organisation’s website if it has one."
           },
           classes: "govuk-input--width-20",
           id: "createaccount-web",
@@ -50,7 +50,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation will have a VAT number if registered for Value Added Tax"
+            text: "Most UK registered companies are registered for Value Added Tax (VAT)."
           },
           classes: "govuk-input--width-20",
           id: "createaccount-vat",
@@ -66,7 +66,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation will have an EORI number if you have brought goods into the UK or EU"
+            text: "Your organisation will have an EORI number if you have brought goods into the UK or EU."
           },
           classes: "govuk-input--width-20",
           id: "createaccount-eori",
@@ -77,12 +77,12 @@
 
         {{ govukInput({
           label: {
-            text: "D‑U‑N‑S Number (optional)",
+            text: "DUNS Number (optional)",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "Your organisation might have a 9 digit Data Universal Numbering System identifier"
+            text: "Your organisation might have a 9-digit Data Universal Numbering System (DUNS) identifier."
           },
           classes: "govuk-input--width-20",
           id: "createaccount-duns",

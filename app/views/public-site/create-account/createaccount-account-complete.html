@@ -31,10 +31,10 @@
 
       {% endif %}
 
-      <p>You can now access your account, however, you need to verify your email address before you can take part in a trade remedy investigation.</p>
-      <p>We have sent an email to <strong>{{ data['account-email'] }}</strong>.</p>
-      <p>Open the email and click on the link to active your account.</p>
-      <p>The link in the email is only valid for 24 hours, after that you will need to request a new activation email.</p>
+      <p>You can now access your account. To take part in a trade remedy investigation, verify your email address.</p>
+      <p>We sent an email to <strong>{{ data['account-email'] }}</strong>.</p>
+      <p>Open the email and click on the link to verify your email address.</p>
+      <p>The link is valid for 24 hours. If it expires, you can request a new verification email.</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -43,9 +43,9 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Please check the email address above to ensure that you entered it correctly. If it is incorrect you will need to create the account again using the correct email address. </p>
-          <p>Check your email spam folders and add our email address to your contact list: trade.remedies.service@notifications.service.gov.uk.</p>
-          <p>If the email still hasn't arrived <a href="createaccount-account-complete?rerequestEmail=yes">click here to resend the email</a>.</p>
+          <p>Check that you entered your email address correctly. If it is incorrect, create an account again with the correct email address.</p>
+          <p>Check your spam or junk mail folders.</p>
+          <p>If you still have not received your verification email, <a href="createaccount-account-complete?rerequestEmail=yes">request new email</a>.</p>
         </div>
       </details>
 
@@ -56,8 +56,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>The link in the email is only valid for 24 hours, after that you will need to request a new activation email.</p>
-          <p><a href="createaccount-account-complete?rerequestEmail=yes">Click here to resend the email</a>.</p>
+          <p><a href="createaccount-account-complete?rerequestEmail=yes">Request a new verification email</a>.</p>
         </div>
       </details>
 
