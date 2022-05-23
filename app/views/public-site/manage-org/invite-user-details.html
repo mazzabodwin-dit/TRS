@@ -4,6 +4,14 @@
   User details - {{serviceName}}
 {% endblock %}
 
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
+
+
+{% block header %}
+  {% include "includes/header-public.html" %}
+{% endblock %}
+
 {% block beforeContent %}
 {% include "includes/beta-banner.html"%}
 
@@ -19,7 +27,7 @@
         
         {% call govukFieldset({
           legend: {
-            text: "Who is your primary client contact?",
+            text: "Who are you inviting?",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
@@ -27,30 +35,30 @@
 
         {{ govukInput({
           label: {
-            text: "Users name",
+            text: "Enter the users name",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           classes: "govuk-input--width-20",
-          id: "reginterest-client-name",
-          name: "reginterest-client-name",
+          id: "invite-user-name",
+          name: "invite-user-name",
           type: "text",
           autocomplete: "name",
-          value: data['reginterest-client-name']
+          value: data['invite-user-name']
 
         }) }}
   
         {{ govukInput({
           label: {
-            text: "Contact email address",
+            text: "Users email address",
             classes: "govuk-label--s"
           },
-          id: "reginterest-client-email",
-          name: "reginterest-client-email",
+          id: "invite-user-email",
+          name: "invite-user-email",
           classes: "govuk-input--width-20",
           type: "email",
           autocomplete: "email",
-          value: data['reginterest-client-email']
+          value: data['invite-user-email']
         }) }}
 
 
