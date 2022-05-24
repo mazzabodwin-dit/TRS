@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Two factor authentication      
+        Two-factor authentication      
       </h1>
 
       {% if (data['rerequest2FA'] == "yes") %}
@@ -31,12 +31,12 @@
 
       {% else %}
 
-        <p>We have sent you an authentication code to [email address or mobile number].  </p>
+        <p>We have sent an authentication code to [email address or mobile number].  </p>
 
       {% endif %}
 
 
-      <p>This code will be valid for 30 minutes. You can request a new code if you need more time.</p>
+      <p>This code will be valid for 10 minutes. You can request a new code if you need more time.</p>
 
       <form action="/public-site/dashboard?signin=yes" method="post" id="signin-2fa-form">
     
