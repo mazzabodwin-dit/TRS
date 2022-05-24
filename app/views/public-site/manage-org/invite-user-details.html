@@ -23,7 +23,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="reginterest-tasks?which-org-task=complete" novalidate method="post" id="reginterest-contact-name-form">  
+      <form action="invite-user-complete" novalidate method="post" id="invite-contact-name-form">  
         
         {% call govukFieldset({
           legend: {
@@ -50,8 +50,11 @@
   
         {{ govukInput({
           label: {
-            text: "Users email address",
+            text: "Email address",
             classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Use their professional or company email."
           },
           id: "invite-user-email",
           name: "invite-user-email",

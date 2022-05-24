@@ -53,12 +53,13 @@
           {
             value: "own-org",
             text: "Someone who works directly for my organisation",
-            checked: false
+            checked: checked("invite-user-type", "own-org")
+
           },
           {
             value: "third-party",
             text: "3rd party representative who works on behalf of my organisation on a particular case e.g. laywer",
-            checked: false
+            checked: checked("invite-user-type", "third-party")
             }
           ]
         }) }}
