@@ -13,16 +13,11 @@
     <div class="govuk-grid-column-two-thirds">
     
       <form action="signin-forgotpass-complete" method="post" id="signin-forgotpass-newpass-form">
-        
-        {% call govukFieldset({
-          legend: {
-            text: "Reset your password",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
-  
-<!-- Content contains accessibility code for screen readers based on this blog: https://incl.ca/show-hide-password-accessibility-and-password-hints-tutorial -->
+        <h1 class="govuk-heading-xl">
+          Reset your password
+        </h1>
+         
+  <!-- Content contains accessibility code for screen readers based on this blog: https://incl.ca/show-hide-password-accessibility-and-password-hints-tutorial -->
          
         <p id="password-hints">The password for this account must: 
 
@@ -64,7 +59,6 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-        {% endcall %} 
       </form> 
     </div>
   </div>
