@@ -47,7 +47,10 @@
 
       <p>This is your Trade Remedies Service (TRS) dashboard.</p>
 
-      <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
+      {% if (data['reginterest-task'] == "complete") or (data['reginterest-task'] == "started") or (data['invite-user-task'] == "started") or (data['invite-user-task'] == "complete")  %}
+        {% else %}
+        <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
+      
 
       <!-- Active cases interest -->
       <div class="address-card">
@@ -58,50 +61,61 @@
            <p>You have no active cases</p>
         </div>
       </div>
+      {% endif %}
 
       <!-- Reg interest -->
-      {% if (data['reginterest-task'] == "complete")  %}
+      {% if (data['reginterest-task'] == "complete") or (data['reginterest-task'] == "started")  %}
         <div class="address-card">
           <div class="address-container">
             <h2 class="govuk-heading-m">
               Registration of Interest
             </h2>
-            <p><a href="reg-interest/reginterest-app-details">
+            {% if (data['reginterest-task'] == "complete")  %}
+              <p><a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
+                {% if (data['regnterest-due-date'] == "current") %}
+                  {{data ['case-ref3']}} - {{data ['case-name3']}}
+                    {% else %}
+                    {{data['case-ref']}} - {{data['case-name']}}
+                {% endif %}</a><br>
+                Status: {{data ['reginterest-app-status']}}<br>
+                <span class="govuk-body-s">Submitted: <span id="date"></span></span>
+              </p>
+            {% endif %}
+            {% if (data['reginterest-task'] == "started")  %}
+            <p><a href="reg-interest/reginterest-tasks" class="govuk-link govuk-link--no-visited-state">
               {% if (data['regnterest-due-date'] == "current") %}
                 {{data ['case-ref1']}} - {{data ['case-name1']}}
-                  {% else %}
+                {% else %}
                   {{data['case-ref']}} - {{data['case-name']}}
               {% endif %}</a><br>
-
-              Submitted: <span id="date"></span><br>
-              Status: {{data ['reginterest-app-status']}}
+              <span class="govuk-body-s">Draft saved: <span id="date"></span></span>
             </p>
+            {% endif %}
           </div>
         </div>
       {% endif %}
 
-      <!-- Applications in progress -->
-      {% if (data['reginterest-task'] == "started")  %}
-      <div class="address-card">
-        <div class="address-container">
-          <h2 class="govuk-heading-m">
-            Draft applications
-          </h2>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-            Registration of Interest:
-          </h3>
-          <p><a href="reg-interest/reginterest-tasks">
-            {% if (data['regnterest-due-date'] == "current") %}
-              {{data ['case-ref1']}} - {{data ['case-name1']}}
-              {% else %}
-                {{data['case-ref']}} - {{data['case-name']}}
-            {% endif %}</a><br>
-            Draft saved: <span id="date"></span><br>
-
-          </p>
+      <!-- Invites in progress -->
+      {% if (data['invite-user-task'] == "started") or (data['invite-user-task'] == "complete") %}
+        <div class="address-card">
+          <div class="address-container">
+            <h2 class="govuk-heading-m">
+              3rd party invites
+            </h2>
+            {% if (data['invite-user-task'] == "started") %}
+              <p><a href="" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
+                {{data ['case-ref3']}} - {{data ['case-name3']}}<br>
+                <span class="govuk-body-s">Draft saved: <span id="date2"></span></span>
+              </p>
+            {% endif %}
+            {% if (data['invite-user-task'] == "complete") %}
+            <p><a href="" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
+              {{data ['case-ref1']}} - {{data ['case-name1']}}<br>
+              <span class="govuk-body-s">Invite sent: <span id="date2"></span></span>
+            </p>
+            {% endif %}
+          </div>
         </div>
-      </div>
-
       {% endif %}
 
       <script>
@@ -110,6 +124,7 @@
             day: '2-digit', month: 'short', year: 'numeric'
           }).replace(/ /g, ' ');
           document.getElementById("date").innerHTML = formattedDate;
+          document.getElementById("date2").innerHTML = formattedDate;
       </script>
 
       
