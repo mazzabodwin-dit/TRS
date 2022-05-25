@@ -63,6 +63,11 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.govuk-input--readonly {
+  border:1px solid govuk-colour("light-grey");
+  background-color:  govuk-colour("light-grey")	;
+}
+
 
 
   

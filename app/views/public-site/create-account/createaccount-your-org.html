@@ -15,14 +15,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-form">          
-        {% call govukFieldset({
-          legend: {
-            text: "Your employer",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+      <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-form">          
+
+        <h1 class="govuk-heading-xl">
+          Your employers details
+        </h1>
 
         <p>We ask for the details of your direct employer, not a company you may be representing. You should have permission to create this account on behalf of your employer.</p>
 
@@ -92,46 +89,12 @@
           type: "text"
         }) }} 
 
-<!-- Removing this for now as we think it unnecessary        
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "createaccount-contact-address",
-          name: "createaccount-contact-address",
-          fieldset: {
-            legend: {
-              text: "Is this address the office that you work at day-to-day?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "This is so that we can contact you if necessary."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              checked: checked("createaccount-contact-address", "yes")
-            },
-            {
-              value: "no",
-              text: "No",
-              checked: checked("createaccount-contact-address", "no")
-            }
-          ]
-        }) }}
-
-        --> 
-
-
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Continue"
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>
-        {% endcall %} 
 
       </form>
         

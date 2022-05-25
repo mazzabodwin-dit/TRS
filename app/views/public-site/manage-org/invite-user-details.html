@@ -25,13 +25,9 @@
 
       <form action="invite-user-complete" novalidate method="post" id="invite-contact-name-form">  
         
-        {% call govukFieldset({
-          legend: {
-            text: "Who are you inviting?",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+        <h1 class="govuk-heading-xl">
+          Who are you inviting?
+        </h1>
 
         {{ govukInput({
           label: {
@@ -71,10 +67,6 @@
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>
-
-
-
-        {% endcall %} 
 
       </form>
         

@@ -5,10 +5,7 @@ Create an account - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html"%}
-
-<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
+  {% include "includes/beta-banner.html"%}
 {% endblock %}
 
 {% block content %}
@@ -18,9 +15,9 @@ Create an account - {{serviceName}}
       <form action="createaccount-password" novalidate method="post" id="createaccount-your-account-form">  
         
         <h1 class="govuk-heading-xl">
-          Create an account
+          Your account details
         </h1>
-
+      
         {{ govukInput({
           label: {
             text: "Enter your name",
@@ -31,28 +28,29 @@ Create an account - {{serviceName}}
             text: "How would you like to be addressed?"
           },
           classes: "govuk-input--width-20",
-          id: "createaccount-name",
-          name: "createaccount-name",
+          id: "invite-user-name",
+          name: "invite-user-name",
           type: "text",
           autocomplete: "name",
-          value: data['createaccount-name']
+          value: data['invite-user-name']
 
         }) }}
-  
+
         {{ govukInput({
           label: {
             text: "Your email address",
             classes: "govuk-label--s"
           },
-          hint: {
-            text: "Use your professional or company email to sign in."
-          },
-          id: "account-email",
-          name: "account-email",
-          classes: "govuk-input--width-20",
+         
+          id: "invite-user-email",
+          name: "invite-user-email",
+          classes: "govuk-input--width-20 govuk-input--readonly",
           type: "email",
           autocomplete: "email",
-          value: data['account-email']
+          attributes: {
+            "readonly": true
+          },
+          value: data['invite-user-email']
         }) }}
 
         <div class="govuk-form-group">
@@ -80,6 +78,7 @@ Create an account - {{serviceName}}
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>
+
       </form>
         
     </div>

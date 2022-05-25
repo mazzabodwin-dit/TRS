@@ -33,13 +33,9 @@
       
       <form action="account-update-success" method="post" id="account-changepass-form">
         
-        {% call govukFieldset({
-          legend: {
-            text: "Change your password",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+        <h1 class="govuk-heading-xl">
+          Change your password
+        </h1>
 
         <p>To change the password for this account enter a new password as well as your existing password for security.</p>
   
@@ -104,8 +100,6 @@
           }) }}    
           <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
         </div>
-
-        {% endcall %} 
       </form>
         
     </div>

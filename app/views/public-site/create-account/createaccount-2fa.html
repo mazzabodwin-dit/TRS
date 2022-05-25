@@ -18,14 +18,10 @@
     
 
       <form action="createaccount-uk-reg" method="post" id="create-account-2fa-form">   
-        
-        {% call govukFieldset({
-          legend: {
-            text: "Two-factor authentication",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+
+        <h1 class="govuk-heading-xl">
+          Two-factor authentication
+        </h1>
 
         <p>The next time you sign in, you will receive a code to verify that it’s really you. This provides an extra layer of security.</p>
         
@@ -46,8 +42,8 @@
               text: "Enter your mobile number"
             }
           }) }}
-
         {% endset -%}
+
 
         {% set emailText %}
           Email address: <strong>{{ data['account-email'] }}</strong>
@@ -89,7 +85,6 @@
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>
 
-        {% endcall %}
        </form>
         
     </div>

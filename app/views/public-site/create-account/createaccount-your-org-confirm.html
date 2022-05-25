@@ -17,13 +17,9 @@
 
       <form action="createaccount-your-org-dets" method="post" id="createaccount-confirm-your-org-form">  
 
-        {% call govukFieldset({
-          legend: {
-            text: "Confirm registered details",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+        <h1 class="govuk-heading-xl">
+          Confirm registered details
+        </h1>
 
         <p>Check the details below carefully - this must be <strong>your direct employer</strong> and not someone you represent as a third party. </p>
 
@@ -166,10 +162,7 @@
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>
-
-      {% endcall %} 
-
-        </form>        
+      </form>        
     </div>
   </div>
 {% endblock %}

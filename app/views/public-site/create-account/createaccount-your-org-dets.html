@@ -16,14 +16,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="createaccount-account-complete" method="post" id="createaccount-your-org-dets-form">  
-        
-        {% call govukFieldset({
-          legend: {
-            text: "Further details about your organisation",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+
+        <h1 class="govuk-heading-xl">
+          Further details about your organisation
+        </h1>
 
         <p>Provide as many details as you can to help us understand your organisation.</p>
 
@@ -97,7 +93,6 @@
           }) }}    
           <a class="govuk-link" href="javascript: history.back()">Back</a>
         </div>        
-        {% endcall %} 
 
       </form>
         

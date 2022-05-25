@@ -17,56 +17,49 @@
 
       <form action="/createaccount-uk-reg-route" method="post" id="createaccount-uk-reg-form"> 
                
-        {% call govukFieldset({
-          legend: {
-            text: "Your employer",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
+        <h1 class="govuk-heading-xl">
+          Your employer
+        </h1>
 
-          <p>We ask for the details of your direct employer, not a company you may be representing. You should have permission to create this account on behalf of your employer.</p>
-        
-          {{ govukRadios({
-            classes: "govuk-radios",
-            idPrefix: "createaccount-uk-reg",
-            name: "createaccount-uk-reg",
-            fieldset: {
-              legend: {
-                text: "Is your employer a UK registered company?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--s"
-              }
+        <p>We ask for the details of your direct employer, not a company you may be representing. You should have permission to create this account on behalf of your employer.</p>
+      
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "createaccount-uk-reg",
+          name: "createaccount-uk-reg",
+          fieldset: {
+            legend: {
+              text: "Is your employer a UK registered company?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("createaccount-uk-reg", "yes")
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                checked: checked("createaccount-uk-reg", "yes")
-              },
-              {
-                value: "no",
-                text: "No",
-                checked: checked("createaccount-uk-reg", "no")
-              }
-            ]
-          }) }}
+            {
+              value: "no",
+              text: "No",
+              checked: checked("createaccount-uk-reg", "no")
+            }
+          ]
+        }) }}
 
-          {{ govukDetails({
-            summaryText: "How to find out if your company is registered in the UK",
-            html: ' <p class="govuk-body">Search the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>              
-            <p>If you cannot find your company in the register, it’s not registered in the UK.</p>'
-          }) }}
+        {{ govukDetails({
+          summaryText: "How to find out if your company is registered in the UK",
+          html: ' <p class="govuk-body">Search the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab).</a></p>              
+          <p>If you cannot find your company in the register, it’s not registered in the UK.</p>'
+        }) }}
 
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Continue"
-            }) }}    
-            <a class="govuk-link" href="javascript: history.back()">Back</a>
-          </div>
-
-        {% endcall %} 
-
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link" href="javascript: history.back()">Back</a>
+        </div>
       </form>
         
     </div>
