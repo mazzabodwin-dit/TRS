@@ -33,15 +33,14 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    
+    <div class="govuk-grid-column-two-thirds">   
     
 
       <form action="/invite-type-route" method="post" id="invite-type-form">   
         
         {{ govukRadios({
-          idPrefix: "invite-user-type",
-          name: "invite-user-type",
+          idPrefix: "reg-type",
+          name: "reg-type",
           fieldset: {
             legend: {
               text: "Who are you inviting?",
@@ -51,15 +50,15 @@
           },
           items: [
           {
-            value: "own-org",
+            value: "invite-own-org",
             text: "Someone who works directly for my organisation",
-            checked: checked("invite-user-type", "own-org")
+            checked: checked("reg-type", "invite-own-org")
 
           },
           {
-            value: "third-party",
+            value: "invite-third-party",
             text: "3rd party representative who works on behalf of my organisation on a particular case e.g. laywer",
-            checked: checked("invite-user-type", "third-party")
+            checked: checked("reg-type", "invite-third-party")
             }
           ]
         }) }}

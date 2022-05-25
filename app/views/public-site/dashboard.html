@@ -112,12 +112,14 @@
             <li>
               <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
             </li>
-            <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="manage-org/manage-org#manage-team">Manage team</a>
-            </li>  
-            <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="manage-org/invite-user-type">Invite user to join this account</a>
-            </li>  
+            {% if data['invite-user-permissions'] != "Regular user" %}
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/manage-org#manage-team">Manage team</a>
+              </li>  
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/invite-user-type">Invite user to join this account</a>
+              </li>  
+            {% endif %}
           </ul>
         </nav>
       </aside>
