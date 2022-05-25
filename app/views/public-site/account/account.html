@@ -62,8 +62,6 @@
                     {{data['user-email1']}}
                 {% endif %}
             {% endif %}
-
-
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -76,6 +74,19 @@
             {% else %}
               {{data['user-mobile1']}}
           {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Account permission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if (data['invite-user-permissions'] == "Regular user") or (data['invite-user-permissions'] == "Admin user")  %}
+              {{data['invite-user-permissions']}}
+                {% else %}
+                  Primary admin
+            {% endif %}
+
           </dd>
         </div>
       </dl>
