@@ -124,7 +124,14 @@
             day: '2-digit', month: 'short', year: 'numeric'
           }).replace(/ /g, ' ');
           document.getElementById("date").innerHTML = formattedDate;
-          document.getElementById("date2").innerHTML = formattedDate;
+      </script>
+
+      <script>
+        const date2 = new Date();
+        const formattedDate2 = date2.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date2").innerHTML = formattedDate2;
       </script>
 
       
