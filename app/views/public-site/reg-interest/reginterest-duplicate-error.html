@@ -32,8 +32,11 @@
       </ul>
           
       <script>
-      const d = new Date();
-      document.getElementById("date").innerHTML = d.toDateString();
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date").innerHTML = formattedDate;
       </script>
         
      

@@ -50,49 +50,66 @@
       <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
 
       <!-- Active cases interest -->
-      <h2 class="govuk-heading-m">
-        Active cases
-      </h2>
-      <p>You have no active cases</p>
+      <div class="address-card">
+        <div class="address-container">
+          <h2 class="govuk-heading-m">
+            My cases
+          </h2>
+           <p>You have no active cases</p>
+        </div>
+      </div>
 
       <!-- Reg interest -->
       {% if (data['reginterest-task'] == "complete")  %}
-        <h2 class="govuk-heading-m">
-          Registration of Interest
-        </h2>
-        <p><a href="reg-interest/reginterest-app-details">
-          {% if (data['regnterest-due-date'] == "current") %}
-            {{data ['case-ref1']}} - {{data ['case-name1']}}
-            {% else %}
-              {{data['case-ref']}} - {{data['case-name']}}
-          {% endif %}</a><br>
-          Submitted: <span id="date"></span><br>
-          Status: {{data ['reginterest-app-status']}}
-        </p>
+        <div class="address-card">
+          <div class="address-container">
+            <h2 class="govuk-heading-m">
+              Registration of Interest
+            </h2>
+            <p><a href="reg-interest/reginterest-app-details">
+              {% if (data['regnterest-due-date'] == "current") %}
+                {{data ['case-ref1']}} - {{data ['case-name1']}}
+                  {% else %}
+                  {{data['case-ref']}} - {{data['case-name']}}
+              {% endif %}</a><br>
+
+              Submitted: <span id="date"></span><br>
+              Status: {{data ['reginterest-app-status']}}
+            </p>
+          </div>
+        </div>
       {% endif %}
 
       <!-- Applications in progress -->
       {% if (data['reginterest-task'] == "started")  %}
+      <div class="address-card">
+        <div class="address-container">
+          <h2 class="govuk-heading-m">
+            Draft applications
+          </h2>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Registration of Interest:
+          </h3>
+          <p><a href="reg-interest/reginterest-tasks">
+            {% if (data['regnterest-due-date'] == "current") %}
+              {{data ['case-ref1']}} - {{data ['case-name1']}}
+              {% else %}
+                {{data['case-ref']}} - {{data['case-name']}}
+            {% endif %}</a><br>
+            Draft saved: <span id="date"></span><br>
 
-        <h2 class="govuk-heading-m">
-          Draft applications
-        </h2>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-          Registration of Interest:
-        </h3>
-        <p><a href="reg-interest/reginterest-tasks">
-          {% if (data['regnterest-due-date'] == "current") %}
-            {{data ['case-ref1']}} - {{data ['case-name1']}}
-            {% else %}
-              {{data['case-ref']}} - {{data['case-name']}}
-          {% endif %}</a><br>
-          Draft saved: <span id="date"></span>
-        </p>
+          </p>
+        </div>
+      </div>
+
       {% endif %}
 
       <script>
-        const d = new Date();
-        document.getElementById("date").innerHTML = d.toDateString();
+          const date = new Date();
+          const formattedDate = date.toLocaleDateString('en-GB', {
+            day: '2-digit', month: 'short', year: 'numeric'
+          }).replace(/ /g, ' ');
+          document.getElementById("date").innerHTML = formattedDate;
       </script>
 
       
