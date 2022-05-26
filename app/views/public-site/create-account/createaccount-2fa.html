@@ -48,10 +48,10 @@
 
     <!-- Put this text into the radio for email-->
         {% set emailText %}
-          {% if data['reg-type'] == null %}
-            Email address: <strong>{{ data['account-email'] }}</strong>
+          {% if data['reg-type'] == "create" %}
+            Email address: <strong>{{ data['account-email'] or "jane@email.com" }}</strong>
               {% else %}
-                Email address: <strong>{{ data['invite-user-email'] }}</strong>
+                Email address: <strong>{{ data['invite-user-email'] or "jane@email.com" }}</strong>
           {% endif %}
         {% endset -%}
 

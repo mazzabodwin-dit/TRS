@@ -32,7 +32,7 @@
       </div>
 
       <p>We have sent an invite for this account to:</p>
-      <p>{{data['invite-user-name']}}: {{data['invite-user-email']}} ({{data['invite-user-permissions']}})</p>
+      <p>{{data['invite-user-name'] or "Jane Winder"}}: {{data['invite-user-email'] or "jane@email.com" }} ({{data['invite-user-permissions']}})</p>
       <p>Once they have registered you can assign them to a case or they will be able to do things according to their account permissions.</p>
      
       <form action="manage-org#manage-team" method="post" id="dashboard">              

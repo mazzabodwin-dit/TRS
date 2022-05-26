@@ -32,7 +32,7 @@ Create an account - {{serviceName}}
           name: "invite-user-name",
           type: "text",
           autocomplete: "name",
-          value: data['invite-user-name']
+          value: data['invite-user-name'] or 'Jane Winder'
 
         }) }}
 
@@ -50,7 +50,7 @@ Create an account - {{serviceName}}
           attributes: {
             "readonly": true
           },
-          value: data['invite-user-email']
+          value: data['invite-user-email'] or 'jane@email.com'
         }) }}
 
         <div class="govuk-form-group">

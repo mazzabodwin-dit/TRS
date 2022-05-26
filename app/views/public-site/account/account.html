@@ -38,10 +38,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if (data['invite-user-permissions'] == "Regular user") or (data['invite-user-permissions'] == "Admin user")  %}
-              {{data['invite-user-name']}}
+              {{data['invite-user-name'] or "Jane Winder"}}
               {% else %}
                 {% if data['createaccount-name'] != null %}
-                    {{data['createaccount-name']}}
+                    {{data['createaccount-name'] or "Bob Hoskins"}}
                     {% else %}
                       {{data['user1']}}
                 {% endif %}
@@ -54,10 +54,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if (data['invite-user-permissions'] == "Regular user") or (data['invite-user-permissions'] == "Admin user")  %}
-              {{data['invite-user-email']}}
+              {{data['invite-user-email'] or "jane@email.com"}}
               {% else %}
                 {% if data['createaccount-email'] != null %}
-                  {{data['createaccount-email']}}
+                  {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}
                   {% else %}
                     {{data['user-email1']}}
                 {% endif %}
@@ -70,9 +70,9 @@
           </dt>
           <dd class="govuk-summary-list__value">
           {% if data['createaccount-mobile'] != null %}
-            {{data['createaccount-mobile']}}
+            {{data['createaccount-mobile'] or "+447821945085"}}
             {% else %}
-              {{data['user-mobile1']}}
+              {{data['user-mobile1'] or "+447821945085"}}
           {% endif %}
           </dd>
         </div>

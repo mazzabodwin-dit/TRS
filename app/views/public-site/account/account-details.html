@@ -36,9 +36,25 @@
 
       <form action="account-update-success" method="post" id="account-update-details-form"> 
 
-       {% if data['createaccount-name'] != null %}
+        {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-third-party")  %}
             
           {{ govukInput({
+            label: {
+              text: "Your name",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-20",
+            id: "invite-user-name",
+            name: "invite-user-name",
+            type: "text",
+            autocomplete: "name",
+            value: data['invite-user-name'] or 'Jane Winder'
+          }) }}
+
+            {% else %} 
+
+            {{ govukInput({
               label: {
                 text: "Enter your name",
                 classes: "govuk-label--s",
@@ -49,57 +65,10 @@
               name: "createaccount-name",
               type: "text",
               autocomplete: "name",
-              value: data['createaccount-name']
-            }) }}
-
-            {% else %} 
-
-              {{ govukInput({
-                label: {
-                  text: "Your name",
-                  classes: "govuk-label--s",
-                  isPageHeading: false
-                },
-                classes: "govuk-input--width-20",
-                id: "user1",
-                name: "user1",
-                type: "text",
-                autocomplete: "name",
-                value: data['user1']
-              }) }}
-
-        {% endif %}
-
-        {% if data['2FA-mobile'] != null %}
-
-          {{ govukInput({
-            id: "2FA-mobile",
-            name: "2FA-mobile",
-            type: "tel",
-            autocomplete: "tel",
-            value: data['2FA-mobile'],
-            classes: "govuk-!-width-one-third",
-            label: {
-              text: "Your mobile number"
-            }
-          }) }}
-
-          {% else %}
-          
-            {{ govukInput({
-              id: "user-mobile1",
-              name: "user-mobile1",
-              type: "tel",
-              autocomplete: "tel",
-              value: data['user-mobile1'],
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "Your mobile number"
-              }
+              value: data['createaccount-name'] or 'Bob Hoskins'
             }) }}
 
         {% endif %}
-
   
         <div class="govuk-button-group">
           {{ govukButton({

@@ -47,45 +47,27 @@
 
           {% include "includes/country-code-list.html" %}    
 
-          {% if data['2FA-mobile'] != null %}
-
             {{ govukInput({
               id: "2FA-mobile",
               name: "2FA-mobile",
               type: "tel",
               autocomplete: "tel",
-              value: data['createaccount-mobile'],
               classes: "govuk-!-width-one-third",
               label: {
                 text: "Enter your mobile number"
-              }
+              },
+              value: data['createaccount-mobile' ] or '07821945085'
             }) }}
-
-            {% else %}
-            
-              {{ govukInput({
-                id: "user-mobile-national1",
-                name: "user-mobile-national1",
-                type: "tel",
-                autocomplete: "tel",
-                value: data['user-mobile-national1'],
-                classes: "govuk-!-width-one-third",
-                label: {
-                  text: "Enter your mobile number"
-                }
-              }) }}
-
-          {% endif %}
           
         {% endset -%}
 
         {% set emailText %}
           Email address: 
           <strong>
-            {% if data['createaccount-email'] != null %}
-              {{data['createaccount-email']}}
+            {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-third-party")  %}
+              {{data['invite-user-email'] or "jane@email.com"}}
                 {% else %}
-                  {{data['user-email1']}}
+                  {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}
             {% endif %}
           </strong>
         {% endset -%}
