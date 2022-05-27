@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">2. Who is registering interest</span>
+      <span class="govuk-caption-xl">2. About you</span>
 
       <form action="reginterest-the-org-dets" method="post" id="createaccount-your-org-confirm-form"> 
         
@@ -29,7 +29,7 @@
             </label>
           </h1>
            <div id="sort-hint" class="govuk-hint">
-            Search the Companies House register for the organisation you represent
+            Search Companies House to find registered company details.
           </div>
           <select class="govuk-select" id="search-reg-org" name="search-reg-org" onchange="showDiv('hidden_div', this); update()">
             <option value="" class="selected"></option>
@@ -47,19 +47,19 @@
         </div>
 
         <div style="display:none;" id="selected_company_wrapper">
-          <p>Check the organisation details below carefully. If the details do not match those of your client, you should return to the previous step and choose the "New client" organisation option.</p>
+          <p>Check the company details carefully. If they do not match your client’s, go back and select ‘New client’.</p>
           <div class="govuk-inset-text" id="selected_company"></div>
         </div>
 
         {{ govukDetails({
-          summaryText: "I can't find the organisation",
-          html: ' <p class="govuk-body">You can search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
-          <p>If you cannot find the organisation on the register return to the previous page and select "<strong>No</strong>" my client is not registered in the UK.</p>'
+          summaryText: "If you can’t find your client’s company",
+          html: ' <p class="govuk-body">Search for your client’s company on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
+          <p>If you cannot find the company on the register, select ‘No’.  This means your client’s company is not registered in the UK.</p>'
         }) }}
    
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "I confirm these are the correct details"
+            text: "I confirm these details are correct"
           }) }}    
           <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
         </div>

@@ -15,19 +15,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">2.  Who is registering interest</span>
-
+      <h1 class="govuk-heading-xl">Who is your primary client contact?</h1>
+      <p>This is the main person you work with from the organisation you are representing.</p>
 
       <form action="reginterest-tasks?which-org-task=complete" novalidate method="post" id="reginterest-contact-name-form">  
         
-        {% call govukFieldset({
-          legend: {
-            text: "Who is your primary client contact?",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
-
-        {{ govukInput({
+       {{ govukInput({
           label: {
             text: "Contact name",
             classes: "govuk-label--s",
@@ -61,10 +54,6 @@
             text: "Continue"
           }) }}    
          <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
-
-
-
-        {% endcall %} 
 
       </form>
         

@@ -18,27 +18,36 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">3.  Registration documentation</span>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">3. Registration documentation</span>
     <h1 class="govuk-heading-xl">
-      Presampling documentation
+      Initial documentation 
     </h1>
+    <p>Download and complete the form. Once complete, upload two versions: one public, one private.</p> 
+    <ul class="govuk-list">
+      <li>
+        {% if (data['pre-download'] == "yes" ) %}
+        <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px">  initial-documentation-form.docx (344KB) </a><span>&#10003;</span>
+        {% else %}
+        <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px">  initial-documentation-form.docx (344KB) </a>
+        {% endif %}
+      </li>
+    </ul> 
+    <br>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How to create a public version of your initial documentation
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>So that all interested parties get the opportunity to understand case evidence, one version needs to be public. Remove all sensitive data from your public file.</p>
+        <p>Create one private file containing all details, and one file containing only information open to the public. For more help, see: <a href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries" target="_blank" class="link govuk-link--no-visited-state">creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
+        
+      </div>
+    </details>    
   </div>
 </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <p>Download and complete the documentation below. Upload a <strong>Private</strong> and <strong>Public</strong> version of each file you submit (maximum single file upload size is 30MB):</p> 
-      <ul class="govuk-list">
-        <li>
-          {% if (data['pre-download'] == "yes" ) %}
-          <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a><span>&#10003;</span>
-          {% else %}
-          <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> registration-form-presampling.docx (344KB) </a>
-          {% endif %}
-        </li>
-      </ul>      
-    </div>
-  </div>
 
   <div id="doc-1">
     <div class="govuk-grid-row">
@@ -108,20 +117,6 @@
         <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2" id="add-doc-button" data-module="govuk-button" onclick="showDoc2Panel()">
           Add another document
         </button>
-
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What are Private and Public versions of a document and why are they needed?
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p>This needs a total re-write I've just stolen it....It’s important that parties involved in a case have the opportunity to understand the evidence provided by other interested parties and contributors and defend their own interests by submitting responses to such information if necessary.</p>
-            <p> However, we understand that some of the information parties provide to us may be confidential to them. Therefore, we ask parties to provide non-confidential versions of their evidence as well, so that we can make this available to other parties.</p>
-            <p>Find out more:  <a href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries" target="_blank" class="link govuk-link--no-visited-state">Creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
-            
-          </div>
-        </details>
         <form action="reginterest-tasks?upload-pre-task=complete" method="post" id="upload-form">
 
           <div class="govuk-button-group">

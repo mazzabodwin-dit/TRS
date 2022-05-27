@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <span class="govuk-caption-xl">2. Who is registering interest</span>
+      <span class="govuk-caption-xl">2. About you</span>
     </div>
     <div class="govuk-grid-column-two-thirds">
 
@@ -27,13 +27,13 @@
         
         {% call govukFieldset({
           legend: {
-            text: "Further details about your client",
+            text: "About your client",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
 
-        <p>Please provide as much of the following information as you can to help us verify the organisation.</p>
+        <p>Provide as many details as you can to help us understand the organisation.</p>
 
         {{ govukInput({
           label: {
@@ -42,7 +42,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "For example clientcompany.com"
+            text: "Provide your organisation’s website if it has one. "
           },
           classes: "govuk-input--width-20",
           id: "reginterest-web",
@@ -58,7 +58,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "The organisation will have a VAT number if registered for Value Added Tax"
+            text: "Most UK registered companies are registered for VAT (Value Added Tax)."
           },
           classes: "govuk-input--width-20",
           id: "reginterest-vat",
@@ -85,12 +85,12 @@
 
         {{ govukInput({
           label: {
-            text: "D‑U‑N‑S Number (optional)",
+            text: "DUNS number (optional)",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "The organisation might have a 9 digit Data Universal Numbering System identifier"
+            text: "Your organisation might have a 9-digit DUNS (Data Universal Numbering System) identifier."
           },
           classes: "govuk-input--width-20",
           id: "reginterest-duns",
