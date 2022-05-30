@@ -100,17 +100,17 @@
         <div class="address-card">
           <div class="address-container">
             <h2 class="govuk-heading-m">
-              3rd party invites
+              Third party respresentative invites
             </h2>
             {% if (data['invite-user-task'] == "started") %}
-              <p><a href="" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
-                {{data ['case-ref3']}} - {{data ['case-name3']}}<br>
+              <p><a href="manage-org/tasklist/invite-third-party-tasks" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
+                {{data ['case-ref']}} - {{data ['case-name']}}<br>
                 <span class="govuk-body-s">Draft saved: <span id="date2"></span></span>
               </p>
             {% endif %}
             {% if (data['invite-user-task'] == "complete") %}
-            <p><a href="" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
-              {{data ['case-ref1']}} - {{data ['case-name1']}}<br>
+            <p><a href="manage-org/tasklist/invite-third-party-tasks" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
+              {{data ['case-ref']}} - {{data ['case-name']}}<br>
               <span class="govuk-body-s">Invite sent: <span id="date2"></span></span>
             </p>
             {% endif %}
@@ -146,7 +146,7 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="reg-interest/reginterest-tasks">Register interest in a case</a> 
+              <a class="govuk-link govuk-link--no-visited-state" href="reg-interest/reginterest-tasks?tasklist-type=reg-interest">Register interest in a case</a> 
             </li>
             <li>
               <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 

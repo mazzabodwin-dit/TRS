@@ -87,7 +87,7 @@ router.post('/reginterest-which-org-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestWho == "new-org"){
     // Send user to next page
-    res.redirect('/public-site/reg-interest/reginterest-uk-reg')
+    res.redirect('/public-site/reg-interest/reginterest-contact')
   } 
 })
 
@@ -160,6 +160,25 @@ router.get('/public-site/reg-interest/reginterest-upload', function (req, res) {
 
   res.render('public-site/reg-interest/reginterest-upload')
  
+})
+
+
+// Invite 3rd party to account
+
+// Run this code on invite-uk-org: - is org UK reg?
+router.post('/invite-uk-reg-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-uk-org'
+  var inviteUKReg = req.session.data['invite-uk-reg']
+
+  // Check whether the variable matches a condition
+  if (inviteUKReg == "yes"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/tasklist/invite-the-org-uk-search')
+  } else {
+    // Send user to no page
+    res.redirect('/public-site/manage-org/tasklist/invite-the-org')
+  }
 })
 
 // Caseworker
@@ -267,7 +286,7 @@ router.post('/invite-type-route', function (req, res) {
   } 
   if (regType == "invite-third-party"){
     // Send user to next page
-    res.redirect('/public-site/manage-org/tasklist/invite-third-party-tasks')
+    res.redirect('/public-site/manage-org/tasklist/invite-third-party-tasks?tasklist-type=invite-third-party')
   } 
 })
 
