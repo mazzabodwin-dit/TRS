@@ -1,7 +1,7 @@
-  <!-- Public - reginterest org - organisation - if the user has completed section 2 show: -->
-    <!-- Public - reginterest org - organisation - if the user has completed section 2 show: -->
-      <!-- Public - reginterest org - organisation - if the user has completed section 2 show: -->
+<!--If the user is trying to reg interest show: -->
+{% if data['tasklist-type'] == "reg-interest" %}
 
+  <!-- Public - reginterest org - organisation - if the user has completed section 2 show: -->
   {% if (data['which-org-task'] == "complete") %}
 
     <li class="app-task-list__item">
@@ -27,7 +27,7 @@
         </li>
         
         {% else %}
-        {% if (data['case-task'] == "complete")  %}
+        {% if (data['regcase-task'] == "complete")  %}
           <!-- If the user has not started section 2 show -->
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -50,5 +50,61 @@
         {% endif %}
 
     {% endif %}
+  {% endif %}
+
+  {% else %}
+
+    <!--If the user is trying to invite a third party show: -->
+
+    {% if (data['invite-which-org-task'] == "complete") %}
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-which-org" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+          Details of organisation 
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="organisation-selected-status">Complete</strong>
+    </li>
+
+    {% else %}
+      {% if (data['invite-which-org-task'] == "started")  %}
+        <!-- If the user has started section 2 show: -->
+
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="reginterest-which-org" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+              Details of organisation 
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-selected-status">In progress</strong>
+          </li>
+          
+          {% else %}
+          {% if (data['invite-case-task'] == "complete")  %}
+            <!-- If the user has not started section 2 show -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reginterest-which-org?which-org-task=started" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+                  Details of organisation 
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Not started yet</strong>
+            </li>
+
+            {% else %}
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name" aria-describedby="organisation-selected-status">
+                  Details of organisation 
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-selected-status">Cannot start yet</strong>
+              </li>
+
+          {% endif %}
+
+        {% endif %}
+
+      {% endif %}
 
 {% endif %}
