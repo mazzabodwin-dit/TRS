@@ -54,13 +54,12 @@
 
   {% else %}
 
-    <!--If the user is trying to invite a third party show: -->
-
+  <!--If the user is trying to invite a third party show: -->
     {% if (data['invite-which-org-task'] == "complete") %}
 
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="reginterest-which-org" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+        <a href="invite-contact" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
           Details of organisation 
         </a>
       </span>
@@ -73,7 +72,7 @@
 
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="reginterest-which-org" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+            <a href="invite-contact" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
               Details of organisation 
             </a>
           </span>
@@ -85,7 +84,7 @@
             <!-- If the user has not started section 2 show -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="reginterest-which-org?which-org-task=started" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
+                <a href="invite-contact?invite-which-org-task=started" class="govuk-link--no-visited-state" aria-describedby="organisation-selected-status">
                   Details of organisation 
                 </a>
               </span>

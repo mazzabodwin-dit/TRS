@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Further details about the organisation - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-xl">2. About your third party rep</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="invite-third-party-tasks?invite-which-org-task=complete" method="post" id="invite-your-org-dets-form">  
+
+        
+        {% call govukFieldset({
+          legend: {
+            text: "About your representative",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>Provide as many details as you can to help us understand your representative's organisation.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Organisation website (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Provide your representative's website if it has one."
+          },
+          classes: "govuk-input--width-20",
+          id: "invite-web",
+          name: "invite-web",
+          type: "text",
+          value: data['invite-web']  
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "VAT registration number (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Most companies are registered for VAT (Value Added Tax) or an international equivalent. "
+          },
+          classes: "govuk-input--width-20",
+          id: "invite-vat",
+          name: "invite-vat",
+          type: "text",
+          value: data['invite-vat']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "EORI number (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Your representative's organisation will have an EORI number if you have brought goods into the UK or EU.  "
+          },
+          classes: "govuk-input--width-20",
+          id: "invite-eori",
+          name: "invite-eori",
+          type: "text",
+          value: data['invite-eori']          
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "DUNS number (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Your representative's organisation might have a 9-digit DUNS (Data Universal Numbering System) identifier."
+          },
+          classes: "govuk-input--width-20",
+          id: "invite-duns",
+          name: "invite-duns",
+          type: "text",
+          value: data['invite-duns']  
+        }) }}
+  
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+        </div>
+
+        {% endcall %} 
+
+      </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

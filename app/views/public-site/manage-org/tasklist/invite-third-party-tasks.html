@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Invite third party representative – {{serviceName}}
+{% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/public-site/dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Invite third party representative
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Invite third party representative
+    </h1>
+    <p class="govuk-body">Complete all the steps to invite a third party representative to work on a case on behalf of your organisation.  </p>
+
+    <p class="govuk-body govuk-!-margin-bottom-7">Return to your dashboard at another time to continue if you leave before you finish.</p>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span>Your case
+        </h2>
+        <ul class="app-task-list__items">
+
+          {% include "includes/task-list1.html" %}
+
+        </ul>
+      </li>
+
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span>About your third party rep
+        </h2>
+        <ul class="app-task-list__items">
+          
+          {% include "includes/task-list2.html" %}
+          
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span>Registration documentation
+        </h2>
+        <ul class="app-task-list__items">
+
+          {% include "includes/task-list3.html" %}
+
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">4. </span>Register interest
+        </h2>
+        <ul class="app-task-list__items">
+
+          {% include "includes/task-list4.html" %}
+
+        </ul>
+      </li>
+    </ol>
+
+    <a class="govuk-link" href="../dashboard">Back to Dashboard</a>
+
+  </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+

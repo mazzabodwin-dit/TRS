@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select Trade Remedies case – {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="invite-third-party-tasks">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">1. Your case</span>
+    <h1 class="govuk-heading-xl">Select a Trade Remedies case</h1>
+    <p>Select the case you would like the third party representative to participate in.</p>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-cases">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort-cases" name="sort-cases">
+            <option value="No." selected>Case No.</option>
+            <option value="Case">Case</option>
+            <option value="Type">Type</option>
+            <option value="Status">Status</option>
+            <option value="Started">Started</option>
+            <option value="Status">Status</option>
+            <option value="Reg due">Reg due</option>
+          </select>
+        
+          <label class="govuk-label govuk-visually-hidden" for="direction-cases">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-cases" name="direction-cases">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+          {{ govukButton({
+            text: "Sort",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+      </div>
+
+      <table class="govuk-table sortable table-border" id="table-header" role="grid">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the open Trade Remedies cases</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case no. <i class="Z-to-A"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Started <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Reg due <i class="sort-indicator"></i>
+            </th>
+            <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
+              <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
+            </th>
+          </tr>
+        </thead>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">No: </span>{{data ['case-ref1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span>{{data ['case-name1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span>{{data ['case-type1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status</span>{{data ['submission1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Start date: </span>{{data ['created1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Registration due: </span>{{data ['register-date1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="invite-third-party-tasks?invite-task=started&invite-case-task=complete&case-ref=AD2224&case-name=Steel plate from Russia&register-date=01 June 2022&case-type=Anti-dumping" class="govuk-link--no-visited-state"> Select <span class="govuk-visually-hidden td-header">BA0005</span></a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span>AG0404
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span>Farnets from Fabon
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-subsidy investigation
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status</span>Questionnaires issued
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Start date: </span>12 April 2021
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Registration due: </span>26 April 2021
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="invite-third-party-tasks?invite-task=started&invite-case-task=complete&case-ref=AG0404&case-name=Farnets from Fabon&register-date=26 April 2021&case-type=Anti-dumping investigation" class="govuk-link--no-visited-state"> Select <span class="govuk-visually-hidden td-header">AG0404</span></a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Ref: </span>AD0004
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span>Garnets from Gabon
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-dumping investigation
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status</span>Questionnaires issued
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Start date: </span>01 Dec 2019
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Registration due: </span>15 Dec 2019
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="invite-third-party-tasks?invite-task=started&invite-case-task=complete&case-ref=AD0004&case-name=Garnets from Gabon&&register-date=15 Dec 2019&case-type=Anti-subsidy investigation" class="govuk-link--no-visited-state"> Select <span class="govuk-visually-hidden td-header">AD0004</span></a>
+          </td>
+        </tr>
+
+      </table>
+    </form>     
+    
+    <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
