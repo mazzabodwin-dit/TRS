@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Is the organisation registered in the UK? – {{ serviceName }}
+  Is your representative a UK-registered company?  – {{ serviceName }}
 {% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
 
 {% block header %}
  {% include "includes/header-public.html" %}
@@ -18,7 +21,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">2. About your third party rep</span>
+      <span class="govuk-caption-xl">2. About your representative</span>
 
       <form action="/invite-uk-reg-route" method="post" id="invite-uk-reg-form"> 
                

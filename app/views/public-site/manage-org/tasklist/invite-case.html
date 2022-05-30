@@ -4,6 +4,9 @@
   Select Trade Remedies case – {{serviceName}}
 {% endblock %}
 
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
+
 {% block header %}
  {% include "includes/header-public.html" %}
 {% endblock %}
@@ -23,7 +26,7 @@
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">1. Your case</span>
     <h1 class="govuk-heading-xl">Select a Trade Remedies case</h1>
-    <p>Select the case you would like the third party representative to participate in.</p>
+    <p>Select the case you would like the representative to participate in.</p>
   </div>
 
   <div class="govuk-grid-column-full">

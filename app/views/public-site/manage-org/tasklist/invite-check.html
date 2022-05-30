@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check and submit – {{serviceName}}
+{% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="invite-third-party-tasks">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop"><span class="govuk-caption-xl">4.  Invite representative</span>
+    <h1 class="govuk-heading-xl">
+      Review your answers
+    </h1>
+
+    <h2 class="govuk-heading-m">Your invite</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['case-ref']}} - {{data['case-name']}}
+        </dd>
+         
+      </div>
+    </dl>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          My representative
+        </dt>
+        <dd class="govuk-summary-list__value">
+            <!-- Show client name-->
+              {{data['invite-name'] or "Tiny Williams"}}<br>
+              {{data['invite-email'] or "t.w@email.com"}}<br><br>
+
+             <!-- And show new or existing org name-->     
+                    {% if (data['invite-uk-reg'] == "yes") %}
+                      ACompany<br>
+                        {% else %}
+                          {{ data['invite-org-name'] or "Steel UK" }}<br>
+                    {% endif %}
+          <!----> 
+          
+          345, The Shard, London <br>
+          EC2 3TF<br>
+          United Kingdom
+          <br><br>
+          Company number: 595934925<br>
+          {% if data['reginterest-what-org'] == "new-org" %}
+          <br>
+            VAT number: {{data['reginterest-vat'] or "205672212000"}}<br>
+            EORI number: {{data['reginterest-eori'] or "GB205672212000"}}<br>
+            DUNS number: {{data['reginterest-duns'] or "123456789"}}<br>
+            <a href="">www.orglongnameurlthatisannoying.com</a>
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="invite-contact">
+            Change
+            <span class="govuk-visually-hidden"> who is registering interest</span>
+          </a>
+        </dd>
+        
+      </div>
+    
+    </dl>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Letter of Authority 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            loa.docx
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="invite-upload-loa">
+              Change
+              <span class="govuk-visually-hidden"> Letter of Authority</span>
+            </a>
+          </dd>
+        </div> 
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your invite</h2>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              I am authorised to provide this information. 
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+     
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Confirm and submit application",
+        href: "invite-rep-complete?invite-task=complete"
+      }) }}    
+      <a class="govuk-link govuk-link--no-visited-state" href="invite-third-party-tasks">Back</a>
+
+    </div>
+
+    </form>
+
+
+</div>
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">          
+          <li>
+            <br>
+            <strong>Email the case team</strong>   
+            <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+          </li>    
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

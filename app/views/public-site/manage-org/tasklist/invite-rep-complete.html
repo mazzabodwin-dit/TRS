@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Invite sent - {{serviceName}}
+{% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Invite sent
+        </h1>
+      </div>
+  
+      <p>We have sent an invite for a respresentative to join your account and act on your behalf in the following Trade Remedies case:</p>
+      <p>
+        {{data ['case-ref1']}} - {{data ['case-name1']}}<br>
+        {{ data['invite-name'] or "Tiny Williams"}} - {{ data['invite-email'] or "t.w@email.com" }}<br>     
+        {% if (data['invite-uk-reg'] == "yes") %}
+          ACompany<br>
+            {% else %}
+              {{ data['invite-org-name'] or "Steel UK" }}<br>
+        {% endif %} 
+      </p>
+
+      <p>Once they have registered they will be able to do things on your behalf....etc</p>
+
+      <form action="manage-org#manage-team" method="post" id="dashboard">              
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Done"
+          }) }}    
+          <a class="govuk-link" href="invite-user-type">Invite new user</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+        },
+        {
+        },
+        {
+          href: "../email/email-reginterest-app-sent.html",
+          text: "For user testing: Go to email"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
