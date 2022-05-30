@@ -1,105 +1,163 @@
-<!-- If the user has completed Downloads show: -->
+{% if data['tasklist-type'] == "reg-interest" %}
 
-{% if (data['reginterest-what-org'] == "existing-org") or (data['reginterest-what-org'] == "new-org")  %}
+<!-- If the user has completed org details show: -->
+  {% if (data['reginterest-what-org'] == "existing-org") or (data['reginterest-what-org'] == "new-org")  %}
 
-  {% if (data['upload-loa-task'] == "complete")  %}
-  <li class="app-task-list__item">
+    <!-- LOA -->
+    {% if (data['upload-loa-task'] == "complete")  %}
+    <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+            Letter of Authority
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="loa-upload-status">Complete</strong>
+      </li>
+
+      {% else %}
+        <!-- If the user has visited loa show: -->
+        {% if (data['upload-loa-task'] == "started")  %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="reginterest-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+                Letter of Authority
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="loa-upload-status">In progress</strong>
+          </li>
+
+          {% else %}
+            <!-- If the user has not started loa but has completed section 2 show: -->
+            {% if (data['which-org-task'] == "complete")  %}
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="reginterest-upload-loa?upload-loa-task=started" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+                    Letter of Authority
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Not started</strong>
+              </li>
+
+              {% else %}
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" aria-describedby="loa-upload-status">              
+                      Letter of Authority
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Cannot start yet</strong>
+                  </li>
+
+            {% endif %}
+
+        {% endif %}
+    {% endif %}
+  {% endif %}
+
+  <!-- If the user has completed Uploads show: -->
+  <!-- If the user has completed Uploads show: -->
+  {% if (data['upload-pre-task'] == "complete") and (data['tasklist-type'] == "reg-interest")  %}
+    <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="reginterest-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
-          Letter of Authority
+        <a href="reginterest-upload-pre" class="govuk-link--no-visited-state" aria-describedby="pre-sampling-upload-status">
+          Initial documentation
         </a>
       </span>
-      <strong class="govuk-tag app-task-list__tag" id="loa-upload-status">Complete</strong>
+      <strong class="govuk-tag app-task-list__tag" id="pre-sampling-upload-status">1 document uploaded</strong>
     </li>
 
     {% else %}
-      <!-- If the user has visited Downloads show: -->
-      {% if (data['upload-loa-task'] == "started")  %}
+      <!-- If the user has visited Uploads show: -->
+      {% if (data['upload-pre-task'] == "started")  %}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="reginterest-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
-              Letter of Authority
+            <a href="reginterest-upload-pre" class="govuk-link--no-visited-state" aria-describedby="pre-sampling-upload-status">
+              Initial documentation
             </a>
           </span>
-          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="loa-upload-status">In progress</strong>
+          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="pre-sampling-upload-status">In progress</strong>
         </li>
 
         {% else %}
-          <!-- If the user has not started Downloads but has completed section 2 show: -->
+          <!-- If the user has not started Uploads but has completed section 2 show: -->
           {% if (data['which-org-task'] == "complete")  %}
-          <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="reginterest-upload-loa?upload-loa-task=started" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
-                  Letter of Authority
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Not started</strong>
-            </li>
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="reginterest-upload-pre?upload-pre-task=started" class="govuk-link--no-visited-state" aria-describedby="pre-sampling-upload-status">
+                    Initial documentation
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="pre-sampling-upload-status">Not started</strong>
+              </li>
 
-            {% else %}
+              {% else %}
                 <li class="app-task-list__item">
-                  <span class="app-task-list__task-name" aria-describedby="loa-upload-status">              
-                    Letter of Authority
+                  <span class="app-task-list__task-name" aria-describedby="pre-sampling-upload-status">
+                    Initial documentation
                   </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Cannot start yet</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="pre-sampling-upload-status">Cannot start yet</strong>
                 </li>
 
           {% endif %}
 
       {% endif %}
+
   {% endif %}
 
-{% endif %}
-
-<!-- If the user has completed Uploads show: -->
-<!-- If the user has completed Uploads show: -->
-{% if (data['upload-pre-task'] == "complete")  %}
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-      <a href="reginterest-upload-pre" class="govuk-link--no-visited-state" aria-describedby="pre-sampling-upload-status">
-        Initial documentation
-      </a>
-    </span>
-    <strong class="govuk-tag app-task-list__tag" id="pre-sampling-upload-status">1 document uploaded</strong>
-  </li>
-
+  
   {% else %}
-    <!-- If the user has visited Uploads show: -->
-    {% if (data['upload-pre-task'] == "started")  %}
-      <li class="app-task-list__item">
-        <span class="app-task-list__task-name">
-          <a href="reginterest-upload-pre" class="govuk-link--no-visited-state" aria-describedby="pre-sampling-upload-status">
-            Initial documentation
-          </a>
-        </span>
-        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="pre-sampling-upload-status">In progress</strong>
-      </li>
 
-      {% else %}
-        <!-- If the user has not started Uploads but has completed section 2 show: -->
-        {% if (data['which-org-task'] == "complete")  %}
-          <li class="app-task-list__item">
+    <!--If the user is trying to invite a third party show: -->
+    {% if data['tasklist-type'] == "invite-third-party" %}
+
+      <!-- LOA -->
+      {% if (data['invite-loa-task'] == "complete")  %}
+      <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="invite-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+              Letter of Authority
+            </a>
+          </span>
+          <strong class="govuk-tag app-task-list__tag" id="loa-upload-status">Complete</strong>
+        </li>
+
+        {% else %}
+          <!-- If the user has visited loa show: -->
+          {% if (data['upload-loa-task'] == "started")  %}
+            <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="reginterest-upload-pre?upload-pre-task=started" class="govuk-link--no-visited-state" aria-describedby="pre-sampling-upload-status">
-                  Initial documentation
+                <a href="invite-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+                  Letter of Authority
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="pre-sampling-upload-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="loa-upload-status">In progress</strong>
             </li>
 
             {% else %}
+              <!-- If the user has not started loa but has completed section 2 show: -->
+              {% if (data['which-org-task'] == "complete")  %}
               <li class="app-task-list__item">
-                <span class="app-task-list__task-name" aria-describedby="pre-sampling-upload-status">
-                  Initial documentation
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="pre-sampling-upload-status">Cannot start yet</strong>
-              </li>
+                  <span class="app-task-list__task-name">
+                    <a href="invite-upload-loa?invite-loa-task=started" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+                      Letter of Authority
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Not started</strong>
+                </li>
 
-        {% endif %}
+                {% else %}
+                    <li class="app-task-list__item">
+                      <span class="app-task-list__task-name" aria-describedby="loa-upload-status">              
+                        Letter of Authority
+                      </span>
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Cannot start yet</strong>
+                    </li>
+
+              {% endif %}
+
+          {% endif %}
+      {% endif %}
 
     {% endif %}
-
-{% endif %}
+  {% endif %}
 
 
 

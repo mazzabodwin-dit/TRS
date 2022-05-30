@@ -82,7 +82,7 @@
               </p>
             {% endif %}
             {% if (data['reginterest-task'] == "started")  %}
-            <p><a href="reg-interest/reginterest-tasks" class="govuk-link govuk-link--no-visited-state">
+            <p><a href="reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link govuk-link--no-visited-state">
               {% if (data['regnterest-due-date'] == "current") %}
                 {{data ['case-ref1']}} - {{data ['case-name1']}}
                 {% else %}
@@ -103,13 +103,13 @@
               Third party respresentative invites
             </h2>
             {% if (data['invite-user-task'] == "started") %}
-              <p><a href="manage-org/tasklist/invite-third-party-tasks" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
+              <p><a href="manage-org/tasklist/invite-third-party-tasks?tasklist-type=invite-third-party" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
                 {{data ['case-ref']}} - {{data ['case-name']}}<br>
                 <span class="govuk-body-s">Draft saved: <span id="date2"></span></span>
               </p>
             {% endif %}
             {% if (data['invite-user-task'] == "complete") %}
-            <p><a href="manage-org/tasklist/invite-third-party-tasks" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
+            <p><a href="manage-org/tasklist/invite-third-party-tasks?tasklist-type=invite-third-party" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
               {{data ['case-ref']}} - {{data ['case-name']}}<br>
               <span class="govuk-body-s">Invite sent: <span id="date2"></span></span>
             </p>
