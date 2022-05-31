@@ -28,24 +28,30 @@
   
       <p>We have sent an invite for a respresentative to join your account and act on your behalf in the following Trade Remedies case:</p>
       <p>
-        {{data ['case-ref1']}} - {{data ['case-name1']}}<br>
-        {{ data['invite-name'] or "Tiny Williams"}} - {{ data['invite-email'] or "t.w@email.com" }}<br>     
+        Case: {{data ['case-ref1']}} - {{data ['case-name1']}}<br>
+        Invite sent to: {{ data['invite-name'] or "Tiny Williams"}} - {{ data['invite-email'] or "t.w@email.com" }}<br>     
+
+        <!-- And show new or existing org name-->     
+        Organisation: 
         {% if (data['invite-uk-reg'] == "yes") %}
-          ACompany<br>
+          Steel UK
             {% else %}
-              {{ data['invite-org-name'] or "Steel UK" }}<br>
-        {% endif %} 
+              {% if (data['invite-uk-reg'] == "no") %}
+                {{data['invite-org-name']}}<br>
+                  {% else %}
+              {% endif %}
+        {% endif %}
       </p>
 
       <p>Once they have registered they will be able to do things on your behalf....etc</p>
 
-      <form action="../manage-org#manage-team" method="post" id="dashboard">              
+      <form action="../../dashboard" method="post" id="dashboard">              
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Done"
+            text: "Go to my dashboard"
           }) }}    
-          <a class="govuk-link" href="invite-user-type">Invite new user</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="../invite-user-type">Invite new user</a>
         </div>
 
       </form>
