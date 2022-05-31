@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check and submit – {{serviceName}}
+  Invite representative – {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -20,22 +20,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-xl">
-      Registration of Interest
+      Invite representative
     </h1>
 
     <h2 class="govuk-heading-m">Your application</h2>
-    {% if data['reginterest-task'] == "Draft" %}
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue application",
-          href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-        }) }}    
-        {{ govukButton({
-          text: "Delete application",
-          classes: "govuk-button--warning"
-        }) }}
-      </div>
-    {% endif %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -43,7 +31,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <p>
-            {{data ['reginterest-task']}}<br>
+            {{data ['invite-rep-task'] or "Draft"}}<br>
             <span id="date"></span>
           </p>
         </dd>
@@ -54,11 +42,8 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <p><a href="">
-            {% if (data['regnterest-due-date'] == "current") %}
-              {{data ['case-ref1']}} - {{data ['case-name1']}}
-              {% else %}
-                {{data['case-ref']}} - {{data['case-name']}}
-            {% endif %}</a><br>
+              {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
+             </a><br>
           </p>
         </dd>
       </div>
@@ -75,75 +60,58 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registering for
+          Invite representative details
         </dt>
         <dd class="govuk-summary-list__value">
           <!--if it is a complete app show address details-->
-          {% if data['reginterest-task'] == "Submitted" %}
-            {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
-            <p>My employer:</p>
-              {% else %}
-              <p>My client:</p>
-            {% endif %}
+          {% if data['invite-rep-task'] == "Sent" %}
 
-            {% if (data['reginterest-what-org'] != "existing-org") or (data['reginterest-what-org'] != "new-org") %}
-              {{data['representative1']}}<br>
-                {% else %}
-                  {% if (data['reginterest-what-org'] == "existing-org") %}
-                    {{ data['reginterest-existing-org'] }}<br>
-                      {% else %}
-                        {% if (data['reginterest-what-org'] == "new-org") and (data['reginterest-uk-reg'] == "yes") %}
-                          {{ data[''] }}ACompany<br>
-                            {% else %}
-                              {{ data['reginterest-org-name'] }}<br>
-                        {% endif %}
-                  {% endif %}
-            {% endif %}
-            
-            
+              {% if (data['invite-uk-reg'] == "yes") %}
+                {{ data[''] }}ACompany<br>
+                  {% else %}
+                    {{ data['reginterest-org-name'] }}<br>
+              {% endif %}
+
+
             Company number: 595934925<br>
             345, The Shard, London <br>
             EC2 3TF<br>
             United Kingdom
             <br><br>
-            {% if data['reginterest-what-org'] == "new-org" %}
-              VAT number: 68593069894<br>
-              DUNS number: 123456789<br>
-              www.orglongnameurlthatisannoying.com
-            {% endif %}
+            VAT number: 68593069894<br>
+            DUNS number: 123456789<br>
+            www.orglongnameurlthatisannoying.com
           {% endif %}
         </dd>        
       </div>
     
     </dl>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      {% if (data['reginterest-what-org'] != "my-org") %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Letter of Authority
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <!--if it is a complete app show doc details-->
-            {% if data['reginterest-task'] == "Submitted" %}
-              <a href="">loa.docx</a>
-            {% endif %}
-          </dd>
-        </div>
-      {% endif %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Initial documentation
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <!--if it is a complete app show doc details-->
-          {% if data['reginterest-task'] == "Submitted" %}
-            <a href="">confidentialdocument1.docx</a><br>
-            <a href="">unconfidentialdocument1.docx</a>
-          {% endif %}
-        </dd>
-      </div>   
+      {% if data['invite-rep-task'] == "Sent" %}
+        {% if (data['reginterest-what-org'] != "my-org") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Letter of Authority
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <!--if it is a complete app show doc details-->
+              {% if data['reginterest-task'] == "Submitted" %}
+                <a href="">loa.docx</a>
+              {% endif %}
+            </dd>
+          </div>
+        {% endif %}  
+      {% endif %} 
     </dl>
+    {% if data['invite-rep-task'] == "Draft" %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue application",
+          href: "tasklist/invite-rep-tasks?tasklist-type=reg-interest&regcase-task=complete"
+        }) }}    
+        <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete application</a>
+      </div>
+    {% endif %}
 </div>
 
   <div class="govuk-grid-column-one-third">
@@ -155,13 +123,15 @@
             <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
           </li>  
           
-          {% if data['case-ref'] != null %}
           <li>
             <br>
-            <strong>Email the case team</strong>        
-            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-          </li>     
-          {% endif %}    
+            <strong>Email the case team</strong>   
+              {% if (data['regnterest-due-date'] == "current") %}
+                <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref1']}}@traderemedies.gov.uk</a>
+                {% else %}       
+                  <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+              {% endif %}
+          </li> 
         </ul>
       </nav>
     </aside>

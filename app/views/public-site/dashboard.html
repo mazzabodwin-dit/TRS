@@ -47,7 +47,7 @@
 
       <p>This is your Trade Remedies Service (TRS) dashboard.</p>
 
-      {% if (data['reginterest-task'] == "Submitted") or (data['reginterest-task'] == "Draft") or (data['invite-user-task'] == "started") or (data['invite-user-task'] == "complete")  %}
+      {% if (data['reginterest-task'] == "Submitted") or (data['reginterest-task'] == "Draft") or (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent")  %}
         {% else %}
         <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
       
@@ -62,20 +62,35 @@
         </div>
       </div>
       {% endif %}
-
       <!-- Reg interest -->
-      {% if (data['reginterest-task'] != "null") %}
+      {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
         <div class="address-card">
           <div class="address-container">
             <h2 class="govuk-heading-m">
               Registration of Interest
             </h2>
-              <p><a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
-                {% if (data['regnterest-due-date'] == "current") %}
-                  {{data ['case-ref3']}} - {{data ['case-name3']}}
+              <p>
+                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
+                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
+
+                <!-- And show new or existing org name-->     
+                {% if (data['reginterest-what-org'] == "my-org") %}
+                  BlueSteel Partners<br>
                     {% else %}
-                    {{data['case-ref']}} - {{data['case-name']}}
-                {% endif %}</a><br>
+                      {% if (data['reginterest-what-org'] == "existing-org") %}
+                        {{ data['reginterest-existing-org'] }}<br>
+                          {% else %}
+                            {% if (data['reginterest-uk-reg'] == "yes") %}
+                              Steel UK
+                                {% else %}
+                                  {% if (data['reginterest-uk-reg'] == "no") %}
+                                    {{data['reginterest-org-name']}}<br>
+                                      {% else %}
+                                  {% endif %}
+                            {% endif %}
+                      {% endif %}
+                {% endif %}
+                  
                 Status: {{data ['reginterest-task']}}<br>
                 <span class="govuk-body-s"><span id="date"></span></span>
               </p>
@@ -84,24 +99,23 @@
       {% endif %}
 
       <!-- Invites in progress -->
-      {% if (data['invite-user-task'] == "started") or (data['invite-user-task'] == "complete") %}
+      {% if (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent") %}
         <div class="address-card">
           <div class="address-container">
             <h2 class="govuk-heading-m">
-              Third party respresentative invites
+              Invite representative
             </h2>
-            {% if (data['invite-user-task'] == "started") %}
-              <p><a href="manage-org/tasklist/invite-third-party-tasks?tasklist-type=invite-third-party" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
-                {{data ['case-ref']}} - {{data ['case-name']}}<br>
-                <span class="govuk-body-s">Draft saved: <span id="date2"></span></span>
-              </p>
-            {% endif %}
-            {% if (data['invite-user-task'] == "complete") %}
-            <p><a href="manage-org/tasklist/invite-third-party-tasks?tasklist-type=invite-third-party" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a><br>
-              {{data ['case-ref']}} - {{data ['case-name']}}<br>
-              <span class="govuk-body-s">Invite sent: <span id="date2"></span></span>
+            <p><a href="manage-org/invite-app-details?tasklist-type=invite-rep" class="govuk-link govuk-link--no-visited-state">
+              {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
+
+              {% if (data['invite-uk-reg'] == "yes") %}
+                ACompany
+                  {% else %}
+                    {{ data['invite-org-name'] or "Steel UK" }}
+              {% endif %}<br>
+              Status: {{data['invite-rep-task']}} <br>
+              <span class="govuk-body-s"><span id="date2"></span></span>
             </p>
-            {% endif %}
           </div>
         </div>
       {% endif %}

@@ -14,7 +14,7 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="invite-third-party-tasks">Back</a>
+ <a class="govuk-back-link govuk-link--no-visited-state" href="invite-rep-tasks">Back</a>
 
 {% endblock %}
 
@@ -40,7 +40,7 @@
 
   </div>
 </div>
-<form action="invite-third-party-tasks?invite-loa-task=complete" method="post" id="invite-upload-form">
+<form action="invite-rep-tasks?invite-loa-task=complete" method="post" id="invite-upload-form">
   
     <!-- Add LOA -->
   <div class="govuk-grid-row">
@@ -68,7 +68,7 @@
             {{ govukButton({
               text: "Continue"
             }) }}
-            <a class="govuk-link govuk-link--no-visited-state" href="invite-third-party-tasks">Back</a>
+            <a class="govuk-link govuk-link--no-visited-state" href="invite-rep-tasks">Back</a>
         </div>      
     </div>
   </div>

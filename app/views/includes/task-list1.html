@@ -42,7 +42,7 @@
 
   <!--If the user is trying to invite a third party show: -->
 
-    {% if data['tasklist-type'] == "invite-third-party" %}
+    {% if data['tasklist-type'] == "invite-rep" %}
 
         {% if (data['invite-case-task'] == "complete") %}
         <li class="app-task-list__item">
@@ -70,7 +70,7 @@
 
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="invite-case?invite-user-task=started" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
+                  <a href="invite-case?invite-rep-task=Draft" class="govuk-link--no-visited-state" aria-describedby="case-selected-status">
                     Select a Trade Remedies case
                   </a>
                 </span>
