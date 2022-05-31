@@ -181,8 +181,4 @@ module.exports = {
   "next-notice7": "n/a/",
   "case-role7": "Importer",
   "user7": "?",
-
-
-
-  "reginterest-app-status": "Application received"
 }

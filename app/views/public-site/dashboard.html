@@ -47,7 +47,7 @@
 
       <p>This is your Trade Remedies Service (TRS) dashboard.</p>
 
-      {% if (data['reginterest-task'] == "complete") or (data['reginterest-task'] == "started") or (data['invite-user-task'] == "started") or (data['invite-user-task'] == "complete")  %}
+      {% if (data['reginterest-task'] == "Submitted") or (data['reginterest-task'] == "Draft") or (data['invite-user-task'] == "started") or (data['invite-user-task'] == "complete")  %}
         {% else %}
         <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
       
@@ -64,33 +64,21 @@
       {% endif %}
 
       <!-- Reg interest -->
-      {% if (data['reginterest-task'] == "complete") or (data['reginterest-task'] == "started")  %}
+      {% if (data['reginterest-task'] != "null") %}
         <div class="address-card">
           <div class="address-container">
             <h2 class="govuk-heading-m">
               Registration of Interest
             </h2>
-            {% if (data['reginterest-task'] == "complete")  %}
               <p><a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
                 {% if (data['regnterest-due-date'] == "current") %}
                   {{data ['case-ref3']}} - {{data ['case-name3']}}
                     {% else %}
                     {{data['case-ref']}} - {{data['case-name']}}
                 {% endif %}</a><br>
-                Status: {{data ['reginterest-app-status']}}<br>
-                <span class="govuk-body-s">Submitted: <span id="date"></span></span>
+                Status: {{data ['reginterest-task']}}<br>
+                <span class="govuk-body-s"><span id="date"></span></span>
               </p>
-            {% endif %}
-            {% if (data['reginterest-task'] == "started")  %}
-            <p><a href="reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link govuk-link--no-visited-state">
-              {% if (data['regnterest-due-date'] == "current") %}
-                {{data ['case-ref1']}} - {{data ['case-name1']}}
-                {% else %}
-                  {{data['case-ref']}} - {{data['case-name']}}
-              {% endif %}</a><br>
-              <span class="govuk-body-s">Draft saved: <span id="date"></span></span>
-            </p>
-            {% endif %}
           </div>
         </div>
       {% endif %}
