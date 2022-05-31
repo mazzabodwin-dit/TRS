@@ -24,18 +24,6 @@
     </h1>
 
     <h2 class="govuk-heading-m">Your application</h2>
-    {% if data['reginterest-task'] == "Draft" %}
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue application",
-          href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-        }) }}    
-        {{ govukButton({
-          text: "Delete application",
-          classes: "govuk-button--warning"
-        }) }}
-      </div>
-    {% endif %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -99,8 +87,7 @@
                         {% endif %}
                   {% endif %}
             {% endif %}
-            
-            
+
             Company number: 595934925<br>
             345, The Shard, London <br>
             EC2 3TF<br>
@@ -144,6 +131,15 @@
         </dd>
       </div>   
     </dl>
+    {% if data['reginterest-task'] == "Draft" %}
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue application",
+        href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
+      }) }}    
+      <a class="govuk-link govuk-link--no-visited-state" href="reginterest-delete-draft">Delete application</a>
+    </div>
+  {% endif %}
 </div>
 
   <div class="govuk-grid-column-one-third">
