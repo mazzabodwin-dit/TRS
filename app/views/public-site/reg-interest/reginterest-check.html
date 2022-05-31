@@ -88,16 +88,14 @@
           <!----> 
           
           <!-- And show address if not my own org-->     
-          {% if (data['reginterest-what-org'] != "my-org") %}
-            Company number: 595934925<br>
             345, The Shard, London <br>
             EC2 3TF<br>
             United Kingdom
             <br><br>
-          {% endif %}
 
           <!-- And show org dets if new org-->     
           {% if data['reginterest-what-org'] == "new-org" %}
+            Company number: 595934925<br>
             VAT number: {{data['reginterest-vat'] or "205672212000"}}<br>
             EORI number: {{data['reginterest-eori'] or "GB205672212000"}}<br>
             DUNS number: {{data['reginterest-duns'] or "123456789"}}<br>
@@ -115,7 +113,7 @@
       </div>
     
     </dl>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
 
       {% if (data['reginterest-what-org'] != "my-org") %}
         <div class="govuk-summary-list__row">
@@ -133,6 +131,9 @@
           </dd>
         </div>
       {% endif %}
+    </dl>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Uploaded initial documentation 

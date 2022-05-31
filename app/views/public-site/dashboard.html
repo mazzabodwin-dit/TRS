@@ -107,12 +107,15 @@
             </h2>
             <p><a href="manage-org/invite-app-details?tasklist-type=invite-rep" class="govuk-link govuk-link--no-visited-state">
               {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
-
+              <!-- And show new or existing org name-->     
               {% if (data['invite-uk-reg'] == "yes") %}
-                ACompany
-                  {% else %}
-                    {{ data['invite-org-name'] or "Steel UK" }}
-              {% endif %}<br>
+              Steel UK
+                {% else %}
+                  {% if (data['invite-uk-reg'] == "no") %}
+                    {{data['invite-org-name']}}<br>
+                      {% else %}
+                  {% endif %}
+              {% endif %}
               Status: {{data['invite-rep-task']}} <br>
               <span class="govuk-body-s"><span id="date2"></span></span>
             </p>
