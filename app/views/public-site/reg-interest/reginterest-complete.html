@@ -22,13 +22,55 @@
           Application complete
         </h1>
         <div class="govuk-panel__body">
-          Case number:<br><strong>{{data ['case-ref']}}</strong>
+          Case number:<br>
+          <strong>
+            {% if (data['regnterest-due-date'] == "current") %}
+              {{data ['case-ref1']}}
+            {% else %}
+
+              {{data['case-ref']}}
+            {% endif %}
+          </strong>
         </div>
       </div>
   
-      <p>Thank you for your application. We have sent you a confirmation email.</p>
+      <p>Thank you for your Registration of Interest. We have sent you a confirmation email.</p>
       
-      <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong><br>
+      <p>Case: 
+        {% if (data['regnterest-due-date'] == "current") %}
+          {{data ['case-ref1']}} - {{data ['case-name1']}}
+        {% else %}
+
+          {{data['case-ref']}} - {{data['case-name']}}
+        {% endif %}<br>
+        
+      Registering interest for: 
+        <!--Show the org who is reg for interest-->
+        {% if (data['reginterest-what-org'] == "my-org") %}
+          <!-- Show 'my org' name-->
+          {% if data['createaccount-org-name'] != null %}
+            {{data['createaccount-org-name'] or "BlueSteel Partners"}}<br>
+            {% else %}
+              {{data['representative1']}}<br>
+          {% endif %}
+        
+          {% else %}
+
+              <!-- And show new or existing org name-->     
+              {% if (data['reginterest-what-org'] == "my-org") %}
+                BlueSteel Partners<br>
+                  {% else %}
+                    {% if (data['reginterest-what-org'] == "existing-org") %}
+                      {{ data['reginterest-existing-org'] }}<br>
+                        {% else %}
+                          {% if (data['reginterest-uk-reg'] == "yes") %}
+                            Steel UK<br>
+                              {% else %}
+                                {{data['reginterest-org-name']}}<br>
+                          {% endif %}
+                    {% endif %}
+              {% endif %}
+        {% endif %}
         Application received on: <span id="date"></span>
       </p>
 

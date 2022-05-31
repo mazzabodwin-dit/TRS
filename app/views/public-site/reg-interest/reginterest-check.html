@@ -91,10 +91,11 @@
             345, The Shard, London <br>
             EC2 3TF<br>
             United Kingdom
-            <br><br>
+            
 
           <!-- And show org dets if new org-->     
           {% if data['reginterest-what-org'] == "new-org" %}
+            <br><br>
             Company number: 595934925<br>
             VAT number: {{data['reginterest-vat'] or "205672212000"}}<br>
             EORI number: {{data['reginterest-eori'] or "GB205672212000"}}<br>

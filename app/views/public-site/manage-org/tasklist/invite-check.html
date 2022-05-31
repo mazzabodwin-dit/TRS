@@ -51,16 +51,16 @@
 
             <!-- And show new or existing org name-->     
             {% if (data['invite-uk-reg'] == "yes") %}
-              ACompany<br>
+              Steel UK<br>
                 {% else %}
-                  {{ data['invite-org-name'] or "Steel UK" }}<br>
+                  {{data['invite-org-name']}}<br>
             {% endif %}
           
             345, The Shard, London <br>
             EC2 3TF<br>
             United Kingdom
             <br><br>
-            <br>
+
             Company number: 595934925<br>
             VAT number: {{data['reginterest-vat'] or "205672212000"}}<br>
             EORI number: {{data['reginterest-eori'] or "GB205672212000"}}<br>
