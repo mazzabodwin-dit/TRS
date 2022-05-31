@@ -151,13 +151,15 @@
             <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
           </li>  
           
-          {% if data['case-ref'] != null %}
           <li>
             <br>
-            <strong>Email the case team</strong>        
-            <a class="link" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-          </li>     
-          {% endif %}    
+            <strong>Email the case team</strong>   
+              {% if (data['regnterest-due-date'] == "current") %}
+                <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref1']}}@traderemedies.gov.uk</a>
+                {% else %}       
+                  <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
+              {% endif %}
+          </li> 
         </ul>
       </nav>
     </aside>
