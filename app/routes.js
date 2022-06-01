@@ -174,7 +174,7 @@ router.post('/invite-type-route', function (req, res) {
   // Check whether the variable matches a condition
   if (regType == "invite-own-org"){
     // Send user to next page
-    res.redirect('/public-site/manage-org/invite-user-permissions')
+    res.redirect('/public-site/manage-org/invite-user-details')
   } 
   if (regType == "invite-third-party"){
     // Send user to next page

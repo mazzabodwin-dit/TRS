@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check and submit – {{serviceName}}
+{% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'org-nav' %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">
+      Review your answers
+    </h1>
+
+    <h2 class="govuk-heading-m">Your invite</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          User type
+        </dt>
+        <dd class="govuk-summary-list__value">
+            <!-- Show client name-->
+            Employee of your org
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="invite-user-type">
+            Change
+            <span class="govuk-visually-hidden"> user type</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who you are inviting
+        </dt>
+        <dd class="govuk-summary-list__value">
+            <!-- Show client name-->
+            {{data['invite-user-name'] or "Jane Winder"}}<br>
+            {{data['invite-user-email'] or "jane@email.com"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="invite-user-details">
+            Change
+            <span class="govuk-visually-hidden"> who is being invited</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Permissions
+        </dt>
+        <dd class="govuk-summary-list__value">
+            <!-- Show client name-->
+            {{data['invite-user-permissions'] or "Regular"}}<br>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="invite-user-permissions">
+            Change
+            <span class="govuk-visually-hidden"> users permissions</span>
+          </a>
+        </dd>
+      </div>
+    
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your invite</h2>
+    <p>An email will be sent to the person whose details you have provided. Once they have successfully registered they will have access to your organisations account as per the permissions you gave them.</p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              The information provided is correct
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+     
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Confirm and submit application",
+        href: "invite-user-complete"
+      }) }}    
+      <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+    </div>
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

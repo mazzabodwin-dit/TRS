@@ -46,8 +46,8 @@
         </dt>
         <dd class="govuk-summary-list__value">
             <!-- Show client name-->
-            {{data['invite-name'] or "Tiny Williams"}}<br>
-            {{data['invite-email'] or "t.w@email.com"}}<br><br>
+            {{data['invite-rep-name'] or "Tiny Williams"}}<br>
+            {{data['invite-rep-email'] or "t.w@email.com"}}<br><br>
 
             <!-- And show new or existing org name-->     
             {% if (data['invite-uk-reg'] == "yes") %}

@@ -77,7 +77,7 @@
       {% if (data['invite-check-task'] == "complete")  %}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="invite-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
+            <a href="invite-rep-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
               Check and submit
             </a>
           </span>
@@ -89,7 +89,7 @@
           {% if (data['invite-check-task'] == "started")  %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="invite-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
+                <a href="invite-rep-check" class="govuk-link--no-visited-state" aria-describedby="check-status">
                   Check and submit
                 </a>
               </span>
@@ -101,7 +101,7 @@
               {% if (data['invite-loa-task'] == "complete") %}
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="invite-check?invite-check-task=started" class="govuk-link--no-visited-state" aria-describedby="check-status">
+                    <a href="invite-rep-check?invite-rep-check-task=started" class="govuk-link--no-visited-state" aria-describedby="check-status">
                       Check and submit
                     </a>
                   </span>
