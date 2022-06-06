@@ -49,11 +49,15 @@
             {{data['invite-rep-name'] or "Tiny Williams"}}<br>
             {{data['invite-rep-email'] or "t.w@email.com"}}<br><br>
 
-            <!-- And show new or existing org name-->     
-            {% if (data['invite-uk-reg'] == "yes") %}
-              Steel UK<br>
+            <!-- And show new or existing org name-->
+            {% if data['invite-rep-what-org'] == "new-org" %}
+              {% if (data['invite-uk-reg'] == "yes") %}
+                Steel UK<br>
+                  {% else %}
+                    {{data['invite-org-name']}}<br>
+              {% endif %}
                 {% else %}
-                  {{data['invite-org-name']}}<br>
+                  {{data['invite-rep-what-org'] or "Borris and Sons"}}<br>
             {% endif %}
           
             345, The Shard, London <br>
@@ -69,7 +73,7 @@
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="invite-contact">
+          <a href="invite-rep-which-org">
             Change
             <span class="govuk-visually-hidden"> who is registering interest</span>
           </a>
