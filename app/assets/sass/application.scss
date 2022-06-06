@@ -20,7 +20,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/blue-panel";
 @import "patterns/nav";
 @import "patterns/password";
-@import "patterns/table";
+@import "patterns/table1";
 @import "patterns/uploads";
 
 /* CHANGING THE WIDTH and HEADER COLOUR BETWEEN PUBLIC AND CASEWORKER */
@@ -113,4 +113,11 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-inset-text__reginterest {
   margin-top: 0px;
+}
+
+//Visibly hiding certain fields on desktop only
+.govuk-visually-hidden--desktop {
+  @include govuk-media-query($from: tablet) {
+  @include govuk-visually-hidden();
+}
 }

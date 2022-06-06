@@ -39,8 +39,11 @@ thead.head-border {
   border: solid 1px govuk-colour("mid-grey");
 }
 
-//Forcing cell aligment
+.govuk-table__header {
+  padding: 10px 10px 10px 0;
+}
 
+//Forcing cell aligment
 td,
 th {
   vertical-align: text-top;
@@ -55,31 +58,33 @@ th {
   background-color: govuk-colour("light-grey");
 }
 
-//Visibly hiding certain fields on desktop only
-.govuk-visually-hidden--desktop {
-    @include govuk-media-query($from: tablet) {
-    @include govuk-visually-hidden();
-  }
+/*  Accessible table taken from w3c: https://w3c.github.io/aria-practices/examples/table/sortable-table.html */
+
+table.sortable1 th {
+  position: relative;
 }
 
-//Sortable table headers / buttons
-
-.sortable-button[role="button"]:hover, .sortable-button[role="button"]:focus {
-    background-color: govuk-colour("light-grey");
-    cursor: default;
+table.sortable1 th button {
+  padding: 0px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 0px 0 #929191;
+  margin: 0px;
 }
 
-.sortable th i {
-    padding-left: 2px;
+.govuk-button:active, .govuk-button:hover, .govuk-button:focus {
+  border-color: govuk-colour("light-grey");
+  outline: govuk-colour("light-grey");
+  box-shadow: none;
 }
 
-table.sortable th .sort-indicator, table.sortable th .A-to-Z, table.sortable th .Z-to-A {
-  margin: 1px 5px 0 5px;
+table.sortable1 th button span.indicator {
   position: absolute;
-  padding-top: 2px;
+  margin-left: 3px;
 }
 
-table.sortable th .A-to-Z:before {
+table.sortable1 th[aria-sort="descending"] span.indicator::before {
   content: "";
   display: block;
   border-left: 7px solid transparent;
@@ -88,7 +93,7 @@ table.sortable th .A-to-Z:before {
   border-bottom: 7px solid govuk-colour("mid-grey");
 }
 
-table.sortable th .A-to-Z:after {
+table.sortable1 th[aria-sort="descending"] span.indicator::after {
   content: "";
   display: block;
   border-left: 7px solid transparent;
@@ -97,7 +102,7 @@ table.sortable th .A-to-Z:after {
   border-top: 7px solid govuk-colour("black");
 }
 
-table.sortable th .Z-to-A:before {
+table.sortable1 th[aria-sort="ascending"] span.indicator::before {
   content: "";
   display: block;
   border-left: 7px solid transparent;
@@ -106,7 +111,7 @@ table.sortable th .Z-to-A:before {
   border-bottom: 7px solid govuk-colour("black");
 }
 
-table.sortable th .Z-to-A:after {
+table.sortable1 th[aria-sort="ascending"] span.indicator::after {
   content: "";
   display: block;
   border-left: 7px solid transparent;
@@ -115,7 +120,7 @@ table.sortable th .Z-to-A:after {
   border-top: 7px solid govuk-colour("mid-grey");
 }
 
-table.sortable th .sort-indicator:before {
+table.sortable1 th .span-indicator::before {
   content: "";
   display: block;
   border-left: 7px solid transparent;
@@ -124,8 +129,7 @@ table.sortable th .sort-indicator:before {
   border-bottom: 7px solid govuk-colour("mid-grey");
 }
 
-table.sortable th .sort-indicator:after {
-  content: "";
+table.sortable1 th .span-indicator::after {
   display: block;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
@@ -133,33 +137,33 @@ table.sortable th .sort-indicator:after {
   border-top: 7px solid govuk-colour("mid-grey");
 }
 
-
-// In a parent/child list show the parent make a distinction between the last child and the next parent
-.govuk-table__row.top-row .govuk-table__cell{
-  border-top-style: solid;
-  border-top-color: #808080;
-  border-top-width: 1px;
-  border-bottom: none;
-}
-// In a parent/child list don't show borders between services for the same organisation
-.govuk-table__row.no-border .govuk-table__cell{
-  // border-top:1px solid #fff;
-  border-bottom: none;
+table.show-unsorted-icon th:not([aria-sort]) button span.indicator::after {
+  content: "♢";
+  color: currentcolor;
+  font-size: 100%;
+  position: relative;
+  top: -3px;
+  left: -4px;
 }
 
-.table-sort-select {
-  float: left;
-  padding-right: 20px;
+/* Focus and hover styling */
+
+table.sortable1 th:not([aria-sort]) button:focus span::before,
+table.sortable1 th:not([aria-sort]) button:hover span::before {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-bottom: 7px solid govuk-colour("mid-grey");
 }
 
-#table-sort .govuk-button--secondary {
-width: initial;
-}
-
-.field-italics {
-  font-style: italic;
-}
-
-.field-grey {
-  color: govuk-colour("mid-grey");
+table.sortable1 th:not([aria-sort]) button:focus span::after,
+table.sortable1 th:not([aria-sort]) button:hover span::after {
+  content: "";
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  margin-top: 2px;
+  border-top: 7px solid govuk-colour("mid-grey");
 }
