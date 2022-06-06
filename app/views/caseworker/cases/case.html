@@ -48,30 +48,74 @@
     <br>
     <br>
     
-      {% set newPartyHTML %}
-      <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
-      <table class="govuk-table sortable" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing of parties waiting to be confirmed on to cases</caption>
-        <thead class="govuk-table__head head-border">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
-              <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
-            </th>
-          </tr>
-        </thead>
+    {% set newPartyHTML %}
+    <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
 
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-party">
+            Sort parties by
+          </label>
+          <select class="govuk-select" id="sort-party" name="sort-party">
+            <option value="No." selected>Party</option>
+            <option value="Case">User</option>
+            <option value="Type">Submission</option>
+            <option value="Applicant">Submitted</option>
+          </select>
+
+          <label class="govuk-label govuk-visually-hidden" for="direction-party">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-party" name="direction-party">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+
+    <table class="govuk-table sortable1 table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the parties waiting to be confirmed on to a case
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+              <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
@@ -108,34 +152,78 @@
             </span></a>
           </td>        
         </tr> 
-      </table>   
-      {% endset %}
+      </body>
+    </table>   
+    {% endset %}
 
-      {% set submissionsHTML %}
-      <p>There are <strong>5</strong> sumbissions waiting for deficicency checks</p>
+    {% set submissionsHTML %}
+    <p>There are <strong>5</strong> submission waiting for deficicency checks</p>
 
-      <table class="govuk-table sortable" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all submissions waiting for deficiency checks</caption>
-        <thead class="govuk-table__head head-border">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
-              <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
-            </th>
-          </tr>
-        </thead>
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-submission">
+            Sort sumbissions by
+          </label>
+          <select class="govuk-select" id="sort-submission" name="sort-submission">
+            <option value="No." selected>Party</option>
+            <option value="Case">User</option>
+            <option value="Type">Submission</option>
+            <option value="Applicant">Submitted</option>
+          </select>
 
+          <label class="govuk-label govuk-visually-hidden" for="direction-submission">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-submission" name="direction-submission">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+
+    <table class="govuk-table sortable1 table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the submission waiting for deficicency checks
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+              <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
@@ -153,8 +241,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from Glorious Gabon Plc</span></a>
           </td>             
         </tr>
-        
-  
+      
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
@@ -172,7 +259,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from Tabon Holdings</span></a>
           </td>    
         </tr>
-  
+
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Farnets First Ltd</a>
@@ -190,7 +277,6 @@
             <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from Farnets First Ltd</span></a>
           </td>    
         </tr>
-
 
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
@@ -228,51 +314,81 @@
             <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from TEA ADVISORY LIMITED</span></a>
           </td>               
         </tr>
-      </table>   
-      {% endset %}
+      </body>
+    </table>   
+    {% endset %}
 
-        {% set submissionsPublishHTML %}
-        <p>There is <strong>1</strong> submission waiting to be published</p>
-        <table class="govuk-table sortable" id="table-header" role="grid">
-          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing submissions waiting to be published</caption>
-          <thead class="govuk-table__head head-border">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submisson <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
-                <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
-              </th>
-            </tr>
-          </thead>
+    {% set submissionsPublishHTML %}
+    <p>There is <strong>1</strong> submission waiting to be published</p>
 
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Publish <span class="govuk-visually-hidden td-header">Tabon Holdings submissions</span></a>
-            </td>  
-          </tr>
-        </table>   
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-published">
+            Sort sumbissions by
+          </label>
+          <select class="govuk-select" id="sort-published" name="sort-published">
+            <option value="No." selected>Party</option>
+            <option value="Case">User</option>
+            <option value="Type">Submission</option>
+            <option value="Applicant">Submitted</option>
+          </select>
+
+          <label class="govuk-label govuk-visually-hidden" for="direction-published">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-published" name="direction-published">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+    <table class="govuk-table sortable" id="table-header" role="grid">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing submissions waiting to be published</caption>
+      <thead class="govuk-table__head head-border">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Party <i class="sort-indicator"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>User <i class="sort-indicator"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Submisson <i class="sort-indicator"></i>
+          </th>
+          <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted <i class="sort-indicator"></i>
+          </th>
+          <th class="govuk-table__header column-full govuk-visually-hidden--mobile" scope="col">
+            <span class="govuk-visually-hidden td-header">Action</span><i class="no-sort govuk-visually-hidden"></i>
+          </th>
+        </tr>
+      </thead>
+
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Publish <span class="govuk-visually-hidden td-header">Tabon Holdings submissions</span></a>
+        </td>  
+      </tr>
+    </table>   
       {% endset %}
 
       {{ govukTabs ({

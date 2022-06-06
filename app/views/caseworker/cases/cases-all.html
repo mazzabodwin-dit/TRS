@@ -57,35 +57,59 @@
             }) }}
           </div>
         </div>
-        
-        <table class="govuk-table sortable table-border" id="table-header" role="grid">
-          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the open Trade Remedies cases</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task<i class="sort-indicator"></i>
-              </th>
-              <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
-              </th>
-            </tr>
-          </thead>
-    
+      </form>
+
+      <table class="govuk-table sortable1 table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+          A table listing all of the open trade remedies cases
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" aria-sort="ascending">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Initiated
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
@@ -205,8 +229,8 @@
               <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
             </td>
           </tr>
-        </table>
-      </form>   
+        </body>
+      </table>
 
     {% endset %}
 
@@ -241,32 +265,53 @@
           }) }}
         </div>
       </div>
+    </form>
 
-      <table class="govuk-table sortable table-border" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the draft Trade Remedies cases</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case No. <i class="A-to-Z"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Created <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status <i class="sort-indicator"></i>
-            </th>
-          </tr>
-        </thead>
-  
+    <table class="govuk-table sortable1 table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the draft trade remedies cases
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Initiated
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref7']}}</a>
@@ -287,9 +332,8 @@
             <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status7']}}
           </td>
         </tr>
- 
-      </table>
-    </form>   
+      </form>
+    </table>  
 
     {% endset %}
 
@@ -324,32 +368,53 @@
           }) }}
         </div>
       </div>
+    </form>
 
-      <table class="govuk-table sortable table-border" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the transition Trade Remedies cases</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case No. <i class="A-to-Z"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Associated Transitional Review<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Published <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Terminated <i class="sort-indicator"></i>
-            </th>
-          </tr>
-        </thead>
-  
+    <table class="govuk-table sortable1 table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the transitional trade remedies cases
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Associated Transitional Review
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Published
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Terminated
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
@@ -370,9 +435,8 @@
             <span class="govuk-visually-hidden--desktop td-header">Terminated: </span>{{data['updated2']}}
           </td>
         </tr>
- 
-      </table>  
-    </form>
+      </body>
+    </table>  
       
     {% endset %}
 
@@ -408,32 +472,53 @@
           }) }}
         </div>
       </div>
+    </form>
 
-      <table class="govuk-table sortable table-border" id="table-header" role="grid">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of the closed Trade Remedies cases</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header column-full sortable-button sortable-column" aria-sort="descending" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>No. <i class="A-to-Z"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant<i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="date">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Updated <i class="sort-indicator"></i>
-            </th>
-            <th class="govuk-table__header column-full sortable-button sortable-column" scope="col" data-sortby="text">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status<i class="sort-indicator"></i>
-            </th>
-          </tr>
-        </thead>
-  
+    <table class="govuk-table sortable1 table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the closed trade remedies cases
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Updated
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case No.: </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
@@ -454,9 +539,8 @@
             <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status2']}}
           </td>
         </tr>
- 
-      </table>  
-    </form> 
+      </body>
+    </table>  
 
     {% endset %}
       

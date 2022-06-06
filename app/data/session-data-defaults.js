@@ -47,7 +47,11 @@ module.exports = {
   "user-role1": "Primary Admin",
   "user-mobile1": "+44 7854329445",
   "user-mobile-national1": "07854329445",
-  "contact1": "Demi Morre",
+  "contact1": "Demi Morre",  
+  "contact-email1": "demi.morre@LawyersRUs.com",
+  "contact-role1": "(Invite sent)",
+
+
   
  
   "case-ref2": "TS0002",
@@ -93,6 +97,8 @@ module.exports = {
   "user-role3": "Primary Admin",
   "user-mobile3": "+44 7854329445",
   "contact3": "Simone Ward",
+  "contact-email3": "simone.ward@LawyersRUs.com",
+  "contact-role3": "Unassigned",
 
 
   "case-ref4": "BA0005",

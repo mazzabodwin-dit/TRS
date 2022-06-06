@@ -167,3 +167,13 @@ table.sortable1 th:not([aria-sort]) button:hover span::after {
   margin-top: 2px;
   border-top: 7px solid govuk-colour("mid-grey");
 }
+
+/* For the hiddlen select for sorting on mobile*/
+.table-sort-select {
+  float: left;
+  padding-right: 20px;
+}
+
+#table-sort .govuk-button--secondary {
+width: initial;
+}

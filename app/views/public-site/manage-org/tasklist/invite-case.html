@@ -23,167 +23,60 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1. Your case</span>
-    <h1 class="govuk-heading-xl">Select a Trade Remedies case</h1>
-    <p>Select the case you would like the representative to participate in.</p>
-  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">1. Your cases</span>
+    <form action="invite-rep-tasks?invite-case-task=complete" method="post" id="invite-rep-which-case"> 
 
-  <div class="govuk-grid-column-full">
-    <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-!-display-inline" for="sort-cases">
-            Sort by
-          </label>
-          <select class="govuk-select" id="sort-cases" name="sort-cases">
-            <option value="No." selected>Case No.</option>
-            <option value="Case">Case</option>
-            <option value="Type">Type</option>
-            <option value="Status">Status</option>
-            <option value="Started">Started</option>
-            <option value="Status">Status</option>
-            <option value="Reg due">Reg due</option>
-          </select>
-        
-          <label class="govuk-label govuk-visually-hidden" for="direction-cases">
-            Direction
-          </label>
-          <select class="govuk-select" id="direction-cases" name="direction-cases">
-            <option value="Decending" selected>Decending</option>
-            <option value="Accending">Accending</option>
-          </select>
-          {{ govukButton({
-            text: "Sort",
-            classes: "govuk-button--secondary"
-          }) }}
-        </div>
+      {{ govukRadios({
+        idPrefix: "invite-rep-what-case",
+        name: "invite-rep-what-case",
+        fieldset: {
+          legend: {
+            text: "Which case?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select the case you would like the representative to participate in."
+        },
+        items: [
+          {
+            value: "AG0404 - Farnets from Fabon",
+            text: "AG0404 - Farnets from Fabon",
+            checked: checked("invite-rep-what-case", "AG0404 - Farnets from Fabon")
+          },
+          {
+            value: "AD2224 - Steel plate from Russia",
+            text: "AD2224 - Steel plate from Russia",
+            checked: checked("invite-rep-what-case", "AD2224 - Steel plate from Russia")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "No case",
+            text: "I will assign them a case later",
+            checked: checked("invite-rep-what-case", "No case")
+          }
+          
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Where are all the cases gone?",
+        html: "<p>To invite a representative to specific case you must have already registered interest on behalf of your organisation and been fully accepted by the TRA on to that case.</p>
+        <p>Alternatively, you can invite the representative to join your organisation's account and once they have registered they can register interest on your behalf.</p>"
+      }) }}
+      
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link govuk-link--no-visited-state" href="invite-rep-tasks?invite-case-task=started">Back</a>
       </div>
-    </form>
 
-    <table class="govuk-table sortable1 table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-        A table listing all of the open Trade Remedies cases
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" aria-sort="ascending">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Started
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Reg due
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header no-sort">
-            <span class="govuk-visually-hidden">Action: </span>
-          </th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">No. </span>AD0004
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span>Garnets from Gabon
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-dumping investigation
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Questionnaires issued
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Start date: </span>01 Dec 2019
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Registration due: </span>15 Dec 2019
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="invite-rep-tasks?invite-rep-task=Draft&invite-case-task=complete&case-ref=AD0004&case-name=Garnets from Gabon&&register-date=15 Dec 2019&case-type=Anti-subsidy investigation" class="govuk-link--no-visited-state"> Select <span class="govuk-visually-hidden td-header">AD0004</span></a>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">No. </span>{{data ['case-ref1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span>{{data ['case-name1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span>{{data ['case-type1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data ['submission1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Start date: </span>{{data ['created1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Registration due: </span>{{data ['register-date1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="invite-rep-tasks?invite-rep-task=Draft&invite-case-task=complete&case-ref=AD2224&case-name=Steel plate from Russia&register-date=01 June 2022&case-type=Anti-dumping" class="govuk-link--no-visited-state"> Select <span class="govuk-visually-hidden td-header">{{data ['case-ref1']}}</span></a>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">No. </span>AG0404
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Case: </span>Farnets from Fabon
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Type: </span>Anti-subsidy investigation
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Questionnaires issued
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Start date: </span>12 April 2021
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Registration due: </span>26 April 2021
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action:</span><a href="invite-rep-tasks?invite-rep-task=Draft&invite-case-task=complete&case-ref=AG0404&case-name=Farnets from Fabon&register-date=26 April 2021&case-type=Anti-dumping investigation" class="govuk-link--no-visited-state"> Select <span class="govuk-visually-hidden td-header">AG0404</span></a>
-          </td>
-        </tr>
-      </tdbody>
-    </table>
-    
-    <a class="govuk-back-link govuk-link--no-visited-state" href="invite-rep-tasks?invite-case-task=started">Back</a>
+    </form> 
 
     </div>
   </div>
