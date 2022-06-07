@@ -34,25 +34,27 @@ module.exports = {
   "initiated1": "13 May 2022",
   "register-date1": "01 June 2022",
   "updated1": "14 May 2022",
+
   "party1": "Steel UK",
+  "party-user1": "Simon Bellweather",
+  "party-email1": "s.bellweather@steeluk.org",
+
   "representative1": "BlueSteel Partners",
+  "rep-user1": "Bob Hoskins",
+  "rep-email1": "bobhoskins@BlueSteelPartners.com",
+  "rep-role1": "Primary Admin",
+  "rep-mobile1": "+44 7854329445",
+  "rep-mobile-national1": "07854329445",
+
   "country1": "Russia",
   "submission1": "Registration of Interest",
   "status1": "Questionnaires issued",
   "next-task1": "Publish questionnaires",
   "next-notice1": "26 July 2022",
   "case-role1": "Domestic Producer",
-  "user1": "Bob Hoskins",
-  "user-email1": "bobhoskins@BlueSteelPartners.com",
-  "user-role1": "Primary Admin",
-  "user-mobile1": "+44 7854329445",
-  "user-mobile-national1": "07854329445",
   "contact1": "Demi Morre",  
   "contact-email1": "demi.morre@LawyersRUs.com",
   "contact-role1": "(Invite sent)",
-
-
-  
  
   "case-ref2": "TS0002",
   "case-name2": "Rainbow Trout from Turkey",

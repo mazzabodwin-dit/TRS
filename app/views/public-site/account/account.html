@@ -43,7 +43,7 @@
                 {% if data['createaccount-name'] != null %}
                     {{data['createaccount-name'] or "Bob Hoskins"}}
                     {% else %}
-                      {{data['user1']}}
+                      {{data['rep-user1']}}
                 {% endif %}
             {% endif %}
           </dd>
@@ -59,7 +59,7 @@
                 {% if data['createaccount-email'] != null %}
                   {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}
                   {% else %}
-                    {{data['user-email1']}}
+                    {{data['rep-email1']}}
                 {% endif %}
             {% endif %}
           </dd>
@@ -72,7 +72,7 @@
           {% if data['createaccount-mobile'] != null %}
             {{data['createaccount-mobile'] or "+447821945085"}}
             {% else %}
-              {{data['user-mobile1'] or "+447821945085"}}
+              {{data['rep-mobile1'] or "+447821945085"}}
           {% endif %}
           </dd>
         </div>

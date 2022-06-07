@@ -52,7 +52,7 @@
 <!-- Confirm primary org which is the org invlovded in the actual case NOT the representative-->
 <!-- Always show -->
 
-{% if (data['primary-party-complete'] != null) %}
+{% if (data['primary-party-task'] == "complete") %}
 
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
@@ -64,7 +64,7 @@
     </li>
 
     {% else %}
-    {% if (data['primary-party-started'] == "yes")  %}
+    {% if (data['primary-party-task'] == "started")  %}
       <!-- If the user has started section 2 show: -->
 
         <li class="app-task-list__item">
@@ -80,7 +80,7 @@
           <!-- If the user has not started section 2 show -->
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="reginterest-interested-party?primary-party-started=yes" class="govuk-link--no-visited-state" aria-describedby="primary-party-status">
+              <a href="reginterest-interested-party?primary-party-task=started" class="govuk-link--no-visited-state" aria-describedby="primary-party-status">
                 Verify interested party
               </a>
             </span>

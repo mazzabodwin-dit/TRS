@@ -227,7 +227,7 @@ router.post('/reginterest-interested-party-route', function (req, res) {
   } 
   if (reginterestValidPrimary == "unverified"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-unverified?primary-party-complete=yes&party-type=int')
+    res.redirect('/caseworker/reg-interest/reginterest-unverified?primary-party-task=complete&party-type=int')
   } 
 })
 

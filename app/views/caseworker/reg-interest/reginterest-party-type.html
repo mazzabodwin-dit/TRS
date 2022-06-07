@@ -26,7 +26,7 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-    <form action="reginterest-tasks?primary-party-complete=yes" method="post" id="reginterest-accept-on-case-form">
+    <form action="reginterest-tasks?primary-party-task=complete" method="post" id="reginterest-accept-on-case-form">
 
       {{ govukRadios({
         idPrefix: "reginterest-party-type",
@@ -115,7 +115,7 @@
 
           <li>
             <strong>Registered by</strong><br>
-            {{data ['user1']}}
+            {{data ['rep-user1']}}
           </li>          
         </ul>
       </nav>

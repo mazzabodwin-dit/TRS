@@ -25,7 +25,7 @@
           </h1>
         </div>
         <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-        <p>You have confirmed the Registration of Interest submitted by <strong>{{ data['user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
+        <p>You have confirmed the Registration of Interest submitted by <strong>{{ data['rep-user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
 
       {% else %}
 
@@ -35,7 +35,7 @@
           </h1>
         </div>
         <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
-        <p>You have declined the Registration of Interest submitted by <strong>{{ data['user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
+        <p>You have declined the Registration of Interest submitted by <strong>{{ data['rep-user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
 
       {% endif %}
 
@@ -43,8 +43,8 @@
         
       <h2 class="govuk-heading-m">What next?</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="../cases/case#new-party">Confirm other parties in this case</a></li>
-        <li><a href="../cases/case#new-submissions">Review submissions from this case</a></li>
+        <li><a href="../cases/case-overview#new-party">Confirm other parties in this case</a></li>
+        <li><a href="../cases/case-overview#new-submissions">Review submissions from this case</a></li>
       </ul>
 
 

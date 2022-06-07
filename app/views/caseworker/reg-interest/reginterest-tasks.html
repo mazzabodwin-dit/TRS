@@ -28,7 +28,7 @@
 
     <!-- 
     <div class="govuk-inset-text">
-      <strong>{{data['case-name1']}}</strong><br><strong>{{data['user1']}}</strong> has registered interest on-behalf of <strong>{{data ['party1']}}</strong>
+      <strong>{{data['case-name1']}}</strong><br><strong>{{data['rep-user1']}}</strong> has registered interest on-behalf of <strong>{{data ['party1']}}</strong>
     </div>
     -->
 
@@ -73,7 +73,7 @@
       </li>
     </ol>
 
-    <a class="govuk-link" href="../cases/case">Back to Case</a>
+    <a class="govuk-link" href="../cases/case-overview">Back to Case</a>
 
   </div>
   <div class="govuk-grid-column-one-third">
@@ -91,15 +91,15 @@
           </li> 
 
           {% if data['third-party'] == "yes" %}
-          <li>
-            <strong>Representative party</strong><br>
-            {{data ['representative1']}}
-          </li>
+            <li>
+              <strong>Representative party</strong><br>
+              {{data ['representative1']}}
+            </li>
           {% endif %} 
 
           <li>
             <strong>Registered by</strong><br>
-            {{data ['user1']}}
+            {{data ['rep-user1']}}
           </li>
 
         </ul>
