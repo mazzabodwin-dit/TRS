@@ -35,7 +35,14 @@
           </h1>
         </div>
         <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
-        <p>You have declined the Registration of Interest submitted by <strong>{{ data['rep-user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
+
+        {% if data['third-party'] == "yes"%}
+          <p>You have declined the registration of interest submitted by <strong>{{ data['rep-user1'] }}</strong> from <strong>{{ data['representative1'] }}</strong> on-behalf of <strong>{{data['party1'] }}</strong>.</p>
+          {% else %}
+          <p>You have declined the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
+        {% endif %}
+
+
 
       {% endif %}
 
@@ -43,8 +50,8 @@
         
       <h2 class="govuk-heading-m">What next?</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="../cases/case-overview#new-party">Confirm other parties in this case</a></li>
-        <li><a href="../cases/case-overview#new-submissions">Review submissions from this case</a></li>
+        <li><a href="../cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
+        <li><a href="../cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
       </ul>
 
 

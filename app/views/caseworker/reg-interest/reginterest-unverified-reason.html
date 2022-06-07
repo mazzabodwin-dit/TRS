@@ -21,37 +21,29 @@
     <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
       {% if data['party-type'] == "int" %}
-        Unverifiable interested party
+      Unverifiable interested party
           {% else %}
-            Unverifiable representative
+          Unverifiable representative
       {% endif %}
     </h1>
   </div>
   <div class="govuk-grid-column-two-thirds">
 
-    <!--
-    <div class="govuk-inset-text">
-      <strong>{{data['party1']}}</strong><br>
-      Involvement in other cases: 3<br>
-      Verification in other cases: 1
-    </div>
-  -->   
+    <form action="reginterest-complete" method="post" id="reginterest-valid-employer-form">
 
-    <form action="reginterest-unverified-reason" method="post" id="reginterest-valid-org-form">
-      <h2 class="govuk-heading-m">Are you certain this organisation cannot be verified?</h2>
-
-      {% if data['party-type'] == "int" %}
-        <p><strong> {{data['party1']}}</strong></p>
-        {% else %}
-          <p><strong> {{data['representative1']}}</strong></p>
-      {% endif %}
-
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>If this organisation cannot be verified this registration of interest will be declined</li>
-        <li>If the organisation is involved in other cases this decision will be flagged to relevant caseworkers</li>
-        <li>Should you find information that enables you to verify this orgnaisation you can change their status at a later date</li>
-      </ul>
+      {{ govukCharacterCount({
+        name: "unverfied-reason",
+        id: "unverfied-reason",
+        maxlength: 200,
+        label: {
+          text: "Why they cannot be verified?",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "This information helps other caseworkers should this organisation be involved in other cases or asks to register interest again."
+        }
+      }) }}
 
       <div class="govuk-button-group">
         {{ govukButton({

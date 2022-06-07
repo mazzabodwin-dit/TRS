@@ -18,14 +18,12 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
       Verify interested party
     </h1>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds">
 
     <div class="govuk-inset-text govuk-inset-text__reginterest">
       <strong>{{data['party1']}}</strong> has been verified on 1 case <br>
@@ -83,39 +81,21 @@
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
-                <li><a href="cases/case-overivew" class="govuk-link--no-visited-state">AD3456: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 12 April 2021</li>
+                <li><a href="" class="govuk-link--no-visited-state">AD3456: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 12 April 2021</li>
               </ul>
             </div>
           </details>
         </div>
-<!-- Hasn't acted as a rep in this scenario so hiding
         <div>
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Acting as a representative: 1 case
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-                <ul class="govuk-list">
-                  <li><a href="cases/case-overivew" class="govuk-link--no-visited-state">AD3346: Garents from Gabon</a> (Exporter)</li>
-                </ul>
-            </div>
-          </details>
-        </div>
--->
-        <div>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Users: 3
+                Users: 1
               </span>
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
-                <li><a href="">{{data['party-user1']}} - {{data['party-email1']}}</a></li>
-                <li><a href="">Simon Williams - s.williams@steeluk.org</a></li>
-                <li><a href="">Tina Fray - tina.fray@steeluk.org</a></li>
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
               </ul>
             </div>
           </details>
@@ -162,40 +142,6 @@
 
     </form>
     
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Registration of Interest</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <strong>Case</strong><br>
-            {{data['case-ref1']}}: {{data['case-name1']}}
-          </li>
-          <li>
-            <strong>Interested party</strong><br>
-            {{data ['party1']}}
-          </li> 
-
-          {% if data['third-party'] == "yes" %}
-          <li>
-            <strong>Representative party</strong><br>
-            {{data ['representative1']}}
-          </li>
-          {% endif %} 
-
-          <li>
-            <strong>Registered by</strong><br>
-            {% if data['third-party'] == "yes" %}
-              {{data ['rep-user1']}}
-              {% else %}
-              {{data ['party-user1']}}
-            {% endif %}
-
-          </li>          
-        </ul>
-      </nav>
-    </aside>
   </div>
 
 </div>
