@@ -51,24 +51,26 @@ module.exports = {
   "party1": "Steel UK",
   "party-user1": "Simon Bellweather",
   "party-email1": "s.bellweather@steeluk.org",
-  "party-submission1": "Registration of Interest",
   "party-country1": "United Kingdom",
-  "party-role1": "(Application sent)",
+  "party-role1": "(unknown)",
+  "party-submission1": "Registration of Interest",
+  "party-status1": "Representative invite received",
 
   "party11": "StrongSteel",
   "party-user11": "Martine Hulk",
   "party-email11": "m.hulk@StrongSteel.org",
-  "party-submission11": "Representative invite",
   "party-country11": "Russia",
-  "party-status1": "Registration of interest received",
+  "party-submission11": "Representative invite",
+  "party-status11": "Representative invite received",
 
   "representative1": "BlueSteel Partners",
+  "rep-role1": "Representative",
   "rep-user1": "Bob Hoskins",
   "rep-email1": "bobhoskins@BlueSteelPartners.com",
-  "rep-role1": "Admin",
+  "rep-user-role1": "Admin",
   "rep-mobile1": "+44 7854329445",
   "rep-mobile-national1": "07854329445",
-  "rep-submission1": "Registration of Interest sent",
+  "rep-submission1": "Registration of Interest received",
 
 
  //CASE 2 - case closed
@@ -112,14 +114,16 @@ module.exports = {
   "party-email3": "o.seas@fabulous-farnets.fn",
   "party-role3": "Importer",
   "party-status5": "Questionnaires received",
+  "party-country": "Russia",
 
   "representative3": "Lawyers RUs",
+  "rep-role3": "Representative",
   "rep-user3": "Demi Morre",  
   "rep-email3": "demi.morre@LawyersRUs.com",
-  "rep-role3": "(Invite sent)",
+  "rep-user-role3": "(Invite sent)",
   "rep-user31": "Simone Ward",
   "rep-email31": "simone.ward@LawyersRUs.com",
-  "rep-role31": "Unassigned",
+  "rep-user-role31": "Unassigned",
 
 //CASE 4
   "case-ref4": "BA0005",
@@ -168,7 +172,8 @@ module.exports = {
   "party-user5": "George Spinter",
   "party-user5": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
-
+  "party-role5": "Trade Body"
+,
   //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
   "rep-user5": "Jon Bodwin",
   "rep-email5": "jon.bodwins@BlueSteelPartners.com",
@@ -196,7 +201,7 @@ module.exports = {
   "rep-user6": "Arnie Swarts",
   "rep-email6": "arnieswarts@BlueSteelPartners.com",
   "rep-status6": "Deficiency notice issued",
-  "rep-role6": "Regular",
+  "rep-user-role6": "Regular",
 
 
 //CASE 7 - DRAFT yet to be made public

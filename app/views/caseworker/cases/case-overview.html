@@ -16,6 +16,19 @@
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/caseworker/dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/caseworker/cases/cases-all">All cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      {{data['case-ref1']}}
+    </li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -233,10 +246,10 @@
             <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['rep-submission1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>28 May 2022
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from {{data['party1']}}
@@ -255,10 +268,10 @@
             <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission11']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>03 May 2022
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>05 May 2022
           </td>   
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">{{data['party11']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from {{data['party11']}}
             </span></a>
           </td>        
         </tr>      

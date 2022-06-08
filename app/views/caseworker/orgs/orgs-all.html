@@ -14,6 +14,16 @@
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/caseworker/dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      All organisations
+    </li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -107,6 +117,27 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role4']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Country: </span>Republic of Gabon
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">No. cases: </span>1
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">No. users: </span>1
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>{{data['initiated5']}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="org-overview" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell">
@@ -122,7 +153,7 @@
               <span class="govuk-visually-hidden--desktop td-header">No. users: </span>3
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>{{data['register-date1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>28 May 2022
             </td>
           </tr>
 
@@ -131,7 +162,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>Interested party
+              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role3']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country3']}}
@@ -149,10 +180,52 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role5']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Country: </span>Republic of Gabon
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">No. cases: </span>1
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">No. users: </span>1
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>{{data['initiated5']}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['representative3']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['rep-role3']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">No. cases: </span>1
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">No. users: </span>2
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>28 April 2021
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>Interested party
+              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role1']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
@@ -164,7 +237,7 @@
               <span class="govuk-visually-hidden--desktop td-header">No. users: </span>1
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>{{data['register-date1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Registered: </span>28 May 2022
             </td>
           </tr>
 
@@ -173,7 +246,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>Applicant
+              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['app-role1']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
@@ -269,7 +342,7 @@
             <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>28 May 2022
@@ -306,7 +379,7 @@
             <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>28 May 2022
