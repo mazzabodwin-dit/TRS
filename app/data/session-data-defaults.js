@@ -35,9 +35,9 @@ module.exports = {
   "country1": "Russia",
   "created1": "12 May 2022",
   "initiated1": "13 May 2022",
-  "register-date1": "01 June 2022",
+  "register-date1": "21 June 2022",
   "updated1": "14 May 2022",
-  "status1": "Questionnaires issued",
+  "status1": "Initiation notices published",
   "next-task1": "Publish questionnaires",
   "next-notice1": "26 July 2022",
 
@@ -60,15 +60,15 @@ module.exports = {
   "party-email11": "m.hulk@StrongSteel.org",
   "party-submission11": "Representative invite",
   "party-country11": "Russia",
-  "party-role11": "(Application sent)",
+  "party-status1": "Registration of interest received",
 
   "representative1": "BlueSteel Partners",
   "rep-user1": "Bob Hoskins",
   "rep-email1": "bobhoskins@BlueSteelPartners.com",
-  "rep-role1": "Primary Admin",
+  "rep-role1": "Admin",
   "rep-mobile1": "+44 7854329445",
   "rep-mobile-national1": "07854329445",
-  "rep-submission1": "Registration of Interest",
+  "rep-submission1": "Registration of Interest sent",
 
 
  //CASE 2 - case closed
@@ -111,6 +111,7 @@ module.exports = {
   "party-user3": "Odessa Seas",
   "party-email3": "o.seas@fabulous-farnets.fn",
   "party-role3": "Importer",
+  "party-status5": "Questionnaires received",
 
   "representative3": "Lawyers RUs",
   "rep-user3": "Demi Morre",  
@@ -156,20 +157,22 @@ module.exports = {
   "created5": "24 Dec 2020",
   "initiated5": "01 Jan 2021",
   "register-date5": "15 Jan 2021",
-  "updated5": "08 Jan 2021",
+  "updated5": "08 Jan 2022",
   "country5": "Republic of Gabon",
-  "status5": "Application received",
+  "status5": "Processing applications",
   "next-task5": "Initiation",
-  "next-notice5": "01 Feb 2021",
+  "next-notice5": "01 June 2022",
   "case-role5": "Declined",
 
   "party5": "Glorious Gabon Plc",
   "party-user5": "George Spinter",
   "party-user5": "Spinter@glorgabon.gb",
+  "party-status5": "Questionnaire received",
 
-  //"representative1": "BlueSteel Partners",
-  //"rep-user1": "Bob Hoskins",
-  //"rep-email1": "bobhoskins@BlueSteelPartners.com",
+  //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
+  "rep-user5": "Jon Bodwin",
+  "rep-email5": "jon.bodwins@BlueSteelPartners.com",
+  "rep-role5": "De-activated",
   
 
   //CASE 6
@@ -182,18 +185,18 @@ module.exports = {
   "created6": "07 July 2021",
   "initiated6": "24 July 2021",
   "register-date6": "07 Aug 2021",
-  "updated6": "24 July 2021",
+  "updated6": "24 March 2022",
   "country6": "Republic of China",
-  "status6": "Initiation prepared",
-  "next-task6": "Finalise case information",
-  "next-notice6": "24 Sept 2021",
+  "status6": "Post-verification analysis",
+  "next-task6": "The Statement of Essential Facts",
+  "next-notice6": "24 Sept 2022",
 
   // This is their own case. Not representing another party
-  "party6": "BlueSteel Partners",
-  "party-user6": "Arnie Swarts",
-  "party-email6": "arnieswarts@BlueSteelPartners.com",
-  "submission6": "Registration of Interest",
-  "case-role6": "Exporter",
+  "rep-user6": "BlueSteel Partners",
+  "rep-user6": "Arnie Swarts",
+  "rep-email6": "arnieswarts@BlueSteelPartners.com",
+  "rep-status6": "Deficiency notice issued",
+  "rep-role6": "Regular",
 
 
 //CASE 7 - DRAFT yet to be made public
