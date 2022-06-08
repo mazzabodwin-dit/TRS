@@ -24,7 +24,7 @@
     <div class="govuk-header__account">
       <ul class="login-nav__list">
         <li class="login-nav__list-item">
-          {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-third-party")  %}
+          {% if (data['invite-reg'] == "complete") %}
             {{data['invite-user-name'] or "Jane Winder" }}
             {% else %}
               {% if data['createaccount-name'] != null %}
