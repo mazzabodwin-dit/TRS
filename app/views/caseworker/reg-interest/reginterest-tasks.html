@@ -99,7 +99,13 @@
 
           <li>
             <strong>Registered by</strong><br>
-            {{data ['rep-user1']}}
+            {% if data['third-party'] == "yes" %}
+              {{data ['rep-user1']}}
+              {% else %}
+              {{data ['party-user1']}}
+            {% endif %} 
+
+
           </li>
 
         </ul>
