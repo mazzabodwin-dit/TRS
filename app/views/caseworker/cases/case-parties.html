@@ -15,22 +15,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/caseworker/dashboard">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/caskworker/cases/cases-all">All cases</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/caskworker/cases/case-overview">{{data['case-ref1']}}</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      Parties
-    </li>
-  </ol>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -49,26 +33,104 @@
       Parties
     </h2>
 
-<form>
-  <div id="table-sort"> 
-    <div class="govuk-form-group table-sort-select">
-      <label class="govuk-label govuk-!-display-inline" for="sort-published">
-        Show
-      </label>
-      <select class="govuk-select" id="sort-published" name="sort-published">
-        <option value="No." selected>All types</option>
-        <option value="Case">Importer</option>
-        <option value="Type">Exporter</option>
-        <option value="Applicant">Government</option>
-      </select>
-    </div>
+    <form>
+      <div id="table-sort"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-published">
+            Show
+          </label>
+          <select class="govuk-select" id="sort-published" name="sort-published">
+            <option value="No." selected>All types</option>
+            <option value="Case">Importer</option>
+            <option value="Type">Exporter</option>
+            <option value="Applicant">Government</option>
+          </select>
+        </div>
 
-    {{ govukButton({
-      text: "Sort",
-      classes: "govuk-button--secondary"
-    }) }}
-  </div>
-</form>  
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col"> Importer </th>
+          <th class="govuk-table__header" scope="col"> Status </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{data['party1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">
+      Urgent
+    </strong>
+    
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{data['party2']}}
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+      New
+    </strong>
+    
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{data['party3']}}
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+      New
+    </strong>
+    
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{data['party4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+      New
+    </strong>
+    
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{data['party5']}}
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+      New
+    </strong>
+    
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{data['party7']}}
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+      Finished
+    </strong>
+    
+          </td>
+        </tr>
+    
+      </tbody>
+    </table>
      
      
 

@@ -7,23 +7,13 @@
 {% endblock %}
 
 <!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
-{% set bodyClasses = 'caseworker-width cases-nav' %}
+{% set bodyClasses = 'caseworker-width org-nav' %}
 
 {% block header %}
  {% include "includes/header-caseworker.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/caseworker/dashboard">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      All organisations
-    </li>
-  </ol>
-</div>
 {% endblock %}
 
 {% block content %}
