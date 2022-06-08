@@ -36,53 +36,43 @@
 {% block content %}
 {% set bodyClasses = 'caseworker' %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-heading-xl__case-header">
+      {{data['case-ref1']}}: {{data['case-name1']}}
+      <span class="govuk-heading-s govuk-!-font-weight-regular"><strong>Status:</strong> {{data['status1']}}</span>
+    </h1>
+    {% include "includes/caseworker-nav-case.html" %}
+  </div>
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m">
+      Parties
+    </h2>
 
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        {{data['case-ref1']}}: {{data['case-name1']}}
-      </h1>
+<form>
+  <div id="table-sort"> 
+    <div class="govuk-form-group table-sort-select">
+      <label class="govuk-label govuk-!-display-inline" for="sort-published">
+        Show
+      </label>
+      <select class="govuk-select" id="sort-published" name="sort-published">
+        <option value="No." selected>All types</option>
+        <option value="Case">Importer</option>
+        <option value="Type">Exporter</option>
+        <option value="Applicant">Government</option>
+      </select>
     </div>
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-s" id="subsection-title">Case status</h2>
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              Status: {{data['status1']}}
-            </li>
-            <li>
-              Next task: {{data['next-task1']}}
-            </li>
-          </ul>
-      </aside>
-    </div>
 
-
-    <div class="govuk-grid-column-full">
-      {% include "includes/caseworker-nav-case.html" %}
-<br>
-
-      <!-- {{data['case-ref1']}}
-      {{data['case-name1']}}
-      {{data['case-type1']}}
-      {{data['case-typeabr1']}}
-      {{data['party1']}}
-      {{data['rep-user1']}}
-      {{data['submission1']}}
-      {{data['register-date1']}} -->
-
+    {{ govukButton({
+      text: "Sort",
+      classes: "govuk-button--secondary"
+    }) }}
+  </div>
+</form>  
+     
      
 
-      <ul class="govuk-list">
-        <li>
-          Applicant: <a href="">{{data['applicant1']}}</a>
-        </li>
-        <li>
-          Type: <a href="">{{data['case-type1']}}</a>
-        </li>
-        <li>Created: {{data['created1']}}
-        </li>
-      </ul>
+     
       
       
       

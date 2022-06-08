@@ -121,3 +121,9 @@ $govuk-assets-path: '/govuk/assets/';
   @include govuk-visually-hidden();
 }
 }
+
+
+/* H1 for case pages*/
+.govuk-heading-xl__case-header {
+  margin-bottom: 0px;
+}

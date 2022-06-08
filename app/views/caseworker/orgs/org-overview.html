@@ -46,11 +46,89 @@
 
     <div class="govuk-grid-column-full">
       {% include "includes/caseworker-nav-org.html" %}
-    <br>
-    <br>
+
+      <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
+
+      <div class="govuk-inset-text govuk-inset-text__reginterest">
+        <strong>{{data['party1']}}</strong> has been verified on 1 case <br>
+        The last confirmation was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
+      </div>
     
     {% set newPartyHTML %}
-    <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
+    
+   
+  
+    <div class="address-card">
+      <div class="address-container">
+        <h2 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
+        </h2> 
+        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Contact:</dt>
+            <dd class="govuk-summary-list__value">{{data['party-user1']}} <br>
+              {{data['party-email1']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">20 Highbury Place, Bramley, Leeds <br>
+              LS13 4PW<br>
+              United Kingdom
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number: </dt>
+            <dd class="govuk-summary-list__value">068482855 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__value"><a href="www.steeluk.com" target="_blank">www.steeluk.com</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">GB205672212000</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__value">GB123456789</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__value">150483782</dd>
+          </div>
+        </dl>
+        <br>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Interested party: 1 case
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="" class="govuk-link--no-visited-state">AD3456: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 12 April 2021</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Users: 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
+              </ul>
+            </div>
+          </details>
+        </div>   
+      </div>
+    </div>
 
       
       {% endset %}
