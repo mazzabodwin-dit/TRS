@@ -27,19 +27,26 @@
     </h1>
 
     <h2 class="govuk-heading-m">Your invite</h2>
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Case details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
+          {% if data['existing-cases-reps'] !="no" %}
+            {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
+            {% else %}
+            No case
+            {% endif %}
         </dd>
-         
       </div>
     </dl>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+    {% if data['existing-cases-reps'] !="no" %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      {% else %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+    {% endif %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           My representative
@@ -82,8 +89,8 @@
       </div>
     
     </dl>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+    {% if data['existing-cases-reps'] !="no" %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Letter of Authority 
@@ -98,7 +105,8 @@
             </a>
           </dd>
         </div> 
-    </dl>
+      </dl>
+    {% endif %}
 
     <h2 class="govuk-heading-m">Now send your invite</h2>
 

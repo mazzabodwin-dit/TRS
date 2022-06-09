@@ -24,57 +24,72 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Invite representative to case
+      Invite representative
     </h1>
-    <p class="govuk-body">Complete all the steps to invite a representative to work on a case on behalf of your organisation.  </p>
+    <p class="govuk-body">Complete all the steps to invite a representative to work on behalf of your organisation.  </p>
 
     <p class="govuk-body govuk-!-margin-bottom-7">Return to your dashboard at another time to continue if you leave before you finish.</p>
 
-    <ol class="app-task-list">
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span>Your cases
-        </h2>
-        <ul class="app-task-list__items">
+    <!--If the user has NOT registered interest in a case and has no existing reps show:-->
+    {% if data['existing-cases-reps'] == "no" %}
 
-          {% include "includes/task-list1.html" %}
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span>About your representative
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list2.html" %}
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>Invite representative
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list4.html" %}
+          </ul>
+        </li>
+      </ol>
 
-        </ul>
-      </li>
+      <!--If the user has registered interest in one or more cases and they have already got representatives show:-->
+      {% else %}
 
-
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span>About your representative
-        </h2>
-        <ul class="app-task-list__items">
-          
-          {% include "includes/task-list2.html" %}
-          
-        </ul>
-      </li>
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span>Upload forms
-        </h2>
-        <ul class="app-task-list__items">
-
-          {% include "includes/task-list3.html" %}
-
-        </ul>
-      </li>
-
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span>Invite representative
-        </h2>
-        <ul class="app-task-list__items">
-
-          {% include "includes/task-list4.html" %}
-
-        </ul>
-      </li>
-    </ol>
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span>Your cases
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list1.html" %}
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>About your representative
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list2.html" %}
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span>Upload forms
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list3.html" %}
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span>Invite representative
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list4.html" %}
+          </ul>
+        </li>
+      </ol>
+    {% endif %}
 
     <a class="govuk-link govuk-link--no-visited-state" href="/public-site/dashboard">Back to Dashboard</a>
 
