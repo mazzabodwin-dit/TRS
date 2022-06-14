@@ -26,10 +26,13 @@
         </h1>
       </div>
   
-      <p>We have sent an invite for a respresentative to join your account and act on your behalf in the following Trade Remedies case:</p>
-      <p>
-        Case: {{data ['case-ref1']}} - {{data ['case-name1']}}<br>
-        Invite sent to: {{ data['invite-rep-name'] or "Tiny Williams"}} - {{ data['invite-rep-email'] or "t.w@email.com" }}<br>     
+      <p>We have sent an invite for a respresentative to join your account and act on your behalf:</p>
+      <p>{{ data['invite-rep-name'] or "Tiny Williams"}} - {{ data['invite-rep-email'] or "t.w@email.com" }}<br>
+          {% if data['existing-cases-reps'] !="no" %}
+            {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
+            {% else %}
+            Case: No case
+          {% endif %}<br>
 
         <!-- And show new or existing org name-->     
         Organisation: 
@@ -37,14 +40,15 @@
               {% if (data['invite-uk-reg'] == "yes") %}
                 Steel UK<br>
                   {% else %}
-                    {{data['invite-org-name']}}<br>
+                    {{data['invite-org-name'] or "Borris and Sons"}}<br>
               {% endif %}
                 {% else %}
                   {{data['invite-rep-what-org'] or "Borris and Sons"}}<br>
             {% endif %}
       </p>
 
-      <p>Once they have registered they will be able to do things on your behalf....etc...need to decide the flow here as to whether the Caseworker must accept the user first or allow user to reg </p>
+      <p>The invite will ask the new user to register. This will give them access to your organisation’s account as a Regular User.</p>
+      <p>They will not be able to act on your behalf until they are invited to a case and their organisation has been verified by us.</p>
 
       <form action="../../dashboard" method="post" id="dashboard">              
 
