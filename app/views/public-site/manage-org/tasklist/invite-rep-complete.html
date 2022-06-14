@@ -26,7 +26,7 @@
         </h1>
       </div>
   
-      <p>We have sent an invite for a respresentative to join your account and act on your behalf:</p>
+      <p>We have sent an email to invite a representative to join your account and act on your behalf.</p>
       <p>{{ data['invite-rep-name'] or "Tiny Williams"}} - {{ data['invite-rep-email'] or "t.w@email.com" }}<br>
           {% if data['existing-cases-reps'] !="no" %}
             {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
@@ -47,8 +47,8 @@
             {% endif %}
       </p>
 
-      <p>The invite will ask the new user to register. This will give them access to your organisation’s account as a Regular User.</p>
-      <p>They will not be able to act on your behalf until they are invited to a case and their organisation has been verified by us.</p>
+      <p>The invite will ask your representative to register. This will give them access to the Trade Remedy Service. </p>
+      <p>They will only be able to act on your behalf once they are invited to participate in a case and their organisation has been verified by us.</p>
 
       <form action="../../dashboard" method="post" id="dashboard">              
 
