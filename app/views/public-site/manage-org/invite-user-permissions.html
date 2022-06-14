@@ -26,8 +26,8 @@
       <form action="invite-user-check" method="post" id="invite-permissions-form">   
         
         {{ govukRadios({
-          idPrefix: "invite-user-permissions",
-          name: "invite-user-permissions",
+          idPrefix: "user-permissions",
+          name: "user-permissions",
           fieldset: {
             legend: {
               text: "Select permissions",
@@ -39,12 +39,12 @@
           {
             value: "Regular user",
             text: "Regular user: they can access and interact with specific cases",
-            checked: checked("invite-user-permissions", "Regular user")
+            checked: checked("user-permissions", "Regular user")
           },
           {
             value: "Admin user",
             text: "Admin user: access and interact with cases, assign cases and manage other team members",
-            checked: checked("invite-user-permissions", "Admin user")
+            checked: checked("user-permissions", "Admin user")
             }
           ]
         }) }}

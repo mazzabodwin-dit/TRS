@@ -37,7 +37,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['invite-user-permissions'] == "Regular user") or (data['invite-user-permissions'] == "Admin user")  %}
+            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
               {{data['invite-user-name'] or "Jane Winder"}}
               {% else %}
                 {% if data['createaccount-name'] != null %}
@@ -53,7 +53,7 @@
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['invite-user-permissions'] == "Regular user") or (data['invite-user-permissions'] == "Admin user")  %}
+            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
               {{data['invite-user-email'] or "jane@email.com"}}
               {% else %}
                 {% if data['createaccount-email'] != null %}
@@ -81,8 +81,8 @@
             Account permission
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['invite-user-permissions'] == "Regular user") or (data['invite-user-permissions'] == "Admin user")  %}
-              {{data['invite-user-permissions']}}
+            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
+              {{data['user-permissions']}}
                 {% else %}
                   Admin
             {% endif %}

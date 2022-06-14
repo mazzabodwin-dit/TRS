@@ -23,13 +23,29 @@ Email address is verified - {{serviceName}}
         </h1>
       </div>
 
-      <p>You can now: </p>
+      <p>You can now sign in and access your organisation's Trade Remedies account. </p>
+
+      <p>With <strong>{{data['user-permissions']}}</strong> permissions you can: </p>
+
+      {% if data['user-permissions'] == "Regular user" %}
       <ul class="govuk-list govuk-list--bullet">
-        <li>add a someone to your account or an open case</li>
         <li>request a new trade investigation</li>
         <li>ask to participate in an open trade remedy case</li>
+        <li>participate in a case assigned to you</li>
         <li>invite another party to represent you in an open case </li>
       </ul>
+
+      {% else %}
+
+      {% if data['user-permissions'] != "Regular user" %}
+      <ul class="govuk-list govuk-list--bullet">
+            <li>add a someone to your account or an open case</li>
+            <li>request a new trade investigation</li>
+            <li>ask to participate in an open trade remedy case</li>
+            <li>invite another party to represent you in an open case </li>
+          </ul>
+        {% endif %}
+    {% endif %}
  
      
       <form action="../signin" method="post" id="dashboard">              
