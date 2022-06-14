@@ -30,7 +30,7 @@
           name: "invite-user-permissions",
           fieldset: {
             legend: {
-              text: "Select the users permissions",
+              text: "Select permissions",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -38,21 +38,22 @@
           items: [
           {
             value: "Regular user",
-            text: "Regular user: they will be able to access and interact with specific cases",
+            text: "Regular user: they can access and interact with specific cases",
             checked: checked("invite-user-permissions", "Regular user")
           },
           {
             value: "Admin user",
-            text: "Admin user: as with a Regular user but they will also be able to assign cases and manage users",
+            text: "Admin user: access and interact with cases, assign cases and manage other team members",
             checked: checked("invite-user-permissions", "Admin user")
             }
           ]
         }) }}
-
+        <!--
         {{ govukDetails({
           summaryText: "Regular verses Admin users",
           text: "Some words"
         }) }}
+        -->
         
         <div class="govuk-button-group">
           {{ govukButton({
@@ -61,7 +62,7 @@
           <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
         </div>
 
-        </form>
+      </form>
         
     </div>
   </div>
