@@ -38,7 +38,7 @@
             {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
             {% else %}
             No case
-            {% endif %}
+          {% endif %}
         </dd>
       </div>
     </dl>
@@ -109,25 +109,13 @@
     {% endif %}
 
     <h2 class="govuk-heading-m">Now send your invite</h2>
+    <p>The invite will ask the new user to register. This will give them access to your organisation’s account as a Regular User.</p>
+    <p>They will not be able to act on your behalf until they are invited to a case and their organisation has been verified by us.</p>
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-            <label class="govuk-label govuk-checkboxes__label" for="waste">
-              I am authorised to provide this information. 
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-
-     
+    
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Confirm and submit application",
+        text: "Confirm and submit invite",
         href: "invite-rep-complete?invite-rep-task=Sent"
       }) }}    
       <a class="govuk-link govuk-link--no-visited-state" href="invite-rep-tasks">Back</a>
@@ -139,20 +127,6 @@
 
 </div>
 
-  <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">          
-          <li>
-            <br>
-            <strong>Email the case team</strong>   
-            <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-          </li>    
-        </ul>
-      </nav>
-    </aside>
-  </div>
 </div>
 {% endblock %}
 {% block footer %}
