@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Interest in the case has already been registered - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        There is a problem
+      </h1>
+
+      <p>This email address is already registered to your organisation:</p>
+      
+      <p><strong>{{data ['invite-rep-email'] or "t.w@email.com"}}</strong></p>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Cancel invite",
+          href: "manage-org"
+        }) }}    
+       <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
