@@ -21,34 +21,20 @@
     <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
       {% if data['party-type'] == "int" %}
-        Unverifiable interested party
+        Interested party
           {% else %}
-            Unverifiable representative
+            Representative party
       {% endif %}
     </h1>
 
     <form action="reginterest-complete" method="post" id="reginterest-valid-org-form">
-      <h2 class="govuk-heading-m">Are you certain this organisation cannot be verified?</h2>
-
-      {% if data['party-type'] == "int" %}
-        <p><strong> {{data['party1']}}</strong></p>
-        {% else %}
-          <p><strong> {{data['representative1']}}</strong></p>
-      {% endif %}
-
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>This registration of interest will be declined and the party informed by email</li>
-        <li>If the organisation is involved in other cases this decision will be flagged to relevant caseworkers</li>
-      </ul>
-
       {{ govukCharacterCount({
         name: "unverfied-reason",
         id: "unverfied-reason",
         maxlength: 200,
         label: {
-          text: "Why they cannot be verified?",
-          classes: "govuk-label--s",
+          text: "Explain why the party cannot be verified",
+          classes: "govuk-label--m",
           isPageHeading: false
         },
         hint: {
@@ -56,6 +42,11 @@
         }
       }) }}
 
+      <h2 class="govuk-heading-s">Next steps</h2> 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>This registration of interest will be declined and the party informed by email</li>
+        <li>If the organisation is involved in other cases this decision will be flagged to relevant caseworkers</li>
+      </ul>
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Confirm"
