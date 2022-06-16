@@ -126,7 +126,7 @@
     <form action="/reginterest-representative-party-route" method="post" id="reginterest-representative-party-form">
 
       {% set validHTML %}
-      Have you been able to verify {{data['representative1']}}?
+      Have you been able to verify the party?
       {% endset %}
 
       {{ govukRadios({
@@ -147,7 +147,7 @@
           },
           {
             value: "unverified",
-            text: "No I am unable to verify theparty",
+            text: "No I am unable to verify the party",
             checked: checked("reginterest-valid-representative", "unverified")
           }
         ]
