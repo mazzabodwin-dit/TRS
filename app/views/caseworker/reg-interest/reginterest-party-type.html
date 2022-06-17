@@ -33,7 +33,7 @@
         name: "reginterest-party-type",
         fieldset: {
           legend: {
-            html: "What type of party is this organsiation acting as in this case?",
+            html: "What type of party is this organisation acting as in this case?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }
@@ -91,35 +91,6 @@
 
     </form>
     
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Registration of Interest</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <strong>Case</strong><br>
-            {{data['case-ref1']}}: {{data['case-name1']}}
-          </li>
-          <li>
-            <strong>Interested party</strong><br>
-            {{data ['party1']}}
-          </li> 
-
-          {% if data['third-party'] == "yes" %}
-          <li>
-            <strong>Representative party</strong><br>
-            {{data ['representative1']}}
-          </li>
-          {% endif %} 
-
-          <li>
-            <strong>Registered by</strong><br>
-            {{data ['rep-user1']}}
-          </li>          
-        </ul>
-      </nav>
-    </aside>
   </div>
 
 </div>

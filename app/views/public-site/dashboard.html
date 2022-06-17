@@ -123,6 +123,19 @@
         </div>
       {% endif %}
 
+      <div class="address-card">
+        <div class="address-container">
+          <h2 class="govuk-heading-m">
+            My invites
+          </h2>
+          <p>{{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
+            <!-- And show new or existing org name-->     
+            Client: Steel UK<br>
+            Status: awaiting TRA verification <br>
+          </p>
+        </div>
+      </div>
+
       <script>
           const date = new Date();
           const formattedDate = date.toLocaleDateString('en-GB', {
