@@ -288,21 +288,23 @@
             <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">View invite</a>
           </td>
         </tr>
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-details-invite-sent?team-member-name=Jane Winder" class="govuk-link--no-visited-state">Jane Winder</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Email: </span>jane.winder@BlueSteelPartners.com
-          </td>
-          <td class="govuk-table__cell field-italics">
-            <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel" class="govuk-link--no-visited-state">Cancel invite</a>
-          </td>
-        </tr>
+        {% if data['show-invite'] == "yes" %}
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-details-invite-sent" class="govuk-link--no-visited-state">{{data['invite-user-name'] or "Jane Winder"}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-user-email'] or "jane@email.com" }}
+            </td>
+            <td class="govuk-table__cell field-italics">
+              <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel" class="govuk-link--no-visited-state">Cancel invite</a>
+            </td>
+          </tr>
+          {% else %}
+        {% endif %}
 
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">

@@ -22,13 +22,15 @@ Cancel invite - {{serviceName}}
 
       <p>Are you sure you want to cancel this invite?</p>
       
-      <p><strong>Jane Winder - jane.winder@BlueSteelPartners.com</strong></p>
+      <p>{{data['invite-user-name'] or "Jane Winder"}}: {{data['invite-user-email'] or "jane@email.com" }}/p>
+      <form action="manage-org#manage-team" method="post" id="cancel-invite-form">
+      <input type="hidden" id="show-invite" name="show-invite" value="no">
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Cancel invite",
-          href: "manage-org"
+          text: "Cancel invite"
         }) }}    
        <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">No</a>
+      </form>
     </div>
   </div>
 {% endblock %}

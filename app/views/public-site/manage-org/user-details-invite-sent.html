@@ -41,7 +41,7 @@ Manage user - {{serviceName}}
           </h3>
           <p>Status: invite sent
             <span class="cancel-invite-link">
-              <a href="" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">Cancel invite</a>
+              <a href="invite-user-cancel" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">Cancel invite</a>
             </span><br>
             <span class="govuk-body-s"><span id="date"></span></span>
           </p>
@@ -63,7 +63,7 @@ Manage user - {{serviceName}}
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['team-member-name'] or "Jane Winder"}}
+            {{data['invite-user-name'] or "Jane Winder"}}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
