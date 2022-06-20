@@ -32,14 +32,14 @@
       </div>
 
       <p>We have sent an invite to:</p>
-      <p>{{data['invite-user-name'] or "Jane Winder"}}: {{data['invite-user-email'] or "jane@email.com" }} ({{data['user-permissions']}})</p>
+      <p>{{data['invite-user-name'] or "Jane Winder"}}: {{data['invite-user-email'] or "jane@email.com" }} ({{data['user-permissions'] or "Regular user"}})</p>
       <p>When they have registered, you will be able to assign them to a case and they can contribute according to their permissions.</p>
      
       <form action="manage-org#manage-team" method="post" id="invite-complete-form">              
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Go to My dashboard"
+            text: "Go to My Organisation"
           }) }}    
           <a class="govuk-link govuk-link--no-visited-state" href="invite-user-type">Invite new user</a>
         </div>
