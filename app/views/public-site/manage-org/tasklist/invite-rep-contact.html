@@ -25,15 +25,7 @@
       <h1 class="govuk-heading-xl">Who is your primary contact?</h1>
       <p>This is the main person you work with from the organisation you are inviting.</p>
 
-      {% if data['invite-rep-what-org'] == "new-org" %}
-        <form action="invite-uk-reg" novalidate method="post" id="invite-contact-name-form">  
-          {% else %}
-          <form action="invite-rep-tasks?invite-which-org-task=complete" novalidate method="post" id="invite-contact-name-form">  
-      {% endif %}
-
-
-
-        <form action="invite-uk-reg" novalidate method="post" id="reginterest-contact-name-form">  
+      <form action="invite-rep-tasks?invite-which-org-task=complete" novalidate method="post" id="invite-contact-name-form">  
         
        {{ govukInput({
           label: {

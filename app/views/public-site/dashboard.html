@@ -103,9 +103,9 @@
         <div class="address-card">
           <div class="address-container">
             <h2 class="govuk-heading-m">
-              Invite representative
+              Representative invites
             </h2>
-            <p><a href="manage-org/invite-app-details?tasklist-type=invite-rep" class="govuk-link govuk-link--no-visited-state">
+            <p><a href="" class="govuk-link govuk-link--no-visited-state">
               {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
               <!-- And show new or existing org name-->     
               {% if (data['invite-uk-reg'] == "yes") %}
@@ -116,25 +116,27 @@
                       {% else %}
                   {% endif %}
               {% endif %}
-              Status: {{data['invite-rep-task']}} <br>
+              Status: <a href="manage-org/invite-app-details?tasklist-type=invite-rep" class="govuk-link govuk-link--no-visited-state">{{data['invite-rep-task']}}</a> <br>
               <span class="govuk-body-s"><span id="date2"></span></span>
             </p>
           </div>
         </div>
       {% endif %}
-
-      <div class="address-card">
-        <div class="address-container">
-          <h2 class="govuk-heading-m">
-            My invites
-          </h2>
-          <p>{{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
-            <!-- And show new or existing org name-->     
-            Client: Steel UK<br>
-            Status: awaiting TRA verification <br>
-          </p>
+      {% if (data['who-signin'] == "rep") %}
+        <div class="address-card">
+          <div class="address-container">
+            <h2 class="govuk-heading-m">
+              My invites
+            </h2>
+            <p><a href="" class="govuk-link govuk-link--no-visited-state">
+              {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
+              Status: Awaiting TRA verification<br>
+              <!-- And show new or existing org name-->     
+              Steel UK<br>
+            </p>
+          </div>
         </div>
-      </div>
+      {% endif %}
 
       <script>
           const date = new Date();
