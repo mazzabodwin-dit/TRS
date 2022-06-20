@@ -10,7 +10,7 @@
 {% set bodyClasses = 'dash-nav' %}
 
 {% block header %}
-  {% include "includes/header-public.html" %}
+    {% include "includes/header-public.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -159,30 +159,34 @@
 
     <div class="govuk-grid-column-one-third">
 
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Quick links
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="reg-interest/reginterest-tasks?tasklist-type=reg-interest">Register interest in a case</a> 
-            </li>
-            <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
-            </li>
-            {% if data['user-permissions'] != "Regular user" %}
+      {% if (data['account-activated'] == "no")  %}
+        {% else %}
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Quick links
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
               <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/manage-org#manage-team">Manage team</a>
-              </li>  
+                <a class="govuk-link govuk-link--no-visited-state" href="reg-interest/reginterest-tasks?tasklist-type=reg-interest">Register interest in a case</a> 
+              </li>
               <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/invite-user-type">Invite user to join this account</a>
-              </li>  
-            {% endif %}
-          </ul>
-        </nav>
-      </aside>
-      <br>
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
+              </li>
+              {% if data['user-permissions'] != "Regular user" %}
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="manage-org/manage-org#manage-team">Manage team</a>
+                </li>  
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="manage-org/invite-user-type">Invite user to join this account</a>
+                </li>  
+              {% endif %}
+            </ul>
+          </nav>
+        </aside>
+        <br>
+      {% endif %}
+
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
           Read the guidance documents

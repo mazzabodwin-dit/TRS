@@ -39,7 +39,7 @@ Manage user - {{serviceName}}
         <div class="address-container">
           <h3 class="govuk-heading-s">User invite
           </h3>
-          <p>Status: Awaiting approval  
+          <p>Status: awaiting approval  
             <span class="cancel-invite-link">
               <a href="" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">View invite</a>
             </span><br>
@@ -66,9 +66,7 @@ Manage user - {{serviceName}}
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
-              {{data['invite-user-name'] or "Jane Winder"}}
-            {% endif %}
+            Harry Stylier
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -76,9 +74,7 @@ Manage user - {{serviceName}}
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
-              {{data['invite-user-email'] or "jane.winder@BlueSteelPartners.com"}}
-            {% endif %}
+            harry.stylier@Steelers.com
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -86,23 +82,7 @@ Manage user - {{serviceName}}
             User type
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
-              Employee
-                {% else %}
-                  Representative
-            {% endif %}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Account permission
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
-              {{data['user-permissions']}}
-                {% else %}
-                  Admin
-            {% endif %}
+              Representative 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
