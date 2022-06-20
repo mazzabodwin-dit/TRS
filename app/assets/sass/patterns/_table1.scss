@@ -177,3 +177,16 @@ table.sortable1 th:not([aria-sort]) button:hover span::after {
 #table-sort .govuk-button--secondary {
 width: initial;
 }
+
+/* This is the select button in the case table */
+table.sortable1 td button {
+  padding: 0px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 0px 0 white;
+  margin: 0px;
+  color:  govuk-colour("blue");
+  background-color:  govuk-colour("white");
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
+}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Cancel invite - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Cancel invite
+      </h1>
+
+      <p>Are you sure you want to cancel this invite?</p>
+      
+      <p><strong>Jane Winder - jane.winder@BlueSteelPartners.com</strong></p>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Cancel invite",
+          href: "manage-org"
+        }) }}    
+       <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">No</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
