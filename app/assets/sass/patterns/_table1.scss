@@ -174,7 +174,7 @@ table.sortable1 th:not([aria-sort]) button:hover span::after {
   padding-right: 20px;
 }
 
-#table-sort .govuk-button--secondary {
+#table-sort .govuk-button--secondary, #table-filter .govuk-button--secondary {
 width: initial;
 }
 

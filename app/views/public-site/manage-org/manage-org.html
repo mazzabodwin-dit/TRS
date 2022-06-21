@@ -34,16 +34,12 @@
     <h1 class="govuk-heading-xl">
       Manage my organisation
     </h1>
-    <p>Some words here</p>
 
     {% set manageCasesHTML %}
       <h2 class="govuk-heading-m">Manage cases
-        <p class="invite-user-link">
-          {{ govukButton({
-            text: "Register interest in case",
-            href: "/public-site/reg-interest/reginterest-tasks?tasklist-type=reg-interest"
-          }) }}
-        </p> 
+        <p class="right-aligned-link govuk-heading-s">
+          <a href="/public-site/reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state">Register interest in case</a>
+        </p>
       </h2>
       <p>Manage the cases your organisation is involved in.</p>
       <form>
@@ -176,12 +172,9 @@
 
     {% set manageTeamHTML %}
     <h2 class="govuk-heading-m">Manage team
-      <p class="invite-user-link">
-        {{ govukButton({
-          text: "Invite new user",
-          href: "invite-user-type"
-        }) }}
-      </p> 
+      <p class="right-aligned-link">
+        <a href="invite-user-type" class="govuk-link--no-visited-state govuk-heading-s">Invite new user</a>
+      </p>
     </h2>
     <p>Manage your users giving them administration rights for your organsiations account or access to cases.</p>
 
@@ -330,12 +323,6 @@
 
     {% set manageRepsHTML %}
     <h2 class="govuk-heading-m">Manage representatives
-      <p class="invite-user-link">
-        {{ govukButton({
-          text: "Invite representative",
-          href: "invite-user-type"
-        }) }}
-      </p> 
     </h2>
     <p>Manage your users giving them administration rights for your organsiations account or access to cases.</p>
 

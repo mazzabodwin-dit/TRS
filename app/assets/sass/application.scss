@@ -32,6 +32,20 @@ $govuk-assets-path: '/govuk/assets/';
  max-width: 1020px;
 }
 
+/* Action links that are right alignhed to a header...both sites*/
+.right-aligned-link {
+  float: none;
+  padding-top: 10px;
+}
+
+@media (min-width: 40.0625em) {
+  .right-aligned-link {
+    float: right;
+    padding-top: 0px;
+
+  }
+}
+
 /* createaccount / reginterest - autocomplete on new company */
 
 .autocomplete__wrapper * {
@@ -44,22 +58,11 @@ $govuk-assets-path: '/govuk/assets/';
   display: none;
 }
 
-.invite-user-link {
-  float: none;
-  padding-top: 20px;
-}
-
 
   /* Task list when being used for other things */
 @media (min-width: 40.0625em) {
   .uploads.app-task-list__items {
       padding-left: 0px;
-  }
-
-  .invite-user-link {
-    float: right;
-    padding-top: 0px;
-
   }
 }
 
