@@ -29,13 +29,15 @@
       </h1>
       {% include "includes/caseworker-nav-case.html" %}
     </div>
+  </div>
 
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <br>
-
+      <h2 class="govuk-heading-l">Overview</h2>
+      
       {% set newPartyHTML %}
-      <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
-  
+      <h3 class="govuk-heading-m">Parties to verify</h3>  
+      <p>There are <strong>2</strong> parties waiting to be verified.</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -65,9 +67,9 @@
         </div>
       </form>  
   
-      <table class="govuk-table sortable1 table-border" id="table-header">
+      <table class="govuk-table sortable1 mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-          A table listing all of the parties waiting to be confirmed on to a case
+          A table listing all of the parties waiting to be verified
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -142,8 +144,8 @@
       {% endset %}
   
       {% set submissionsHTML %}
-      <p>There are <strong>5</strong> submission waiting for deficicency checks</p>
-  
+      <h3 class="govuk-heading-m">Submissions to check</h3> 
+      <p>There are <strong>5</strong> submission waiting for deficicency checks.</p> 
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -173,7 +175,7 @@
         </div>
       </form>  
   
-      <table class="govuk-table sortable1 table-border" id="table-header">
+      <table class="govuk-table sortable1 mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
           A table listing all of the submission waiting for deficicency checks
         </caption>
@@ -304,8 +306,8 @@
       {% endset %}
   
       {% set submissionsPublishHTML %}
-      <p>There is <strong>1</strong> submission waiting to be published</p>
-  
+      <h3 class="govuk-heading-m">Submissions to publish</h3>  
+      <p>There is <strong>1</strong> submission waiting to be published.</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -334,7 +336,7 @@
           }) }}
         </div>
       </form>  
-      <table class="govuk-table sortable1 table-border" id="table-header">
+      <table class="govuk-table sortable1 mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
           A table listing submissions waiting to be published
         </caption>
@@ -418,22 +420,48 @@
           }
           ]
         }) }}
-
-      <ul class="govuk-list">
-        <li>
-          Applicant: <a href="">{{data['applicant1']}}</a>
-        </li>
-        <li>
-          Type: <a href="">{{data['case-type1']}}</a>
-        </li>
-        <li>Created: {{data['created1']}}
-        </li>
-      </ul>
-      
-      
-      
     </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">Case details</h2>
+      <ul class="govuk-list">
+        <li>Applicant: <a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a></li>
+        <li>Type: <a href="" class="govuk-link--no-visited-state">{{data['case-type1']}}</a></li>
+        <li>Status: {{data['status1']}}</li>
+        <li>Created: {{data['created1']}}</li>
+        <li><a href="" class="govuk-link--no-visited-state">Public file</a></li>
+      </ul>  
+      <h2 class="govuk-heading-m">Case administration</h2>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Case documents</a></li>
+        <li><a href="" class="govuk-link--no-visited-state">Administrator controls</a></li>
+      </ul>  
 
+
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">Team members</h2> 
+      <h3 class="govuk-heading-s">TRA Investigators</h3>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Bob Tyler - bob.tyler@TRA.gov.uk</a></li>
+        <li><a href="" class="govuk-link--no-visited-state">Lauri Wotner - lauri.wotner@tra.gov.uk</a></li>
+        <li><a href="" class="govuk-link--no-visited-state">Colin Totnes - colin.totnes@tra.gov.uk</a></li>
+      </ul> 
+      <h3 class="govuk-heading-s">TRA Administrators</h3>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Johnny John- johnny.john@TRA.gov.uk</a></li>
+      </ul>  
+      <h3 class="govuk-heading-s">Head of Investigations</h3>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Sabrina Watch - sabrina.watch@TRA.gov.uk</a></li>
+      </ul>  
+    </div>
   </div>
 {% endblock %}
 

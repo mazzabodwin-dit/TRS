@@ -29,33 +29,35 @@
     {% include "includes/caseworker-nav-case.html" %}
   </div>
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m govuk-visually-hidden--desktop">
-      Parties
+    <h2 class="govuk-heading-l">
+      Parties 
+      <p class="right-aligned-link govuk-heading-s">
+        <a href="" class="govuk-link--no-visited-state">Add new party</a>
+      </p> 
     </h2>
-
     <form>
-      <div id="table-sort"> 
+      <div id="table-filter"> 
         <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-!-display-inline" for="sort-published">
-            Show
+          <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-parties">
+            Filter parties by
           </label>
-          <select class="govuk-select" id="sort-published" name="sort-published">
-            <option value="No." selected>All types</option>
-            <option value="Case">Importer</option>
-            <option value="Type">Exporter</option>
-            <option value="Applicant">Government</option>
+          <select class="govuk-select" id="filter-parties" name="filter-parties">
+            <option value="All parties" selected>All roles</option>
+            <option value="Importer">Importer</option>
+            <option value="Exporter">Exporter</option>
+            <option value="Government">Government</option>
           </select>
         </div>
 
         {{ govukButton({
-          text: "Sort",
+          text: "Show",
           classes: "govuk-button--secondary"
         }) }}
       </div>
     </form>  
-    <h3 class="govuk-heading-s">Importer</h3>
+    <h3 class="govuk-heading-m">Importer</h3>
     {% set newPartyHTML %}
-    <table class="govuk-table">
+    <table class="govuk-table sortable1">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" scope="col"> Importer </th>
@@ -102,7 +104,7 @@
             {{data['party5']}}
           </td>
           <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">Sampled</strong>
+            <strong class="govuk-tag govuk-tag--green">Verified</strong>
           </td>
         </tr>    
       </tbody>
@@ -133,14 +135,6 @@
       }
       ]
     }) }}
-
-    
-     
-     
-
-     
-      
-      
       
     </div>
 

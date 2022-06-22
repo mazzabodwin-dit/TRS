@@ -59,7 +59,7 @@
         </div>
       </form>
 
-      <table class="govuk-table sortable1 table-border" id="table-header">
+      <table class="govuk-table sortable1 mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
           A table listing all of the active organisations
         </caption>
@@ -257,7 +257,8 @@
     {% endset %}
 
     {% set confirmPartyHTML %}
-    <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
+    <h2 class="govuk-heading-m">Parties to verify</h2>
+    <p>There are <strong>3</strong> parties waiting to be verified</p>
 
     <form>
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
@@ -288,7 +289,7 @@
       </div>
     </form>  
 
-    <table class="govuk-table sortable1 table-border" id="table-header">
+    <table class="govuk-table sortable1 mobile-table-border" id="table-header">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
         A table listing all of the parties waiting to be confirmed on to a case
       </caption>
@@ -338,7 +339,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>28 May 2022
           </td>   
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=yes&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">{{data['party1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=yes&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party1']}}
             </span></a>
           </td>        
         </tr> 
@@ -357,7 +358,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>22 May 2022
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
           </td>             
         </tr>
 
@@ -375,7 +376,7 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>28 May 2022
           </td>   
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=no&notify-contact=no" class="govuk-link--no-visited-state">Confirm <span class="govuk-visually-hidden td-header">{{data['party1']}}
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=no&notify-contact=no" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party1']}}
             </span></a>
           </td>        
         </tr> 
@@ -386,6 +387,7 @@
 
     {% set rejOrgtHTML %}
     <h2 class="govuk-heading-m">Cannot be verified</h2> 
+    <p>There are <strong>0</strong> parties that cannot be verified</p>
       
     {% endset %}
       
@@ -400,7 +402,7 @@
         }
       },
       { 
-      label: "Parties to confirm",
+      label: "Parties to verify (3)",
       id: "confirm-party",
       panel: {
         html: confirmPartyHTML

@@ -25,18 +25,24 @@
         @include govuk-visually-hidden();
       } 
 
+      table.mobile-table-border {
+        border: solid 1px govuk-colour("mid-grey");
+        border-collapse: unset;
+      }
+
 }
 
 /**** Normal size viewport ****/
 
-
 table.table-border {
-  border: solid 1px govuk-colour("mid-grey");
+  border-top: solid 1px govuk-colour("mid-grey");
+  border-left: solid 1px govuk-colour("mid-grey");
+  border-right: solid 1px govuk-colour("mid-grey");
   border-collapse: unset;
 }
 
 thead.head-border {
-  border: solid 1px govuk-colour("mid-grey");
+  border: solid 1px govuk-colour("blue");
 }
 
 .govuk-table__header {
@@ -49,12 +55,12 @@ th {
   vertical-align: text-top;
 }
 
-#table-header tr.govuk-table__row th, #table-header tr.govuk-table__row td {
+.sortable1 tr.govuk-table__row th, .sortable1 tr.govuk-table__row td {
   padding-left: 8px;
   padding-right: 25px;
 }
 
-#table-header th {
+th {
   background-color: govuk-colour("light-grey");
 }
 
@@ -69,7 +75,8 @@ table.sortable1 th button {
   font-weight: 700;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 0px 0 #929191;
+  box-shadow: 0 0px;
+  background: none;
   margin: 0px;
 }
 
@@ -178,7 +185,7 @@ table.sortable1 th:not([aria-sort]) button:hover span::after {
 width: initial;
 }
 
-/* This is the select button in the case table */
+/* This is the select button in the case table in reg interest */
 table.sortable1 td button {
   padding: 0px;
   text-align: left;
