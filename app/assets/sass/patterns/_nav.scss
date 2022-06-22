@@ -79,10 +79,6 @@
 /* Full screen size */
 @media (min-width: 40.0625em) {
 
-  .govuk-list > li {
-    margin-bottom: 10px;
-  }
-
   .app-navigation__list-item {
     float: left;
     margin: 10px 30px 10px 0px;
@@ -93,6 +89,7 @@
     border-bottom: 2px solid #fff;
     border-left: 0px;
     padding: 0;
+    margin-bottom: 10px
   }
 
  }
@@ -105,63 +102,66 @@
 
 @media (min-width: 40.0625em) {
 
-.case-navigation {
-    display: block;
+  .case-navigation .govuk-list > li {
+    margin-bottom: 0px;
+  }
+  
+  .case-navigation {
+      display: block;
+  }
+
+  .case-navigation__list {
+    position: relative;
+    left: -15px;
+  }
+
+  /* Case active nav */
+  .case-nav .case-navigation__list-item--case {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  .party-nav .case-navigation__list-item--party {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  .submission-nav .case-navigation__list-item--submission {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  .submission-nav .case-navigation__list-item--file {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  .workflow-nav .case-navigation__list-item--workflow {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  .notice-nav .case-navigation__list-item--notice {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  .milestone-nav .case-navigation__list-item--milestone {
+    border-bottom: 2px solid #1d70b8;
+  }
+
+  /*end*/
+
+  .case-navigation__list-item {
+    margin: 0 15px;
+    float: left;
+  }
+
+  .case-navigation__link:not([hidden]) {
+    display: inline;
+  }
+
+  .case-navigation__list-item {
+    line-height: 2.63158;
+  }
 }
 
-.case-navigation__list {
-  position: relative;
-  left: -15px;
-}
 
-/* Case active nav */
-.case-nav .case-navigation__list-item--case {
-  border-bottom: 2px solid #1d70b8;
-}
-
-.party-nav .case-navigation__list-item--party {
-  border-bottom: 2px solid #1d70b8;
-}
-
-.submission-nav .case-navigation__list-item--submission {
-  border-bottom: 2px solid #1d70b8;
-}
-
-.submission-nav .case-navigation__list-item--file {
-  border-bottom: 2px solid #1d70b8;
-}
-
-.workflow-nav .case-navigation__list-item--workflow {
-  border-bottom: 2px solid #1d70b8;
-}
-
-.notice-nav .case-navigation__list-item--notice {
-  border-bottom: 2px solid #1d70b8;
-}
-
-.milestone-nav .case-navigation__list-item--milestone {
-  border-bottom: 2px solid #1d70b8;
-}
-
-/*end*/
-
-
-.case-navigation__list-item {
-  margin: 0 15px;
-  float: left;
-}
-
-.case-navigation__link:not([hidden]) {
-  display: inline;
-}
-
-.case-navigation__list-item {
-  line-height: 2.63158;
-}
-}
-
-
-.case-navigation__link:after, .case-navigation__button:after {
+/* .case-navigation__link:after, .case-navigation__button:after {
 content: "";
 position: absolute;
 top: 0;
@@ -169,6 +169,7 @@ right: 0;
 bottom: 0;
 left: 0;
 }
+*/
 
 .case-navigation {
 border-bottom: 1px solid #b1b4b6;

@@ -8,7 +8,7 @@
 
 <!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
 
-{% set bodyClasses = 'caseworker-width cases-nav case-nav' %}
+{% set bodyClasses = 'caseworker-width orgs-nav org-nav' %}
 
 
 {% block header %}
@@ -19,20 +19,16 @@
 {% endblock %}
 
 {% block content %}
-{% set bodyClasses = 'caseworker' %}
-
   <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         {{data['representative1']}}
       </h1>
     </div>
-
-
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       {% include "includes/caseworker-nav-org.html" %}
-
       <p>There are <strong>2</strong> parties waiting to be confirmed on to a case</p>
 
       <div class="govuk-inset-text govuk-inset-text__reginterest">

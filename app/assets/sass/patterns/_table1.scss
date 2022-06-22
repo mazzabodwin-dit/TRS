@@ -3,46 +3,58 @@
 
 @include govuk-media-query($until: tablet) {
 
-      /*  Turn table in blocks */
-      tr,
-      th,
-      td {
-      display: block;
-      }
+  /*  Turn table in blocks */
+  tr,
+  th,
+  td {
+  display: block;
+  }
 
-      th {
-        @include govuk-visually-hidden();
-      }
+  th {
+    @include govuk-visually-hidden();
+  }
 
-      tr:nth-child(even) {
-      background-color: govuk-colour("light-grey");
-      border-top: 1px govuk-colour("mid-grey") solid;
-      border-bottom: 1px govuk-colour("mid-grey") solid;
+  tr:nth-child(even) {
+    background-color: govuk-colour("light-grey");
+  }
 
-      }
-           
-      .govuk-visually-hidden--mobile {
-        @include govuk-visually-hidden();
-      } 
+  tr:last-child {
+    border-bottom: none;
+  }
 
-      table.mobile-table-border {
-        border: solid 1px govuk-colour("mid-grey");
-        border-collapse: unset;
-      }
+  tr:first-child {
+    border-top: none;
+  }
 
+  tr {
+    border-bottom: 1px govuk-colour("mid-grey") solid;
+  }
+      
+  .govuk-visually-hidden--mobile {
+    @include govuk-visually-hidden();
+  } 
+
+  /* border for all mobile tables*/
+  .mobile-table-border {
+    border: solid 1px govuk-colour("mid-grey");
+    border-collapse: unset;
+  }
+
+  .govuk-table__cell {
+    border: none;
+  }
 }
 
 /**** Normal size viewport ****/
 
-table.table-border {
-  border-top: solid 1px govuk-colour("mid-grey");
-  border-left: solid 1px govuk-colour("mid-grey");
-  border-right: solid 1px govuk-colour("mid-grey");
-  border-collapse: unset;
-}
-
-thead.head-border {
-  border: solid 1px govuk-colour("blue");
+/* This border only gets used if the table is NOT in tabs*/
+@media (min-width: 40.0625em) {
+  .desktop-table-border {
+    border-top: solid 1px govuk-colour("mid-grey");
+    border-left: solid 1px govuk-colour("mid-grey");
+    border-right: solid 1px govuk-colour("mid-grey");
+    border-collapse: unset;
+  }
 }
 
 .govuk-table__header {
@@ -60,7 +72,7 @@ th {
   padding-right: 25px;
 }
 
-th {
+.sortable1 th {
   background-color: govuk-colour("light-grey");
 }
 
