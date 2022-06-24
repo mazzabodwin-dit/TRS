@@ -49,9 +49,9 @@
     <!-- Put this text into the radio for email-->
         {% set emailText %}
           {% if data['reg-type'] == "create" %}
-            Email address: <strong>{{ data['account-email'] or "jane@email.com" }}</strong>
+            By email: <strong>{{ data['account-email'] or "jane@email.com" }}</strong>
               {% else %}
-                Email address: <strong>{{ data['invite-user-email'] or "jane@email.com" }}</strong>
+                By email: <strong>{{ data['invite-user-email'] or "jane@email.com" }}</strong>
           {% endif %}
         {% endset -%}
 
@@ -68,7 +68,7 @@
           items: [
           {
             value: "mobile",
-            text: "Mobile",
+            text: "By text message",
             id: "mobile",
             checked: checked("2fa-choice", "mobile"),
             conditional: {

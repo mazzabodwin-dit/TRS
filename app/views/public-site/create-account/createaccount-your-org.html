@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your employer - {{serviceName}}
+  Your organisation details - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,10 +18,10 @@
       <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-form">          
 
         <h1 class="govuk-heading-xl">
-          Your employers details
+          Your organisation details
         </h1>
 
-        <p>We ask for the details of your direct employer, not a company you may be representing. You should have permission to create this account on behalf of your employer.</p>
+        <p>You are creating an account for this organisation and you will be the primary contact. This is the organisation you are directly employed by.</p>
 
         {{ govukInput({
           label: {
@@ -75,12 +75,12 @@
         {% include "includes/country-list.html" %}
         {{ govukInput({
           label: {
-            text: "Registered company number",
+            text: "Organisation registration number",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "Most companies have an official registration number from the country they are based in."
+            text: "Some organisations have an official registration number from the country they are based in."
           },
           classes: "govuk-input--width-10",
           id: "createaccount-reg-org-number",

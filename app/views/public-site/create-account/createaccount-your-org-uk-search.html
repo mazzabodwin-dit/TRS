@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your employers registered details - {{serviceName}}
+  Your organisation details - {{serviceName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,11 +20,11 @@
         <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--xl" for="search-reg-org">
-              Your employers details
+              Your organisation details
             </label>
           </h1>
            <div id="sort-hint" class="govuk-hint">
-            Search Companies House to find registered company details.
+            Search Companies House to find your UK registered company details.
           </div>
           <select class="govuk-select" id="search-reg-org" name="search-reg-org">
             <option value="0" class="selected"></option>
@@ -41,14 +41,14 @@
         </div>
 
         <div style="display:none;" id="selected_company_wrapper">
-          <p>Check the organisation details below carefully. If it does not match the registered details of your employer, you should return to the previous step and choose the "New" organisation option.</p>
+          <p>Check the details below carefully. If it does not match the UK registered company details of your organisation, you should go back to the previous page and select "No".</p>
           <div class="govuk-inset-text" id="selected_company"></div>
         </div>
 
         {{ govukDetails({
-          summaryText: "If you can’t find your employer",
+          summaryText: "If you can’t find your organisation",
           html: ' <p class="govuk-body">Search for your organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
-          <p>If the organisation is not on the register, go back to the previous page and select "No". Your employer is not registered in the UK.</p>'
+          <p>If the organisation is not on the register it is not a UK registered company. Go back to the previous page and select "No". </p>'
         }) }}
    
         <div class="govuk-button-group">
