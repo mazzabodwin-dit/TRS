@@ -172,8 +172,8 @@ module.exports = {
   "party-user5": "George Spinter",
   "party-user5": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
-  "party-role5": "Trade Body"
-,
+  "party-role5": "Trade Body",
+
   //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
   "rep-user5": "Jon Bodwin",
   "rep-email5": "jon.bodwins@BlueSteelPartners.com",
@@ -197,11 +197,13 @@ module.exports = {
   "next-notice6": "24 Sept 2022",
 
   // This is their own case. Not representing another party
-  "rep-user6": "BlueSteel Partners",
+  "representative6": "BlueSteel Partners",
   "rep-user6": "Arnie Swarts",
   "rep-email6": "arnieswarts@BlueSteelPartners.com",
   "rep-status6": "Deficiency notice issued",
   "rep-user-role6": "Regular",
+  "rep-role6": "Contributor",
+
 
 
 //CASE 7 - DRAFT yet to be made public

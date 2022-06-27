@@ -37,7 +37,6 @@
   /* border for all mobile tables*/
   .mobile-table-border {
     border: solid 1px govuk-colour("mid-grey");
-    border-collapse: unset;
   }
 
   .govuk-table__cell {
@@ -53,7 +52,6 @@
     border-top: solid 1px govuk-colour("mid-grey");
     border-left: solid 1px govuk-colour("mid-grey");
     border-right: solid 1px govuk-colour("mid-grey");
-    border-collapse: unset;
   }
 }
 

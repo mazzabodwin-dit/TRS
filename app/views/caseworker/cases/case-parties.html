@@ -35,9 +35,9 @@
         <a href="" class="govuk-link--no-visited-state">Add new party</a>
       </p> 
     </h2>
-    <form>
+    <form id="table-filter">
       <div id="table-filter"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort-select clearfix">
           <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-parties">
             Filter parties by
           </label>
@@ -54,7 +54,8 @@
           classes: "govuk-button--secondary"
         }) }}
       </div>
-    </form>  
+    </form> 
+     
     <h3 class="govuk-heading-m">Importer</h3>
     {% set newPartyHTML %}
     <table class="govuk-table sortable1 mobile-table-border">

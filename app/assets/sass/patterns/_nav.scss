@@ -49,11 +49,6 @@
 }
 
 
-
-
-
-
-
  /*  Navigation */
  /*  Navigation */
  /*  Navigation */
@@ -98,12 +93,14 @@
 /* Case Navigation */
 /* Case Navigation */
 
-
-
 @media (min-width: 40.0625em) {
 
   .case-navigation .govuk-list > li {
     margin-bottom: 0px;
+  }
+
+  .case-navigation .govuk-link {
+    text-underline-offset: 0.9em;
   }
   
   .case-navigation {
