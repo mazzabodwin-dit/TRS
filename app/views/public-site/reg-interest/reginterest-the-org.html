@@ -36,7 +36,7 @@
 
       {{ govukInput({
         label: {
-          text: "Client name",
+          text: "Organisation name",
           classes: "govuk-label--s",
           isPageHeading: false
         },
@@ -50,7 +50,7 @@
      
       {% call govukFieldset({
         legend: {
-          text: "Client address",
+          text: "Organisation address",
           classes: "govuk-fieldset__legend--s",
           isPageHeading: true
         }
@@ -85,21 +85,22 @@
       {% endcall %}
 
       {% include "includes/country-list.html" %}
+
       {{ govukInput({
         label: {
-          text: "Registered company number",
+          text: "Organisation registration number",
           classes: "govuk-label--s",
           isPageHeading: false
         },
         hint: {
-          text: "Most companies have an official registration number from the country they are based in."
+          text: "Some organisations have an official registration number from the country they are based in."
         },
         classes: "govuk-input--width-10",
-        id: "reginterest-reg-org-number",
-        name: "reginterest-reg-org-number",
-        value: data['reginterest-reg-org-number'],
+        id: "createaccount-reg-org-number",
+        name: "createaccount-reg-org-number",
+        value: data['createaccount-reg-org-number'],
         type: "text"
-      }) }}
+      }) }} 
       
       {% endcall %} 
 

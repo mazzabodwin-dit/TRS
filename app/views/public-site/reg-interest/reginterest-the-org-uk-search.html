@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  The organisations registered details - {{serviceName}}
+Who are you representing? - {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -29,7 +29,7 @@
             </label>
           </h1>
            <div id="sort-hint" class="govuk-hint">
-            Search Companies House to find registered company details.
+            Search Companies House to find your client's UK registered company details.
           </div>
           <select class="govuk-select" id="search-reg-org" name="search-reg-org" onchange="showDiv('hidden_div', this); update()">
             <option value="" class="selected"></option>
@@ -47,14 +47,14 @@
         </div>
 
         <div style="display:none;" id="selected_company_wrapper">
-          <p>Check the company details carefully. If they do not match your client’s, go back and select ‘No’ and enter the correct information.</p>
+          <p>Check the details below carefully. If it does not match the details of the organisation, you should go back to the previous page and select "No".</p>
           <div class="govuk-inset-text" id="selected_company"></div>
         </div>
 
         {{ govukDetails({
-          summaryText: "If you can’t find your client’s company",
-          html: ' <p class="govuk-body">Search for your client’s company on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
-          <p>If you cannot find the company on the register, go back and select ‘No’ and enter the correct information. This means your client’s company is not registered in the UK.</p>'
+          summaryText: "If you can’t find the organisation",
+          html: ' <p class="govuk-body">Search for the organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
+          <p>If the organisation is not on the register, it is not a UK registered company. Go back to the previous page and select "No".</p>'
         }) }}
    
         <div class="govuk-button-group">
