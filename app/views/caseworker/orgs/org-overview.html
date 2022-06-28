@@ -37,13 +37,17 @@
 
       <div class="govuk-inset-text govuk-inset-text__reginterest">
         <strong>{{data['representative1']}}</strong> has been verified on 2 cases <br>
-        The last confirmation was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
+        The last verification was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
       </div>  
    
   
     <div class="address-card">
       <div class="address-container">
-        <h2 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+        <h2 class="govuk-heading-m">
+          {{data['representative1']}}
+          <p class="right-aligned-link govuk-heading-s">
+            <a href="" class="govuk-link--no-visited-state">Edit details</a>
+          </p> 
         </h2> 
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
           <div class="govuk-summary-list__row">
