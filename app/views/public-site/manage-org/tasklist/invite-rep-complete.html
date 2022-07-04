@@ -27,9 +27,9 @@
       </div>
   
       <p>We have sent an email to invite a representative to join your account and act on your behalf.</p>
-      <p>{{ data['invite-rep-name'] or "Tiny Williams"}} - {{ data['invite-rep-email'] or "t.w@email.com" }}<br>
+      <p>{{ data['invite-rep-name'] or "Jane Winder"}} - {{ data['invite-rep-email'] or "jane@email.com" }}<br>
           {% if data['existing-cases-reps'] !="no" %}
-            {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
+            {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
             {% else %}
             Case: No case
           {% endif %}<br>
@@ -94,8 +94,8 @@
         {
         },
         {
-          href: "/public-site/email/email-invite-rep-app-sent.html",
-          text: "For user testing: Go to email"
+          href: "/public-site/email/email-invite-rep.html",
+          text: "For user testing: Go to invite email"
         }
       ]
     }

@@ -182,6 +182,23 @@ router.post('/invite-type-route', function (req, res) {
   } 
 })
 
+// Run this code on invite-user-type - which option is chosen:
+router.post('/invite-type-no-case-route', function (req, res) {
+
+  // Make a variable and give it the value from 'invite-user-type'
+  var regType = req.session.data['reg-type']
+
+  // Check whether the variable matches a condition
+  if (regType == "invite-own-org"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/invite-user-details')
+  } 
+  if (regType == "invite-third-party"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/tasklist/invite-case-none')
+  } 
+})
+
 // Run this code on invite-uk-org: - is org UK reg?
 router.post('/invite-uk-reg-route', function (req, res) {
 

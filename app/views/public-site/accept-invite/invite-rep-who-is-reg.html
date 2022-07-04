@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Who is registering? – {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public-signedout.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="createaccount-your-account-invite" method="post" id="invite-rep-who-reg-form">
+
+      <!-- Put this text into the radio for mobile-->
+      {% set inviteHintHtml %} 
+        <p>To represent <strong>Steel UK</strong>, create an account. Your request will be verified by the TRA.</p>
+        <p>If you are not the orginal email recipient but work for the same organisation please indicate below and your request will be verified by the TRA.</p>
+      {% endset -%}
+    
+      {% set inviteRepNameHtml %} 
+        I am the email recipient: <strong>{{data['invite-rep-name']}}</strong>   
+      {% endset -%}
+
+      {% set inviteRepOrgHtml %} 
+        I work for: <strong>{{data['invite-rep-what-org']}}</strong>   
+      {% endset -%}
+    
+    
+      {{ govukRadios({
+        idPrefix: "invite-rep-who-reg",
+        name: "invite-rep-who-reg",
+        fieldset: {
+          legend: {
+            html: "Who is registering?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: 
+            {
+              html: inviteHintHtml
+            },
+          
+        items: [
+          {
+            value: "Recipient",
+            html: inviteRepNameHtml,
+            checked: checked("invite-rep-who-reg", "Email recipient")
+          },
+          {
+            value: "Colleague",
+            html: inviteRepOrgHtml,
+            checked: checked("invite-rep-who-reg", "Colleague")
+          }
+        ]
+      }) }} 
+
+      {{ govukDetails({
+        summaryText: "I work for a different organisation",
+        html:'<p>If you work for a different organisation then you need to ask the person that orginally sent the invite to send you an invitation directly. </p><p>If there is a mistake in the name of your organisation you will need to ask the person that originally sent the invite to create a new one with the correct details.</p>'
+      }) }}
+    
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}  
+  {% include "includes/footer.html" %}
+{% endblock %}
+
+
