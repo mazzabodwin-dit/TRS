@@ -15,9 +15,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     
-    
-    <form action="createaccount-your-org" method="post" id="create-account-2fa-form">   
-
+    {% if data['reg-type'] == "invite-own-org" %}
+      <form action="createaccount-account-complete" method="post" id="create-account-2fa-form">   
+      {% else %}
+      <form action="createaccount-your-org" method="post" id="create-account-2fa-form">   
+    {% endif %}
         <h1 class="govuk-heading-xl">
           Two-factor authentication
         </h1>
@@ -45,9 +47,9 @@
     <!-- Put this text into the radio for email-->
         {% set emailText %}
           {% if data['reg-type'] == "create" %}
-            By email: <strong>{{ data['account-email'] or "jane@email.com" }}</strong>
+            By email: <strong>{{ data['account-email'] or "bobhoskins@BlueSteelPartners.com" }}</strong>
               {% else %}
-                By email: <strong>{{ data['invite-user-email'] or "jane@email.com" }}</strong>
+                By email: <strong>{{ data['invite-user-email'] or "jane@lawyerus.com" }}</strong>
           {% endif %}
         {% endset -%}
 

@@ -19,8 +19,8 @@
 
         <h1 class="govuk-heading-xl">
           Your organisation details
-        </h1>
 
+        </h1>
         <p>You are creating an account for your own organisation and you will be the primary contact. This is the organisation you are directly employed by.</p>
 
         {{ govukInput({
@@ -32,9 +32,8 @@
           classes: "govuk-input--width-20 govuk-input--readonly",
           id: "createaccount-org-name",
           name: "createaccount-org-name",
-          value: data['createaccount-org-name'],
           type: "text",
-          value: data['invite-rep-what-org'] or 'BlueSteel Partners',
+          value: data['invite-rep-what-org'] or 'Lawyers R Us',
           attributes: {
             "readonly": true
           }

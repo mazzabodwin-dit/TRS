@@ -18,11 +18,9 @@ Create an account - {{serviceName}}
       <form action="createaccount-password" novalidate method="post" id="createaccount-your-account-form">  
         
         <h1 class="govuk-heading-xl">
-          Your account details
+          Your account details  {{data['reg-type']}}
         </h1>
-
-        {% if data['invite-rep-who-reg'] == "Recipient" %}
-        
+        {% if data['reg-type'] == "invite-own-org" %}
           {{ govukInput({
             label: {
               text: "Enter your name",
@@ -37,7 +35,7 @@ Create an account - {{serviceName}}
             name: "invite-user-name",
             type: "text",
             autocomplete: "name",
-            value: data['invite-rep-name'] or 'Jane Winder'
+            value: data['invite-user-name'] or 'Lara Crift'
           }) }}
 
           {{ govukInput({
@@ -54,39 +52,79 @@ Create an account - {{serviceName}}
             attributes: {
               "readonly": true
             },
-            value: data['invite-rep-email'] or 'jane@email.com'
+            value: data['invite-user-email'] or 'lara@steeluk.com'
           }) }}
 
           {% else %}
 
-          {{ govukInput({
-            label: {
-              text: "Enter your name",
-              classes: "govuk-label--s",
-              isPageHeading: false
-            },
-            hint: {
-              text: "How would you like to be addressed?"
-            },
-            classes: "govuk-input--width-20",
-            id: "invite-user-name",
-            name: "invite-user-name",
-            type: "text",
-            autocomplete: "name"
-          }) }}
+            {% if (data['reg-type'] == "invite-rep") and (data['invite-rep-who-reg'] == "Recipient") %}
+            
+              {{ govukInput({
+                label: {
+                  text: "Enter your name",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                hint: {
+                  text: "How would you like to be addressed?"
+                },
+                classes: "govuk-input--width-20",
+                id: "invite-user-name",
+                name: "invite-user-name",
+                type: "text",
+                autocomplete: "name",
+                value: data['invite-rep-name'] or 'Jane Winder'
+              }) }}
 
-          {{ govukInput({
-            label: {
-              text: "Your email address",
-              classes: "govuk-label--s"
-            },
-          
-            id: "invite-user-email",
-            name: "invite-user-email",
-            classes: "govuk-input--width-20",
-            type: "email",
-            autocomplete: "email"
-          }) }}
+              {{ govukInput({
+                label: {
+                  text: "Your email address",
+                  classes: "govuk-label--s"
+                },
+              
+                id: "invite-user-email",
+                name: "invite-user-email",
+                classes: "govuk-input--width-20 govuk-input--readonly",
+                type: "email",
+                autocomplete: "email",
+                attributes: {
+                  "readonly": true
+                },
+                value: data['invite-rep-email'] or 'jane@lawyerus.com'
+              }) }}
+
+              {% else %}
+
+              {{ govukInput({
+                label: {
+                  text: "Enter your name",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                hint: {
+                  text: "How would you like to be addressed?"
+                },
+                classes: "govuk-input--width-20",
+                id: "invite-user-name",
+                name: "invite-user-name",
+                type: "text",
+                autocomplete: "name"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Your email address",
+                  classes: "govuk-label--s"
+                },
+              
+                id: "invite-user-email",
+                name: "invite-user-email",
+                classes: "govuk-input--width-20",
+                type: "email",
+                autocomplete: "email"
+              }) }}
+
+            {% endif %}
 
         {% endif %}
 

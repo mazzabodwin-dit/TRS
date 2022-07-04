@@ -33,15 +33,7 @@
 
       <p>You can now access your account. To take part in a trade remedies investigation, verify your email address.</p>
       <p>We sent an email to <strong>      
-        {% if (data['reg-type'] == "invite-own-org") %}
-          {{ data['invite-user-name'] or "jane@email.com" }}
-          {% else %}
-          {% if (data['reg-type'] == "invite-third-party") %}
-            {{ data['invite-rep-name'] or "jane@email.com" }}
-            {% else %}
-            {{ data['account-email'] or "bobhoskins@BlueSteelPartners.com"}}
-          {% endif %}
-        {% endif %}
+        {{ data['account-email'] or "bobhoskins@BlueSteelPartners.com"}}
       </strong></p>
 
       <p>Open the email and click on the link to verify your email address.</p>
