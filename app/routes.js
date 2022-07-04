@@ -176,7 +176,7 @@ router.post('/invite-type-route', function (req, res) {
     // Send user to next page
     res.redirect('/public-site/manage-org/invite-user-details')
   } 
-  if (regType == "invite-third-party"){
+  if (regType == "invite-rep"){
     // Send user to next page
     res.redirect('/public-site/manage-org/tasklist/invite-rep-tasks?tasklist-type=invite-rep')
   } 
@@ -193,7 +193,7 @@ router.post('/invite-type-no-case-route', function (req, res) {
     // Send user to next page
     res.redirect('/public-site/manage-org/invite-user-details')
   } 
-  if (regType == "invite-third-party"){
+  if (regType == "invite-rep"){
     // Send user to next page
     res.redirect('/public-site/manage-org/tasklist/invite-case-none')
   } 

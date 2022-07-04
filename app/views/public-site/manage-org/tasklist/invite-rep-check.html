@@ -35,7 +35,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['existing-cases-reps'] !="no" %}
-            {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}
+              {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
             {% else %}
             No case
           {% endif %}
@@ -53,8 +53,8 @@
         </dt>
         <dd class="govuk-summary-list__value">
             <!-- Show rep name-->
-            {{data['invite-rep-name'] or "Tiny Williams"}}<br>
-            {{data['invite-rep-email'] or "t.w@email.com"}}<br><br>
+            {{data['invite-rep-name'] or "Demi Moore"}}<br>
+            {{data['invite-rep-email'] or "demi@lawyerus.com"}}<br>
 
             <!-- And show new or existing org name-->
             {% if data['invite-rep-what-org'] == "new-org" %}
@@ -64,7 +64,7 @@
                     {{data['invite-org-name']}}
               {% endif %}
                 {% else %}
-                  {{data['invite-rep-what-org'] or "Borris and Sons"}}
+                  {{data['invite-rep-what-org'] or "Lawyers R Us"}}
             {% endif %}
 
         </dd>

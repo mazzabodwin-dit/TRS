@@ -46,10 +46,10 @@
 
     <!-- Put this text into the radio for email-->
         {% set emailText %}
-          {% if data['reg-type'] == "create" %}
-            By email: <strong>{{ data['account-email'] or "bobhoskins@BlueSteelPartners.com" }}</strong>
+          {% if data['reg-type'] == "invite-own-org" %}
+            By email: <strong>{{ data['invite-user-email'] or "lara@steeluk.com" }}</strong>
               {% else %}
-                By email: <strong>{{ data['invite-user-email'] or "jane@lawyerus.com" }}</strong>
+                By email: <strong>{{ data['invite-rep-email'] or "demi@lawyerus.com" }}</strong>
           {% endif %}
         {% endset -%}
 

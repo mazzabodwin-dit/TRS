@@ -27,7 +27,7 @@
       </div>
   
       <p>We have sent an email to invite a representative to join your account and act on your behalf.</p>
-      <p>{{ data['invite-rep-name'] or "Jane Winder"}} - {{ data['invite-rep-email'] or "jane@email.com" }}<br>
+      <p>{{ data['invite-rep-name'] or "Demi Moore"}} - {{ data['invite-rep-email'] or "demi@lawyers.com" }}<br>
           {% if data['existing-cases-reps'] !="no" %}
             {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
             {% else %}
@@ -43,7 +43,7 @@
                     {{data['invite-org-name'] or "Borris and Sons"}}<br>
               {% endif %}
                 {% else %}
-                  {{data['invite-rep-what-org'] or "Borris and Sons"}}<br>
+                  {{data['invite-rep-what-org'] or "Lawyers R Us"}}<br>
             {% endif %}
       </p>
 

@@ -64,7 +64,7 @@
         {% set emailText %}
           Email address: 
           <strong>
-            {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-third-party")  %}
+            {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-rep")  %}
               {{data['invite-user-email'] or "jane@email.com"}}
                 {% else %}
                   {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}

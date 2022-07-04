@@ -36,7 +36,7 @@
 
       <form action="account-update-success" method="post" id="account-update-details-form"> 
 
-        {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-third-party")  %}
+        {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-rep")  %}
             
           {{ govukInput({
             label: {

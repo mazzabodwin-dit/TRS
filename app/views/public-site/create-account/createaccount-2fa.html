@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
     
     
-{% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-third-party") %}
+{% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-rep") %}
   <form action="createaccount-account-complete?invite-reg=complete" method="post" id="create-account-2fa-form">   
     {% else %}
       <form action="createaccount-uk-reg" method="post" id="create-account-2fa-form">   

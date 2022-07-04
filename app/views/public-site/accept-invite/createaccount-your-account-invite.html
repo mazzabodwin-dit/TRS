@@ -18,7 +18,7 @@ Create an account - {{serviceName}}
       <form action="createaccount-password" novalidate method="post" id="createaccount-your-account-form">  
         
         <h1 class="govuk-heading-xl">
-          Your account details  {{data['reg-type']}}
+          Your account details
         </h1>
         {% if data['reg-type'] == "invite-own-org" %}
           {{ govukInput({
@@ -69,11 +69,11 @@ Create an account - {{serviceName}}
                   text: "How would you like to be addressed?"
                 },
                 classes: "govuk-input--width-20",
-                id: "invite-user-name",
-                name: "invite-user-name",
+                id: "invite-rep-name",
+                name: "invite-rep-name",
                 type: "text",
                 autocomplete: "name",
-                value: data['invite-rep-name'] or 'Jane Winder'
+                value: data['invite-rep-name'] or 'Demi Moore'
               }) }}
 
               {{ govukInput({
@@ -82,15 +82,15 @@ Create an account - {{serviceName}}
                   classes: "govuk-label--s"
                 },
               
-                id: "invite-user-email",
-                name: "invite-user-email",
+                id: "invite-rep-email",
+                name: "invite-rep-email",
                 classes: "govuk-input--width-20 govuk-input--readonly",
                 type: "email",
                 autocomplete: "email",
                 attributes: {
                   "readonly": true
                 },
-                value: data['invite-rep-email'] or 'jane@lawyerus.com'
+                value: data['invite-rep-email'] or 'demi@lawyerus.com'
               }) }}
 
               {% else %}
@@ -105,8 +105,8 @@ Create an account - {{serviceName}}
                   text: "How would you like to be addressed?"
                 },
                 classes: "govuk-input--width-20",
-                id: "invite-user-name",
-                name: "invite-user-name",
+                id: "invite-rep-name",
+                name: "invite-rep-name",
                 type: "text",
                 autocomplete: "name"
               }) }}
@@ -117,8 +117,8 @@ Create an account - {{serviceName}}
                   classes: "govuk-label--s"
                 },
               
-                id: "invite-user-email",
-                name: "invite-user-email",
+                id: "invite-rep-email",
+                name: "invite-rep-email",
                 classes: "govuk-input--width-20",
                 type: "email",
                 autocomplete: "email"
