@@ -60,11 +60,11 @@
             {% if data['invite-rep-what-org'] == "new-org" %}
               {% if (data['invite-uk-reg'] == "yes") %}
                 BlueSteel Partners<br>
-                  {% else %}
-                    {{data['invite-org-name'] or "BlueSteel Partners"}}<br>  
-              {% endif %}
                 {% else %}
-                  {{data['invite-rep-what-org'] or "BlueSteel Partners"}}<br>
+                {{data['invite-org-name'] or "BlueSteel Partners"}}<br>  
+              {% endif %}
+              {% else %}
+              {{data['invite-rep-what-org'] or "BlueSteel Partners"}}<br>
             {% endif %}
 
         </dd>
