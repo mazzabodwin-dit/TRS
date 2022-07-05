@@ -23,10 +23,9 @@ module.exports = {
 
 
    //Key users 
-  "publicname": "Bob Hoskins",
   "caseworkername": "Jonanna Barton",
   
-   //CASE 1
+//CASE 1
   "case-ref1": "AD2224",
   "case-name1": "Steel plate from Russia",
   "case-typeabr1": "AD",
@@ -47,22 +46,20 @@ module.exports = {
   "app-submission1": "Questionnaire",
   "app-role1": "Producer",
 
-
+  //KEY USER: who-signin=org
   "party1": "Steel UK",
-  "party-user1": "Simon Bellweather",
-  "party-email1": "s.bellweather@steeluk.org",
+  "party-user1": "Jane Winder",
+  "party-email1": "j.winder@steeluk.org",
   "party-country1": "United Kingdom",
   "party-role1": "(unknown)",
   "party-submission1": "Registration of Interest",
   "party-status1": "Representative invite received",
 
-  "party11": "StrongSteel",
-  "party-user11": "Martine Hulk",
-  "party-email11": "m.hulk@StrongSteel.org",
-  "party-country11": "Russia",
-  "party-submission11": "Representative invite",
-  "party-status11": "Representative invite received",
+  //KEY USER: who-signin=org-invite
+  "party-user11": "Lara Crist",
+  "party-email11": "l.crist@steeluk.com",
 
+  //KEY USER: who-signin=rep
   "representative1": "BlueSteel Partners",
   "rep-role1": "Representative",
   "rep-user1": "Bob Hoskins",
@@ -73,7 +70,7 @@ module.exports = {
   "rep-submission1": "Registration of Interest received",
 
 
- //CASE 2 - case closed
+//CASE 2 - case closed
   "case-ref2": "TS0002",
   "case-name2": "Rainbow Trout from Turkey",
   "case-typeabr2": "TAS",
@@ -116,13 +113,15 @@ module.exports = {
   "party-status5": "Questionnaires received",
   "party-country": "Russia",
 
-  "representative3": "Lawyers RUs",
+  //KEY USER - who-signin=rep-invite
+  "representative3": "Lawyers R Us",
   "rep-role3": "Representative",
   "rep-user3": "Demi Morre",  
-  "rep-email3": "demi.morre@LawyersRUs.com",
+  "rep-email3": "demi.morre@lawyerus.com",
   "rep-user-role3": "(Invite sent)",
+
   "rep-user31": "Simone Ward",
-  "rep-email31": "simone.ward@LawyersRUs.com",
+  "rep-email31": "simone.ward@lawyerus.com",
   "rep-user-role31": "Unassigned",
 
 //CASE 4
@@ -146,12 +145,10 @@ module.exports = {
   "party-email4": "m.fringe@best-barnets.uk",
   "party-role4": "Importer",
 
-  "representative3": "Lawyers RUs",
-  "rep-user3": "Demi Morre",  
-  "rep-email3": "demi.morre@LawyersRUs.com",
-  "rep-role3": "Representative",
+  //Representative for this case is Demi Morre - see Case 3 for dets
 
-  //CASE 5
+
+//CASE 5
   "case-ref5": "AS3464",
   "case-name5": "Garnets from Gabon",
   "case-typeabr5": "AS",

@@ -64,10 +64,21 @@
         {% set emailText %}
           Email address: 
           <strong>
-            {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-rep")  %}
-              {{data['invite-user-email'] or "jane@email.com"}}
+            <!--Determine who is signed in -->
+            {% if (data['who-signin'] == "rep") %}
+              {{data['createaccount-email'] or data['rep-email1'] }}
+              {% else %}
+              {% if (data['who-signin'] == "org") %}
+                {{data['createaccount-email'] or data['party-email1'] }}
                 {% else %}
-                  {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}
+                {% if (data['who-signin'] == "rep-invite") %}
+                  {{data['invite-rep-email'] or data['rep-email3'] }}
+                  {% else %}
+                  {% if (data['who-signin'] == "org-invite") %}
+                      {{data['invite-user-email'] or data['party-email11'] }}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
             {% endif %}
           </strong>
         {% endset -%}

@@ -37,14 +37,21 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
-              {{data['invite-user-name'] or "Jane Winder"}}
+            <!--Determine who is signed in -->
+            {% if (data['who-signin'] == "rep") %}
+              {{data['createaccount-name'] or data['rep-user1'] }}
               {% else %}
-                {% if data['createaccount-name'] != null %}
-                    {{data['createaccount-name'] or "Bob Hoskins"}}
-                    {% else %}
-                      {{data['rep-user1']}}
+              {% if (data['who-signin'] == "org") %}
+                {{data['createaccount-name'] or data['party-user1'] }}
+                {% else %}
+                {% if (data['who-signin'] == "rep-invite") %}
+                  {{data['invite-rep-name'] or data['rep-user3'] }}
+                  {% else %}
+                  {% if (data['who-signin'] == "org-invite") %}
+                      {{data['invite-user-name'] or data['party-user11'] }}
+                  {% endif %}
                 {% endif %}
+              {% endif %}
             {% endif %}
           </dd>
         </div>
@@ -53,15 +60,23 @@
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
-              {{data['invite-user-email'] or "jane@email.com"}}
+            <!--Determine who is signed in -->
+            {% if (data['who-signin'] == "rep") %}
+              {{data['createaccount-email'] or data['rep-email1'] }}
               {% else %}
-                {% if data['createaccount-email'] != null %}
-                  {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}
+              {% if (data['who-signin'] == "org") %}
+                {{data['createaccount-email'] or data['party-email1'] }}
+                {% else %}
+                {% if (data['who-signin'] == "rep-invite") %}
+                  {{data['invite-rep-email'] or data['rep-email3'] }}
                   {% else %}
-                    {{data['rep-email1']}}
+                  {% if (data['who-signin'] == "org-invite") %}
+                      {{data['invite-user-email'] or data['party-email11'] }}
+                  {% endif %}
                 {% endif %}
+              {% endif %}
             {% endif %}
+
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -69,11 +84,7 @@
             Mobile phone
           </dt>
           <dd class="govuk-summary-list__value">
-          {% if data['createaccount-mobile'] != null %}
-            {{data['createaccount-mobile'] or "+447821945085"}}
-            {% else %}
-              {{data['rep-mobile1'] or "+447821945085"}}
-          {% endif %}
+            +447821945085
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -97,11 +108,22 @@
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Name:</dt>
           <dd class="govuk-summary-list__value">
-          {% if data['createaccount-org-name'] != null %}
-            {{data['createaccount-org-name']}}
-            {% else %}
-              {{data['representative1']}}
-          {% endif %}
+            <!--Determine who is signed in -->
+            {% if (data['who-signin'] == "rep") %}
+              {{data['createaccount-org-name'] or data['representative1'] }}
+              {% else %}
+              {% if (data['who-signin'] == "org") %}
+                {{data['createaccount-org-name'] or data['party1'] }}
+                {% else %}
+                {% if (data['who-signin'] == "rep-invite") %}
+                  {{data['invite-org-name'] or data['representative3'] }}
+                  {% else %}
+                  {% if (data['who-signin'] == "org-invite") %}
+                      {{data['party1'] }}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">

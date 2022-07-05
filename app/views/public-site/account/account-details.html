@@ -35,9 +35,8 @@
       </h1>
 
       <form action="account-update-success" method="post" id="account-update-details-form"> 
-
-        {% if (data['reg-type'] == "invite-own-org") or (data['reg-type'] == "invite-rep")  %}
-            
+        <!--Determine who is signed in -->
+        {% if (data['who-signin'] == "rep") %}
           {{ govukInput({
             label: {
               text: "Your name",
@@ -49,25 +48,58 @@
             name: "invite-user-name",
             type: "text",
             autocomplete: "name",
-            value: data['invite-user-name'] or 'Jane Winder'
+            value: data['createaccount-name'] or data['rep-user1']
           }) }}
 
-            {% else %} 
-
+          {% else %}
+          {% if (data['who-signin'] == "org") %}
             {{ govukInput({
-              label: {
-                text: "Enter your name",
-                classes: "govuk-label--s",
-                isPageHeading: false
-              },
-              classes: "govuk-input--width-20",
-              id: "createaccount-name",
-              name: "createaccount-name",
-              type: "text",
-              autocomplete: "name",
-              value: data['createaccount-name'] or 'Bob Hoskins'
-            }) }}
+                label: {
+                  text: "Your name",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "invite-user-name",
+                name: "invite-user-name",
+                type: "text",
+                autocomplete: "name",
+                value: data['createaccount-name'] or data['party-user1']
+              }) }}
 
+            {% else %}
+            {% if (data['who-signin'] == "rep-invite") %}
+              {{ govukInput({
+                  label: {
+                    text: "Your name",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "invite-user-name",
+                  name: "invite-user-name",
+                  type: "text",
+                  autocomplete: "name",
+                  value: data['invite-rep-name'] or data['rep-user3']
+                }) }}
+              {% else %}
+              {% if (data['who-signin'] == "org-invite") %}
+                {{ govukInput({
+                  label: {
+                    text: "Your name",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "invite-user-name",
+                  name: "invite-user-name",
+                  type: "text",
+                  autocomplete: "name",
+                  value: data['invite-user-name'] or data['party-user11']
+                }) }}
+              {% endif %}
+            {% endif %}
+          {% endif %}
         {% endif %}
   
         <div class="govuk-button-group">

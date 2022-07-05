@@ -24,7 +24,25 @@
     <div class="govuk-header__account">
       <ul class="login-nav__list">
         <li class="login-nav__list-item">
-          {% if (data['invite-reg'] == "complete") %}
+          <!--Determine who is signed in -->
+
+          {% if (data['who-signin'] == "rep") %}
+            {{data['createaccount-name'] or data['rep-user1'] }}
+            {% else %}
+            {% if (data['who-signin'] == "org") %}
+              {{data['createaccount-name'] or data['party-user1'] }}
+              {% else %}
+              {% if (data['who-signin'] == "rep-invite") %}
+                {{data['invite-rep-name'] or data['rep-user3'] }}
+                {% else %}
+                {% if (data['who-signin'] == "org-invite") %}
+                    {{data['invite-user-name'] or data['party-user11'] }}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+          <!--{% if (data['invite-reg'] == "complete") %}
             {{data['invite-user-name'] or "Jane Winder" }}
             {% else %}
               {% if data['createaccount-name'] != null %}
@@ -32,8 +50,8 @@
                   {% else %}
                     {{data['rep-user1']}}
               {% endif %}
-          {% endif %}
-          |</li>
+          {% endif %} -->
+        </li>
         <li class="login-nav__list-item"><a href="/public-site/account/account" class="govuk-link govuk-link govuk-link--inverse login-nav__link">Manage account</a>|</li>
         <li class="login-nav__list-item"><a href="/public-site/start?signin=no" class="govuk-link govuk-link--inverse login-nav__link">Sign out</a></li>
       </ul>
