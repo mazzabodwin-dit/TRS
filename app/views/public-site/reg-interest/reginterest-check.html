@@ -33,8 +33,7 @@
 
           {% if (data['regnterest-due-date'] == "current") %}
             {{data ['case-ref1']}} - {{data ['case-name1']}}
-          {% else %}
-
+            {% else %}
             {{data['case-ref']}} - {{data['case-name']}}
           {% endif %}
         </dd>
@@ -49,42 +48,60 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if (data['reginterest-what-org'] == "my-org") %}
-              <p>My employer:</p>
-                {% else %}
-                  {% if (data['reginterest-what-org'] == "existing-org") or (data['reginterest-what-org'] == "new-org") %}
-                    <p>My client:</p>
-                  {% endif %}
-            {% endif %}
-          
-          <!--Show the org who is reg for interest-->
-          {% if (data['reginterest-what-org'] == "my-org") %}
-            <!-- Show 'my org' name-->
-            {% if data['createaccount-org-name'] != null %}
-              {{data['createaccount-org-name'] or "BlueSteel Partners"}}<br>
-              {% else %}
-                {{data['representative1']}}<br>
-            {% endif %}
-          
+            <p>My employer:</p>
             {% else %}
-              <!-- Show client name-->
-              {{data['reginterest-client-name'] or "Tiny Williams"}}<br>
-              {{data['reginterest-client-email'] or "t.w@email.com"}}<br><br>
-
-                <!-- And show new or existing org name-->     
-                {% if (data['reginterest-what-org'] == "my-org") %}
-                  BlueSteel Partners<br>
-                    {% else %}
-                      {% if (data['reginterest-what-org'] == "existing-org") %}
-                        {{ data['reginterest-existing-org'] }}<br>
-                          {% else %}
-                            {% if (data['reginterest-uk-reg'] == "yes") %}
-                              Steel UK<br>
-                                {% else %}
-                                  {{data['reginterest-org-name']}}<br>
-                            {% endif %}
-                      {% endif %}
-                {% endif %}
+            {% if (data['reginterest-what-org'] == "existing-org") or (data['reginterest-what-org'] == "new-org") %}
+              <p>My client:</p>
+            {% endif %}
           {% endif %}
+                 
+          <!-- Show the reg of interest for new or existing clients according to who has signed in: Org-->
+          {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+            {% if (data['reginterest-what-org'] == "my-org") %}
+              {{data['createaccount-org-name'] or data['party1'] }}
+              {% else %}
+              {% if data['reginterest-what-org'] == "existing-org" %}
+                {{data['reginterest-client-name'] or data['party-user1'] }}<br>
+                {{data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                {{data['reginterest-existing-org'] or data['party1']}}
+                {% else %}
+                {% if (data['reginterest-what-org'] == "new-org") %}
+                  {{data['reginterest-client-name'] or data['party-user1'] }}<br>
+                  {{data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                  {% if data['reginterest-uk-reg'] == "yes" %}
+                    Aluminium Trade Ltd
+                    {% else %}
+                    {{data['reginterest-org-name'] or "Aluminium Trade Ltd"}}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            <!-- Show the reg of interest for new or existing clients according to who has signed in: Rep-->
+            {% else %}
+            {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
+              {% if (data['reginterest-what-org'] == "my-org") %}
+                {{data['createaccount-org-name'] or data['representative1'] }}
+                {% else %}
+                {% if data['reginterest-what-org'] == "existing-org" %}
+                  {{data['reginterest-client-name'] or data['party-user1'] }}<br>
+                  {{data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                  {{data['reginterest-existing-org'] or data['party1']}}
+                  {% else %}
+                  {% if (data['reginterest-what-org'] == "new-org") %}
+                    {{data['reginterest-client-name'] or data['party-user1'] }}<br>
+                    {{data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                    {% if data['reginterest-uk-reg'] == "yes" %}
+                      Aluminium Trade Ltd
+                      {% else %}
+                      {{data['reginterest-org-name'] or "Aluminium Trade Ltd"}}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}<br>
+          
+   
           <!----> 
           
           <!-- And show address if not my own org-->     

@@ -96,12 +96,12 @@
                       Interested party: {{data['representative1']}}
                       {% else %}
                       {% if data['reginterest-what-org'] == "existing-org" %}
-                        Interested party: {{data['reginterest-org-name'] or "Steel UK"}}
+                        Interested party: {{data['reginterest-org-name'] or data['party1']}}
                         {% else %}
                         {% if (data['reginterest-uk-reg'] == "yes") %}
                           Interested party: Steel UK 
                           {% else %} 
-                            Interested party: {{data['reginterest-org-name'] or "Steel UK"}}
+                            Interested party: {{data['reginterest-org-name'] or data['party1']}}
                         {% endif %}
                       {% endif %}
                     {% endif %}
