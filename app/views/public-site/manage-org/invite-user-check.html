@@ -64,7 +64,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
             <!-- Show client name-->
-            {{data['user-permissions'] or "Admin"}}<br>
+            {{data['invite-user-permissions'] or "Admin"}}<br>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-user-permissions">
@@ -82,7 +82,7 @@
     <div class="govuk-button-group">
       {{ govukButton({
         text: "Confirm and submit invite",
-        href: "invite-user-complete?invite-user=complete&show-invite=yes"
+        href: "invite-user-complete?invite-user=complete&show-invite-org=yes"
       }) }}    
       <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 

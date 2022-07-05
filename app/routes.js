@@ -75,7 +75,7 @@ router.post('/reginterest-which-org-route', function (req, res) {
     // Check whether the variable matches a condition
   if (reginterestWho == "my-org"){
     // Send user to next page
-    res.redirect('/public-site/reg-interest/reginterest-tasks?which-org-task=complete')
+    res.redirect('/public-site/reg-interest/reginterest-tasks?which-org-task=complete&reginterest-task=Draft')
   } 
 
   // Check whether the variable matches a condition
@@ -163,7 +163,7 @@ router.get('/public-site/reg-interest/reginterest-upload', function (req, res) {
 })
 
 
-// Invite 3rd party to account
+// Invite Rep to account
 
 // Run this code on invite-user-type - which option is chosen:
 router.post('/invite-type-route', function (req, res) {

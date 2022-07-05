@@ -21,8 +21,13 @@ module.exports = {
 
   // Insert values here
 
+//Key default values to set up Public
+  "who-signin": "org",
+  "account-activated": "yes",
+  "user-permissions": "Admin user",
 
-   //Key users 
+
+//Key caseworker users 
   "caseworkername": "Jonanna Barton",
   
 //CASE 1

@@ -22,7 +22,7 @@
       {% if (data['rerequestEmail'] == "yes") %}
 
       {% set requestSent %}
-          We have sent a new account activation email link to {{data['account-email'] or "bobhoskins@BlueSteelPartners.com"}}.
+          We have sent a new account activation email link to {{data['createaccount-email'] or data['party-email1'] }}.
       {% endset %}
 
       {{ govukInsetText({
@@ -33,7 +33,7 @@
 
       <p>You can now access your account. To take part in a trade remedies investigation, verify your email address.</p>
       <p>We sent an email to <strong>      
-        {{ data['account-email'] or "bobhoskins@BlueSteelPartners.com"}}
+        {{data['createaccount-email'] or data['party-email1'] }}
       </strong></p>
 
       <p>Open the email and click on the link to verify your email address.</p>

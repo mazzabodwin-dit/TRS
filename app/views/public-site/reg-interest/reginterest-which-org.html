@@ -27,42 +27,74 @@
 
       <!-- Set the name of the org if is is "my org" whether from regsitering or default-->
       {% set myorgHTML %}
-        {% if data['createaccount-org-name'] != null %}
-          My organisation: {{data['createaccount-org-name']}}
+        {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+          My organisation: {{data['createaccount-org-name'] or data['party1'] }}
           {% else %}
-            My organisation: {{data['representative1']}}
+          My organisation: {{data['createaccount-org-name'] or data['representative1'] }}
         {% endif %}
       {% endset -%}
 
-      {{ govukRadios({
-        idPrefix: "reginterest-what-org",
-        name: "reginterest-what-org",
-        fieldset: {
-          legend: {
-            text: "Who is registering interest in this case?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-          {
-            value: "my-org",
-            html: myorgHTML,
-            checked: checked("reginterest-what-org", "my-org")
-          },
-          {
-            value: "existing-org",
-            text: "An existing client: someone I have previously represented using the Trade Remedies Service",
-            checked: checked("reginterest-what-org", "existing-org")
+     <!-- According to whether it is an org or a rep show the "existing client" in the select -->
+      {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
 
+        {{ govukRadios({
+          idPrefix: "reginterest-what-org",
+          name: "reginterest-what-org",
+          fieldset: {
+            legend: {
+              text: "Who is registering interest in this case?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
           },
-          {
-            value: "new-org",
-            text: "A new client: someone I am representing for the first time using the Trade Remedies Service",
-            checked: checked("reginterest-what-org", "new-org")
-          }
-        ]
-      }) }}
+          items: [
+            {
+              value: "my-org",
+              html: myorgHTML,
+              checked: checked("reginterest-what-org", "my-org")
+            },
+            {
+              value: "new-org",
+              text: "A new client: someone I am representing for the first time using the Trade Remedies Service",
+              checked: checked("reginterest-what-org", "new-org")
+            }
+          ]
+        }) }}
+
+        {% else %}
+        {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
+
+          {{ govukRadios({
+            idPrefix: "reginterest-what-org",
+            name: "reginterest-what-org",
+            fieldset: {
+              legend: {
+                text: "Who is registering interest in this case?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "my-org",
+                html: myorgHTML,
+                checked: checked("reginterest-what-org", "my-org")
+              },
+              {
+                value: "existing-org",
+                text: "An existing client: someone I have previously represented using the Trade Remedies Service",
+                checked: checked("reginterest-what-org", "existing-org")
+
+              },
+              {
+                value: "new-org",
+                text: "A new client: someone I am representing for the first time using the Trade Remedies Service",
+                checked: checked("reginterest-what-org", "new-org")
+              }
+            ]
+          }) }}
+        {% endif %}
+      {% endif %}
 
       <div class="govuk-button-group">
         {{ govukButton({

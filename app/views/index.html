@@ -32,7 +32,7 @@
                 <ul class="app-task-list__items">
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="public-site/start" class="govuk-link--no-visited-state" aria-describedby="create-status">
+                      <a href="public-site/start?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="create-status">
                         Create account, Sign in & Forgotton Password
                       </a>
                     </span>
@@ -40,13 +40,19 @@
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="public-site/reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
-                        Register Interest
+                      <a href="public-site/reg-interest/reginterest-tasks?who-signin=org&tasklist-type=reg-interest" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                        Register Interest - own org
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/reg-interest/reginterest-duplicate-error" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/reg-interest/reginterest-tasks?who-signin=rep&tasklist-type=reg-interest" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                        Register Interest - as a Representative
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-status">Complete</span><br>
+                    <span class="app-task-list__task-name">
+                      <a href="public-site/reg-interest/reginterest-duplicate-error?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Duplicate registration of interest
                       </a>
                     </span>
@@ -54,25 +60,25 @@
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/manage-org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/manage-org/manage-org?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Invite user from own org
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/email/email-invite-org-user?reg-type=invite-own-org&user-permissions=Regular user" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/email/email-invite-org-user?who-signin=org-invite&reg-type=invite-own-org&user-permissions=Regular user" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Accept invite from own org - Regular user
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/email/email-invite-org-user?reg-type=invite-own-org&user-permissions=Admin user" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/email/email-invite-org-user?who-signin=org-invite&reg-type=invite-own-org&user-permissions=Admin user" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Accept invite from own org - Admin user
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/invite-user-already-error.html" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/manage-org/invite-user-already-error?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Error - existing email part of orgs account
                       </a>
                     </span>
@@ -80,31 +86,31 @@
                   </li>  
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/invite-user-type-no-case" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/manage-org/invite-user-type-no-case?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Invite representative - org is not reg to a case 
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/invite-user-type?existing-cases-reps=yes" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/manage-org/invite-user-type?who-signin=org?existing-cases-reps=yes" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Invite representative - existing cases & reps
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/email/email-invite-rep?reg-type=invite-rep&who-signin=rep" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/email/email-invite-rep?reg-type=invite-rep&who-signin=rep-invite" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Accept invite from org - Rep
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/email/email-invite-rep-has-account?reg-type=invite-rep&who-signin=rep" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/email/email-invite-rep-has-account?reg-type=invite-rep&who-signin=rep-invite" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Accept invite from org - Rep already reg
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/manage-org?show-invite=yes" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                      <a href="public-site/manage-org/manage-org?who-signin=org&show-invite=yes" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                        Cancel user invite
                       </a>
                     </span>
@@ -126,7 +132,7 @@
                 <ul class="app-task-list__items">
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/signin?signin=no" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/signin" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Sign in & Forgotton Password
                       </a>
                     </span>
@@ -164,19 +170,22 @@
           <nav role="navigation" aria-labelledby="subsection-title">
             <ul class="govuk-list govuk-!-font-size-16">
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/start">Trade Remedies Start page</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/start?who-signin=org">Trade Remedies Start page</a> 
               </li>   
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?account-activated=no&welcome-message=close&reginterest-task=null&invite-rep-task=null">Dashboard - not-activated</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=no&welcome-message=close&reginterest-task=null&invite-rep-task=null">Dashboard for org - not-activated</a> 
               </li> 
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?&count-activated=yes&reginterest-task=Draft&regnterest-due-date=current&reginterest-what-org=null">Dashboard - with draft Reg Interest</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&reginterest-task=Draft&regnterest-due-date=current&reginterest-what-org=null">Dashboard for org - with draft Reg Interest</a> 
               </li>   
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?account-activated=yes&reginterest-task=Submitted&regnterest-due-date=current&reginterest-what-org=my-org">Dashboard - with Reg Interest</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&reginterest-task=Submitted&regnterest-due-date=current&reginterest-what-org=my-org">Dashboard for org - with Reg Interest</a> 
               </li> 
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?account-activated=yes&invite-rep-task=Draft">Dashboard - with draft 3rd party invites</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=rep&account-activated=yes&reginterest-task=Submitted&regnterest-due-date=current&reginterest-what-org=my-org">Dashboard for rep - with Reg Interest</a> 
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&invite-rep-task=Draft">Dashboard - with draft Rep invite</a> 
               </li>    
             </ul>
           </nav>
@@ -184,7 +193,7 @@
           <nav role="navigation" aria-labelledby="subsection-title">
             <ul class="govuk-list govuk-!-font-size-16">
               <li>
-                <a class="govuk-link--no-visited-state" href="/caseworker/signin?signin=no">Caseworker sign in</a> 
+                <a class="govuk-link--no-visited-state" href="/caseworker/signin">Caseworker sign in</a> 
               </li>
               <li>
                 <a class="govuk-link--no-visited-state" href="/caseworker/dashboard">Caseworker dashboard</a> 

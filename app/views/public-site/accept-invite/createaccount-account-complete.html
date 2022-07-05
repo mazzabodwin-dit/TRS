@@ -22,7 +22,7 @@
       {% if (data['rerequestEmail'] == "yes") %}
 
       {% set requestSent %}
-          We have sent a new account activation email link to {{data['account-email'] or "bobhoskins@BlueSteelPartners.com"}}.
+          We have sent a new account activation email link to {{data['createaccount-email'] or "bobhoskins@BlueSteelPartners.com"}}.
       {% endset %}
 
       {{ govukInsetText({

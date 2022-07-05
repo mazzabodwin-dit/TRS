@@ -21,9 +21,17 @@ Cancel invite - {{serviceName}}
       </h1>
 
       <p>Are you sure you want to cancel this invite?</p>
-      
-      <p>{{data['invite-user-name'] or data['party-user11'] }}: {{data['invite-user-email'] or data['party-email11'] }}/p>
-      <form action="manage-org#manage-team" method="post" id="cancel-invite-form">
+
+      {% if data['cancel-invite'] =="org" %}
+        <p>{{data['invite-user-name'] or data['party-user11'] }}: {{data['invite-user-email'] or data['party-email11'] }}</p>
+        <form action="manage-org?show-invite-org=no#manage-team" method="post" id="cancel-invite-form">
+        {% else %}
+          <p>{{data['invite-rep-name'] or data['rep-user3'] }}: {{data['invite-rep-email'] or data['party-email3'] }}</p>
+          <form action="manage-org?show-invite-rep=no#manage-team" method="post" id="cancel-invite-form">
+      {% endif %}
+
+
+
       <input type="hidden" id="show-invite" name="show-invite" value="no">
       <div class="govuk-button-group">
         {{ govukButton({

@@ -49,9 +49,9 @@
     <!-- Put this text into the radio for email-->
         {% set emailText %}
           {% if data['reg-type'] == "create" %}
-            By email: <strong>{{ data['account-email'] or "bobhoskins@BlueSteelPartners.com" }}</strong>
+            By email: <strong>{{data['createaccount-email'] or data['party-email1'] }}</strong>
               {% else %}
-                By email: <strong>{{ data['invite-user-email'] or "jane@lawyerus.com" }}</strong>
+                By email: <strong>{{data['invite-user-email'] or data['party-email11'] }}</strong>
           {% endif %}
         {% endset -%}
 
@@ -76,10 +76,10 @@
             }
           },
           {
-              value: "account-email",
+              value: "createaccount-email",
               html: emailText,
-              id: "account-email",
-              checked: checked("2fa-choice", "account-email")
+              id: "createaccount-email",
+              checked: checked("2fa-choice", "createaccount-email")
             }
           ]
         }) }}
