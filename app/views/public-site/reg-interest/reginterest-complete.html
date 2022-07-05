@@ -78,7 +78,7 @@
                 {% if data['reginterest-uk-reg'] == "yes" %}
                   Aluminium Trade Ltd
                   {% else %}
-                  {{data['reginterest-org-name'] or "Aluminium Trade Ltd"}}
+                  {{data['reginterest-org-name'] or data['party1'] }}
                 {% endif %}
               {% endif %}
             {% endif %}
