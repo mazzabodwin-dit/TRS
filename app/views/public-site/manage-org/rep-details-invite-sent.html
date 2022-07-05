@@ -66,7 +66,7 @@ Manage user - {{serviceName}}
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Harry Stylier
+            {{data['invite-rep-name'] or data['rep-user3'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -74,7 +74,7 @@ Manage user - {{serviceName}}
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            harry.stylier@Steelers.com
+            {{data['invite-rep-email'] or data['rep-email3'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -117,11 +117,7 @@ Manage user - {{serviceName}}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Name:</dt>
           <dd class="govuk-summary-list__value">
-          {% if data['createaccount-org-name'] != null %}
-            {{data['createaccount-org-name']}}
-            {% else %}
-              {{data['representative1']}}
-          {% endif %}
+            {{data['invite-org-name'] or data['representative1'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">

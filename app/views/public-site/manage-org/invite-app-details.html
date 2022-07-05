@@ -59,9 +59,10 @@
           Details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data['invite-rep-name'] or "Tiny Williams"}}<br>
-          {{data['invite-rep-email'] or "t.w@email.com"}}<br>
-
+          {{data['invite-rep-name'] or data['rep-user3'] }}
+          <br>
+          {{data['invite-rep-email'] or data['rep-email3'] }}
+          <br>
 
           <!--if it is a complete app show address details-->
           {% if data['invite-rep-task'] == "Sent" %}

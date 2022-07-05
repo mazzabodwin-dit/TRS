@@ -48,7 +48,7 @@
                   {{data['invite-rep-name'] or data['rep-user3'] }}
                   {% else %}
                   {% if (data['who-signin'] == "org-invite") %}
-                      {{data['invite-user-name'] or data['party-user11'] }}
+                    {{data['invite-user-name'] or data['party-user11'] }}
                   {% endif %}
                 {% endif %}
               {% endif %}
@@ -71,7 +71,7 @@
                   {{data['invite-rep-email'] or data['rep-email3'] }}
                   {% else %}
                   {% if (data['who-signin'] == "org-invite") %}
-                      {{data['invite-user-email'] or data['party-email11'] }}
+                    {{data['invite-user-email'] or data['party-email11'] }}
                   {% endif %}
                 {% endif %}
               {% endif %}
@@ -116,10 +116,10 @@
                 {{data['createaccount-org-name'] or data['party1'] }}
                 {% else %}
                 {% if (data['who-signin'] == "rep-invite") %}
-                  {{data['invite-org-name'] or data['representative3'] }}
+                  {{data['invite-org-name'] or data['representative1'] }}
                   {% else %}
                   {% if (data['who-signin'] == "org-invite") %}
-                      {{data['party1'] }}
+                    {{data['party1'] }}
                   {% endif %}
                 {% endif %}
               {% endif %}

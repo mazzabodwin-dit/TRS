@@ -53,18 +53,18 @@
         </dt>
         <dd class="govuk-summary-list__value">
             <!-- Show rep name-->
-            {{data['invite-rep-name'] or "Demi Moore"}}<br>
-            {{data['invite-rep-email'] or "demi@lawyerus.com"}}<br>
+            {{data['invite-rep-name'] or data['rep-user3'] }}<br>
+            {{data['invite-rep-email'] or data['rep-email3'] }}<br>
 
             <!-- And show new or existing org name-->
             {% if data['invite-rep-what-org'] == "new-org" %}
               {% if (data['invite-uk-reg'] == "yes") %}
-                Steel UK
+                BlueSteel Partners<br>
                   {% else %}
-                    {{data['invite-org-name']}}
+                    {{data['invite-org-name'] or "BlueSteel Partners"}}<br>  
               {% endif %}
                 {% else %}
-                  {{data['invite-rep-what-org'] or "Lawyers R Us"}}
+                  {{data['invite-rep-what-org'] or "BlueSteel Partners"}}<br>
             {% endif %}
 
         </dd>

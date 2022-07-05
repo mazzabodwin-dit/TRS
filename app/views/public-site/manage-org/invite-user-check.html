@@ -34,7 +34,6 @@
           User type
         </dt>
         <dd class="govuk-summary-list__value">
-            <!-- Show client name-->
             Employee of your org
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -49,9 +48,8 @@
           User name
         </dt>
         <dd class="govuk-summary-list__value">
-            <!-- Show client name-->
-            {{data['invite-user-name'] or "Lara Chrift"}}<br>
-            {{data['invite-user-email'] or "lara@steeluk.com"}}
+            {{data['invite-user-name'] or data['party-user11']}}<br>
+            {{data['invite-user-email'] or data['party-email11']}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-user-details">
@@ -66,7 +64,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
             <!-- Show client name-->
-            {{data['user-permissions'] or "Regular user"}}<br>
+            {{data['user-permissions'] or "Admin"}}<br>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-user-permissions">
