@@ -114,15 +114,11 @@ module.exports = {
   "party-country": "Russia",
 
   //KEY USER - who-signin=rep-invite
-  "representative3": "Lawyers R Us",
+  //"representative1": "BlueSteel Partners",
   "rep-role3": "Representative",
   "rep-user3": "Demi Morre",  
-  "rep-email3": "demi.morre@lawyerus.com",
+  "rep-email3": "demi.morre@BlueSteelPartners.com",
   "rep-user-role3": "(Invite sent)",
-
-  "rep-user31": "Simone Ward",
-  "rep-email31": "simone.ward@lawyerus.com",
-  "rep-user-role31": "Unassigned",
 
 //CASE 4
   "case-ref4": "BA0005",
