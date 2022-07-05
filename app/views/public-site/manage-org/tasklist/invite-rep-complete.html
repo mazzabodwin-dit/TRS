@@ -27,7 +27,7 @@
       </div>
   
       <p>We have sent an email to invite a representative to join your account and act on your behalf.</p>
-      <p>{{ data['invite-rep-name'] or data['party-user1'] }} - {{ data['invite-rep-email'] or data['party-email2'] }}<br>
+      <p>{{ data['invite-rep-name'] or data['rep-user1'] }} - {{ data['invite-rep-email'] or data['rep-email1'] }}<br>
           {% if data['existing-cases-reps'] !="no" %}
             {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
             {% else %}
@@ -36,15 +36,23 @@
 
         <!-- And show new or existing org name-->     
         Organisation: 
-          {% if data['invite-rep-what-org'] == "new-org" %}
-            {% if (data['invite-uk-reg'] == "yes") %}
-              BlueSteel Partners<br>
-                {% else %}
-                  {{data['invite-org-name'] or "BlueSteel Partners"}}<br>  
-            {% endif %}
+        {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+          {% if (data['invite-rep-what-org'] == "my-org") %}
+            {{data['createaccount-org-name'] or data['party1'] }}
+            {% else %}
+            {% if data['invite-rep-what-org'] == "existing-org" %}
+              {{data['reginterest-existing-org'] or data['representative1']}}
               {% else %}
-                {{data['invite-rep-what-org'] or "BlueSteel Partners"}}<br>
+              {% if (data['invite-rep-what-org'] == "new-org") %}
+                {% if data['invite-uk-reg'] == "yes" %}
+                  Aluminium Trade Ltd
+                  {% else %}
+                  {{data['invite-org-name'] or "Aluminium Trade Ltd"}}
+                {% endif %}
+              {% endif %}
+            {% endif %}
           {% endif %}
+        {% endif %}
       </p>
 
       <p>The invite will ask your representative to register. This will give them access to the Trade Remedy Service. </p>

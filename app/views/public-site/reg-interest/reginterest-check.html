@@ -55,7 +55,7 @@
             {% endif %}
           {% endif %}
                  
-          <!-- Show the reg of interest for new or existing clients according to who has signed in: Org-->
+          <!-- Show the reg of interest for clients according to who has signed in: Org-->
           {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
             {% if (data['reginterest-what-org'] == "my-org") %}
               {{data['createaccount-org-name'] or data['party1'] }}
@@ -76,7 +76,7 @@
                 {% endif %}
               {% endif %}
             {% endif %}
-            <!-- Show the reg of interest for new or existing clients according to who has signed in: Rep-->
+            <!-- Show the reg of interest for clients according to who has signed in: Rep-->
             {% else %}
             {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
               {% if (data['reginterest-what-org'] == "my-org") %}
@@ -100,9 +100,6 @@
               {% endif %}
             {% endif %}
           {% endif %}<br>
-          
-   
-          <!----> 
           
           <!-- And show address if not my own org-->     
             345, The Shard, London <br>

@@ -52,20 +52,40 @@
           My representative
         </dt>
         <dd class="govuk-summary-list__value">
-            <!-- Show rep name-->
-            {{data['invite-rep-name'] or data['rep-user3'] }}<br>
-            {{data['invite-rep-email'] or data['rep-email3'] }}<br>
 
-            <!-- And show new or existing org name-->
-            {% if data['invite-rep-what-org'] == "new-org" %}
-              {% if (data['invite-uk-reg'] == "yes") %}
-                BlueSteel Partners<br>
+            <!-- Show the invite for new or existing rep according to who has signed in: Org-->
+            {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+              {% if data['invite-rep-what-org'] == "existing-org" %}
+                {{data['invite-rep-name'] or data['rep-user1'] }}<br>
+                {{data['invite-rep-email'] or data['rep-email1'] }}<br><br>
+                {{data['representative1']}}
                 {% else %}
-                {{data['invite-org-name'] or "BlueSteel Partners"}}<br>  
+                {% if (data['invite-rep-what-org'] == "new-org") %}
+                  {{data['invite-rep-name'] or data['rep-user1'] }}<br>
+                  {{data['invite-rep-email'] or data['rep-email1'] }}<br><br>
+                  {% if data['invite-uk-reg'] == "yes" %}
+                    Aluminium Trade Ltd
+                    {% else %}
+                    {{data['invite-org-name'] or "Aluminium Trade Ltd"}}
+                  {% endif %}
+                {% endif %}
               {% endif %}
-              {% else %}
-              {{data['invite-rep-what-org'] or "BlueSteel Partners"}}<br>
-            {% endif %}
+            {% endif %}<br>
+
+            <!-- And show address if not my own org-->     
+            345, The Shard, London <br>
+            EC2 3TF<br>
+            United Kingdom
+ 
+           <!-- And show org dets if new org-->     
+           {% if data['invite-rep-what-org'] == "new-org" %}
+             <br><br>
+             Company number: 595934925<br>
+             VAT number: {{data['reginterest-vat'] or "205672212000"}}<br>
+             EORI number: {{data['reginterest-eori'] or "GB205672212000"}}<br>
+             DUNS number: {{data['reginterest-duns'] or "123456789"}}<br>
+             <a href="">www.orglongnameurlthatisannoying.com</a>
+           {% endif %}
 
         </dd>
         <dd class="govuk-summary-list__actions">
