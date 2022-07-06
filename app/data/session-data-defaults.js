@@ -130,6 +130,7 @@ module.exports = {
   "party-role3": "Importer",
   "party-status5": "Questionnaires received",
   "party-country": "Russia",
+  "submission3": "Questionnaire",
 
 //CASE 4
   "case-ref4": "BA0005",
@@ -138,6 +139,8 @@ module.exports = {
   "case-type4": "Safeguarding Invesitgation",
   "commodity4": "Barnets",
   "applicant4": "Tabon Holdings",
+  "applicant-user4": "Terry Crotchet",
+  "applicant-submission4": "Applicant",
   "created4": "	13 Nov 2020",
   "initiated4": "20 Nov 2020",
   "register-date4": "05 Dec 2020",
@@ -177,8 +180,12 @@ module.exports = {
   "party-user5": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
   "party-role5": "Trade Body",
+  "party-submission5": "Representative invite",
 
   //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
+  "rep-user6": "Arnie Swarts",
+  "rep-email6": "arnieswarts@BlueSteelPartners.com",
+
   "rep-user5": "Jonty Bodwin",
   "rep-email5": "jon.bodwins@BlueSteelPartners.com",
   "rep-role5": "De-activated",
@@ -201,9 +208,9 @@ module.exports = {
   "next-notice6": "24 Sept 2022",
 
   // This is their own case. Not representing another party
-  "representative6": "BlueSteel Partners",
-  "rep-user6": "Arnie Swarts",
-  "rep-email6": "arnieswarts@BlueSteelPartners.com",
+  //"representative1": "BlueSteel Partners",
+  //"rep-user6": "Arnie Swarts",
+ // "rep-email6": "arnieswarts@BlueSteelPartners.com",
   "rep-status6": "Deficiency notice issued",
   "rep-user-role6": "Regular",
   "rep-role6": "Contributor",

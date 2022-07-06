@@ -104,13 +104,13 @@
         <tbody class="govuk-table__body">  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">ArnieSwarts</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Representative invite
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission5']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>22 May 2022
@@ -144,7 +144,7 @@
   
       {% set submissionsHTML %}
       <h3 class="govuk-heading-m">Submissions to check</h3> 
-      <p>There are <strong>5</strong> submission waiting for deficicency checks.</p> 
+      <p>There are <strong>4</strong> submission waiting for deficicency checks.</p> 
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -212,13 +212,13 @@
         <tbody class="govuk-table__body">  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">ArnieSwarts</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>3rd party invite
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission5']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>01 Dec 2019
@@ -230,37 +230,37 @@
         
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['applicant-submission4']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from Tabon Holdings</span></a>
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from {{data['applicant4']}}</span></a>
             </td>    
           </tr>
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Farnets First Ltd</a>
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">JessRabbit</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Questionnaire
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission3']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>13 April 2021
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from Farnets First Ltd</span></a>
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from {{data['party3']}}</span></a>
             </td>    
           </tr>
   
@@ -272,7 +272,7 @@
               <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
@@ -281,24 +281,6 @@
               <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from {{data['party1']}}
               </span></a>
             </td>    
-          </tr>
-  
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">TEA ADVISORY LIMITED</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">PGTips</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Assign user to case
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>31 Jan 2022
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Check <span class="govuk-visually-hidden td-header">submission from TEA ADVISORY LIMITED</span></a>
-            </td>               
           </tr>
         </body>
       </table>   
@@ -374,19 +356,19 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Tabon Holdings</a>
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">SnailTrail</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Applicant
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['applicant-submission4']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>12 May 2022
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Publish <span class="govuk-visually-hidden td-header">Tabon Holdings submissions</span></a>
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Publish <span class="govuk-visually-hidden td-header">{{data['applicant4']}} submissions</span></a>
             </td>  
           </tr>
         </body>
@@ -404,7 +386,7 @@
             }
           },
           { 
-            label: "Submissions to check (5)",
+            label: "Submissions to check (4)",
             id: "new-submissions",
             panel: {
               html: submissionsHTML
