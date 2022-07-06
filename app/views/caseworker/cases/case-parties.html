@@ -40,11 +40,11 @@
     <form id="table-filter">
       <div id="table-filter"> 
         <div class="govuk-form-group table-sort-select clearfix">
-          <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-parties">
+          <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-roles">
             Filter parties by
           </label>
-          <select class="govuk-select" id="filter-parties" name="filter-parties">
-            <option value="All parties" selected>All roles</option>
+          <select class="govuk-select" id="filter-roles" name="filter-roles">
+            <option value="All roles" selected>All roles</option>
             <option value="Importer">Importer</option>
             <option value="Exporter">Exporter</option>
             <option value="Government">Government</option>
@@ -65,7 +65,7 @@
 
       <details class="govuk-details_orgs">
         <summary class="govuk-details__summary govuk-body">
-          {{data['party4']}}
+          {{data['party1']}}
           <span class="right-aligned-link">
             <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Submission waiting</strong>
           </span> 
@@ -75,8 +75,7 @@
           <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
           <br>
           <br>          
-          <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-
+          <h5 class="govuk-heading-s">Contacts</h5>
           <table class="govuk-table sortable1 mobile-table-border " id="table-header">
             <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
               A table listing all of the users that are related to this organisation's account
@@ -98,31 +97,34 @@
               </tr>
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a>
+                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3']}}
+                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email1']}}
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['rep-role3']}}
+                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role1']}}
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user3']}}</span></a>
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user1']}}</span></a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['app-user1']}}</a>
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['app-email1']}}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['app-role1']}}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['app-user1']}}</span></a>
                 </td>
               </tr>
           </table>    
         </div>
-      </details>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
-          {{data['party1']}}
-          <span class="right-aligned-link">
-            <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Unverified</strong>
-          </span> 
-        </summary>
-        <p><a href="" class="govuk-link--no-visited-state">Review submission</a></p>
-        <p><a href="" class="govuk-link--no-visited-state">Remove from sample list</a></p> 
-        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
       </details>
       <details class="govuk-details_orgs">
         <summary class="govuk-details__summary govuk-body">
@@ -151,14 +153,14 @@
     {{ govukTabs ({
       items: [
       { 
-        label: "Sampled",
+        label: "Sampled (3)",
         id: "importer-sampled",
         panel: {
           html: importerSampledHTML
         }
       },
       { 
-        label: "Not sampled",
+        label: "Not sampled (0)",
         id: "importer-nonsampled",
         panel: {
           html: importerNonSampledHTML
@@ -194,14 +196,14 @@
     {{ govukTabs ({
       items: [
       { 
-        label: "Sampled",
+        label: "Sampled (1)",
         id: "other-sampled",
         panel: {
           html: otherSampledHTML
         }
       },
       { 
-        label: "Not sampled",
+        label: "Not sampled (0)",
         id: "other-nonsampled",
         panel: {
           html: otherNonSampledHTML
@@ -209,75 +211,6 @@
       }
       ]
     }) }}
-
-    <table class="govuk-table sortable1 mobile-table-border">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col"> Importer </th>
-          <th class="govuk-table__header" scope="col"> Status </th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <div>
-              <details class="case-details govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    {{data['party1']}}
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list">
-                    <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
-                    <li><a href="#" class="govuk-link--no-visited-state">Simon Williams</a> - s.williams@BlueSteelPartners.com</li>
-                    <li><a href="#" class="govuk-link--no-visited-state">Tina Fray</a> - tina.fray@BlueSteelPartners.com</li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--red"><a href="#">Unverified</a></strong>
-    
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            {{data['party2']}}
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">New</strong>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            {{data['party3']}}
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">New</strong>
-  
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            {{data['party4']}}
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">New</strong>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            {{data['party5']}}
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">Verified</strong>
-          </td>
-        </tr>    
-      </tbody>
-    </table>
-
       
   </div>
 

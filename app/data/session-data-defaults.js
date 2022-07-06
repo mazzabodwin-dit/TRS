@@ -49,14 +49,14 @@ module.exports = {
   "app-user1": "Vladimir Boffoff",
   "app-email1": "v.boffoff@Steelman.org",
   "app-submission1": "Questionnaire",
-  "app-role1": "Producer",
+  "app-role1": "Applicant",
 
   //KEY USER: who-signin=org
   "party1": "Steel UK",
   "party-user1": "Jane Winder",
   "party-email1": "j.winder@steeluk.org",
   "party-country1": "United Kingdom",
-  "party-role1": "(unknown)",
+  "party-role1": "Interested party",
   "party-submission1": "Registration of Interest",
   "party-status1": "Representative invite received",
 
@@ -177,7 +177,7 @@ module.exports = {
 
   "party5": "Glorious Gabon Plc",
   "party-user5": "George Spinter",
-  "party-user5": "Spinter@glorgabon.gb",
+  "party-email": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
   "party-role5": "Trade Body",
   "party-submission5": "Representative invite",

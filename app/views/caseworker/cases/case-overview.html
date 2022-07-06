@@ -44,10 +44,10 @@
               Sort parties by
             </label>
             <select class="govuk-select" id="sort-party" name="sort-party">
-              <option value="No." selected>Party</option>
-              <option value="Case">User</option>
-              <option value="Type">Submission</option>
-              <option value="Applicant">Submitted</option>
+              <option value="Interested party" selected>Interested party</option>
+              <option value="Contact">Contact</option>
+              <option value="Submission">Submission</option>
+              <option value="Submitted">Submitted</option>
             </select>
   
             <label class="govuk-label govuk-visually-hidden" for="direction-party">
@@ -74,13 +74,13 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Contact
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -104,10 +104,10 @@
         <tbody class="govuk-table__body">  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission5']}}
@@ -122,10 +122,10 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
@@ -134,7 +134,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>28 May 2022
             </td>   
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=yes&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party1']}}
               </span></a>
             </td>        
           </tr> 
@@ -152,10 +152,10 @@
               Sort sumbissions by
             </label>
             <select class="govuk-select" id="sort-submission" name="sort-submission">
-              <option value="No." selected>Party</option>
-              <option value="Case">User</option>
-              <option value="Type">Submission</option>
-              <option value="Applicant">Submitted</option>
+              <option value="Interested party" selected>Interested party</option>
+              <option value="Contact">Contact</option>
+              <option value="Submission">Submission</option>
+              <option value="Submitted">Submitted</option>
             </select>
   
             <label class="govuk-label govuk-visually-hidden" for="direction-submission">
@@ -182,13 +182,13 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Contact
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -212,10 +212,10 @@
         <tbody class="govuk-table__body">  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission5']}}
@@ -230,10 +230,10 @@
         
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['applicant-submission4']}}
@@ -248,10 +248,10 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party3']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['submission3']}}
@@ -266,10 +266,10 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
@@ -296,10 +296,10 @@
               Sort sumbissions by
             </label>
             <select class="govuk-select" id="sort-published" name="sort-published">
-              <option value="No." selected>Party</option>
-              <option value="Case">User</option>
-              <option value="Type">Submission</option>
-              <option value="Applicant">Submitted</option>
+              <option value="Interested party" selected>Interested party</option>
+              <option value="Contact">Contact</option>
+              <option value="Submission">Submission</option>
+              <option value="Submitted">Submitted</option>
             </select>
   
             <label class="govuk-label govuk-visually-hidden" for="direction-published">
@@ -325,13 +325,13 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Contact
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -356,10 +356,10 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['applicant-submission4']}}

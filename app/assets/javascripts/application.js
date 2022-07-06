@@ -14,7 +14,7 @@ $(document).ready(function () {
     // AccessibleAutocomplete orignal
     accessibleAutocomplete.enhanceSelectElement({
       defaultValue: '',
-      placeholder: "Enter a registered company name or number",
+      placeholder: "Enter a company name or number",
       selectElement: document.querySelector('#search-reg-org'),
       onConfirm: function (data) {
         if (data !== undefined){

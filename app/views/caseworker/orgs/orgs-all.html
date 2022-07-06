@@ -34,13 +34,12 @@
               Sort active organisations cases by
             </label>
             <select class="govuk-select" id="sort-active-org" name="sort-active-org">
-              <option value="Case No." selected>Name</option>
-              <option value="Alerts">Type of org</option>
-              <option value="Case">Registration no.</option>
-              <option value="Type">Country</option>
-              <option value="Applicant">No. cases</option>
-              <option value="Initiated">No. users</option>
-              <option value="Status">Created</option>
+              <option value="Organisation" selected>Organisation</option>
+              <option value="Contact">Contact</option>
+              <option value="Country">Country</option>
+              <option value="No. cases">No. cases</option>
+              <option value="No. users">No. users</option>
+              <option value="Registered">Registered</option>
             </select>
 
             <label class="govuk-label govuk-visually-hidden" for="direction-active-org">
@@ -67,13 +66,12 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Type of org
+              <button class="govuk-button govuk-button--secondary">Contact
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -107,10 +105,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role4']}}
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user4']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>Republic of Gabon
@@ -128,10 +126,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="org-overview" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="org-overview" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>Representative
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
@@ -149,10 +147,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role3']}}
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>{{data['country3']}}
@@ -170,10 +168,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role5']}}
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>Republic of Gabon
@@ -191,10 +189,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['representative2']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative2']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['rep-role2']}}
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user2']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
@@ -212,10 +210,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['party-role1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
@@ -233,10 +231,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Type of org: </span>{{data['app-role1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['app-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Country: </span>United Kingdom
@@ -268,10 +266,10 @@
             Sort parties by
           </label>
           <select class="govuk-select" id="sort-party" name="sort-party">
-            <option value="No." selected>Party</option>
-            <option value="Case">User</option>
-            <option value="Type">Submission</option>
-            <option value="Applicant">Submitted</option>
+            <option value="Interested party" selected>Interested party</option>
+            <option value="Contact">Contact</option>
+            <option value="Submission">Submission</option>
+            <option value="Submitted">Submitted</option>
           </select>
 
           <label class="govuk-label govuk-visually-hidden" for="direction-party">
@@ -298,13 +296,13 @@
         <tr class="govuk-table__row">
           <th class="govuk-table__header" aria-sort="ascending">
             <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
           <th class="govuk-table__header">
             <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Contact
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
@@ -328,10 +326,10 @@
       <tbody class="govuk-table__body">  
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="org-overview" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="org-overview" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
@@ -347,28 +345,28 @@
 
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">Glorious Gabon Plc</a>
+            <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">ArnieSwarts</a>
+            <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>Representative invite
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission5']}}
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>22 May 2022
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">Glorious Gabon Plc</span></a>
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party5']}}</span></a>
           </td>             
         </tr>
 
         <tr class="govuk-table__row no-border">
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}

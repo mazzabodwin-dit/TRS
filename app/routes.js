@@ -216,22 +216,6 @@ router.post('/invite-contact-details-route', function (req, res) {
   } 
 })
 
-// Run this code on invite-uk-org: - is org UK reg?
-router.post('/invite-uk-reg-route', function (req, res) {
-
-  // Make a variable and give it the value from 'reginterest-uk-org'
-  var inviteUKReg = req.session.data['invite-uk-reg']
-
-  // Check whether the variable matches a condition
-  if (inviteUKReg == "yes"){
-    // Send user to next page
-    res.redirect('/public-site/manage-org/tasklist/invite-the-org-uk-search')
-  } else {
-    // Send user to no page
-    res.redirect('/public-site/manage-org/tasklist/invite-the-org')
-  }
-})
-
 // Caseworker
 // Caseworker
 // Caseworker
@@ -322,6 +306,23 @@ router.post('/reginterest-loa-existing-route', function (req, res) {
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-loa-new')
   } 
+})
+
+
+// Run this code on invite-party-contacts-choice - which option is chosen:
+router.post('/invite-party-contacts-choice-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-party'
+  var invitePartyContactsChoice = req.session.data['invite-party-contacts-choice']
+
+  // Check whether the variable matches a condition
+  if (invitePartyContactsChoice == "new-contact"){
+    // Send user to next page
+    res.redirect('/caseworker/cases/invite-party-contacts')
+  } else {
+    // Send user to no page
+    res.redirect('/caseworker/cases/invite-party-check')
+  }
 })
 
 
