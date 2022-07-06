@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-There's a problem - {{serviceName}}
+Invite cancelled - {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -17,16 +17,22 @@ There's a problem - {{serviceName}}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        There's a problem
+        Invite canceled
       </h1>
 
-      <p>We can't find this invite. Please contact the admin for this organisation as they may have cancelled it. </p>
-      
+      <p>We have cancelled the invite. If the user receives the email they will not be able to join your organisation. </p>
+
+  
+
+
+
+      <input type="hidden" id="show-invite" name="show-invite" value="no">
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "OK",
-          href: "../start"
+          text: "Manage team",
+          href: "manage-org#manage-team"
         }) }}    
+      </form>
     </div>
   </div>
 {% endblock %}
