@@ -28,13 +28,19 @@
   
       <p>We have sent an email to invite a party to join the following case.</p>
       <p>{{data['case-ref1']}} - {{data['case-name1']}}<br>
+        BlueSteel Partners<br>
+
         {% if data['invite-party-contacts-choice'] == "new-contact" %}
-          {{data['invite-contact-name']}}
-          {{data['invite-email-name']}}
-          {% else %}
-          {{data['invite-party-contacts-choice']}}
-        {% endif %}<br>
-        Steel UK<br>
+            {{data['invite-contact-name'] or data['rep-user3']}} <br>
+            {{data['invite-contact-email'] or data['rep-email3']}}
+            {% else %}
+            {% if data['invite-party-contacts-choice'] == "user1" %}
+              {{data['rep-user1']}}<br> {{data['rep-email1']}}
+              {% else %}
+              {{data['rep-user6']}} <br> {{data['rep-email6']}}
+            {% endif %}
+          {% endif %}
+          
 
       </p>
 

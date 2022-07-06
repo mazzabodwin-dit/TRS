@@ -193,7 +193,7 @@ module.exports = {
   "rep-email6": "arnieswarts@BlueSteelPartners.com",
 
   "rep-user5": "Jonty Bodwin",
-  "rep-email5": "jon.bodwins@BlueSteelPartners.com",
+  "rep-email5": "jonty.bodwin@BlueSteelPartners.com",
   "rep-role5": "De-activated",
   
 
