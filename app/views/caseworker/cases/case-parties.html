@@ -71,7 +71,7 @@
           </span> 
         </summary>
         <div class="govuk-details__text">
-          <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Review submission</a>
+          <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Review submission</a>&nbsp; &nbsp; 
           <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
           <br>
           <br>          
@@ -130,15 +130,33 @@
         <summary class="govuk-details__summary govuk-body">
           {{data['party2']}}
         </summary>
-        <p><a href="" class="govuk-link--no-visited-state">Remove from sample list</a></p> 
-        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-      </details>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
-          {{data['party3']}}
-        </summary>
-        <p><a href="" class="govuk-link--no-visited-state">Remove from sample list</a></p> 
-        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+        <div class="govuk-details__text">
+          <span class="right-aligned-link">
+          <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
+          <br>
+          <br>          
+          <h5 class="govuk-heading-s">Contacts</h5>
+          <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+            <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+              A table listing all of the users that are related to this organisation's account
+            </caption>
+            
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user2']}}</a>
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email2']}}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role2']}}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user2']}}</span></a>
+                </td>
+              </tr>
+          </table>    
+        </div>
       </details>
 
     {% endset %}
@@ -172,18 +190,38 @@
     <h3 class="govuk-heading-m">Other</h3>
     {% set otherSampledHTML %}
     <h4 class="govuk-heading-s">Sampled</h4>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
-          {{data['party5']}}
-          <span class="right-aligned-link">
-            <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Unverified</strong>
-          </span> 
-        </summary>
-        <p><a href="" class="govuk-link--no-visited-state">Verify party</a></p> 
-        <p><a href="" class="govuk-link--no-visited-state">Remove from sample list</a></p>
-
-        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-      </details>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['party5']}}
+      </summary>
+      <div class="govuk-details__text">
+        <span class="right-aligned-link">
+        <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
+        <br>
+        <br>          
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email5']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role5']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user5']}}</span></a>
+              </td>
+            </tr>
+        </table>    
+      </div>
+    </details>
      
      
     {% endset %}

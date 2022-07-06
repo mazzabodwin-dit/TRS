@@ -57,6 +57,7 @@ module.exports = {
   "party-email1": "j.winder@steeluk.org",
   "party-country1": "United Kingdom",
   "party-role1": "Interested party",
+  "party-case-role1": "Importer",
   "party-submission1": "Registration of Interest",
   "party-status1": "Representative invite received",
 
@@ -104,9 +105,12 @@ module.exports = {
   "next-task2": "n/a",
   "next-notice2": "n/a",
   
-  "party2": "Trouty Turks",
-  "party-role2": "Exporter",
+  "party2": "Trouty Works",
+  "party-case-role2": "Exporter",
+  "party-role2": "Interested party",
   "party-user2": "Clay Akin",
+  "party-email2": "Clay.Akin@trouty.works.co",
+
 
 //CASE 3
   "case-ref3": "AG0404",
@@ -153,7 +157,8 @@ module.exports = {
   "party4": "Best Barnets Corp",
   "party-user4": "Mohawks Fringe",
   "party-email4": "m.fringe@best-barnets.uk",
-  "party-role4": "Importer",
+  "party-case-role4": "Importer",
+  "party-role4": "Interested party",
 
   //Representative for this case is Demi Morre - see Case 3 for dets
 
@@ -177,9 +182,10 @@ module.exports = {
 
   "party5": "Glorious Gabon Plc",
   "party-user5": "George Spinter",
-  "party-email": "Spinter@glorgabon.gb",
+  "party-email5": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
-  "party-role5": "Trade Body",
+  "party-case-role5": "Trade Body",
+  "party-role5": "Interested party",
   "party-submission5": "Representative invite",
 
   //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
