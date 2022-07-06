@@ -36,7 +36,7 @@
         {% if (data['reg-type'] == "invite-own-org") %}
           {{ data['invite-user-email'] or data['party-email11'] }}
           {% else %}
-            {{ data['invite-rep-email'] or data['rep-email3'] }}
+            {{ data['invite-rep-email'] or data['rep-email3'] }}  fff{{date['user-permissions']}}
         {% endif %}
       </strong></p>
 
