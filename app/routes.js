@@ -199,6 +199,23 @@ router.post('/invite-type-no-case-route', function (req, res) {
   } 
 })
 
+// Run this code on invite-rep-which-org - which option is chosen:
+router.post('/invite-contact-details-route', function (req, res) {
+
+  // Make a variable and give it the value from 'invite-user-type'
+  var inviteRepWhatOrg = req.session.data['invite-rep-what-org']
+
+  // Check whether the variable matches a condition
+  if (inviteRepWhatOrg == "existing-org"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/tasklist/invite-rep-contact')
+  } 
+  if (inviteRepWhatOrg == "new-org"){
+    // Send user to next page
+    res.redirect('/public-site/manage-org/tasklist/invite-rep-contact-details')
+  } 
+})
+
 // Run this code on invite-uk-org: - is org UK reg?
 router.post('/invite-uk-reg-route', function (req, res) {
 

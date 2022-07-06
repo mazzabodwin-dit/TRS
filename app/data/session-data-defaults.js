@@ -74,6 +74,19 @@ module.exports = {
   "rep-mobile-national1": "07854329445",
   "rep-submission1": "Registration of Interest received",
 
+  //KEY USER - who-signin=rep-invite
+  //"representative1": "BlueSteel Partners",
+  "rep-role3": "Representative",
+  "rep-user3": "Demi Morre",  
+  "rep-email3": "demi.morre@BlueSteelPartners.com",
+  "rep-user-role3": "(Invite sent)",
+
+   //KEY USER - who-signin=rep-invite2
+  "rep-role2": "Representative",
+  "rep-user2": "Trevor McDoodle",  
+  "rep-email2": "doodle@lawyersinc.com",
+  "rep-user-role2": "(Invite sent)",
+  "representative2": "Lawyers Inc",
 
 //CASE 2 - case closed
   "case-ref2": "TS0002",
@@ -117,13 +130,6 @@ module.exports = {
   "party-role3": "Importer",
   "party-status5": "Questionnaires received",
   "party-country": "Russia",
-
-  //KEY USER - who-signin=rep-invite
-  //"representative1": "BlueSteel Partners",
-  "rep-role3": "Representative",
-  "rep-user3": "Demi Morre",  
-  "rep-email3": "demi.morre@BlueSteelPartners.com",
-  "rep-user-role3": "(Invite sent)",
 
 //CASE 4
   "case-ref4": "BA0005",
