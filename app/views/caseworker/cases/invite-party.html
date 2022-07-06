@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Invite party - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+{% set bodyClasses = 'caseworker-width cases-nav' %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="invite-party-contacts-choice" method="post" id="invite-party-contact-form"> 
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="search-reg-org">
+              Who are you inviting?
+            </label>
+          </h1>
+          <div id="sort-hint" class="govuk-hint">
+            Search existing organisations or add enter a new one.
+          </div>
+          <select class="govuk-select" id="search-reg-org" name="search-reg-org" onchange="showDiv('hidden_div', this); update()">
+            <option value="" class="selected"></option>
+            <option value="New organisation Steel UK">Invite new party "Blue"</option>
+            <option value="BLUESTEEL PARTNERS (49069784) 20 Highbury Place, Bramley, Leeds, LS13 4PW, United Kingdom">BLUESTEEL PARTNERS (49069784) 20 Highbury Place, Bramley, Leeds, LS13 4PW, United Kingdom</option>
+            <option value="ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ">ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ</option>
+            <option value="ALUMINUM ELECTRICS LIMITED (05337101) 20 Highbury Place, Bramley, Leeds, United Kingdom, LS13 4PW">ALUMINUM ELECTRICS LIMITED (05337101) 20 Highbury Place, Bramley, Leeds, United Kingdom, LS13 4PW</option>
+            <option value="ALUMINUM SQUIRREL LIMITED (SOUTH WALES) (08199303) 16 Bracken Park, Bingley, United Kingdom, BD16 3LG">ALUMINUM SQUIRREL LIMITED (SOUTH WALES) (08199303) 16 Bracken Park, Bingley, United Kingdom, BD16 3LG</option>
+            <option value="ALUMINIUM PROFILE SERVICES LIMITED (09849849) Clock Cottage, Corneybury Farm, Royston Road, Buntingford, Hertfordshire, England, SG9 9RS">ALUMINIUM PROFILE SERVICES LIMITED (09849849) Clock Cottage, Corneybury Farm, Royston Road, Buntingford, Hertfordshire, England, SG9 9RS</option>
+            <option value="ALUMINIUM INTEGRATED SOLUTIONS LIMITED (09424974) 61 Great North Road, Newcastle Upon Tyne, Tyne And Wear, United Kingdom, NE3 2DQ">ALUMINIUM INTEGRATED SOLUTIONS LIMITED (09424974) 61 Great North Road, Newcastle Upon Tyne, Tyne And Wear, United Kingdom, NE3 2DQ</option>
+            <option value="ALUMINIUM STAR LIMITED (07751077) 21 Princess Mary House, Vincent Street Westminster, London, England, SW1P 4HL">ALUMINIUM STAR LIMITED (07751077) 21 Princess Mary House, Vincent Street Westminster, London, England, SW1P 4HL</option>
+            <option value="ALUMINUMNOW LIMITED (07650927) 29 Belfont Walk, London, 29 Belfont Walk, London, Greater London, England, N7 0SN">"ALUMINUMNOW LIMITED (07650927) 29 Belfont Walk, London, 29 Belfont Walk, London, Greater London, England, N7 0SN</option>
+            <option value="AEROSPACE ALUMINUM CO., LTD (08667181) Unit G25 Waterfront Studios, 1 Dock Road, London, United Kingdom, E16 1AH">AEROSPACE ALUMINUM CO., LTD (08667181) Unit G25 Waterfront Studios, 1 Dock Road, London, United Kingdom, E16 1AH</option>
+          </select>
+        </div>
+
+        <!--<div style="display:none;" id="selected_company_wrapper">
+          <p>Check the company details carefully before continuing.</p>
+          <div class="govuk-inset-text" id="selected_company"></div>
+        </div>-->
+    
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Cancel</a>
+      </div>
+    </form> 
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
