@@ -5,7 +5,7 @@ There's a problem - {{serviceName}}
 {% endblock %}
 
 {% block header %}
- {% include "includes/header-public.html" %}
+ {% include "includes/header-public-signedout.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,7 @@ There's a problem - {{serviceName}}
       
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "OK",
+          text: "Trade Remedies home",
           href: "../start"
         }) }}    
     </div>
