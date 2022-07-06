@@ -33,11 +33,11 @@
           id: "createaccount-org-name",
           name: "createaccount-org-name",
           type: "text",
-          value: data['invite-rep-what-org'] or 'Lawyers R Us',
+          value: data['invite-rep-what-org'] or data['representative1'],
           attributes: {
             "readonly": true
           }
-        }) }}
+        }) }} 
        
         {% call govukFieldset({
           legend: {

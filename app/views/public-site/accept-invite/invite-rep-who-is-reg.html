@@ -28,11 +28,11 @@
       {% endset -%}
     
       {% set inviteRepNameHtml %} 
-        I am the email recipient: <strong>{{data['invite-rep-name'] or 'Demo Moore'}}</strong>   
+        I am the email recipient: <strong>{{data['invite-rep-name'] or data['rep-user1'] }}</strong>   
       {% endset -%}
 
       {% set inviteRepOrgHtml %} 
-        I work for: <strong>{{data['invite-rep-what-org'] or 'Lawyers R Us'}}</strong>   
+        I work for: <strong>{{data['invite-rep-what-org'] or data['representative1'] }}</strong>   
       {% endset -%}
     
     

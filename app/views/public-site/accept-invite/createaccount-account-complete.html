@@ -34,9 +34,9 @@
       <p>You can now access your account. To take part in a trade remedies investigation, verify your email address.</p>
       <p>We sent an email to <strong>      
         {% if (data['reg-type'] == "invite-own-org") %}
-          {{ data['invite-user-email'] or "lara@steeluk.com" }}
+          {{ data['invite-user-email'] or data['party-email11'] }}
           {% else %}
-            {{ data['invite-rep-email'] or "demi@lawyerus.com" }}
+            {{ data['invite-rep-email'] or data['rep-email3'] }}
         {% endif %}
       </strong></p>
 

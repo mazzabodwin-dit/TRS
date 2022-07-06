@@ -35,7 +35,7 @@ Create an account - {{serviceName}}
             name: "invite-user-name",
             type: "text",
             autocomplete: "name",
-            value: data['invite-user-name'] or 'Lara Crift'
+            value: data['invite-user-name'] or data['party-user11']
           }) }}
 
           {{ govukInput({
@@ -52,7 +52,7 @@ Create an account - {{serviceName}}
             attributes: {
               "readonly": true
             },
-            value: data['invite-user-email'] or 'lara@steeluk.com'
+            value: data['invite-user-email'] or data['party-email11']
           }) }}
 
           {% else %}
@@ -73,7 +73,7 @@ Create an account - {{serviceName}}
                 name: "invite-rep-name",
                 type: "text",
                 autocomplete: "name",
-                value: data['invite-rep-name'] or 'Demi Moore'
+                value: data['invite-rep-name'] or data['rep-user1']
               }) }}
 
               {{ govukInput({
@@ -90,7 +90,7 @@ Create an account - {{serviceName}}
                 attributes: {
                   "readonly": true
                 },
-                value: data['invite-rep-email'] or 'demi@lawyerus.com'
+                value: data['invite-rep-email'] or data['rep-email1']
               }) }}
 
               {% else %}

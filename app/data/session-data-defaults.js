@@ -179,7 +179,7 @@ module.exports = {
   "party-role5": "Trade Body",
 
   //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
-  "rep-user5": "Jon Bodwin",
+  "rep-user5": "Jonty Bodwin",
   "rep-email5": "jon.bodwins@BlueSteelPartners.com",
   "rep-role5": "De-activated",
   

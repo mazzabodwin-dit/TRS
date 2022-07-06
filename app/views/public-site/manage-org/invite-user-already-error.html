@@ -22,13 +22,14 @@ Existing user - {{serviceName}}
 
       <p>This email address is already registered to your organisation:</p>
       
-      <p><strong>{{data['invite-user-name'] or data['party-user11'] }}</strong></p>
+      <p>{{data['invite-user-name'] or data['party-user11'] }}: {{data['invite-user-email'] or data['party-email11'] }}</p>
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Cancel invite",
+          classes: "govuk-button--warning",
           href: "manage-org"
         }) }}    
-       <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
+       <a class="govuk-link govuk-link--no-visited-state"  href="invite-user-details">Back</a>
     </div>
   </div>
 {% endblock %}

@@ -47,9 +47,13 @@
     <!-- Put this text into the radio for email-->
         {% set emailText %}
           {% if data['reg-type'] == "invite-own-org" %}
-            By email: <strong>{{ data['invite-user-email'] or "lara@steeluk.com" }}</strong>
+            By email: <strong>{{data['invite-email'] or data['party-email11'] }}</strong>
+            {% else %}
+            {% if (data['reg-type'] == "invite-rep") and (data['invite-rep-who-reg'] == "Recipient") %}
+              By email: <strong>{{data['invite-email'] or data['rep-email1'] }}</strong>
               {% else %}
-                By email: <strong>{{ data['invite-rep-email'] or "demi@lawyerus.com" }}</strong>
+              By email: <strong>{{data['invite-email'] or data['rep-email3'] }}</strong>
+            {% endif %}
           {% endif %}
         {% endset -%}
 

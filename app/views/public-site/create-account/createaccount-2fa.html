@@ -48,11 +48,7 @@
 
     <!-- Put this text into the radio for email-->
         {% set emailText %}
-          {% if data['reg-type'] == "create" %}
-            By email: <strong>{{data['createaccount-email'] or data['party-email1'] }}</strong>
-              {% else %}
-                By email: <strong>{{data['invite-user-email'] or data['party-email11'] }}</strong>
-          {% endif %}
+          By email: <strong>{{data['createaccount-email'] or data['party-email1'] }}</strong>
         {% endset -%}
 
     <!-- Radio buttons-->
