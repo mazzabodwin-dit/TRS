@@ -57,14 +57,16 @@
             <!-- Show the invite for new or existing rep according to who has signed in: Org-->
             {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
               {% if data['invite-rep-what-org'] == "existing-org" %}
+                {{data['representative1']}}<br>
                 {{data['invite-rep-name'] or data['rep-user1'] }}<br>
-                {{data['invite-rep-email'] or data['rep-email1'] }}<br>
-                {{data['representative1']}}
+                {{data['invite-rep-email'] or data['rep-email1'] }}
+                
                 {% else %}
                 {% if (data['invite-rep-what-org'] == "new-org") %}
+                  {{data['invite-rep-org-name'] or data['representative2'] }}<br>
                   {{data['invite-rep-name'] or data['rep-user2'] }}<br>
-                  {{data['invite-rep-email'] or data['rep-email2'] }}<br>
-                  {{data['invite-rep-org-name'] or data['representative2'] }}
+                  {{data['invite-rep-email'] or data['rep-email2'] }}
+                  
                 {% endif %}
               {% endif %}
             {% endif %}<br>

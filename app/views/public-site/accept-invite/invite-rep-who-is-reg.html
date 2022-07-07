@@ -32,7 +32,12 @@
       {% endset -%}
 
       {% set inviteRepOrgHtml %} 
-        I work for: <strong>{{data['invite-rep-what-org'] or data['representative1'] }}</strong>   
+      {% if data['invite-rep-what-org'] == "new-org" %} 
+        I work for: <strong>{{data['createaccount-org-name'] or data['representative1'] }}</strong>
+        {% else %}   
+        I work for: <strong>{{data['invite-rep-what-org'] or data['representative1'] }}</strong> 
+      {% endif %}  
+
       {% endset -%}
     
     
