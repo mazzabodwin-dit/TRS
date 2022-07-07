@@ -290,15 +290,7 @@ router.post('/reginterest-loa-existing-route', function (req, res) {
   var reginterestAuthChooseContact = req.session.data['reginterest-auth-choose-contact']
 
   // Check whether the variable matches a condition
-  if (reginterestAuthChooseContact == "Simon Williams"){
-    // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
-  } 
-  if (reginterestAuthChooseContact == "Robbie Cortina"){
-    // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
-  } 
-  if (reginterestAuthChooseContact == "Tina Fray"){
+  if (reginterestAuthChooseContact == "Jane Winder"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
   } 
