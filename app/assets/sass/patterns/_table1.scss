@@ -185,7 +185,11 @@ table.sortable1 th:not([aria-sort]) button:hover span::after {
   border-top: 7px solid govuk-colour("mid-grey");
 }
 
-/* For the hiddlen select for sorting on mobile*/
+/* For the hiddlen select for sorting on mobile or the visible one used in caseworker caes*/
+.table-filter {
+  display: inline-block;
+}
+
 .table-sort-select {
   float: left;
   padding-right: 20px;
