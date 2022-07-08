@@ -25,13 +25,6 @@
   </div>
 
     <div class="govuk-grid-column-two-thirds">
-
-    <!-- 
-    <div class="govuk-inset-text">
-      <strong>{{data['case-name1']}}</strong><br><strong>{{data['rep-user1']}}</strong> has registered interest on-behalf of <strong>{{data ['party1']}}</strong>
-    </div>
-    -->
-
    
     <ol class="app-task-list">
       <li>
@@ -39,16 +32,7 @@
           <span class="app-task-list__section-number">1. </span>Review parties
         </h2>
         <ul class="app-task-list__items">
-
           {% include "includes/task-list-caseworker-org.html" %}
-
-
-          <!-- Test data -->
-          <!--<div class="govuk-inset-text">
-            Test data: <br>
-            Who reg started: {{ data['which-org-started']}}<br> 
-            Type of reg org: {{ data['reginterest-what-org']}}
-          </div> -->          
         </ul>
       </li>
 
@@ -57,18 +41,7 @@
           <span class="app-task-list__section-number">2. </span>Confirm
         </h2>
         <ul class="app-task-list__items">
-
-          <!-- 
-          Test data 
-          <div class="govuk-inset-text">
-            Test data:<br>
-            Check started: {{ data['check-started']}}<br>
-            Upload complete: {{ data['upload-complete']}}
-          </div>
-          -->
-
           {% include "includes/task-list-caseworker-accept.html" %}
-
         </ul>
       </li>
     </ol>
@@ -89,14 +62,12 @@
             <strong>Interested party</strong><br>
             {{data ['party1']}}
           </li> 
-
           {% if data['third-party'] == "yes" %}
             <li>
               <strong>Representative party</strong><br>
               {{data ['representative1']}}
             </li>
           {% endif %} 
-
           <li>
             <strong>Submitted by</strong><br>
             {% if data['third-party'] == "yes" %}
@@ -104,15 +75,11 @@
               {% else %}
               {{data ['party-user1']}}
             {% endif %} 
-
-
           </li>
-
         </ul>
       </nav>
     </aside>
   </div>
-
 </div>
 
 {% endblock %}

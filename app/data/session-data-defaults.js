@@ -89,6 +89,16 @@ module.exports = {
   "rep-user-role2": "(Invite sent)",
   "representative2": "Lawyers Inc",
 
+  //KEY USER: party that cannot be verified
+  "party111": "Awesome Steel",
+  "party-user111": "Itsa Steel",
+  "party-email111": "itsa.steel@awesomesteel.cn",
+  "party-country111": "China",
+  "party-role111": "Interested party",
+  "party-case-role111": "Unknown",
+  "party-submission111": "Registration of Interest",
+  "party-comment111": "Unable to find concrete details about this organisation through any of the usual channels. They have not responded to any email requests.",
+
 //CASE 2 - case closed
   "case-ref2": "TS0002",
   "case-name2": "Rainbow Trout from Turkey",
@@ -144,7 +154,9 @@ module.exports = {
   "commodity4": "Barnets",
   "applicant4": "Tabon Holdings",
   "applicant-user4": "Terry Crotchet",
+  "applicant-email4": "terry.crotchet@tabon-holdings.tb",
   "applicant-submission4": "Applicant",
+  "applicant-role4": "Applicant",
   "created4": "	13 Nov 2020",
   "initiated4": "20 Nov 2020",
   "register-date4": "05 Dec 2020",
@@ -159,6 +171,7 @@ module.exports = {
   "party-email4": "m.fringe@best-barnets.uk",
   "party-case-role4": "Importer",
   "party-role4": "Interested party",
+  "party-submission4": "Questionnaire",
 
   //Representative for this case is Demi Morre - see Case 3 for dets
 
@@ -184,7 +197,7 @@ module.exports = {
   "party-user5": "George Spinter",
   "party-email5": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
-  "party-case-role5": "Trade Body",
+  "party-case-role5": "Exporter",
   "party-role5": "Interested party",
   "party-submission5": "Representative invite",
 

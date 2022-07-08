@@ -47,7 +47,7 @@
             <option value="All roles" selected>All roles</option>
             <option value="Importer">Importer</option>
             <option value="Exporter">Exporter</option>
-            <option value="Government">Government</option>
+            <option value="Government">Can't be verified</option>
           </select>
         </div>
 
@@ -62,108 +62,185 @@
 
     {% set importerSampledHTML %}
     <h4 class="govuk-heading-s">Sampled</h4>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['party4']}}
+        <span class="right-aligned-link">
+          <a href="" class="govuk-link--no-visited-state"><strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Review submission</strong></a>
+        </span> 
+      </summary>
+      <div class="govuk-details__text">
+        <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Review submission</a>&nbsp; &nbsp; 
+        <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
+        <br>
+        <br>          
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          <tbody class="case-user">
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user4']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email4']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role4']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user4']}}</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    </details>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['party3']}}
+        <span class="right-aligned-link">
+          <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Review submission</strong>
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Review submission</a>&nbsp; &nbsp;
+        <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
+        <br>
+        <br>          
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          <tbody class="case-user">
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email3']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role3']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user3']}}</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    </details>
 
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
-          {{data['party1']}}
-          <span class="right-aligned-link">
-            <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Submission waiting</strong>
-          </span> 
-        </summary>
-        <div class="govuk-details__text">
-          <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Review submission</a>&nbsp; &nbsp; 
-          <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
-          <br>
-          <br>          
-          <h5 class="govuk-heading-s">Contacts</h5>
-          <table class="govuk-table sortable1 mobile-table-border " id="table-header">
-            <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-              A table listing all of the users that are related to this organisation's account
-            </caption>
-            
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email1']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['rep-role1']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user1']}}</span></a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email1']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role1']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user1']}}</span></a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['app-user1']}}</a>
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['app-email1']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['app-role1']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['app-user1']}}</span></a>
-                </td>
-              </tr>
-          </table>    
-        </div>
-      </details>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
-          {{data['party2']}}
-        </summary>
-        <div class="govuk-details__text">
-          <span class="right-aligned-link">
-          <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
-          <br>
-          <br>          
-          <h5 class="govuk-heading-s">Contacts</h5>
-          <table class="govuk-table sortable1 mobile-table-border " id="table-header">
-            <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-              A table listing all of the users that are related to this organisation's account
-            </caption>
-            
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user2']}}</a>
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email2']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role2']}}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user2']}}</span></a>
-                </td>
-              </tr>
-          </table>    
-        </div>
-      </details>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['party1']}}
+        <span class="right-aligned-link">
+          <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Verify party</strong>
+        </span> 
+      </summary>
+      <div class="govuk-details__text">
+        <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Verify party</a>&nbsp; &nbsp; <a href="" class="govuk-link--no-visited-state">Review submission</a></a>&nbsp; &nbsp;
+        <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
+        <br>
+        <br>          
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border" id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          <tbody class="case-user">
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['rep-role1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user1']}}</span></a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user1']}}</span></a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['app-user1']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['app-email1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['app-role1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['app-user1']}}</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    </details>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['applicant4']}}
+        <span class="right-aligned-link">
+          <strong class="govuk-tag govuk-tag--green govuk-link--no-visited-state">Verified</strong>
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <span class="right-aligned-link">
+        <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
+        <br>
+        <br>          
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          <tbody class="case-user">
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['applicant-user4']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['applicant-email4']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['applicant-role4']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['applicant-user4']}}</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    </details>
 
     {% endset %}
 
     {% set importerNonSampledHTML %}
       <h4 class="govuk-heading-s">Not sampled</h4>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+      <p>Importers that will not be sampled: 0</p>
     {% endset %}
 
 
@@ -187,15 +264,18 @@
       ]
     }) }}
 
-    <h3 class="govuk-heading-m">Other</h3>
+    <h3 class="govuk-heading-m">Exporter</h3>
     {% set otherSampledHTML %}
     <h4 class="govuk-heading-s">Sampled</h4>
     <details class="govuk-details_orgs">
       <summary class="govuk-details__summary govuk-body">
         {{data['party5']}}
+        <span class="right-aligned-link">
+          <strong class="govuk-tag govuk-tag--red govuk-link--no-visited-state">Verify party</strong>
+        </span>
       </summary>
       <div class="govuk-details__text">
-        <span class="right-aligned-link">
+        <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Verify party</a>&nbsp; &nbsp;<a href="" class="govuk-link--no-visited-state">Review submission</a>&nbsp; &nbsp;
         <a href="" class="govuk-link--no-visited-state">Remove from sample list</a></span> 
         <br>
         <br>          
@@ -204,7 +284,7 @@
           <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
             A table listing all of the users that are related to this organisation's account
           </caption>
-          
+          <tbody class="case-user">
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
@@ -219,6 +299,7 @@
                 <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user5']}}</span></a>
               </td>
             </tr>
+          </tbody>
         </table>    
       </div>
     </details>
@@ -228,7 +309,7 @@
 
     {% set otherNonSampledHTML %}
       <h4 class="govuk-heading-s">Not sampled</h4>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+      <p>Exporters that will not be sampled: 0</p>
     {% endset %}
 
     {{ govukTabs ({
@@ -249,6 +330,42 @@
       }
       ]
     }) }}
+
+    <h3 class="govuk-heading-m">Can't be verified</h3>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['party111']}}
+      </summary>
+      <div class="govuk-details__text">
+        <div class="govuk-inset-text govuk-inset-text__reginterest">
+          <strong>{{data['party111']}}</strong> could not be verified on this case <br>
+          <p>Verification was attempted on <strong>21 May 2022</strong> by <strong>{{data['caseworkername']}}</strong></p>
+          <p>"{{data['party-comment111']}}"</p>
+        </div>
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          <tbody class="case-user">
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email111']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-role111']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user111']}}</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    </details>
       
   </div>
 

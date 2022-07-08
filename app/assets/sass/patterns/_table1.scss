@@ -199,7 +199,7 @@ table.sortable1 th:not([aria-sort]) button:hover span::after {
 width: initial;
 }
 
-/* This is the select button in the case table in reg interest */
+/* This is the select button in the caseworker table in reg interest */
 table.sortable1 td button {
   padding: 0px;
   text-align: left;
@@ -210,4 +210,9 @@ table.sortable1 td button {
   background:  none;
   text-decoration: underline;
   text-underline-offset: 0.1em;
+}
+
+/*Caseworker case users table - putting border-topback*/ 
+.case-user tr:first-child {
+  border-top: 1px solid govuk-colour("mid-grey");
 }
