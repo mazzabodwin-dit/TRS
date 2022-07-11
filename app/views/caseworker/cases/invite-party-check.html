@@ -44,7 +44,11 @@
           Organisation
         </dt>
         <dd class="govuk-summary-list__value">
-          BlueSteel Partners
+          {% if data['invite-party-contacts-choice'] == "new-contact" %}
+            {{data['invite-party-org-name'] or "BlueSteel Partners"}}
+            {% else %}
+            BlueSteel Partners
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-party">
