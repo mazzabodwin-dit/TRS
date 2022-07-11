@@ -26,8 +26,7 @@
 
 
     <div class="govuk-inset-text govuk-inset-text__reginterest">
-      <strong>{{data['party1']}}</strong> has been verified on 1 case <br>
-      The last verification was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
+      <strong>{{data['party1']}}</strong> is waiting to be verified<br>
     </div>
    
   
@@ -76,13 +75,11 @@
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Interested party: 1 case
+                Interested party: 0
               </span>
             </summary>
             <div class="govuk-details__text">
-              <ul class="govuk-list">
-                <li><a href="" class="govuk-link--no-visited-state">AD3456: Jelly Tots from Japan</a> (Exporter) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Feb 2020</li>
-              </ul>
+              <strong>{{data['party1']}}</strong> is waiting to be verified<br>
             </div>
           </details>
         </div>
