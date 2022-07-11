@@ -1,0 +1,500 @@
+{{ data | log }}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cases: Steel plate from Russia – {{ serviceName }}
+{% endblock %}
+
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+{% set bodyClasses = 'caseworker-width cases-nav party-nav' %}
+
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+{% set bodyClasses = 'caseworker' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-heading-xl__case-header">
+      {{data['case-ref1']}}: {{data['case-name1']}}
+      <span class="govuk-heading-s govuk-!-font-weight-regular"><strong>Status:</strong> {{data['status1']}}</span>
+    </h1>
+    {% include "includes/caseworker-nav-case.html" %}
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">
+      {{data['representative1']}} 
+      <p class="right-aligned-link govuk-heading-s">
+        <a href="invite-party" class="govuk-link--no-visited-state">Action here</a>
+      </p> 
+    </h2>    
+   
+
+    {% set caseOverviewHTML %}
+    <h2 class="govuk-heading-m">Case overview</h2>
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <strong>{{data['representative1']}}</strong> is acting as a representative for <a href="case-party-steeluk" class="govuk-link govuk-link--no-visited-state">{{data['party1']}}</a> <br>
+      and has been verified on 2 previous cases <br>
+      The last verification was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
+    </div>
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-submission">
+            Sort sumbissions by
+          </label>
+          <select class="govuk-select" id="sort-submission" name="sort-submission">
+            <option value="Interested party" selected>Interested party</option>
+            <option value="Contact">Contact</option>
+            <option value="Submission">Submission</option>
+            <option value="Submitted">Submitted</option>
+          </select>
+
+          <label class="govuk-label govuk-visually-hidden" for="direction-submission">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-submission" name="direction-submission">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+
+    <table class="govuk-table sortable1 mobile-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the submissions waiting to be reviewed
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Date received
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>User
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Action
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+              <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Date recieved: </span>22 May 2022
+          </td>  
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span>Received
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>Pending
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party1']}}</span></a>
+          </td>             
+        </tr>
+      </body>
+    </table>   
+    {% endset %}
+    
+    {% set casesHTML %}
+    <h3 class="govuk-heading-m">All cases
+      <p class="right-aligned-link govuk-heading-s">
+        <a href="" class="govuk-link--no-visited-state">Invite organisation to case</a>
+      </p> 
+    </h3>
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-cases">
+            Sort your cases by
+          </label>
+          <select class="govuk-select" id="sort-cases" name="sort-cases">
+            <option value="No." selected>No.</option>
+            <option value="Case">Case</option>
+            <option value="Type">Type</option>
+            <option value="Applicant">Applicant</option>
+            <option value="Initiated">Initiated</option>
+            <option value="Status">Status</option>
+          </select>
+
+          <label class="govuk-label govuk-visually-hidden" for="direction-cases">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-cases" name="direction-cases">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+
+    <table class="govuk-table sortable1 mobile-table-border desktop-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the cases this organisation is involved in
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Role
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+            <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">No. </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr5']}}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['party-case-role5']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task5']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status5']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Some action<span class="govuk-visually-hidden td-header">{data['case-ref5']}}</span></a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">No. </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Type: </span><span title="{{data['case-type1']}}">{{data['case-typeabr6']}}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['rep-role6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Next task: </span>{{data['next-task6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Some action<span class="govuk-visually-hidden td-header">{data['case-ref6']}}</span></a>
+          </td>
+        </tr>
+      </body>
+    </table>    
+
+  {% endset %}
+
+  {% set usersHTML %}
+  <h3 class="govuk-heading-m">Users
+    <p class="right-aligned-link govuk-heading-s">
+      <a href="" class="govuk-link--no-visited-state">Invite user to case</a>
+    </p> 
+  </h3>
+  <form>
+    <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+      <div class="govuk-form-group table-sort-select">
+        <label class="govuk-label govuk-!-display-inline" for="sort-users">
+          Sort your cases by
+        </label>
+        <select class="govuk-select" id="sort-users" name="sort-users">
+          <option value="No." selected>Name</option>
+          <option value="Case">Email</option>
+        </select>
+
+        <label class="govuk-label govuk-visually-hidden" for="direction-users">
+          Direction
+        </label>
+        <select class="govuk-select" id="direction-users" name="direction-users">
+          <option value="Decending" selected>Decending</option>
+          <option value="Accending">Accending</option>
+        </select>
+      </div>
+
+      {{ govukButton({
+        text: "Sort",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
+  </form>  
+
+  <table class="govuk-table sortable1 mobile-table-border desktop-table-border" id="table-header">
+    <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+      A table listing all of the users that are related to this organisation's account
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" aria-sort="ascending">
+          <button class="govuk-button govuk-button--secondary">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Name
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+        </th>
+        <th class="govuk-table__header">
+          <button class="govuk-button govuk-button--secondary">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Email
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+        </th>
+        <th class="govuk-table__header">
+          <button class="govuk-button govuk-button--secondary">
+            <span class="govuk-visually-hidden--desktop">Sort by: </span>Org role
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+        </th>
+        <th class="govuk-table__header no-sort">
+          <span class="govuk-visually-hidden--desktop">Action:</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Email: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-email1']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Org role: </span>Admin
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user1']}}</span></a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-user5']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Email: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-email5']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Org role: </span>{{data['rep-role5']}}
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user5']}}</span></a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Email: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-email6']}}</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Org role: </span>Regular user
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user6']}}</span></a>
+        </td>
+      </tr>
+    </body>
+  </table> 
+  {% endset %}
+
+  {% set detailsHTML %}
+  <h3 class="govuk-heading-m">Details
+    <p class="right-aligned-link govuk-heading-s">
+      <a href="" class="govuk-link--no-visited-state">Edit details</a>
+    </p>
+  </h3> 
+  <div class="address-card">
+    <div class="address-container">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Organisation:</dt>
+          <dd class="govuk-summary-list__value">{{data['representative1']}} <br>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Contact:</dt>
+          <dd class="govuk-summary-list__value">{{data['rep-user1']}} <br>
+            {{data['rep-email1']}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address:</dt>
+          <dd class="govuk-summary-list__value">20 Highbury Place, Bramley, Leeds <br>
+            LS13 4PW<br>
+            United Kingdom
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Company number: </dt>
+          <dd class="govuk-summary-list__value">068482855 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Web address: </dt>
+          <dd class="govuk-summary-list__value"><a href="www.steeluk.com" target="_blank">BlueSteelPartners.com</a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">EORI: </dt>
+          <dd class="govuk-summary-list__value">GB205672212000</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">VAT no: </dt>
+          <dd class="govuk-summary-list__value">GB123456789</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+          <dd class="govuk-summary-list__value">150483782</dd>
+        </div>
+      </dl>
+
+    </div>
+  </div>
+  
+  {% endset %}
+
+
+
+    {{ govukTabs ({
+      items: [
+      { 
+        label: "Case overview",
+        id: "caseOverview",
+        panel: {
+          html: caseOverviewHTML
+        }
+      },
+      { 
+        label: "All cases",
+        id: "cases",
+        panel: {
+          html: casesHTML
+        }
+      },
+      { 
+        label: "Users",
+        id: "users",
+        panel: {
+          html: usersHTML
+        }
+      },
+      { 
+        label: "Details",
+        id: "details",
+        panel: {
+          html: detailsHTML
+        }
+      }
+      ]
+    }) }}
+  </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

@@ -40,7 +40,7 @@
    
 
     {% set caseOverviewHTML %}
-    <h4 class="govuk-heading-s">Case overview</h4>
+    <h2 class="govuk-heading-m">Case overview</h2>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
       <strong>{{data['party1']}}</strong> is waiting to be verified<br>
     </div>
@@ -120,10 +120,10 @@
             <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Date recieved: </span>01 Dec 2019
+            <span class="govuk-visually-hidden--desktop td-header">Date recieved: </span>22 May 2022
           </td>  
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Action: </span>Received
@@ -140,7 +140,7 @@
     {% endset %}
     
     {% set casesHTML %}
-      <h4 class="govuk-heading-s">All cases (1)</h4>
+      <h3 class="govuk-heading-m">All cases</h3>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -258,7 +258,7 @@
     {% endset %}
 
     {% set usersHTML %}
-      <h4 class="govuk-heading-s">Users</h4>
+      <h3 class="govuk-heading-m">Users</h3>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -335,16 +335,19 @@
     {% endset %}
 
     {% set detailsHTML %}
-    <h4 class="govuk-heading-s">Org detalis</h4>
+    <h3 class="govuk-heading-m">Details
+      <p class="right-aligned-link govuk-heading-s">
+        <a href="" class="govuk-link--no-visited-state">Edit details</a>
+      </p> 
+    </h3>
     <div class="address-card">
       <div class="address-container">
-        <h2 class="govuk-heading-m">
-          {{data['party1']}}
-          <p class="right-aligned-link govuk-heading-s">
-            <a href="" class="govuk-link--no-visited-state">Edit details</a>
-          </p> 
-        </h2> 
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Organisation:</dt>
+            <dd class="govuk-summary-list__value">{{data['party1']}} <br>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Contact:</dt>
             <dd class="govuk-summary-list__value">{{data['party-user1']}} <br>
@@ -391,7 +394,7 @@
     {{ govukTabs ({
       items: [
       { 
-        label: "Case overivew",
+        label: "Case overview",
         id: "caseOverview",
         panel: {
           html: caseOverviewHTML

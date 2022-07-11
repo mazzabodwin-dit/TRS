@@ -33,7 +33,7 @@
       </div> 
       
       {% set casesHTML %}
-      <h3 class="govuk-heading-s">Cases
+      <h3 class="govuk-heading-m">Cases
         <p class="right-aligned-link govuk-heading-s">
           <a href="" class="govuk-link--no-visited-state">Invite organisation to case</a>
         </p> 
@@ -155,11 +155,11 @@
     {% endset %}
 
     {% set usersHTML %}
-    <h2 class="govuk-heading-l">Users
+    <h3 class="govuk-heading-m">Users
       <p class="right-aligned-link govuk-heading-s">
         <a href="" class="govuk-link--no-visited-state">Invite user to case</a>
       </p> 
-    </h2>
+    </h3>
     <form>
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
         <div class="govuk-form-group table-sort-select">
@@ -236,16 +236,19 @@
     {% endset %}
 
     {% set detailsHTML %}
-    <h4 class="govuk-heading-s">Org detalis</h4>
+    <h3 class="govuk-heading-m">Org detalis
+      <p class="right-aligned-link govuk-heading-s">
+        <a href="" class="govuk-link--no-visited-state">Edit details</a>
+      </p> 
+    </h3>
     <div class="address-card">
-      <div class="address-container">
-        <h2 class="govuk-heading-m">
-          {{data['party1']}}
-          <p class="right-aligned-link govuk-heading-s">
-            <a href="" class="govuk-link--no-visited-state">Edit details</a>
-          </p> 
-        </h2> 
+      <div class="address-container"> 
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Organisation:</dt>
+            <dd class="govuk-summary-list__value">{{data['party1']}} <br>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Contact:</dt>
             <dd class="govuk-summary-list__value">{{data['party-user1']}} <br>
