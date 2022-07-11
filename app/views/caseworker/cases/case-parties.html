@@ -44,10 +44,11 @@
             Filter parties by
           </label>
           <select class="govuk-select" id="filter-roles" name="filter-roles">
-            <option value="All roles" selected>All roles</option>
+            <option value="All roles" selected>All parties</option>
             <option value="Importer">Importer</option>
             <option value="Exporter">Exporter</option>
-            <option value="Government">Can't be verified</option>
+            <option value="Invited">Invited</option>
+            <option value="Unverified">Can't be verified</option>
           </select>
         </div>
 
@@ -330,6 +331,37 @@
       }
       ]
     }) }}
+
+    <h3 class="govuk-heading-m">Invited to case<h3>
+    <details class="govuk-details_orgs">
+      <summary class="govuk-details__summary govuk-body">
+        {{data['representative1']}}
+      </summary>
+      <div class="govuk-details__text">
+        <div class="govuk-inset-text govuk-inset-text__reginterest">
+          <p>Invite was sent on <strong>21 May 2022</strong> by <strong>{{data['caseworkername']}}</strong></p>
+        </div>
+        <h5 class="govuk-heading-s">Contacts</h5>
+        <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+          <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+            A table listing all of the users that are related to this organisation's account
+          </caption>
+          <tbody class="case-user">
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Cancel invite <span class="govuk-visually-hidden td-header">{{data['rep-user3']}}</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    </details>
 
     <h3 class="govuk-heading-m">Can't be verified</h3>
     <details class="govuk-details_orgs">
