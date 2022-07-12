@@ -53,48 +53,13 @@
         ]
       }) }} 
 
-     <!-- <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--xl" for="search-reg-org">
-            Who are you representing?
-          </label>
-        </h1>
-       
-        <select class="govuk-select" id="reginterest-existing-org" name="reginterest-existing-org" onchange="showDiv('hidden_div', this); update()">
-          <option value="0" class="selected">Select organisation</option>
-          <option value="ALUMINUM TRADE LTD (05850450) Suite 19 Old Anglo House, Mitton Street, Stourport-On-Severn, Worcestershire, DY13 9AQ">ALUMINUM TRADE LTD</option>
-          <option value="ALUMINUM ELECTRICS LIMITED (05337101) 20 Highbury Place, Bramley, Leeds, United Kingdom, LS13 4PW">ALUMINUM ELECTRICS LIMITED</option>
-          <option value="ALUMINUM SQUIRREL LIMITED (SOUTH WALES) (08199303) 16 Bracken Park, Bingley, United Kingdom, BD16 3LG">ALUMINUM SQUIRREL LIMITED (SOUTH WALES)</option>
-        </select>
-      </div>
-
-      <div id="hidden_div">
-        <p>Check the organisation details below carefully. If the details do not match those of the organisation you are representing, you should return to the previous step and choose the "New" organisation option.</p>
-        <div class="govuk-inset-text" id="text"></div>
-      </div>
-
-      <script type="text/javascript">
-        function showDiv(divId, element)
-        {
-          document.getElementById(divId).style.display = element.value != 0 ? 'block' : 'none';
-        }
-
-        function update() {
-          var select = document.getElementById('reginterest-existing-org');
-          var option = select.options[select.selectedIndex];
-          
-          document.getElementById('text').innerHTML = option.value;
-        }
-
-        update();
-    </script>
-
-    -->
+    
+      
 
       {{ govukDetails({
         summaryText: "The organisation is not listed",
         html: ' <p class="govuk-body">This is a list of organisations you have previously represented using the Trade Remedies Service.</p>
-        <p>If you’re representing an organisation for the first time, go back and select ‘New client’.</p>'
+        <p>If you’re representing an organisation for the first time, go back and change your answer.</p>'
       }) }}
     
       <div class="govuk-button-group">
@@ -103,23 +68,8 @@
         }) }}
         <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
       </div>
-    
-
     </form>
-
-       <!-- Test data  
-       <div class="govuk-inset-text">
-        Test data: <br>
-        What org: {{data['reginterest-what-org']}}<br>
-        Selected org: {{data['reginterest-existing-org']}}<br>
-      </div>
-      -->
-      
-    
   </div>
-
-  
-
 </div>
 
 {% endblock %}

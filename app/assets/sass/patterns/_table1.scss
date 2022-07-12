@@ -68,6 +68,7 @@ th {
 .sortable1 tr.govuk-table__row th, .sortable1 tr.govuk-table__row td {
   padding-left: 8px;
   padding-right: 25px;
+  vertical-align: middle;
 }
 
 .sortable1 th {
@@ -215,4 +216,8 @@ table.sortable1 td button {
 /*Caseworker case users table - putting border-topback*/ 
 .case-user tr:first-child {
   border-top: 1px solid govuk-colour("mid-grey");
+}
+
+table.sortable1 .govuk-form-group {
+  margin-bottom: 0px;
 }

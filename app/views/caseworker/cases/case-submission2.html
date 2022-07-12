@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify Registered Interest – {{serviceName}}
+{% endblock %}
+
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+{% set bodyClasses = 'caseworker-width cases-nav party-nav' %}
+
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+{% set bodyClasses = 'caseworker' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-heading-xl__case-header">
+      {{data['case-ref1']}}: {{data['case-name1']}}
+      <span class="govuk-heading-s govuk-!-font-weight-regular"><strong>Status:</strong> {{data['status1']}}</span>
+    </h1>
+    {% include "includes/caseworker-nav-case.html" %}
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <strong>{{data['party1']}}</strong> is waiting to be verified<br>
+    </div> 
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Registration of Interest</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <strong>Interested party</strong><br>
+            {{data ['party1']}}
+          </li> 
+          {% if data['third-party'] == "yes" %}
+            <li>
+              <strong>Representative party</strong><br>
+              {{data ['representative1']}}
+            </li>
+          {% endif %} 
+          <li>
+            <strong>Submitted by</strong><br>
+            {% if data['third-party'] == "yes" %}
+              {{data ['rep-user1']}}
+              {% else %}
+              {{data ['party-user1']}}
+            {% endif %} 
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    
+    {% set latestHTML %}
+    <h3 class="govuk-heading-m">Latest submissions
+    </h3>
+
+
+
+
+
+    <table class="govuk-table sortable1 mobile-table-border desktop-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing the submissions provided by the organsiation
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Document
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+            <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	letter-of-authorisation-110918.docx</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">22 May 2022</a>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-visually-hidden">
+                    Is the docuement sufficient?
+                </legend>
+                <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                      Sufficient
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      Deficient
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </td>
+        </tr>
+      </body>
+    </table>  
+    <table class="govuk-table sortable1 mobile-table-border desktop-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing the submissions provided by the organsiation
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Document
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+            <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">  
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	letter-of-authorisation-110918.docx</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">22 May 2022</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Sufficient</a> | <a href="" class="govuk-link--no-visited-state">Deficient</a>
+          </td>
+        </tr>
+      </body>
+    </table>  
+
+  {% endset %}
+
+  {% set originalHTML %}
+ 
+  {% endset %}
+
+
+  {{ govukTabs ({
+    items: [
+    { 
+      label: "Latest submissions",
+      id: "latest",
+      panel: {
+        html: latestHTML
+      }
+    },
+    { 
+      label: "Orignal",
+      id: "original",
+      panel: {
+        html: originalHTML
+      }
+    }
+    ]
+  }) }}
+
+
+
+
+
+  </div>
+   
+
+
+ 
+</div>
+
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+

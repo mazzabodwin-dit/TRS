@@ -19,53 +19,52 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">3. Registration documentation</span>
+    <span class="govuk-caption-xl">3. Documentation</span>
     <h1 class="govuk-heading-xl">
-      Initial documentation 
+      Registration documentation 
     </h1>
-    <p>Download and complete the form. Once complete, upload two versions: one public, one private (max. file size 30MB).</p> 
+    <p>Download the documentation and complete the relevant forms.  Once complete, upload two versions of each: one confidential and one non-confidential (max. file size 30MB).</p> 
     <ul class="govuk-list">
       <li>
         {% if (data['pre-download'] == "yes" ) %}
-        <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px">  initial-documentation-form.docx (344KB) </a><span>&#10003;</span>
+        <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px">  registration-documentation-form.docx (344KB) </a><span>&#10003;</span>
         {% else %}
-        <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px">  initial-documentation-form.docx (344KB) </a>
+        <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px">  registration-documentation-form.docx (344KB) </a>
         {% endif %}
       </li>
-    </ul> 
-    <br>
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          How to create a public version of your initial documentation
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>So that all interested parties get the opportunity to understand case evidence, one version needs to be public. Remove all sensitive data from your public file.</p>
-        <p>Create one private file containing all details, and one file containing only information open to the public. For more help, see: <a href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries" target="_blank" class="link govuk-link--no-visited-state">creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
-        
-      </div>
-    </details>    
+    </ul>   
   </div>
 </div>
 
   <div id="doc-1">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How to create a non-confidential version of your registration documentation
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>So that all interested parties get the opportunity to understand case evidence, one version needs to be non-confidential. Remove all sensitive data from your non-confidential files.</p>
+            <p>Create one confidential file containing all details, and one file containing only information open to the public. For more help, see: <a href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries" target="_blank" class="link govuk-link--no-visited-state">creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
+            
+          </div>
+        </details>  
         <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
           Upload document 1
         </h2>
         <div class="row-colour">
           <div class="govuk-grid-column-one-half">
             <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
-              Public file
+              Non-confidential file
           </h3>
             {% set id="1" %}
             {% include 'includes/drag_drop_upload.html' %}
           </div>
           <div class="govuk-grid-column-one-half">
             <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
-              Private file
+              Confidential file
           </h3>
             {% set id="2" %}
             {% include 'includes/drag_drop_upload.html' %}
@@ -88,14 +87,14 @@
             
             <div class="govuk-grid-column-one-half">
             <h3 class="govuk-heading-s govuk-!-text-align-centre">
-              Public file
+              Non-confidential file
             </h3>
             {% set id="3" %}
             {% include 'includes/drag_drop_upload.html' %}
           </div>
           <div class="govuk-grid-column-one-half">
             <h3 class="govuk-heading-s govuk-!-text-align-centre">
-              Private file
+              Confidential file
             </h3>
             {% set id="4" %}
             {% include 'includes/drag_drop_upload.html' %}

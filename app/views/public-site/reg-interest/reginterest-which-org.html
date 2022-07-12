@@ -28,9 +28,9 @@
       <!-- Set the name of the org if is is "my org" whether from regsitering or default-->
       {% set myorgHTML %}
         {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-          My organisation: {{data['createaccount-org-name'] or data['party1'] }}
+          {{data['createaccount-org-name'] or data['party1'] }}
           {% else %}
-          My organisation: {{data['createaccount-org-name'] or data['representative1'] }}
+          {{data['createaccount-org-name'] or data['representative1'] }}
         {% endif %}
       {% endset -%}
 
@@ -55,7 +55,7 @@
             },
             {
               value: "new-org",
-              text: "A new client: someone I am representing for the first time using the Trade Remedies Service",
+              text: "An organisation I am representing for the first time using the Trade Remedies Service",
               checked: checked("reginterest-what-org", "new-org")
             }
           ]
@@ -82,13 +82,13 @@
               },
               {
                 value: "existing-org",
-                text: "An existing client: someone I have previously represented using the Trade Remedies Service",
+                text: "An organisation I have previously represented using the Trade Remedies Service",
                 checked: checked("reginterest-what-org", "existing-org")
 
               },
               {
                 value: "new-org",
-                text: "A new client: someone I am representing for the first time using the Trade Remedies Service",
+                text: "An organisation I am representing for the first time using the Trade Remedies Service",
                 checked: checked("reginterest-what-org", "new-org")
               }
             ]

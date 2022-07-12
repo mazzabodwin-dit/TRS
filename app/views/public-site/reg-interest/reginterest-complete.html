@@ -19,7 +19,7 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          Application complete
+          Registration complete
         </h1>
         <div class="govuk-panel__body">
           Case number:<br>
@@ -44,7 +44,7 @@
           {{data['case-ref']}} - {{data['case-name']}}
         {% endif %}<br>
         
-        Registering interest for: 
+        Interested party: 
         <!--Show the org who is reg for interest-->
        
 
@@ -86,7 +86,7 @@
         {% endif %}
       {% endif %}<br>
 
-        Application received on: <span id="date"></span>
+        Received on: <span id="date"></span>
       </p>
 
     
@@ -100,11 +100,11 @@
         
       <h2 class="govuk-heading-m">What happens next</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li>We will investigate your application, and let you know if your request to participate in this case is successful.  </li>
+        <li>We will review your registration of interest, and let you know if your request to participate in this case is successful.  </li>
         <li>You may be asked to complete a further questionnaire. We will contact you if so.  </li>
         <li>Organisations taking part in the investigation will all be placed on a public record of the case. </li>
       </ul>
-      <p>If you need to make any changes to your application, contact us as soon as possible at <strong>{{data ['case-ref']}}@traderemedies.gov.uk</strong>.</p>
+      <p>If you need to make any changes to your registration, contact us as soon as possible at <strong>{{data ['case-ref']}}@traderemedies.gov.uk</strong>.</p>
 
 
         {{ govukButton({
