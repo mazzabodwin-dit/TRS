@@ -22,9 +22,8 @@
     <h1 class="govuk-heading-xl">
       Representative invite
     </h1>
-    <p>Approve the Letter of Authority to allow the representative to submit documents on behalf of the interested party.</p>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
-      <a href="../orgs/org-bluesteel" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a> has been verified on 2 other cases
+      This submission was approved on 12 July 2021 by <a href="" class="">{{data['caseworkername']}}</a>
     </div> 
   </div>
   <div class="govuk-grid-column-one-third">
@@ -119,55 +118,11 @@
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['register-date5']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <div class="govuk-form-group">
-              <label class="govuk-visually-hidden" for="sort">
-                Is the document sufficient?
-              </label>
-              <select class="govuk-select" id="sufficient" name="sufficient" onchange="update(this);">
-                <option id="select" selected>Select</option>
-                <option value="Sufficient">Sufficient</option>
-                <option value="Deficient">Deficient</option>
-              </select>
-            </div>
+            Sufficient
           </td>
         </tr>       
       </body>
     </table>  
-
-    <div class="govuk-button-group" id="myDIV" style="display:none;">
-      {{ govukButton({
-        text: "Submit decision",
-        href: "case-submission-rep-suff"
-      }) }}    
-      <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-    </div>
-
-    <!--Script to show hide the submit button-->
-    <script>
-      function update(nameSelect)
-    {
-        console.log(nameSelect);
-        if(nameSelect){
-          selectValue = document.getElementById("select").value;
-            if(selectValue == nameSelect.value){
-                document.getElementById("myDIV").style.display = "none";
-            }
-            else{
-                document.getElementById("myDIV").style.display = "block";
-            }
-        }
-        else{
-            document.getElementById("myDIV").style.display = "block";
-        }
-    }
-    </script>
-
-
-    
-
-
-
-
 
   {% endset %}
 
@@ -192,8 +147,6 @@
       }) }}
     </div>
   </form>  
-
-    
 
   <table class="govuk-table sortable1 mobile-table-border desktop-table-border" id="table-header">
     <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
