@@ -36,7 +36,7 @@
       
       {% set newPartyHTML %}
       <h3 class="govuk-heading-m">Parties to verify</h3>  
-      <p>There are <strong>3</strong> parties waiting to be verified.</p>
+      <p>There are <strong>2</strong> parties waiting to be verified.</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -103,39 +103,20 @@
         </thead>
         <tbody class="govuk-table__body">  
           <tr class="govuk-table__row no-border">
-            <tr class="govuk-table__row no-border">
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="case-party-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>22 May 2022
-              </td>  
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['representative1']}}</span></a>
-              </td>             
-            </tr>
-            <tr class="govuk-table__row no-border">
-
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Party: </span><a href="case-party-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission5']}}
+              <span class="govuk-visually-hidden--desktop td-header">Submission: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>22 May 2022
             </td>  
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['party5']}}</span></a>
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden td-header">{{data['representative1']}}</span></a>
             </td>             
           </tr>
   
@@ -297,7 +278,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Submitted: </span>{{data['register-date1']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from {{data['party1']}}
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden td-header">submission from {{data['party1']}}
               </span></a>
             </td>    
           </tr>
@@ -398,7 +379,7 @@
         {{ govukTabs ({
           items: [
           { 
-            label: "Parties to verify (3)",
+            label: "Parties to verify (2)",
             id: "new-party",
             panel: {
               html: newPartyHTML

@@ -70,7 +70,7 @@
             </span> 
           </summary>
           <div class="govuk-details__text">
-            <span class="right-aligned-link"><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Verify party</a></span> 
+            <span class="right-aligned-link"><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Verify party</a>&nbsp; &nbsp; <a href="/caseworker/cases/case-party-bluesteel" class="govuk-link--no-visited-state">View party</a></span> 
             <br>
             <br>          
             <h4 class="govuk-heading-s">Case contacts</h4>
@@ -111,43 +111,7 @@
             </table>    
           </div>
         </details>
-        <details class="govuk-details_orgs">
-          <summary class="govuk-details__summary govuk-body">
-            <span class="govuk-details__summary-text">
-            {{data['party5']}}
-            </span>
-            <span class="right-aligned-link">
-              <strong class="govuk-tag govuk-tag--red">Verify party</strong>
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <span class="right-aligned-link"><a href="" class="govuk-link--no-visited-state">Verify party</a>&nbsp; &nbsp;<a href="" class="govuk-link--no-visited-state">Review submission</a></span> 
-            <br>
-            <br>          
-            <h4 class="govuk-heading-s">Case contacts</h4>
-            <table class="govuk-table sortable1 mobile-table-border " id="table-header">
-              <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-                A table listing all of the users that are related to the account for {{data['party5']}}
-              </caption>
-              <tbody class="case-user">
-                <tr class="govuk-table__row no-border">
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email5']}}
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Contact role: </span>{{data['party-role5']}}
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user5']}}</span></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>    
-          </div>
-        </details>
+        
         <details class="govuk-details_orgs">
           <summary class="govuk-details__summary govuk-body">
             <span class="govuk-details__summary-text">
@@ -158,7 +122,7 @@
             </span> 
           </summary>
           <div class="govuk-details__text">
-            <span class="right-aligned-link"><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Verify party</a>&nbsp; &nbsp; <a href="case-submission" class="govuk-link--no-visited-state">Review submission</a></a></span> 
+            <span class="right-aligned-link"><a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Verify party</a>&nbsp; &nbsp; <a href="case-submission" class="govuk-link--no-visited-state">Review submission</a>&nbsp; &nbsp; <a href="/caseworker/cases/case-party-steeluk" class="govuk-link--no-visited-state">View party</a></span> 
             <br>
             <br>          
             <h4 class="govuk-heading-s">Case contacts</h4>
@@ -274,7 +238,7 @@
             {{data['party4']}}
           </span>
           <span class="right-aligned-link">
-            <a href="" class="govuk-link--no-visited-state"><strong class="govuk-tag govuk-tag--yellow">Review submission</strong></a>
+            <strong class="govuk-tag govuk-tag--yellow">Review submission</strong>
           </span> 
         </summary>
         <div class="govuk-details__text">
@@ -347,6 +311,43 @@
       <details class="govuk-details_orgs">
         <summary class="govuk-details__summary govuk-body">
           <span class="govuk-details__summary-text">
+          {{data['party5']}}
+          </span>
+          <span class="right-aligned-link">
+            <strong class="govuk-tag govuk-tag--yellow">Review submission</strong>
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <span class="right-aligned-link"><a href="case-submission-rep" class="govuk-link--no-visited-state">Verify submission</a>&nbsp; &nbsp; <a href="" class="govuk-link--no-visited-state">View party</a></span> 
+          <br>
+          <br>          
+          <h4 class="govuk-heading-s">Case contacts</h4>
+          <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+            <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+              A table listing all of the users that are related to the account for {{data['party5']}}
+            </caption>
+            <tbody class="case-user">
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email5']}}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Contact role: </span>{{data['party-role5']}}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user5']}}</span></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>    
+        </div>
+      </details>
+      <details class="govuk-details_orgs">
+        <summary class="govuk-details__summary govuk-body">
+          <span class="govuk-details__summary-text">
           {{data['applicant4']}}
           </span>
           <span class="right-aligned-link">
@@ -409,41 +410,6 @@
         ]
       }) }}
 
-      <h3 class="govuk-heading-m">Invited to case</h3>
-      <div class="govuk-tabs">
-        <details class="govuk-details_orgs">
-          <summary class="govuk-details__summary govuk-body">
-            <span class="govuk-details__summary-text">
-            Steelers Inc
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <div class="govuk-inset-text govuk-inset-text__reginterest">
-              <p>Invite was sent on <strong>21 May 2022</strong> by <strong>{{data['caseworkername']}}</strong></p>
-            </div>
-            <h4 class="govuk-heading-s">Case contacts</h4>
-            <table class="govuk-table sortable1 mobile-table-border " id="table-header">
-              <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-                A table listing all of the organisations that are invited to join this case
-              </caption>
-              <tbody class="case-user">
-                <tr class="govuk-table__row no-border">
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">Simone Cheshire</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Email: </span>simone.cheshire@steelers.inc
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Cancel invite <span class="govuk-visually-hidden td-header">Steelers Inc</span></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>    
-          </div>
-        </details>
-      </div>
-
       <h3 class="govuk-heading-m">Can't be verified</h3>
       <div class="govuk-tabs">
         <details class="govuk-details_orgs">
@@ -476,6 +442,40 @@
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user111']}}</span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>    
+          </div>
+        </details>
+      </div>
+      <h3 class="govuk-heading-m">Invited to case</h3>
+      <div class="govuk-tabs">
+        <details class="govuk-details_orgs">
+          <summary class="govuk-details__summary govuk-body">
+            <span class="govuk-details__summary-text">
+            Steelers Inc
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <div class="govuk-inset-text govuk-inset-text__reginterest">
+              <p>Invite was sent on <strong>21 May 2022</strong> by <strong>{{data['caseworkername']}}</strong></p>
+            </div>
+            <h4 class="govuk-heading-s">Case contacts</h4>
+            <table class="govuk-table sortable1 mobile-table-border " id="table-header">
+              <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+                A table listing all of the organisations that are invited to join this case
+              </caption>
+              <tbody class="case-user">
+                <tr class="govuk-table__row no-border">
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">Simone Cheshire</a>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop td-header">Email: </span>simone.cheshire@steelers.inc
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Cancel invite <span class="govuk-visually-hidden td-header">Steelers Inc</span></a>
                   </td>
                 </tr>
               </tbody>

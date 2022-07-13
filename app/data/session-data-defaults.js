@@ -197,7 +197,7 @@ module.exports = {
   "party-user5": "George Spinter",
   "party-email5": "Spinter@glorgabon.gb",
   "party-status5": "Questionnaire received",
-  "party-case-role5": "Exporter",
+  "party-case-role5": "Importer",
   "party-role5": "Interested party",
   "party-submission5": "Representative invite",
 

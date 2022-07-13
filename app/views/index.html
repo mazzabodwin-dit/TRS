@@ -137,13 +137,13 @@
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
                       <a href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=no&notify-contact=no" class="govuk-link--no-visited-state">
-                        Register interest - primary party only
+                        Verify Register interest - Interested party only
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Complete</span>
-                    <span class="app-task-list__task-name">
+                     <span class="app-task-list__task-name">
                       <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?duplicate-org=no&third-party=yes&notify-contact=yes">
-                        Register interest - with representative party</a> 
+                        Verify Register interest - with Rep</a> 
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Complete</span>
                   </li>
@@ -151,6 +151,64 @@
                     <span class="app-task-list__task-name">
                       <a href="caseworker/cases/invite-party" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Invite to case
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Mostly complete</span>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/case-submission-rep" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Verify representative invite to case
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/cases-all" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        All cases
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Mostly complete</span><br>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/case-overview" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Single case - overview page
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Mostly complete</span><br>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/case-parties" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Case - parties v1
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/case-parties2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Case - parties v2
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/case-party-bluesteel" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        An org within a case
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/case-party-unverified" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        An org that could not be verified
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/orgs/orgs-all" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        All organisations
+                      </a>
+                    </span>
+                    <span class="app-task-list__tag" id="reginterest-direct-status">Mostly complete</span><br>
+                    <span class="app-task-list__task-name">
+                      <a href="caseworker/orgs/org-bluesteel" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Single organisation
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Mostly complete</span>
@@ -180,13 +238,13 @@
                 <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=no&welcome-message=close&reginterest-task=null&invite-rep-task=null">Dashboard for org - not-activated</a> 
               </li> 
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&reginterest-task=Draft&regnterest-due-date=current&reginterest-what-org=null">Dashboard for org - with draft Reg Interest</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&reginterest-task=Draft&regnterest-due-date=current&reginterest-what-org=my-org">Dashboard for Org - with draft Reg Interest</a> 
               </li>   
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&reginterest-task=Submitted&regnterest-due-date=current&reginterest-what-org=my-org">Dashboard for org - with Reg Interest</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=rep&account-activated=yes&reginterest-task=Draft&regnterest-due-date=current&reginterest-what-org=existing-org">Dashboard for Rep - with draft Reg Interest</a> 
               </li> 
               <li>
-                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=rep&account-activated=yes&reginterest-task=Submitted&regnterest-due-date=current&reginterest-what-org=my-org">Dashboard for rep - with Reg Interest</a> 
+                <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=rep&account-activated=yes&reginterest-task=Submitted&regnterest-due-date=current&reginterest-what-org=existing-org">Dashboard for Rep - with submitted Reg Interest</a> 
               </li>
               <li>
                 <a class="govuk-link--no-visited-state" href="/public-site/dashboard?who-signin=org&account-activated=yes&invite-rep-task=Draft">Dashboard - with draft Rep invite</a> 
