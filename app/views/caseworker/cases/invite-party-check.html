@@ -45,9 +45,9 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            {{data['invite-party-org-name'] or "BlueSteel Partners"}}
+            {{data['invite-party-org-name'] or "Steel UK"}}
             {% else %}
-            BlueSteel Partners
+            Steel UK
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -65,13 +65,11 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            {{data['invite-contact-name'] or data['rep-user3']}} <br>
-            {{data['invite-contact-email'] or data['rep-email3']}}
+            {{data['invite-contact-name'] or data['party-user1']}} <br>
+            {{data['invite-contact-email'] or data['party-email1']}}
             {% else %}
             {% if data['invite-party-contacts-choice'] == "user1" %}
-              {{data['rep-user1']}}<br> {{data['rep-email1']}}
-              {% else %}
-              {{data['rep-user6']}} <br> {{data['rep-email6']}}
+              {{data['party-user1']}}<br> {{data['party-email1']}}
             {% endif %}
           {% endif %}
         </dd>

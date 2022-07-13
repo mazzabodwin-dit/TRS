@@ -25,11 +25,7 @@
     <form action="/invite-party-contacts-choice-route" novalidate method="post" id="invite-party-contacts-choice-form">
 
       {% set user1HTML %}
-        {{data['rep-user1'] }} - {{data['rep-email1'] }}
-      {% endset -%}
-
-      {% set user6HTML %}
-        {{data['rep-user6'] }} - {{data['rep-email6'] }}
+        {{data['party-user1'] }} - {{data['party-email1'] }}
       {% endset -%}
 
       {{ govukRadios({
@@ -48,11 +44,6 @@
             value: "user1",
             html: user1HTML,
             checked: checked("invite-party-contacts-choice", "user1")
-          },
-          {
-            value: "user6",
-            html: user6HTML,
-            checked: checked("invite-party-contacts-choice", "user6")
           },
           {
             divider: "or"
