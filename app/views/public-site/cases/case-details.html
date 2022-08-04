@@ -5,11 +5,7 @@
 {% endblock %}
 
 {% block header %}
-  {% if (data['signin'] == "no") %}
-   {% include "includes/header-public-signedout.html" %}
-  {% else %}
-    {% include "includes/header-public.html" %}
-  {% endif %}
+  {% include "includes/header-public.html" %}
 {% endblock %}
 
 {% block beforeContent %}

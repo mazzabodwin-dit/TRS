@@ -9,11 +9,7 @@
 
 
 {% block header %}
-  {% if (data['signin'] == "yes") %}
-    {% include "includes/header-public.html" %}
-    {% else %}
-    {% include "includes/header-public-signedout.html" %}
-  {% endif %}
+  {% include "includes/header-public.html" %}
 {% endblock %}
 
 {% block beforeContent %}
