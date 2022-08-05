@@ -99,6 +99,8 @@
           <li>
             <a href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#about-our-questionnaires" target="_blank" class="govuk-link govuk-link--no-visited-state">About our questionnaires (opens in a new window or tab)</a>
           </li> 
+
+          {% if (data['regcase-task'] == "complete") %}
           <li>
             <br>
             <strong>Email the case team</strong>   
@@ -107,7 +109,8 @@
                 {% else %}       
                   <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
               {% endif %}
-          </li> 
+          </li>
+          {% endif %} 
         </ul>
       </nav>
     </aside>
