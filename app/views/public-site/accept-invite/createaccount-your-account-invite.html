@@ -20,6 +20,8 @@ Create an account - {{serviceName}}
         <h1 class="govuk-heading-xl">
           Your account details
         </h1>
+        <p>You will be creating this account for your own organisation and will be the admin for the account. This is the organisation you are directly employed by.</p>
+
         {% if data['reg-type'] == "invite-own-org" %}
           {{ govukInput({
             label: {
