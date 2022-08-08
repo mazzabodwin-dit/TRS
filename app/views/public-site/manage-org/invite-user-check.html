@@ -37,7 +37,7 @@
             Employee of your org
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="invite-user-type">
+          <a href="invite-user-type" class="govuk-link govuk-link--no-visited-state">
             Change
             <span class="govuk-visually-hidden"> user type</span>
           </a>
@@ -52,7 +52,7 @@
             {{data['invite-user-email'] or data['party-email11']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="invite-user-details">
+          <a href="invite-user-details" class="govuk-link govuk-link--no-visited-state">
             Change
             <span class="govuk-visually-hidden"> who is being invited</span>
           </a>
@@ -67,12 +67,32 @@
             {{data['invite-user-permissions'] or "Admin user"}}<br>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="invite-user-permissions">
+          <a href="invite-user-permissions" class="govuk-link govuk-link--no-visited-state">
             Change
             <span class="govuk-visually-hidden"> users permissions</span>
           </a>
         </dd>
       </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['invite-case'] == "case1" %}<!-- Show case name-->
+          {{data['case-ref1'] or "AD2224"}} - {{data['case-name1'] or "Steel plate from Russia"}}
+            {% else %}
+            No case assigned
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="invite-user-case" class="govuk-link govuk-link--no-visited-state">
+            Change
+            <span class="govuk-visually-hidden"> case</span>
+          </a>
+        </dd>
+      </div>
+      
     
     </dl>
 

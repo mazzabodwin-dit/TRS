@@ -13,12 +13,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+{% include "includes/beta-banner.html"%}
+
 
 {% endblock %}
 
@@ -33,8 +29,16 @@
 
       <p>We have sent an invite to:</p>
       <p>{{data['invite-user-name'] or data['party-user11'] }}: {{data['invite-user-email'] or data['party-email11'] }} <br>
-      {{data['user-permissions'] or "Admin user"}}</p>
-      <p>When they have registered, you will be able to assign them to a case and they can contribute according to their permissions.</p>
+      Permission: {{data['user-permissions'] or "Admin user"}}<br>
+      Case: 
+      {% if data['invite-case'] == "case1" %}
+          <!-- Show case name-->
+        {{data['case-ref1'] or "Steel plate from Russia"}} - {{data['case-name1'] or "Steel plate from Russia"}}
+        {% else %}
+        No case assigned
+      {% endif %}
+      </p>
+      <p>Once they have registered, you can manage the cases they are assigned to and change their permissions as you require.</p>
      
       <form action="manage-org#manage-team" method="post" id="invite-complete-form">              
 
