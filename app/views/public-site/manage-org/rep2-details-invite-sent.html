@@ -64,7 +64,7 @@ Manage user - {{serviceName}}
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['invite-rep-name'] or data['rep-user1'] }}
+            {{data['invite-rep-name'] or data['rep-user2'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -72,7 +72,7 @@ Manage user - {{serviceName}}
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['invite-rep-email'] or data['rep-email1'] }}
+            {{data['invite-rep-email'] or data['rep-email2'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -81,28 +81,6 @@ Manage user - {{serviceName}}
           </dt>
           <dd class="govuk-summary-list__value">
               Representative 
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Active
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Cases
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link--no-visited-state" href="">AD12345 - Chips</a>
-              </li>
-              <li><a class="govuk-link--no-visited-state" href="">BA65435 - Sausages</a>
-              </li>
-            </ul>
           </dd>
         </div>
       </dl>
@@ -115,30 +93,10 @@ Manage user - {{serviceName}}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Name:</dt>
           <dd class="govuk-summary-list__value">
-            {{data['invite-org-name'] or data['representative1'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Address:</dt>
-          <dd class="govuk-summary-list__value">345, The Shard, London <br>
-            EC2 3TF<br>
-            United Kingdom
+            {{data['invite-org-name'] or data['representative2'] }}
           </dd>
         </div>
       </dl>
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">Update details</h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16"> 
-            <li>
-              <a class="govuk-link--no-visited-state" href="account-changepass">Manage user cases</a>
-            </li>    
-          </ul>
-        </nav>
-      </aside>
     </div>
   </div>
 {% endblock %}
