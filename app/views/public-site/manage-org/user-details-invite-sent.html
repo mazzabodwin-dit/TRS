@@ -38,11 +38,18 @@ Manage user - {{serviceName}}
       <div class="address-card">
         <div class="address-container">
           <h3 class="govuk-heading-s">User invite
+            <span class="cancel-invite-link govuk-body">
+              <a href="invite-user-cancel?cancel-invite=org" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">Cancel invite</a>
+            </span>
           </h3>
-          <p>Status: invite sent
-            <span class="cancel-invite-link">
-              <a href="invite-user-cancel" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">Cancel invite</a>
-            </span><br>
+          <p>Status: Sent<br>
+            {% if data['invite-case'] == "case1" %}
+              <!-- Show case name-->
+              {{data['case-ref1'] or "AD2224"}} - {{data['case-name1'] or "AD2224 - Steel plate from Russia"}}
+              {% else %}
+              No case assigned
+            {% endif %}
+            <br>
             <span class="govuk-body-s"><span id="date"></span></span>
           </p>
         </div>
@@ -88,14 +95,6 @@ Manage user - {{serviceName}}
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['user-permissions'] or "Admin user"}}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            In-active
           </dd>
         </div>
       </dl>
