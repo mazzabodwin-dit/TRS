@@ -14,7 +14,7 @@ Manage user - {{serviceName}}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="manage-org">Manage organisation</a>
@@ -38,8 +38,12 @@ Manage user - {{serviceName}}
       <div class="address-card">
         <div class="address-container">
           <h3 class="govuk-heading-s">User invite
+            <span class="cancel-invite-link govuk-body">
+              <a href="invite-user-cancel?cancel-invite=rep" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">Cancel invite</a>
+            </span>
           </h3>
-          <p>Status: invite sent  
+          <p>Status: {{data['invite-rep-task']}}
+            
             <br>
             {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
             <br> 
