@@ -30,13 +30,15 @@
       <p>We have sent an invite to:</p>
       <p>{{data['invite-user-name'] or data['party-user11'] }}: {{data['invite-user-email'] or data['party-email11'] }} <br>
       Permission: {{data['user-permissions'] or "Admin user"}}<br>
-      Case: 
+      <!--
+        Case: 
       {% if data['invite-case'] == "case1" %}
-          <!-- Show case name-->
+         
         {{data['case-ref1'] or "Steel plate from Russia"}} - {{data['case-name1'] or "AD2224 - Steel plate from Russia"}}
         {% else %}
         No case assigned
       {% endif %}
+      -->
       </p>
       <p>Once they have registered, you can manage the cases they are assigned to and change their permissions as you require.</p>
      
