@@ -1,24 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width">
+{% extends "layout.html" %}
 
-<!--Browser tab -->
-    <title>Email: Your interest in the case has been registered</title>
-<!--Browser end -->
+{% block pageTitle %}
+  Choose case - {{serviceName}}
+{% endblock %}
 
-    <style type="text/css">
-      @media only screen and (min-device-width: 581px) {
-        .content {
-          width: 580px !important;
-        }
-      }
-      body { margin:0 !important; }
-      div[style*="margin: 16px 0"] { margin:0 !important; }
-    </style>
-  </head>
-  <body style="font-family: Helvetica, Arial, sans-serif;font-size: 16px;margin: 0;color:#0B0C0C;">
+{% block header %}
+{% endblock %}
+
+{% block content %}
     <table role="presentation" width="100%" style="border-collapse: collapse;min-width: 100%;width: 100% !important;" cellpadding="0" cellspacing="0" border="0">
       <tbody>
         <tr align="center">
@@ -34,8 +23,8 @@
 
 
 <!-- Email header starts -->
-                    <h3 style="font-weight: 300; font-size: 20px;">Your interest in the case has been registered</h3> 
-                    <h4 style="font-size: 15px;">Trade Remedies Service <span style="font-size: 13px; font-weight: 300;">trade.remedies.service@notifications.service.gov.uk></span></h4>
+                    <h3 class="govuk-heading-s">Your interest in the case has been registered</h3> 
+                    <p>Trade Remedies Service <span style="font-size: 13px; font-weight: 300;">trade.remedies.service@notifications.service.gov.uk></span></p>
   <!-- Email header ends -->
 
 
@@ -144,5 +133,4 @@
         <td height="200"><p>For user testing <a href="/public-site/dashboard?reginterest-complete=yes">Back to TRS</a></p></td>
       </tr>
     </table>
-  </body>
-</html>
+{% endblock %}

@@ -23,7 +23,7 @@
 
 
 <!-- Email header starts -->
-                    <h3 class="govuk-heading-s">You are invited to represent ((organisation name)) on a Trade Remedies case</h3> 
+                    <h3 class="govuk-heading-s">Trade remedies investigation ((case-ref)) – ((case-name))</h3> 
                     <p>Trade Remedies Service <span style="font-size: 13px; font-weight: 300;">trade.remedies.service@notifications.service.gov.uk></span></p>
   <!-- Email header ends -->
 
@@ -84,21 +84,32 @@
 
 <!-- Content starts -->
 
-            <p>Dear ((username)),</p>
-            <p>You have been invited by ((invited_by)) to take part in a Trade Remedies case on behalf of ((orgnaisation_name)):</p>
-            <p>((Case_number)) - ((Case_name))</p>   
-            <p>Create an account to participate in the investigation.</p> 
-            <blockquote style="Margin: 0 0 20px 0; border-left: 10px solid #BFC1C3;padding: 15px 0 0.1px 15px; font-size: 19px; line-height: 25px;">
-              <p style="Margin: 0 0 20px 0;"><strong><a href="/public-site/accept-invite/invite-rep-who-is-reg" style="color: #005ea5;">
-                https://trade-remedies.digital/email-invite?code=ZMc4Z0zLJszTGPHrd6JQTiD93g2cgtCG0aE
-              </a></strong></p>
-            </blockquote>
-            <p>Yours sincerely, <br>
-              Investigations Team
-              <br>
-              Trade Remedies Authority
-              <br>
-            </p>           
+            <p>Dear {{data['party-user1']}}</p>
+            <p>We are contacting you because the UK government’s Trade Remedies Authority (TRA) has started an investigation that we believe may be of interest to you.</p>
+            <p>The case was started due to alleged unfair trading practices of concern to UK industry.</p>
+            <p>{{data['case-ref1']}} - {{data['case-name1']}}</p>
+            <p>You can find more details in the Notice of Initiation:</p>
+            <p><a href="" class="govuk-link">((url-of-website.com))</a></p>
+
+            <h3 class="govuk-heading-m">How to register your interest</h3>
+            <p>You can register your interest in this investigation. If accepted, you will receive updates and be able to submit evidence on behalf of your organisation.</p>
+            <p>Sign in to your account on the Trade Remedies Service website and then register your interest in this case: </p>
+            <p><a href="/public-site/signin" class="govuk-link--no-visited-state">https://trade-remedies.london.cloudapps.digital/invitation/a7cdcd09-1f4b-43ab-bc5e-3ceed77b7d4f/c3cbfc76-780b-4306-9c3d-1806b9e7332a/.</a></p>
+
+            <div class="govuk-inset-text">
+              Register your interest before: {{data['register-date1']}}
+            </div>
+            
+            <p>If you have further questions, please email us at 
+              <a href="" class="govuk-link"></a>{{data['register-date1']}}@traderemedies.gov.uk.</a>
+            </p>
+            <p>Yours sincerely</p>
+            <p>Investigations Team<br>
+              Trade Remedies<br>
+              Department for International Trade<br>
+              Contact: <a href="" class="govuk-link"></a>{{data['register-date1']}}@traderemedies.gov.uk.</a>
+            </p>
+
 <!-- Content ends -->
 
           </td>
@@ -124,7 +135,7 @@
       </tr>
       <tr>
         <td></td>
-        <td height="200"><p></p></td>
+        <td height="200"><p>For user testing <a href="">Back to TRS</a></p></td>
       </tr>
     </table>
 {% endblock %}
