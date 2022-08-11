@@ -50,7 +50,7 @@
             <p><a href="" class="">Register interest in a case</a></p>  
             <p>This will let you to take part in the investigation, get updates on important developments, comment on TRA’s findings before a final decision is made, and request a reconsideration of a final determination.</p>
 
-            {% if data['user-permissions'] == "Admin" %}
+            {% if data['user-permissions'] != "Regular user" %}
               <p><a href="" class="">Manage team</a></p>
               <p>Grant access to your organisation's active cases or invite new users into your team.</p>
             {% endif %}    
