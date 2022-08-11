@@ -25,9 +25,10 @@
       <h1 class="govuk-heading-xl">
         Welcome
       </h1>
+      <p>This is your Trade Remedies Service (TRS) dashboard. You can view cases you are involved in and track your registration of interest in a case.</p>
+
 
       {% if (data['account-activated'] == "no")  %}
-
         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
           <div class="govuk-notification-banner__header">
             <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -42,17 +43,26 @@
             </p>
           </div>
         </div>
+        {% else %}
+          {% if (data['reginterest-task'] == "Submitted") or (data['reginterest-task'] == "Draft") or (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent")  %}
+            {% else %}
+            <p>You can use the TRS to:</p>
+            <p><a href="" class="">Register interest in a case</a></p>  
+            <p>This will let you to take part in the investigation, get updates on important developments, comment on TRA’s findings before a final decision is made, and request a reconsideration of a final determination.</p>
+
+            {% if data['user-permissions'] == "Admin" %}
+              <p><a href="" class="">Manage team</a></p>
+              <p>Grant access to your organisation's active cases or invite new users into your team.</p>
+            {% endif %}    
+              <p><a href="" class="">Manage your account details</a></p>
+              <p>Update your contact details from the top right of your screen.</p>
+          {% endif %}
 
       {% endif %}
-
-      <p>This is your Trade Remedies Service (TRS) dashboard.</p>
-
-      {% if (data['reginterest-task'] == "Submitted") or (data['reginterest-task'] == "Draft") or (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent")  %}
-        {% else %}
-        <p>View cases you are involved in on this page. Click on the case to see more information and a record of your interactions with the TRA.</p>
+       
       
 
-      <!-- Active cases interest -->
+      <!-- Active cases interest 
       <div class="address-card">
         <div class="address-container">
           <h2 class="govuk-heading-m">
@@ -61,7 +71,8 @@
            <p>You have no active cases</p>
         </div>
       </div>
-      {% endif %}
+      -->
+      
       <!-- Reg interest -->
       {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
         <div class="address-card">
