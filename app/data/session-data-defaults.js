@@ -39,11 +39,11 @@ module.exports = {
   "country1": "Russia",
   "created1": "12 May 2022",
   "initiated1": "13 May 2022",
-  "register-date1": "21 June 2022",
-  "updated1": "14 May 2022",
+  "register-date1": "21 September 2022",
+  "updated1": "14 August 2022",
   "status1": "Initiation notices published",
   "next-task1": "Publish questionnaires",
-  "next-notice1": "26 July 2022",
+
 
   "applicant1": "Steelman Plc",
   "app-user1": "Vladimir Boffoff",
