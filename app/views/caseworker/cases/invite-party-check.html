@@ -64,14 +64,11 @@
           Contact details
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            {{data['invite-contact-name'] or data['party-user1']}} <br>
-            {{data['invite-contact-email'] or data['party-email1']}}
-            {% else %}
-            {% if data['invite-party-contacts-choice'] == "user1" %}
-              {{data['party-user1']}}<br> {{data['party-email1']}}
-            {% endif %}
-          {% endif %}
+          <ul class="govuk-list govuk-list--bullet">
+            {% for contact in data['invite-party-contacts-choice'] %}
+              <li>{{ contact }}</li>
+            {% endfor %}
+          </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-party-contacts-choice" class="govuk-link--no-visited-state">

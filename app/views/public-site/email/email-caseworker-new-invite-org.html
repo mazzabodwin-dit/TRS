@@ -84,30 +84,29 @@
 
 <!-- Content starts -->
 
-            <p>Dear ((user-name)),</p>
+            <p>Dear {{data['party-user1']}}</p>
             <p>We are contacting you because the UK government’s Trade Remedies Authority (TRA) has started an investigation that we believe may be of interest to you.</p>
             <p>The case was started due to alleged unfair trading practices of concern to UK industry.</p>
-            <p>((case-ref)) - ((case-name))</p>
-            <p>You can find more details in the Notice of Initiation:</p>
-            <p><a href="" class="govuk-link">((url-of-website.com))</a></p>
+            <p>{{data['case-ref1']}} - {{data['case-name1']}}</p>
+            <p>You can find more details in the Notice of Initiation:
+            <a href="" class="govuk-link">((url-of-website.com))</a></p>
 
             <h3 class="govuk-heading-m">How to register your interest</h3>
+            <p>Register your interest before: {{data['register-date1']}}</p>
             <p>You can register your interest in this investigation. If accepted, you will receive updates and be able to submit evidence on behalf of your organisation.</p>
+            <p>Only one person from your organisation will be able to Register Interest so please liase with your team first.</p>
             <p>Create an account on the Trade Remedies Service website and then register your interest in this case: </p>
-            <p><a href="/public-site/start" class="govuk-link--no-visited-state">https://www.trade-remedies.service.gov.uk/</a></p>
+            <p><a href="/public-site/signin" class="govuk-link--no-visited-state">https://www.trade-remedies.service.gov.uk/accounts/login/</a></p>
 
-            <div class="govuk-inset-text">
-              Register your interest before: {{data['register-date1']}}
-            </div>
             
             <p>If you have further questions, please email us at 
-              <a href="" class="govuk-link"></a>TS0002@traderemedies.gov.uk.</a>
+              <a href="" class="govuk-link"></a>{{data['case-ref1']}}@traderemedies.gov.uk.</a>
             </p>
             <p>Yours sincerely</p>
             <p>Investigations Team<br>
               Trade Remedies<br>
               Department for International Trade<br>
-              Contact: <a href="" class="govuk-link"></a>TS0002@traderemedies.gov.uk.</a>
+              Contact: <a href="" class="govuk-link"></a>{{data['case-ref1']}}@traderemedies.gov.uk.</a>
             </p>
 
 <!-- Content ends -->

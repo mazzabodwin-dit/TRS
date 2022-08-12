@@ -26,23 +26,18 @@
         </h1>
       </div>
   
-      <p>We have sent an email to invite a party to join the following case.</p>
-      <p>{{data['case-ref1']}} - {{data['case-name1']}}<br>
-        Steel UK<br>
-
-        {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            {{data['invite-contact-name'] or data['party-user1']}} <br>
-            {{data['invite-contact-email'] or data['party-email1']}}
-            {% else %}
-            {% if data['invite-party-contacts-choice'] == "user1" %}
-              {{data['party-user1']}}<br> {{data['party-email1']}}
-            {% endif %}
-          {% endif %}
-          
-
+      <p>We have sent an email to invite an interested party to join the following case:</p>
+      <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
+      Organisation: Steel UK<br>
+      Contacts:
+        <ul class="govuk-list govuk-list--bullet">
+          {% for contact in data['invite-party-contacts-choice'] %}
+            <li>{{ contact }}</li>
+          {% endfor %}
+        </ul>
       </p>
 
-      <p>The invite will ask the representative to create and account and Register Interest in the case. </p>
+      <p>The invite will ask the interested party to create and account and Register Interest in the case. </p>
       <p>You will be alerted when they have completed their Registration of Interest.</p>
 
       <form action="case-parties" method="post" id="dashboard">              
