@@ -26,21 +26,32 @@
         </h1>
       </div>
   
-      <p>We have sent an email to invite an interested party to join the following case:</p>
-      <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
-      Organisation: Steel UK<br>
-      Contacts:
-        <ul class="govuk-list govuk-list--bullet">
-          {% for contact in data['invite-party-contacts-choice'] %}
-            <li>{{ contact }}</li>
-          {% endfor %}
-        </ul>
-      </p>
+      <p>We have sent an invite email to the following details:</p>
+      {% if data ['direct-invite'] != "yes" %}
+        <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
+          Organisation: Steel UK<br>
+          Contacts:
+          <ul class="govuk-list govuk-list--bullet">
+            {% for contact in data['invite-party-contacts-choice'] %}
+              <li>{{ contact }}</li>
+            {% endfor %}
+          </ul>
+        </p>
 
-      <p>The invite will ask the interested party to create and account and Register Interest in the case. </p>
-      <p>You will be alerted when they have completed their Registration of Interest.</p>
+        {% else %}
+        <p>Case:  AD2224 - Steel plate from Russia<br>
+          Organisation: Bluesteel Partners<br>
+          Contacts:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>{{data['rep-user6']}} - {{data['rep-email6']}}</li>
+          </ul>
+        </p>
+      {% endif %}
 
-      <form action="case-parties" method="post" id="dashboard">              
+      <p>The invite will ask the interested party to register interest in the case. </p>
+      <p>You will be alerted when they have completed their registration of interest.</p>
+
+      <form action="../case-parties" method="post" id="dashboard">              
 
         <div class="govuk-button-group">
           {{ govukButton({
