@@ -44,12 +44,10 @@
             Filter parties by
           </label>
           <select class="govuk-select" id="filter-roles" name="filter-roles">
-            <option value="All parties" selected>All parties</option>
-            <option value="Unverified">Unverified parties</option>
-            <option value="Applicant">Applicant</option>
-            <option value="Importer">Importer</option>
-            <option value="Invited">Invited to case</option>
-            <option value="Unverified">Can't be verified</option>
+            <option value="Name" selected>Name</option>
+            <option value="Email">Email</option>
+            <option value="Case role">Case role</option>
+
           </select>
         </div>
 
@@ -60,8 +58,8 @@
       </div>
       <h3 class="govuk-heading-m">Unverified parties</h3>
       <div class="govuk-tabs">
-        <details class="govuk-details_orgs">
-          <summary class="govuk-details__summary govuk-body">
+        <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+          <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
             {{data['representative1']}}
             </span>
@@ -87,7 +85,7 @@
                     <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email1']}}
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Contact role: </span>{{data['rep-role1']}}
+                    <span class="govuk-visually-hidden--desktop td-header">Case role: </span>Primary
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['rep-user1']}}</span></a>
@@ -101,7 +99,7 @@
                     <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email6']}}
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Contact role: </span>Not on case
+                    <span class="govuk-visually-hidden--desktop td-header">Case role: </span>Not on case
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-party-complete?direct-invite=yes" class="govuk-link--no-visited-state">Invite to case <span class="govuk-visually-hidden td-header">{{data['rep-user6']}}</span></a>
@@ -112,8 +110,8 @@
           </div>
         </details>
         
-        <details class="govuk-details_orgs">
-          <summary class="govuk-details__summary govuk-body">
+        <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+          <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
             {{data['party1']}}
             </span>
@@ -153,8 +151,8 @@
       <h3 class="govuk-heading-m">Applicant</h3>
       {% set applicantSampledHTML %}
       <h4 class="govuk-heading-s">Sampled</h4>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
+      <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+        <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             {{data['applicant1']}}
           </span>
@@ -218,8 +216,8 @@
       <h3 class="govuk-heading-m">Importer</h3>
       {% set importerSampledHTML %}
       <h4 class="govuk-heading-s">Sampled</h4>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
+      <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+        <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             {{data['party4']}}
           </span>
@@ -256,8 +254,8 @@
           </table>    
         </div>
       </details>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
+      <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+        <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
           {{data['party3']}}
           </span>
@@ -294,8 +292,8 @@
           </table>    
         </div>
       </details>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
+      <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+        <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
           {{data['party5']}}
           </span>
@@ -331,8 +329,8 @@
           </table>    
         </div>
       </details>
-      <details class="govuk-details_orgs">
-        <summary class="govuk-details__summary govuk-body">
+      <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+        <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
           {{data['applicant4']}}
           </span>
@@ -398,8 +396,8 @@
 
       <h3 class="govuk-heading-m">Can't be verified</h3>
       <div class="govuk-tabs">
-        <details class="govuk-details_orgs">
-          <summary class="govuk-details__summary govuk-body">
+        <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+          <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
             {{data['party111']}}
             </span>
@@ -437,8 +435,8 @@
       </div>
       <h3 class="govuk-heading-m">Invited to case</h3>
       <div class="govuk-tabs">
-        <details class="govuk-details_orgs">
-          <summary class="govuk-details__summary govuk-body">
+        <details class="govuk-details govuk-details_orgs" data-module="govuk-details">
+          <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
             Steelers Inc
             </span>

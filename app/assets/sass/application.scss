@@ -135,6 +135,10 @@ $govuk-assets-path: '/govuk/assets/';
   margin-bottom: 0px;
 }
 
+.govuk-details_orgs {
+  margin-bottom: 0px;
+}
+
 .govuk-details_orgs .govuk-details__summary {
   display: block;
   margin-bottom: 10px;
@@ -151,7 +155,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-details__summary:focus {
   outline: 3px solid transparent;
-  box-shadow: 0 -2px #ffdd00, 0 2px govuk-colour("dark-grey");
+  box-shadow: 0 -2px #ffdd00, 0 2px govuk-colour("light-grey");
 }
 
 .govuk-details_orgs .govuk-details__text {
