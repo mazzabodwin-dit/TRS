@@ -51,11 +51,9 @@
             <select class="govuk-select" id="sort-cases" name="sort-cases">
               <option value="Case No." selected>Case No.</option>
               <option value="Case">Case</option>
-              <option value="Representing">Representing</option>
-              <option value="Role">Role</option>
               <option value="Status">Status</option>
-              <option value="Updated">Updated</option>
-              <option value="Primary">Primary</option>
+              <option value="Case stage">Case stage</option>
+              <option value="Update">Update</option>
             </select>
 
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
@@ -74,7 +72,7 @@
         </div>
       </form>
 
-      <table class="govuk-table sortable1 table-border" id="table-header">
+      <table class="govuk-table sortable1 table-border mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your organisation's case</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -189,6 +187,7 @@
             <option value="User" selected>User</option>
             <option value="Email">Email</option>
             <option value="Account role">Account role</option>
+            <option value="Number of cases">Number of cases</option>
           </select>
 
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
@@ -207,7 +206,7 @@
       </div>
     </form>
 
-    <table class="govuk-table sortable1 table-border" id="table-header">
+    <table class="govuk-table sortable1 table-border mobile-table-border" id="table-header">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
         A table listing all of the users that have access to this organisations account
       </caption>

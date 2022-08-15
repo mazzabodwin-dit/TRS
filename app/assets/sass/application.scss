@@ -37,18 +37,20 @@ $govuk-assets-path: '/govuk/assets/';
 
 /* Action links that are right alignhed to a header...both sites*/
 .right-aligned-link {
-  float: none;
+  /*float: none;*/
+  float: right;
   padding-top: 0px;
   clear: both;
 }
 
-@media (min-width: 40.0625em) {
+/*@media (min-width: 40.0625em) {
   .right-aligned-link {
     float: right;
     padding-top: 0px;
 
   }
 }
+*/
 
 /* createaccount / reginterest - autocomplete on new company */
 
