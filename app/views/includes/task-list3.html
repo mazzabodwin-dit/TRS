@@ -113,42 +113,26 @@
         </li>
 
         {% else %}
-          <!-- If the user has visited loa show: -->
-          {% if (data['upload-loa-task'] == "started")  %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="invite-upload-loa" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
-                  Letter of Authority
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="loa-upload-status">In progress</strong>
-            </li>
+        <!-- If the user has not started loa but has completed section 2 show: -->
+        {% if (data['invite-which-org-task'] == "complete")  %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="invite-upload-loa?invite-loa-task=started" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
+                Letter of Authority
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Not started</strong>
+          </li>
 
-            {% else %}
-              <!-- If the user has not started loa but has completed section 2 show: -->
-              {% if (data['invite-which-org-task'] == "complete")  %}
-              <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a href="invite-upload-loa?invite-loa-task=started" class="govuk-link--no-visited-state" aria-describedby="loa-upload-status">
-                      Letter of Authority
-                    </a>
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Not started</strong>
-                </li>
-
-                {% else %}
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name" aria-describedby="loa-upload-status">              
-                        Letter of Authority
-                      </span>
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Cannot start yet</strong>
-                    </li>
-
-              {% endif %}
-
-          {% endif %}
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name" aria-describedby="loa-upload-status">              
+              Letter of Authority
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="loa-upload-status">Cannot start yet</strong>
+          </li>
+        {% endif %}
       {% endif %}
-
     {% endif %}
   {% endif %}
 
