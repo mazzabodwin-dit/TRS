@@ -16,49 +16,82 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% if data['verify-type'] == "reg-interest" %}
 
-      {% if data['accept-on-case-result'] == "accept" %}
+        {% if data['accept-on-case-result'] == "accept" %}
 
-        <div class="govuk-panel govuk-panel--confirmation">
-          <h1 class="govuk-panel__title">
-            Registration of Interest accepted
-          </h1>
-        </div>
-        <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-        <p>You have accepted the Registration of Interest submitted by <strong>{{ data['rep-user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Registration of Interest accepted
+            </h1>
+          </div>
+          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
+          <p>You have accepted the registration of interest submitted by <strong>{{ data['rep-user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
 
-      {% else %}
-
-        <div class="govuk-panel govuk-panel--confirmation">
-          <h1 class="govuk-panel__title">
-            Registration of Interest declined
-          </h1>
-        </div>
-        <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
-
-        {% if data['third-party'] == "yes"%}
-          <p>You have declined the registration of interest submitted by <strong>{{ data['rep-user1'] }}</strong> from <strong>{{ data['representative1'] }}</strong> on-behalf of <strong>{{data['party1'] }}</strong>.</p>
           {% else %}
-          <p>You have declined the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Registration of Interest declined
+            </h1>
+          </div>
+          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
+
+          {% if data['third-party'] == "yes"%}
+            <p>You have declined the registration of interest submitted by <strong>{{ data['rep-user1'] }}</strong> from <strong>{{ data['representative1'] }}</strong> on-behalf of <strong>{{data['party1'] }}</strong>.</p>
+            {% else %}
+            <p>You have declined the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
+          {% endif %}
         {% endif %}
 
-
-
+        <p>An email will be sent to those involved.</p>
+          
+        <h2 class="govuk-heading-m">What next?</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="../cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
+          <li><a href="../cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
+        </ul>
       {% endif %}
 
-      <p>An email will be sent to the party who registered interest</p>
-        
-      <h2 class="govuk-heading-m">What next?</h2>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="../cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
-        <li><a href="../cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
-      </ul>
+      {% if data['verify-type'] == "rep-invite" %}
+
+        {% if data['accept-on-case-result'] == "accept" %}
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Representative invite accepted
+            </h1>
+          </div>
+          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
+          <p>You have accepted the invite for <strong>{{ data['rep-user1'] }}</strong> to work on behalf of <strong>{{ data['party1'] }}</strong>.</p>
+
+          {% else %}
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Representative invite declined
+            </h1>
+          </div>
+          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
+
+          <p>You have accepted the invite for <strong>{{ data['rep-user1'] }}</strong> to work on behalf of <strong>{{ data['party1'] }}</strong>.</p>
+
+        {% endif %}
+
+        <p>An email will be sent to those involved.</p>
+          
+        <h2 class="govuk-heading-m">What next?</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="../cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
+          <li><a href="../cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
+        </ul>
+      {% endif %}
 
 
-        {{ govukButton({
-          text: "Go to my dashboard",
-          href: "../dashboard"
-        }) }}
+      {{ govukButton({
+        text: "Go to my dashboard",
+        href: "../dashboard"
+      }) }}
 
     </div>
   </div>

@@ -19,10 +19,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">{{data['case-ref1']}}: {{data['case-name1']}}</span>
-    <h1 class="govuk-heading-xl">
-      Registration of interest
-    </h1>
-    <p>Approval of this request will give the interested party the opportunity to take part in this investigation.</p>
+      {% if data['verify-type'] =="reg-interest" %}
+      <h1 class="govuk-heading-xl">
+        Registration of interest
+        </h1>
+        <p>Approval of this request will give the interested party the opportunity to take part in this investigation.</p>
+        {% else %}
+        {% if data['verify-type'] =="rep-invite" %}
+        <h1 class="govuk-heading-xl">
+          Representative invite
+        </h1>
+        <p>Approval of this invite will  allow the representative to act on-behalf of the interested party.</p>
+        {% endif %}
+      {% endif %}
   </div>
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
