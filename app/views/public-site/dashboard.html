@@ -22,8 +22,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        Welcome
+      <h1 class="govuk-heading-l">
+        Take part in a trade remedy investigation
       </h1>
       <p>This is your Trade Remedies Service (TRS) dashboard. You can view cases you are involved in and track your registration of interest in a case.</p>
 
@@ -47,14 +47,20 @@
           {% if (data['reginterest-task'] == "Submitted") or (data['reginterest-task'] == "Draft") or (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent")  %}
             {% else %}
             <p>You can use the TRS to:</p>
-            <p><a href="" class="">Register interest in a case</a></p>  
-            <p>This will let you to take part in the investigation, get updates on important developments, comment on TRA’s findings before a final decision is made, and request a reconsideration of a final determination.</p>
+            <p><a href="" class="govuk-link--no-visited-state">Register interest in a case</a></p>  
+            <p>This will allow you to: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>take part in an investigation</li>
+              <li>get updates on important developments</li>
+              <li>comment on TRA findings before a final decision is made</li>
+              <li>request reconsideration of a final determination in a case</li>
+            </ul>
 
             {% if data['user-permissions'] != "Regular user" %}
-              <p><a href="" class="">Manage team</a></p>
+              <p><a href="" class="govuk-link--no-visited-state">Manage team</a></p>
               <p>Grant access to your organisation's active cases or invite new users into your team.</p>
             {% endif %}    
-              <p><a href="" class="">Manage your account details</a></p>
+              <p><a href="" class="govuk-link--no-visited-state">Manage your account details</a></p>
               <p>Update your contact details from the top right of your screen.</p>
           {% endif %}
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Representative contact details - {{serviceName}}
+  Invite contact details - {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -21,7 +21,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Who are you inviting?</h1>
+      <h1 class="govuk-heading-xl">Who do you want to invite?</h1>
       <form action="invite-party-check" novalidate method="post" id="invite-party-check">  
 
         {{ govukInput({

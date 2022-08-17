@@ -26,29 +26,27 @@
         </h1>
       </div>
   
-      <p>We have sent an invite email to the following details:</p>
+      <p>We have sent an invite to the following parties:</p>
       {% if data ['direct-invite'] != "yes" %}
+        <ul class="govuk-list govuk-list--bullet">
+          {% for contact in data['invite-party-contacts-choice'] %}
+            <li>{{ contact }}</li>
+          {% endfor %}
+        </ul>
         <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
-          Organisation: Steel UK<br>
-          Contacts:
-          <ul class="govuk-list govuk-list--bullet">
-            {% for contact in data['invite-party-contacts-choice'] %}
-              <li>{{ contact }}</li>
-            {% endfor %}
-          </ul>
+          Organisation: Steel UK<br>          
         </p>
 
         {% else %}
-        <p>Case:  AD2224 - Steel plate from Russia<br>
-          Organisation: Bluesteel Partners<br>
-          Contacts:
-          <ul class="govuk-list govuk-list--bullet">
-            <li>{{data['rep-user6']}} - {{data['rep-email6']}}</li>
-          </ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>{{data['rep-user6']}} - {{data['rep-email6']}}</li>
+        </ul>
+        <p>Case: AD2224 - Steel plate from Russia<br>
+          Organisation: Bluesteel Partners<br>          
         </p>
       {% endif %}
 
-      <p>The invite will ask the interested party to register interest in the case. </p>
+      <p>The invite will ask the interested parties to register an interest in the case.</p>
       <p>You will be alerted when they have completed their registration of interest.</p>
 
       <form action="../case-parties" method="post" id="dashboard">              

@@ -37,13 +37,13 @@
         name: "invite-party-contacts-choice",
         fieldset: {
           legend: {
-            text: "Which contacts?",
+            text: "Who do you want to invite?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "Select who you want to invite to this case."
+          text: "Select any contact you want to invite."
         },
         items: [
           {
@@ -61,7 +61,7 @@
 
       {{ govukDetails({
         summaryText: "I want to invite a new contact from this organsiation",
-        html: '<p>In order to avoid new contacts creating duplicate accounts please request the Admin to invite the new contact to the account first.</p>'
+        html: '<p>To avoid duplicate accounts, please ask the admin to invite the new contact to the account first.</p>'
       }) }}
 
       <div class="govuk-button-group">
