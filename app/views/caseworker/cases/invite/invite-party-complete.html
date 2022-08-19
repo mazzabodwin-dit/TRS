@@ -26,7 +26,7 @@
         </h1>
       </div>
   
-      <p>We have sent an invite to the following parties:</p>
+      <p>We have sent the invite to:</p>
       {% if data ['direct-invite'] == "no" %}
         {% if data['invite-party-contacts-choice'] == "new-contact" %}
           <ul class="govuk-list govuk-list--bullet">
@@ -41,8 +41,9 @@
               <li>{{ contact }}</li>
             {% endfor %}
           </ul>
-          <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
-            Organisation: Steel UK<br>          
+          <p> Organisation: Steel UK<br>
+            Case: {{data['case-ref1']}} - {{data['case-name1']}}
+           <br>          
           </p>
         {% endif %}
 
@@ -51,14 +52,14 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>{{data['invite-contact-name']}}  - {{data['invite-contact-email']}}</li>
           </ul>
-          <p>Case: AD2224 - Steel plate from Russia<br>
-            Organisation: Bluesteel Partners<br>          
+          <p> Organisation: Bluesteel Partners<br>
+            Case: AD2224 - Steel plate from Russia          
           </p>
         {% endif %}
       {% endif %}
 
 
-      <p>The invite will ask the interested parties to register an interest in the case.</p>
+      <p>The invite will ask them to register interest in the case.</p>
       <p>You will be alerted when they have completed their registration of interest.</p>
 
       <form action="../case-parties" method="post" id="dashboard">              
