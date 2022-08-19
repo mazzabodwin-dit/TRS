@@ -42,12 +42,10 @@ Manage user - {{serviceName}}
               <a href="invite-user-cancel?cancel-invite=rep" alt="Cancel invite" title="Cancel invite" class="govuk-link govuk-link--no-visited-state">Cancel invite</a>
             </span>
           </h3>
-          <p>Status: {{data['invite-rep-task']}}
+          <p>
             
-            <br>
-            {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
-            <br> 
-            <span class="govuk-body-s"><span id="date"></span></span>
+            {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
+            Status: {{data['invite-rep-task']}} (<span id="date"></span>)
           </p>
         </div>
       </div>
