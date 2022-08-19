@@ -101,7 +101,7 @@ module.exports = {
 
 //CASE 2 - case closed
   "case-ref2": "TS0002",
-  "case-name2": "Rainbow Trout from Turkey",
+  "case-name2": "Rainbow Trout from Republic of Turkey",
   "case-typeabr2": "TAS",
   "case-type2": "Transition anti-subsidy review",
   "commodity2": "Rainbow Trout",
