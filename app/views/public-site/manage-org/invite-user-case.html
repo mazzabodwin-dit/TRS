@@ -26,11 +26,15 @@
 
       <form action="invite-user-check" method="post" id="invite-case-form">   
 
-        {% set CaseHTML %}
-        {{ data['case-ref1'] }} - {{ data['case-name1'] }}
-        {% endset -%}
-        
-        {{ govukRadios({
+        {% set Case1HTML %}
+        {{ data['case-ref1']}} - {{ data['case-name1']}}
+        {% endset %}
+
+        {% set Case2HTML %}
+        {{ data['case-ref2'] }} - {{ data['case-name2'] }}
+        {% endset %}
+
+        {{ govukCheckboxes({
           idPrefix: "invite-case",
           name: "invite-case",
           fieldset: {
@@ -41,30 +45,35 @@
             }
           },
           hint: {
-            text: "Select the case you would like them to participate in."
+            text: "Select the cases they can take part in."
           },
           items: [
-          {
-            value: "case1",
-            html: CaseHTML,
-            checked: checked("invite-case", "case1")
-
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "no-case",
-            text: "Assign a case later",
-            checked: checked("invite-case", "no-case")
+            {
+              value: Case1HTML,
+              html: Case1HTML,
+              checked: checked("invite-case", "case1")
+            },
+            {
+              value: Case2HTML,
+              html: Case2HTML,
+              checked: checked("invite-case", "case2")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "None",
+              text: "None, I will assign a case later",
+              checked: checked("invite-case", "none"),
+              behaviour: "exclusive"
             }
           ]
         }) }}
 
         {{ govukDetails({
-          summaryText: "Why can’t I view more active cases?",
+          summaryText: "Why can't I see other active cases?",
           html: '<p>You can only select cases that you are currently participating in.</p>
-          <p> You can <a href="" class="govuk-link">Register Interest</a> in an active case and then invite your employee if accepted.</p>'
+          <p> You can <a href="" class="govuk-link">register interest</a> in a case and if accepted you can invite others.</p>'
         }) }}
         
         <div class="govuk-button-group">

@@ -30,17 +30,16 @@
       <p>
         {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
           {% if data['invite-rep-what-org'] == "existing-org" %}
-            {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
-            {{ data['invite-rep-name'] or data['rep-user1'] }} <br> 
+            {{ data['invite-rep-name'] or data['rep-user1'] }} - {{ data['invite-rep-email'] or data['rep-email1'] }} <br> 
             {{data['reginterest-existing-org'] or data['representative1']}}<br>
-            {{ data['invite-rep-email'] or data['rep-email1'] }}
+            {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>           
             
             {% else %}
             {% if data['invite-rep-what-org'] == "new-org" %}
-              {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
-              {{ data['invite-rep-name'] or data['rep-user2'] }} <br> 
+              {{ data['invite-rep-name'] or data['rep-user2'] }} - {{ data['invite-rep-email'] or data['rep-email2'] }} <br> 
               {{data['invite-rep-org-name'] or data['representative2'] }}<br>
-              {{ data['invite-rep-email'] or data['rep-email2'] }}
+              {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
+
             {% endif %}
           {% endif %}
         {% endif %}

@@ -348,7 +348,7 @@
                   <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-rep-email'] or data['rep-email2'] }}
                 </td>
                 <td class="govuk-table__cell field-italics">
-                  <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
+                  <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['invite-rep-task']}}
                 </td>
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
@@ -367,13 +367,17 @@
                     <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-rep-email'] or data['rep-email1'] }}
                   </td>
                   <td class="govuk-table__cell field-italics">
-                    <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
+                    <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['invite-rep-task']}}
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel?cancel-invite=rep" class="govuk-link--no-visited-state">Cancel invite</a>
+                    {% if (data['invite-rep-task'] == "Draft") %}
+                      <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Delete invite</a>
+                      {% else %}
+                      <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel?cancel-invite=rep" class="govuk-link--no-visited-state">Cancel invite</a>
+                    {% endif %}
                   </td>
                 </tr>
               {% endif %}

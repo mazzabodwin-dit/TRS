@@ -14,7 +14,7 @@
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+ <a class="govuk-back-link govuk-link--no-visited-state" href="invite-user-case">Back</a>
 
 {% endblock %}
 
@@ -73,17 +73,21 @@
           </a>
         </dd>
       </div>
-    <!--  
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Case
+          Cases invited to
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['invite-case'] == "case1" %}
-          {{data['case-ref1'] or "AD2224"}} - {{data['case-name1'] or "AD2224 - Steel plate from Russia"}}
-            {% else %}
-            No case assigned
-          {% endif %}
+        {% if data['invite-case'] == "None" %}
+          None
+          {% else %}
+          <ul class="govuk-list govuk-list--bullet">
+            {% for case in data['invite-case'] %}
+              <li>{{ case }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-user-case" class="govuk-link govuk-link--no-visited-state">
@@ -92,7 +96,7 @@
           </a>
         </dd>
       </div>
-      -->
+      
     
     </dl>
 
@@ -104,7 +108,7 @@
         text: "Confirm and submit invite",
         href: "invite-user-complete?invite-user=complete&show-invite-org=yes"
       }) }}    
-      <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="invite-user-case">Back</a>
 
     </div>
 

@@ -43,22 +43,19 @@ Manage user - {{serviceName}}
             </span>
           </h3>
           <p>
-            
             {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
             Status: {{data['invite-rep-task']}} (<span id="date"></span>)
           </p>
         </div>
       </div>
 
-
-            <script>
-              const date = new Date();
-              const formattedDate = date.toLocaleDateString('en-GB', {
-                day: '2-digit', month: 'short', year: 'numeric'
-              }).replace(/ /g, ' ');
-              document.getElementById("date").innerHTML = formattedDate;
-          </script>
-
+      <script>
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date").innerHTML = formattedDate;
+      </script>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -87,8 +84,6 @@ Manage user - {{serviceName}}
         </div>
       </dl>
 
-     
-
       <h2 class="govuk-heading-m">Organisation</h2>
       <dl class="govuk-summary-list">
 
@@ -99,6 +94,7 @@ Manage user - {{serviceName}}
           </dd>
         </div>
       </dl>
+      
     </div>
   </div>
 {% endblock %}

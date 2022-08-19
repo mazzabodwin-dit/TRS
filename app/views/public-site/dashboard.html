@@ -62,151 +62,148 @@
         <p><a href="" class="govuk-link--no-visited-state">Manage your account details</a></p>
         {% else %}
 
-        <!-- MY CASES -->
-        <!-- MY CASES -->
-        <!-- MY CASES -->
+        <!-- MY INVITES -->
+        <!-- MY INVITES -->
+        <!--This is only shown in Rep account-->     
+        {% if (data['who-signin'] == "rep") %}
           <div class="address-card">
             <div class="address-container">
               <h2 class="govuk-heading-m">
-                My cases
-                <p class="right-aligned-link">
-                  <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
-                </p> 
+                My invites
               </h2>
-              {% if (data['who-signin'] == "org-invite") or (data['who-signin'] == "rep-invite") %}
-                <p>
-                  <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
-                  {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>         
-                  Interested party: Steel UK   
-                  <br>
-                  Status: Pending TRA approval<br>
-                  <span class="govuk-body-s"><span id="date"></span></span>
-                </p>
-              {% endif %}
-
-              {% if (data['who-signin'] == "org") or (data['who-signin'] == "rep") %}
-                <p>
-                  <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
-                  {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}</a><br>         
-                  Interested party: Steel UK   
-                  <br>
-                  Status: Questionnaires sent (<span id="date"></span>)
-                </p>
-              {% endif %}
+              <p><a href="" class="govuk-link govuk-link--no-visited-state">Steel UK
+                </a><br>
+                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
+                Status: Awaiting TRA verification (<span id="date3"></span>)
+                <!-- And show new or existing org name-->     
+                
+              </p>
             </div>
           </div>
+        {% endif %}
 
-          
-          
-          <!-- Reg interest -->
-          <!-- Reg interest -->
-          <!-- Reg interest -->
+        <!-- MY CASES -->
+        <!-- MY CASES -->
+        <!-- MY CASES -->
+        <div class="address-card">
+          <div class="address-container">
+            <h2 class="govuk-heading-m">
+              My cases
+              <p class="right-aligned-link">
+                <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
+              </p> 
+            </h2>
+            {% if (data['who-signin'] == "org-invite") or (data['who-signin'] == "rep-invite") %}
+              <p>
+                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
+                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>         
+                Interested party: Steel UK   
+                <br>
+                Status: Pending TRA approval (<span id="date"></span>)
+              </p>
+            {% endif %}
 
-          {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
-            <div class="address-card">
-              <div class="address-container">
-                <h2 class="govuk-heading-m">
-                  Registration of Interest
-                  <p class="right-aligned-link">
-                    <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
-                  </p>
-                </h2>
-                <p>
-                  <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
-                  {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
+            {% if (data['who-signin'] == "org") or (data['who-signin'] == "rep") %}
+              <p>
+                <a href="" class="govuk-link govuk-link--no-visited-state">
+                {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}</a><br>         
+                Interested party: {{ data['party1']}}   
+                <br>
+                Status: Questionnaires sent (14 May 2022)
+              </p>
+            {% endif %}
+          </div>
+        </div>
+            
+        <!-- Reg interest -->
+        <!-- Reg interest -->
+        <!-- Reg interest -->
 
-                  <!-- Show the reg of interest according to who has signed in: Org-->
-                  {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+        {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
+          <div class="address-card">
+            <div class="address-container">
+              <h2 class="govuk-heading-m">
+                Registration of Interest
+                <p class="right-aligned-link">
+                  <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
+                </p>
+              </h2>
+              <p>
+                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
+                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
 
+                <!-- Show the reg of interest according to who has signed in: Org-->
+                {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+
+                  {% if data['reginterest-what-org'] == "my-org" %}
+                    Interested party: {{data['party1']}}
+                    {% else %}
+                    {% if data['reginterest-what-org'] == "existing-org" %}
+                      Interested party: {{data['reginterest-existing-org'] or "Aluminium Trade Ltd"}}
+                      {% else %}
+                      {% if (data['reginterest-uk-reg'] == "yes") %}
+                        Interested party: Aluminium Trade Ltd 
+                        {% else %} 
+                          Interested party: {{data['reginterest-org-name'] or "Aluminium Trade Ltd"}}
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  <!-- Show the reg of interest according to who has signed in: Rep-->
+                  {% else %}
+                  {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
                     {% if data['reginterest-what-org'] == "my-org" %}
-                      Interested party: {{data['party1']}}
+                      Interested party: {{data['representative1']}}
                       {% else %}
                       {% if data['reginterest-what-org'] == "existing-org" %}
-                        Interested party: {{data['reginterest-existing-org'] or "Aluminium Trade Ltd"}}
+                        Interested party: {{data['reginterest-org-name'] or data['party1']}}
                         {% else %}
                         {% if (data['reginterest-uk-reg'] == "yes") %}
-                          Interested party: Aluminium Trade Ltd 
+                          Interested party: Steel UK 
                           {% else %} 
-                            Interested party: {{data['reginterest-org-name'] or "Aluminium Trade Ltd"}}
+                            Interested party: {{data['reginterest-org-name'] or data['party1']}}
                         {% endif %}
                       {% endif %}
                     {% endif %}
-                    <!-- Show the reg of interest according to who has signed in: Rep-->
-                    {% else %}
-                    {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
-                      {% if data['reginterest-what-org'] == "my-org" %}
-                        Interested party: {{data['representative1']}}
-                        {% else %}
-                        {% if data['reginterest-what-org'] == "existing-org" %}
-                          Interested party: {{data['reginterest-org-name'] or data['party1']}}
-                          {% else %}
-                          {% if (data['reginterest-uk-reg'] == "yes") %}
-                            Interested party: Steel UK 
-                            {% else %} 
-                              Interested party: {{data['reginterest-org-name'] or data['party1']}}
-                          {% endif %}
-                        {% endif %}
-                      {% endif %}
-                    {% endif %}
-                  {% endif %}<br>
-                    
-                  Status: {{data ['reginterest-task']}}<br>
-                  <span class="govuk-body-s"><span id="date"></span></span>
-                </p>
-              </div>
+                  {% endif %}
+                {% endif %}<br>
+                  
+                Status: {{data ['reginterest-task']}} (<span id="date2"></span>)
+              </p>
             </div>
-          {% endif %}
+          </div>
+        {% endif %}
 
-          <!-- Representative invites -->
-          <!-- Representative invites -->
-          <!--This is only shown to orgs that have invited a rep to represent them-->
-          {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-            {% if (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent") %}
-              <div class="address-card">
-                <div class="address-container">
-                  <h2 class="govuk-heading-m">
-                    Representative invites
-                    <p class="right-aligned-link">
-                      <a href="/public-site/manage-org/manage-org#manage-team" class="govuk-link--no-visited-state">Manage team</a>
-                    </p> 
-                  </h2>
-                  <p>
-                    <!-- Show new or existing org name-->     
-                    {% if data['invite-rep-what-org'] == "existing-org" %}
-                      <a href="manage-org/rep-details-invite-sent" class="govuk-link--no-visited-state">{{ data['invite-rep-name'] or data['rep-user1'] }}</a> <br>                   
-                      {% else %}
-
-                      {% if data['invite-rep-what-org'] == "new-org" %}
-                        <a href="manage-org/rep2-details-invite-sent" class="govuk-link--no-visited-state">{{ data['invite-rep-name'] or data['rep-user2'] }}</a> <br> 
-                        {{data['invite-rep-org-name'] or data['representative2'] }}<br>
-                      {% endif %}
-                    {% endif %}
-                    {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
-                    Status: {{data['invite-rep-task']}} (<span id="date2"></span>)
-                  </p>
-                </div>
-              </div>
-            {% endif %}
-          {% endif %}
-
-          
-          <!--This is only shown in Rep account-->     
-          {% if (data['who-signin'] == "rep") %}
+        <!-- Representative invites -->
+        <!-- Representative invites -->
+        <!--This is only shown to orgs that have invited a rep to represent them-->
+        {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+          {% if (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent") %}
             <div class="address-card">
               <div class="address-container">
                 <h2 class="govuk-heading-m">
-                  My invites
+                  Representative invites
+                  <p class="right-aligned-link">
+                    <a href="/public-site/manage-org/manage-org#manage-team" class="govuk-link--no-visited-state">Manage team</a>
+                  </p> 
                 </h2>
-                <p><a href="" class="govuk-link govuk-link--no-visited-state">
-                  {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
-                  Status: Awaiting TRA verification<br>
-                  <!-- And show new or existing org name-->     
-                  Representing: Steel UK<br>
+                <p>
+                  <!-- Show new or existing org name-->     
+                  {% if data['invite-rep-what-org'] == "existing-org" %}
+                    <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=existing-org#manage-team" class="govuk-link--no-visited-state">{{ data['invite-rep-name'] or data['rep-user1'] }}</a> <br>                   
+                    {% else %}
+
+                    {% if data['invite-rep-what-org'] == "new-org" %}
+                      <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=new-org#manage-team" class="govuk-link--no-visited-state">{{ data['invite-rep-name'] or data['rep-user2'] }}</a> <br> 
+                      {{data['invite-rep-org-name'] or data['representative2'] }}<br>
+                    {% endif %}
+                  {% endif %}
+                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
+                  Status: {{data['invite-rep-task']}} (<span id="date3"></span>)
                 </p>
               </div>
             </div>
           {% endif %}
-        
+        {% endif %}
 
         <script>
             const date = new Date();
@@ -222,6 +219,14 @@
             day: '2-digit', month: 'short', year: 'numeric'
           }).replace(/ /g, ' ');
           document.getElementById("date2").innerHTML = formattedDate2;
+        </script>
+
+        <script>
+          const date3 = new Date();
+          const formattedDate3 = date3.toLocaleDateString('en-GB', {
+            day: '2-digit', month: 'short', year: 'numeric'
+          }).replace(/ /g, ' ');
+          document.getElementById("date3").innerHTML = formattedDate3;
         </script>
       {% endif %}
     {% endif %}
