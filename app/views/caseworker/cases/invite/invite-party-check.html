@@ -45,16 +45,23 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            {{data['invite-party-org-name'] or "Steel UK"}}
+            {{data['invite-contact-org-name'] or "Steel UK"}}
             {% else %}
             Steel UK
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
+          {% if data['invite-party-contacts-choice'] == "new-contact" %}
+            <a href="invite-new-contact-details" class="govuk-link--no-visited-state">
+            Change
+              <span class="govuk-visually-hidden"> organisation</span>
+            </a>
+          {% else %}
           <a href="invite-party" class="govuk-link--no-visited-state">
             Change
-            <span class="govuk-visually-hidden"> organisation</span>
-          </a>
+              <span class="govuk-visually-hidden"> organisation</span>
+            </a>
+          {% endif %}
         </dd>
       </div>
     </dl>
@@ -65,16 +72,27 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list govuk-list--bullet">
-            {% for contact in data['invite-party-contacts-choice'] %}
-              <li>{{ contact }}</li>
-            {% endfor %}
+            {% if data['invite-party-contacts-choice'] == "new-contact" %}
+            <li>{{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</li>
+            {% else %}
+              {% for contact in data['invite-party-contacts-choice'] %}
+                <li>{{ contact }}</li>
+              {% endfor %}
+            {% endif %}
           </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="invite-party-contacts-choice" class="govuk-link--no-visited-state">
+          {% if data['invite-party-contacts-choice'] == "new-contact" %}
+            <a href="invite-new-contact-details" class="govuk-link--no-visited-state">
             Change
-            <span class="govuk-visually-hidden"> contact</span>
-          </a>
+              <span class="govuk-visually-hidden"> organisation</span>
+            </a>
+          {% else %}
+          <a href="invite-party" class="govuk-link--no-visited-state">
+            Change
+              <span class="govuk-visually-hidden"> organisation</span>
+            </a>
+          {% endif %}
         </dd>
         
       </div>

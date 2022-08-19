@@ -27,24 +27,36 @@
       </div>
   
       <p>We have sent an invite to the following parties:</p>
-      {% if data ['direct-invite'] != "yes" %}
-        <ul class="govuk-list govuk-list--bullet">
-          {% for contact in data['invite-party-contacts-choice'] %}
-            <li>{{ contact }}</li>
-          {% endfor %}
-        </ul>
-        <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
-          Organisation: Steel UK<br>          
-        </p>
+      {% if data ['direct-invite'] == "no" %}
+        {% if data['invite-party-contacts-choice'] == "new-contact" %}
+          <ul class="govuk-list govuk-list--bullet">
+            <li>{{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</li>
+          </ul>
+          <p>Case: AD2224 - Steel plate from Russia<br>
+            Organisation:  {{data['invite-contact-org-name'] or "Steel UK"}}<br>          
+          </p>
+          {% else %}
+          <ul class="govuk-list govuk-list--bullet">
+            {% for contact in data['invite-party-contacts-choice'] %}
+              <li>{{ contact }}</li>
+            {% endfor %}
+          </ul>
+          <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
+            Organisation: Steel UK<br>          
+          </p>
+        {% endif %}
 
         {% else %}
-        <ul class="govuk-list govuk-list--bullet">
-          <li>{{data['rep-user6']}} - {{data['rep-email6']}}</li>
-        </ul>
-        <p>Case: AD2224 - Steel plate from Russia<br>
-          Organisation: Bluesteel Partners<br>          
-        </p>
+        {% if data ['direct-invite'] == "yes" %}
+          <ul class="govuk-list govuk-list--bullet">
+            <li>{{data['invite-contact-name']}}  - {{data['invite-contact-email']}}</li>
+          </ul>
+          <p>Case: AD2224 - Steel plate from Russia<br>
+            Organisation: Bluesteel Partners<br>          
+          </p>
+        {% endif %}
       {% endif %}
+
 
       <p>The invite will ask the interested parties to register an interest in the case.</p>
       <p>You will be alerted when they have completed their registration of interest.</p>
