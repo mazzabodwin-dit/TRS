@@ -27,22 +27,20 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Case details</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Case details</h1>
 
-      
+    <p>{{data['case-ref']}} - {{data['case-name']}}</p>
+    <p>Type: {{data['case-type']}}</p>
+    <p>Start date: {{data['case-startdate']}}</p>
+    <p>Reg date: {{data['case-regdate']}}</p>
+    <p>Case status: {{data['case-status']}}</p>
+    {{ govukButton({
+      text: "Invite 3rd party"
+    }) }}   
 
-      <p>{{data['case-ref']}} - {{data['case-name']}}</p>
-      <p>Type: {{data['case-type']}}</p>
-      <p>Start date: {{data['case-startdate']}}</p>
-      <p>Reg date: {{data['case-regdate']}}</p>
-      <p>Case status: {{data['case-status']}}</p>
-      {{ govukButton({
-        text: "Invite 3rd party"
-      }) }}   
-
-      <h2 class="govuk-heading-m">My uploaded documentation</h2>
+    <h2 class="govuk-heading-m">My uploaded documentation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-6">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
