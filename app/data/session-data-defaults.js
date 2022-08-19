@@ -23,7 +23,7 @@ module.exports = {
 
 //Key default values to set up Public
   "who-signin": "org",
-  "account-activated": "yes",
+  "account-activated": "fully",
   "user-permissions": "Admin user",
 
 
