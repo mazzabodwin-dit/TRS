@@ -25,9 +25,19 @@
               Registration of Interest accepted
             </h1>
           </div>
-          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-          <p>You have accepted the registration of interest submitted by <strong>{{ data['rep-user1'] }}</strong> for <strong>{{ data['party1'] }}</strong>.</p>
+          {% if data['third-party'] == "yes"%}
+            <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
+            <p>You have accepted the registration of interest for <strong>{{ data['party1'] }}</strong> submitted by:
+            <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
+              {{ data['representative1'] }}
+            </p>
 
+            {% else %}
+            
+            <p>You have accepted the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
+          {% endif %}
+
+          
           {% else %}
 
           <div class="govuk-panel govuk-panel--confirmation">
@@ -38,8 +48,13 @@
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
 
           {% if data['third-party'] == "yes"%}
-            <p>You have declined the registration of interest submitted by <strong>{{ data['rep-user1'] }}</strong> from <strong>{{ data['representative1'] }}</strong> on-behalf of <strong>{{data['party1'] }}</strong>.</p>
+          <p>You have declined the registration of interest for <strong>{{ data['party1'] }}</strong> submitted by:
+            <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
+              {{ data['representative1'] }}
+            </p>
+
             {% else %}
+
             <p>You have declined the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
           {% endif %}
         {% endif %}
@@ -48,8 +63,8 @@
           
         <h2 class="govuk-heading-m">What next?</h2>
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="../cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
-          <li><a href="../cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
+          <li><a href="/caseworker/cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
+          <li><a href="/caseworker/cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
         </ul>
       {% endif %}
 
@@ -63,7 +78,10 @@
             </h1>
           </div>
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-          <p>You have accepted the invite for <strong>{{ data['rep-user1'] }}</strong> to work on behalf of <strong>{{ data['party1'] }}</strong>.</p>
+          <p>You have accepted the representative invite from <strong>{{ data['party1'] }}</strong> for:
+          <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
+            {{ data['representative2'] }}
+          </p>
 
           {% else %}
 
@@ -72,18 +90,20 @@
               Representative invite declined
             </h1>
           </div>
-          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
 
-          <p>You have accepted the invite for <strong>{{ data['rep-user1'] }}</strong> to work on behalf of <strong>{{ data['party1'] }}</strong>.</p>
-
+          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
+          <p>You have declined the representative invite from <strong>{{ data['party1'] }}</strong> for:
+          <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
+            {{ data['representative2'] }}
+          </p>
         {% endif %}
 
         <p>An email will be sent to those involved.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="../cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
-          <li><a href="../cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
+          <li><a href="/caseworker/cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
+          <li><a href="/caseworker/cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
         </ul>
       {% endif %}
 

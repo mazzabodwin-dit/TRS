@@ -31,35 +31,41 @@
 
     <form action="reginterest-tasks?loa-complete=yes" method="post" id="reginterest-loa-new-form">
 
-    <p>Provide details of the authorised contact (signatory) in the Letter of Authority</p>
-
-    {{ govukInput({
-      label: {
-        text: "Contacts's name",
-        classes: "govuk-label--s",
-        isPageHeading: false
-      },
-      classes: "govuk-input--width-20",
-      id: "reginterest-auth-name",
-      name: "reginterest-auth-name",
-      type: "text",
-      autocomplete: "name",
-      value: data['reginterest-auth-name']
-
-    }) }}
-
-    {{ govukInput({
-      label: {
-        text: "Email address",
-        classes: "govuk-label--s"
-      },
-      id: "reginterest-auth-email",
-      name: "reginterest-auth-email",
-      classes: "govuk-input--width-20",
-      type: "email",
-      autocomplete: "email",
-      value: data['reginterest-auth-email']
-    }) }}
+      {% call govukFieldset({
+        legend: {
+          text: "Who is the interested parties authorised signatory in the Letter of Authority?",
+          classes: "govuk-fieldset__legend--s",
+          isPageHeading: false
+        }
+      }) %}
+  
+      {{ govukInput({
+        label: {
+          text: "Name",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "reginterest-auth-name",
+        name: "reginterest-auth-name",
+        type: "text",
+        autocomplete: "name",
+        value: data['reginterest-auth-name']
+  
+      }) }}
+  
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "reginterest-auth-email",
+        name: "reginterest-auth-email",
+        classes: "govuk-input--width-20",
+        type: "email",
+        autocomplete: "email",
+        value: data['reginterest-auth-email']
+      }) }}
+  
+      {% endcall %}
        
       <div class="govuk-button-group">
         {{ govukButton({
