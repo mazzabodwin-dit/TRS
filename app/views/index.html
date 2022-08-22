@@ -44,19 +44,27 @@
                         Register Interest - own org
                       </a>
                     </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span><br>
+                    <span class="app-task-list__tag" id="reginterest-status">In dev</span><br>
                     <span class="app-task-list__task-name">
                       <a href="public-site/reg-interest/reginterest-tasks?who-signin=rep&tasklist-type=reg-interest" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                         Register Interest - as a Representative
                       </a>
                     </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span><br>
-                    <span class="app-task-list__task-name">
-                      <a href="public-site/reg-interest/reginterest-duplicate-error?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
-                        Duplicate registration of interest
-                      </a>
-                    </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span>
+                    <span class="app-task-list__tag" id="reginterest-status">In dev</span><br>
+                    <!--errors-->
+                    <details class="govuk-details govuk-!-margin-0" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Error pages
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <a href="public-site/reg-interest/reginterest-duplicate-error?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                          Error - duplicate registration of interest
+                        </a>
+                      </div>
+                    </details>
+                    <!---->
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
@@ -64,19 +72,24 @@
                         Invite user - own org or Rep
                       </a>
                     </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span>
-                    <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/invite-user-type-no-case?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
-                        Error - org is not registered to a case 
-                      </a>
-                    </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span>
-                    <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/invite-user-already-error?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
-                        Error - existing email part of orgs account
-                      </a>
-                    </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span>
+                    <span class="app-task-list__tag" id="reginterest-status">In dev</span><br>
+                    <!--errors-->
+                    <details class="govuk-details govuk-!-margin-0" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Error pages
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <a href="public-site/manage-org/tasklist/invite-case-none" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                          Error - org is not registered to a case 
+                        </a><br>
+                        <a href="public-site/manage-org/invite-user-already-error?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                          Error - existing email part of orgs account
+                        </a>
+                      </div>
+                    </details>
+                    <!---->
                   </li>
                   <li class="app-task-list__item"> 
                     <span class="app-task-list__task-name">
@@ -96,8 +109,23 @@
                         Accept invite to account - Existing rep
                       </a>
                     </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span>
+                    <span class="app-task-list__tag" id="reginterest-status">Complete</span><br><br><br>
+                    <!--errors-->
+                    <details class="govuk-details govuk-!-margin-0" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Error pages
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <a href="public-site/manage-org/invite-user-cancel-error" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
+                          Error - no invite
+                         </a>
+                      </div>
+                    </details>
+                    <!---->
                   </li>
+
                   <li class="app-task-list__item"> 
                     <span class="app-task-list__task-name">
                       <a href="public-site/email/email-caseworker-existing-invite-org?reg-type=sigin&who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
@@ -115,25 +143,17 @@
                   <li class="app-task-list__item"> 
                     <span class="app-task-list__task-name">
                       <a href="public-site/account/account?who-signin=org" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
-                       User acount
+                       User account
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span><br>
-                  </li>   
-                  <li class="app-task-list__item"> 
                     <span class="app-task-list__task-name">
                       <a href="public-site/manage-org/manage-org?who-signin=org&show-invite=yes" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
                        Cancel user invite
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-status">Complete</span><br>
-                    <span class="app-task-list__task-name">
-                      <a href="public-site/manage-org/invite-user-cancel-error" class="govuk-link--no-visited-state" aria-describedby="reginterest-status">
-                       Error - no invite
-                      </a>
-                    </span>
-                    <span class="app-task-list__tag" id="reginterest-status">Complete</span>
-                  </li>            
+                  </li>     
                 </ul>
               </li>
             </ol>
