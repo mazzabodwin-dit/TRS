@@ -22,7 +22,7 @@
     <h1 class="govuk-heading-xl">
       Reigtration of interest
     </h1>
-    <p>Approve the Letter of Authority to allow the representative to submit documents on behalf of the interested party.</p>
+    <p>Approve the registration of interest documents to allow the interested party to take part in this case.</p>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
       <a href="../orgs/org-bluesteel" class="govuk-link govuk-link--no-visited-state">{{data['representative1']}}</a> has been verified on 2 other cases
     </div> 
@@ -113,7 +113,30 @@
             <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	letter-of-authorisation-110918.docx</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['register-date5']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <label class="govuk-visually-hidden" for="sort">
+                Is the document sufficient?
+              </label>
+              <select class="govuk-select" id="sufficient" name="sufficient" onchange="update(this);">
+                <option id="select" selected>Select</option>
+                <option value="Sufficient">Sufficient</option>
+                <option value="Deficient">Deficient</option>
+              </select>
+            </div>
+          </td>
+        </tr>      
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	registrationdoc-confi.docx</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['register-date5']}}</a>
@@ -137,7 +160,7 @@
     <div class="govuk-button-group" id="myDIV" style="display:none;">
       {{ govukButton({
         text: "Submit decision",
-        href: "case-submission-rep-suff"
+        href: ""
       }) }}    
       <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
     </div>
@@ -161,13 +184,6 @@
         }
     }
     </script>
-
-
-    
-
-
-
-
 
   {% endset %}
 
@@ -219,6 +235,14 @@
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	letter-of-authorisation.docx</a>
+        </td>
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Uploaded by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['caseworkername']}}</a>
+        </td>
+      </tr>   
+      <tr class="govuk-table__row no-border">
+        <td class="govuk-table__cell">
+          <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	registration-docs.docx</a>
         </td>
         <td class="govuk-table__cell">
           <span class="govuk-visually-hidden--desktop td-header">Uploaded by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['caseworkername']}}</a>

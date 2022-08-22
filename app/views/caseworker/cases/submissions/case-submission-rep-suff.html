@@ -22,8 +22,9 @@
     <h1 class="govuk-heading-xl">
       Representative invite
     </h1>
+    <p>Approve the Letter of Authority to allow the representative to submit documents on behalf of the interested party.</p>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
-      This submission was approved on 12 July 2021 by <a href="" class="">{{data['caseworkername']}}</a>
+      <a href="../orgs/org-bluesteel" class="govuk-link govuk-link--no-visited-state">{{data['representative2']}}</a> has been verified on <a href="">1 case</a>
     </div> 
   </div>
   <div class="govuk-grid-column-one-third">
@@ -33,15 +34,15 @@
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
             <strong>Interested party</strong><br>
-            {{data['party5']}}
+            {{data['party1'] or "Steel UK"}}
           </li> 
           <li>
             <strong>Representative party</strong><br>
-            {{data ['representative1'] or "Bluesteel Partners"}}
+            {{data ['representative2'] or "Lawyers Inc" }}
           </li>
           <li>
             <strong>Representative contact</strong><br>
-            {{data ['rep-user6'] or "Arnie Swarts"}}
+            {{data ['rep-user2'] or "Trevor McDoodle"}}
           </li>
         </ul>
       </nav>
@@ -75,8 +76,6 @@
         }) }}
       </div>
     </form>  
-
-      
 
     <table class="govuk-table sortable1 mobile-table-border desktop-table-border" id="table-header">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
@@ -112,10 +111,10 @@
             <span class="govuk-visually-hidden--desktop td-header">Document: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">	letter-of-authorisation-110918.docx</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Submitted by: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
           </td>
           <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['register-date5']}}</a>
+            <span class="govuk-visually-hidden--desktop td-header">Submitted: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['submission-date2']}}</a>
           </td>
           <td class="govuk-table__cell">
             Sufficient
