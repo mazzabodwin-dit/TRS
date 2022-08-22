@@ -27,7 +27,7 @@
           </div>
           {% if data['third-party'] == "yes"%}
             <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-            <p>You have accepted the registration of interest for <strong>{{ data['party1'] }}</strong> submitted by:
+            <p>You have accepted <strong>{{ data['party1'] }}'s</strong> registration of interest that was submitted by:
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
               {{ data['representative1'] }}
             </p>
@@ -48,7 +48,7 @@
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
 
           {% if data['third-party'] == "yes"%}
-          <p>You have declined the registration of interest for <strong>{{ data['party1'] }}</strong> submitted by:
+          <p>You have declined <strong>{{ data['party1'] }}'s</strong> registration of interest that was submitted by:
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
               {{ data['representative1'] }}
             </p>
