@@ -23,7 +23,7 @@
 
 
 <!-- Email header starts -->
-                    <h3 class="govuk-heading-s">You are invited to represent ((organisation name)) on a Trade Remedies case</h3> 
+                    <h3 class="govuk-heading-s">You are invited to represent Steel UK on a Trade Remedies case</h3> 
                     <p>Trade Remedies Service <span style="font-size: 13px; font-weight: 300;">trade.remedies.service@notifications.service.gov.uk></span></p>
   <!-- Email header ends -->
 
@@ -84,15 +84,15 @@
 
 <!-- Content starts -->
 
-            <p>Dear ((username)),</p>
-            <p>You have been invited by ((invited_by)) to take part in a Trade Remedies case on behalf of ((orgnaisation_name)):</p>
-            <p>((Case_number)) - ((Case_name))</p>   
-            <p>Create an account to participate in the investigation.</p> 
-            <blockquote style="Margin: 0 0 20px 0; border-left: 10px solid #BFC1C3;padding: 15px 0 0.1px 15px; font-size: 19px; line-height: 25px;">
-              <p style="Margin: 0 0 20px 0;"><strong><a href="/public-site/accept-invite/invite-rep-who-is-reg?who-signin=rep-invite&user-permissions=Admin&account-activated=fully&reginterest-task=None&reginterest-what-org=existing-org" style="color: #005ea5;">
-                https://trade-remedies.digital/email-invite?code=ZMc4Z0zLJszTGPHrd6JQTiD93g2cgtCG0aE
-              </a></strong></p>
-            </blockquote>
+            <p>Dear {{ data['invite-rep-name'] or data['rep-user2'] }} 
+
+            </p>
+            <p>You have been invited by Jane Winder to take part in a Trade Remedies case on behalf of Steel UK:</p>
+            <p>{{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}</p>   
+            <p>Create an account to participate in the investigation:</p>
+            <p><a href="/public-site/accept-invite/invite-rep-who-is-reg?who-signin=rep-invite&user-permissions=Admin&account-activated=fully&reginterest-task=None&reginterest-what-org=existing-org" style="color: #005ea5;">
+              https://trade-remedies.digital/email-invite?code=ZMc4Z0zLJszTGPHrd6JQTiD93g2cgtCG0aE
+            </a></p> 
             <p>Yours sincerely, <br>
               Investigations Team
               <br>
