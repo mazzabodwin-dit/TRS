@@ -87,9 +87,8 @@
             <p>Hello,</p>
             <p>Verify your email address by clicking this link:</p>
             <blockquote style="Margin: 0 0 20px 0; border-left: 10px solid #BFC1C3;padding: 15px 0 0.1px 15px; font-size: 19px; line-height: 25px;">
-
-            {% if data['account-activated'] =="fully" %}
-              <p style="Margin: 0 0 20px 0;"><strong><a href="/public-site/create-account/createaccount-account-activate-complete" style="color: #005ea5;">
+            {% if data['reg-type'] =="invite-rep" %}
+              <p style="Margin: 0 0 20px 0;"><strong><a href="/public-site/create-account/createaccount-account-activate-complete?account-activated=fully" style="color: #005ea5;">
               https://trade-remedies.digital/email/verify/?code=ZMc4Z0zLJszTGPHrd6JQTiD93g2cgtCG0aE
               </a></strong></p>
               {% else %}

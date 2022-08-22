@@ -65,7 +65,7 @@
         <!-- MY INVITES -->
         <!-- MY INVITES -->
         <!--This is only shown in Rep account-->     
-        {% if (data['who-signin'] == "rep") %}
+        {% if (data[''] == "") and (data[''] == "") %}
           <div class="address-card">
             <div class="address-container">
               <h2 class="govuk-heading-m">
@@ -93,7 +93,7 @@
                 <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
               </p> 
             </h2>
-            {% if (data['who-signin'] == "org-invite") or (data['who-signin'] == "rep-invite") %}
+            {% if (data['who-signin'] == "rep-invite") %}
               <p>
                 <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
                 {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>         
@@ -103,7 +103,7 @@
               </p>
             {% endif %}
 
-            {% if (data['who-signin'] == "org") or (data['who-signin'] == "rep") %}
+            {% if (data['who-signin'] == "org") or (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
               <p>
                 <a href="" class="govuk-link govuk-link--no-visited-state">
                 {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}</a><br>         
