@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify representative – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Verify representative
+    </h1>
+
+
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <strong>{{data['representative2']}}</strong> has been verified on 1 cases <br>
+      The last verification was on <strong>01 Dec 2020</strong> by <strong>Bobby Caseworker</strong>
+    </div>
+   
+    <div class="address-card">
+      <div class="address-container">
+        <h2 class="govuk-heading-m"><a href="../orgs/org-overview" class="govuk-link--no-visited-state">{{data['representative2']}}</a>  
+        </h2> 
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Contact:</dt>
+            <dd class="govuk-summary-list__value">{{data['rep-user2']}} <br>
+              {{data['rep-email2']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">345, The Shard, London <br>
+              EC2 3TF<br>
+              United Kingdom
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number: </dt>
+            <dd class="govuk-summary-list__value">456794936 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__value"><a href="www.steeluk.com" target="_blank">www.lawyersinc.com</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">GB205672212000</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__value">GB123456789</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__value">150483782</dd>
+          </div>
+        </dl>
+        <br>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Acting as a representative: 1 case
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 01 Dec 2020</li>
+                </ul>
+            </div>
+          </details>
+        </div>
+
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Users: 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user2']}}</a> - {{data['rep-email2']}}</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+          
+        
+      </div>
+    </div>
+
+    <form action="/verify-rep-invite-representative-party-route" method="post" id="verify-rep-invite-representative-party-form">
+
+      {% set validHTML %}
+      Have you been able to verify the party?
+      {% endset %}
+
+      {{ govukRadios({
+        idPrefix: "reginterest-valid-representative",
+        name: "reginterest-valid-representative",
+        fieldset: {
+          legend: {
+            html: validHTML,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "verified",
+            text: "Yes, I have verified the party",
+            checked: checked("reginterest-valid-representative", "verified")
+          },
+          {
+            value: "unverified",
+            text: "No, I am unable to verify the party",
+            checked: checked("reginterest-valid-representative", "unverified")
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" href="javascript: history.back()">Back</a>
+      </div>
+
+    </form>
+    
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+

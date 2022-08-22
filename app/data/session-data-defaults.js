@@ -88,6 +88,8 @@ module.exports = {
   "rep-email2": "doodle@lawyersinc.com",
   "rep-user-role2": "(Invite sent)",
   "representative2": "Lawyers Inc",
+  "party-submission2": "Representative invite",
+  "submission-date2": "02 August 2022",
 
   //KEY USER: party that cannot be verified
   "party111": "Awesome Steel",
@@ -200,6 +202,12 @@ module.exports = {
   "party-case-role5": "Importer",
   "party-role5": "Interested party",
   "party-submission5": "Representative invite",
+
+  "rep-role7": "Representative",
+  "rep-user7": "Joan de-Arc",  
+  "rep-email7": "doodle@biglawyersrus.com",
+  "rep-user-role7": "(Invite sent)",
+  "representative7": "Big Lawyers RUS",
 
   //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
   "rep-user6": "Arnie Swarts",
