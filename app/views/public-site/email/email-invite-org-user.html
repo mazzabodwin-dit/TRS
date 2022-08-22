@@ -23,7 +23,7 @@
 
 
 <!-- Email header starts -->
-                    <h3 class="govuk-heading-s">You are invited to join ((organisation name)) on a Trade Remedies case </h3> 
+                    <h3 class="govuk-heading-s">You are invited to join Steel UK on a Trade Remedies case </h3> 
                     <p>Trade Remedies Service <span style="font-size: 13px; font-weight: 300;">trade.remedies.service@notifications.service.gov.uk></span></p>
   <!-- Email header ends -->
 
@@ -84,12 +84,11 @@
 
 <!-- Content starts -->
 
-            <p>Dear ((full_name))</p>
-            <p>You have been invited by ((invited_by)) to join ((organisation_name)’s account on the Trade Remedies Service and take part in Trade Remedies case:</p> 
-            <ul class="govuk-list--bullet">
-              <li>((case_name))</li>
-            </ul>
-            <p>Before you can take part in the case, you need to create your own login details at: ((login_url))</p>
+            <p>Dear {{data['invite-user-name'] or data['party-user11']}} </p>
+            <p>You have been invited by Jane Winder to join Steel UK’s account on the Trade Remedies Service and take part in trade remedies cases.</p> 
+            <p>Create sign in details and you will be added to your organisations account:<br>
+
+              <a href="/public-site/accept-invite/createaccount-your-account-invite?reg-type=invite-own-org" class=""> https://www.trade-remedies.service.gov.uk/start</a></p>
 
             <p>Yours sincerely, <br>
               Investigations Team

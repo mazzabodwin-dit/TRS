@@ -20,9 +20,9 @@ Create an account - {{serviceName}}
         <h1 class="govuk-heading-xl">
           Your account details
         </h1>
-        <p>You will be creating this account for your own organisation and will be the admin for the account. This is the organisation you are directly employed by.</p>
-
+        
         {% if data['reg-type'] == "invite-own-org" %}
+        <!--For invite org -->
           {{ govukInput({
             label: {
               text: "Enter your name",
@@ -58,8 +58,10 @@ Create an account - {{serviceName}}
           }) }}
 
           {% else %}
+          <!--For invite rep -->
+          <p>You will be creating this account for your own organisation and will be the admin for the account. This is the organisation you are directly employed by.</p>
 
-            {% if (data['reg-type'] == "invite-rep") and (data['invite-rep-who-reg'] == "Recipient") %}
+            {% if (data['reg-type'] == "invite-rep") and (data['invite-rep-who-reg'] == "Email recipient") %}
             
               {{ govukInput({
                 label: {
