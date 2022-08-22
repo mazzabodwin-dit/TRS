@@ -28,40 +28,19 @@
       </div>
 
       <p>We have sent an invite to:</p>
-      {% if data ['direct-invite'] != "yes" %}
-      <ul class="govuk-list govuk-list--bullet">
-        {% for contact in data['invite-party-contacts-choice'] %}
-          <li>{{ contact }}</li>
-        {% endfor %}
-      </ul>
-      <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
-        Organisation: Steel UK<br>          
-      </p>
-
-      {% else %}
-      {% if data ['direct-invite'] != "no" %}
-        {% if data['invite-party-contacts-choice'] == "new-contact" %}
-        sdfsdf
-          <ul class="govuk-list govuk-list--bullet">
-            <li>{{data['invite-contact-name']}}  - {{data['invite-contact-email']}}</li>
-          </ul>
-          <p>Case: AD2224 - Steel plate from Russia<br>
-            Organisation: Bluesteel Partners<br>          
-          </p>
+        <p>{{data['invite-user-name'] or data['party-user11']}} - {{data['invite-user-email'] or data['party-email11']}}<br>
+        Permission: {{data['invite-user-permissions'] or "Admin user"}}<br>
+        Cases: {% if data['invite-case'] == "None" %}
+          None
           {% else %}
-
-          {% for contact in data['invite-party-contacts-choice'] %}
-            <ul class="govuk-list govuk-list--bullet">
-              <li>{{ contact }}</li>
-            </ul>
-            <p>Case: {{data['case-ref1']}} - {{data['case-name1']}}<br>
-              Organisation: {{data['invite-contact-org-name']}}<br>          
-            </p>
-          {% endfor %}
+          <ul class="govuk-list govuk-list--bullet">
+            {% for case in data['invite-case'] %}
+              <li>{{ case }}</li>
+            {% endfor %}
+          </ul>
         {% endif %}
-      {% endif %}
-    {% endif %}
       </p>
+
       <p>Once they have registered you can manage cases they are assigned to and change their permissions.</p>
      
       <form action="manage-org#manage-team" method="post" id="invite-complete-form">              
