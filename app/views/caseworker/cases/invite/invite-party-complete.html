@@ -32,8 +32,9 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>{{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</li>
           </ul>
-          <p>Case: AD2224 - Steel plate from Russia<br>
-            Organisation:  {{data['invite-contact-org-name'] or "Steel UK"}}<br>          
+          <p>Organisation:  {{data['invite-contact-org-name'] or "Steel UK"}}<br>
+            Case: AD2224 - Steel plate from Russia<br>
+                      
           </p>
           {% else %}
           <ul class="govuk-list govuk-list--bullet">
@@ -104,10 +105,12 @@
         {
         },
         {
+          href: "/public-site/email/email-caseworker-existing-invite-org",
+          text: "For user testing: Existing user invite email"
         },
         {
-          href: "/public-site/email/email-invite-rep.html",
-          text: "For user testing: Go to invite email"
+          href: "/public-site/email/email-caseworker-new-invite-org",
+          text: "New user invite email"
         }
       ]
     }
