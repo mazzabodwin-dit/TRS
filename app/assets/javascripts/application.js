@@ -9,7 +9,7 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
   let selectElement = $('#search-reg-org')
-  let placeholder = 'Enter the registered company name or number'
+  let placeholder = 'Enter a registered company name or number'
   if (selectElement.length) {
     // AccessibleAutocomplete orignal
     if (selectElement.attr('autocomplete-placeholder')) {
