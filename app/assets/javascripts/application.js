@@ -9,13 +9,11 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
   let selectElement = $('#search-reg-org')
-
-  if (selectElement) {
+  let placeholder = 'Enter the registered company name or number'
+  if (selectElement.length) {
     // AccessibleAutocomplete orignal
-    if (selectElement.hasAttribute('autocomplete-placeholder')) {
-      let placeholder = selectElement.attr('autocomplete-placeholder')
-    } else {
-      let placeholder = 'Enter the registered company name or number'
+    if (selectElement.attr('autocomplete-placeholder')) {
+      placeholder = selectElement.attr('autocomplete-placeholder')
     }
     accessibleAutocomplete.enhanceSelectElement({
       defaultValue: '',
