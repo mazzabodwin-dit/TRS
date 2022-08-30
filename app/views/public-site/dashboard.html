@@ -65,14 +65,14 @@
         <!-- MY INVITES -->
         <!-- MY INVITES -->
         <!--This is only shown in Rep account-->     
-        {% if (data[''] == "") and (data[''] == "") %}
+        {% if (data['who-signin'] == "rep") and (data['invite-rep-task'] == "Sent") %}
           <div class="address-card">
             <div class="address-container">
               <h2 class="govuk-heading-m">
                 My invites
               </h2>
-              <p><a href="" class="govuk-link govuk-link--no-visited-state">Steel UK
-                </a><br>
+              <p>Steel UK
+                <br>
                 {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
                 Status: Awaiting TRA verification (<span id="date3"></span>)
                 <!-- And show new or existing org name-->     
