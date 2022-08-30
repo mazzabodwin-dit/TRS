@@ -339,7 +339,7 @@
               </tr>
             {% endif %}
 
-            {% if (data['show-invite-rep'] == "yes") and (data['invite-rep-what-org'] == "new-org") %}
+            {% if (data['show-invite-rep'] == "yes" or data['invite-rep-task'] == "Draft") and (data['invite-rep-what-org'] == "new-org") %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep2-details-invite-sent" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user2'] }}</a>
@@ -358,7 +358,7 @@
                 </td>
               </tr>
               {% else %}
-              {% if (data['show-invite-rep'] == "yes") and (data['invite-rep-what-org'] == "existing-org") %}
+              {% if (data['show-invite-rep'] == "yes" or data['invite-rep-task'] == "Draft") and (data['invite-rep-what-org'] == "existing-org") %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep-details-invite-sent" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user1'] }}</a>
