@@ -65,18 +65,16 @@
         <!-- MY INVITES -->
         <!-- MY INVITES -->
         <!--This is only shown in Rep account-->     
-        {% if (data['who-signin'] == "rep") and (data['invite-rep-task'] == "Sent") %}
+        {% if (data['who-signin'] == "rep-invite") and (data['invite-rep-task'] == "Sent") %}
           <div class="address-card">
             <div class="address-container">
               <h2 class="govuk-heading-m">
                 My invites
               </h2>
-              <p>Steel UK
+              <p>Invited by: Steel UK
                 <br>
                 {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
-                Status: Awaiting TRA verification (<span id="date3"></span>)
-                <!-- And show new or existing org name-->     
-                
+                Status: Awaiting TRA verification (<span id="date3"></span>)                
               </p>
             </div>
           </div>
@@ -93,7 +91,7 @@
                 <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
               </p> 
             </h2>
-            {% if (data['who-signin'] == "rep-invite") %}
+            {% if (data[''] == "") %}
               <p>
                 <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
                 {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>         
