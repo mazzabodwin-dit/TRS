@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirm Registered Interest – {{serviceName}}
+  Confirm on to case – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -18,40 +18,64 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">2.  Confirm decision</span>
-    <h1 class="govuk-heading-xl"> 
-     Accept parties on case
-    </h1>
+    <span class="govuk-caption-xl">2. Confirm decision</span>   
   </div>
   <div class="govuk-grid-column-two-thirds">
 
     <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
-        
-      {{ govukRadios({
-        idPrefix: "reginterest-accecpt-on-case",
-        name: "reginterest-accecpt-on-case",
-        fieldset: {
-          legend: {
-            html: "Do you want to accept this registration of interest?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "accept",
-            text: "Accept party on to case",
-            checked: checked("reginterest-accecpt-on-case", "accept")
-          },
-          {
-            value: "decline",
-            text: "Decline party",
-            checked: checked("reginterest-accecpt-on-case", "decline")
-          }
-        ]
-      }) }}
+    
+      {% if data['verify-type'] == "reg-interest" %}
 
-     
+        {{ govukRadios({
+          idPrefix: "reginterest-accecpt-on-case",
+          name: "reginterest-accecpt-on-case",
+          fieldset: {
+            legend: {
+              html: "Approve registration of interest?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "accept",
+              text: "Approve",
+              checked: checked("reginterest-accecpt-on-case", "accept")
+            },
+            {
+              value: "decline",
+              text: "Decline",
+              checked: checked("reginterest-accecpt-on-case", "decline")
+            }
+          ]
+        }) }}
+
+        {% else %}
+
+        {{ govukRadios({
+          idPrefix: "reginterest-accecpt-on-case",
+          name: "reginterest-accecpt-on-case",
+          fieldset: {
+            legend: {
+              html: "Approve representative invite?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "accept",
+              text: "Approve",
+              checked: checked("reginterest-accecpt-on-case", "accept")
+            },
+            {
+              value: "decline",
+              text: "Decline",
+              checked: checked("reginterest-accecpt-on-case", "decline")
+            }
+          ]
+        }) }}
+      {% endif %}
 
       <div class="govuk-button-group">
         {{ govukButton({

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  The Registration of Interest is complete - {{serviceName}}
+  Verification complete - {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -22,21 +22,20 @@
 
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-              Registration of Interest accepted
+              Registration of interest accepted
             </h1>
           </div>
           {% if data['third-party'] == "yes"%}
             <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-            <p>You have accepted <strong>{{ data['party1'] }}'s</strong> registration of interest that was submitted by:
+            <p>You have accepted the registration of interest for <strong>{{ data['party1'] }}</strong> that was submitted by:</p>
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
               {{ data['representative1'] }}
             </p>
-
             {% else %}
-            
-            <p>You have accepted the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
+            {% if data['third-party'] == "no" %}
+              <p>You have accepted the registration of interest for <strong>{{ data['party1'] }}</strong> that was submitted by <strong>{{ data['party-user1'] }} - {{data['party-email1']}}</strong></p>
+            {% endif %}
           {% endif %}
-
           
           {% else %}
 
@@ -48,14 +47,14 @@
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.
 
           {% if data['third-party'] == "yes"%}
-          <p>You have declined <strong>{{ data['party1'] }}'s</strong> registration of interest that was submitted by:
+            <p>You have declined the registration of interest for <strong>{{ data['party1'] }}</strong> that was submitted by:</p>
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
-              {{ data['representative1'] }}
+                {{ data['representative1'] }}
             </p>
-
             {% else %}
-
-            <p>You have declined the registration of interest submitted by <strong>{{ data['party-user1'] }}</strong> from <strong>{{ data['party1'] }} </strong>.</p>
+            {% if data['third-party'] == "no" %}
+              <p>You have declined the registration of interest for <strong>{{ data['party1'] }}</strong> that was submitted by <strong>{{ data['party-user1'] }} - {{data['party-email1']}}</strong></p>
+            {% endif %}
           {% endif %}
         {% endif %}
 
@@ -78,7 +77,7 @@
             </h1>
           </div>
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-          <p>You have accepted the representative invite from <strong>{{ data['party1'] }}</strong> for:
+          <p>You have approved <strong>{{ data['party1'] }}'s </strong> invite to:
           <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
             {{ data['representative2'] }}
           </p>

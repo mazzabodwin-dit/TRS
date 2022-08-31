@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Verify Registered Interest – {{serviceName}}
+  Verify parties on case – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -29,10 +29,11 @@
         <h1 class="govuk-heading-xl">
           Representative invite
         </h1>
-        <p>Approval of this invite will  allow the representative to act on-behalf of the interested party.</p>
+        <p>Approval of this invite will allow the representative to act on-behalf of the interested party.</p>
         {% endif %}
       {% endif %}
   </div>
+
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
       <h2 class="govuk-heading-m" id="subsection-title">Party details</h2>
@@ -63,9 +64,7 @@
 </div>
 
 <div class="govuk-grid-row">
-  
-    <div class="govuk-grid-column-two-thirds">
-   
+  <div class="govuk-grid-column-two-thirds">
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
@@ -75,7 +74,6 @@
           {% include "includes/task-list-caseworker-org.html" %}
         </ul>
       </li>
-
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span>Confirm
@@ -85,11 +83,8 @@
         </ul>
       </li>
     </ol>
-
     <a class="govuk-link" href="../cases/case-overview">Back to Case</a>
-
   </div>
- 
 </div>
 
 {% endblock %}
