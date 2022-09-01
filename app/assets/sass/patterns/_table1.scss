@@ -138,7 +138,7 @@ table.sortable1 th[aria-sort="ascending"] span.indicator::after {
   border-top: 7px solid govuk-colour("mid-grey");
 }
 
-table.sortable1 th .span-indicator::before {
+table.sortable1 th span.indicator::before {
   content: "";
   display: block;
   border-left: 7px solid transparent;
@@ -147,7 +147,8 @@ table.sortable1 th .span-indicator::before {
   border-bottom: 7px solid govuk-colour("mid-grey");
 }
 
-table.sortable1 th .span-indicator::after {
+table.sortable1 th span.indicator::after {
+  content: "";
   display: block;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
@@ -155,14 +156,6 @@ table.sortable1 th .span-indicator::after {
   border-top: 7px solid govuk-colour("mid-grey");
 }
 
-table.show-unsorted-icon th:not([aria-sort]) button span.indicator::after {
-  content: "♢";
-  color: currentcolor;
-  font-size: 100%;
-  position: relative;
-  top: -3px;
-  left: -4px;
-}
 
 /* Focus and hover styling */
 
