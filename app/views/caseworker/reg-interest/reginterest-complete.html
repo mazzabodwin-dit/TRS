@@ -73,7 +73,7 @@
 
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-              Representative invite accepted
+              Representative invite approved
             </h1>
           </div>
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
@@ -83,33 +83,32 @@
           </p>
 
           {% else %}
+          {% if data['accept-on-case-result'] == "decline" %}
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Representative invite declined
+              </h1>
+            </div>
 
-          <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">
-              Representative invite declined
-            </h1>
-          </div>
-
-          <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-          <p>You have declined the representative invite from <strong>{{ data['party1'] }}</strong> for:
-          <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
-            {{ data['representative2'] }}
-          </p>
+            <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
+            <p>You have declined the representative invite from <strong>{{ data['party1'] }}</strong> for:
+            <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
+              {{ data['representative2'] }}
+            </p>
+          {% endif %}
         {% endif %}
 
         <p>An email will be sent to those involved.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/caseworker/cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
-          <li><a href="/caseworker/cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
-        </ul>
+        <p><a href="/caseworker/cases/submissions/case-submission-rep" class="govuk-link--no-visited-state">Review LOA submission for this invite</a>
+        </p>
       {% endif %}
 
 
       {{ govukButton({
-        text: "Go to my dashboard",
-        href: "../dashboard"
+        text: "Back to Parties",
+        href: "../cases/case-parties"
       }) }}
 
     </div>

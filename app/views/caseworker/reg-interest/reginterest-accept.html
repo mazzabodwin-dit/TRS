@@ -18,7 +18,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">2. Confirm decision</span>   
+    <span class="govuk-caption-xl">2. Confirm </span>   
   </div>
   <div class="govuk-grid-column-two-thirds">
 
@@ -26,63 +26,53 @@
     
       {% if data['verify-type'] == "reg-interest" %}
 
-        {{ govukRadios({
-          idPrefix: "reginterest-accecpt-on-case",
-          name: "reginterest-accecpt-on-case",
-          fieldset: {
-            legend: {
-              html: "Approve registration of interest?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          items: [
-            {
-              value: "accept",
-              text: "Approve",
-              checked: checked("reginterest-accecpt-on-case", "accept")
-            },
-            {
-              value: "decline",
-              text: "Decline",
-              checked: checked("reginterest-accecpt-on-case", "decline")
-            }
-          ]
-        }) }}
+        
 
         {% else %}
+        {% if data['verify-type'] == "rep-invite" %}
 
-        {{ govukRadios({
-          idPrefix: "reginterest-accecpt-on-case",
-          name: "reginterest-accecpt-on-case",
-          fieldset: {
-            legend: {
-              html: "Approve representative invite?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          items: [
-            {
-              value: "accept",
-              text: "Approve",
-              checked: checked("reginterest-accecpt-on-case", "accept")
-            },
-            {
-              value: "decline",
-              text: "Decline",
-              checked: checked("reginterest-accecpt-on-case", "decline")
-            }
-          ]
-        }) }}
-      {% endif %}
+          <h1 class="govuk-heading-xl">
+            Submit decision
+          </h1>  
+          <h2 class="govuk-heading-m">Invite details</h2>
 
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue"
-        }) }}    
-        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-      </div>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Case
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['case-ref1']}} - {{data['case-name1']}}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Interested Party
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Steel UK               
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Representative Party
+              </dt>
+              <dd class="govuk-summary-list__value">
+                BlueSteel Partners               
+              </dd>
+            </div>
+          </dl>
+          <p>Approving this invite will send confirmation emails to both parties. </p>
+    
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Approve invite",
+              href: "reginterest-complete?accept-on-case-result=accept"
+            }) }}   
+            <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline">Decline invite</a>
+          </div>
+        {% endif %} 
+      {% endif %} 
 
     </form>
     

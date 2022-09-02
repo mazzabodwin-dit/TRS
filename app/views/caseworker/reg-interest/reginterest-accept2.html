@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm on to case – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">2. Confirm</span>   
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
+    
+      {% if data['verify-type'] == "reg-interest" %}
+
+        {{ govukRadios({
+          idPrefix: "reginterest-accecpt-on-case",
+          name: "reginterest-accecpt-on-case",
+          fieldset: {
+            legend: {
+              html: "Approve registration of interest?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "accept",
+              text: "Approve",
+              checked: checked("reginterest-accecpt-on-case", "accept")
+            },
+            {
+              value: "decline",
+              text: "Decline",
+              checked: checked("reginterest-accecpt-on-case", "decline")
+            }
+          ]
+        }) }}
+
+        {% else %}
+
+        {{ govukRadios({
+          idPrefix: "reginterest-accecpt-on-case",
+          name: "reginterest-accecpt-on-case",
+          fieldset: {
+            legend: {
+              html: "Approve representative invite?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "This includes changing your last name or spelling your name differently."
+          },
+          items: [
+            {
+              value: "accept",
+              text: "Approve invite",
+              checked: checked("reginterest-accecpt-on-case", "accept")
+            },
+            {
+              value: "decline",
+              text: "Decline",
+              checked: checked("reginterest-accecpt-on-case", "decline")
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
+      </div>
+
+    </form>
+    
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+
