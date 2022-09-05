@@ -239,11 +239,11 @@ router.post('/reginterest-interested-party-route', function (req, res) {
   var reginterestValidPrimary = req.session.data['reginterest-valid-primary']
 
   // Check whether the variable matches a condition
-  if (reginterestValidPrimary == "verified"){
+  if (reginterestValidPrimary == "Verified"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-party-type')
   } 
-  if (reginterestValidPrimary == "unverified"){
+  if (reginterestValidPrimary == "Unverified"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-unverified?primary-party-task=complete&party-type=int')
   } 
@@ -256,11 +256,11 @@ router.post('/reginterest-representative-party-route', function (req, res) {
   var reginterestValidRepresentative = req.session.data['reginterest-valid-representative']
 
   // Check whether the variable matches a condition
-  if (reginterestValidRepresentative == "verified"){
+  if (reginterestValidRepresentative == "Verified"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-tasks?representative-party-complete=yes')
   } 
-  if (reginterestValidRepresentative == "unverified"){
+  if (reginterestValidRepresentative == "Unverified"){
     // Send user to next page
     res.redirect('/caseworker/reg-interest/reginterest-unverified?representative-party-complete=yes&party-type=rep')
   } 

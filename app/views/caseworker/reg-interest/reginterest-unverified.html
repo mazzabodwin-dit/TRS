@@ -21,33 +21,46 @@
     <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
       {% if data['party-type'] == "int" %}
-      Unverified party
+      Unverified interested party
           {% else %}
             Unverified representative
       {% endif %}
     </h1>
 
-    <form action="reginterest-decline" method="post" id="reginterest-valid-org-form">
-      {{ govukCharacterCount({
-        name: "unverfied-reason",
-        id: "unverfied-reason",
-        maxlength: 200,
-        label: {
-          text: "Explain why the party cannot be verified",
-          classes: "govuk-label--m",
-          isPageHeading: false
-        },
-        hint: {
-          text: "This information helps other caseworkers should this organisation be involved in other cases or asks to register interest again."
-        }
-      }) }}
-<!--
-      <h2 class="govuk-heading-s">Next steps</h2> 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>This registration of interest will be declined and the party informed by email</li>
-        <li>If the organisation is involved in other cases this decision will be flagged to relevant caseworkers</li>
-      </ul>
--->
+    <form action="reginterest-tasks" method="post" id="reginterest-valid-org-form">
+      {% if data['party-type'] == "int" %}
+        {{ govukCharacterCount({
+          name: "unverfied-reason-int",
+          id: "unverfied-reason",
+          maxlength: 200,
+          label: {
+            text: "Explain why the party cannot be verified",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This information helps other caseworkers should this organisation be involved in other cases or asks to register interest again."
+          }
+        }) }}
+
+        {% else %}
+
+        {{ govukCharacterCount({
+          name: "unverfied-reason-rep",
+          id: "unverfied-reason",
+          maxlength: 200,
+          label: {
+            text: "Explain why the party cannot be verified",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This information helps other caseworkers should this organisation be involved in other cases or asks to register interest again."
+          }
+        }) }}
+
+      {% endif %}
+
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"

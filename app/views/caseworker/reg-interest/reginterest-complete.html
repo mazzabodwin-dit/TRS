@@ -77,7 +77,7 @@
             </h1>
           </div>
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-          <p>You have approved <strong>{{ data['party1'] }}'s </strong> invite to:
+          <p>You have approved the representative invite from {{ data['party1'] }} to:
           <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
             {{ data['representative2'] }}
           </p>
@@ -91,14 +91,16 @@
             </div>
 
             <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-            <p>You have declined the representative invite from <strong>{{ data['party1'] }}</strong> for:
+            <p>You have declined the representative invite from {{ data['party1'] }} to:
             <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
               {{ data['representative2'] }}
+            </p>
+            <p>Reason: {{data['unverfied-reason']}}               
             </p>
           {% endif %}
         {% endif %}
 
-        <p>An email will be sent to those involved.</p>
+        <p>An email will be sent to both parties involved.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
         <p><a href="/caseworker/cases/submissions/case-submission-rep" class="govuk-link--no-visited-state">Review LOA submission for this invite</a>

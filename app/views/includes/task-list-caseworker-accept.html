@@ -9,9 +9,15 @@
       <!-- If the user has not started section 2 show -->
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
-            Submit decision
-          </a>
+          {% if (data['reginterest-valid-representative'] == "Unverified") or (data['reginterest-valid-primary'] == "Unverified") %}
+            <a href="reginterest-decline" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+            {% else %}
+            <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+          {% endif %}
         </span>
         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Not started yet</strong>
       </li>
@@ -32,9 +38,15 @@
       <!-- If the user has not started section 2 show -->
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-          <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
-            Submit decision
-          </a>
+          {% if (data['reginterest-valid-primary'] == "Unverified") %}
+            <a href="reginterest-decline" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+            {% else %}
+            <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+          {% endif %}
         </span>
         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Not started yet</strong>
       </li>
@@ -61,9 +73,15 @@
     <!-- If the user has not started section 2 show -->
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
-          Submit decision
-        </a>
+        {% if data['reginterest-valid-representative'] == "Unverified" %}
+          <a href="reginterest-decline" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+            Submit decision
+          </a>
+          {% else %}
+          <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+            Submit decision
+          </a>
+        {% endif %}
       </span>
       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Not started yet</strong>
     </li>

@@ -51,11 +51,11 @@
           {% endif %} 
           <li>
             <strong>Submitted by</strong><br>
-            {% if data['third-party'] == "yes" %}
-              {{data ['rep-user1']}}
-              {% else %}
+            {% if data['verify-type'] == "rep-invite" %}
               {{data ['party-user1']}}
-            {% endif %} 
+              {% else %}
+              {{data ['rep-user1']}}
+            {% endif%}
           </li>
         </ul>
       </nav>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirm on to case – {{serviceName}}
+  Confirm – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -16,73 +16,172 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">2. Confirm </span>   
-  </div>
-  <div class="govuk-grid-column-two-thirds">
-
-    <form action="/reginterest-accept-on-case-route" method="post" id="reginterest-accept-on-case-form">
-    
-      {% if data['verify-type'] == "reg-interest" %}
-
-        
-
-        {% else %}
-        {% if data['verify-type'] == "rep-invite" %}
-
-          <h1 class="govuk-heading-xl">
-            Submit decision
-          </h1>  
-          <h2 class="govuk-heading-m">Invite details</h2>
-
-          <dl class="govuk-summary-list govuk-!-margin-bottom-6">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Case
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['case-ref1']}} - {{data['case-name1']}}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Interested Party
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Steel UK               
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Representative Party
-              </dt>
-              <dd class="govuk-summary-list__value">
-                BlueSteel Partners               
-              </dd>
-            </div>
-          </dl>
-          <p>Approving this invite will send confirmation emails to both parties. </p>
-    
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Approve invite",
-              href: "reginterest-complete?accept-on-case-result=accept"
-            }) }}   
-            <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline">Decline invite</a>
+  <!--REg interest-->
+  {% if data['verify-type'] == "reg-interest" %}
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">2. Confirm </span>   
+      <h1 class="govuk-heading-xl">
+        Accept registration of interest
+      </h1>
+      <h2 class="govuk-heading-m">Interested party</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Party type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['reginterest-party-type'] or "Exporter"}}             
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="reginterest-party-type" class="govuk-link--no-visited-state">
+              Change
+              <span class="govuk-visually-hidden"> party type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['reginterest-valid-primary'] or "Verified"}}             
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="reginterest-interested-party" class="govuk-link--no-visited-state">
+              Change
+              <span class="govuk-visually-hidden"> status</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            LOA signatory
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
+              Change
+              <span class="govuk-visually-hidden govuk-link--no-visited-state"> contact</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      {% if data['third-party'] == "yes" %}
+        <h2 class="govuk-heading-m">Representative party</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['reginterest-valid-representative']}}             
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="reginterest-representative-party" class="govuk-link--no-visited-state">
+                Change
+                <span class="govuk-visually-hidden"> status</span>
+              </a>
+            </dd>
           </div>
-        {% endif %} 
-      {% endif %} 
+        </dl>
+      {% endif %}
+      <p>By approving this invite, parties will be informed of your decision.</p>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Approve invite",
+          href: "reginterest-complete?accept-on-case-result=accept"
+        }) }} 
+        <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline.html">Decline invite</a>
+      </div>
+    </div>
+    {% else %}
 
-    </form>
-    
-  </div>
-
+    <!--Rep invite-->
+    {% if data['verify-type'] == "rep-invite" %}
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">2. Confirm </span>   
+        <h1 class="govuk-heading-xl">
+          Approve representative invite
+        </h1>
+        <h2 class="govuk-heading-m">Invite details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              LOA signatory
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['reginterest-auth-choose-contact'] or "Jane Winder" }}               
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
+                Change
+                <span class="govuk-visually-hidden govuk-link--no-visited-state"> contact</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Representative party status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['reginterest-valid-representative'] or "Verified"}}             
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="reginterest-representative-party" class="govuk-link--no-visited-state">
+                Change
+                <span class="govuk-visually-hidden"> status</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <p>By approving this invite, parties will be informed of your decision.</p>
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Approve invite",
+            href: "reginterest-complete?accept-on-case-result=accept"
+          }) }} 
+          <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline.html">Decline invite</a>
+        </div>
+      </div>
+    {% endif %} 
+  {% endif %} 
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Party details</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <strong>Interested party</strong><br>
+            {{data ['party1']}}
+          </li> 
+          {% if data['third-party'] == "yes" %}
+            <li>
+              <strong>Representative party</strong><br>
+              {{data ['representative1']}}
+            </li>
+          {% endif %} 
+          <li>
+            <strong>Submitted by</strong><br>
+            {% if data['verify-type'] == "rep-invite" %}
+              {{data ['party-user1']}}
+              {% else %}
+              {{data ['rep-user1']}}
+            {% endif%}
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div> 
 </div>
 
 {% endblock %}
+
 {% block footer %}
-{%include "includes/footer.html" %}
+  {% include "includes/footer.html" %}
 {% endblock %}
 
 
