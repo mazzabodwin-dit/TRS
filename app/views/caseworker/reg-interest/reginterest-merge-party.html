@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify representative – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">1.  Review parties</span>
+    <h1 class="govuk-heading-xl">
+      Merge representatives
+    </h1>
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <strong>{{data['representative1']}}</strong> has been verified on 2 cases <br>
+      The last verification was on <strong>21 Jan 2022</strong> by <strong>Bobby Caseworker</strong>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <div class="address-card">
+        <div class="address-container">
+          <h2 class="govuk-heading-m">Current organisation
+            <p class="right-aligned-link govuk-heading-s">
+              <a href="" class="govuk-link--no-visited-state">Edit</a>
+            </p> 
+          </h2> 
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Organisation:</dt>
+              <dd class="govuk-summary-list__value">{{data['representative1']}}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Address:</dt>
+              <dd class="govuk-summary-list__value">345, The Shard, London <br>
+                EC2 3TF<br>
+                United Kingdom
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company number: </dt>
+              <dd class="govuk-summary-list__value">456794936 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Web address: </dt>
+              <dd class="govuk-summary-list__value"><a href="" target="_blank">www.BlueSteelPartners.com</a></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">EORI: </dt>
+              <dd class="govuk-summary-list__value">GB205672212000</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">VAT no: </dt>
+              <dd class="govuk-summary-list__value">GB123456789</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+              <dd class="govuk-summary-list__value">150483782</dd>
+            </div>
+          </dl> 
+          <br>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Acting as a representative: 1 case
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Jan 2022</li>
+                  </ul>
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 1
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                </ul>
+              </div>
+            </details>
+          </div>    
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+
+      <div class="address-card">
+        <div class="address-container">
+          <h2 class="govuk-heading-m">Duplicate organisation
+            <p class="right-aligned-link govuk-heading-s">
+              <a href="" class="govuk-link--no-visited-state">Edit</a>
+            </p> 
+          </h2> 
+          <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Organisation:</dt>
+              <dd class="govuk-summary-list__value">Bluesteel Partners
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Address:</dt>
+              <dd class="govuk-summary-list__value">345 The Shard, London <br>
+                EC2 3TF<br>
+                United Kingdom
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company number: </dt>
+              <dd class="govuk-summary-list__value">456794936
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Web address: </dt>
+              <dd class="govuk-summary-list__value"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">EORI: </dt>
+              <dd class="govuk-summary-list__value"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">VAT no: </dt>
+              <dd class="govuk-summary-list__value"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+              <dd class="govuk-summary-list__value"></dd>
+            </div>
+          </dl> 
+          <br>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Interested party: 1 case
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 1
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user5']}}</a> - {{data['rep-email5']}}</li>
+                </ul>
+              </div>
+            </details>
+          </div>    
+        </div>
+      </div>
+    </div>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Merge organisations",
+        href: "reginterest-complete?accept-on-case-result=accept"
+      }) }} 
+      <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline.html">Decline invite</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+
