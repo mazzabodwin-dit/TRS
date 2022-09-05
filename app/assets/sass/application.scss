@@ -13,9 +13,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/mainstream-guide";
 @import "patterns/pagination";
 @import "patterns/related-items";
-@import "patterns/step-by-step-header";
-@import "patterns/step-by-step-nav";
-@import "patterns/step-by-step-related";
 @import "patterns/task-list";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -97,6 +94,11 @@ $govuk-assets-path: '/govuk/assets/';
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-color: #f8f8f8;
+}
+
+.address-card-duplicate {
+  /* Add shadows to create the "card" effect */
+  background-color: white;
 }
 
 /* On mouse-over, add a deeper shadow */
