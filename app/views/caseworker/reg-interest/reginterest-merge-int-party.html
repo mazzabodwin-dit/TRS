@@ -104,7 +104,7 @@
     </div>
   </div>
   <div class="govuk-grid-column-one-half">
-    {% if data['merge-complete'] == "yes" %}
+    {% if data['merge-complete'] == "0" %}
       <h2 class="govuk-heading-m">Duplicate organisation</h2> 
       <div class="address-card address-card-duplicate">
         <div class="address-container">
@@ -176,7 +176,7 @@
                 </summary>
                 <div class="govuk-details__text">
                   <ul class="govuk-list">
-                    <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user5']}}</a> - {{data['rep-email5']}}</li>
+                    <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user11']}}</a> - {{data['party-user11']}}</li>
                   </ul>
                 </div>
               </details>
@@ -188,7 +188,7 @@
           <h2 class="govuk-heading-m">Duplicate organisation (2 of 2)</h2> 
           <div class="address-card address-card-duplicate">
             <div class="address-container">
-              <h3 class="govuk-heading-s">Steel UK
+              <h3 class="govuk-heading-s">Steeel uk
                 <p class="right-aligned-link govuk-heading-s">
                   <a href="" class="govuk-link--no-visited-state">Edit</a>
                 </p> 
@@ -196,9 +196,8 @@
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Address:</dt>
-                  <dd class="govuk-summary-list__value">22 Bosworth Street, Reading<br>
-                    RD23 3TF<br>
-                    United Kingdom
+                  <dd class="govuk-summary-list__value">22 Bosworth Street, Shanghai<br>
+                    China
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -228,26 +227,12 @@
                 <details class="case-details govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
-                      Interested party: 1 case
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <ul class="govuk-list">
-                      <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
-                    </ul>
-                  </div>
-                </details>
-              </div>
-              <div>
-                <details class="case-details govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
                       Users: 1
                     </span>
                   </summary>
                   <div class="govuk-details__text">
                     <ul class="govuk-list">
-                      <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user5']}}</a> - {{data['rep-email5']}}</li>
+                      <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a> - {{data['party-email111']}}</li>
                     </ul>
                   </div>
                 </details>
@@ -260,7 +245,7 @@
 
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-    {% if data['merge-complete'] == "yes" %}
+    {% if data['merge-complete'] == "0" %}
       {% else %}
       {% if data['merge-complete'] == "1" %}
         {{ govukPagination({
@@ -307,16 +292,25 @@
   <div class="govuk-grid-column-full">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <div class="govuk-button-group">
-      {% if data['merge-complete'] == "yes" %}
+      {% if data['merge-complete'] == "0" %}
         {{ govukButton({
           text: "Continue",
           href: "reginterest-tasks"
         }) }} 
         {% else %}
-        {{ govukButton({
-          text: "Review merge",
-          href: ""
-        }) }} 
+        {% if data['merge-complete'] == "1" %}
+          {{ govukButton({
+            text: "Review merge1",
+            href: ""
+          }) }} 
+          {% else %}
+          {% if data['merge-complete'] == "2" %}
+            {{ govukButton({
+              text: "Review merge2",
+              href: ""
+            }) }} 
+          {% endif %}
+        {% endif %}
       {% endif %}
       <a class="govuk-link" govuk-link--no-visited-state href="reginterest-tasks">Back</a>
     </div>
