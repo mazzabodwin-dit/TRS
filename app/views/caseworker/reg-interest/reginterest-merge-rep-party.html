@@ -29,20 +29,17 @@
     </div>
 
     <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">Current organisation
+      </h2>
       <div class="address-card">
         <div class="address-container">
-          <h2 class="govuk-heading-m">Current organisation
+          <h3 class="govuk-heading-s">{{data['representative1']}}
             <p class="right-aligned-link govuk-heading-s">
               <a href="" class="govuk-link--no-visited-state">Edit</a>
             </p> 
-          </h2> 
+          </h3> 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Organisation:</dt>
-              <dd class="govuk-summary-list__value">{{data['representative1']}}
-              </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Address:</dt>
               <dd class="govuk-summary-list__value">345, The Shard, London <br>
@@ -103,22 +100,25 @@
           </div>    
         </div>
       </div>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Review merge",
+          href: ""
+        }) }} 
+      </div>
     </div>
     <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">Duplicate organisation (1 of 3)
+      </h2> 
 
-      <div class="address-card">
+      <div class="address-card address-card-duplicate">
         <div class="address-container">
-          <h2 class="govuk-heading-m">Duplicate organisation
+          <h3 class="govuk-heading-s">Bluesteel Partners
             <p class="right-aligned-link govuk-heading-s">
               <a href="" class="govuk-link--no-visited-state">Edit</a>
             </p> 
-          </h2> 
+          </h3> 
           <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Organisation:</dt>
-              <dd class="govuk-summary-list__value">Bluesteel Partners
-              </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Address:</dt>
               <dd class="govuk-summary-list__value">345 The Shard, London <br>
@@ -179,13 +179,37 @@
           </div>    
         </div>
       </div>
+      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+      {{ govukPagination({
+        next: {
+          href: "#"
+        },
+        items: [
+          {
+            number: 1,
+            current: true,
+            href: "#"
+          },
+          {
+            number: 2,
+            href: "#"
+          },
+          {
+            number: 3,
+            href: "#"
+          }
+        ]
+      }) }}
     </div>
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Merge organisations",
-        href: "reginterest-complete?accept-on-case-result=accept"
-      }) }} 
-      <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline.html">Decline invite</a>
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "reginterest-tasks"
+        }) }} 
+        <a class="govuk-link" govuk-link--no-visited-state href="reginterest-tasks">Back</a>
+      </div>
     </div>
   </div>
 </div>
