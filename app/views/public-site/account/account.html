@@ -126,24 +126,67 @@
             {% endif %}
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Address:</dt>
-          <dd class="govuk-summary-list__value">345, The Shard, London <br>
-            EC2 3TF<br>
-            United Kingdom
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Company details: </dt>
-          <dd class="govuk-summary-list__value">
-            Company number: 456794936 <img src="/public/images/checkmark.png" class="verified-tick" alt="Registered UK Company" title="Registered UK Company" width="18px"><br>
-
-            VAT number: 68593069894<br>
-            DUNS number: 123456789<br>
-            <a href="">www.orglongnameurlthatisannoying.com</a>
-          </dd>
-        </div>
-      </dl>
+        <!--Show the right info for who has logged in-->
+        {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
+              {{data['party-postcode1']}}<br>
+              {{data['party-country1']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number: </dt>
+            <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
+          </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
+              {{data['rep-postcode1']}}<br>
+              {{data['rep-country1']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
+          </div>
+        {% endif %}
+      </dl> 
     </div>
 
     <div class="govuk-grid-column-one-third">

@@ -59,14 +59,25 @@ module.exports = {
   "party-case-role1": "Importer",
   "party-submission1": "Registration of Interest",
   "party-status1": "Representative invite received",
+
   "party-address1": "345, The Shard, London",
-  "party-postcode1": "EC2 3TF",
+  "party-postcode1": "SE1 9QU",
   "party-country1": "United Kingdom",
   "party-org-number1": "456794936", 
   "party-web1": "www.steeluk.org", 
   "party-vat1": "123456789", 
   "party-eori1": "GB123456789",
   "party-duns1": "150483782",
+
+  "dup-party1": "Steeel uk",
+  "dup-party-address1": "22 Bosworth Street, Shanghai",
+  "dup-party-postcode1": "345667",
+  "dup-party-country1": "China",
+  "dup-party-org-number1": "456794936", 
+  "dup-party-web1": "www.steeluk.org", 
+  "dup-party-vat1": "", 
+  "dup-party-eori1": "",
+  "dup-party-duns1": "",
 
 
 
@@ -83,6 +94,17 @@ module.exports = {
   "rep-mobile1": "+44 7854329445",
   "rep-mobile-national1": "07854329445",
   "rep-submission1": "Registration of Interest received",
+
+  "rep-address1": "305 Fleet Street, London",
+  "rep-postcode1": "EC4Y 1JU",
+  "rep-country1": "United Kingdom",
+  "rep-org-number1": "765238953", 
+  "rep-web1": "www.BlueSteelPartners.com", 
+  "rep-vat1": "123456789", 
+  "rep-eori1": "",
+  "rep-duns1": "",
+
+  
 
   //KEY USER - who-signin=rep-invite
   //"representative1": "BlueSteel Partners",

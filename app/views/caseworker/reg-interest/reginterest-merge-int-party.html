@@ -31,14 +31,13 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-m">Current organisation
+    <h2 class="govuk-heading-m">Interested party
     </h2>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-s">{{data['party1'] or "fudge"}}
-
+        <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
           <p class="right-aligned-link govuk-heading-s">
-            <a href="/caseworker/orgs/org-edit-org-dets?org-edit-type=merge-int" class="govuk-link--no-visited-state">Edit</a>
+            <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
           </p> 
         </h3> 
 
@@ -60,12 +59,12 @@
             <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
-          </div>
-          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">VAT no: </dt>
             <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">D-U-N-S: </dt>
@@ -96,7 +95,7 @@
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
               </ul>
             </div>
           </details>
@@ -104,7 +103,9 @@
       </div>
     </div>
   </div>
+  <!--List of duplicates-->
   <div class="govuk-grid-column-one-half">
+    <!--Show header according to how many dups there are-->
     {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
       <h2 class="govuk-heading-m">Duplicate organisation</h2> 
       {% else %}
@@ -117,6 +118,7 @@
       {% endif %}
     {% endif %}
 
+    <!--Show content according to how many dups there are-->
     {% if (data['merge-duplicates'] == "0") %}
       <div class="address-card address-card-duplicate">
         <div class="address-container">
@@ -127,40 +129,39 @@
       {% if (data['merge-duplicates'] == "1") or (data['merge-duplicates'] == "1of2") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
-            <h3 class="govuk-heading-s">Steel UK ltd
+            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
               <p class="right-aligned-link govuk-heading-s">
-                <a href="/caseworker/orgs/org-edit-org-address?org-edit-type=merge-int" class="govuk-link--no-visited-state">Edit</a>
+                <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
               </p> 
             </h3> 
             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address:</dt>
-                <dd class="govuk-summary-list__value">345 The Shard<br>
-                  London <br>
-                  EC2 3TF<br>
-                  United Kingdom
+                <dd class="govuk-summary-list__value">{{data['dup-party-address1']}}<br>
+                  {{data['dup-party-postcode1']}}<br>
+                  {{data['dup-party-country1']}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Company number: </dt>
-                <dd class="govuk-summary-list__value">456794936
+                <dd class="govuk-summary-list__value">{{data['dup-party-org-number1']}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Web address: </dt>
-                <dd class="govuk-summary-list__value"><a href="" target="_blank">www.steeluk.org</a></dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">EORI: </dt>
-                <dd class="govuk-summary-list__value"></dd>
+                <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['dup-party-web1']}}</a></dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">VAT no: </dt>
-                <dd class="govuk-summary-list__value"></dd>
+                <dd class="govuk-summary-list__value">{{data['dup-party-vat1']}}</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">EORI: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-eori1']}}</dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-                <dd class="govuk-summary-list__value"></dd>
+                <dd class="govuk-summary-list__value">{{data['dup-party-duns']}}</dd>
               </div>
             </dl> 
             <br>
@@ -187,7 +188,7 @@
                 </summary>
                 <div class="govuk-details__text">
                   <ul class="govuk-list">
-                    <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user11']}}</a> - {{data['party-user11']}}</li>
+                    <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a> - {{data['party-user111']}}</li>
                   </ul>
                 </div>
               </details>
@@ -198,7 +199,7 @@
         {% if data['merge-duplicates'] == "2of2" %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
-              <h3 class="govuk-heading-s">Steeel uk
+              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
                 <p class="right-aligned-link govuk-heading-s">
                   <a href="" class="govuk-link--no-visited-state">Edit</a>
                 </p> 
@@ -206,25 +207,26 @@
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Address:</dt>
-                  <dd class="govuk-summary-list__value">22 Bosworth Street, Shanghai<br>
-                    China
+                  <dd class="govuk-summary-list__value">24 The Street<br> Reading<br>
+                    RG1 1AF<br>
+                    {{data['party-country1']}}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Company number: </dt>
-                  <dd class="govuk-summary-list__value">456794936
+                  <dd class="govuk-summary-list__value">
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Web address: </dt>
-                  <dd class="govuk-summary-list__value"><a href="" target="_blank">www.steeluk.org</a></dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">EORI: </dt>
-                  <dd class="govuk-summary-list__value"></dd>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank"></a></dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-vat1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
                   <dd class="govuk-summary-list__value"></dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -242,7 +244,7 @@
                   </summary>
                   <div class="govuk-details__text">
                     <ul class="govuk-list">
-                      <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a> - {{data['party-email111']}}</li>
+                      <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user11']}}</a> - {{data['party-email11']}}</li>
                     </ul>
                   </div>
                 </details>
@@ -253,6 +255,7 @@
       {% endif %}
     {% endif %}
 
+    <!--Show pagenation if there are 2 or more dups-->
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
     {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
@@ -302,6 +305,7 @@
   <div class="govuk-grid-column-full">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <div class="govuk-button-group">
+      <!--Show different buttons according to whether the dups have been resovled or not-->
       {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
         {{ govukButton({
           text: "Continue",
