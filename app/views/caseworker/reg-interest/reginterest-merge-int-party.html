@@ -35,40 +35,41 @@
     </h2>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-s">{{data['party1']}}
+        <h3 class="govuk-heading-s">{{data['party1'] or "fudge"}}
+
           <p class="right-aligned-link govuk-heading-s">
-            <a href="" class="govuk-link--no-visited-state">Edit</a>
+            <a href="/caseworker/orgs/org-edit-org-dets?org-edit-type=merge-int" class="govuk-link--no-visited-state">Edit</a>
           </p> 
         </h3> 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Address:</dt>
-            <dd class="govuk-summary-list__value">345, The Shard, London <br>
-              EC2 3TF<br>
-              United Kingdom
+            <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
+              {{data['party-postcode1']}}<br>
+              {{data['party-country1']}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company number: </dt>
-            <dd class="govuk-summary-list__value">456794936 
+            <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__value"><a href="" target="_blank">steeluk.org</a></dd>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">GB205672212000</dd>
+            <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">VAT no: </dt>
-            <dd class="govuk-summary-list__value">GB123456789</dd>
+            <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-            <dd class="govuk-summary-list__value">150483782</dd>
+            <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
           </div>
         </dl> 
         <br>
@@ -104,21 +105,31 @@
     </div>
   </div>
   <div class="govuk-grid-column-one-half">
-    {% if data['merge-complete'] == "0" %}
+    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
       <h2 class="govuk-heading-m">Duplicate organisation</h2> 
+      {% else %}
+      {% if data['merge-duplicates'] == "1of2" %}
+        <h2 class="govuk-heading-m">Duplicate organisation (1 of 2)</h2>
+        {% else %}
+        {% if data['merge-duplicates'] == "2of2" %}
+          <h2 class="govuk-heading-m">Duplicate organisation (2 of 2)</h2>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    {% if (data['merge-duplicates'] == "0") %}
       <div class="address-card address-card-duplicate">
         <div class="address-container">
           <p>No more duplicates</p>
         </div>
       </div>
       {% else %}
-      {% if data['merge-complete'] == "1" %}
-        <h2 class="govuk-heading-m">Duplicate organisation (1 of 2)</h2> 
+      {% if (data['merge-duplicates'] == "1") or (data['merge-duplicates'] == "1of2") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
             <h3 class="govuk-heading-s">Steel UK ltd
               <p class="right-aligned-link govuk-heading-s">
-                <a href="" class="govuk-link--no-visited-state">Edit</a>
+                <a href="/caseworker/orgs/org-edit-org-address?org-edit-type=merge-int" class="govuk-link--no-visited-state">Edit</a>
               </p> 
             </h3> 
             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
@@ -184,8 +195,7 @@
           </div>
         </div>
         {% else %}
-        {% if data['merge-complete'] == "2" %}
-          <h2 class="govuk-heading-m">Duplicate organisation (2 of 2)</h2> 
+        {% if data['merge-duplicates'] == "2of2" %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
               <h3 class="govuk-heading-s">Steeel uk
@@ -245,41 +255,41 @@
 
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-    {% if data['merge-complete'] == "0" %}
+    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
       {% else %}
-      {% if data['merge-complete'] == "1" %}
+      {% if data['merge-duplicates'] == "1of2" %}
         {{ govukPagination({
           next: {
-            href: "?merge-complete=2"
+            href: "?merge-duplicates=2of2"
           },
           items: [
             {
               number: 1,
               current: true,
-              href: "?merge-complete=1"
+              href: "?merge-duplicates=1of2"
             },
             {
               number: 2,
-              href: "?merge-complete=2"
+              href: "?merge-duplicates=2of2"
             }
           ]
         }) }}
 
         {% else %}
-        {% if data['merge-complete'] == "2" %}
+        {% if data['merge-duplicates'] == "2of2" %}
           {{ govukPagination({
             previous: {
-              href: "?merge-complete=1"
+              href: "?merge-duplicates=1of2"
             },
             items: [
               {
                 number: 1,
-                href: "?merge-complete=1"
+                href: "?merge-duplicates=1of2"
               },
               {
                 number: 2,
                 current: true,
-                href: "?merge-complete=2"
+                href: "?merge-duplicates=2of2"
               }
             ]
           }) }}
@@ -292,19 +302,19 @@
   <div class="govuk-grid-column-full">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <div class="govuk-button-group">
-      {% if data['merge-complete'] == "0" %}
+      {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
         {{ govukButton({
           text: "Continue",
           href: "reginterest-tasks"
         }) }} 
         {% else %}
-        {% if data['merge-complete'] == "1" %}
+        {% if data['merge-duplicates'] == "1of2" %}
           {{ govukButton({
             text: "Review merge1",
             href: ""
           }) }} 
           {% else %}
-          {% if data['merge-complete'] == "2" %}
+          {% if data['merge-duplicates'] == "2of2" %}
             {{ govukButton({
               text: "Review merge2",
               href: ""

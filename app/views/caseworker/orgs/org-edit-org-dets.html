@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Edit organisation details - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['org-edit-type'] == "merge-int" %}
+       <form action="/caseworker/reg-interest/reginterest-merge-int-party" method="post" id="edit-org-dets-form"> 
+        {% else %}
+        {% if data['org-edit-type'] == "merge-rep" %}
+          <form action="/caseworker/reg-interest/reginterest-merge-int-rep" method="post" id="edit-org-dets-form">
+        {% endif %}
+      {% endif %}           
+
+        <h1 class="govuk-heading-xl">
+          Organisation details
+        </h1>
+
+        {{ govukInput({
+          label: {
+            text: "Name of organisation",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "party1",
+          name: "party1",
+          value: data['party1'],
+          type: "text"
+        }) }}
+       
+        {% call govukFieldset({
+          legend: {
+            text: "Address of organisation",
+            classes: "govuk-fieldset__legend--s",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>Provide the address of the main office.</p>
+
+          {{ govukTextarea({
+            label: {
+              text: "Street address",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-20",
+            id: "party-address1",
+            name: "party-address1",
+            value: data['party-address1'],
+            type: "text"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode or zip code",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-5",
+            id: "party-postcode1",
+            name: "party-postcode1",
+            value: data['party-postcode1'],
+            type: "text"
+          }) }}
+        
+        {% endcall %}
+
+        {% include "includes/country-list.html" %}
+        {{ govukInput({
+          label: {
+            text: "Organisation registration number",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-10",
+          id: "party-org-number1",
+          name: "party-org-number1",
+          value: data['party-org-number1'],
+          type: "text"
+        }) }} 
+
+        {{ govukInput({
+          label: {
+            text: "Website (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "party-web1",
+          name: "party-web1",
+          type: "text",
+          value: data['party-web1']  
+        }) }}
+        
+        {{ govukInput({
+          label: {
+            text: "VAT registration number (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "party-vat1",
+          name: "party-vat1",
+          type: "text",
+          value: data['party-vat1']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "EORI number (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "party-eori1",
+          name: "party-eori1",
+          type: "text",
+          value: data['party-eori1']          
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "DUNS number (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "party-duns1",
+          name: "party-duns1",
+          type: "text",
+          value: data['party-duns1']  
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save details"
+          }) }}    
+         <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
+
+      </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

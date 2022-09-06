@@ -54,7 +54,7 @@
             classes: "govuk-input--width-20",
             id: "createaccount-org-address",
             name: "createaccount-org-address",
-            value: data['createaccount-reg-org-address'],
+            value: data['createaccount-org-address'],
             type: "text"
           }) }}
 
@@ -66,13 +66,14 @@
             classes: "govuk-input--width-5",
             id: "createaccount-org-zip",
             name: "createaccount-org-zip",
-            value: data['createaccount-reg-org-zip'],
+            value: data['createaccount-org-zip'],
             type: "text"
           }) }}
         
         {% endcall %}
 
         {% include "includes/country-list.html" %}
+        
         {{ govukInput({
           label: {
             text: "Organisation registration number",
@@ -83,9 +84,9 @@
             text: "Some organisations have an official registration number from the country they are based in."
           },
           classes: "govuk-input--width-10",
-          id: "createaccount-reg-org-number",
-          name: "createaccount-reg-org-number",
-          value: data['createaccount-reg-org-number'],
+          id: "createaccount-org-number",
+          name: "createaccount-org-number",
+          value: data['createaccount-org-number'],
           type: "text"
         }) }} 
 

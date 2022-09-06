@@ -55,11 +55,20 @@ module.exports = {
   "party1": "Steel UK",
   "party-user1": "Jane Winder",
   "party-email1": "j.winder@steeluk.org",
-  "party-country1": "United Kingdom",
   "party-role1": "Interested party",
   "party-case-role1": "Importer",
   "party-submission1": "Registration of Interest",
   "party-status1": "Representative invite received",
+  "party-address1": "345, The Shard, London",
+  "party-postcode1": "EC2 3TF",
+  "party-country1": "United Kingdom",
+  "party-org-number1": "456794936", 
+  "party-web1": "www.steeluk.org", 
+  "party-vat1": "123456789", 
+  "party-eori1": "GB123456789",
+  "party-duns1": "150483782",
+
+
 
   //KEY USER: who-signin=org-invite
   "party-user11": "Lara Crist",
