@@ -31,9 +31,11 @@
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
               {{ data['representative1'] }}
             </p>
+            <p>We will notify your decision to both parties.</p>
             {% else %}
             {% if data['third-party'] == "no" %}
               <p>You have accepted the registration of interest for <strong>{{ data['party1'] }}</strong> that was submitted by <strong>{{ data['party-user1'] }} - {{data['party-email1']}}</strong></p>
+              <p>We will notify your decision to the interested party.</p>
             {% endif %}
           {% endif %}
           
@@ -58,7 +60,7 @@
           {% endif %}
         {% endif %}
 
-        <p>An email will be sent to those involved.</p>
+        <p>We will notify your decision to both parties.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
         <ul class="govuk-list govuk-list--bullet">
@@ -95,15 +97,15 @@
             <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
               {{ data['representative2'] }}
             </p>
-            <p>Reason: {{data['unverfied-reason']}}               
+            <p>Reason: {{data['unverfied-reason-rep']}}               
             </p>
           {% endif %}
         {% endif %}
 
-        <p>An email will be sent to both parties involved.</p>
+        <p>We will notify your decision to both parties.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
-        <p><a href="/caseworker/cases/submissions/case-submission-rep" class="govuk-link--no-visited-state">Review LOA submission for this invite</a>
+        <p><a href="/caseworker/cases/submissions/case-submission-rep" class="govuk-link--no-visited-state">Review Letter of Authority submission for this invite</a>
         </p>
       {% endif %}
 
@@ -118,6 +120,9 @@
 {% endblock %}
 
 {% block footer %}
+
+{% if data['verify-type'] == "reg-interest" %}
+
   {{ govukFooter({
     meta: {
       items: [
@@ -146,14 +151,54 @@
         {
         },
         {
-          href: "../email/email-reginterest-accept.html",
-          text: "For user testing: Accept email"
+          href: "/public-site/email/email-reginterest-accept.html",
+          text: "Email: Accept email"
         },
         {
-          href: "../email/email-reginterest-decline.html",
-          text: "For user testing: Decline email"
+          href: "/public-site/email/email-reginterest-decline.html",
+          text: "Email: Decline email"
         }
       ]
     }
   }) }}
+  {% else %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Help"
+        },
+        {
+          href: "#2",
+          text: "Cookies"
+        },
+        {
+          href: "#3",
+          text: "Privacy"
+        },
+        {
+          href: "#4",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+        },
+        {
+        },
+        {
+          href: "/public-site/email/email-invite-rep-accept.html",
+          text: "Email: Accept email"
+        },
+        {
+          href: "/public-site/email/email-invite-rep-decline.html",
+          text: "Email: Decline email"
+        }
+      ]
+    }
+  }) }}
+{% endif %}
 {% endblock %}

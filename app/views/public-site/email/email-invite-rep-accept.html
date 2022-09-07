@@ -20,15 +20,12 @@
                   <td valign="middle"><br></td>
                   <td>
 
-
-
 <!-- Email header starts -->
-                    <h3 class="govuk-heading-s">You are invited to represent Steel UK on a Trade Remedies case</h3> 
+                    <h3 class="govuk-heading-s">Invite for Bluesteel Partners to represent Steel UK</h3> 
                     <p>Trade Remedies Service <span style="font-size: 13px; font-weight: 300;">trade.remedies.service@notifications.service.gov.uk></span></p>
   <!-- Email header ends -->
 
 
-                    
                   </td>
                 </tr>
               </tbody>
@@ -83,21 +80,23 @@
           <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px;">
 
 <!-- Content starts -->
-
-            <p>Dear {{ data['invite-rep-name'] or data['rep-user2'] }} </p>
-            <p>You have been invited by Jane Winder to represent Steel UK in the following trade remedies case:</p>
-            <p>{{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}</p>   
-            <p><a href="/public-site/accept-invite/invite-rep-who-is-reg?who-signin=rep-invite&user-permissions=Admin&account-activated=fully&reginterest-task=None&reginterest-what-org=existing-org" style="color: #005ea5;">
-              https://trade-remedies.digital/email-invite?code=ZMc4Z0zLJszTGPHrd6JQTiD93g2cgtCG0aE
-            </a></p>
-            <h3>What next?</h3>
-            <p>Once you have accepted the invite, we will email you to let you know when you have been added to the case.</p> 
+            <p>Dear Bob Hoskins</p>
+            <p>The invite for Bluesteel Partners to represent Steel UK has been approved in the following case:</p>
+            <p>{{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}</p>
+            <h3>What happens next:</h3>
+            <p>You can follow the progress of the case by reading the public file.</p>
+            <p>We may sent an email asking for further information or to complete a questionnaire.</p>
+            <p>Not really sure what else</p>
+              
+            <p>If you have any questions about the investigation process, please contact us.</p>
             <p>Yours sincerely, <br>
               Investigations Team
               <br>
               Trade Remedies Authority
               <br>
+              Contact: <a href="mailto:investigations@traderemedies.gov.uk">{{data ['case-ref1']}}@traderemedies.gov.uk</a>
             </p>           
+           
 <!-- Content ends -->
 
           </td>
