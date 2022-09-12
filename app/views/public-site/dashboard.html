@@ -185,9 +185,10 @@
                   </p> 
                 </h2>
                 <p>
-                  <!-- Show new or existing org name-->     
-                  {% if data['invite-rep-what-org'] == "existing-org" %}
-                    <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=existing-org#manage-team" class="govuk-link--no-visited-state">{{ data['invite-rep-name'] or data['rep-user1'] }}</a> <br>                   
+                  <!-- Show new or existing org name-->   
+                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                  <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=existing-org#manage-team" class="govuk-link--no-visited-state"></a>{% if data['invite-rep-what-org'] == "existing-org" %}</a>
+                    {{ data['invite-rep-name'] or data['rep-user1'] }} - {{data['representative2']}} <br>                   
                     {% else %}
 
                     {% if data['invite-rep-what-org'] == "new-org" %}
@@ -195,7 +196,6 @@
                       {{data['invite-rep-org-name'] or data['representative2'] }}<br>
                     {% endif %}
                   {% endif %}
-                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>
                   Status: {{data['invite-rep-task']}} (<span id="date3"></span>)
                 </p>
               </div>
