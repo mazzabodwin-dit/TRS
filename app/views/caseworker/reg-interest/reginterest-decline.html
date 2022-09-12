@@ -70,20 +70,22 @@
               </dd>
           </div>
         {% endif %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            LOA signatory
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
-              Change
-              <span class="govuk-visually-hidden govuk-link--no-visited-state"> contact</span>
-            </a>
-          </dd>
-        </div>
+        {% if data['third-party'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              LOA signatory
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
+                Change
+                <span class="govuk-visually-hidden govuk-link--no-visited-state"> contact</span>
+              </a>
+            </dd>
+          </div>
+        {% endif %}
       </dl>
       {% if data['third-party'] == "yes" %}
         <h2 class="govuk-heading-m">Representative party</h2>
