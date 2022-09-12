@@ -29,15 +29,13 @@
       <p>We have sent the invite to:</p>
       {% if data ['direct-invite'] == "no" %}
         {% if data['invite-party-contacts-choice'] == "new-contact" %}
-          <ul class="govuk-list govuk-list--bullet">
-            <li>{{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</li>
-          </ul>
+          <ul class="govuk-list">
+            {{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</ul>
           <p>Organisation:  {{data['invite-contact-org-name'] or "Steel UK"}}<br>
-            Case: AD2224 - Steel plate from Russia<br>
-                      
+            Case: AD2224 - Steel plate from Russia<br>     
           </p>
           {% else %}
-          <ul class="govuk-list govuk-list--bullet">
+          <ul class="govuk-list">
             {% for contact in data['invite-party-contacts-choice'] %}
               <li>{{ contact }}</li>
             {% endfor %}

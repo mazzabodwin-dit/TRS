@@ -52,7 +52,7 @@
         </dd>
         <dd class="govuk-summary-list__actions">
           {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            <a href="invite-new-contact-details" class="govuk-link--no-visited-state">
+            <a href="invite-party" class="govuk-link--no-visited-state">
             Change
               <span class="govuk-visually-hidden"> organisation</span>
             </a>
@@ -71,10 +71,10 @@
           Contact details
         </dt>
         <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list--bullet">
+          <ul class="govuk-list">
             {% if data['invite-party-contacts-choice'] == "new-contact" %}
-            <li>{{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</li>
-            {% else %}
+              <li>{{data['invite-contact-name'] or "Jane Winder"}}  - {{data['invite-contact-email'] or "j.winder@steeluk.org"}}</li>
+              {% else %}
               {% for contact in data['invite-party-contacts-choice'] %}
                 <li>{{ contact }}</li>
               {% endfor %}
@@ -101,7 +101,7 @@
    
 
     <h2 class="govuk-heading-m">Now send your invite</h2>
-    <p>Submitting this information will send invite emails. </p>
+    <p>Submitting this information will send email invites.</p>
     
     <div class="govuk-button-group">
       {{ govukButton({
