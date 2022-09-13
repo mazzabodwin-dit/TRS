@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm not duplicate – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">1.  Review parties</span>
+    <h1 class="govuk-heading-xl">
+      Confirm not a duplicate
+    </h1>
+    <p>Before marking this organisation as not a duplicate with the interested party please ensure the following:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Carefully review the details that are the same as the interested party</li>
+      <li>Update any details that are incorrect</li>
+      <li>If necessary seek confirmation from the organisation</li>
+    </ul>
+
+    <form action="reginterest-tasks" method="post" id="reginterest-valid-org-form">
+      
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
+      </div>
+
+    </form>
+    
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+

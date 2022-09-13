@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Verify representative – {{serviceName}}
+  Duplicate representative – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -21,7 +21,7 @@
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
-      Resolve duplicate interested party
+      Duplicate interested party
     </h1>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
       <strong>{{data['party1']}}</strong> has been verified on 1 case <br>
@@ -35,43 +35,62 @@
     </h2>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-s">{{data['party1']}}
+        <h3 class="govuk-heading-m"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
           <p class="right-aligned-link govuk-heading-s">
-            <a href="" class="govuk-link--no-visited-state">Edit</a>
+            <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
           </p> 
         </h3> 
-
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Address:</dt>
-            <dd class="govuk-summary-list__value">345, The Shard, London <br>
-              EC2 3TF<br>
-              United Kingdom
+            <dt class="govuk-summary-list__key">Contact:</dt>
+            <dd class="govuk-summary-list__value">{{data['rep-user1']}} <br>
+              {{data['rep-email1']}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Company number: </dt>
-            <dd class="govuk-summary-list__value">456794936 
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
+              {{data['rep-postcode1']}}<br>
+              {{data['rep-country1']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Reg number: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} 
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__value"><a href="" target="_blank">steeluk.org</a></dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">GB205672212000</dd>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">VAT no: </dt>
-            <dd class="govuk-summary-list__value">GB123456789</dd>
+            <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-            <dd class="govuk-summary-list__value">150483782</dd>
+            <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
           </div>
         </dl> 
         <br>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Interested party: 1 case
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
+              </ul>
+            </div>
+          </details>
+        </div>
         <div>
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -90,12 +109,14 @@
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Users: 1
+                Users: 3
               </span>
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
                 <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
               </ul>
             </div>
           </details>
@@ -131,7 +152,7 @@
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Company number: </dt>
+                <dt class="govuk-summary-list__key">Reg number: </dt>
                 <dd class="govuk-summary-list__value">456794936
                 </dd>
               </div>
@@ -201,7 +222,7 @@
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">Company number: </dt>
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
                   <dd class="govuk-summary-list__value">456794936
                   </dd>
                 </div>

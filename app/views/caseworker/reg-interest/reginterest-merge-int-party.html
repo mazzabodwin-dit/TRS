@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Verify representative – {{serviceName}}
+  Duplicate interested party – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -21,26 +21,30 @@
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">1.  Review parties</span>
     <h1 class="govuk-heading-xl">
-      Resolve duplicate interested party
+      Duplicate organisations
     </h1>
-    <div class="govuk-inset-text govuk-inset-text__reginterest">
-      <strong>{{data['party1']}}</strong> has been verified on 1 case <br>
-      The last verification was on <strong>21 Jan 2022</strong> by <strong>Bobby Caseworker</strong>
-    </div>
+    <p>Organisations have been found with similar details to the party concerned. Ensure that: </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Genuine duplicates are only merged after confirmation with the parties involved</li>
+      <li>Non-duplicates should have incorrect details updated and marked as 'Not duplicate'</li>
+    </ul>
+    {{ govukDetails({
+      summaryText: "How are duplicates determined?",
+      text: "Matches are made based on the website domain, organisation registration number, EORI, VAT, and DUNS number."
+    }) }}
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-m">Interested party
+    <h2 class="govuk-heading-s">Interested party
     </h2>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+        <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
           <p class="right-aligned-link govuk-heading-s">
             <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
           </p> 
         </h3> 
-
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Address:</dt>
@@ -50,7 +54,7 @@
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Company number: </dt>
+            <dt class="govuk-summary-list__key">Reg number: </dt>
             <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
             </dd>
           </div>
@@ -107,13 +111,16 @@
   <div class="govuk-grid-column-one-half">
     <!--Show header according to how many dups there are-->
     {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1") %}
-      <h2 class="govuk-heading-m">Duplicate organisation</h2> 
+      <h2 class="govuk-heading-s">Duplicate organisation
+      </h2> 
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
-        <h2 class="govuk-heading-m">Duplicate organisation (1 of 2)</h2>
+        <h2 class="govuk-heading-s">Duplicate organisation (1 of 2)
+        </h2>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-m">Duplicate organisation (2 of 2)</h2>
+          <h2 class="govuk-heading-s">Duplicate organisation (2 of 2)
+        </h2>
         {% endif %}
       {% endif %}
     {% endif %}
@@ -129,12 +136,12 @@
       {% if (data['merge-duplicates'] == "1") or (data['merge-duplicates'] == "1of2") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
-            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
+            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
               <p class="right-aligned-link govuk-heading-s">
-                <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
+                <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
               </p> 
-            </h3> 
-            <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+            </h3>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address:</dt>
                 <dd class="govuk-summary-list__value">{{data['dup-party-address1']}}<br>
@@ -143,7 +150,7 @@
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Company number: </dt>
+                <dt class="govuk-summary-list__key">Reg number: </dt>
                 <dd class="govuk-summary-list__value">{{data['dup-party-org-number1']}}
                 </dd>
               </div>
@@ -161,7 +168,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-                <dd class="govuk-summary-list__value">{{data['dup-party-duns']}}</dd>
+                <dd class="govuk-summary-list__value">{{data['dup-party-duns1']}}</dd>
               </div>
             </dl> 
             <br>
@@ -179,45 +186,73 @@
                 </div>
               </details>
             </div> 
+            <div class="govuk-button-group">
+              <!--Show different buttons according to whether the dups have been resovled or not-->
+              {% if (data['merge-duplicates'] == "1") %}
+                {{ govukButton({
+                  text: "Review merge details",
+                  href: "reginterest-merge-choose-table-radio"
+                }) }} 
+                {% else %}
+                {% if data['merge-duplicates'] == "1of2" %}
+                  {{ govukButton({
+                    text: "Review merge details",
+                    href: "reginterest-merge-choose-table-radio"
+                  }) }} 
+                  {% else %}
+                  {% if data['merge-duplicates'] == "2of2" %}
+                    {{ govukButton({
+                      text: "Review merge details",
+                      href: "reginterest-merge-choose-table-radio"
+                    }) }} 
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+              {{ govukButton({
+                text: "Not duplicate",
+                classes: "govuk-button--secondary",
+                href: "reginterest-merge-not-duplicate"
+              }) }} 
+            </div>
           </div>
         </div>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
-              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party2']}}</a>  
                 <p class="right-aligned-link govuk-heading-s">
-                  <a href="" class="govuk-link--no-visited-state">Edit</a>
+                  <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
                 </p> 
-              </h3> 
+              </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Address:</dt>
-                  <dd class="govuk-summary-list__value">24 The Street<br> Reading<br>
-                    RG1 1AF<br>
-                    {{data['party-country1']}}
+                  <dd class="govuk-summary-list__value">{{data['dup-party-address2']}}<br>
+                    {{data['dup-party-postcode2']}}<br>
+                    {{data['dup-party-country2']}}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">Company number: </dt>
-                  <dd class="govuk-summary-list__value">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-org-number2']}}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Web address: </dt>
-                  <dd class="govuk-summary-list__value"><a href="" target="_blank"></a></dd>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['dup-party-web2']}}</a></dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">VAT no: </dt>
-                  <dd class="govuk-summary-list__value">{{data['dup-party-vat1']}}</dd>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-vat2']}}</dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">EORI: </dt>
-                  <dd class="govuk-summary-list__value"></dd>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-eori2']}}</dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-                  <dd class="govuk-summary-list__value"></dd>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-duns2']}}</dd>
                 </div>
               </dl> 
               <br>
@@ -249,6 +284,34 @@
                   </div>
                 </details>
               </div> 
+              <div class="govuk-button-group">
+                <!--Show different buttons according to whether the dups have been resovled or not-->
+                {% if (data['merge-duplicates'] == "1") %}
+                  {{ govukButton({
+                    text: "Review merge details",
+                    href: "reginterest-merge-choose-table-radio"
+                  }) }} 
+                  {% else %}
+                  {% if data['merge-duplicates'] == "1of2" %}
+                    {{ govukButton({
+                      text: "Review merge details",
+                      href: "reginterest-merge-choose-table-radio"
+                    }) }} 
+                    {% else %}
+                    {% if data['merge-duplicates'] == "2of2" %}
+                      {{ govukButton({
+                        text: "Review merge details",
+                        href: "reginterest-merge-choose-table-radio"
+                      }) }} 
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {{ govukButton({
+                  text: "Not duplicate",
+                  classes: "govuk-button--secondary",
+                  href: "reginterest-merge-not-duplicate"
+                }) }} 
+              </div>
             </div>
           </div>
         {% endif %}
@@ -315,13 +378,13 @@
         {% if data['merge-duplicates'] == "1of2" %}
           {{ govukButton({
             text: "Review merge1",
-            href: ""
+            href: "reginterest-merge-choose-table-radio"
           }) }} 
           {% else %}
           {% if data['merge-duplicates'] == "2of2" %}
             {{ govukButton({
               text: "Review merge2",
-              href: ""
+              href: "reginterest-merge-choose-select"
             }) }} 
           {% endif %}
         {% endif %}

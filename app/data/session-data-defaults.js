@@ -17,6 +17,8 @@ Example usage:
 
 */
 
+const { isNull } = require("lodash");
+
 module.exports = {
 
   // Insert values here
@@ -66,20 +68,29 @@ module.exports = {
   "party-org-number1": "456794936", 
   "party-web1": "www.steeluk.org", 
   "party-vat1": "123456789", 
-  "party-eori1": "GB123456789",
-  "party-duns1": "150483782",
+  "party-eori1": null,
+  "party-duns1": null,
 
   "dup-party1": "Steeel uk",
   "dup-party-address1": "22 Bosworth Street, Shanghai",
   "dup-party-postcode1": "345667",
   "dup-party-country1": "China",
   "dup-party-org-number1": "456794936", 
-  "dup-party-web1": "www.steeluk.org", 
-  "dup-party-vat1": "", 
-  "dup-party-eori1": "",
-  "dup-party-duns1": "",
+  "dup-party-web1": null, 
+  "dup-party-vat1": null, 
+  "dup-party-eori1": "GB123456789",
+  "dup-party-duns1": null,
 
-
+  "dup-party2": "Steel UK",
+  "dup-party-address2": "24 The Street, Reading",
+  "dup-party-postcode2": "RG1 1AF",
+  "dup-party-country2": "United Kingdom",
+  "dup-party-org-number2": null,
+  "dup-party-vat2": null,
+  "dup-party-web2": "www.steeluk.org", 
+  "dup-party-vat2": null, 
+  "dup-party-eori2": null,
+  "dup-party-duns2": null,
 
   //KEY USER: who-signin=org-invite
   "party-user11": "Lara Crist",
@@ -100,9 +111,9 @@ module.exports = {
   "rep-country1": "United Kingdom",
   "rep-org-number1": "765238953", 
   "rep-web1": "www.BlueSteelPartners.com", 
-  "rep-vat1": "123456789", 
-  "rep-eori1": "",
-  "rep-duns1": "",
+  "rep-vat1": "223456789", 
+  "rep-eori1": null,
+  "rep-duns1": "150483782",
 
   
 
@@ -236,7 +247,7 @@ module.exports = {
 
   "rep-role7": "Representative",
   "rep-user7": "Joan de-Arc",  
-  "rep-email7": "doodle@biglawyersrus.com",
+  "rep-email7": "arc@biglawyersrus.com",
   "rep-user-role7": "(Invite sent)",
   "representative7": "Big Lawyers RUS",
 
