@@ -17,7 +17,7 @@
       
     <!--This determines where the edit page should go back to-->
     {% if data['org-edit-type'] == "org-int" %}
-      <form action="/caseworker/org/org-steeluk" method="post" id="edit-org-dets-form"> 
+      <form action="/caseworker/orgs/org-steeluk#details" method="post" id="edit-org-dets-form"> 
       {% else %}
       {% if data['org-edit-type'] == "merge-int" %}
         <form action="/caseworker/reg-interest/reginterest-merge-int-party" method="post" id="edit-org-dets-form"> 

@@ -15,7 +15,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/caseworker/reg-interest/reginterest-merge-int-rep" method="post" id="edit-org-dets-form">         
+      {% if data['org-edit-type'] == "org-rep" %}
+        <form action="/caseworker/orgs/org-bluesteel#details" method="post" id="edit-org-dets-form"> 
+        {% else %}
+        {% if data['org-edit-type'] == "merge-rep" %}
+          <form action="/caseworker/reg-interest/reginterest-merge-rep-party" method="post" id="edit-org-dets-form"> 
+        {% endif %}
+      {% endif %}
 
         <h1 class="govuk-heading-xl">
           Organisation details

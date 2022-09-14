@@ -3,8 +3,8 @@
     <!-- Caseworker - verify reginterest & verify invite- organisation -->
 
 
-<!-- Duplicates only show if there is dup -->
-{% if (data['duplicate-org'] == "yes") %}
+<!-- Duplicate Interested party only show if there is dup int -->
+{% if (data['duplicate-org'] == "int") or (data['duplicate-org'] == "both") %}
 
   {% if (data['merge-task'] == "complete") %}
     <li class="app-task-list__item">
@@ -106,6 +106,51 @@
 <!-- Only show this if it is the right type of verify type e.g. involves a representative-->
 
 {% if (data['third-party'] == "yes") %}
+
+  <!-- Duplicate Representative only show if there is dup rep -->
+  {% if (data['duplicate-org'] == "rep") or (data['duplicate-org'] == "both") %}
+
+    {% if (data['merge-rep-task'] == "complete") %}
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-merge-rep-party" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
+            Resolve duplicate representative
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="duplicate-status">Complete</strong>
+      </li>
+
+      {% else %}
+      {% if (data['merge-rep-task'] == "started") %}
+      <!-- If the user has started section 2 show: -->
+
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-merge-rep-party" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
+            Resolve duplicate representative
+          </a>
+        </span>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="duplicate-status">In progress</strong>
+        </li>
+        
+        {% else %}
+          <!-- If the user has not started section 2 show -->
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="reginterest-merge-rep-party?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
+                Resolve duplicate representative
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="duplicate-status">Not started yet</strong>
+          </li>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+
+
+
+
 
   {% if (data['representative-party-complete'] != null) %}
       <li class="app-task-list__item">
