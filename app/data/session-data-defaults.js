@@ -61,7 +61,6 @@ module.exports = {
   "party-case-role1": "Importer",
   "party-submission1": "Registration of Interest",
   "party-status1": "Representative invite received",
-
   "party-address1": "345, The Shard, London",
   "party-postcode1": "SE1 9QU",
   "party-country1": "United Kingdom",
@@ -71,26 +70,27 @@ module.exports = {
   "party-eori1": "GB123456789",
   "party-duns1": null,
 
-  "dup-party1": "Steeel uk",
-  "dup-party-address1": "22 Bosworth Street, Shanghai",
+  "dup-party1": "Steeel",
+  "dup-party-address1": "22 High Drive, Shanghai",
   "dup-party-postcode1": "345667",
   "dup-party-country1": "China",
   "dup-party-org-number1": "456794936", 
   "dup-party-web1": null, 
   "dup-party-vat1": "987654321", 
   "dup-party-eori1": "GB987654321",
-  "dup-party-duns1": null,
+  "dup-party-duns1": "150483782",
 
   "dup-party2": "Steel UK",
   "dup-party-address2": "24 The Street, Reading",
   "dup-party-postcode2": "RG1 1AF",
   "dup-party-country2": "United Kingdom",
-  "dup-party-org-number2": null,
+  "dup-party-org-number2": "765238953",
   "dup-party-web2": "www.steeluk.org", 
   "dup-party-vat2": "123456789", 
   "dup-party-eori2": null,
   "dup-party-duns2": null,
 
+  
   //KEY USER: who-signin=org-invite
   "party-user11": "Lara Crist",
   "party-email11": "l.crist@steeluk.com",
@@ -113,6 +113,18 @@ module.exports = {
   "rep-vat1": "223456789", 
   "rep-eori1": null,
   "rep-duns1": "150483782",
+
+  "dup-party3": "Bluesteel",
+  "dup-party-address3": "243 Cupboard Lane, Leeds",
+  "dup-party-postcode3": "LE1 1AF",
+  "dup-party-country3": "United Kingdom",
+  "dup-party-org-number3": "765238953",
+  "dup-party-web3": "bluesteelpartners.com", 
+  "dup-party-vat3": "223456789", 
+  "dup-party-eori3": null,
+  "dup-party-duns3": null,
+  "dup-user3": "Jonty Bodwin",
+  "dup-email3": "jonty.bodwin@BlueSteelPartners.com",
 
   
 
@@ -250,13 +262,11 @@ module.exports = {
   "rep-user-role7": "(Invite sent)",
   "representative7": "Big Lawyers RUS",
 
-  //"representative1": "BlueSteel Partners",   Using Bob for this one as Jon is deactived
+  //"representative1": "BlueSteel Partners",
   "rep-user6": "Arnie Swarts",
   "rep-email6": "arnieswarts@BlueSteelPartners.com",
 
-  "rep-user5": "Jonty Bodwin",
-  "rep-email5": "jonty.bodwin@BlueSteelPartners.com",
-  "rep-role5": "De-activated",
+
   
 
   //CASE 6

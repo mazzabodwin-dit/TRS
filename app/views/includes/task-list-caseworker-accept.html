@@ -69,31 +69,62 @@
 
 {% if data['verify-type'] == "rep-invite" %}
 
-  {% if (data['representative-party-complete'] == "yes") and (data['loa-complete'] == "yes")  %}
-    <!-- If the user has not started section 2 show -->
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        {% if data['reginterest-valid-representative'] == "Unverified" %}
-          <a href="reginterest-decline" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
-            Submit decision
-          </a>
-          {% else %}
-          <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
-            Submit decision
-          </a>
-        {% endif %}
-      </span>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Not started yet</strong>
-    </li>
+
+  {% if data['duplicate-org'] == "rep" %}
+
+    {% if (data['representative-party-complete'] == "yes") and (data['loa-complete'] == "yes") and (data['merge-rep-task'] == "complete") %}
+      <!-- If the user has not started section 2 show -->
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          {% if data['reginterest-valid-representative'] == "Unverified" %}
+            <a href="reginterest-decline" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+            {% else %}
+            <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+          {% endif %}
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Not started yet</strong>
+      </li>
+      {% else %}
+      <!-- If the user has not complete section 1 show -->
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          Submit decision
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Cannot start yet</strong>
+      </li>
+    {% endif %}
 
     {% else %}
-    <!-- If the user has not complete section 1 show -->
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        Submit decision
-      </span>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Cannot start yet</strong>
-    </li>
+
+    {% if (data['representative-party-complete'] == "yes") and (data['loa-complete'] == "yes")  %}
+      <!-- If the user has not started section 2 show -->
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          {% if data['reginterest-valid-representative'] == "Unverified" %}
+            <a href="reginterest-decline" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+            {% else %}
+            <a href="reginterest-accept" class="govuk-link--no-visited-state" aria-describedby="reginterest-accept-status">
+              Submit decision
+            </a>
+          {% endif %}
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Not started yet</strong>
+      </li>
+      {% else %}
+      <!-- If the user has not complete section 1 show -->
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          Submit decision
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reginterest-accept-status">Cannot start yet</strong>
+      </li>
+    {% endif %}
   {% endif %}
 {% endif %}
 

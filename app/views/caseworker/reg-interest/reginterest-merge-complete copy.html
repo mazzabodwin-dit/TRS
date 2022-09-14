@@ -29,44 +29,44 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="reginterest-merge-rep-party" method="post" id="reginterest-merge-complete">
-      <h2 class="govuk-heading-s">Representative party
+    <form action="reginterest-merge-int-party" method="post" id="reginterest-loa-new-form">
+      <h2 class="govuk-heading-s">Interested party
       </h2>
       <div class="address-card">
         <div class="address-container">
-          <h3 class="govuk-heading-m"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+          <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
             <p class="right-aligned-link govuk-heading-s">
-              <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
+              <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
             </p> 
           </h3> 
           <dl class="govuk-summary-list govuk-!-margin-bottom-1">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Address:</dt>
-              <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
-                {{data['rep-postcode1']}}<br>
-                {{data['rep-country1']}}
+              <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
+                {{data['party-postcode1']}}<br>
+                {{data['party-country1']}}
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Reg number: </dt>
-              <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} 
+              <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Web address: </dt>
-              <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
+              <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">VAT no: </dt>
-              <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+              <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">EORI: </dt>
-              <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
+              <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-              <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
+              <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
             </div>
           </dl> 
           <br>
@@ -79,7 +79,7 @@
               </summary>
               <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref1']}} - {{data['case-name1']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2022</li>
                 </ul>
               </div>
             </details>
@@ -88,34 +88,17 @@
             <details class="case-details govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Acting as a representative: 2 cases
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <ul class="govuk-list">
-                    <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Jan 2022</li>
-                    <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2022</li>
-                  </ul>
-              </div>
-            </details>
-          </div>
-          <div>
-            <details class="case-details govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Users: 4
+                  Users: 2
                 </span>
               </summary>
               <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a> - {{data['dup-email3']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user11']}}</a> - {{data['party-email11']}}</li>
                 </ul>
               </div>
             </details>
-          </div>    
+          </div> 
         </div> 
       </div>
       <div class="govuk-button-group">

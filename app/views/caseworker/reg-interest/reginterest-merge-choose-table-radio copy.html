@@ -35,12 +35,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     {% if (data['merge-duplicates'] == "1of2") %}
-      <form action="reginterest-merge-complete?merge-duplicates=1b&merge-rep-task=started" method="post" id="reginterest-merge-form">
+      <form action="reginterest-merge-complete?merge-duplicates=1b&merge-task=started" method="post" id="reginterest-merge-form">
       {% else %}
       {% if (data['merge-duplicates'] == "2of2") %}
-        <form action="reginterest-merge-complete?merge-duplicates=1a&merge-rep-task=started" method="post" id="reginterest-merge-form">
+        <form action="reginterest-merge-complete?merge-duplicates=1a&merge-task=started" method="post" id="reginterest-merge-form">
         {% else %}
-        <form action="reginterest-merge-complete?merge-duplicates=0&merge-rep-task=complete" method="post" id="reginterest-merge-form">
+        <form action="reginterest-merge-complete?merge-duplicates=0&merge-task=complete" method="post" id="reginterest-merge-form">
       {% endif %}
     {% endif %}
 
@@ -61,9 +61,9 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="name-int" name="representative1" type="radio" value="{{data['representative1']}}" checked>
+                  <input class="govuk-radios__input" id="name-int" name="party1" type="radio" value="{{data['party1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="name-int">
-                    {{data['representative1'] }}
+                    {{data['party1'] }}
                   </label>
                 </div>
               </div>
@@ -72,15 +72,15 @@
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
-                    <input class="govuk-radios__input" id="name-dup" name="representative1" type="radio" value="{{data['dup-party1']}}" >
+                    <input class="govuk-radios__input" id="name-dup" name="party1" type="radio" value="{{data['dup-party1']}}" >
                     <label class="govuk-label govuk-radios__label" for="name-dup">
                       {{data['dup-party1'] }}
                     </label>
                     {% else %}
                     {% if (data['merge-duplicates'] == "1b") or (data['merge-duplicates'] == "2of2") %}
-                      <input class="govuk-radios__input" id="name-dup" name="representative1" type="radio" value="{{data['dup-party3']}}" >
+                      <input class="govuk-radios__input" id="name-dup" name="party1" type="radio" value="{{data['dup-party2']}}" >
                       <label class="govuk-label govuk-radios__label" for="name-dup">
-                        {{data['dup-party3'] }}
+                        {{data['dup-party2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -93,9 +93,9 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="address-int" name="rep-address1" type="radio" value="{{data['rep-address1']}}" checked>
+                  <input class="govuk-radios__input" id="address-int" name="party-address1" type="radio" value="{{data['party-address1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="address-int">
-                    {{data['rep-address1'] }}
+                    {{data['party-address1'] }}
                   </label>
                 </div>
               </div>
@@ -104,15 +104,15 @@
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
-                    <input class="govuk-radios__input" id="address-dup" name="rep-address1" type="radio" value="{{data['dup-party-address1']}}">
+                    <input class="govuk-radios__input" id="address-dup" name="party-address1" type="radio" value="{{data['dup-party-address1']}}">
                     <label class="govuk-label govuk-radios__label" for="address-dup">
                     {{data['dup-party-address1'] }}
                     </label>
                     {% else %}
                     {% if (data['merge-duplicates'] == "1b") or (data['merge-duplicates'] == "2of2") %}
-                      <input class="govuk-radios__input" id="address-dup" name="rep-address1" type="radio" value="{{data['dup-party-address3']}}">
+                      <input class="govuk-radios__input" id="address-dup" name="party-address1" type="radio" value="{{data['dup-party-address2']}}">
                       <label class="govuk-label govuk-radios__label" for="address-dup">
-                        {{data['dup-party-address3'] }}
+                        {{data['dup-party-address2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -125,9 +125,9 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="postcode-int" name="rep-postcode1" type="radio" value="{{data['rep-postcode1']}}" checked>
+                  <input class="govuk-radios__input" id="postcode-int" name="party-postcode1" type="radio" value="{{data['party-postcode1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="postcode-int">
-                    {{data['rep-postcode1'] }}
+                    {{data['party-postcode1'] }}
                   </label>
                 </div>
               </div>
@@ -136,15 +136,15 @@
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
-                    <input class="govuk-radios__input" id="postcode-dup" name="rep-postcode1" type="radio" value="{{data['dup-party-postcode1']}}">
+                    <input class="govuk-radios__input" id="postcode-dup" name="party-postcode1" type="radio" value="{{data['dup-party-postcode1']}}">
                     <label class="govuk-label govuk-radios__label" for="postcode-dup">
                       {{data['dup-party-postcode1'] }}
                     </label>
                     {% else %}
                     {% if (data['merge-duplicates'] == "1b") or (data['merge-duplicates'] == "2of2") %}
-                      <input class="govuk-radios__input" id="postcode-dup" name="rep-postcode1" type="radio" value="{{data['dup-party-postcode3']}}">
+                      <input class="govuk-radios__input" id="postcode-dup" name="party-postcode1" type="radio" value="{{data['dup-party-postcode2']}}">
                       <label class="govuk-label govuk-radios__label" for="postcode-dup">
-                        {{data['dup-party-postcode3'] }}
+                        {{data['dup-party-postcode2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -157,9 +157,9 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="country-int" name="rep-country1" type="radio" value="{{data['rep-country1']}}" checked>
+                  <input class="govuk-radios__input" id="country-int" name="party-country1" type="radio" value="{{data['party-country1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="country-int">
-                    {{data['rep-country1'] }}
+                    {{data['party-country1'] }}
                   </label>
                 </div>
               </div>
@@ -168,15 +168,15 @@
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
-                    <input class="govuk-radios__input" id="country-dup" name="rep-country1" type="radio" value="{{data['dup-party-country1']}}">
+                    <input class="govuk-radios__input" id="country-dup" name="party-country1" type="radio" value="{{data['dup-party-country1']}}">
                     <label class="govuk-label govuk-radios__label" for="country-dup">
                       {{data['dup-party-country1'] }}
                     </label>
                     {% else %}
                     {% if (data['merge-duplicates'] == "1b") or (data['merge-duplicates'] == "2of2") %}
-                      <input class="govuk-radios__input" id="country-dup" name="rep-country1" type="radio" value="{{data['dup-party-country3']}}">
+                      <input class="govuk-radios__input" id="country-dup" name="party-country1" type="radio" value="{{data['dup-party-country2']}}">
                       <label class="govuk-label govuk-radios__label" for="country-dup">
-                        {{data['dup-party-country3'] }}
+                        {{data['dup-party-country2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -189,9 +189,9 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="org-number-int" name="rep-org-number1" type="radio" value="{{data['rep-org-number1']}}" checked>
+                  <input class="govuk-radios__input" id="org-number-int" name="party-org-number1" type="radio" value="{{data['party-org-number1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="org-number-int">
-                    {{data['rep-org-number1'] }}
+                    {{data['party-org-number1'] }}
                   </label>
                 </div>
               </div>
@@ -201,26 +201,26 @@
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
                     {% if (data['dup-party-org-number1'] == null) %}
-                      <input class="govuk-radios__input" id="org-number-dup" name="rep-org-number1" type="radio" value="{{data['dup-party-org-number1']}}">
+                      <input class="govuk-radios__input" id="org-number-dup" name="party-org-number1" type="radio" value="{{data['dup-party-org-number1']}}">
                       <label class="govuk-label govuk-radios__label" for="org-number-dup">
                         (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="org-number-dup" name="rep-org-number1" type="radio" value="{{data['dup-party-org-number1']}}">
+                      <input class="govuk-radios__input" id="org-number-dup" name="party-org-number1" type="radio" value="{{data['dup-party-org-number1']}}">
                       <label class="govuk-label govuk-radios__label" for="org-number-dup">
                         {{data['dup-party-org-number1'] }}
                       </label>
                     {% endif %}
                     {% else %}
-                    {% if (data['dup-party-org-number3'] == null) %}
-                      <input class="govuk-radios__input" id="org-number-dup" name="rep-org-number1" type="radio" value="{{data['dup-party-org-number3']}}">
+                    {% if (data['dup-party-org-number2'] == null) %}
+                      <input class="govuk-radios__input" id="org-number-dup" name="party-org-number1" type="radio" value="{{data['dup-party-org-number2']}}">
                       <label class="govuk-label govuk-radios__label" for="org-number-dup">
                         (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="org-number-dup" name="rep-org-number1" type="radio" value="{{data['dup-party-org-number3']}}">
+                      <input class="govuk-radios__input" id="org-number-dup" name="party-org-number1" type="radio" value="{{data['dup-party-org-number2']}}">
                       <label class="govuk-label govuk-radios__label" for="org-number-dup">
-                        {{data['dup-party-org-number3'] }}
+                        {{data['dup-party-org-number2'] }}
                       </label>
                     {% endif %}
                   {% endif %}                
@@ -233,9 +233,9 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="web-int" name="rep-web1" type="radio" value="{{data['rep-web1']}}" checked>
+                  <input class="govuk-radios__input" id="web-int" name="party-web1" type="radio" value="{{data['party-web1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="web-int">
-                    {{data['rep-web1'] }}
+                    {{data['party-web1'] }}
                   </label>
                 </div>
               </div>
@@ -245,26 +245,26 @@
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
                     {% if (data['dup-party-web1'] == null) %}
-                      <input class="govuk-radios__input" id="web-dup" name="rep-web1" type="radio" value="{{data['dup-party-web1']}}">
+                      <input class="govuk-radios__input" id="web-dup" name="party-web1" type="radio" value="{{data['dup-party-web1']}}">
                       <label class="govuk-label govuk-radios__label" for="web-dup">
                         (empty)
                       </label>
                       {% else %}                      
-                      <input class="govuk-radios__input" id="web-dup" name="rep-web1" type="radio" value="{{data['dup-party-web1']}}">
+                      <input class="govuk-radios__input" id="web-dup" name="party-web1" type="radio" value="{{data['dup-party-web1']}}">
                       <label class="govuk-label govuk-radios__label" for="web-dup">
                         {{data['dup-party-web1'] }}
                       </label>
                     {% endif %}
                     {% else %}
-                    {% if (data['dup-party-web3'] == null) %}
-                      <input class="govuk-radios__input" id="web-dup" name="rep-web1" type="radio" value="{{data['dup-party-web3']}}">
+                    {% if (data['dup-party-web2'] == null) %}
+                      <input class="govuk-radios__input" id="web-dup" name="party-web1" type="radio" value="{{data['dup-party-web2']}}">
                       <label class="govuk-label govuk-radios__label" for="web-dup">
                         (empty)
                       </label>
                       {% else %}                      
-                      <input class="govuk-radios__input" id="web-dup" name="rep-web1" type="radio" value="{{data['dup-party-web3']}}">
+                      <input class="govuk-radios__input" id="web-dup" name="party-web1" type="radio" value="{{data['dup-party-web2']}}">
                       <label class="govuk-label govuk-radios__label" for="web-dup">
-                        {{data['dup-party-web3'] }}
+                        {{data['dup-party-web2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -277,17 +277,14 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  {% if (data['rep-vat1'] == null) %}
-                    <input class="govuk-radios__input" id="vat-int" name="rep-vat1" type="radio" value="{{data['rep-vat1']}}">
-                    <label class="govuk-label govuk-radios__label" for="vat-int">
+                  <input class="govuk-radios__input" id="vat-int" name="party-vat1" type="radio" value="{{data['party-vat1']}}">
+                  <label class="govuk-label govuk-radios__label" for="vat-int">
+                    {% if (data['party-vat1'] == null) %}
                       (empty)
-                    </label>
-                    {% else %}
-                    <input class="govuk-radios__input" id="vat-int" name="rep-vat1" type="radio" value="{{data['rep-vat1']}}" checked>
-                    <label class="govuk-label govuk-radios__label" for="vat-int">
-                      {{data['rep-vat1'] }}
-                    </label>
-                  {% endif %}
+                      {% else %}
+                      {{data['party-vat1'] }}
+                    {% endif %}
+                  </label>
                 </div>
               </div>
             </td>
@@ -296,27 +293,27 @@
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
                     {% if (data['dup-party-vat1'] == null) %}
-                      <input class="govuk-radios__input" id="vat-dup" name="rep-vat1" type="radio" value="{{data['dup-party-vat1']}}">
+                      <input class="govuk-radios__input" id="vat-dup" name="party-vat1" type="radio" value="{{data['dup-party-vat1']}}" checked>
                       <label class="govuk-label govuk-radios__label" for="vat-dup">
                        (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="vat-dup" name="rep-vat1" type="radio" value="{{data['dup-party-vat1']}}">
+                      <input class="govuk-radios__input" id="vat-dup" name="party-vat1" type="radio" value="{{data['dup-party-vat1']}}" checked>
                       <label class="govuk-label govuk-radios__label" for="vat-dup">
                         {{data['dup-party-vat1'] }}
                       </label>
                     {% endif %}
 
                     {% else %}
-                    {% if (data['dup-party-vat3'] == null) %}
-                      <input class="govuk-radios__input" id="vat-dup" name="rep-vat1" type="radio" value="{{data['dup-party-vat3']}}">
+                    {% if (data['dup-party-vat2'] == null) %}
+                      <input class="govuk-radios__input" id="vat-dup" name="party-vat1" type="radio" value="{{data['dup-party-vat2']}}" checked>
                       <label class="govuk-label govuk-radios__label" for="vat-dup">
                       (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="vat-dup" name="rep-vat1" type="radio" value="{{data['dup-party-vat3']}}">
+                      <input class="govuk-radios__input" id="vat-dup" name="party-vat1" type="radio" value="{{data['dup-party-vat2']}}" checked>
                       <label class="govuk-label govuk-radios__label" for="vat-dup">
-                        {{data['dup-party-vat3'] }}
+                        {{data['dup-party-vat2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -329,17 +326,14 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  {% if (data['rep-eori1'] == null) %}
-                    <input class="govuk-radios__input" id="eori-int" name="rep-eori1" type="radio" value="{{data['rep-eori1']}}">
-                    <label class="govuk-label govuk-radios__label" for="eori-int">
+                  <input class="govuk-radios__input" id="eori-int" name="party-eori1" type="radio" value="{{data['party-eori1']}}" checked>
+                  <label class="govuk-label govuk-radios__label" for="eori-int">
+                    {% if (data['party-eori1'] == null) %}
                       (empty)
-                    </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="eori-int" name="rep-eori1" type="radio" value="{{data['rep-eori1']}}" checked>
-                      <label class="govuk-label govuk-radios__label" for="eori-int">
-                        {{data['rep-eori1'] }}
-                      </label>
+                      {{data['party-eori1'] }}
                     {% endif %}
+                  </label>
                 </div>
               </div>
             </td>
@@ -348,27 +342,27 @@
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
                     {% if (data['dup-party-eori1'] == null) %}
-                      <input class="govuk-radios__input" id="eori-dup" name="rep-eori1" type="radio" value="{{data['dup-party-eori1']}}">
+                      <input class="govuk-radios__input" id="eori-dup" name="party-eori1" type="radio" value="{{data['dup-party-eori1']}}">
                       <label class="govuk-label govuk-radios__label" for="vat-eori">
                       (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="eori-dup" name="rep-eori1" type="radio" value="{{data['dup-party-eori1']}}"checked>
+                      <input class="govuk-radios__input" id="eori-dup" name="party-eori1" type="radio" value="{{data['dup-party-eori1']}}">
                       <label class="govuk-label govuk-radios__label" for="eori-dup">
                         {{data['dup-party-eori1'] }}
                       </label>
                     {% endif %}
 
                     {% else %}
-                    {% if (data['dup-party-eori3'] == null) %}
-                      <input class="govuk-radios__input" id="eori-dup" name="rep-eori1" type="radio" value="{{data['dup-party-eori3']}}">
+                    {% if (data['dup-party-eori2'] == null) %}
+                      <input class="govuk-radios__input" id="eori-dup" name="party-eori1" type="radio" value="{{data['dup-party-eori2']}}">
                       <label class="govuk-label govuk-radios__label" for="eori-dup">
                       (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="eori-dup" name="rep-eori1" type="radio" value="{{data['dup-party-eori3']}}" >
+                      <input class="govuk-radios__input" id="eori-dup" name="party-eori1" type="radio" value="{{data['dup-party-eori2']}}" >
                       <label class="govuk-label govuk-radios__label" for="v-dup">
-                        {{data['dup-party-eori3'] }}
+                        {{data['dup-party-eori2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
@@ -381,12 +375,12 @@
             <td class="govuk-table__cell">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="duns-int" name="rep-duns1" type="radio" value="{{data['rep-duns1']}}" checked>
+                  <input class="govuk-radios__input" id="duns-int" name="party-duns1" type="radio" value="{{data['party-duns1']}}" checked>
                   <label class="govuk-label govuk-radios__label" for="duns-int">
-                    {% if (data['rep-duns1'] == null) %}
+                    {% if (data['party-duns1'] == null) %}
                         (empty)
                         {% else %}
-                        {{data['rep-duns1'] }}
+                        {{data['party-duns1'] }}
                     {% endif %}
                   </label>
                 </div>
@@ -397,27 +391,27 @@
                 <div class="govuk-radios__item">
                   {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
                     {% if (data['dup-party-duns1'] == null) %}
-                      <input class="govuk-radios__input" id="duns-dup" name="rep-duns1" type="radio" value="{{data['dup-party-duns1']}}">
+                      <input class="govuk-radios__input" id="duns-dup" name="party-duns1" type="radio" value="{{data['dup-party-duns1']}}">
                       <label class="govuk-label govuk-radios__label" for="duns-dup">
                         (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="duns-dup" name="rep-duns1" type="radio" value="{{data['dup-party-duns1']}}">
+                      <input class="govuk-radios__input" id="duns-dup" name="party-duns1" type="radio" value="{{data['dup-party-duns1']}}">
                       <label class="govuk-label govuk-radios__label" for="duns-dup">
                         {{data['dup-party-duns1'] }}
                       </label>
                     {% endif %}
 
                     {% else %}
-                    {% if (data['dup-party-duns3'] == null) %}
-                      <input class="govuk-radios__input" id="duns-dup" name="rep-duns1" type="radio" value="{{data['dup-party-duns3']}}">
+                    {% if (data['dup-party-duns2'] == null) %}
+                      <input class="govuk-radios__input" id="duns-dup" name="party-duns1" type="radio" value="{{data['dup-party-duns2']}}">
                       <label class="govuk-label govuk-radios__label" for="duns-dup">
                         (empty)
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="duns-dup" name="rep-duns1" type="radio" value="{{data['dup-party-duns3']}}">
+                      <input class="govuk-radios__input" id="duns-dup" name="party-duns1" type="radio" value="{{data['dup-party-duns2']}}">
                       <label class="govuk-label govuk-radios__label" for="duns-dup">
-                        {{data['dup-party-duns3'] }}
+                        {{data['dup-party-duns2'] }}
                       </label>
                     {% endif %}
                   {% endif %}
