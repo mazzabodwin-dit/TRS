@@ -76,50 +76,100 @@
           </div>
         </dl> 
         <br>
-        <div>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Interested party: 1 case
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list">
-                <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-        <div>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Acting as a representative: 1 case
-              </span>
-            </summary>
-            <div class="govuk-details__text">
+        {% if data['merge-rep-task'] != null %}
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Interested party: 1 case
+                </span>
+              </summary>
+              <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Jan 2022</li>
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
                 </ul>
-            </div>
-          </details>
-        </div>
-        <div>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Users: 3
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list">
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
-              </ul>
-            </div>
-          </details>
-        </div>    
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Acting as a representative: 2 cases
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Jan 2022</li>
+                    <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2022</li>
+                  </ul>
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 4
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a> - {{data['dup-email3']}}</li>
+                </ul>
+              </div>
+            </details>
+          </div>    
+
+          {% else %}
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Interested party: 1 case
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2021</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Acting as a representative: 1 case
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Jan 2022</li>
+                  </ul>
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 3
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
+                </ul>
+              </div>
+            </details>
+          </div> 
+        {% endif %}   
       </div>
     </div>
   </div>
