@@ -22,7 +22,7 @@
     <h1 class="govuk-heading-xl">
       Merge complete
     </h1>
-    <p>The organisations have been merged and teh results are below.
+    <p>The organisations have been merged and the results are below.
     </p>
   </div>
 </div>
@@ -34,77 +34,76 @@
       </h2>
       <div class="address-card">
         <div class="address-container">
-        <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['merge-party1']}}</a>  
-          <p class="right-aligned-link govuk-heading-s">
-            <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
-          </p> 
-        </h3> 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Address:</dt>
-            <dd class="govuk-summary-list__value">{{data['merge-address']}} <br>
-              {{data['merge-postcode']}}<br>
-              {{data['merge-country']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Reg number: </dt>
-            <dd class="govuk-summary-list__value">{{data['merge-org-number']}} 
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['merge-web']}}</a></dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">VAT no: </dt>
-            <dd class="govuk-summary-list__value">{{data['merge-vat']}}</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">{{data['merge-eori']}}</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-            <dd class="govuk-summary-list__value">{{data['merge-duns']}}</dd>
-          </div>
-        </dl> 
-        <br>
-        <div>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Acting as a representative: 1 case
-              </span>
-            </summary>
-            <div class="govuk-details__text">
+          <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['merge-party']}}</a>  
+            <p class="right-aligned-link govuk-heading-s">
+              <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
+            </p> 
+          </h3> 
+          <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Address:</dt>
+              <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
+                {{data['party-postcode1']}}<br>
+                {{data['party-country1']}}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Reg number: </dt>
+              <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Web address: </dt>
+              <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">VAT no: </dt>
+              <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">EORI: </dt>
+              <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+              <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
+            </div>
+          </dl> 
+          <br>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Interested party: 1 case
+                </span>
+              </summary>
+              <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 21 Jan 2022</li>
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref1']}} - {{data['case-name1']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2022</li>
                 </ul>
-            </div>
-          </details>
-        </div>
-        <div>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Users: 2
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list">
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['dup-party-user1']}}</a> - {{data['dup-party-email1']}}</li>
-              </ul>
-            </div>
-          </details>
+              </div>
+            </details>
+          </div>
+          <div>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 2
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user11']}}</a> - {{data['party-email11']}}</li>
+                </ul>
+              </div>
+            </details>
+          </div> 
         </div> 
       </div>
-      </div>
-      <p>Now that the two organisations have been merged, the other duplicates may no longer be applicable. </p>
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Re-check for duplicates"
+          text: "Continue"
         }) }}    
         <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
       </div>

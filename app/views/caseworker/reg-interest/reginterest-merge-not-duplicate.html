@@ -35,7 +35,7 @@
         <div class="address-container">
           <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
             <p class="right-aligned-link govuk-heading-s">
-              <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
+              <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
             </p> 
           </h3>
           <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
@@ -77,7 +77,7 @@
           <div class="address-container">
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party2']}}</a>  
               <p class="right-aligned-link govuk-heading-s">
-                <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
+                <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
               </p> 
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
@@ -138,7 +138,7 @@
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Mark as not a duplicate",
-            href: "reginterest-merge-int-party?merge-task=complete"
+            href: "reginterest-merge-int-party?merge-duplicates=0&merge-task=complete"
           }) }}    
           <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
         </div>

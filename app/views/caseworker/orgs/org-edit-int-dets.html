@@ -268,6 +268,126 @@
               value: data['dup-party-duns1']  
             }) }}
 
+            {% else %}
+
+            <!--This uses different field contents as it is the duplicate org-->
+            {% if data['party-type'] == "int-dup2" %}
+            
+              {{ govukInput({
+                label: {
+                  text: "Name of organisation",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "dup-party2",
+                name: "dup-party2",
+                value: data['dup-party2'],
+                type: "text"
+              }) }}
+            
+              {% call govukFieldset({
+                legend: {
+                  text: "Address of organisation",
+                  classes: "govuk-fieldset__legend--s",
+                  isPageHeading: true
+                }
+              }) %}
+
+              <p>Provide the address of the main office.</p>
+
+                {{ govukTextarea({
+                  label: {
+                    text: "Street address",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "dup-party-address2",
+                  name: "dup-party-address2",
+                  value: data['dup-party-address2'],
+                  type: "text"
+                }) }}
+
+                {{ govukInput({
+                  label: {
+                    text: "Postcode or zip code",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-5",
+                  id: "dup-party-postcode2",
+                  name: "dup-party-postcode2",
+                  value: data['dup-party-postcode2'],
+                  type: "text"
+                }) }}
+              
+              {% endcall %}
+
+              {% include "includes/country-list.html" %}
+              {{ govukInput({
+                label: {
+                  text: "Organisation registration number",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-10",
+                id: "dup-party-org-number2",
+                name: "dup-party-org-number2",
+                value: data['dup-party-org-number2'],
+                type: "text"
+              }) }} 
+
+              {{ govukInput({
+                label: {
+                  text: "Website (optional)",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "dup-party-web2",
+                name: "dup-party-web2",
+                type: "text",
+                value: data['dup-party-web2']  
+              }) }}
+              
+              {{ govukInput({
+                label: {
+                  text: "VAT registration number (optional)",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "dup-party-vat2",
+                name: "dup-party-vat2",
+                type: "text",
+                value: data['dup-party-vat2']
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "EORI number (optional)",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "dup-party-eori2",
+                name: "dup-party-eori2",
+                type: "text",
+                value: data['dup-party-eori2']          
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "DUNS number (optional)",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "dup-party-duns2",
+                name: "dup-party-duns2",
+                type: "text",
+                value: data['dup-party-duns2']  
+              }) }}
+            {% endif %}
           {% endif %}
         {% endif %}
 

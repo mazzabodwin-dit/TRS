@@ -105,8 +105,8 @@
       }) }}
 
       {{ govukSelect({
-        id: "reginterest-merge-org-number",
-        name: "reginterest-merge-org-number",
+        id: "reginterest-party-org-number1",
+        name: "reginterest-party-org-number1",
         label: {
           text: "Choose Reg number"
         },
@@ -123,8 +123,8 @@
       }) }}
 
       {{ govukSelect({
-        id: "reginterest-merge-web",
-        name: "reginterest-merge-web",
+        id: "reginterest-party-web1",
+        name: "reginterest-party-web1",
         label: {
           text: "Choose website"
         },
@@ -141,8 +141,8 @@
       }) }}
 
       {{ govukSelect({
-        id: "reginterest-merge-vat",
-        name: "reginterest-merge-vat",
+        id: "reginterest-party-vat1",
+        name: "reginterest-party-vat1",
         label: {
           text: "Choose VAT number"
         },
@@ -159,8 +159,8 @@
       }) }}
 
       {{ govukSelect({
-        id: "reginterest-merge-eori",
-        name: "reginterest-merge-eori",
+        id: "reginterest-party-eori1",
+        name: "reginterest-party-eori1",
         label: {
           text: "Choose Eori number"
         },
@@ -178,8 +178,8 @@
 
 
       {{ govukSelect({
-        id: "reginterest-merge-duns",
-        name: "reginterest-merge-duns",
+        id: "reginterest-party-duns1",
+        name: "reginterest-party-duns1",
         label: {
           text: "Choose DUNS number"
         },
@@ -223,24 +223,24 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Reg number: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-org-number'] or data['party-org-number1']}} 
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-org-number1'] or data['party-org-number1']}} 
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['reginterest-merge-web'] or data['party-web1']}}</a></dd>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['reginterest-party-web1'] or data['party-web1']}}</a></dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">VAT no: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-vat'] or data['party-vat1']}}</dd>
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-vat1'] or data['party-vat1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-eori'] or data['party-eori1']}}</dd>
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-eori1'] or data['party-eori1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-duns'] or data['party-duns1']}}</dd>
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-duns1'] or data['party-duns1']}}</dd>
           </div>
         </dl> 
         <br>

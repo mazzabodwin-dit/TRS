@@ -133,8 +133,8 @@
      
 
       {{ govukRadios({
-        idPrefix: "reginterest-merge-org-number",
-        name: "reginterest-merge-org-number",
+        idPrefix: "reginterest-party-org-number1",
+        name: "reginterest-party-org-number1",
         fieldset: {
           legend: {
             text: "Reg number",
@@ -147,19 +147,19 @@
           {
             value: data['party-org-number1'],
             html: data['party-org-number1'],
-            checked: checked("reginterest-merge-org-number", data['party-org-number1'])
+            checked: checked("reginterest-party-org-number1", data['party-org-number1'])
           },
           {
             value: data['dup-party-org-number1'],
             html: data['dup-party-org-number1'],
-            checked: checked("reginterest-merge-org-number", data['dup-party-org-number1'])
+            checked: checked("reginterest-party-org-number1", data['dup-party-org-number1'])
           }
         ]
       }) }}  
 
       {{ govukRadios({
-        idPrefix: "reginterest-merge-web",
-        name: "reginterest-merge-web",
+        idPrefix: "reginterest-party-web1",
+        name: "reginterest-party-web1",
         fieldset: {
           legend: {
             text: "Website",
@@ -172,19 +172,19 @@
           {
             value: data['party-web1'],
             html: data['party-web1'],
-            checked: checked("reginterest-merge-web", data['party-web1'])
+            checked: checked("reginterest-party-web1", data['party-web1'])
           },
           {
             value: data['dup-party-web1'],
             html: data['dup-party-web1'],
-            checked: checked("reginterest-merge-web", data['dup-party-web1'])
+            checked: checked("reginterest-party-web1", data['dup-party-web1'])
           }
         ]
       }) }}  
 
       {{ govukRadios({
-        idPrefix: "reginterest-merge-vat",
-        name: "reginterest-merge-vat",
+        idPrefix: "reginterest-party-vat1",
+        name: "reginterest-party-vat1",
         fieldset: {
           legend: {
             text: "VAT number",
@@ -196,19 +196,19 @@
           {
             value: data['party-vat1'],
             html: data['party-vat1'],
-            checked: checked("reginterest-merge-vat", data['party-vat1'])
+            checked: checked("reginterest-party-vat1", data['party-vat1'])
           },
           {
             value: data['dup-party-vat1'],
             html: data['dup-party-vat1'],
-            checked: checked("reginterest-merge-vat", data['dup-party-vat1'])
+            checked: checked("reginterest-party-vat1", data['dup-party-vat1'])
           }
         ]
       }) }}  
 
       {{ govukRadios({
-        idPrefix: "reginterest-merge-eori",
-        name: "reginterest-merge-eori",
+        idPrefix: "reginterest-party-eori1",
+        name: "reginterest-party-eori1",
         fieldset: {
           legend: {
             text: "EORI number",
@@ -220,19 +220,19 @@
           {
             value: data['party-eori1'],
             html: data['party-eori1'],
-            checked: checked("reginterest-merge-eori", data['party-eori1'])
+            checked: checked("reginterest-party-eori1", data['party-eori1'])
           },
           {
             value: data['dup-party-eori1'],
             html: data['dup-party-eori1'],
-            checked: checked("reginterest-merge-eori", data['dup-party-eori1'])
+            checked: checked("reginterest-party-eori1", data['dup-party-eori1'])
           }
         ]
       }) }}  
 
       {{ govukRadios({
-        idPrefix: "reginterest-merge-duns",
-        name: "reginterest-merge-duns",
+        idPrefix: "reginterest-party-duns1",
+        name: "reginterest-party-duns1",
         fieldset: {
           legend: {
             text: "duns number",
@@ -244,12 +244,12 @@
           {
             value: data['party-duns1'],
             html: data['party-duns1'],
-            checked: checked("reginterest-merge-duns", data['party-duns1'])
+            checked: checked("reginterest-party-duns1", data['party-duns1'])
           },
           {
             value: data['dup-party-eori1'],
             html: data['dup-party-eori1'],
-            checked: checked("reginterest-merge-duns", data['dup-party-duns1'])
+            checked: checked("reginterest-party-duns1", data['dup-party-duns1'])
           }
         ]
       }) }}  
@@ -282,24 +282,24 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Reg number: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-org-number'] or data['party-org-number1']}} 
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-org-number1'] or data['party-org-number1']}} 
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['reginterest-merge-web'] or data['party-web1']}}</a></dd>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['reginterest-party-web1'] or data['party-web1']}}</a></dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">VAT no: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-vat'] or data['party-vat1']}}</dd>
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-vat1'] or data['party-vat1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-eori'] or data['party-eori1']}}</dd>
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-eori1'] or data['party-eori1']}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-            <dd class="govuk-summary-list__value">{{data['reginterest-merge-duns'] or data['party-duns1']}}</dd>
+            <dd class="govuk-summary-list__value">{{data['reginterest-party-duns1'] or data['party-duns1']}}</dd>
           </div>
         </dl> 
         <br>

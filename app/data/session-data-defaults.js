@@ -67,8 +67,8 @@ module.exports = {
   "party-country1": "United Kingdom",
   "party-org-number1": "456794936", 
   "party-web1": "www.steeluk.org", 
-  "party-vat1": "123456789", 
-  "party-eori1": null,
+  "party-vat1": null, 
+  "party-eori1": "GB123456789",
   "party-duns1": null,
 
   "dup-party1": "Steeel uk",
@@ -77,8 +77,8 @@ module.exports = {
   "dup-party-country1": "China",
   "dup-party-org-number1": "456794936", 
   "dup-party-web1": null, 
-  "dup-party-vat1": null, 
-  "dup-party-eori1": "GB123456789",
+  "dup-party-vat1": "987654321", 
+  "dup-party-eori1": "GB987654321",
   "dup-party-duns1": null,
 
   "dup-party2": "Steel UK",
@@ -86,9 +86,8 @@ module.exports = {
   "dup-party-postcode2": "RG1 1AF",
   "dup-party-country2": "United Kingdom",
   "dup-party-org-number2": null,
-  "dup-party-vat2": null,
   "dup-party-web2": "www.steeluk.org", 
-  "dup-party-vat2": null, 
+  "dup-party-vat2": "123456789", 
   "dup-party-eori2": null,
   "dup-party-duns2": null,
 
