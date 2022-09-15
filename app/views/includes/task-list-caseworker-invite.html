@@ -1,0 +1,105 @@
+<!-- Duplicate Representative only show if there is dup rep -->
+{% if (data['duplicate-org'] == "rep") %}
+
+  {% if (data['merge-rep-task'] == "complete") %}
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-merge-rep-party" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
+          Resolve duplicate representative
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="duplicate-status">Complete</strong>
+    </li>
+
+    {% else %}
+    {% if (data['merge-rep-task'] == "started") %}
+      <!-- if the user has started resolving dups: -->
+      <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-merge-rep-party" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
+          Resolve duplicate representative
+        </a>
+      </span>
+      <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="duplicate-status">In progress</strong>
+      </li>
+      
+      {% else %}
+        <!-- If the user has not started -->
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="reginterest-merge-rep-party?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
+              Resolve duplicate representative
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="duplicate-status">Not started yet</strong>
+        </li>
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+
+<!-- LOA -->
+<!-- If there are dups and the dups are not complete, LOA cannot be started -->
+{% if (data['duplicate-org'] == "rep") and (data['merge-rep-task'] != "complete") %}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name" aria-describedby="organisation-loa-status">  
+        Verify Letter of Authority
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Cannot start yet</strong>
+  </li>
+  {% else %}
+  <!-- If there are no dups LOA status is according to what the user has done -->
+  {% if (data['loa-complete'] != null) %}
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+          Verify Letter of Authority
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="organisation-loa-status">Complete</strong>
+    </li>
+    {% else %}
+    <!-- If the user has not started -->
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+          Verify Letter of Authority
+        </a>
+      </span>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
+    </li>
+  {% endif %}
+{% endif %}
+
+<!-- Verfiy representative party -->
+<!-- If there are dups and the dups are not complete,  verfiy cannot be started -->
+{% if (data['duplicate-org'] == "rep") and (data['merge-rep-task'] != "complete") %}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name" aria-describedby="third-party-status">  
+      Verify representative party
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="third-party-status">Cannot start yet</strong>
+  </li>
+  {% else %}
+  <!-- If there are no dups Verify Rep status is according to what the user has done -->
+  {% if (data['representative-party-complete'] != null) %}
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-representative-party" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
+          Verify representative party
+        </a>
+      </span>
+      <strong class="govuk-tag app-task-list__tag" id="third-party-status">Complete</strong>
+    </li>
+    {% else %}
+    <!-- If the user has not started -->
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="reginterest-representative-party?rep-party-started=yes" class="govuk-link--no-visited-state" aria-describedby="third-party-status">
+          Verify representative party
+        </a>
+      </span>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="third-party-status">Not started yet</strong>
+    </li>
+  {% endif %}
+{% endif %}

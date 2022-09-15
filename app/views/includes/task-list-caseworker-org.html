@@ -80,7 +80,7 @@
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
         <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-          Confirm LOA signatory
+          Verify Letter of Authority
         </a>
       </span>
       <strong class="govuk-tag app-task-list__tag" id="organisation-loa-status">Complete</strong>
@@ -92,7 +92,7 @@
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
         <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-          Confirm LOA signatory
+          Verify Letter of Authority
         </a>
       </span>
       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
@@ -107,7 +107,7 @@
 
 {% if (data['third-party'] == "yes") %}
 
-  <!-- Duplicate Representative only show if there is dup rep -->
+    <!-- Duplicate Representative only show if there is dup rep -->
   {% if (data['duplicate-org'] == "rep") or (data['duplicate-org'] == "both") %}
 
     {% if (data['merge-rep-task'] == "complete") %}

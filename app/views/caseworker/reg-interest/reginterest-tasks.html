@@ -29,7 +29,7 @@
         <h1 class="govuk-heading-xl">
           Representative invite
         </h1>
-        <p>Approval of this invite will allow the representative to act on-behalf of the interested party.</p>
+        <p>Approval of this invite will allow the representative to act on behalf of the interested party.</p>
         {% endif %}
       {% endif %}
   </div>
@@ -76,7 +76,11 @@
           {% endif %}
         </h2>
         <ul class="app-task-list__items">
-          {% include "includes/task-list-caseworker-org.html" %}
+          {% if data['verify-type'] == "rep-invite" %}
+            {% include "includes/task-list-caseworker-invite.html" %}
+            {% else %}
+            {% include "includes/task-list-caseworker-regint.html" %}
+           {% endif %}
         </ul>
       </li>
       <li>
@@ -85,12 +89,14 @@
         </h2>
         <ul class="app-task-list__items">
           {% include "includes/task-list-caseworker-accept.html" %}
+          
         </ul>
       </li>
     </ol>
     <a class="govuk-link" href="../cases/case-overview">Back to Case</a>
   </div>
 </div>
+
 
 {% endblock %}
 {% block footer %}

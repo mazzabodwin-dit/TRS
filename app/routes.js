@@ -245,7 +245,7 @@ router.post('/reginterest-interested-party-route', function (req, res) {
   } 
   if (reginterestValidPrimary == "Unverified"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-unverified?primary-party-task=complete&party-type=int')
+    res.redirect('/caseworker/reg-interest/reginterest-unverified?int-party-task=complete&party-type=int')
   } 
 })
 
@@ -258,11 +258,11 @@ router.post('/reginterest-representative-party-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestValidRepresentative == "Verified"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?representative-party-complete=yes')
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?rep-party-task=complete')
   } 
   if (reginterestValidRepresentative == "Unverified"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-unverified?representative-party-complete=yes&party-type=rep')
+    res.redirect('/caseworker/reg-interest/reginterest-unverified?rep-party-task=complete&party-type=rep')
   } 
 })
 

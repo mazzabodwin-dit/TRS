@@ -19,7 +19,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  Review parties</span>
+    <span class="govuk-caption-xl">1.  
+      {% if data['verify-type'] == "rep-invite" %}
+        Review representative
+      {% else %}
+        Review parties
+      {% endif %}
+    </span>
     <h1 class="govuk-heading-xl">
       Duplicate organisations
     </h1>
@@ -76,7 +82,7 @@
           </div>
         </dl> 
         <br>
-        {% if data['merge-rep-task'] != null %}
+        {% if data['merge-rep-task'] == "complete" %}
           <div>
             <details class="case-details govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
@@ -176,7 +182,7 @@
   <!--List of duplicates-->
   <div class="govuk-grid-column-one-half">
     <!--Show header according to how many dups there are-->
-    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1b") %}
+    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
       <h2 class="govuk-heading-s">Duplicate organisation
       </h2> 
       {% else %}
@@ -204,7 +210,7 @@
           <div class="address-container">
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
               <p class="right-aligned-link govuk-heading-s">
-                <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
+                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
               </p> 
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
@@ -255,7 +261,7 @@
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Review merge details",
-                href: "reginterest-merge-choose-table-radio"
+                href: "reginterest-merge-rep-choose-table-radio"
               }) }} 
                 
               {{ govukButton({
@@ -267,12 +273,12 @@
           </div>
         </div>
         {% else %}
-        {% if (data['merge-duplicates'] == "1b") or (data['merge-duplicates'] == "2of2") %}
+        {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
               <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
                 <p class="right-aligned-link govuk-heading-s">
-                  <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
+                  <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
                 </p> 
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
@@ -337,7 +343,7 @@
               <div class="govuk-button-group">
                 {{ govukButton({
                   text: "Review merge details",
-                  href: "reginterest-merge-choose-table-radio"
+                  href: "reginterest-merge-rep-choose-table-radio"
                 }) }} 
                   
                 {{ govukButton({
@@ -355,7 +361,7 @@
     <!--Show pagenation if there are 2 or more dups-->
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1b") %}
+    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
         {{ govukPagination({
@@ -415,7 +421,7 @@
 
 {% endblock %}
 {% block footer %}
-{%include "includes/footer.html" %}
+  {% include "includes/footer.html" %}
 {% endblock %}
 
 

@@ -24,7 +24,8 @@
       {% else %}
         Review parties
       {% endif %}
-    </span>    <h1 class="govuk-heading-xl">
+    </span>
+    <h1 class="govuk-heading-xl">
       Choose the correct details
     </h1>
     <p>Before continuing please ensure that you have:
@@ -39,15 +40,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if (data['merge-duplicates'] == "1of2") %}
-      <form action="reginterest-merge-complete?merge-duplicates=1b&merge-task=started" method="post" id="reginterest-merge-form">
-      {% else %}
-      {% if (data['merge-duplicates'] == "2of2") %}
-        <form action="reginterest-merge-complete?merge-duplicates=1a&merge-task=started" method="post" id="reginterest-merge-form">
-        {% else %}
-        <form action="reginterest-merge-complete?merge-duplicates=0&merge-task=complete" method="post" id="reginterest-merge-form">
-      {% endif %}
-    {% endif %}
+    <form action="reginterest-merge-int-complete?merge-duplicates=0&merge-task=complete" method="post" id="reginterest-merge-form">
+
 
       <table class="govuk-table sortable1">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-bold">
@@ -56,7 +50,7 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Field</th>
-            <th scope="col" class="govuk-table__header">Representative party</th>
+            <th scope="col" class="govuk-table__header">Interested party</th>
             <th scope="col" class="govuk-table__header">Duplicate party</th>
           </tr>
         </thead>

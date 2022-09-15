@@ -60,7 +60,7 @@
           {% endif %}
         {% endif %}
 
-        <p>Your decision will be notified to both parties.</p>
+        <p>All parties involved will be notified of your decision.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
         <ul class="govuk-list govuk-list--bullet">
@@ -80,8 +80,8 @@
           </div>
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
           <p>You have approved the representative invite from {{ data['party1'] }} to:
-          <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
-            {{ data['representative2'] }}
+          <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
+            {{ data['representative1'] }}
           </p>
 
           {% else %}
@@ -94,15 +94,13 @@
 
             <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
             <p>You have declined the representative invite from {{ data['party1'] }} to:
-            <p>{{ data['rep-user2'] }} - {{ data['rep-email2'] }}<br>
-              {{ data['representative2'] }}
-            </p>
-            <p>Reason: {{data['unverfied-reason-rep']}}               
+            <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
+              {{ data['representative1'] }}
             </p>
           {% endif %}
         {% endif %}
 
-        <p>Your decision will be notified to both parties.</p>
+        <p>Both parties will be notified of your decision.</p>
           
         <h2 class="govuk-heading-m">What next?</h2>
         <p><a href="/caseworker/cases/submissions/case-submission-rep" class="govuk-link--no-visited-state">Review Letter of Authority submission for this invite</a>

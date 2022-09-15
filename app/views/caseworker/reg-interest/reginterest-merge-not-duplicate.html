@@ -78,7 +78,7 @@
         </div>
       </div>
       {% else %}
-      {% if (data['merge-duplicates'] == "1b") or (data['merge-duplicates'] == "2of2") %}
+      {% if (data['merge-duplicates'] == "1b") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party2']}}</a>  
@@ -119,37 +119,98 @@
             <br>
           </div>
         </div>
+    
+        {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
+          <div class="address-card address-card-duplicate">
+            <div class="address-container">
+              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
+                <p class="right-aligned-link govuk-heading-s">
+                  <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
+                </p> 
+              </h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Address:</dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-address3']}}<br>
+                    {{data['dup-party-postcode3']}}<br>
+                    {{data['dup-party-country3']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-org-number3']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Web address: </dt>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['dup-party-web3']}}</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-vat3']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-eori3']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                  <dd class="govuk-summary-list__value">{{data['dup-party-duns3']}}</dd>
+                </div>
+              </dl> 
+              <br>
+            </div>
+          </div>
+        {% endif %}
       {% endif %}
     {% endif %}
-     
+      
+    <!--Show a Not duplicate button for Representative Party-->
     {% if (data['merge-duplicates'] == "1of2") %}
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Mark as not a duplicate",
-          href: "reginterest-merge-rep-party?merge-duplicates=1b&merge-rep-task=started"
-        }) }}    
-        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-      </div>
+      <form action="reginterest-merge-rep-party?merge-duplicates=1b&merge-rep-task=started">
       {% else %}
       {% if (data['merge-duplicates'] == "2of2") %}
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Mark as not a duplicate",
-            href: "reginterest-merge-rep-party?merge-duplicates=1a&merge-rep-task=started"
-          }) }}    
-          <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-        </div>
+        <form action="reginterest-merge-rep-party?merge-duplicates=1a&merge-rep-task=started">
         {% else %}
-
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Mark as not a duplicate",
-            href: "reginterest-merge-rep-party?merge-duplicates=0&merge-rep-task=complete"
-          }) }}    
-          <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-        </div>
+        {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+          <form action="reginterest-merge-rep-party?merge-duplicates=0&merge-rep-task=complete">
+          {% else %}
+          <!--Or show a button that is for Interested Party only-->
+          <form action="reginterest-merge-int-party?merge-duplicates=0&merge-task=complete">
+        {% endif %}
       {% endif %}
     {% endif %}
+
+    <div class="govuk-button-group">
+    <!--Show a Not duplicate button for Representative Party-->
+      {% if (data['merge-duplicates'] == "1of2") %}
+        {{ govukButton({
+          text: "Mark as not a duplicate",
+          href: "reginterest-merge-rep-party?merge-duplicates=1c&merge-rep-task=started"
+        }) }}    
+        {% else %}
+        {% if (data['merge-duplicates'] == "2of2") %}
+            {{ govukButton({
+              text: "Mark as not a duplicate",
+              href: "reginterest-merge-rep-party?merge-duplicates=1a&merge-rep-task=started"
+            }) }}    
+          {% else %}
+          {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+              {{ govukButton({
+                text: "Mark as not a duplicate",
+                href: "reginterest-merge-rep-party?merge-duplicates=0&merge-rep-task=complete"
+              }) }}    
+            {% else %}
+            <!--Or show a button that is for Interested Party only-->
+              {{ govukButton({
+                text: "Mark as not a duplicate",
+                href: "reginterest-merge-int-party?merge-duplicates=0&merge-task=complete"
+              }) }}    
+          {% endif %}
+        {% endif %}
+      {% endif %}
+      <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
+    </div>
   </div>
 </div>
 

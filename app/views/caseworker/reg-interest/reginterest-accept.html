@@ -91,7 +91,7 @@
           </div>
         </dl>
       {% endif %}
-      <p>If you approve this invite, your decision will be notified to all parties.</p>
+      <p>If you approve this invite, all parties will be notified of your decision.</p>
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Approve invite",
@@ -116,7 +116,11 @@
               LOA signatory
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['reginterest-auth-choose-contact'] or "Jane Winder" }}               
+              {% if (data['reginterest-auth-choose-contact'] == "Jane Winder" ) %}
+                Jane Winder
+                {% else %}        
+                {{data['reginterest-auth-name'] }} 
+              {% endif %}      
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
@@ -140,7 +144,7 @@
             </dd>
           </div>
         </dl>
-        <p>If you approve this invite, your decision will be notified to all parties.</p>
+        <p>If you approve this invite, both parties will be notified of your decision.</p>
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Approve invite",
