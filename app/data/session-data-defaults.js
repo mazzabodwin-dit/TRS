@@ -84,7 +84,7 @@ module.exports = {
   "dup-party-address2": "24 The Street, Reading",
   "dup-party-postcode2": "RG1 1AF",
   "dup-party-country2": "United Kingdom",
-  "dup-party-org-number2": "765238953",
+  "dup-party-org-number2": "456794936",
   "dup-party-web2": "www.steeluk.org", 
   "dup-party-vat2": "123456789", 
   "dup-party-eori2": null,
