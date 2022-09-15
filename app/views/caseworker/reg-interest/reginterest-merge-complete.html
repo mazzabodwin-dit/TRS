@@ -18,7 +18,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  Review parties</span>
+    <span class="govuk-caption-xl">1.  
+      {% if data['verify-type'] == "rep-invite" %}
+        Review representative
+      {% else %}
+        Review parties
+      {% endif %}
+    </span>
     <h1 class="govuk-heading-xl">
       Merge complete
     </h1>

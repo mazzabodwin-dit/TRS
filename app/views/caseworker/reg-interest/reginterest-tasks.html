@@ -68,7 +68,12 @@
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span>Review parties
+          <span class="app-task-list__section-number">1. </span>
+          {% if data['verify-type'] == "rep-invite" %}
+            Review representative
+          {% else %}
+            Review parties
+          {% endif %}
         </h2>
         <ul class="app-task-list__items">
           {% include "includes/task-list-caseworker-org.html" %}

@@ -19,8 +19,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  Review parties</span>
-    <h1 class="govuk-heading-xl">
+    <span class="govuk-caption-xl">1.  
+      {% if data['verify-type'] == "rep-invite" %}
+        Review representative
+      {% else %}
+        Review parties
+      {% endif %}
+    </span>    <h1 class="govuk-heading-xl">
       Resolve duplicates
     </h1>
     <p>Select which of the following is the correct information.</p>
