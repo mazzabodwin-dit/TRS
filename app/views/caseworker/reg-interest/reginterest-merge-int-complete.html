@@ -11,116 +11,34 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  
-      {% if data['verify-type'] == "rep-invite" %}
-        Review representative
-      {% else %}
-        Review parties
-      {% endif %}
-    </span>
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       Merge complete
     </h1>
-    <p>The organisations have been merged and the results are below.
+    <p>The organisations have been successfully merged and all parties will be informed by email.
     </p>
-  </div>
-</div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
     <form action="reginterest-merge-int-party" method="post" id="reginterest-loa-new-form">
-      <h2 class="govuk-heading-s">Interested party
-      </h2>
-      <div class="address-card">
-        <div class="address-container">
-          <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
-            <p class="right-aligned-link govuk-heading-s">
-              <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
-            </p> 
-          </h3> 
-          <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Address:</dt>
-              <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
-                {{data['party-postcode1']}}<br>
-                {{data['party-country1']}}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Reg number: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Web address: </dt>
-              <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">VAT no: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">EORI: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
-            </div>
-          </dl> 
-          <br>
-          <div>
-            <details class="case-details govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Interested party: 1 case
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list">
-                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref1']}} - {{data['case-name1']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified party" title="Verified party" width="32px"> 29 July 2022</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-          <div>
-            <details class="case-details govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Users: 2
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list">
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user11']}}</a> - {{data['party-email11']}}</li>
-                </ul>
-              </div>
-            </details>
-          </div> 
-        </div> 
-      </div>
-      <div class="govuk-button-group">
+
+    <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"
         }) }}    
-        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
       </div>
     </form>
   </div>
 </div>
 
 
+
+
 {% endblock %}
 {% block footer %}
-{%include "includes/footer.html" %}
+  {% include "includes/footer.html" %}
 {% endblock %}
 
 
