@@ -31,9 +31,9 @@
     <p>Before continuing please ensure that you have:
     </p>
     <ul class="govuk-list govuk-list--bullet">
+      <li>Liased with the caseworkers and organisations involved</li>
       <li>Carefully reviewed the matching details</li>
       <li>Updated any details that are incorrect</li>
-      <li>Recieved confirmation of the merge from all those involved</li>
     </ul>
   </div>
 </div>
@@ -425,6 +425,31 @@
         text: "Merging organisations cannot be undone",
         iconFallbackText: "Warning"
       }) }}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Please confirm
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="check-1" name="check" type="checkbox" value="caseworker-check">
+              <label class="govuk-label govuk-checkboxes__label" for="check-1">
+                I have alerted all caseworkers who are involved in the cases affected
+              </label>
+            </div>
+              <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="check-2" name="check" type="checkbox" value="org-check">
+              <label class="govuk-label govuk-checkboxes__label" for="check-2">
+                I have permission to proceed from the orgnaisations involved
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Merge organisations now"
@@ -438,7 +463,7 @@
 
 {% endblock %}
 {% block footer %}
-{%include "includes/footer.html" %}
+  {% include "includes/footer.html" %}
 {% endblock %}
 
 

@@ -164,7 +164,7 @@
       {% if (data['merge-duplicates'] == "1b") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
-            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party2']}}</a>  
+            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state"><mark>{{data['dup-party2']}}</mark></a>  
               <p class="right-aligned-link govuk-heading-s">
                 <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
               </p> 
@@ -174,17 +174,17 @@
                 <dt class="govuk-summary-list__key">Address:</dt>
                 <dd class="govuk-summary-list__value">{{data['dup-party-address2']}}<br>
                   {{data['dup-party-postcode2']}}<br>
-                  {{data['dup-party-country2']}}
+                  <mark>{{data['dup-party-country2']}}</mark>
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Reg number: </dt>
-                <dd class="govuk-summary-list__value">{{data['dup-party-org-number2']}}
+                <dd class="govuk-summary-list__value"><mark>{{data['dup-party-org-number2']}}</mark>
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Web address: </dt>
-                <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['dup-party-web2']}}</a></dd>
+                <dd class="govuk-summary-list__value"><a href="" target="_blank"><mark>{{data['dup-party-web2']}}</mark></a></dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">VAT no: </dt>
@@ -204,7 +204,7 @@
               <details class="case-details govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
-                    Interested party: 1 case
+                    <mark>Interested party: 1 case</mark>
                   </span>
                 </summary>
                 <div class="govuk-details__text">
