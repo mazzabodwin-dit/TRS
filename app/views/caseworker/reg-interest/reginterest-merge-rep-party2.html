@@ -35,7 +35,7 @@
     </ul>
     {{ govukDetails({
       summaryText: "How are duplicates determined?",
-      text: "Matches are made based on the website domain, organisation registration number, EORI, VAT, and DUNS number."
+      text: "Matches are made based on the website domain, organisation registration number, EORI, VAT, and DUNS number. Some more information about how caes/ users get merged."
     }) }}
   </div>
 </div>
@@ -350,10 +350,10 @@
                       Duplicate organisations (2)
                     </h1>
                   </legend>
-                  <div id="waste-hint" class="govuk-hint">
-                    Select the organisation you wish to merge.
+                 <div id="merge-duplicates-hint" class="govuk-hint">
+                    Select the duplicates you wish to merge or mark as not a duplicate
                   </div>
-                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="merge-duplicates-1a" name="merge-duplicates" type="radio" value="1of2">
                       <label class="govuk-label govuk-radios__label" for="merge-duplicates-1a">

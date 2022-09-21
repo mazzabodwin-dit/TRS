@@ -33,9 +33,10 @@
       <li>Duplicates are only merged after consulting the parties and caseworkers involved</li>
       <li>Non-duplicates should have incorrect details updated and marked as 'Not duplicate'</li>
     </ul>
+    
     {{ govukDetails({
       summaryText: "How are duplicates determined?",
-      text: "Matches are made based on the website domain, organisation registration number, EORI, VAT, and DUNS number."
+      text: "Matches are made based on the website domain, organisation registration number, EORI, VAT, and DUNS number. Some more information about how caes/ users get merged."
     }) }}
   </div>
 </div>
@@ -344,18 +345,18 @@
           {% if data['merge-duplicates'] == "1of2" or data['merge-duplicates'] == "2of2"  %}
             <form action="reginterest-merge-rep-choose-table-radio" method="post" id="reginterest-merge-form">
               <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <fieldset class="govuk-fieldset" aria-describedby="merge-duplicates-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     <h2 class="govuk-fieldset__heading">
                         Duplicate organisations (2)
                     </h2>
                   </legend>
-                  <div id="waste-hint" class="govuk-hint">
-                    Select organisations you wish to merge in one step.
+                  <div id="merge-duplicates-hint" class="govuk-hint">
+                    Select one or more duplicates to merge at the same time
                   </div>
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="merge-duplicates-1a" name="merge-duplicates" type="checkbox" value="10f2">
+                      <input class="govuk-checkboxes__input" id="merge-duplicates-1a" name="merge-duplicates" type="checkbox" value="1of2">
                       <label class="govuk-label govuk-checkboxes__label" for="merge-duplicates-1a">
                         <div class="address-card address-card-duplicate">
                           <div class="address-container">
@@ -409,12 +410,17 @@
                                 </div>
                               </details>
                             </div> 
+                              {{ govukButton({
+                                text: "Not duplicate",
+                                classes: "govuk-button--secondary",
+                                href: "reginterest-merge-not-duplicate"
+                              }) }} 
                           </div>
                         </div>
                       </label>
                     </div>
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="merge-duplicates-1c" name="merge-duplicates" type="checkbox" value="20f2">
+                      <input class="govuk-checkboxes__input" id="merge-duplicates-1c" name="merge-duplicates" type="checkbox" value="2of2">
                       <label class="govuk-label govuk-checkboxes__label" for="merge-duplicates-1c">
                         <div class="address-card address-card-duplicate">
                           <div class="address-container">
@@ -482,6 +488,11 @@
                                 </div>
                               </details>
                             </div>
+                              {{ govukButton({
+                                text: "Not duplicate",
+                                classes: "govuk-button--secondary",
+                                href: "reginterest-merge-not-duplicate"
+                              }) }} 
                           </div>
                         </div>
                       </label>
@@ -494,11 +505,6 @@
                   text: "Review merge details"
                 }) }} 
                 
-              {{ govukButton({
-                text: "Not duplicate",
-                classes: "govuk-button--secondary",
-                href: "reginterest-merge-not-duplicate"
-              }) }} 
             </form>
           {% endif %}
         {% endif %}
