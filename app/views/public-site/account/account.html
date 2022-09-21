@@ -92,7 +92,7 @@
             Account permission
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "Regular user") or (data['user-permissions'] == "Admin user")  %}
+            {% if (data['user-permissions'] == "User") or (data['user-permissions'] == "Admin user")  %}
               {{data['user-permissions']}}
                 {% else %}
                   Admin

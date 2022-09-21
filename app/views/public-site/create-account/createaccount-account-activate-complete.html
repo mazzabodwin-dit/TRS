@@ -23,7 +23,7 @@ Email address is verified - {{serviceName}}
         </h1>
       </div>
 
-      {% if data['user-permissions'] == "Regular user" %}
+      {% if data['user-permissions'] == "User" %}
       <p>You can now sign in and access your organisation's Trade Remedies account.</p>
       <p>With this account you can: </p>
       
@@ -35,7 +35,7 @@ Email address is verified - {{serviceName}}
 
         {% else %}
 
-        {% if data['user-permissions'] != "Regular user" %}
+        {% if data['user-permissions'] != "User" %}
         <p>You can now sign in and access your organisation's Trade Remedies account. </p>
         <p>You are the primary contact for this account and can: </p>
 

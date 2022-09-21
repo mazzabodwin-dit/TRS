@@ -55,7 +55,7 @@
           <li>comment on TRA findings before a final decision is made</li>
           <li>request reconsideration of a final determination in a case</li>
         </ul>
-        {% if data['user-permissions'] != "Regular user" %}
+        {% if data['user-permissions'] != "User" %}
           <p><a href="" class="govuk-link--no-visited-state">Manage team</a></p>
           <p>Grant access to your organisation's active cases or invite new users into your team.</p>
         {% endif %}    
@@ -246,7 +246,7 @@
             <li>
               <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
             </li>
-            {% if data['user-permissions'] != "Regular user" %}
+            {% if data['user-permissions'] != "User" %}
               <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="manage-org/manage-org#manage-team">Manage team</a>
               </li>  
