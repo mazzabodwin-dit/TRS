@@ -344,19 +344,19 @@
           {% if data['merge-duplicates'] == "1of2" or data['merge-duplicates'] == "2of2"  %}
             <form action="reginterest-merge-rep-choose-table-radio" method="post" id="reginterest-merge-form">
               <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <h1 class="govuk-fieldset__heading">
-                      Duplicate organisations (2)
-                    </h1>
+                    <h2 class="govuk-fieldset__heading">
+                        Duplicate organisations (2)
+                    </h2>
                   </legend>
                   <div id="waste-hint" class="govuk-hint">
-                    Select the organisation you wish to merge.
+                    Select organisations you wish to merge in one step.
                   </div>
-                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="merge-duplicates-1a" name="merge-duplicates" type="radio" value="1of2">
-                      <label class="govuk-label govuk-radios__label" for="merge-duplicates-1a">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="merge-duplicates-1a" name="merge-duplicates" type="checkbox" value="10f2">
+                      <label class="govuk-label govuk-checkboxes__label" for="merge-duplicates-1a">
                         <div class="address-card address-card-duplicate">
                           <div class="address-container">
                              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
@@ -413,14 +413,14 @@
                         </div>
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="merge-duplicates-1c" name="merge-duplicates" type="radio" value="2of2">
-                      <label class="govuk-label govuk-radios__label" for="merge-duplicates-1c">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="merge-duplicates-1c" name="merge-duplicates" type="checkbox" value="20f2">
+                      <label class="govuk-label govuk-checkboxes__label" for="merge-duplicates-1c">
                         <div class="address-card address-card-duplicate">
                           <div class="address-container">
-                            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
+                             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
                               <p class="right-aligned-link govuk-heading-s">
-                                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
+                                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
                               </p> 
                             </h3>
                             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
@@ -454,7 +454,7 @@
                               </div>
                             </dl> 
                             <br>
-                            <div>
+                             <div>
                               <details class="case-details govuk-details" data-module="govuk-details">
                                 <summary class="govuk-details__summary">
                                   <span class="govuk-details__summary-text">
@@ -481,8 +481,8 @@
                                   </ul>
                                 </div>
                               </details>
-                            </div> 
-                          </div> 
+                            </div>
+                          </div>
                         </div>
                       </label>
                     </div>
