@@ -65,19 +65,20 @@ th {
   vertical-align: text-top;
 }
 
-.sortable tr.govuk-table__row th, .sortable tr.govuk-table__row td {
+.sortable tr.govuk-table__row th, .sortable tr.govuk-table__row td, .merge tr.govuk-table__row th, .merge tr.govuk-table__row td {
   padding-left: 8px;
   padding-right: 25px;
   vertical-align: middle;
 }
 
-.sortable th {
+/* For all tables that are sortable - and for the merge table*/
+.sortable th, .merge th {
   background-color: govuk-colour("light-grey");
 }
 
 /*  Accessible table taken from w3c: https://w3c.github.io/aria-practices/examples/table/sortable-table.html */
 
-table.sortable th {
+table.sortable th, table.merge th {
   position: relative;
 }
 
