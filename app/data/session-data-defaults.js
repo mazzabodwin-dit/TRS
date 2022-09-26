@@ -29,8 +29,10 @@ module.exports = {
   "user-permissions": "Admin user",
 
 
-//Key caseworker users 
-  "caseworkername": "Jonanna Barton",
+//Key caseworker users - Investigator not Lead
+  "caseworker-invest": "Jonanna Barton",
+  "caseworker-lead": "Natalie Inbruge",
+  "who-signin": "invest",
   
 //CASE 1
   "case-ref1": "AD2224",

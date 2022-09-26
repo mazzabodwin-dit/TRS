@@ -172,7 +172,7 @@
                 <ul class="app-task-list__items">
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/signin" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/signin?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Sign in & Forgotton Password
                       </a>
                     </span>
@@ -181,18 +181,18 @@
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">TRSP-20 and 24</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link--no-visited-state">
+                      <a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link--no-visited-state">
                         Verify ROI - Interested party only
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=yes">
+                      <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=yes">
                         Verify ROI - with Rep</a> 
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=both&merge-duplicates=1of2&third-party=yes">
+                      <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=reg-interest&duplicate-org=both&merge-duplicates=1of2&third-party=yes">
                         Verify ROI - with rep and duplicates</a> 
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span>
@@ -201,7 +201,7 @@
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">TRSP-23</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="/caseworker/cases/existing-parties-invite?direct-invite=no" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="/caseworker/cases/existing-parties-invite?who-signin=invest&direct-invite=no" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Invite to case
                       </a>
                     </span>
@@ -210,22 +210,26 @@
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">TRSP-22 and 24</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/existing-parties-page?verify-type=rep-invite&duplicate-org=no&third=party=yes" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/cases/existing-parties-page?who-signin=invest&verify-type=rep-invite&duplicate-org=no&third=party=yes" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Verify representative invite - no duplicates
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/existing-parties-page?verify-type=rep-invite&duplicate-org=rep&third=party=yes" class="govuk-link--no-visited-state" aria-describedby="signin-status">
-                        Verify representative invite - with duplicates
+                      <a href="caseworker/cases/existing-parties-page?who-signin=lead&verify-type=rep-invite&duplicate-org=rep&third=party=yes" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Verify representative invite - Lead Investigator with duplicates
                       </a><br>
-                      <a href="caseworker/reg-interest/reginterest-merge-rep-party?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <span class="app-task-list__task-name">
+                      <a href="caseworker/cases/existing-parties-page?who-signin=invest&verify-type=rep-invite&duplicate-org=rep&third=party=yes" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                        Verify representative invite - Investigator with duplicates
+                      </a><br>
+                      <a href="caseworker/reg-interest/reginterest-merge-rep-party?who-signin=invest&merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Verify representative invite - with duplicates v1
                       </a><br>
-                      <a href="caseworker/reg-interest/reginterest-merge-rep-party2?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/reg-interest/reginterest-merge-rep-party2?who-signin=invest&merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Verify representative invite - with duplicates v2
                       </a><br>
-                      <a href="caseworker/reg-interest/reginterest-merge-rep-party3?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/reg-interest/reginterest-merge-rep-party3?who-signin=invest&merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Verify representative invite - with duplicates v3
                       </a>
                     </span>
@@ -239,31 +243,31 @@
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/case-overview" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/cases/case-overview?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Single case - overview page
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/case-parties" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/cases/case-parties?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Case - parties v1
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/case-parties2" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/cases/case-parties2?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Case - parties v2
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/case-party-bluesteel" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/cases/case-party-bluesteel?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         An org within a case
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/cases/case-party-unverified" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/cases/case-party-unverified?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         An org that could not be verified
                       </a>
                     </span>
@@ -271,13 +275,13 @@
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/orgs/orgs-all" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/orgs/orgs-all?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         All organisations
                       </a>
                     </span>
                     <span class="app-task-list__tag" id="reginterest-direct-status">Partly complete</span><br>
                     <span class="app-task-list__task-name">
-                      <a href="caseworker/orgs/org-bluesteel" class="govuk-link--no-visited-state" aria-describedby="signin-status">
+                      <a href="caseworker/orgs/org-bluesteel?who-signin=invest" class="govuk-link--no-visited-state" aria-describedby="signin-status">
                         Single organisation
                       </a>
                     </span>
@@ -325,17 +329,11 @@
           <nav role="navigation" aria-labelledby="subsection-title">
             <ul class="govuk-list govuk-!-font-size-16">
               <li>
-                <a class="govuk-link--no-visited-state" href="/caseworker/signin">Caseworker sign in</a> 
+                <a class="govuk-link--no-visited-state" href="/caseworker/signin?who-signin=invest">Caseworker sign in</a> 
               </li>
               <li>
-                <a class="govuk-link--no-visited-state" href="/caseworker/dashboard">Caseworker dashboard</a> 
-              </li>
-              <li>
-                <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no&notify-contact=no">Verify registration of interest from interested party</a> 
-              </li> 
-              <li>
-                <a class="govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=yes">Verify registration of interest from rep</a> 
-              </li>     
+                <a class="govuk-link--no-visited-state" href="/caseworker/dashboard?who-signin=invest">Caseworker dashboard</a> 
+              </li>`
             </ul>
           </nav>
         </aside>
