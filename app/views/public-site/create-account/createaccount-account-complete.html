@@ -61,14 +61,13 @@
         <div class="govuk-details__text">
           <p><a href="createaccount-account-complete?rerequestEmail=yes">Request a new verification email</a>.</p>
         </div>
-      </details>
-
-      <form action="../dashboard?account-activated=no" method="post" id="createaccount-verify-email-form">  
-
+      </details> 
+      <form action="../dashboard?account-activated=no" method="post" id="createaccount-verify-email-form"> 
         {{ govukButton({
           text: "Sign in"
         }) }}
       </form>  
+      
     </div>
   </div>
 {% endblock %}
