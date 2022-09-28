@@ -36,7 +36,11 @@
       <li>Carefully reviewed the matching details</li>
       <li>Updated any details that are incorrect</li>
     </ul>
-    
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
     {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
       <div class="address-card address-card-duplicate">
           <div class="address-container">
@@ -96,7 +100,7 @@
       {% if (data['merge-duplicates'] == "1b") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
-            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party2']}}</a>  
+            <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party2']}}</a>  
               <p class="right-aligned-link govuk-heading-s">
                 <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=merge-int&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
               </p> 
@@ -139,7 +143,7 @@
         {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
-              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
+              <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
                 <p class="right-aligned-link govuk-heading-s">
                   <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup2" class="govuk-link--no-visited-state">Edit</a>
                 </p> 

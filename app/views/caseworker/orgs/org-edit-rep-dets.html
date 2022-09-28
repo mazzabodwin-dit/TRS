@@ -151,7 +151,7 @@
           {% else %}
 
           <!--This uses different field contents as it is the duplicate org-->
-          {% if data['party-type'] == "rep-dup1" %}
+          {% if data['party-type'] == "rep-dup-1a" %}
           
             {{ govukInput({
               label: {
@@ -271,7 +271,7 @@
             {% else %}
 
             <!--This uses different field contents as it is the duplicate org-->
-            {% if data['party-type'] == "rep-dup2" %}
+            {% if data['party-type'] == "rep-dup-1b" %}
             
               {{ govukInput({
                 label: {
@@ -387,6 +387,123 @@
                 type: "text",
                 value: data['dup-party-duns2']  
               }) }}
+              {% else %}
+              {% if data['party-type'] == "rep-dup-1c" %}
+                {{ govukInput({
+                  label: {
+                    text: "Name of organisation",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "dup-party3",
+                  name: "dup-party3",
+                  value: data['dup-party3'],
+                  type: "text"
+                }) }}
+              
+                {% call govukFieldset({
+                  legend: {
+                    text: "Address of organisation",
+                    classes: "govuk-fieldset__legend--s",
+                    isPageHeading: true
+                  }
+                }) %}
+
+                <p>Provide the address of the main office.</p>
+
+                  {{ govukTextarea({
+                    label: {
+                      text: "Street address",
+                      isPageHeading: false
+                    },
+                    classes: "govuk-input--width-20",
+                    id: "dup-party-address3",
+                    name: "dup-party-address3",
+                    value: data['dup-party-address3'],
+                    type: "text"
+                  }) }}
+
+                  {{ govukInput({
+                    label: {
+                      text: "Postcode or zip code",
+                      isPageHeading: false
+                    },
+                    classes: "govuk-input--width-5",
+                    id: "dup-party-postcode3",
+                    name: "dup-party-postcode3",
+                    value: data['dup-party-postcode3'],
+                    type: "text"
+                  }) }}
+                
+                {% endcall %}
+
+                {% include "includes/country-list.html" %}
+                {{ govukInput({
+                  label: {
+                    text: "Organisation registration number",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "dup-party-org-number3",
+                  name: "dup-party-org-number3",
+                  value: data['dup-party-org-number3'],
+                  type: "text"
+                }) }} 
+
+                {{ govukInput({
+                  label: {
+                    text: "Website (optional)",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "dup-party-web3",
+                  name: "dup-party-web3",
+                  type: "text",
+                  value: data['dup-party-web3']  
+                }) }}
+                
+                {{ govukInput({
+                  label: {
+                    text: "VAT registration number (optional)",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "dup-party-vat3",
+                  name: "dup-party-vat3",
+                  type: "text",
+                  value: data['dup-party-vat3']
+                }) }}
+
+                {{ govukInput({
+                  label: {
+                    text: "EORI number (optional)",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "dup-party-eori3",
+                  name: "dup-party-eori3",
+                  type: "text",
+                  value: data['dup-party-eori3']          
+                }) }}
+
+                {{ govukInput({
+                  label: {
+                    text: "DUNS number (optional)",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "dup-party-duns3",
+                  name: "dup-party-duns3",
+                  type: "text",
+                  value: data['dup-party-duns3']  
+                }) }}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}

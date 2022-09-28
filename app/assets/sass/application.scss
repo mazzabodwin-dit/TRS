@@ -92,6 +92,11 @@ $govuk-assets-path: '/govuk/assets/';
 
 /* Caseworker - Address card  */
 
+.cover {
+  background-color: govuk-colour("light-grey");
+  padding: 20px 20px 0px 20px;
+}
+
 .address-card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -113,6 +118,11 @@ $govuk-assets-path: '/govuk/assets/';
 .address-container {
   padding: 25px 20px 5px 20px;
   margin-bottom: 30px;
+}
+
+/* Add some padding inside the card container */
+.address-container .govuk-heading-m {
+  margin-bottom: 10px;
 }
 
 .verified-check {

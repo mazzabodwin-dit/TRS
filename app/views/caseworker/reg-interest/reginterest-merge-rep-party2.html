@@ -43,7 +43,7 @@
     </h2>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-m"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+        <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
           <p class="right-aligned-link govuk-heading-s">
             <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
           </p> 
@@ -244,7 +244,9 @@
             {% if data['merge-1a'] =="isduplicate" %}
               <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
             {% endif %} 
-            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+            <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+              <p class="right-aligned-link govuk-heading-s"><a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1a" class="govuk-link--no-visited-state">Edit</a>
+              </p> 
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
               <div class="govuk-summary-list__row">
@@ -312,7 +314,9 @@
               {% if data['merge-1c'] =="isduplicate" %}
               <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
               {% endif %} 
-              <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
+              <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a> 
+                <p class="right-aligned-link govuk-heading-s"><a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1c" class="govuk-link--no-visited-state">Edit</a>
+                </p>  
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                 <div class="govuk-summary-list__row">
