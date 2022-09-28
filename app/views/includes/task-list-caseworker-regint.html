@@ -52,6 +52,7 @@
 
     {% else %}
     {% if (data['merge-rep-task'] == "pending") %}
+      <!-- If the user is an Invest not Lead and requested merge approval: -->
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-merge-rep-party?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
