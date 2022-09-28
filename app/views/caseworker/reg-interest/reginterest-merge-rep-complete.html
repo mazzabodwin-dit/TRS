@@ -11,7 +11,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +19,7 @@
   <div class="govuk-grid-column-two-thirds">
     {% if data['who-signin'] == "invest" %}
       <h1 class="govuk-heading-xl">
-        Merge verification requested
+        Merge approval requested
       </h1>
       <p>The Lead Investigator of this case has been alerted. You will be informed once they have have finished reviewing the merge so you can complete the verfication of this organisation.</p>
       <form action="reginterest-tasks?merge-rep-task=pending" method="post" id="reginterest-merge-complete-form">

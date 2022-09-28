@@ -335,19 +335,36 @@ router.post('/verify-rep-invite-representative-party-route', function (req, res)
 })
 
 // Run this code on reginterest-merge-rep-party - which option is chosen:
-router.post('/reginterest-merge-rep-party-route', function (req, res) {
+router.post('/reginterest-merge-rep-party-merge-1a-route', function (req, res) {
 
   // Make a variable and give it the value from 'reginterest-valid-primary'
-  var reginterestmatchingorgsquestion = req.session.data['reginterest-matching-orgs-question']
+  var reginterestmatchingorgs1aquestion = req.session.data['reginterest-matching-orgs-1a-question']
 
   // Check whether the variable matches a condition
-  if (reginterestmatchingorgsquestion == "yes"){
+  if (reginterestmatchingorgs1aquestion == "yes"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio')
+    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-party4?merge-1a=isduplicate')
   } 
-  if (reginterestmatchingorgsquestion == "no"){
+  if (reginterestmatchingorgs1aquestion == "no"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate')
+    res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate2?merge-1a=notduplicate')
+  } 
+})
+
+// Run this code on reginterest-merge-rep-party - which option is chosen:
+router.post('/reginterest-merge-rep-party-merge-1c-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-primary'
+  var reginterestmatchingorgs1cquestion = req.session.data['reginterest-matching-orgs-1c-question']
+
+  // Check whether the variable matches a condition
+  if (reginterestmatchingorgs1cquestion == "yes"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-party4?merge-1c=isduplicate')
+  } 
+  if (reginterestmatchingorgs1cquestion == "no"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate2?merge-1c=notduplicate')
   } 
 })
 

@@ -185,7 +185,7 @@
       </h2>
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
-        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches (1/2)</span>
+        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches</span>
           {{ govukPagination({
             classes: "right-aligned-link",
             next: {
@@ -206,7 +206,7 @@
         </h2>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches (2/2)</span>
+          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches</span>
 
             {{ govukPagination({
               classes: "right-aligned-link",
@@ -241,10 +241,10 @@
       {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
+            {% if data['merge-1a'] =="isduplicate" %}
+              <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
+            {% endif %}    
             <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
-              <p class="right-aligned-link govuk-heading-s">
-                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
-              </p> 
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
               <div class="govuk-summary-list__row">
@@ -293,42 +293,46 @@
             </div> 
           </div>
         </div>
-        <form action="/reginterest-merge-rep-party-route" method="post" id="reginterest-matching-orgs-question-form">
-            {{ govukRadios({
-              name: "reginterest-matching-orgs-question",
-              classes: "govuk-radios--inline",
-              fieldset: {
-                legend: {
-                  text: "Is this the same orgnaisation?",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
-                }
+        <form action="/reginterest-merge-rep-party-merge-1a-route" method="post" id="reginterest-matching-orgs-1a-question-form">
+          {{ govukRadios({
+            name: "reginterest-matching-orgs-1a-question",
+            id: "reginterest-matching-orgs-1a-question",
+            classes: "govuk-radios--inline",
+            fieldset: {
+              legend: {
+                text: "Is this the same organisation as the Representative?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                checked: checked("reginterest-matching-orgs-1a-question", "yes")
               },
-              items: [
-                {
-                  value: "yes",
-                  text: "Yes"
-                },
-                {
-                  value: "no",
-                  text: "No"
-                }
-              ]
-            }) }}
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Continue"
-              }) }} 
-            </div>
-          </form>
+              {
+                value: "no",
+                text: "No",
+                checked: checked("reginterest-matching-orgs-1a-question", "no")
+
+              }
+            ]
+          }) }}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm"
+            }) }} 
+          </div>
+        </form>
         {% else %}
         {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
+              {% if data['merge-1c'] =="isduplicate" %}
+                <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
+              {% endif %}    
               <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
-                <p class="right-aligned-link govuk-heading-s">
-                  <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
-                </p> 
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                 <div class="govuk-summary-list__row">
@@ -388,38 +392,41 @@
                     </ul>
                   </div>
                 </details>
-              </div> 
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-              <form action="/reginterest-merge-rep-party-route" method="post" id="reginterest-matching-orgs-question-form">
-                {{ govukRadios({
-                  name: "reginterest-matching-orgs-question",
-                  classes: "govuk-radios--inline",
-                  fieldset: {
-                    legend: {
-                      text: "Is this the same orgnaisation?",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "yes",
-                      text: "Yes"
-                    },
-                    {
-                      value: "no",
-                      text: "No"
-                    }
-                  ]
-                }) }}
-                <div class="govuk-button-group">
-                  {{ govukButton({
-                    text: "Continue"
-                  }) }} 
-                </div>
-              </form>
+              </div>     
             </div>
           </div>
+          <form action="/reginterest-merge-rep-party-merge-1c-route" method="post" id="reginterest-matching-orgs-1c-question-form">
+            {{ govukRadios({
+              name: "reginterest-matching-orgs-1c-question",
+              classes: "govuk-radios--inline",
+              fieldset: {
+                legend: {
+                  text: "Is this the same organisation as the Representative?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  checked: checked("reginterest-matching-orgs-1c-question", "yes")
+
+                },
+                {
+                  value: "no",
+                  text: "No",
+                  checked: checked("reginterest-matching-orgs-1c-question", "yes")
+
+                }
+              ]
+            }) }}
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Confirm"
+              }) }} 
+            </div>
+          </form>
         {% endif %}
       {% endif %}
     {% endif %}
@@ -429,12 +436,50 @@
   <div class="govuk-grid-column-full">
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Continue",
-        href: "reginterest-tasks"
-      }) }} 
-        
-      <a class="govuk-link" govuk-link--no-visited-state href="reginterest-tasks">Back</a>
+     <!--Show a Review Merge button according to whether all orgs have been checked-->
+      {% if (data['merge-duplicates'] == "1of2") or (data['merge-duplicates'] == "2of2") %}
+        {% if (data['merge-1a'] == null) or (data['merge-1c'] == null) %}
+          {{ govukButton({
+            text: "Review merge fields",
+            disabled: true
+          }) }} 
+          {% else %}
+          {{ govukButton({
+            text: "Review merge fields",
+            href: "reginterest-merge-rep-choose-table-radio?merge-duplicates=1of2,2of2"
+          }) }}
+        {% endif %}
+   
+        {% else %}
+        {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+          {% if (data['merge-1a'] == null) or (data['merge-1c'] == null) %}
+            {{ govukButton({
+              text: "Review merge fields",
+              disabled: true
+            }) }} 
+            {% else %}
+            {{ govukButton({
+              text: "Review merge fields",
+              href: "reginterest-merge-rep-choose-table-radio"
+            }) }}
+          {% endif %}
+    
+          {% else %}
+          {% if (data['merge-duplicates'] == "0") %}
+            {{ govukButton({
+              text: "Continue",
+              href: "reginterest-tasks?merge-rep-task=complete"
+            }) }}
+            {% else %}
+            <!--Or show a button that is for Interested Party only-->
+            {{ govukButton({
+              text: "Review merge fields",
+              href: "reginterest-merge-int-party2?merge-task=complete"
+            }) }}    
+          {% endif %}
+        {% endif %}
+      {% endif %}
+      <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back to task list</a>
     </div>
   </div>
 </div>

@@ -185,7 +185,7 @@
       </h2>
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
-        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches (1/2)</span>
+        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches</span>
           {{ govukPagination({
             classes: "right-aligned-link",
             next: {
@@ -206,7 +206,7 @@
         </h2>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches (2/2)</span>
+          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches</span>
 
             {{ govukPagination({
               classes: "right-aligned-link",
@@ -241,12 +241,10 @@
       {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
+            {% if data['merge-1a'] =="isduplicate" %}
+              <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
+            {% endif %} 
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
-              <p class="right-aligned-link">
-                {% if data['merge-1a'] =="isduplicate" %}
-                  <strong class="govuk-tag govuk-tag--red">Duplicate</strong>
-                {% endif %}    
-              </p> 
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
               <div class="govuk-summary-list__row">
@@ -311,12 +309,10 @@
         {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
           <div class="address-card address-card-duplicate">
             <div class="address-container">
+              {% if data['merge-1c'] =="isduplicate" %}
+              <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
+              {% endif %} 
               <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
-                <p class="right-aligned-link">
-                {% if data['merge-1c'] =="isduplicate" %}
-                  <strong class="govuk-tag govuk-tag--red">Duplicate</strong>
-                {% endif %}    
-                </p> 
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                 <div class="govuk-summary-list__row">
@@ -424,7 +420,7 @@
             {% else %}
             {{ govukButton({
               text: "Review merge fields",
-              href: "reginterest-merge-rep-party2?merge-duplicates=0merge-rep-task=pending"
+              href: "reginterest-merge-rep-choose-table-radio"
             }) }}
           {% endif %}
     
