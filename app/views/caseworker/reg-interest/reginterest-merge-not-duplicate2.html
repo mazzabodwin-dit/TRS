@@ -208,22 +208,6 @@
         {% endif %}
       {% endif %}
     {% endif %}
-      
-    <!--Show a Not duplicate button for Representative Party-->
-    {% if (data['merge-duplicates'] == "1of2") %}
-      <form action="reginterest-merge-rep-party?merge-duplicates=1b&merge-rep-task=started">
-      {% else %}
-      {% if (data['merge-duplicates'] == "2of2") %}
-        <form action="reginterest-merge-rep-party?merge-duplicates=1a&merge-rep-task=started">
-        {% else %}
-        {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
-          <form action="reginterest-merge-rep-party?merge-duplicates=0&merge-rep-task=complete">
-          {% else %}
-          <!--Or show a button that is for Interested Party only-->
-          <form action="reginterest-merge-int-party?merge-duplicates=0&merge-task=complete">
-        {% endif %}
-      {% endif %}
-    {% endif %}
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -248,32 +232,32 @@
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
           text: "This as not a duplicate",
-          href: "reginterest-merge-rep-party?merge-duplicates=1c&merge-rep-task=started"
+          href: "reginterest-merge-rep-party2?merge-duplicates=1c&merge-rep-task=started"
         }) }}    
         {% else %}
         {% if (data['merge-duplicates'] == "2of2") %}
-            {{ govukButton({
-              text: "This as not a duplicate",
-              href: "reginterest-merge-rep-party?merge-duplicates=1a&merge-rep-task=started"
-            }) }}    
+          {{ govukButton({
+            text: "This as not a duplicate",
+            href: "reginterest-merge-rep-party2?merge-duplicates=1a&merge-rep-task=started"
+          }) }}    
           {% else %}
           {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
-              {{ govukButton({
-                text: "This as not a duplicate",
-                href: "reginterest-merge-rep-party?merge-duplicates=0&merge-rep-task=complete"
-              }) }}    
+            {{ govukButton({
+              text: "This as not a duplicate",
+              href: "reginterest-merge-rep-party2?merge-duplicates=0&merge-rep-task=pending"
+            }) }}    
             {% else %}
+
             <!--Or show a button that is for Interested Party only-->
               {{ govukButton({
                 text: "This as not a duplicate",
-                href: "reginterest-merge-int-party?merge-duplicates=0&merge-task=complete"
+                href: "reginterest-merge-int-party2?merge-task=complete"
               }) }}    
           {% endif %}
         {% endif %}
       {% endif %}
       <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
     </div>
-    </form>
   </div>
 </div>
 

@@ -39,7 +39,7 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-s">Representative
+    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Representative party</span>
     </h2>
     <div class="address-card">
       <div class="address-container">
@@ -178,18 +178,54 @@
   </div>
   <!--List of duplicates-->
   <div class="govuk-grid-column-one-half">
+    {% from "govuk/components/pagination/macro.njk" import govukPagination %}
     <!--Show header according to how many dups there are-->
-    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
-      <h2 class="govuk-heading-s">Matching organisation
-      </h2> 
+     {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+      <h2 class="govuk-heading-s merge-header2 clearfix">Match
+      </h2>
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
-        <h2 class="govuk-heading-s">Matches (1 of 2)
+        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches (1/2)</span>
+          {{ govukPagination({
+            classes: "right-aligned-link",
+            next: {
+              href: "?merge-duplicates=2of2"
+            },
+            items: [
+              {
+                number: 1,
+                current: true,
+                href: "?merge-duplicates=1of2"
+              },
+              {
+                number: 2,
+                href: "?merge-duplicates=2of2"
+              }
+            ]
+          }) }}
         </h2>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-s">Matches (2 of 2)
-        </h2>
+          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches (2/2)</span>
+
+            {{ govukPagination({
+              classes: "right-aligned-link",
+              previous: {
+                href: "?merge-duplicates=1of2"
+              },
+              items: [
+                {
+                  number: 1,
+                  href: "?merge-duplicates=1of2"
+                },
+                {
+                  number: 2,
+                  current: true,
+                  href: "?merge-duplicates=2of2"
+                }
+              ]
+            }) }}
+          </h2>
         {% endif %}
       {% endif %}
     {% endif %}
@@ -205,7 +241,7 @@
       {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container">
-            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+            <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
               <p class="right-aligned-link govuk-heading-s">
                 <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
               </p> 
@@ -255,20 +291,36 @@
                 </div>
               </details>
             </div> 
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Review merge details",
-                href: "reginterest-merge-rep-choose-table-radio"
-              }) }} 
-                
-              {{ govukButton({
-                text: "Not duplicate",
-                classes: "govuk-button--secondary",
-                href: "reginterest-merge-not-duplicate"
-              }) }} 
-            </div>
           </div>
         </div>
+        <form action="/reginterest-merge-rep-party-route" method="post" id="reginterest-matching-orgs-question-form">
+            {{ govukRadios({
+              name: "reginterest-matching-orgs-question",
+              classes: "govuk-radios--inline",
+              fieldset: {
+                legend: {
+                  text: "Is this the same orgnaisation?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue"
+              }) }} 
+            </div>
+          </form>
         {% else %}
         {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
           <div class="address-card address-card-duplicate">
@@ -337,65 +389,37 @@
                   </div>
                 </details>
               </div> 
-              <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Review merge details",
-                  href: "reginterest-merge-rep-choose-table-radio"
-                }) }} 
-                  
-                {{ govukButton({
-                  text: "Not duplicate",
-                  classes: "govuk-button--secondary",
-                  href: "reginterest-merge-not-duplicate"
-                }) }} 
-              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <form action="/reginterest-merge-rep-party-route" method="post" id="reginterest-matching-orgs-question-form">
+                {{ govukRadios({
+                  name: "reginterest-matching-orgs-question",
+                  classes: "govuk-radios--inline",
+                  fieldset: {
+                    legend: {
+                      text: "Is this the same orgnaisation?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                }) }}
+                <div class="govuk-button-group">
+                  {{ govukButton({
+                    text: "Continue"
+                  }) }} 
+                </div>
+              </form>
             </div>
           </div>
-        {% endif %}
-      {% endif %}
-    {% endif %}
-
-    <!--Show pagenation if there are 2 or more dups-->
-    {% from "govuk/components/pagination/macro.njk" import govukPagination %}
-
-    {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
-      {% else %}
-      {% if data['merge-duplicates'] == "1of2" %}
-        {{ govukPagination({
-          next: {
-            href: "?merge-duplicates=2of2"
-          },
-          items: [
-            {
-              number: 1,
-              current: true,
-              href: "?merge-duplicates=1of2"
-            },
-            {
-              number: 2,
-              href: "?merge-duplicates=2of2"
-            }
-          ]
-        }) }}
-
-        {% else %}
-        {% if data['merge-duplicates'] == "2of2" %}
-          {{ govukPagination({
-            previous: {
-              href: "?merge-duplicates=1of2"
-            },
-            items: [
-              {
-                number: 1,
-                href: "?merge-duplicates=1of2"
-              },
-              {
-                number: 2,
-                current: true,
-                href: "?merge-duplicates=2of2"
-              }
-            ]
-          }) }}
         {% endif %}
       {% endif %}
     {% endif %}

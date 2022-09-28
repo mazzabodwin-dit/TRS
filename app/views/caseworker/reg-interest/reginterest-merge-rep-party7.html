@@ -206,8 +206,14 @@
         <div class="address-card address-card-duplicate">
           <div class="address-container">
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
-              <p class="right-aligned-link govuk-heading-s">
-                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup1" class="govuk-link--no-visited-state">Edit</a>
+              <p class="right-aligned-link">
+                {% if data['merge-1a'] =="notduplicate" %}
+                  <strong class="govuk-tag govuk-tag--green">Not duplicate</strong>
+                  {% else %}
+                  {% if data['merge-1a'] =="isduplicate" %}
+                    <strong class="govuk-tag govuk-tag--red">Duplicate</strong>
+                  {% endif %}
+                {% endif %}    
               </p> 
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
@@ -257,12 +263,12 @@
             </div> 
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Review merge details",
-                href: "reginterest-merge-rep-choose-table-radio"
+                text: "Mark as duplicate",
+                href: "reginterest-merge-rep-party7?merge-1a=isduplicate"
               }) }} 
                 
               {{ govukButton({
-                text: "Not duplicate",
+                text: "Remove as duplicate",
                 classes: "govuk-button--secondary",
                 href: "reginterest-merge-not-duplicate"
               }) }} 
@@ -274,8 +280,14 @@
           <div class="address-card address-card-duplicate">
             <div class="address-container">
               <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
-                <p class="right-aligned-link govuk-heading-s">
-                  <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=int-dup2" class="govuk-link--no-visited-state">Edit</a>
+                <p class="right-aligned-link">
+                  {% if data['merge-1c'] =="notduplicate" %}
+                    <strong class="govuk-tag govuk-tag--green">Not duplicate</strong>
+                    {% else %}
+                    {% if data['merge-1c'] =="isduplicate" %}
+                      <strong class="govuk-tag govuk-tag--red">Duplicate</strong>
+                    {% endif %}
+                  {% endif %}    
                 </p> 
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1">
@@ -339,16 +351,16 @@
               </div> 
               <div class="govuk-button-group">
                 {{ govukButton({
-                  text: "Review merge details",
-                  href: "reginterest-merge-rep-choose-table-radio"
+                  text: "Mark as duplicate",
+                  href: "reginterest-merge-rep-party7?merge-1c=isduplicate"
                 }) }} 
                   
                 {{ govukButton({
-                  text: "Not duplicate",
+                  text: "Remove as duplicate",
                   classes: "govuk-button--secondary",
                   href: "reginterest-merge-not-duplicate"
                 }) }} 
-              </div>
+            </div>
             </div>
           </div>
         {% endif %}

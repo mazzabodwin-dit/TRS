@@ -334,4 +334,21 @@ router.post('/verify-rep-invite-representative-party-route', function (req, res)
   } 
 })
 
+// Run this code on reginterest-merge-rep-party - which option is chosen:
+router.post('/reginterest-merge-rep-party-route', function (req, res) {
+
+  // Make a variable and give it the value from 'reginterest-valid-primary'
+  var reginterestmatchingorgsquestion = req.session.data['reginterest-matching-orgs-question']
+
+  // Check whether the variable matches a condition
+  if (reginterestmatchingorgsquestion == "yes"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio')
+  } 
+  if (reginterestmatchingorgsquestion == "no"){
+    // Send user to next page
+    res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate')
+  } 
+})
+
 module.exports = router

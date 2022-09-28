@@ -23,6 +23,10 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/table1";
 @import "patterns/uploads";
 
+.clearfix {
+  overflow: auto;
+}
+
 /* CHANGING THE WIDTH and HEADER COLOUR BETWEEN PUBLIC AND CASEWORKER */
 .caseworker-red .govuk-header__container {
     border-bottom: 10px solid #df3034;
@@ -37,7 +41,6 @@ $govuk-assets-path: '/govuk/assets/';
   /*float: none;*/
   float: right;
   padding-top: 0px;
-  clear: both;
 }
 
 /*@media (min-width: 40.0625em) {
@@ -93,7 +96,7 @@ $govuk-assets-path: '/govuk/assets/';
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  background-color: #f8f8f8;
+  background-color: govuk-colour("light-grey");
 }
 
 .address-card-duplicate {
@@ -140,16 +143,16 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .govuk-details_orgs {
-  margin-bottom: 0px;
+  padding: 10px 10px 0px 10px;
+  background-color: govuk-colour("light-grey");
+  margin-bottom: 10px;
 }
 
-.govuk-details_orgs .govuk-details__summary {
+.govuk-details_orgs--summary.govuk-details__summary {
   display: block;
   margin-bottom: 10px;
-  padding: 10px 15px 15px 30px;
-  color: #1d70b8;
+  padding: 5px 10px 5px 30px;
   cursor: pointer;
-  background-color: govuk-colour("light-grey");
   font-size: 1.1875rem;
 }
 
@@ -157,15 +160,27 @@ $govuk-assets-path: '/govuk/assets/';
   margin-left: 10px
 }
 
-.govuk-details__summary:focus {
-  outline: 3px solid transparent;
-  box-shadow: 0 -2px #ffdd00, 0 2px govuk-colour("light-grey");
-}
-
 .govuk-details_orgs .govuk-details__text {
-  padding: 10px 20px;
+  padding: 0 10px 1px 10px;
   border-left: 2px solid govuk-colour("light-grey");
   border-right: 2px solid govuk-colour("light-grey");
   margin-bottom: 10px;
+}
 
+
+.govuk-pagination.right-aligned-link {
+  margin-bottom: 10px;
+}
+
+.govuk-heading-s.merge-header {
+  margin-bottom: 0px;
+}
+
+.govuk-heading-s.merge-header2 {
+  margin-bottom: 30px;
+}
+
+.govuk-heading-s__merge3 {
+  position: relative;
+  top: 8px;
 }

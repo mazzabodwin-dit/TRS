@@ -41,16 +41,16 @@
   <div class="govuk-grid-column-full">
     <!--Show a merge button for Representative Party-->
     {% if (data['merge-duplicates'] == "1of2") %}
-      <form action="reginterest-merge-rep-complete?merge-duplicates=1c&merge-rep-task=started" method="post" id="reginterest-merge-form">
+      <form action="reginterest-merge-rep-party2?merge-rep-task=started" method="post" id="reginterest-merge-form">
       {% else %}
       {% if (data['merge-duplicates'] == "2of2") %}
-        <form action="reginterest-merge-rep-complete?merge-duplicates=1a&merge-rep-task=started" method="post" id="reginterest-merge-form">
+        <form action="reginterest-merge-rep-party2?merge-rep-task=started" method="post" id="reginterest-merge-form">
         {% else %}
         {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
-          <form action="reginterest-merge-rep-complete?merge-duplicates=0&merge-rep-task=complete" method="post" id="reginterest-merge-form">
+          <form action="reginterest-merge-rep-party2?merge-rep-task=complete" method="post" id="reginterest-merge-form">
         {% endif %}
         {% if (data['merge-duplicates'] == "1of2,2of2") %}
-          <form action="reginterest-merge-rep-complete?merge-duplicates=0&merge-rep-task=complete" method="post" id="reginterest-merge-form">
+          <form action="reginterest-merge-rep-party2?merge-rep-task=complete" method="post" id="reginterest-merge-form">
         {% endif %}
       {% endif %}
     {% endif %}
@@ -583,7 +583,7 @@
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['rep-eori1'] == null) %}
-                    <input class="govuk-radios__input" id="eori-int" name="rep-eori1" type="radio" value="{{data['rep-eori1']}}" checked>
+                    <input class="govuk-radios__input" id="eori-int" name="rep-eori1" type="radio" value="{{data['rep-eori1']}}">
                     <label class="govuk-label govuk-radios__label" for="eori-int">
                       (empty)
                     </label>

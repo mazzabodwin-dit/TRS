@@ -18,12 +18,25 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Merge complete
-    </h1>
-    <p>The organisations have been successfully merged and all parties will be informed by email.
-    </p>
-    <form action="reginterest-merge-rep-party" method="post" id="reginterest-loa-new-form">
+    {% if data['who-signin'] == "invest" %}
+      <h1 class="govuk-heading-xl">
+        Merge verification requested
+      </h1>
+      <p>The Lead Investigator of this case has been alerted. You will be informed once they have have finished reviewing the merge so you can complete the verfication of this organisation.</p>
+      <form action="reginterest-tasks?merge-rep-task=pending" method="post" id="reginterest-merge-complete-form">
+      <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}    
+        </div>
+      </form>
+      {% else %}
+      {% if data['who-signin'] == "lead" %}
+        <h1 class="govuk-heading-xl">
+          Merge complete
+        </h1>
+        <p>The organisations have been successfully merged and all parties will be informed by email.</p>
+        <form action="reginterest-merge-rep-party?merge-rep-task=complete" method="post" id="reginterest-loa-new-form">
 
     <div class="govuk-button-group">
         {{ govukButton({
@@ -31,6 +44,10 @@
         }) }}    
       </div>
     </form>
+      {% endif %}
+    {% endif %}
+
+    
   </div>
 </div>
 
