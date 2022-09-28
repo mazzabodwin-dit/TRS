@@ -43,7 +43,7 @@
     </h2>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-m"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+        <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
           <p class="right-aligned-link govuk-heading-s">
             <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
           </p> 
@@ -239,13 +239,20 @@
       </div>
       {% else %}
       {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1of2") %}
-        <div class="cover">
+        <div class="address-cover">
           {% if data['merge-1a'] =="isduplicate" %}
             <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
-          {% endif %}
+            {% else %}
+            {% if data['merge-1a'] =="notduplicate" %}
+              <p><strong class="govuk-tag govuk-tag--green">Not duplicate</strong></p>
+            {% endif %} 
+          {% endif %}   
           <div class="address-card address-card-duplicate">
             <div class="address-container">   
               <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+                <p class="right-aligned-link govuk-heading-s">
+                  <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1a" class="govuk-link--no-visited-state">Edit</a>
+                </p> 
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
                 <div class="govuk-summary-list__row">
@@ -294,7 +301,7 @@
               </div> 
             </div>
           </div>
-          <form action="/reginterest-merge-rep-party-merge-1a-route" method="post" id="reginterest-matching-orgs-1a-question-form">
+          <form action="/reginterest-merge-rep-party3-merge-1a-route" method="post" id="reginterest-matching-orgs-1a-question-form">
             {{ govukRadios({
               name: "reginterest-matching-orgs-1a-question",
               id: "reginterest-matching-orgs-1a-question",
@@ -329,13 +336,20 @@
         </div>
         {% else %}
         {% if (data['merge-duplicates'] == "1c") or (data['merge-duplicates'] == "2of2") %}
-          <div class="cover">
+          <div class="address-cover">
             {% if data['merge-1c'] =="isduplicate" %}
               <p><strong class="govuk-tag govuk-tag--red">Marked as duplicate</strong></p>
-            {% endif %} 
+              {% else %}
+              {% if data['merge-1c'] =="notduplicate" %}
+                <p><strong class="govuk-tag govuk-tag--green">Not duplicate</strong></p>
+              {% endif %} 
+            {% endif %}   
             <div class="address-card address-card-duplicate">
               <div class="address-container">   
                 <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
+                  <p class="right-aligned-link govuk-heading-s">
+                    <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1c" class="govuk-link--no-visited-state">Edit</a>
+                  </p> 
                 </h3>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-1">
                   <div class="govuk-summary-list__row">
@@ -398,7 +412,7 @@
                 </div>     
               </div>
             </div>
-            <form action="/reginterest-merge-rep-party-merge-1c-route" method="post" id="reginterest-matching-orgs-1c-question-form">
+            <form action="/reginterest-merge-rep-party3-merge-1c-route" method="post" id="reginterest-matching-orgs-1c-question-form">
               {{ govukRadios({
                 name: "reginterest-matching-orgs-1c-question",
                 classes: "govuk-radios--inline",
@@ -414,13 +428,11 @@
                     value: "yes",
                     text: "Yes",
                     checked: checked("reginterest-matching-orgs-1c-question", "yes")
-
                   },
                   {
                     value: "no",
                     text: "No",
-                    checked: checked("reginterest-matching-orgs-1c-question", "yes")
-
+                    checked: checked("reginterest-matching-orgs-1c-question", "no")
                   }
                 ]
               }) }}
@@ -445,6 +457,7 @@
         {% if (data['merge-1a'] == null) or (data['merge-1c'] == null) %}
           {{ govukButton({
             text: "Review merge fields",
+            classes: "govuk-button--secondary",
             disabled: true
           }) }} 
           {% else %}
@@ -459,6 +472,7 @@
           {% if (data['merge-1a'] == null) or (data['merge-1c'] == null) %}
             {{ govukButton({
               text: "Review merge fields",
+              classes: "govuk-button--secondary",
               disabled: true
             }) }} 
             {% else %}
@@ -493,5 +507,3 @@
 {% block footer %}
   {% include "includes/footer.html" %}
 {% endblock %}
-
-

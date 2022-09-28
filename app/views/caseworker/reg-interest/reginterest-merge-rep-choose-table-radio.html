@@ -791,18 +791,9 @@
       </div>
 
       <div class="govuk-button-group">
-        {% if data['who-signin'] == "invest" %}
-          {{ govukButton({
-            text: "Request merge approval"
-          }) }}  
-
-          {% else %}
-          {% if data['who-signin'] == "lead" %}
-            {{ govukButton({
-              text: "Merge organisations now"
-            }) }}  
-          {% endif %}  
-        {% endif %}
+        {{ govukButton({
+          text: "Merge organisations"
+        }) }}  
         <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
       </div>
     </form>

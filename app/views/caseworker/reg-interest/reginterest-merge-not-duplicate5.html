@@ -33,7 +33,6 @@
     <ul class="govuk-list govuk-list--bullet">
       <ul class="govuk-list govuk-list--bullet">
       <li>Liased with the caseworkers and organisations involved if needed</li>
-      <li>Carefully reviewed the matching details</li>
       <li>Updated any details that are incorrect</li>
     </ul>
   </div>
@@ -236,19 +235,19 @@
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
           text: "This as not a duplicate",
-          href: "reginterest-merge-rep-party2?merge-duplicates=1c&merge-rep-task=started"
+          href: "reginterest-merge-rep-party5?merge-duplicates=1c&merge-rep-task=started"
         }) }}    
         {% else %}
         {% if (data['merge-duplicates'] == "2of2") %}
           {{ govukButton({
             text: "This as not a duplicate",
-            href: "reginterest-merge-rep-party2?merge-duplicates=1a&merge-rep-task=started"
+            href: "reginterest-merge-rep-party5?merge-duplicates=1a&merge-rep-task=started"
           }) }}    
           {% else %}
           {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
             {{ govukButton({
               text: "This as not a duplicate",
-              href: "reginterest-merge-rep-party2?merge-duplicates=0&merge-rep-task=pending"
+              href: "reginterest-merge-rep-party5?merge-duplicates=0&merge-rep-task=pending"
             }) }}    
             {% else %}
 
