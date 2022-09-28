@@ -121,7 +121,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 /* Add some padding inside the card container */
-.address-container .govuk-heading-m, .address-cover .govuk-form-group {
+.address-container .govuk-heading-m, .address-cover .govuk-form-group, .govuk-details__text .govuk-form-group {
   margin-bottom: 10px;
 }
 
