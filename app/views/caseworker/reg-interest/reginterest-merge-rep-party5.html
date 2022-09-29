@@ -426,13 +426,13 @@
       {% if (data['merge-duplicates'] == "1of2") or (data['merge-duplicates'] == "2of2") %}
         {% if (data['merge-1a'] == null) or (data['merge-1c'] == null) %}
           {{ govukButton({
-            text: "Review merge fields",
+            text: "Review final merge",
             classes: "govuk-button--secondary",
             disabled: true
           }) }} 
           {% else %}
           {{ govukButton({
-            text: "Review merge fields",
+            text: "Review final merge",
             href: "reginterest-merge-rep-choose-table-radio?merge-duplicates=1of2,2of2"
           }) }}
         {% endif %}
@@ -441,13 +441,13 @@
         {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
           {% if (data['merge-1a'] == null) or (data['merge-1c'] == null) %}
             {{ govukButton({
-              text: "Review merge fields",
+              text: "Review final merge",
               classes: "govuk-button--secondary",
               disabled: true
             }) }} 
             {% else %}
             {{ govukButton({
-              text: "Review merge fields",
+              text: "Review final merge",
               href: "reginterest-merge-rep-choose-table-radio"
             }) }}
           {% endif %}
@@ -461,13 +461,13 @@
             {% else %}
             <!--Or show a button that is for Interested Party only-->
             {{ govukButton({
-              text: "Review merge fields",
+              text: "Review final merge",
               href: "reginterest-merge-int-party2?merge-task=complete"
             }) }}    
           {% endif %}
         {% endif %}
       {% endif %}
-      <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back to task list</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back to task list</a>
     </div>
   </div>
 </div

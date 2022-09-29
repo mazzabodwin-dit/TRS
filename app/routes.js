@@ -334,7 +334,7 @@ router.post('/verify-rep-invite-representative-party-route', function (req, res)
   } 
 })
 
-// Run this code on reginterest-merge-rep-party3 - which option is chosen:
+// Run this code on reginterest-merge-rep-party1 - which option is chosen:
 router.post('/reginterest-merge-rep-party1-merge-1a-route', function (req, res) {
 
   // Make a variable and give it the value from 'reginterest-valid-primary'
@@ -351,7 +351,7 @@ router.post('/reginterest-merge-rep-party1-merge-1a-route', function (req, res) 
   } 
 })
 
-// Run this code on reginterest-merge-rep-party3 - which option is chosen:
+// Run this code on reginterest-merge-rep-party1 - which option is chosen:
 router.post('/reginterest-merge-rep-party1-merge-1c-route', function (req, res) {
 
   // Make a variable and give it the value from 'reginterest-valid-primary'

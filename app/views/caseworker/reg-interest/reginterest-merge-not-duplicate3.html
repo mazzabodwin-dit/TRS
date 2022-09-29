@@ -32,8 +32,8 @@
     </p>
     <ul class="govuk-list govuk-list--bullet">
       <ul class="govuk-list govuk-list--bullet">
-      <li>Liased with the caseworkers and organisations involved if needed</li>
       <li>Updated any details that are incorrect</li>
+      <li>Liased with the caseworkers and organisations involved if needed</li>
     </ul>
   </div>
 </div>
@@ -234,27 +234,27 @@
      <!--Show a Not duplicate button for Representative Party-->
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
-          text: "This as not a duplicate",
-          href: "reginterest-merge-rep-party3?&merge-rep-task=started"
+          text: "Mark as not a duplicate",
+          href: "reginterest-merge-rep-party3?merge-rep-task=started"
         }) }}    
         {% else %}
         {% if (data['merge-duplicates'] == "2of2") %}
           {{ govukButton({
-            text: "This as not a duplicate",
-            href: "reginterest-merge-rep-party3?&merge-rep-task=started"
+            text: "Mark as not a duplicate",
+            href: "reginterest-merge-rep-party3?merge-rep-task=started"
           }) }}    
           {% else %}
           {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
             {{ govukButton({
-              text: "This as not a duplicate",
-              href: "reginterest-merge-rep-party3?&merge-rep-task=pending"
+              text: "Mark as not a duplicate",
+              href: "reginterest-merge-rep-party3?merge-rep-task=pending"
             }) }}    
             {% else %}
 
             <!--Or show a button that is for Interested Party only-->
               {{ govukButton({
-                text: "This as not a duplicate",
-                href: "reginterest-merge-int-party2?merge-task=complete"
+                text: "Mark as not a duplicate",
+                href: "reginterest-merge-int-party3?merge-task=complete"
               }) }}    
           {% endif %}
         {% endif %}
