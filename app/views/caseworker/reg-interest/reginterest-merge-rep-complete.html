@@ -36,14 +36,13 @@
           Merge complete
         </h1>
         <p>The organisations have been successfully merged and all parties and caseworkers will be informed by email.</p>
-        <form action="reginterest-merge-rep-party?merge-rep-task=complete" method="post" id="reginterest-loa-new-form">
-
-    <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue"
-        }) }}    
-      </div>
-    </form>
+        <form action="reginterest-tasks?merge-rep-task=complete" method="post" id="reginterest-loa-new-form">
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}    
+          </div>
+        </form>
       {% endif %}
     {% endif %}
 
