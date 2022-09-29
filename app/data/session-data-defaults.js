@@ -113,7 +113,7 @@ module.exports = {
   "rep-org-number1": "765238953", 
   "rep-web1": "www.BlueSteelPartners.com", 
   "rep-vat1": "223456789", 
-  "rep-eori1": null,
+  "rep-eori1": "GB205672212000",
   "rep-duns1": "150483782",
 
   "dup-party3": "Bluesteel",
