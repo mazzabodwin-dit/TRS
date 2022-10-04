@@ -206,6 +206,14 @@ $govuk-assets-path: '/govuk/assets/';
   margin: 10px;
 }
 
+/* For when the rating is shown on a task completion page*/
+.star-rating3__stars.task {
+  margin: 0 auto;
+}
+
+.govuk-button.task {
+  margin: 0 auto;
+}
 
 .star-rating3__label {
   position: absolute;
@@ -257,11 +265,10 @@ $govuk-assets-path: '/govuk/assets/';
   width: 100%;
 }
 
-
 .star-rating3__input:checked + .star-rating3__label,
 .star-rating3__input:focus + .star-rating3__label,
 .star-rating3__label:hover {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 70 70'%3e%3cpath fill='gold' stroke='grey' stroke-width='2' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 70 70'%3e%3cpath fill='%23ffdd00' stroke='grey' stroke-width='2' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
   background-size: 5rem 5rem;
 }
 
@@ -275,7 +282,22 @@ $govuk-assets-path: '/govuk/assets/';
   right: -.4em;
   bottom: -.6em;
   left: -.4em;
-  outline: 0.25rem solid govuk-colour("yellow");
   padding-bottom: 0px;
+  box-shadow: inset 0 0 0 2px;
+  outline: 3px solid govuk-colour("yellow");
+}
+
+/*Feedback button centered on end of task page*/
+.flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.govuk-fieldset .align {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
