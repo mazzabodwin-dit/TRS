@@ -89,7 +89,6 @@
         Received on: <span id="date"></span>
       </p>
 
-    
       <script>
         const date = new Date();
         const formattedDate = date.toLocaleDateString('en-GB', {
@@ -106,13 +105,13 @@
       </ul>
       <p>If you need to make any changes to your registration, contact us as soon as possible at <strong>{{data ['case-ref']}}@traderemedies.gov.uk</strong>.</p>
 
-
-        {{ govukButton({
-          text: "Go to my dashboard",
-          href: "../dashboard"
-        }) }}
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
+      {{ govukButton({
+        text: "Go to my dashboard",
+        href: "../dashboard"
+      }) }}
+      
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <form action="feedback" method="post" id="feedback-task-complete-form">
         <div class="address-card address-card-duplicate">
           <div class="address-container">
             <div class="govuk-form-group">
@@ -123,67 +122,33 @@
                   </h3>
                 </legend>
                 <div class="govuk-radios star-rating3__stars task" data-module="govuk-radios">
-                  <input class="star-rating3__input" type="radio" name="rating" value="1" id="rating-1" />
+                  <input class="star-rating3__input" type="radio" name="rating" value="1" id="rating-1" {{ checked("rating", "1") }} />
                   <label class="star-rating3__label" for="rating-1" aria-label="Very dissatisfied"><span class="govuk-label text">Very dissatisfied</span></label></a>
-                  <input class="star-rating3__input" type="radio" name="rating" value="2" id="rating-2" />
+                  <input class="star-rating3__input" type="radio" name="rating" value="2" id="rating-2" {{ checked("rating", "2") }} />
                   <label class="star-rating3__label" for="rating-2" aria-label="Dissatisfied"><span class="govuk-label text">Dissatisfied</span></label>
-                  <input class="star-rating3__input" type="radio" name="rating" value="3" id="rating-3" />
+                  <input class="star-rating3__input" type="radio" name="rating" value="3" id="rating-3" {{ checked("rating", "3") }} />
                   <label class="star-rating3__label" for="rating-3" aria-label="Neither satisified or dissatisfied"><span class="govuk-label text">Neither satisified or dissatisfied</span></label>
-                  <input class="star-rating3__input" type="radio" name="rating" value="4" id="rating-4" />
+                  <input class="star-rating3__input" type="radio" name="rating" value="4" id="rating-4" {{ checked("rating", "4") }} />
                   <label class="star-rating3__label" for="rating-4" aria-label="Satisfied"><span class="govuk-label text">Satisfied</span></label>
-                  <input class="star-rating3__input" type="radio" name="rating" value="5" id="rating-5" />
+                  <input class="star-rating3__input" type="radio" name="rating" value="5" id="rating-5" {{ checked("rating", "5") }} />
                   <label class="star-rating3__label" for="rating-5" aria-label="Very satisfied"><span class="govuk-label text">Very satisfied</span></label>
                   <div class="star-rating3__focus"></div>
                 </div>
               </fieldset>
             </div>
             <div class="flex-parent jc-center">
-              {{ govukButton({
-                text: "Continue",
-                href: "feedback",
-                classes: "govuk-button--secondary"
-              }) }}
+                {{ govukButton({
+                  text: "Continue",
+                  classes: "govuk-button--secondary"
+                }) }}
             </div>
-            
           </div>
         </div>
+      </form>
     </div>
   </div>
 {% endblock %}
 
 {% block footer %}
-  {{ govukFooter({
-    meta: {
-      items: [
-        {
-          href: "#1",
-          text: "Help"
-        },
-        {
-          href: "#2",
-          text: "Cookies"
-        },
-        {
-          href: "#3",
-          text: "Privacy"
-        },
-        {
-          href: "#4",
-          text: "Terms and conditions"
-        },
-        {
-          href: "/prototype-admin/clear-data",
-          text: "Clear data"
-        },
-        {
-        },
-        {
-        },
-        {
-          href: "../email/email-reginterest-app-sent.html",
-          text: "For user testing: Go to email"
-        }
-      ]
-    }
-  }) }}
+   {% include "includes/footer.html" %}
 {% endblock %}
