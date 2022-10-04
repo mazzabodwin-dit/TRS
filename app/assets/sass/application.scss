@@ -214,22 +214,18 @@ $govuk-assets-path: '/govuk/assets/';
 
 .star-rating3__label .text {
   visibility: hidden;
+  background: white;
 }
 
-.star-rating3__label:hover .text {
-  z-index: 1;
-}
 
 .star-rating3__input:checked + .star-rating3__label .text, .star-rating3__label:hover .text {
   visibility: visible;
-  background: white;
   display: block;
   position: relative;
   width: 20em;
   text-align: center;
   top: 80px;
   margin: 10px;
-  z-index: 2;
 }
 
 .star-rating3__input {
@@ -260,6 +256,7 @@ $govuk-assets-path: '/govuk/assets/';
   width: 100%;
 }
 
+
 .star-rating3__input:checked + .star-rating3__label,
 .star-rating3__input:focus + .star-rating3__label,
 .star-rating3__label:hover {
@@ -270,6 +267,7 @@ $govuk-assets-path: '/govuk/assets/';
 .star-rating3__label:hover ~ .star-rating3__label {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3cpath fill='white' stroke='grey' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
 }
+
 .star-rating3__input:focus ~ .star-rating3__focus {
   position: absolute;
   top: -.25em;
