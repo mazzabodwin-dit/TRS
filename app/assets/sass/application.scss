@@ -200,9 +200,10 @@ $govuk-assets-path: '/govuk/assets/';
 @at-root.star-rating3__stars {
   position: relative;
   height: 5rem;
-  width: 25rem;
-  background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3cpath fill='white' stroke='grey' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
+  width: 23.5rem;
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 70 70'%3e%3cpath fill='white' stroke='grey' stroke-width='2' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
   background-size: 5rem 5rem;
+  margin: 10px;
 }
 
 
@@ -222,10 +223,10 @@ $govuk-assets-path: '/govuk/assets/';
   visibility: visible;
   display: block;
   position: relative;
-  width: 20em;
+  width: 16.7em;
   text-align: center;
-  top: 80px;
-  margin: 10px;
+  top: 60px;
+  padding: 0px 30px 00px 30px;
 }
 
 .star-rating3__input {
@@ -260,21 +261,21 @@ $govuk-assets-path: '/govuk/assets/';
 .star-rating3__input:checked + .star-rating3__label,
 .star-rating3__input:focus + .star-rating3__label,
 .star-rating3__label:hover {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3cpath fill='gold' stroke='grey' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 70 70'%3e%3cpath fill='gold' stroke='grey' stroke-width='2' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
   background-size: 5rem 5rem;
 }
 
 .star-rating3__label:hover ~ .star-rating3__label {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3cpath fill='white' stroke='grey' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 70 70'%3e%3cpath fill='white' stroke='grey' stroke-width='2' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3e%3c/svg%3e");
 }
 
 .star-rating3__input:focus ~ .star-rating3__focus {
   position: absolute;
-  top: -.25em;
-  right: -.25em;
-  bottom: -.25em;
-  left: -.25em;
+  top: -.6em;
+  right: -.4em;
+  bottom: -.6em;
+  left: -.4em;
   outline: 0.25rem solid govuk-colour("yellow");
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
