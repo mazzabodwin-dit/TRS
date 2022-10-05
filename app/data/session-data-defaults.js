@@ -73,6 +73,8 @@ module.exports = {
   "party-duns1": null,
 
   "dup-party1": "Steeel",
+  "dup-user1": "Jane Winder",
+  "dup-email1": "j.winder@steeluk.org",
   "dup-party-address1": "22 High Drive, Shanghai",
   "dup-party-postcode1": "345667",
   "dup-party-country1": "China",

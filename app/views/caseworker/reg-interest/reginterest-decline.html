@@ -215,7 +215,11 @@
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
             <strong>Interested party</strong><br>
+          {% if data['third-party'] == "no" %}
+            {{data ['dup-party1']}}
+            {% else %}
             {{data ['party1']}}
+          {% endif %} 
           </li> 
           {% if data['third-party'] == "yes" %}
             <li>
@@ -228,13 +232,17 @@
             {% if data['verify-type'] == "rep-invite" %}
               {{data ['party-user1']}}
               {% else %}
-              {{data ['rep-user1']}}
+              {% if data['third-party'] == "yes" %}
+                {{data ['rep-user1']}}
+                {% else %}
+                {{data ['party-user111']}}
+              {% endif%}
             {% endif%}
           </li>
         </ul>
       </nav>
     </aside>
-  </div> 
+  </div>
 </div>
 
 {% endblock %}

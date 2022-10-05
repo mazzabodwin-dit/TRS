@@ -32,6 +32,7 @@
         <p>Approval of this invite will allow the representative to act on behalf of the interested party.</p>
         {% endif %}
       {% endif %}
+        <p class="govuk-body">Information is automatically saved so you can leave this page before finalising your decision and return later.</p>
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -41,7 +42,11 @@
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
             <strong>Interested party</strong><br>
+          {% if data['third-party'] == "no" %}
+            {{data ['dup-party1']}}
+            {% else %}
             {{data ['party1']}}
+          {% endif %} 
           </li> 
           {% if data['third-party'] == "yes" %}
             <li>
@@ -54,7 +59,11 @@
             {% if data['verify-type'] == "rep-invite" %}
               {{data ['party-user1']}}
               {% else %}
-              {{data ['rep-user1']}}
+              {% if data['third-party'] == "yes" %}
+                {{data ['rep-user1']}}
+                {% else %}
+                {{data ['party-user111']}}
+              {% endif%}
             {% endif%}
           </li>
         </ul>
