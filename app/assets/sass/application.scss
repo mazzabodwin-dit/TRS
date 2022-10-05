@@ -226,6 +226,13 @@ $govuk-assets-path: '/govuk/assets/';
   background: white;
 }
 
+.task-issue-hide {
+  display: none;
+}
+
+.task-issue-hide2 {
+  display: block;
+}
 
 .star-rating3__input:checked + .star-rating3__label .text, .star-rating3__label:hover .text {
   visibility: visible;

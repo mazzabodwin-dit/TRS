@@ -10,15 +10,20 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        {{ govukPanel({
-          titleText: "Feedback complete"
-        }) }}
+      {{ govukPanel({
+        titleText: "Feedback complete"
+      }) }}
 
-        <p class="govuk-body">Thank you for providing your invaluable feedback on our service.</p>
-
+      <p class="govuk-body">Thank you for providing your invaluable feedback on our service.</p>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue to dashboard",
+          href: "dashboard"
+        }) }}    
+      </div>
 
   </div>
 </div>
