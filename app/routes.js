@@ -343,7 +343,7 @@ router.post('/reginterest-merge-rep-party1-merge-1a-route', function (req, res) 
   // Check whether the variable matches a condition
   if (reginterestmatchingorgs1aquestion == "yes"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-duplicates=1of2&merge-1a=isduplicate')
+    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-1a=isduplicate')
   } 
   if (reginterestmatchingorgs1aquestion == "no"){
     // Send user to next page
@@ -360,7 +360,7 @@ router.post('/reginterest-merge-rep-party1-merge-1c-route', function (req, res) 
   // Check whether the variable matches a condition
   if (reginterestmatchingorgs1cquestion == "yes"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-duplicates=1c&merge-1c=isduplicate')
+    res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-1c=isduplicate')
   } 
   if (reginterestmatchingorgs1cquestion == "no"){
     // Send user to next page
