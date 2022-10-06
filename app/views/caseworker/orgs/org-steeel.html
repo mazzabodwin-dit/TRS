@@ -1,0 +1,203 @@
+{{ data | log }}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Organisations: {{data['dup-party1']}} – {{ serviceName }}
+{% endblock %}
+
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+
+{% set bodyClasses = 'caseworker-width org-nav org-overview-nav' %}
+
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{data['dup-party1']}}
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-inset-text govuk-inset-text__reginterest">
+        <strong>{{data['dup-party1']}}</strong> has applied for a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link govuk-link--no-visited-state">Registration of Interest</a><br>
+      </div> 
+      
+    {% set casesHTML %}
+      <h3 class="govuk-heading-m">Cases
+        <p class="right-aligned-link govuk-heading-s">
+          <a href="" class="govuk-link--no-visited-state">Invite organisation to case</a>
+        </p> 
+      </h3>
+      <p>{{data['dup-party1']}} is not involved in any cases</p>
+    {% endset %}
+
+    {% set usersHTML %}
+    <h3 class="govuk-heading-m">Users
+      <p class="right-aligned-link govuk-heading-s">
+        <a href="" class="govuk-link--no-visited-state">Invite user to case</a>
+      </p> 
+    </h3>
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-users">
+            Sort your cases by
+          </label>
+          <select class="govuk-select" id="sort-users" name="sort-users">
+            <option value="No." selected>Name</option>
+            <option value="Case">Email</option>
+          </select>
+
+          <label class="govuk-label govuk-visually-hidden" for="direction-users">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-users" name="direction-users">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>  
+
+    <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        A table listing all of the users that are related to this organisation's account
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Name
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Email
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Org role
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header no-sort">
+            <span class="govuk-visually-hidden--desktop">Action:</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Name: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Email: </span><a href="" class="govuk-link--no-visited-state">{{data['party-email111']}}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Org role: </span>Admin
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden td-header">{{data['party-user111']}}</span></a>
+          </td>
+        </tr>
+      </body>
+    </table> 
+    {% endset %}
+
+    {% set detailsHTML %}
+    <h3 class="govuk-heading-m">Organisation details
+    </h3>
+    <div class="address-card">
+      <div class="address-container">
+        <h3 class="govuk-heading-m">{{data['dup-party1']}}
+          <p class="right-aligned-link govuk-heading-s">
+            <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=org-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
+          </p> 
+        </h3> 
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">{{data['dup-party-address1']}} <br>
+              {{data['dup-party-postcode1']}}<br>
+              {{data['dup-party-country1']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Reg number: </dt>
+            <dd class="govuk-summary-list__value">{{data['dup-party-org-number1']}} 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['dup-party-web1']}}</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__value">{{data['dup-party-vat1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">{{data['dup-party-eori1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__value">{{data['dup-party-duns1']}}</dd>
+          </div>
+        </dl> 
+      </div>
+    </div>   
+    {% endset %}
+
+
+
+    {{ govukTabs ({
+      items: [
+      { 
+        label: "All cases",
+        id: "cases",
+        panel: {
+          html: casesHTML
+        }
+      },
+      { 
+        label: "Users",
+        id: "users",
+        panel: {
+          html: usersHTML
+        }
+      },
+      { 
+        label: "Organisation details",
+        id: "details",
+        panel: {
+          html: detailsHTML
+        }
+      }
+      ]
+    }) }}
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
