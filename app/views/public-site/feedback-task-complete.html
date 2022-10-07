@@ -111,7 +111,10 @@
         }) }}
       </form>
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <!--Having to add the break in this way as there is an issue with button groupings and the <hr> size at l or xl which appears on other similar pages-->
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <br>
+      <br>      
       <form action="/feedback-task-route" method="post" id="feedback-task-complete-form">
         <div class="address-card address-card-duplicate">
           <div class="address-container">
