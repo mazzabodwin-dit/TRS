@@ -53,35 +53,6 @@
           }
         }) }}
 
-        {% call govukFieldset({
-          legend: {
-            text: "If you would like to take part in future feedback sessions please provide your contact details below (optional).",
-            classes: "govuk-fieldset__legend--s",
-            isPageHeading: false
-          }
-        }) %}
-
-          {{ govukInput({
-            label: {
-              text: 'Name'
-            },
-            id: "name",
-            name: "name",
-            classes: "govuk-!-width-three-quarters"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: 'Email address'
-            },
-            id: "email",
-            name: "email",
-            autocomplete: "email",
-            classes: "govuk-!-width-three-quarters"
-          }) }}
-
-        {% endcall %}
-
         {{ govukButton({
           text: "Submit"
         }) }}
