@@ -470,4 +470,20 @@ router.post('/reginterest-merge-rep-party5-merge-1c-route', function (req, res) 
   } 
 })
 
+// Run this code on feedback-task
+router.post('/feedback-task-route', function (req, res) {
+
+  // Make a variable and give it the value from 'createaccount-uk-reg'
+  var taskrating = req.session.data['task-rating']
+
+  // Check whether the variable matches a condition
+  if (taskrating == "5"){
+    // Send user to next page
+    res.redirect('/public-site/feedback-complete')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/public-site/feedback-task')
+  }
+})
+
 module.exports = router
