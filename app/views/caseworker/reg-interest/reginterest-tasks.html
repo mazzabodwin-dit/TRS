@@ -43,26 +43,29 @@
           <li>
             <strong>Interested party</strong><br>
           {% if data['third-party'] == "no" %}
-            {{data ['dup-party1']}}
+            <a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a><br>
+            <a href="" class="govuk-link--no-visited-state">{{data ['party-user111']}}</a>
             {% else %}
-            {{data ['party1']}}
+            <a href="/caseworker/orgs/org-steeluk" class="govuk-link--no-visited-state">{{data ['party1']}}</a><br>
+            <a href="" class="govuk-link--no-visited-state">{{data ['party-user1']}}</a>
           {% endif %} 
           </li> 
           {% if data['third-party'] == "yes" %}
             <li>
               <strong>Representative party</strong><br>
-              {{data ['representative1']}}
+              <a href="/caseworker/orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data ['representative1']}}</a><br>
+              <a href="" class="govuk-link--no-visited-state">{{data ['rep-user1']}}</a>
             </li>
           {% endif %} 
           <li>
             <strong>Submitted by</strong><br>
             {% if data['verify-type'] == "rep-invite" %}
-              {{data ['party-user1']}}
+              <a href="" class="govuk-link--no-visited-state">{{data ['party-user1']}}</a>
               {% else %}
               {% if data['third-party'] == "yes" %}
-                {{data ['rep-user1']}}
+                <a href="" class="govuk-link--no-visited-state">{{data ['rep-user1']}}</a>
                 {% else %}
-                {{data ['party-user111']}}
+                <a href="" class="govuk-link--no-visited-state">{{data ['party-user111']}}</a>
               {% endif%}
             {% endif%}
           </li>
@@ -81,7 +84,7 @@
           {% if data['verify-type'] == "rep-invite" %}
             Review representative
           {% else %}
-            Review parties
+            Review interested party
           {% endif %}
         </h2>
         <ul class="app-task-list__items">
@@ -92,13 +95,28 @@
            {% endif %}
         </ul>
       </li>
+      <!--If there is a rep show-->
+      {% if (data['verify-type'] == "reg-interest") and (data['third-party'] =="yes")  %}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>
+              Review representative party
+          </h2>
+          <ul class="app-task-list__items">
+            {% include "includes/task-list-caseworker-regint-rep.html" %}
+          </ul>
+        </li>
+      {% endif %}
       <li>
         <h2 class="app-task-list__section">
+        {% if (data['verify-type'] == "reg-interest") and (data['third-party'] =="yes")  %}
+          <span class="app-task-list__section-number">3. </span>Confirm
+          {% else %}
           <span class="app-task-list__section-number">2. </span>Confirm
+        {% endif %}
         </h2>
         <ul class="app-task-list__items">
           {% include "includes/task-list-caseworker-accept.html" %}
-          
         </ul>
       </li>
     </ol>
