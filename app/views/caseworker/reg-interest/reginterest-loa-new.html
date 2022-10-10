@@ -19,15 +19,23 @@ Verify Letter of Authority – {{serviceName}}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">1.  
-      {% if data['verify-type'] == "rep-invite" %}
-        Review representative
+     {% if (data['verify-type'] == "rep-invite") %}
+      <span class="govuk-caption-xl">1.
+        Review representative party
+      </span>
       {% else %}
-        Review parties
+      {% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
+        <span class="govuk-caption-xl">2.
+          Review representative party
+        </span>
+        {% else %}
+        <span class="govuk-caption-xl">1.
+          Review interested party
+        </span>
       {% endif %}
-    </span>
+    {% endif %}
     <h1 class="govuk-heading-xl">
-      Verify Letter of Authority
+      Letter of Authority
     </h1>
 
     <div class="govuk-inset-text govuk-inset-text__reginterest">
