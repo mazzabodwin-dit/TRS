@@ -18,13 +18,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Merge complete
+      Merge has been done
     </h1>
-    <p>The organisations have been successfully merged and all parties will be informed by email.
-    </p>
-    <form action="reginterest-merge-int-party" method="post" id="reginterest-loa-new-form">
-
-    <div class="govuk-button-group">
+    <p>The two organisations have been successfully merged and the new details updated across the system. </a>
+    <p>All parties and caseworkers will be informed by email.</p>
+    <form action="reginterest-merge-int-party" method="post" id="reginterest-merge-complete-form">
+      <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"
         }) }}    
@@ -32,13 +31,7 @@
     </form>
   </div>
 </div>
-
-
-
-
 {% endblock %}
 {% block footer %}
   {% include "includes/footer.html" %}
 {% endblock %}
-
-

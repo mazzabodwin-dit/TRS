@@ -38,7 +38,7 @@
         <p>The two organisations have been successfully merged and the new details updated across the system. </a>
         <p>All parties and caseworkers will be informed by email.</p>
         {% if (data['merge-duplicates'] =="1a") or (data['merge-duplicates'] =="1c")  or (data['merge-duplicates'] =="0")%}
-          <form action="reginterest-merge-rep-party?merge-rep-task=started" method="post" id="reginterest-loa-new-form">
+          <form action="reginterest-merge-rep-party" method="post" id="reginterest-loa-new-form">
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Continue"
@@ -47,7 +47,7 @@
           </form>
           {% else %}
           {% if (data['merge-duplicates'] =="1of2,2of2") %}
-            <form action="reginterest-tasks?merge-rep-task=complete" method="post" id="reginterest-loa-new-form">
+            <form action="reginterest-tasks" method="post" id="reginterest-loa-new-form">
                <div class="govuk-button-group">
                 {{ govukButton({
                   text: "Continue"
