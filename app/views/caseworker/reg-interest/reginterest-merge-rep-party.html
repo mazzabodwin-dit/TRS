@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Duplicate organisations – {{serviceName}}
+  Duplicate representative – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -18,27 +18,25 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  
-      {% if data['verify-type'] == "rep-invite" %}
-        Review representative
+  <div class="govuk-grid-column-full">  
+    {% if (data['verify-type'] == "rep-invite") %}
+      <span class="govuk-caption-xl">1.
+        Review representative party
+      </span>
       {% else %}
-        Review parties
+      {% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
+        <span class="govuk-caption-xl">2.
+          Review representative party
+        </span>
+        {% else %}
+        <span class="govuk-caption-xl">1.
+          Review interested party
+        </span>
       {% endif %}
-    </span>
-    <h1 class="govuk-heading-xl">
-      Check for duplicate organisations
-    </h1>
-    {% if data['who-signin'] =="invest" %}
-      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
-        <h2 class="govuk-error-summary__title" id="error-summary-title">
-          You do not have the correct permissions to resolve duplicate organisations
-        </h2>
-        <p>You can review the duplicate organisations below but need to request the case Lead Investigator to perform this task.</p>
-        <p>Once duplicates are resolved you will be able to continue with the verification of this organisation.</p>
-        <p><a href="reginterest-tasks?merg">Back to task list</a></p>
-      </div>
     {% endif %}
+    <h1 class="govuk-heading-xl">
+      Duplicate organisations
+    </h1>
     <p>We have found one or more registered organisations with similar details to the representative party.</p>
     <p>Check if the registered organisation is a duplicate and update any incorrect information.</p>
     {{ govukDetails({
@@ -49,7 +47,7 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Representative party</span>
+    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Representative party</span>
     </h2>
     <div class="address-card">
       <div class="address-container">
@@ -59,6 +57,12 @@
           </p> 
         </h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Contact:</dt>
+            <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a><br>
+            {{data['rep-email1']}}
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Address:</dt>
             <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
@@ -190,12 +194,12 @@
     <div class="govuk-grid-column-one-half">
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
     <!--Show header according to how many dups there are-->
-     {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}-hidden
-      <h2 class="govuk-heading-s merge-header2 clearfix govuk-visually-hidden--desktop">Match
-      </h2> govuk-vis
+     {% if (data['merge-duplicates'] == "0") or (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+      <h2 class="govuk-heading-s merge-header2 clearfix">Duplicate
+      </h2>
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
-        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3 govuk-visually-hidden--desktop">Matches</span>
+        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Duplicates</span>
           {{ govukPagination({
             classes: "right-aligned-link",
             next: {
@@ -216,7 +220,7 @@
         </h2>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3 govuk-visually-hidden--desktop">Matches</span>
+          <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Duplicate</span>
 
             {{ govukPagination({
               classes: "right-aligned-link",
@@ -252,12 +256,18 @@
         <div class="address-cover clearfix">
           <div class="address-card address-card-duplicate">
             <div class="address-container">   
-              <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+              <h3 class="govuk-heading-m clearfix"><a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
                 <p class="right-aligned-link govuk-heading-s">
                   <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1a" class="govuk-link--no-visited-state">Edit</a>
                 </p> 
               </h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Contact:</dt>
+                  <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a><br>
+                  {{data['party-email111']}}
+                  </dd>
+                </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Address:</dt>
                   <dd class="govuk-summary-list__value">{{data['dup-party-address1']}}<br>
@@ -305,10 +315,10 @@
             </div>
           </div>
           {% if data['who-signin'] =="lead" %}
-            <form action="/reginterest-merge-rep-party1-merge-1a-route" method="post" id="reginterest-matching-orgs-1a-question-form">
+            <form action="/reginterest-merge-rep-party1-merge-1c-route" method="post" id="reginterest-matching-orgs-1c-question-form">
               {{ govukRadios({
-                name: "reginterest-matching-orgs-1a-question",
-                id: "reginterest-matching-orgs-1a-question",
+                name: "reginterest-matching-orgs-1c-question",
+                id: "reginterest-matching-orgs-1c-question",
                 classes: "govuk-radios--inline",
                 fieldset: {
                   legend: {
@@ -321,12 +331,12 @@
                   {
                     value: "yes",
                     text: "Yes",
-                    checked: checked("reginterest-matching-orgs-1a-question", "yes")
+                    checked: checked("reginterest-matching-orgs-1c-question", "yes")
                   },
                   {
                     value: "no",
                     text: "No",
-                    checked: checked("reginterest-matching-orgs-1a-question", "no")
+                    checked: checked("reginterest-matching-orgs-1c-question", "no")
                   }
                 ]
               }) }}
@@ -349,6 +359,12 @@
                   </p> 
                 </h3>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Contact:</dt>
+                    <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a><br>
+                    {{data['dup-email3']}}
+                    </dd>
+                  </div>
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Address:</dt>
                     <dd class="govuk-summary-list__value">{{data['dup-party-address3']}}<br>

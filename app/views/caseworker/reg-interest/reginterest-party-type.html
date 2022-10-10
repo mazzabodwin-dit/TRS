@@ -18,13 +18,21 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">1.  
-      {% if data['verify-type'] == "rep-invite" %}
+    {% if (data['verify-type'] == "rep-invite") %}
+      <span class="govuk-caption-xl">1.
         Review representative
+      </span>
       {% else %}
-        Review parties
+      {% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
+        <span class="govuk-caption-xl">2.
+          Review representative
+        </span>
+        {% else %}
+        <span class="govuk-caption-xl">1.
+          Review parties
+        </span>
       {% endif %}
-    </span>
+    {% endif %}
     <h1 class="govuk-heading-xl"> 
       Verify interested party
     </h1>

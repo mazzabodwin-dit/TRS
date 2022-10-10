@@ -32,6 +32,7 @@
             Unverified representative
       {% endif %}
     </h1>
+    <h2 class="govuk-heading-m">Case note - for caseworkers only</h2>
 
     <form action="reginterest-tasks" method="post" id="reginterest-valid-org-form">
       {% if data['party-type'] == "int" %}
@@ -41,7 +42,7 @@
           maxlength: 200,
           label: {
             text: "Explain why the party cannot be verified",
-            classes: "govuk-label--m",
+            classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
@@ -57,7 +58,7 @@
           maxlength: 200,
           label: {
             text: "Explain why the party cannot be verified",
-            classes: "govuk-label--m",
+            classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {

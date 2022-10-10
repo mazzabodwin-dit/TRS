@@ -57,7 +57,7 @@
         {% if data['reginterest-valid-primary'] == "Unverified" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Reason
+              Case note
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['unverfied-reason-int']}}               
@@ -107,7 +107,7 @@
           {% if data['reginterest-valid-representative'] == "Unverified" %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Reason
+                Case note
               </dt>
               <dd class="govuk-summary-list__value">
                 {{data['unverfied-reason-rep']}}               
@@ -125,8 +125,9 @@
       <p>By declining this registration of interest, parties will be informed of your decision and the following will apply:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>This interested party will not be able to take part in the case</li>
-        <li>The information provided will be available to other caseworkers </li>
-        <li>This will not effect other cases the parties are involved in</li>      </ul>
+        <li>The case notes provided will be available to other caseworkers </li>
+        <li>This will not effect other cases the parties are involved in</li>      
+      </ul>
       
       <div class="govuk-button-group">
         {{ govukButton({
@@ -178,7 +179,7 @@
           {% if data['reginterest-valid-representative'] =="Unverified" %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Reason
+                Case note
               </dt>
               <dd class="govuk-summary-list__value">
                 {{data['unverfied-reason-rep']}}               
@@ -195,7 +196,7 @@
         <p>If you decline this invite your decision will be notified to all parties. The following will apply:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>The representative will not be allowed to act on behalf of this interested party</li>
-          <li>The information provided by the representative will be available to other caseworkers</li>
+          <li>The case notes provided will be available to other caseworkers </li>
           <li>The representative can continue act in other cases they are involved in</li>
         </ul>
         <div class="govuk-button-group">

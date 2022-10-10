@@ -29,15 +29,8 @@
     <h1 class="govuk-heading-xl">
       Verify party
     </h1>
-
+    <!--If there is a rep then the Int Party is Steel UK-->
     {% if data['third-party'] == "yes" %}
-
-      <div class="govuk-inset-text govuk-inset-text__reginterest">
-         <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
-         <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes" class="govuk-link govuk-link--no-visited-state">Registration of Interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
-         <strong>{{data['representative1']}}</strong> has been <a href="" class="govuk-link--no-visited-state">invited to represent</a> <strong>{{data['party1']}}</strong>
-      </div> 
-    
       <div class="address-card">
         <div class="address-container">
           <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
@@ -82,40 +75,39 @@
             </div>
           </dl> 
           <br>
-          <div>
-            <details class="case-details govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Interested party: 0 cases
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <strong>{{data['party1']}}</strong> is waiting to be verified<br>
-              </div>
-            </details>
-          </div>
-          <div>
-            <details class="case-details govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Users: 1
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list">
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
-                </ul>
-              </div>
-            </details>
-          </div>    
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Cases: 0
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><strong>{{data['party1']}}</strong> has not been approved on any cases<br>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Users: 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
+      <!--If there is not a rep then the Int Party is Steeel-->
       {% else %}
       <div class="govuk-inset-text govuk-inset-text__reginterest">
-        <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
+        <strong>{{data['dup-party1']}}</strong> has not been approved on any cases<br>
         <strong>{{data['dup-party1']}}</strong> has applied for a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link govuk-link--no-visited-state">Registration of Interest</a><br>
       </div>
-    
       <div class="address-card">
         <div class="address-container">   
           <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
@@ -124,6 +116,12 @@
             </p> 
           </h3>
           <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Contact:</dt>
+              <dd class="govuk-summary-list__value">{{data['party-user111']}} <br>
+                {{data['party-email111']}}
+              </dd>
+            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Address:</dt>
               <dd class="govuk-summary-list__value">{{data['dup-party-address1']}}<br>
@@ -154,23 +152,34 @@
             </div>
           </dl> 
           <br>
-          <div>
-            <details class="case-details govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Users: 1
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list">
-                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a> - {{data['party-email111']}}</li>
-                </ul>
-              </div>
-            </details>
-          </div> 
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Cases: 0
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><strong>{{data['dup-party1']}}</strong> has not been approved on any cases<br>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Users: 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a> - {{data['party-email111']}}</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
-      {% endif %}
+    {% endif %}
 
     <form action="/reginterest-interested-party-route" method="post" id="reginterest-interested-party-form">
 

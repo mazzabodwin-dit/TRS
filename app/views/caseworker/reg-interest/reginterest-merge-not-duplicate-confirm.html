@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Merge complete – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Duplicate removed
+    </h1>
+    <p>This organisation has been marked as not being a duplicate of the party.</p>
+    <p>This duplicate will be removed from the list.</p>
+    {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+      <form action="reginterest-merge-rep-party" method="post" id="reginterest-merge-not-duplicate-confirm-form">
+      {% else %}
+      <form action="reginterest-merge-int-party" method="post" id="reginterest-merge-not-duplicate-confirm-formm">
+    {% endif %} 
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+{% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock %}
+
+
