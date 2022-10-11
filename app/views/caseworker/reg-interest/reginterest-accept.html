@@ -61,7 +61,13 @@
               LOA signatory
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
+              {% if (data['reginterest-auth-choose-contact'] == "Jane Winder" ) %}
+                Jane Winder <br>
+                j.winder@steeluk.com
+                {% else %}        
+                {{data['reginterest-auth-name'] }} <br>
+                {{data['reginterest-auth-email'] or "j.winder@steeluk.com"}} 
+              {% endif %}                  
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
