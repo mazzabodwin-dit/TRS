@@ -292,29 +292,29 @@ router.post('/reginterest-loa-existing-route', function (req, res) {
   // Check whether the variable matches a condition
   if (reginterestAuthChooseContact == "Jane Winder"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-complete=yes')
+    res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-task=complete')
   } 
   if (reginterestAuthChooseContact == "new-contact"){
     // Send user to next page
-    res.redirect('/caseworker/reg-interest/reginterest-loa-new')
+    res.redirect('/caseworker/reg-interest/reginterest-loa-new?loa-task=complete')
   } 
 })
 
 // Run this code on reginterest-loa-existing - which option is chosen:
-router.post('/verify-rep-invite-loa-existing-route', function (req, res) {
+router.post('/reginterest-loa-submission-route', function (req, res) {
 
-  // Make a variable and give it the value from 'reginterest-valid-primary'
-  var reginterestAuthChooseContact = req.session.data['reginterest-auth-choose-contact']
+   // Make a variable and give it the value from 'reginterest-valid-primary'
+   var reginterestAuthChooseContact = req.session.data['reginterest-auth-choose-contact']
 
-  // Check whether the variable matches a condition
-  if (reginterestAuthChooseContact == "Jane Winder"){
-    // Send user to next page
-    res.redirect('/caseworker/cases/invite/verify-rep-invite/verify-rep')
-  } 
-  if (reginterestAuthChooseContact == "new-contact"){
-    // Send user to next page
-    res.redirect('/caseworker/cases/invite/verify-rep-invite/verify-loa-new')
-  } 
+   // Check whether the variable matches a condition
+   if (reginterestAuthChooseContact == "Jane Winder"){
+     // Send user to next page
+     res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-task=started')
+   } 
+   if (reginterestAuthChooseContact == "new-contact"){
+     // Send user to next page
+     res.redirect('/caseworker/reg-interest/reginterest-loa-new?loa-task=started')
+   } 
 })
 
 // Run this code on reginterest-representative-party - which option is chosen:

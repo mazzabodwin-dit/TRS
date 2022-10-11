@@ -95,7 +95,7 @@
   </li>
   {% else %}
   <!-- If there are no dups LOA status is according to what the user has done -->
-  {% if (data['loa-complete'] != null) %}
+  {% if (data['loa-task'] == "complete") %}
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
         <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
@@ -105,14 +105,26 @@
       <strong class="govuk-tag app-task-list__tag" id="organisation-loa-status">Complete</strong>
     </li>
     {% else %}
-    <!-- If the user has not started -->
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-          Letter of Authority
-        </a>
-      </span>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
-    </li>
+    <!-- If the user has not completed a submission -->
+    {% if (data['loa-task'] == "started") %}
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-loa-submission" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+            Letter of Authority
+          </a>
+        </span>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-loa-status">In progress</strong>
+      </li>
+      {% else %}
+      <!-- If the user has not started -->
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+            Letter of Authority
+          </a>
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
+      </li>
+    {% endif %}
   {% endif %}
 {% endif %}

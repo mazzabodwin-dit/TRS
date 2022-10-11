@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify Letter of Authority – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+     {% if (data['verify-type'] == "rep-invite") %}
+      <span class="govuk-caption-xl">1.
+        Review representative party
+      </span>
+      {% else %}
+      {% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
+        <span class="govuk-caption-xl">2.
+          Review representative party
+        </span>
+        {% else %}
+        <span class="govuk-caption-xl">1.
+          Review interested party
+        </span>
+      {% endif %}
+    {% endif %}
+    <h1 class="govuk-heading-xl">
+      Letter of Authority
+    </h1>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Review LOA Submission
+        </p>
+        {% if data['verify-type'] =="rep-invite" %}
+          <p>The LOA submission has yet to be reviewed and marked as sufficient. </p>
+          <p>Once the submission is marked sufficent you will be able to give final approval to this representative invite.</p>
+          {% else %}
+          <p>The LOA submission has yet to be reviewed and marked as sufficient. </p>
+          <p>Once the submission is marked sufficent you will be able to give final approval to this registration of interest.</p>
+        {% endif %}
+
+        <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
+      </div>
+    </div>
+
+    <div class="govuk-inset-text govuk-inset-text__reginterest">
+      <p><a href="" class="govuk-link--no-visited-state"target="_blank">View the Letter of Authority (opens in a new tab)</a></p>
+      <p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
+    </div>
+
+    <form action="/reginterest-loa-submission-route" method="post" id="reginterest-loa-existing-form">
+
+      {{ govukRadios({
+        idPrefix: "reginterest-auth-choose-contact",
+        name: "reginterest-auth-choose-contact",
+        fieldset: {
+          legend: {
+            text: "Who is the interested party's authorised signatory in the Letter of Authority?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+               
+        items: [
+          {
+            value: "Jane Winder",
+            text: "Jane Winder - j.winder@steeluk.com",
+            checked: checked("reginterest-auth-choose-contact", "Jane Winder")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "new-contact",
+            text: "Add new contact",
+            checked: checked("reginterest-auth-choose-contact", "new-contact")
+          }
+        ]
+      }) }}  
+
+      
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
+      </div>
+
+    </form>
+    
+  </div>
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+
