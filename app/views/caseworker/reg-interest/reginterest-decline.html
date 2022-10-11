@@ -31,7 +31,11 @@
               Organisation
             </dt>
             <dd class="govuk-summary-list__value">       
-              {{data ['party1']}}
+              {% if data['third-party'] == "no" %}
+                {{data['dup-party1']}}
+                {% else %}
+                {{data ['party1']}}
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -41,7 +45,11 @@
               Submitted by
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data ['party-user1']}}      
+              {% if data['third-party'] == "no" %}
+                {{data['party-user111']}}
+                {% else %}
+                {{data ['party-user1']}}
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -52,7 +60,13 @@
                 LOA signatory
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
+                {% if (data['reginterest-auth-choose-contact'] == "Jane Winder" ) %}
+                  Jane Winder <br>
+                  j.winder@steeluk.com
+                  {% else %}        
+                  {{data['reginterest-auth-name'] }} <br>
+                  {{data['reginterest-auth-email'] or "j.winder@steeluk.com"}} 
+                {% endif %}               
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
@@ -149,7 +163,7 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>The case notes will be only available to other caseworkers</li>
         <li>The interested party will not be able to take part in the case</li>
-        <li>All parties will be notified the registration of interest has been declined</li>
+        <li>All parties will be notified that the registration of interest has been declined</li>
       </ul>
       
       <div class="govuk-button-group">
@@ -176,7 +190,11 @@
               Organisation
             </dt>
             <dd class="govuk-summary-list__value">       
-              {{data ['party1']}}
+              {% if data['third-party'] == "no" %}
+                {{data['dup-party1']}}
+                {% else %}
+                {{data ['party1']}}
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -186,7 +204,11 @@
               Submitted by
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data ['party-user1']}}      
+              {% if data['third-party'] == "no" %}
+                {{data['party-user111']}}
+                {% else %}
+                {{data ['party-user1']}}
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -197,10 +219,12 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['reginterest-auth-choose-contact'] == "Jane Winder" ) %}
-                Jane Winder
+                Jane Winder <br>
+                j.winder@steeluk.com
                 {% else %}        
-                {{data['reginterest-auth-name'] }} 
-              {% endif %}      
+                {{data['reginterest-auth-name'] }} <br>
+                {{data['reginterest-auth-email'] or "j.winder@steeluk.com"}} 
+              {% endif %}        
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
@@ -265,7 +289,7 @@
         <ul class="govuk-list govuk-list--bullet">
           <li>The case notes will be only available to other caseworkers</li>
           <li>The representative will not be allowed to act on behalf of the interested party</li>
-          <li>All parties will be notified the representative invite has been declined</li>
+          <li>All parties will be notified that the representative invite has been declined</li>
         </ul>
         <div class="govuk-button-group">
           {{ govukButton({

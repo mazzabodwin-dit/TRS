@@ -32,7 +32,11 @@
             Organisation
           </dt>
           <dd class="govuk-summary-list__value">       
-            {{data ['party1']}}
+            {% if data['third-party'] == "no" %}
+              {{data['dup-party1']}}
+              {% else %}
+              {{data ['party1']}}
+            {% endif %} 
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -42,7 +46,11 @@
             Submitted by
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data ['party-user1']}}      
+            {% if data['third-party'] == "no" %}
+              {{data['party-user111']}}
+              {% else %}
+              {{data ['party-user1']}}
+            {% endif %} 
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -179,10 +187,12 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['reginterest-auth-choose-contact'] == "Jane Winder" ) %}
-                Jane Winder
+                Jane Winder <br>
+                j.winder@steeluk.com
                 {% else %}        
-                {{data['reginterest-auth-name'] }} 
-              {% endif %}      
+                {{data['reginterest-auth-name'] }} <br>
+                {{data['reginterest-auth-email'] or "j.winder@steeluk.com"}} 
+              {% endif %}     
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">

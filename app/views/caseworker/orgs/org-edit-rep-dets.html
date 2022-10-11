@@ -21,6 +21,10 @@
         {% else %}
         {% if data['org-edit-type'] == "merge-rep" %}
           <form action="/caseworker/reg-interest/reginterest-merge-rep-party" method="post" id="edit-org-dets-form"> 
+          {% else %}
+          {% if data['org-edit-type'] == "verify-rep" %}
+            <form action="/caseworker/reg-interest/reginterest-representative-party" method="post" id="edit-org-dets-form"> 
+          {% endif %}
         {% endif %}
       {% endif %}
 
