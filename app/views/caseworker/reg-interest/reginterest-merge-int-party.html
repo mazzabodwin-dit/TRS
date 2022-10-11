@@ -21,12 +21,12 @@
   <div class="govuk-grid-column-full">
      {% if (data['verify-type'] == "rep-invite") %}
       <span class="govuk-caption-xl">1.
-        Review representative party
+        Review representative 
       </span>
       {% else %}
       {% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
         <span class="govuk-caption-xl">2.
-          Review representative party
+          Review representative 
         </span>
         {% else %}
         <span class="govuk-caption-xl">1.
@@ -37,7 +37,7 @@
     <h1 class="govuk-heading-xl">
       Duplicate organisations
     </h1>
-    <p>We have found one or more registered organisations with similar details to the representative party.</p>
+    <p>We have found one or more registered organisations with similar details to the representative .</p>
     <p>Check if the registered organisation is a duplicate and update any incorrect information.</p>
     {{ govukDetails({
       summaryText: "How are duplicates determined?",

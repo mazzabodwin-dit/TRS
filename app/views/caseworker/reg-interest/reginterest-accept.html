@@ -73,7 +73,7 @@
         {% endif %}
       </dl>
       {% if data['third-party'] == "yes" %}
-        <h2 class="govuk-heading-m">Representative party</h2>
+        <h2 class="govuk-heading-m">Representative </h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -131,7 +131,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Representative party status
+              Representative  status
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['reginterest-valid-representative'] or "Verified"}}             
@@ -170,7 +170,7 @@
           </li> 
           {% if data['third-party'] == "yes" %}
             <li>
-              <strong>Representative party</strong><br>
+              <strong>Representative </strong><br>
               {{data ['representative1']}}
             </li>
           {% endif %} 

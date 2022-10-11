@@ -47,7 +47,7 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <!--Show a merge button for Representative Party-->
+    <!--Show a merge button for Representative -->
     {% if (data['merge-duplicates'] == "1of2") %}
       <form action="reginterest-merge-rep-complete?merge-duplicates=1c&merge-rep-task=started" method="post" id="reginterest-merge-form">
       {% else %}
@@ -72,7 +72,7 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Field</th>
-            <th scope="col" class="govuk-table__header">Representative party</th>
+            <th scope="col" class="govuk-table__header">Representative </th>
             <th scope="col" class="govuk-table__header">Duplicate party</th>
             {% if data['merge-duplicates'] == "1of2,2of2" %}
               <th scope="col" class="govuk-table__header">Duplicate party</th>
