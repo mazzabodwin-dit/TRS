@@ -51,7 +51,6 @@
 
 <!-- Rep party -->
 <!-- If there are dups and the dups are not complete, Int Party cannot be started -->
-{% if (data['third-party'] == "yes") %} 
 
   {% if ((data['duplicate-org'] == "rep") and (data['merge-rep-task'] != "complete")) 
   or ((data['duplicate-org'] == "both") and (data['merge-rep-task'] != "complete")) %}
@@ -80,14 +79,13 @@
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="reginterest-representative-party" class="govuk-link--no-visited-state" aria-describedby="rep-party-status">
-              Representative 
+              Representative {{data['loa-task']}}
             </a>
           </span>
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="rep-party-status">Not started yet</strong>
         </li>
     {% endif %}
   {% endif %}
-{% endif %}
 
 <!-- LOA -->
 <!-- If there are dups and the dups are not complete, LOA cannot be started -->
@@ -113,7 +111,8 @@ or ((data['duplicate-org'] == "both") and (data['merge-rep-task'] != "complete")
       <strong class="govuk-tag app-task-list__tag" id="organisation-loa-status">Complete</strong>
     </li>
     <!-- If the user has not completed a submission -->
-    {% if (data['loa-task'] == "started") %}
+    {% else %}
+     {% if (data['loa-task'] == "started") %}
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-loa-submission" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
@@ -123,16 +122,17 @@ or ((data['duplicate-org'] == "both") and (data['merge-rep-task'] != "complete")
         <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="organisation-loa-status">In progress</strong>
       </li>
       {% else %}
-      <!-- If the user has not started -->
-      <li class="app-task-list__item">
-        <span class="app-task-list__task-name">
-          <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
-            Letter of Authority
-          </a>
-        </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
-      </li>
+      {% if (data['loa-task'] == null ) %}
+        <!-- If the user has not started -->
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="reginterest-loa-existing" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
+              Letter of Authority
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="organisation-loa-status">Not started yet</strong>
+        </li>
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endif %}
-
