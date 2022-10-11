@@ -25,108 +25,131 @@
         Decline registration of interest
       </h1>
       <h2 class="govuk-heading-m">Interested party</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Party type
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['reginterest-party-type'] or "Exporter"}}             
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="reginterest-party-type" class="govuk-link--no-visited-state">
-              Change
-              <span class="govuk-visually-hidden"> party type</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['reginterest-valid-primary'] or "Unverified"}}             
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="reginterest-interested-party" class="govuk-link--no-visited-state">
-              Change
-              <span class="govuk-visually-hidden"> status</span>
-            </a>
-          </dd>
-        </div>
-        {% if data['reginterest-valid-primary'] == "Unverified" %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Case note
+              Organisation
             </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['unverfied-reason-int']}}               
+            <dd class="govuk-summary-list__value">       
+              {{data ['party1']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-                <a href="reginterest-unverified?party-type=int" class="govuk-link--no-visited-state">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Submitted by
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data ['party-user1']}}      
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          {% if data['third-party'] == "yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                LOA signatory
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
                   Change
-                  <span class="govuk-visually-hidden"> reason</span>
+                  <span class="govuk-visually-hidden govuk-link--no-visited-state"> signatory</span>
                 </a>
               </dd>
-          </div>
-        {% endif %}
-        {% if data['third-party'] == "yes" %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              LOA signatory
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
-                Change
-                <span class="govuk-visually-hidden govuk-link--no-visited-state"> contact</span>
-              </a>
-            </dd>
-          </div>
-        {% endif %}
-      </dl>
-      {% if data['third-party'] == "yes" %}
-        <h2 class="govuk-heading-m">Representative </h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            </div>
+          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Status
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['reginterest-valid-representative'] or "Unverified"}}             
+              {{data['reginterest-valid-primary'] or "Verified"}}             
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="reginterest-representative-party" class="govuk-link--no-visited-state">
+              <a href="reginterest-interested-party" class="govuk-link--no-visited-state">
                 Change
                 <span class="govuk-visually-hidden"> status</span>
               </a>
             </dd>
           </div>
-          {% if data['reginterest-valid-representative'] == "Unverified" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case notes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['unverfied-reason-int']}}              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="reginterest-party-type" class="govuk-link--no-visited-state">
+                Change
+                <span class="govuk-visually-hidden"> case notes</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        {% if data['third-party'] == "yes" %}
+          <h2 class="govuk-heading-m">Representative </h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-6">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Case note
+                Organisation 
               </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['unverfied-reason-rep']}}               
+              <dd class="govuk-summary-list__value">      
+                  {{data['representative1'] }} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                  <a href="reginterest-unverified?party-type=rep" class="govuk-link--no-visited-state">
-                    Change
-                    <span class="govuk-visually-hidden"> reason</span>
-                  </a>
-                </dd>
+              </dd>
             </div>
-          {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact 
+              </dt>
+              <dd class="govuk-summary-list__value">      
+                  {{data ['rep-user1']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['reginterest-valid-representative'] or "Verified"}}             
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="reginterest-representative-party" class="govuk-link--no-visited-state">
+                  Change
+                  <span class="govuk-visually-hidden"> status</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Case notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['unverfied-reason-rep']}}              
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="reginterest-party-type" class="govuk-link--no-visited-state">
+                  Change
+                  <span class="govuk-visually-hidden"> case notes</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
         {% endif %}
-      </dl>
-      <p>By declining this registration of interest, parties will be informed of your decision and the following will apply:</p>
+
+      <p>By declining this registration of interest, the following will apply:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>This interested party will not be able to take part in the case</li>
-        <li>The case notes provided will be available to other caseworkers </li>
-        <li>This will not effect other cases the parties are involved in</li>      
+        <li>The case notes will be only available to other caseworkers</li>
+        <li>The interested party will not be able to take part in the case</li>
+        <li>All parties will be notified the registration of interest has been declined</li>
       </ul>
       
       <div class="govuk-button-group">
@@ -146,58 +169,103 @@
         <h1 class="govuk-heading-xl">
           Decline representative invite
         </h1>
-        <h2 class="govuk-heading-m">Invite details</h2>
+        <h2 class="govuk-heading-m">Interested party</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Organisation
+            </dt>
+            <dd class="govuk-summary-list__value">       
+              {{data ['party1']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Submitted by
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data ['party-user1']}}      
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               LOA signatory
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['reginterest-auth-choose-contact'] or "Jane Winder"}}               
+              {% if (data['reginterest-auth-choose-contact'] == "Jane Winder" ) %}
+                Jane Winder
+                {% else %}        
+                {{data['reginterest-auth-name'] }} 
+              {% endif %}      
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="reginterest-loa-existing" class="govuk-link--no-visited-state">
                 Change
-                <span class="govuk-visually-hidden govuk-link--no-visited-state"> contact</span>
+                <span class="govuk-visually-hidden govuk-link--no-visited-state"> signatory</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m">Representative</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Organisation 
+            </dt>
+            <dd class="govuk-summary-list__value">      
+                {{data['representative1'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact 
+            </dt>
+            <dd class="govuk-summary-list__value">      
+                {{data ['rep-user1']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['reginterest-valid-representative'] or "Verified"}}             
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="reginterest-representative-party" class="govuk-link--no-visited-state">
+                Change
+                <span class="govuk-visually-hidden"> status</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Representative  status
+              Case notes
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['reginterest-valid-representative'] or "Unverified"}}             
+              {{data['unverfied-reason-rep']}}              
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="reginterest-representative-party" class="govuk-link--no-visited-state">
+              <a href="reginterest-unverified" class="govuk-link--no-visited-state">
                 Change
-                <span class="govuk-visually-hidden govuk-link--no-visited-state"> status</span>
+                <span class="govuk-visually-hidden"> case notes</span>
               </a>
             </dd>
           </div>
-          {% if data['reginterest-valid-representative'] =="Unverified" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Case note
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['unverfied-reason-rep']}}               
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                  <a href="reginterest-unverified?party-type=rep" class="govuk-link--no-visited-state">
-                    Change
-                    <span class="govuk-visually-hidden"> reason</span>
-                  </a>
-                </dd>
-            </div>
-          {% endif %}
         </dl>
-        <p>If you decline this invite your decision will be notified to all parties. The following will apply:</p>
+        <p>By declining this representative invite, the following will apply:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>The representative will not be allowed to act on behalf of this interested party</li>
-          <li>The case notes provided will be available to other caseworkers </li>
-          <li>The representative can continue act in other cases they are involved in</li>
+          <li>The case notes will be only available to other caseworkers</li>
+          <li>The representative will not be allowed to act on behalf of the interested party</li>
+          <li>All parties will be notified the representative invite has been declined</li>
         </ul>
         <div class="govuk-button-group">
           {{ govukButton({
@@ -210,39 +278,6 @@
     {% endif %} 
   {% endif %} 
   <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Party details</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <strong>Interested party</strong><br>
-          {% if data['third-party'] == "no" %}
-            {{data ['dup-party1']}}
-            {% else %}
-            {{data ['party1']}}
-          {% endif %} 
-          </li> 
-          {% if data['third-party'] == "yes" %}
-            <li>
-              <strong>Representative </strong><br>
-              {{data ['representative1']}}
-            </li>
-          {% endif %} 
-          <li>
-            <strong>Submitted by</strong><br>
-            {% if data['verify-type'] == "rep-invite" %}
-              {{data ['party-user1']}}
-              {% else %}
-              {% if data['third-party'] == "yes" %}
-                {{data ['rep-user1']}}
-                {% else %}
-                {{data ['party-user111']}}
-              {% endif%}
-            {% endif%}
-          </li>
-        </ul>
-      </nav>
-    </aside>
   </div>
 </div>
 

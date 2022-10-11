@@ -79,9 +79,7 @@
             </h1>
           </div>
           <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-          <p>You have approved the representative invite from {{ data['party1'] }} to:
-          <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
-            {{ data['representative1'] }}
+          <p>You have approved {{ data['party1'] }}'s representative invite for {{ data['representative1'] }}
           </p>
 
           {% else %}
@@ -93,9 +91,7 @@
             </div>
 
             <p><strong>{{data ['case-ref1']}} - {{data ['case-name1']}}</strong>.</p>
-            <p>You have declined the representative invite from {{ data['party1'] }} to:
-            <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
-              {{ data['representative1'] }}
+            <p>You have declined {{ data['party1'] }}'s representative invite for {{ data['representative1'] }}
             </p>
           {% endif %}
         {% endif %}
@@ -109,8 +105,8 @@
 
 
       {{ govukButton({
-        text: "Back to Parties",
-        href: "../cases/case-parties"
+        text: "Back to case",
+        href: "../cases/case-overview"
       }) }}
 
     </div>

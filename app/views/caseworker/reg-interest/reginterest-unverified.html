@@ -32,7 +32,7 @@
             Unverified representative
       {% endif %}
     </h1>
-    <h2 class="govuk-heading-m">Case note - for caseworkers only</h2>
+    <h2 class="govuk-heading-m">Case notes</h2>
 
     <form action="reginterest-tasks" method="post" id="reginterest-valid-org-form">
       {% if data['party-type'] == "int" %}
@@ -41,12 +41,12 @@
           id: "unverfied-reason",
           maxlength: 200,
           label: {
-            text: "Explain why the party cannot be verified",
+            text: "Explain why the organisation cannot be verified",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "This information helps other caseworkers should this organisation be involved in other cases or asks to register interest again."
+            text: "This information will help other caseworkers if the organisation requests to be involved in other cases."
           }
         }) }}
 
@@ -57,12 +57,12 @@
           id: "unverfied-reason",
           maxlength: 200,
           label: {
-            text: "Explain why the party cannot be verified",
+            text: "Explain why the organisation cannot be verified",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "This information will help caseworkers if the organisation asks to register interest again or is involved in other cases."
+            text: "This information will help other caseworkers if the organisation requests to be involved in other cases."
           }
         }) }}
 
