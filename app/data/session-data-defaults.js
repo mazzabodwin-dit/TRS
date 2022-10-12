@@ -73,16 +73,14 @@ module.exports = {
   "party-duns1": null,
 
   "dup-party1": "Steeel",
-  "dup-user1": "Jane Winder",
-  "dup-email1": "j.winder@steeluk.org",
   "dup-party-address1": "22 High Drive, Shanghai",
   "dup-party-postcode1": "345667",
   "dup-party-country1": "China",
-  "dup-party-org-number1": "456794936", 
+  "dup-party-org-number1": "765238953", 
   "dup-party-web1": null, 
   "dup-party-vat1": "987654321", 
   "dup-party-eori1": "GB987654321",
-  "dup-party-duns1": "150483782",
+  "dup-party-duns1": "450483782",
 
   "dup-party2": "Steel UK",
   "dup-party-address2": "24 The Street, Reading",
