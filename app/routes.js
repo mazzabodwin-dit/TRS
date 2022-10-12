@@ -499,7 +499,7 @@ router.post('/feedback-task-route', function (req, res) {
     res.redirect('/public-site/feedback-complete')
   } else {
     // Send user to ineligible page
-    res.redirect('/public-site/feedback-task')
+    res.redirect('/public-site/feedback')
   }
 })
 
