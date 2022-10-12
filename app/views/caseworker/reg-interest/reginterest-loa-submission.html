@@ -46,14 +46,12 @@
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
-          Review LOA Submission
+          Review LOA submission
         </p>
         {% if data['verify-type'] =="rep-invite" %}
-          <p>The LOA submission has yet to be reviewed. </p>
-          <p>Until the submission is marked sufficent you will not be able to approve this representative invite.</p>
+          <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
           {% else %}
-          <p>The LOA submission has yet to be reviewed. </p>
-          <p>Until the submission is marked sufficent you will not be able to approve this registration of interest.</p>
+          <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
         {% endif %}
 
         <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
