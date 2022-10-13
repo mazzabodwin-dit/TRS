@@ -33,9 +33,9 @@
       {% else %}
       {% if data['who-signin'] == "lead" %}
         <h1 class="govuk-heading-xl">
-          Merge has been done
+          Organisations merged
         </h1>
-        <p>The two organisations have been successfully merged and the new details updated across the system. </a>
+        <p>The 2 organisations have been merged and our records updated.</a>
         <p>All parties and caseworkers will be informed by email.</p>
         {% if (data['merge-duplicates'] =="1a") or (data['merge-duplicates'] =="1c")  or (data['merge-duplicates'] =="0")%}
           <form action="reginterest-merge-rep-party" method="post" id="reginterest-loa-new-form">

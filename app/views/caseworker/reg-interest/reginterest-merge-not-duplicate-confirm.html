@@ -20,8 +20,12 @@
     <h1 class="govuk-heading-xl">
       Duplicate removed
     </h1>
-    <p>This organisation has been marked as not being a duplicate of the party.</p>
-    <p>This duplicate will be removed from the list.</p>
+    {% if data['verify-type'] =="invite-rep" %}
+      <p>The organisation has been marked as not a duplicate of the representative.</p>
+      {% else %}
+      <p>The organisation has been marked as not a duplicate of the party.</p>
+    {% endif %}
+    <p>We have removed the organisation from the duplicates list.</p>
     {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
       <form action="reginterest-merge-rep-party" method="post" id="reginterest-merge-not-duplicate-confirm-form">
       {% else %}
