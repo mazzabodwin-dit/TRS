@@ -300,23 +300,6 @@ router.post('/reginterest-loa-existing-route', function (req, res) {
   } 
 })
 
-// Run this code on reginterest-loa-existing - which option is chosen:
-router.post('/reginterest-loa-submission-route', function (req, res) {
-
-   // Make a variable and give it the value from 'reginterest-valid-primary'
-   var reginterestAuthChooseContact = req.session.data['reginterest-auth-choose-contact']
-
-   // Check whether the variable matches a condition
-   if (reginterestAuthChooseContact == "Jane Winder"){
-     // Send user to next page
-     res.redirect('/caseworker/reg-interest/reginterest-tasks?loa-task=started')
-   } 
-   if (reginterestAuthChooseContact == "new-contact"){
-     // Send user to next page
-     res.redirect('/caseworker/reg-interest/reginterest-loa-new?loa-task=started')
-   } 
-})
-
 // Run this code on reginterest-representative-party - which option is chosen:
 router.post('/verify-rep-invite-representative-party-route', function (req, res) {
 

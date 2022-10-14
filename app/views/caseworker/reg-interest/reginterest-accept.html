@@ -25,6 +25,26 @@
       <h1 class="govuk-heading-xl">
         Approve registration of interest
       </h1>
+      {% if data['loa-sufficient'] =="no" %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Review LOA submission
+            </p>
+            {% if data['verify-type'] =="rep-invite" %}
+              <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
+              {% else %}
+              <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
+            {% endif %}
+            <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
+          </div>
+        </div>
+      {% endif %}
       <h2 class="govuk-heading-m">Interested party</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-6">
         <div class="govuk-summary-list__row">
@@ -122,7 +142,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Contact 
+              Case contact 
             </dt>
             <dd class="govuk-summary-list__value">      
                 {{data ['rep-user1']}}
@@ -149,11 +169,18 @@
       {% endif %}
       <p>If you approve this invite, all parties will be notified of your decision.</p>
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Approve registration of interest",
-          href: "reginterest-complete?accept-on-case-result=accept"
-        }) }} 
-        <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline.html">Decline invite</a>
+        {% if data['loa-sufficient'] =="no" %}
+          {{ govukButton({
+            text: "Approve registration of interest",
+            disabled: true
+          }) }}
+          {% else %} 
+            {{ govukButton({
+              text: "Approve registration of interest",
+              href: "reginterest-complete?accept-on-case-result=accept"
+            }) }} 
+        {% endif %} 
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline.html">Decline invite</a>
       </div>
     </div>
     {% else %}
@@ -165,6 +192,26 @@
         <h1 class="govuk-heading-xl">
           Approve representative invite
         </h1>
+        {% if data['loa-sufficient'] =="no" %}
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                Review LOA submission
+              </p>
+              {% if data['verify-type'] =="rep-invite" %}
+                <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
+                {% else %}
+                <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
+              {% endif %}
+              <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
+            </div>
+          </div>
+        {% endif %}
         <h2 class="govuk-heading-m">Interested party </h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
           <div class="govuk-summary-list__row">
@@ -222,7 +269,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Contact 
+              Case contact 
             </dt>
             <dd class="govuk-summary-list__value">      
                 {{data ['rep-user1']}}
@@ -247,11 +294,18 @@
         </dl>
         <p>If you approve this invite, both parties will be notified of your decision.</p>
         <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Approve invite",
-            href: "reginterest-complete?accept-on-case-result=accept"
-          }) }} 
-          <a class="govuk-link" govuk-link--no-visited-state href="reginterest-decline">Decline invite</a>
+          {% if data['loa-sufficient'] =="no" %}
+            {{ govukButton({
+              text: "Approve invite",
+              disabled: true
+            }) }}
+            {% else %} 
+              {{ govukButton({
+                text: "Approve invite",
+                href: "reginterest-complete?accept-on-case-result=accept"
+              }) }} 
+          {% endif %} 
+          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline">Decline invite</a>
         </div>
       </div>
     {% endif %} 

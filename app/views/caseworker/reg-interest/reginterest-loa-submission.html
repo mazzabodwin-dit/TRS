@@ -53,7 +53,6 @@
           {% else %}
           <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
         {% endif %}
-
         <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
       </div>
     </div>
@@ -63,7 +62,7 @@
       <p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
     </div>
 
-    <form action="/reginterest-loa-submission-route" method="post" id="reginterest-loa-existing-form">
+    <form action="/reginterest-loa-existing-route" method="post" id="reginterest-loa-existing-form">
 
       {{ govukRadios({
         idPrefix: "reginterest-auth-choose-contact",
