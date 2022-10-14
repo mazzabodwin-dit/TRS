@@ -153,7 +153,7 @@
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-task-issue-4">
                   <div class="govuk-form-group">
                   <label class="govuk-label" for="task-issue-other">
-                    How could we improve this service (optional)? 
+                    What other issues did you have?
                   </label>
                   <textarea class="govuk-textarea govuk-!-width-two-third" id="task-issue-other" name="task-issue-other" rows="5" spellcheck="true"></textarea>
                   </div>
@@ -163,13 +163,17 @@
           </div>
         {% endif %}
 
-        {{ govukTextarea({
-          name: "more-detail",
+        {{ govukCharacterCount({
+          name: "more-detailt",
           id: "more-detail",
+          maxlength: 1200,
           label: {
             text: "How could we improve this service (optional)?",
             classes: "govuk-label--s",
             isPageHeading: false
+          },
+          hint: {
+            text: "Do not include personal or financial information like your National Insurance number or credit card details."
           }
         }) }}
 
