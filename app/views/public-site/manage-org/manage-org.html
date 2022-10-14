@@ -303,7 +303,7 @@
           {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite")  %}
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="/public-site/account/account" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="/public-site/manage-org/user-account#account-details" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
@@ -315,7 +315,7 @@
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>1
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="user-details-cases" class="govuk-link--no-visited-state">Assign/remove case</a>
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="user-account#cases" class="govuk-link--no-visited-state">Assign/remove case</a>
               </td>
             </tr>
             {% if (data['show-invite-org'] == "yes") %}

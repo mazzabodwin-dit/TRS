@@ -1,0 +1,301 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage account - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../manage-org/manage-org#manage-team">Manage my organisation</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Manage team
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+         Jane Winder
+      </h1>
+
+      {% set casesHtml %}
+      <h2 class="govuk-heading-m">Cases
+      <p class="right-aligned-link">
+        <a href="" class="govuk-link--no-visited-state govuk-heading-s">Assign to case</a>
+      </p>
+      </h2>
+      <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your organisation's case</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" aria-sort="ascending">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Representing
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case permissions
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header no-sort">
+                <span class="govuk-visually-hidden--desktop">Action: </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            </td>
+          </tr>
+          
+        </body>
+      </table> 
+      {% endset -%}
+
+      {% set accountHtml %}
+        <h2 class="govuk-heading-m">Account details</h2>
+        <div class="address-card">
+          <div class="address-container">
+             <h3 class="govuk-heading-m">{{data['party-user1']}}
+              <p class="right-aligned-link govuk-heading-s">
+                <a href="" class="govuk-link--no-visited-state">Edit</a>
+              </p> 
+            </h3> 
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--Determine who is signed in -->
+                  {% if (data['who-signin'] == "rep") %}
+                    {{data['createaccount-email'] or data['rep-email1'] }}
+                    {% else %}
+                    {% if (data['who-signin'] == "org") %}
+                      {{data['createaccount-email'] or data['party-email1'] }}
+                      {% else %}
+                      {% if (data['who-signin'] == "rep-invite") %}
+                        {{data['invite-rep-email'] or data['rep-email3'] }}
+                        {% else %}
+                        {% if (data['who-signin'] == "org-invite") %}
+                          {{data['invite-user-email'] or data['party-email11'] }}
+                        {% endif %}
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Mobile phone
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  +447821945085
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Account permission
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if (data['user-permissions'] == "User") or (data['user-permissions'] == "Admin user")  %}
+                    {{data['user-permissions']}}
+                      {% else %}
+                        Admin
+                  {% endif %}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+      {% endset -%}
+
+      {% set orgHtml %}
+        <h2 class="govuk-heading-m">Organisation details</h2>
+        <div class="address-card">
+          <div class="address-container">
+            <h3 class="govuk-heading-m">{{data['party1']}}
+              <p class="right-aligned-link govuk-heading-s">
+                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=org-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
+              </p> 
+            </h3> 
+            <dl class="govuk-summary-list">
+              <!--Show the right info for who has logged in-->
+              {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Address:</dt>
+                  <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
+                    {{data['party-postcode1']}}<br>
+                    {{data['party-country1']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Web address: </dt>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
+                </div>
+                {% else %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Address:</dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
+                    {{data['rep-postcode1']}}<br>
+                    {{data['rep-country1']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} 
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Web address: </dt>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
+                </div>
+              {% endif %}
+            </dl> 
+          </div>
+        </div>
+
+      {% endset -%}
+
+      {{ govukTabs({
+        items: [
+          {
+            label: "Cases",
+            id: "cases",
+            panel: {
+              html: casesHtml
+            }
+          },
+          {
+            label: "Account details",
+            id: "account-details",
+            panel: {
+              html: accountHtml
+            }
+          },
+          {
+            label: "Organisation details",
+            id: "org-details",
+            panel: {
+              html: orgHtml
+            }
+          }
+        ]
+      }) }}
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+ {% include "includes/footer.html" %}
+{% endblock %}
