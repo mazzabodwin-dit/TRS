@@ -222,7 +222,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .star-rating3__label .text {
-  visibility: hidden;
+  display: none;
   background: white;
 }
 
@@ -235,7 +235,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .star-rating3__input:checked + .star-rating3__label .text, .star-rating3__label:hover .text {
-  visibility: visible;
   display: block;
   position: relative;
   width: 16.7em;
@@ -308,3 +307,4 @@ $govuk-assets-path: '/govuk/assets/';
   padding-bottom: 10px;
 }
 
+.star
