@@ -24,7 +24,7 @@
       <!-- Put this text into the radio for mobile-->
       {% set inviteHintHtml %} 
         <p>To represent <strong>Steel UK</strong>, create an account for your own organisation. Your request will be verified by the TRA.</p>
-        <p>If you are not the orginal email recipient but work for the same organisation please indicate below and your request will be verified by the TRA.</p>
+        <p>If you are not the original email recipient but work for the same organisation please indicate below and your request will be verified by the TRA.</p>
       {% endset -%}
     
       {% set inviteRepNameHtml %} 
@@ -46,35 +46,35 @@
         name: "invite-rep-who-reg",
         fieldset: {
           legend: {
-            html: "Who is registering?",
+            html: "Are you the named recipient of the invite?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        hint: 
+        hint:
             {
               html: inviteHintHtml
             },
-          
+
         items: [
           {
             value: "Email recipient",
-            html: inviteRepNameHtml,
+            text: "Yes, I am the named recipient",
             checked: checked("invite-rep-who-reg", "Email recipient")
           },
           {
             value: "Colleague",
-            html: inviteRepOrgHtml,
+            html: "No, I am not the named recipient, but work for the same organisation",
             checked: checked("invite-rep-who-reg", "Colleague")
           }
         ]
-      }) }} 
+      }) }}
 
       {{ govukDetails({
         summaryText: "I work for a different organisation",
-        html:'<p>If you work for a different organisation then you need to ask the person that orginally sent the invite to send you an invitation directly. </p><p>If there is a mistake in the name of your organisation you will need to ask the person that originally sent the invite to create a new one with the correct details.</p>'
+        html:'<p>If you work for a different organisation, you need to ask for an invite to be sent to you personally at your organisation.</p>'
       }) }}
-    
+
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"
@@ -87,8 +87,6 @@
 
 {% endblock %}
 
-{% block footer %}  
+{% block footer %}
   {% include "includes/footer.html" %}
 {% endblock %}
-
-
