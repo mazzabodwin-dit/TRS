@@ -34,13 +34,9 @@
           </div>
           <div class="govuk-notification-banner__content">
             <p class="govuk-notification-banner__heading">
-              Review LOA submission
+              Review Letter of Authority
             </p>
-            {% if data['verify-type'] =="rep-invite" %}
-              <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
-              {% else %}
-              <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
-            {% endif %}
+          <p>The letter of Authority submitted on this registration is currently not marked as sufficient. You will need to review the Letter of Authority submission before you can verify this registration of interest.</p>
             <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
           </div>
         </div>
@@ -167,7 +163,7 @@
         </dl>
 
       {% endif %}
-      <p>If you approve this invite, all parties will be notified of your decision.</p>
+      <p>If you approve this registration of interest, all parties will be notified of your decision.</p>
       <div class="govuk-button-group">
         {% if data['loa-sufficient'] =="no" %}
           {{ govukButton({
@@ -180,7 +176,7 @@
               href: "reginterest-complete?accept-on-case-result=accept"
             }) }} 
         {% endif %} 
-        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline.html">Decline invite</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline.html">Decline registration of interest</a>
       </div>
     </div>
     {% else %}
@@ -201,13 +197,9 @@
             </div>
             <div class="govuk-notification-banner__content">
               <p class="govuk-notification-banner__heading">
-                Review LOA submission
+                Review Letter of Authority
               </p>
-              {% if data['verify-type'] =="rep-invite" %}
-                <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
-                {% else %}
-                <p>Until you mark the submission as sufficient you cannot approve this representative invite.</p>
-              {% endif %}
+              <p>The letter of Authority submitted on this registration is currently not marked as sufficient. You will need to review the Letter of Authority submission before you can verify this registration of interest.</p>
               <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
             </div>
           </div>
@@ -292,7 +284,7 @@
             </dd>
           </div>
         </dl>
-        <p>If you approve this invite, both parties will be notified of your decision.</p>
+        <p>If you approve this registration of interest, all parties will be notified of your decision.</p>
         <div class="govuk-button-group">
           {% if data['loa-sufficient'] =="no" %}
             {{ govukButton({
@@ -305,7 +297,7 @@
                 href: "reginterest-complete?accept-on-case-result=accept"
               }) }} 
           {% endif %} 
-          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline">Decline invite</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline">Decline registration of interest</a>
         </div>
       </div>
     {% endif %} 
