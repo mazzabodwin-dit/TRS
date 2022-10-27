@@ -53,6 +53,7 @@
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
                 {{ data['representative1'] }}
             </p>
+
             {% else %}
             {% if data['third-party'] == "no" %}
               <p>You have declined the registration of interest for <strong>{{ data['dup-party1'] }}</strong> that was submitted by <strong>{{ data['party-user111'] }} - {{data['party-email111']}}</strong></p>
