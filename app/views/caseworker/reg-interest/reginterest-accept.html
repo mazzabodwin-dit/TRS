@@ -167,7 +167,7 @@
         </dl>
 
       {% endif %}
-      <p>If you approve this invite, all parties will be notified of your decision.</p>
+      <p>If you approve this registration of interest, all parties will be notified of your decision.</p>
       <div class="govuk-button-group">
         {% if data['loa-sufficient'] =="no" %}
           {{ govukButton({
@@ -180,7 +180,7 @@
               href: "reginterest-complete?accept-on-case-result=accept"
             }) }} 
         {% endif %} 
-        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline.html">Decline invite</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-decline.html">Decline registration of interest</a>
       </div>
     </div>
     {% else %}
