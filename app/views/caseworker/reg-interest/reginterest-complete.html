@@ -53,6 +53,7 @@
             <p>{{ data['rep-user1'] }} - {{ data['rep-email1'] }}<br>
                 {{ data['representative1'] }}
             </p>
+
             {% else %}
             {% if data['third-party'] == "no" %}
               <p>You have declined the registration of interest for <strong>{{ data['dup-party1'] }}</strong> that was submitted by <strong>{{ data['party-user111'] }} - {{data['party-email111']}}</strong></p>
@@ -60,12 +61,10 @@
           {% endif %}
         {% endif %}
 
-        <p>All parties involved will be notified of your decision.</p>
-          
         <h2 class="govuk-heading-m">What next?</h2>
         <ul class="govuk-list govuk-list--bullet">
           <li><a href="/caseworker/cases/case-overview#new-party" class="govuk-link--no-visited-state">Confirm other parties in this case</a></li>
-          <li><a href="/caseworker/cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions from this case</a></li>
+          <li><a href="/caseworker/cases/case-overview#new-submissions" class="govuk-link--no-visited-state">Review submissions for this case</a></li>
         </ul>
       {% endif %}
 

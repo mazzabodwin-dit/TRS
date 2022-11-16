@@ -22,14 +22,14 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">2. About you</span>
 
-    <form action="reginterest-contact" method="post" id="reginterest-existing-org-form">
+    <form action="/reginterest-contact-route" method="post" id="reginterest-existing-org-form">
 
       {{ govukRadios({
         idPrefix: "reginterest-existing-org",
         name: "reginterest-existing-org",
         fieldset: {
           legend: {
-            html: "Who are you representing?",
+            html: "Who do you represent?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -61,12 +61,6 @@
     
       
 
-      {{ govukDetails({
-        summaryText: "The organisation is not listed",
-        html: ' <p class="govuk-body">This is a list of organisations you have previously represented using the Trade Remedies Service.</p>
-        <p>If you’re representing an organisation for the first time, go back and change your answer.</p>'
-      }) }}
-    
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"

@@ -21,13 +21,7 @@
 
     <form action="createaccount-your-account-invite" method="post" id="invite-rep-who-reg-form">
 
-      <!-- Put this text into the radio for mobile-->
-      {% set inviteHintHtml %} 
-        <p>To represent <strong>Steel UK</strong>, create an account for your own organisation. Your request will be verified by the TRA.</p>
-        <p>If you are not the original email recipient but work for the same organisation please indicate below and your request will be verified by the TRA.</p>
-      {% endset -%}
-    
-      {% set inviteRepNameHtml %} 
+      {% set inviteRepNameHtml %}
         I am the email recipient: <strong>{{data['invite-rep-name'] or data['rep-user1'] }}</strong>   
       {% endset -%}
 
@@ -51,11 +45,6 @@
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        hint: 
-            {
-              html: inviteHintHtml
-            },
-          
         items: [
           {
             value: "Email recipient",
@@ -68,13 +57,13 @@
             checked: checked("invite-rep-who-reg", "Colleague")
           }
         ]
-      }) }} 
+      }) }}
 
       {{ govukDetails({
         summaryText: "I work for a different organisation",
         html:'<p>If you work for a different organisation, you need to ask for an invite to be sent to you personally at your organisation.</p>'
       }) }}
-    
+
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"
@@ -87,8 +76,6 @@
 
 {% endblock %}
 
-{% block footer %}  
+{% block footer %}
   {% include "includes/footer.html" %}
 {% endblock %}
-
-
