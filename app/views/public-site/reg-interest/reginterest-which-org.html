@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who is registering interest – {{serviceName}}
+    Who is registering interest – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
- {% include "includes/header-public.html" %}
+    {% include "includes/header-public.html" %}
 {% endblock %}
 
 {% block beforeContent %}
- {% include "includes/beta-banner.html"%}
+    {% include "includes/beta-banner.html" %}
 
- <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+    <a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
 
 {% endblock %}
 
@@ -19,101 +19,59 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">2. About you</span>
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">2. About you</span>
 
-    <form action="/reginterest-which-org-route" method="post" id="reginterest-which-org-form">
-      
+        <form action="/reginterest-which-org-route" method="post" id="reginterest-which-org-form">
 
-      <!-- Set the name of the org if is is "my org" whether from regsitering or default-->
-      {% set myorgHTML %}
-        {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-          {{data['createaccount-org-name'] or data['party1'] }}
-          {% else %}
-          {{data['createaccount-org-name'] or data['representative1'] }}
-        {% endif %}
-      {% endset -%}
 
-     <!-- According to whether it is an org or a rep show the "existing client" in the select -->
-      {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-
-        {{ govukRadios({
+        <!-- According to whether it is an org or a rep show the "existing client" in the select -->
+            {{ govukRadios({
           idPrefix: "reginterest-what-org",
           name: "reginterest-what-org",
           fieldset: {
             legend: {
-              text: "Who is registering interest in this case?",
+              text: "Which organisation do you work for?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [
             {
-              value: "my-org",
-              html: myorgHTML,
+              value: "new-org",
+              text: "I work for the organisation registering an interest in this case",
               checked: checked("reginterest-what-org", "my-org")
             },
             {
               value: "new-org",
-              text: "An organisation I am representing for the first time using the Trade Remedies Service",
-              checked: checked("reginterest-what-org", "new-org")
+              text: "I am a representative, registering interest in this case on behalf of another organisation",
+              checked: checked("reginterest-what-org", "existing-org")
             }
           ]
         }) }}
 
-        {% else %}
-        {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
-
-          {{ govukRadios({
-            idPrefix: "reginterest-what-org",
-            name: "reginterest-what-org",
-            fieldset: {
-              legend: {
-                text: "Who is registering interest in this case?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            items: [
-              {
-                value: "my-org",
-                html: myorgHTML,
-                checked: checked("reginterest-what-org", "my-org")
-              },
-              {
-                value: "existing-org",
-                text: "An organisation I have previously represented using the Trade Remedies Service",
-                checked: checked("reginterest-what-org", "existing-org")
-
-              },
-              {
-                value: "new-org",
-                text: "An organisation I am representing for the first time using the Trade Remedies Service",
-                checked: checked("reginterest-what-org", "new-org")
-              }
-            ]
-          }) }}
-        {% endif %}
-      {% endif %}
-
-      <div class="govuk-button-group">
-        {{ govukButton({
+            {{ govukDetails({
+             summaryText: "What is a representative?",
+            html: '<p>A representative is a person who works on behalf of the organisation registering interest, but isn\'t an employee of that organisation. This includes, for example, a person working for a law firm or a consulting business</p>'
+          }) }}`
+            <div class="govuk-button-group">
+                {{ govukButton({
           text: "Continue"
-        }) }}    
-        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
-      </div>
+        }) }}
 
-    </form>
-      <!-- Test data -->
-          <!--<div class="govuk-inset-text">
+                <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+            </div>
+
+        </form>
+        <!-- Test data -->
+        <!--<div class="govuk-inset-text">
             Test data: <br>
             Which org started?: {{ data['which-org-started']}}<br> 
             Type of reg org: {{ data['reginterest-what-org']}}
           </div> 
         -->
-  </div>
+    </div>
 
-  
 
 </div>
 
@@ -122,5 +80,5 @@
 
 
 {% block footer %}
-{%include "includes/footer.html" %}
+    {% include "includes/footer.html" %}
 {% endblock %}
