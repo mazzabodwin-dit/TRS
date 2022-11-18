@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Further details about the organisation - {{serviceName}}
+  Further details about your client’s organisation - {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -27,13 +27,13 @@
         
         {% call govukFieldset({
           legend: {
-            text: "About your client",
+            text: " Further details about your client’s organisation",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
 
-        <p>Provide as many details as you can to help us understand your client’s organisation.</p>
+        <p>Provide as many details as you can. These are optional, but can help us with our investigations into any case you register an interest in.</p>
 
         {{ govukInput({
           label: {
