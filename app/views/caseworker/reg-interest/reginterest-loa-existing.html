@@ -17,96 +17,101 @@
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            {% if (data['verify-type'] == "rep-invite") %}
-                <span class="govuk-caption-xl">1.
-        Review representative 
-      </span>
-            {% else %}
-                {% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
-                    <span class="govuk-caption-xl">2.
-          Review representative 
-        </span>
-                {% else %}
-                    <span class="govuk-caption-xl">1.
-          Review interested party
-        </span>
-                {% endif %}
-            {% endif %}
-            <h1 class="govuk-heading-xl">
-                Letter of Authority
-            </h1>
-            {% if data['loa-sufficient'] =="no" %}
-                <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-                     data-module="govuk-notification-banner">
-                    <div class="govuk-notification-banner__header">
-                        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                            Important
-                        </h2>
-                    </div>
-                    <div class="govuk-notification-banner__content">
-                        <p class="govuk-notification-banner__heading">
-                            Review Letter of Authority
-                        </p>
-                        <p>You will need to review the Letter of Authority submission before you can verify this registration of interest.</p>
-                        <p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
-                    </div>
-                </div>
-            {% endif %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+		{% if (data['verify-type'] == "rep-invite") %}
+			<span class="govuk-caption-xl">1.
+			Review representative 
+			</span>
+			{% else %}
+			{% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
+				<span class="govuk-caption-xl">2.
+					Review representative 
+				</span>
+				{% else %}
+				<span class="govuk-caption-xl">1.
+					Review interested party
+				</span>
+			{% endif %}
+		{% endif %}
+		<h1 class="govuk-heading-xl">
+			Letter of Authority
+		</h1>
+		{% if data['loa-sufficient'] =="no" %}
+			<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+						data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+						<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+								Important
+						</h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+						<p class="govuk-notification-banner__heading">
+								Review Letter of Authority
+						</p>
+						<p>You will need to review the Letter of Authority submission before you can verify this registration of interest.</p>
+						<p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
+				</div>
+			</div>
+		{% endif %}
 
-            <div class="govuk-inset-text govuk-inset-text__reginterest">
-                <p><a href="" class="govuk-link--no-visited-state" target="_blank">View the Letter of Authority (opens
-                    in a new tab)</a></p>
-                <p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
-            </div>
+		<div class="govuk-inset-text govuk-inset-text__reginterest">
+			<p><a href="" class="govuk-link--no-visited-state" target="_blank">View the Letter of Authority (opens
+					in a new tab)</a></p>
+			<p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
+		</div>
 
-            <form action="/reginterest-loa-existing-route" method="post" id="reginterest-loa-existing-form">
+		<form action="/reginterest-loa-existing-route" method="post" id="reginterest-loa-existing-form">
 
-                {{ govukRadios({
-        idPrefix: "reginterest-auth-choose-contact",
-        name: "reginterest-auth-choose-contact",
-        fieldset: {
-          legend: {
-            html: "<p>Who is the authorised signatory in the Letter of Authority?</p><p>We collect this data so that it's easily available when needed in the future.</p>",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-               
-        items: [
-          {
-            value: "Jane Winder",
-            text: "Jane Winder - j.winder@steeluk.com",
-            checked: checked("reginterest-auth-choose-contact", "Jane Winder")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "new-contact",
-            text: "Add new contact",
-            checked: checked("reginterest-auth-choose-contact", "new-contact")
-          }
-        ]
-      }) }}
-
-
-                <div class="govuk-button-group">
-                    {{ govukButton({
-          text: "Continue"
-        }) }}
-                    <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-                </div>
-
-            </form>
-
-        </div>
-        <div class="govuk-grid-column-one-third">
-            <h2 class="govuk-heading-s ">Submission status:</h2>
-            <p class="govuk-body">Submitted</p>
-        </div>
-    </div>
+			{{ govukRadios({
+				idPrefix: "reginterest-auth-choose-contact",
+				name: "reginterest-auth-choose-contact",
+				fieldset: {
+					legend: {
+						html: "<p>Who is the authorised signatory in the Letter of Authority?</p><p>We collect this data so that it's easily available when needed in the future.</p>",
+						isPageHeading: false,
+						classes: "govuk-fieldset__legend--s"
+					}
+				},
+							
+				items: [
+					{
+						value: "Jane Winder",
+						text: "Jane Winder - j.winder@steeluk.com",
+						checked: checked("reginterest-auth-choose-contact", "Jane Winder")
+					},
+					{
+						divider: "or"
+					},
+					{
+						value: "new-contact",
+						text: "Add new contact",
+						checked: checked("reginterest-auth-choose-contact", "new-contact")
+					}
+				]
+			}) }}
+			<div class="govuk-button-group">
+				{{ govukButton({
+					text: "Continue"
+				}) }}
+				<a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
+			</div>
+		</form>
+  </div>
+	<div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Submission status</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <strong>Letter of Authority:</strong><br>
+            Sufficient
+            </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
 
 {% endblock %}
 {% block footer %}
