@@ -23,23 +23,19 @@
         <h1 class="govuk-heading-xl">
             Registration documentation
         </h1>
-        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+        
 
-        {% set notification_html %}
-        <p class="govuk-notification-banner__heading">
-            You need to upload a confidential and non-confidential version of each document.
-        </p>
+        {{ govukWarningText({
+            text: "Upload a confidential and non-confidential version of the relevant documentation.",
+            iconFallbackText: "Warning"
+            }) }}
+        <p>Complete the following documentation that is relevant to your organisation and upload it for the TRA to review (max. file size 30MB).</p>
+        
+
+
         <p>The confidential version is needed for the case investigation and the non-confidential version is published to our <a class="govuk-notification-banner__link" href="#">public case</a> page.</p>
-        {% endset %}
 
-        {{ govukNotificationBanner({
-          html: notification_html
-        }) }}
-        <p>Download the documentation and complete the relevant forms. Once complete, upload two versions: one
-            confidential and one non-confidential (max. file size 30MB).</p>
-        <p>To upload multiple documents, click 'Add another document'.</p>
-
-        <ul class="govuk-list">
+         <ul class="govuk-list">
             <li>
                 {% if (data['pre-download'] == "yes" ) %}
                     <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img
@@ -52,32 +48,21 @@
                 {% endif %}
             </li>
         </ul>
+       
+
+        
     </div>
 </div>
 
 <div id="doc-1">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              How to create a non-confidential version of your registration documentation
-            </span>
-                </summary>
-                <div class="govuk-details__text">
-                    <p>So that all interested parties get the opportunity to understand case evidence, one version needs
-                        to be non-confidential. Remove all sensitive data from your non-confidential files.</p>
-                    <p>Create one confidential file containing all details, and one file containing only information
-                        open to the public. For more help, see: <a
-                                href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries"
-                                target="_blank" class="link govuk-link--no-visited-state">creating confidential and
-                            non-confidential documents (opens in a new window or tab)</a></p>
-
-                </div>
-            </details>
+            
+           
             <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
                 Upload document 1
             </h2>
+           
             <div class="row-colour">
                 <div class="govuk-grid-column-one-half">
                     <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
