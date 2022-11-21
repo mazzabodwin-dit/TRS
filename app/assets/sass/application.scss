@@ -129,6 +129,14 @@ $govuk-assets-path: '/govuk/assets/';
   margin: 0px 0px -10px 10px;
 }
 
+.unverified-check {
+  margin: 0px 0px -10px 10px;
+}
+
+.pending-clock {
+  margin: 0px 4px -7px 10px;
+}
+
 .verified-tick {
   margin: 0px 3px -2px 20px;
 }
@@ -305,4 +313,18 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-fieldset .align {
   text-align: center;
   padding-bottom: 10px;
+}
+
+.govuk-warning-text__text-p  {
+  padding-left: 45px;
+  padding-right: 20px;
+}
+
+.govuk-warning-text__text-p button  {
+  margin-bottom: 0px;
+}
+
+.govuk-warning-text  {
+  margin-bottom: 0px;
+  padding: 0px;
 }
