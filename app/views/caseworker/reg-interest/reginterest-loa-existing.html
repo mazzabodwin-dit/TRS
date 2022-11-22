@@ -18,10 +18,10 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+ 	<div class="govuk-grid-column-two-thirds">
 		{% if (data['verify-type'] == "rep-invite") %}
 			<span class="govuk-caption-xl">1.
-			Review representative 
+				Review representative 
 			</span>
 			{% else %}
 			{% if (data['verify-type'] == "reg-interest") and (data['third-party'] == "yes") %}
@@ -37,28 +37,11 @@
 		<h1 class="govuk-heading-xl">
 			Letter of Authority
 		</h1>
-		{% if data['loa-sufficient'] =="no" %}
-			<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-						data-module="govuk-notification-banner">
-				<div class="govuk-notification-banner__header">
-						<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-								Important
-						</h2>
-				</div>
-				<div class="govuk-notification-banner__content">
-						<p class="govuk-notification-banner__heading">
-								Review Letter of Authority
-						</p>
-						<p>You will need to review the Letter of Authority submission before you can verify this registration of interest.</p>
-						<p><a class="govuk-notification-banner__link" href="#">Review submission</a></p>
-				</div>
-			</div>
-		{% endif %}
+	
 
 		<div class="govuk-inset-text govuk-inset-text__reginterest">
 			<p><a href="" class="govuk-link--no-visited-state" target="_blank">View the Letter of Authority (opens
 					in a new tab)</a></p>
-			<p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
 		</div>
 
 		<form action="/reginterest-loa-existing-route" method="post" id="reginterest-loa-existing-form">
@@ -68,12 +51,14 @@
 				name: "reginterest-auth-choose-contact",
 				fieldset: {
 					legend: {
-						html: "<p>Who is the authorised signatory in the Letter of Authority?</p><p>We collect this data so that it's easily available when needed in the future.</p>",
+						html: "Who is the authorised signatory in the Letter of Authority?",
 						isPageHeading: false,
 						classes: "govuk-fieldset__legend--s"
 					}
 				},
-							
+				hint: {
+					text: "We collect this data so that it's easily available when needed in the future."
+			},		
 				items: [
 					{
 						value: "Jane Winder",

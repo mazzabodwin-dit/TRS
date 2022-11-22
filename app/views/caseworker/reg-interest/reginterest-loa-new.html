@@ -40,18 +40,18 @@ Verify Letter of Authority – {{serviceName}}
 
     <div class="govuk-inset-text govuk-inset-text__reginterest">
       <p><a href="" class="govuk-link--no-visited-state"target="_blank">View the Letter of Authority (opens in a new tab)</a></p>
-      <p><a href="" class="govuk-link--no-visited-state">Download the Letter of Authority</a></p>
     </div>
 
     <form action="reginterest-tasks" novalidate method="post" id="reginterest-loa-new-form">
 
       {% call govukFieldset({
         legend: {
-          html: "<p>Who is the authorised signatory in the Letter of Authority?</p><p>We collect this data so that it's easily available when needed in the future.</p>",
+          html: "Who is the authorised signatory in the Letter of Authority?",
           classes: "govuk-fieldset__legend--s",
           isPageHeading: false
         }
       }) %}
+      <p>We collect this data so that it's easily available when needed in the future.</p>
   
       {{ govukInput({
         label: {

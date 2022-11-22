@@ -62,15 +62,18 @@
     <form action="/reginterest-loa-existing-route" method="post" id="reginterest-loa-existing-form">
 
       {{ govukRadios({
-        idPrefix: "reginterest-auth-choose-contact",
-        name: "reginterest-auth-choose-contact",
-        fieldset: {
-          legend: {
-            html: "<p>Who is the authorised signatory in the Letter of Authority?</p><p>We collect this data so that it's easily available when needed in the future.</p>",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
+				idPrefix: "reginterest-auth-choose-contact",
+				name: "reginterest-auth-choose-contact",
+				fieldset: {
+					legend: {
+						html: "Who is the authorised signatory in the Letter of Authority?",
+						isPageHeading: false,
+						classes: "govuk-fieldset__legend--s"
+					}
+				},
+				hint: {
+					text: "We collect this data so that it's easily available when needed in the future."
+			  },		
                
         items: [
           {
