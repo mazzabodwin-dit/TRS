@@ -53,16 +53,16 @@
         </h3> 
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Case contact:</dt>
+            <dt class="govuk-summary-list__key">Invite accepted by:</dt>
             <dd class="govuk-summary-list__value">{{data['rep-user1']}} <br>
               {{data['rep-email1']}}
             </dd>
           </div>
           {% if data['verify-type'] =="rep-invite" %}
             <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Invited user:</dt>
-              <dd class="govuk-summary-list__value">{{data['rep-user1']}} <br>
-                {{data['rep-email1']}}
+              <dt class="govuk-summary-list__key">Invite sent to:</dt>
+              <dd class="govuk-summary-list__value">{{data['rep-user2']}} <br>
+                {{data['rep-email2']}}
               </dd>
             </div>
           {% endif %}
