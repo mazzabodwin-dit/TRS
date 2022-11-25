@@ -71,6 +71,10 @@ th {
   vertical-align: middle;
 }
 
+.sortable .govuk-table__cell.action {
+  text-align: right;
+}
+
 /* For all tables that are sortable - and for the merge table*/
 .sortable th, .merge th {
   background-color: govuk-colour("light-grey");

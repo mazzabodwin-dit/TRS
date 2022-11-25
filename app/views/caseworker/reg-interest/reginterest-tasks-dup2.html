@@ -23,33 +23,32 @@
       <h1 class="govuk-heading-xl">
         Registration of interest
         </h1>
-        <div class="address-card">
-          <div class="address-container">
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                Resolve duplicate parties
-              </strong>
-              <p class="govuk-warning-text__text-p">There are one or more organisations that have matching information. You must resolve the duplicates before you can verify this Registration of Interest.</p>
-              <p class="govuk-warning-text__text-p"><button class="govuk-button" data-module="govuk-button">
-                  Review duplicates
-                </button>
-              </p>
-            </div>
-          </div>
-        </div>
-        
         <p>Approval of this request will give the interested party the opportunity to take part in this investigation.</p>
         {% else %}
         {% if data['verify-type'] =="rep-invite" %}
         <h1 class="govuk-heading-xl">
           Representative invite
         </h1>
-        <p>Approval of this invite will allow the representative to act on behalf of the interested party.</p>
+        <div class="address-card">
+          <div class="address-container">
+            <div class="govuk-warning-text">
+              <p class="govuk-warning-text__text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong> 
+                  <span class="govuk-warning-text__assistive">Warning</span>
+                  The organisation in this representative invite matches other organisation(s) in our records. 
+                </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h2 class="govuk-heading-m" id="subsection-title">Check duplicates</h2>
+
+        <p>Organisations are matched when one or more of their registered details are the same as another organisation.</p>
+        <p>You need to check if they are duplicates before you can review this representative invite.</p>
         {% endif %}
       {% endif %}
-        <p class="govuk-body">Information is automatically saved so you can leave this page before finalising your decision and return later.</p>
+        
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -95,60 +94,87 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    
-      
+      <form>
+        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+          <div class="govuk-form-group table-sort-select">
+            <label class="govuk-label govuk-!-display-inline" for="sort-dup">
+              Sort organisations by
+            </label>
+            <select class="govuk-select" id="sort-dup" name="sort-dup">
+              <option value="Organisation" selected>Organisation</option>
+              <option value="Matches">Matches</option>
+              <option value="Status">Status</option>
+            </select>
 
-    <ol class="app-task-list">
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span>
-          {% if data['verify-type'] == "rep-invite" %}
-            Review representative
-          {% else %}
-            Review interested party
-          {% endif %}
-        </h2>
-        <ul class="app-task-list__items">
-          {% if data['verify-type'] == "rep-invite" %}
-            {% include "includes/task-list-caseworker-invite.html" %}
-            {% else %}
-            {% include "includes/task-list-caseworker-regint.html" %}
-           {% endif %}
-        </ul>
-      </li>
-      <!--If there is a rep show-->
-      {% if (data['verify-type'] == "reg-interest") and (data['third-party'] =="yes")  %}
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span>
-              Review representative  
-          </h2>
-          <ul class="app-task-list__items">
-            {% include "includes/task-list-caseworker-regint-rep.html" %}
-          </ul>
-        </li>
-      {% endif %}
-      <li>
-        <h2 class="app-task-list__section">
-        {% if (data['verify-type'] == "reg-interest") and (data['third-party'] =="yes")  %}
-          <span class="app-task-list__section-number">3. </span>Confirm
-          {% else %}
-          <span class="app-task-list__section-number">2. </span>Confirm
-        {% endif %}
-        </h2>
-        <ul class="app-task-list__items">
-          {% include "includes/task-list-caseworker-accept.html" %}
-        </ul>
-      </li>
-    </ol>
-    <a class="govuk-link" href="../cases/case-overview">Back to Case</a>
+            <label class="govuk-label govuk-visually-hidden" for="direction-dup">
+              Direction
+            </label>
+            <select class="govuk-select" id="direction-dup" name="direction-dup">
+              <option value="Decending" selected>Decending</option>
+              <option value="Accending">Accending</option>
+            </select>
+          </div>
+
+          {{ govukButton({
+            text: "Sort",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+      </form> 
+      <table class="govuk-table sortable mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+          A table listing all of the parties waiting to be verified
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" aria-sort="ascending">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Matches
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header no-sort">
+                <span class="govuk-visually-hidden--desktop">Action:</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">             
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Matches: </span>2
+            </td>  
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Status: </span>Not started
+            </td>  
+            <td class="govuk-table__cell action">
+              <a href="" class="govuk-link govuk-link--no-visited-state">Review duplicates<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
+            </td>             
+          </tr>
+        </body>
+      </table>  
+
   </div>
 </div>
 
 
 {% endblock %}
 {% block footer %}
-{%include "includes/footer.html" %}
+ {% include "includes/footer.html" %}
 {% endblock %}
 
 
