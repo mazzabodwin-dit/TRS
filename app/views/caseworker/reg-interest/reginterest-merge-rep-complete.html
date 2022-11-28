@@ -17,47 +17,293 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if data['who-signin'] == "invest" %}
-      <h1 class="govuk-heading-xl">
-        Merge approval requested
-      </h1>
-      <p>The Lead Investigator of this case has been alerted.</p>
-      <p>You will be informed once they have have finished reviewing the merge so you can complete the verfication of this organisation.</p>
+    <span class="govuk-caption-xl">
+      Resolve duplicates
+     </span>      
+    <h1 class="govuk-heading-xl">
+      Confirm organisation's details
+    </h1>
+    <p>Our records will be updated with these details. Check that they are correct.</p>
+    <div class="address-card">
+      <div class="address-container">
+        <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+        </h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address:</dt>
+            <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
+              {{data['rep-postcode1']}}<br>
+              {{data['rep-country1']}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Reg number: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} <img src="/public/images/checkmark.png" class="verified-tick" alt="Valid Companies House registration number" title="Valid Companies House registration number" width="20px"><span class="govuk-body-s">Valid</span>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Web address: </dt>
+            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">VAT no: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">EORI: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+            <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
+          </div>
+        </dl> 
+        <br>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Cases: 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified on case" title="Verified on case" width="32px"><span class="govuk-body-s"> 29 July 2021</span></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Cases acting as a representative: 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified on case" title="Verified on case" width="32px"><span class="govuk-body-s"> 21 Jan 2022</span></li>
+                </ul>
+            </div>
+          </details>
+        </div>
+        <div>
+          <details class="case-details govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Users: 3
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
+              </ul>
+            </div>
+          </details>
+        </div> 
+      </div>
+    </div>
+    <h2 class="govuk-heading-m">For reference</h2>
+    <details class="case-details govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Organisations before merge
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div class="address-card">
+          <div class="address-container">   
+            <h3 class="govuk-heading-m clearfix"><a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+              <p class="right-aligned-link govuk-heading-s">
+                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1a" class="govuk-link--no-visited-state">Edit</a>
+              </p> 
+            </h3>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Contact:</dt>
+                <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a><br>
+                {{data['party-email111']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address:</dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-address1']}}<br>
+                  {{data['dup-party-postcode1']}}<br>
+                  {{data['dup-party-country1']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Reg number: </dt>
+                <dd class="govuk-summary-list__value"><mark>{{data['dup-party-org-number1']}}</mark> 
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Web address: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-web1']}}</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">VAT no: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-vat1']}}</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">EORI: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-eori1']}}</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-duns1']}}</dd>
+              </div>
+            </dl> 
+            <br>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Cases: 0
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><strong>{{data['party1']}}</strong> has not been approved on any cases<br>
+                  </li>
+                </ul>
+              </div>
+            </details>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 1
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a> - {{data['party-email111']}}</li>
+                </ul>
+              </div>
+            </details> 
+          </div>
+        </div>
+      </div>
+    </details>
+    <details class="case-details govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Organisations not merged
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div class="address-card address-card-duplicate clearfix">
+          <div class="address-container">   
+            <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>  
+              <p class="right-aligned-link govuk-heading-s">
+                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=merge-rep&party-type=rep-dup-1c" class="govuk-link--no-visited-state">Edit</a>
+              </p> 
+            </h3>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Contact:</dt>
+                <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a><br>
+                {{data['dup-email3']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address:</dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-address3']}}<br>
+                  {{data['dup-party-postcode3']}}<br>
+                  <mark>{{data['dup-party-country3']}}</mark>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Reg number: </dt>
+                <dd class="govuk-summary-list__value"><mark>{{data['dup-party-org-number3']}}</mark><img src="/public/images/checkmark.png" class="verified-tick" alt="Valid Companies House registration number" title="Valid Companies House registration number" width="20px"><span class="govuk-body-s">Valid</span>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Web address: </dt>
+                <dd class="govuk-summary-list__value"><a href="" target="_blank"><mark>{{data['dup-party-web3']}}</mark></a></dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">VAT no: </dt>
+                <dd class="govuk-summary-list__value"><mark>{{data['dup-party-vat3']}}</mark></dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">EORI: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-eori3']}}</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                <dd class="govuk-summary-list__value">{{data['dup-party-duns3']}}</dd>
+              </div>
+            </dl> 
+            <br>
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Cases acting as a representative: 1
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified on case" title="Verified on case" width="32px"><span class="govuk-body-s"> 29 July 2022</span></li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="case-details govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Users: 1
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  <li><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a> - {{data['dup-email3']}}</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </details>
+
+
+
+
+
       <form action="reginterest-tasks?merge-rep-task=pending" method="post" id="reginterest-merge-complete-form">
-      <div class="govuk-button-group">
+        {{ govukWarningText({
+          text: "Merging organisations cannot be undone",
+          iconFallbackText: "Warning"
+        }) }}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Please confirm the following
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="check-1" name="check" type="checkbox" value="caseworker-check">
+                <label class="govuk-label govuk-checkboxes__label" for="check-1">
+                  I have completed all the checks required to merge the organisations.<br>
+                  I have the authority to complete this merge????? We know as they are a lead??
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-button-group">
           {{ govukButton({
-            text: "Continue"
-          }) }}    
+            text: "Complete merge"
+          }) }}   
+          {{ govukButton({
+            text: "Save and exit",
+            classes: "govuk-button--secondary"
+          }) }} 
+          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-rep-party">Edit merge</a>
         </div>
       </form>
-      {% else %}
-      {% if data['who-signin'] == "lead" %}
-        <h1 class="govuk-heading-xl">
-          Organisations merged
-        </h1>
-        <p>The 2 organisations have been merged and our records updated.</a>
-        <p>All parties and caseworkers will be informed by email.</p>
-        {% if (data['merge-duplicates'] =="1a") or (data['merge-duplicates'] =="1c")  or (data['merge-duplicates'] =="0")%}
-          <form action="reginterest-merge-rep-party" method="post" id="reginterest-loa-new-form">
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Continue"
-              }) }}    
-            </div>
-          </form>
-          {% else %}
-          {% if (data['merge-duplicates'] =="1of2,2of2") %}
-            <form action="reginterest-tasks" method="post" id="reginterest-loa-new-form">
-               <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Continue"
-                }) }}    
-              </div>
-            </form>
-          {% endif %}
-        {% endif %}
-      {% endif %}
-    {% endif %}
+      
 
     
   </div>

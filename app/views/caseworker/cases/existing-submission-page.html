@@ -6,10 +6,18 @@
 
 {% block header %}
 
-<a href="../reg-interest/reginterest-tasks"></href><img src="/public/images/submissions - review invite.png"></a>
+{% if (data['duplicate-org'] == "int") or (data['duplicate-org'] == "both")  %}
+  <a href="../reg-interest/reginterest-tasks-dup"></href><img src="/public/images/submissions - review invite.png"></a>
+  {% else %}
+  {% if (data['duplicate-org'] == "rep")  %}
+    <a href="../reg-interest/reginterest-tasks-dup"></href><img src="/public/images/submissions - review invite.png"></a>
+    {% else %}
+    <a href="../reg-interest/reginterest-tasks"></href><img src="/public/images/submissions - review invite.png"></a>
+  {% endif %}
+{% endif %}
+
 {% endblock %}
 
 {% block content %}
 
-   
 {% endblock %}

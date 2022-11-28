@@ -19,39 +19,44 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">{{data['case-ref1']}}: {{data['case-name1']}}</span>
-      {% if data['verify-type'] =="reg-interest" %}
+    {% if data['verify-type'] =="reg-interest" %}
+    <h1 class="govuk-heading-xl">
+      Registration of interest
+      </h1>
+      <p>Approval of this request will give the interested party the opportunity to take part in this investigation.</p>
+      {% else %}
+      {% if data['verify-type'] =="rep-invite" %}
       <h1 class="govuk-heading-xl">
-        Registration of interest
-        </h1>
-        <p>Approval of this request will give the interested party the opportunity to take part in this investigation.</p>
-        {% else %}
-        {% if data['verify-type'] =="rep-invite" %}
-        <h1 class="govuk-heading-xl">
-          Representative invite
-        </h1>
-        <div class="address-card">
-          <div class="address-container">
-            <div class="govuk-warning-text">
-              <p class="govuk-warning-text__text">
-                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                <strong> 
-                  <span class="govuk-warning-text__assistive">Warning</span>
-                  The organisation in this representative invite matches other organisation(s) in our records. 
-                </strong>
-              </p>
-              <p class="govuk-warning-text__text-p">You need to check if they are duplicates before you can review this representative invite.</p>
-              <p class="govuk-warning-text__text-p"><button class="govuk-button" data-module="govuk-button">
-                  Check duplicates
-                </button>
-              </p>
-            </div>
+        Representative invite
+      </h1>
+      <p>Approval of this invite will allow the representative to act on behalf of the interested party.</p>
+      {% endif %}
+    {% endif %}
+    <p class="govuk-body">Information is automatically saved so you can leave this page before finalising your decision and return later.</p>
+
+    {% if data['duplicate-org'] == "rep" %}
+      <div class="address-card">
+        <div class="address-container">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <p class="govuk-warning-text__text">
+              <strong>
+                <span class="govuk-warning-text__assistive">Warning</span>
+                The organisation in this representative invite matches other organisation(s) in our records.
+              </strong>
+            </p>
+            <p class="govuk-warning-text__text-p">You need to check if they are duplicates before you can review this representative invite.</p>
+            <p class="govuk-warning-text__text-p">
+              <button class="govuk-button" data-module="govuk-button">
+                Review submisison
+              </button>
+            </p>
           </div>
         </div>
-        <p>Approval of this invite will allow the representative to act on behalf of the interested party.</p>
-        {% endif %}
-      {% endif %}
-        <p class="govuk-body">Information is automatically saved so you can leave this page before finalising your decision and return later.</p>
+      </div>
+    {% endif %}
   </div>
+    
 
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
