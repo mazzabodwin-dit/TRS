@@ -31,6 +31,25 @@
     <h1 class="govuk-heading-xl">
       Register interest in a case
     </h1>
+
+    <!--Deficiency notice -->
+    {% if data['submission-status'] == "def" %}
+      <div class="address-card">
+        <div class="address-container">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <p class="govuk-warning-text__text">
+              <strong>
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Deficiency Notice
+              </strong>
+            </p>
+            <p class="govuk-warning-text__text-p">We have reviewed your submission and there are areas where we need further information or clarification. Review the highlighted sections. </p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     <p class="govuk-body">Complete all the steps to register an interest in an active trade remedies investigation.  </p>
 
     <p class="govuk-body govuk-!-margin-bottom-7">If you leave this page before submitting, you can return later from your dashboard.</p>

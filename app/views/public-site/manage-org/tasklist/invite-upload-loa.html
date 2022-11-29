@@ -26,6 +26,33 @@
     <h1 class="govuk-heading-xl">
       Upload a Letter of Authority 
     </h1>
+    <!--Deficiency notice -->
+    {% if data['loa-submission'] == "def" %}
+      <div class="address-card">
+        <div class="address-container">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <p class="govuk-warning-text__text">
+              <strong>
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Deficiency Notice
+              </strong>
+            </p>
+            <p class="govuk-warning-text__text-p">You need to resubmit documents as they have been marked deficient. Download the  Deficiency Notice(s) for the relevant instructions.</p>
+          </div>
+          <ul class="govuk-list govuk-warning-text__text-p">
+            <li>
+              {% if (data['loa-download'] == "yes" ) %}
+                <a href="?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-LoA.docx (344KB) </a><span>&#10003;</span>
+                {% else %}
+                <a href="?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-LoA.docx (344KB) </a>
+              {% endif %}
+            </li>
+          </ul>    
+        </div>
+      </div>
+    {% endif %}
+
     <p>Download and complete your Letter of Authority. This is a letter confirming that your representative can act on your behalf.</p> 
     <p>Upload your completed letter of authority (max. file size 30MB). Your information is kept confidential.</p>
     <ul class="govuk-list">
@@ -54,9 +81,53 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
       <div class="row-colour">
-        <div class="govuk-grid-column-full">      
-          {% set id="5" %}
-          {% include 'includes/drag_drop_upload.html' %}
+        <div class="govuk-grid-column-full"> 
+
+          {% if data['loa-submission'] == "def" %} 
+            <div class="upload-card">
+              <div class="upload-container">
+                <div class="waiting_for_upload" id="waiting-upload-{{ id }}">
+                  <p class="govuk-tag govuk-tag--pink">Deficient document</p>
+                  <p class="file_name" id="progress-complete">my-loa.pdf</p>
+                  <p>
+                    <label for="file-{{ id }}" class="govuk-link">Replace file</label>
+                    <input type="file" name="private-file" id="file-{{ id }}" class="inputfile" />
+                  </p>
+                </div>
+                <div class="scanning_file_for_virus" style="display:none">
+                  <label class="govuk-label" for="progress-1">
+                    Scanning file:
+                    <div class="file_name"></div>
+                  </label>
+                  <progress id="progress-scan"></progress>
+                  <p><a href="#" class="govuk-link--no-visited-state" id="cancel-upload"> Cancel <span class="govuk-visually-hidden">file</span></a></p>
+                </div>
+
+                <div class="uploading_file" style="display:none">
+                  <label class="govuk-label" for="progress-10">
+                      <div class="upload_percentage">Uploading 10%:</div>
+                      <div class="file_name"></div>
+                  </label>
+                  <progress class="progress-10" max="100" value="10"></progress>
+                  <progress class="progress-40" max="100" value="40" style="display:none"></progress>
+                  <progress class="progress-70" max="100" value="70" style="display:none"></progress>
+                  <progress class="progress-100" max="100" value="100" style="display:none"></progress>
+                  <p><a href="#" class="govuk-link--no-visited-state" id="case-selected-status">Cancel <span class="govuk-visually-hidden">file</span></a></p>
+                </div>
+
+                <div class="upload_file_complete" style="display:none" id="complete-upload-{{ id }}">
+                  <label class="govuk-label" for="progress-complete">
+                      <span class="govuk-visually-hidden">Upload complete:</span>
+                  </label>
+                  <p class="file_name" id="progress-complete"></p>
+                  <p><a href="#doc-1" class="govuk-link govuk-link--no-visited-state" onclick="removeDoc()">Remove <span class="govuk-visually-hidden">file</span></a></p>
+                </div>
+              </div>
+            </div>  
+            {% else %}  
+            {% set id="5" %}
+            {% include 'includes/drag_drop_upload.html' %}
+          {% endif %}  
         </div>
       </div>
     </div>
