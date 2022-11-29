@@ -79,7 +79,7 @@
 
       {% else %}
       <!--If the Doc is deficient-->
-      {% if (data['reg-submission'] == "def") %}
+      {% if (data['docs-submission'] == "def") %}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="reginterest-upload-pre" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
@@ -114,8 +114,8 @@
   {% endif %}
 
   {% else %}
-  <!-- 3rd Party rep -->
 
+  <!-- 3rd Party rep -->
   <!--If the user is trying to invite a third party show: -->
   {% if data['tasklist-type'] == "invite-rep" %}
 
