@@ -139,18 +139,18 @@
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="task-issue-5" name="task-issue" type="checkbox" value="text message">
-                  <label class="govuk-label govuk-checkboxes__label" for="task-issue-5">
-                    I didn’t get information I expected 
+                  <input class="govuk-checkboxes__input" id="task-issue-4" name="task-issue" type="checkbox" value="text message" data-aria-controls="">
+                  <label class="govuk-label govuk-checkboxes__label" for="task-issue-4">
+                    I couldn’t find the information I wanted
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="task-issue-4" name="task-issue" type="checkbox" value="text message" data-aria-controls="conditional-task-issue-4">
-                  <label class="govuk-label govuk-checkboxes__label" for="task-issue-4">
-                    Other issue
+                  <input class="govuk-checkboxes__input" id="task-issue-5" name="task-issue" type="checkbox" value="text message" data-aria-controls="conditional-task-issue-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="task-issue-5">
+                    Other issues
                   </label>
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-task-issue-4">
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-task-issue-5">
                   <div class="govuk-form-group">
                   <label class="govuk-label" for="task-issue-other">
                     What other issues did you have?
@@ -161,6 +161,9 @@
               </div>
             </fieldset>
           </div>
+
+      
+
         {% endif %}
 
         {{ govukCharacterCount({
@@ -176,6 +179,8 @@
             text: "Do not include personal or financial information like your National Insurance number or credit card details."
           }
         }) }}
+
+        <p>We use feedback to help us improve the service and cannot respond to any requests for support you make on this form.</p>
 
         {{ govukButton({
           text: "Submit"
