@@ -46,9 +46,11 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['third-party'] == "no" %}
-                {{data['party-user111']}}
+                {{data['party-user111']}}<br>
+                {{data['party-email111']}}
                 {% else %}
-                {{data ['party-user1']}}
+                {{data ['party-user1']}}<br>
+                {{data['party-email1']}}
               {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -123,7 +125,8 @@
                 Contact 
               </dt>
               <dd class="govuk-summary-list__value">      
-                  {{data ['rep-user1']}}
+                  {{data ['rep-user1']}}<br>
+                  {{data ['rep-email1']}}
               </dd>
               <dd class="govuk-summary-list__actions">
               </dd>
@@ -159,7 +162,7 @@
           </dl>
         {% endif %}
 
-      <p>By declining this registration of interest, the following will apply:</p>
+      <p>By rejecting this registration of interest, the following will apply:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>The case notes will be only available to other caseworkers</li>
         <li>The interested party will not be able to take part in the case</li>
@@ -205,9 +208,11 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['third-party'] == "no" %}
-                {{data['party-user111']}}
+                {{data['party-user111']}}<br>
+                {{data['party-email111']}}
                 {% else %}
-                {{data ['party-user1']}}
+                {{data ['party-user1']}}<br>
+                {{data['party-email1']}}
               {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -251,7 +256,8 @@
               Contact 
             </dt>
             <dd class="govuk-summary-list__value">      
-                {{data ['rep-user1']}}
+                {{data ['rep-user1']}}<br>
+                {{data ['rep-email1']}}
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
