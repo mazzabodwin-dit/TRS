@@ -34,7 +34,7 @@
 
                         {% if (data['regnterest-due-date'] == "current") %}
                             {{ data ['case-ref1'] }} - {{ data ['case-name1'] }}
-                        {% else %}
+                            {% else %}
                             {{ data['case-ref'] }} - {{ data['case-name'] }}
                         {% endif %}
                     </dd>
@@ -50,7 +50,7 @@
                     <dd class="govuk-summary-list__value">
                         {% if (data['reginterest-what-org'] == "my-org") %}
                             <p>My organisation:</p>
-                        {% else %}
+                            {% else %}
                             {% if (data['reginterest-what-org'] == "existing-org") or (data['reginterest-what-org'] == "new-org") %}
                                 <p>My client:</p>
                             {% endif %}
@@ -60,40 +60,40 @@
                         {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
                             {% if (data['reginterest-what-org'] == "my-org") %}
                                 {{ data['createaccount-org-name'] or data['party1'] }}
-                            {% else %}
+                                {% else %}
                                 {% if data['reginterest-what-org'] == "existing-org" %}
                                     {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
                                     {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
                                     {{ data['reginterest-existing-org'] or data['party1'] }}
-                                {% else %}
+                                    {% else %}
                                     {% if (data['reginterest-what-org'] == "new-org") %}
                                         {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
                                         {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
                                         {% if data['reginterest-uk-reg'] == "yes" %}
                                             Aluminium Trade Ltd
-                                        {% else %}
+                                            {% else %}
                                             {{ data['reginterest-org-name'] or "Aluminium Trade Ltd" }}
                                         {% endif %}
                                     {% endif %}
                                 {% endif %}
                             {% endif %}
                             <!-- Show the reg of interest for clients according to who has signed in: Rep-->
-                        {% else %}
+                            {% else %}
                             {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
                                 {% if (data['reginterest-what-org'] == "my-org") %}
                                     {{ data['createaccount-org-name'] or data['representative1'] }}
-                                {% else %}
+                                    {% else %}
                                     {% if data['reginterest-what-org'] == "existing-org" %}
                                         {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
                                         {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
                                         {{ data['reginterest-existing-org'] or data['party1'] }}
-                                    {% else %}
+                                        {% else %}
                                         {% if (data['reginterest-what-org'] == "new-org") %}
                                             {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
                                             {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
                                             {% if data['reginterest-uk-reg'] == "yes" %}
                                                 Aluminium Trade Ltd
-                                            {% else %}
+                                                {% else %}
                                                 {{ data['reginterest-org-name'] or data['party1'] }}
                                             {% endif %}
                                         {% endif %}

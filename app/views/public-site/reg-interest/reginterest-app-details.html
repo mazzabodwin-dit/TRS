@@ -20,20 +20,29 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-xl">
-      Registration of Interest application
+      Registration of Interest
     </h1>
 
     <h2 class="govuk-heading-m">Your application</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Application status
+          Status
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>
-            {{data ['reginterest-task']}}<br>
-            <span id="date"></span>
-          </p>
+          
+            {% if data['submission-status'] == "def" %}
+              <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+              <span id="date"></span></p>
+              {{ govukButton({
+                text: "Review documentation",
+                href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
+              }) }}  
+              {% else %}
+              <p>{{data ['reginterest-task']}}<br>
+              <span id="date"></span></p>
+            {% endif %}
+            
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -73,43 +82,50 @@
             {% endif %}
           {% endif %}
 
-           <!-- Show the reg of interest for new or existing clients according to who has signed in: Org-->
-          {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-            {% if (data['reginterest-what-org'] == "my-org") %}
-              {{data['createaccount-org-name'] or data['party1'] }}
-              {% else %}
-              {% if data['reginterest-what-org'] == "existing-org" %}
-                {{data['reginterest-existing-org'] or data['party1']}}
-                {% else %}
-                {% if (data['reginterest-what-org'] == "new-org") %}
-                  {% if data['reginterest-uk-reg'] == "yes" %}
-                    Aluminium Trade Ltd
-                    {% else %}
-                    {{data['reginterest-org-name'] or "Aluminium Trade Ltd"}}
-                  {% endif %}
-                {% endif %}
-              {% endif %}
-            {% endif %}
-            <!-- Show the reg of interest for new or existing clients according to who has signed in: Rep-->
-            {% else %}
-            {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
-              {% if (data['reginterest-what-org'] == "my-org") %}
-                {{data['createaccount-org-name'] or data['representative1'] }}
-                {% else %}
-                {% if data['reginterest-what-org'] == "existing-org" %}
-                  {{data['reginterest-existing-org'] or data['party1']}}
-                  {% else %}
-                  {% if (data['reginterest-what-org'] == "new-org") %}
-                    {% if data['reginterest-uk-reg'] == "yes" %}
-                      Aluminium Trade Ltd
-                      {% else %}
-                      {{data['reginterest-org-name'] or data['party1'] }}
-                    {% endif %}
-                  {% endif %}
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endif %}<br>
+                       {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+                            {% if (data['reginterest-what-org'] == "my-org") %}
+                                {{ data['createaccount-org-name'] or data['party1'] }}
+                                {% else %}
+                                {% if data['reginterest-what-org'] == "existing-org" %}
+                                    {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
+                                    {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                                    {{ data['reginterest-existing-org'] or data['party1'] }}
+                                    {% else %}
+                                    {% if (data['reginterest-what-org'] == "new-org") %}
+                                        {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
+                                        {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                                        {% if data['reginterest-uk-reg'] == "yes" %}
+                                            Aluminium Trade Ltd
+                                            {% else %}
+                                            {{ data['reginterest-org-name'] or "Aluminium Trade Ltd" }}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                            <!-- Show the reg of interest for clients according to who has signed in: Rep-->
+                            {% else %}
+                            {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
+                                {% if (data['reginterest-what-org'] == "my-org") %}
+                                    {{ data['createaccount-org-name'] or data['representative1'] }}
+                                    {% else %}
+                                    {% if data['reginterest-what-org'] == "existing-org" %}
+                                        {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
+                                        {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                                        {{ data['reginterest-existing-org'] or data['party1'] }}
+                                        {% else %}
+                                        {% if (data['reginterest-what-org'] == "new-org") %}
+                                            {{ data['reginterest-client-name'] or data['party-user1'] }}<br>
+                                            {{ data['reginterest-client-email'] or data['party-email1'] }}<br><br>
+                                            {% if data['reginterest-uk-reg'] == "yes" %}
+                                                Aluminium Trade Ltd
+                                                {% else %}
+                                                {{ data['reginterest-org-name'] or data['party1'] }}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}<br>
 
           {% if (data['reginterest-what-org'] != "my-org") %}
           <!-- And show address if not my own org-->     
@@ -119,7 +135,7 @@
           {% endif %}
             
           <!-- And show org dets if new org-->     
-          {% if data['reginterest-what-org'] == "new-org" %}
+          {% if data['reginterest-what-org'] != "my-org" %}
             <br><br>
             Company number: 595934925<br>
             VAT number: {{data['reginterest-vat'] or "205672212000"}}<br>
@@ -157,11 +173,10 @@
       </div>   
     </dl>
 
-
-    {% if data['reginterest-task'] == "Draft" %}
+   {% if data['reginterest-task'] == "Draft" %}
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Continue application",
+        text: "Continue Registration of Interest",
         href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
       }) }}    
       <a class="govuk-link govuk-link--no-visited-state" href="reginterest-delete-draft">Delete application</a>
