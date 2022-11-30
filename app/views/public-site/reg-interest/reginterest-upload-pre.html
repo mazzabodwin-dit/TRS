@@ -24,7 +24,7 @@
         Registration documentation
     </h1>
         <!--Deficiency notice -->
-    {% if data['docs-submission'] == "def" %}
+    {% if data['upload-pre-task'] == "def" %}
       <div class="address-card">
         <div class="address-container">
           <div class="govuk-warning-text">
@@ -39,10 +39,10 @@
           </div>
           <ul class="govuk-list govuk-warning-text__text-p">
             <li>
-              {% if (data['loa-download'] == "yes" ) %}
-                <a href="?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-RegDocs.docx (344KB) </a><span>&#10003;</span>
+              {% if (data['deficiency-pre-download'] == "yes" ) %}
+                <a href="?deficiency-pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-RegDocs.docx (344KB) </a><span>&#10003;</span>
                 {% else %}
-                <a href="?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-RegDocs.docx (344KB) </a>
+                <a href="?deficiency-pre-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-RegDocs.docx (344KB) </a>
               {% endif %}
             </li>
           </ul>    
@@ -108,7 +108,7 @@
           <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
               Non-confidential file
           </h3>
-          {% if data['docs-submission'] == "def" %} 
+          {% if data['upload-pre-task'] == "def" %} 
             <div class="upload-card">
               <div class="upload-container">
                 <div class="waiting_for_upload" id="waiting-upload-{{ id }}">
@@ -159,7 +159,7 @@
           <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
               Confidential file
           </h3>
-          {% if data['docs-submission'] == "def" %} 
+          {% if data['upload-pre-task'] == "def" %} 
             <div class="upload-card">
               <div class="upload-container">
                  <label class="govuk-label" for="progress-complete">

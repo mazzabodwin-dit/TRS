@@ -24,7 +24,7 @@
       Upload a Letter of Authority 
     </h1>
      <!--Deficiency notice -->
-    {% if data['loa-submission'] == "def" %}
+    {% if data['upload-loa-task'] == "def" %}
       <div class="address-card">
         <div class="address-container">
           <div class="govuk-warning-text">
@@ -39,10 +39,10 @@
           </div>
           <ul class="govuk-list govuk-warning-text__text-p">
             <li>
-              {% if (data['loa-download'] == "yes" ) %}
-                <a href="?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-LoA.docx (344KB) </a><span>&#10003;</span>
+              {% if (data['loa-deficiency-download'] == "yes" ) %}
+                <a href="?loa-deficiency-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-LoA.docx (344KB) </a><span>&#10003;</span>
                 {% else %}
-                <a href="?loa-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-LoA.docx (344KB) </a>
+                <a href="?loa-deficiency-download=yes" class="govuk-link--no-visited-state"><img src="/public/images/doc.png" alt="File icon" width="24px"> Deficiency-Notice-LoA.docx (344KB) </a>
               {% endif %}
             </li>
           </ul>    
@@ -79,7 +79,7 @@
       <div class="row-colour">
         <div class="govuk-grid-column-full"> 
 
-          {% if data['loa-submission'] == "def" %} 
+          {% if data['upload-loa-task'] == "def" %} 
             <div class="upload-card">
               <div class="upload-container">
                 <div class="waiting_for_upload" id="waiting-upload-{{ id }}">
