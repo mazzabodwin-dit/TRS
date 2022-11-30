@@ -27,7 +27,7 @@
       Upload a Letter of Authority 
     </h1>
     <!--Deficiency notice -->
-    {% if data['loa-submission'] == "def" %}
+    {% if data['invite-loa-task'] == "def" %}
       <div class="address-card">
         <div class="address-container">
           <div class="govuk-warning-text">
@@ -83,7 +83,7 @@
       <div class="row-colour">
         <div class="govuk-grid-column-full"> 
 
-          {% if data['loa-submission'] == "def" %} 
+          {% if data['invite-loa-task'] == "def" %} 
             <div class="upload-card">
               <div class="upload-container">
                 <div class="waiting_for_upload" id="waiting-upload-{{ id }}">

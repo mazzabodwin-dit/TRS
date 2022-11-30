@@ -24,7 +24,7 @@
         Registration documentation
     </h1>
         <!--Deficiency notice -->
-    {% if data['loa-submission'] == "def" %}
+    {% if data['docs-submission'] == "def" %}
       <div class="address-card">
         <div class="address-container">
           <div class="govuk-warning-text">
@@ -108,7 +108,7 @@
           <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
               Non-confidential file
           </h3>
-          {% if data['loa-submission'] == "def" %} 
+          {% if data['docs-submission'] == "def" %} 
             <div class="upload-card">
               <div class="upload-container">
                 <div class="waiting_for_upload" id="waiting-upload-{{ id }}">
@@ -159,7 +159,7 @@
           <h3 class="govuk-heading-s govuk-!-text-align-centre govuk-!-margin-bottom-1">
               Confidential file
           </h3>
-          {% if data['loa-submission'] == "def" %} 
+          {% if data['docs-submission'] == "def" %} 
             <div class="upload-card">
               <div class="upload-container">
                  <label class="govuk-label" for="progress-complete">

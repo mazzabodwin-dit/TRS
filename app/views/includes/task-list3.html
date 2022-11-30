@@ -19,7 +19,7 @@
 
       {% else %}
       <!--If the LOA is deficient-->
-      {% if (data['loa-submission'] == "def") %}
+      {% if (data['upload-loa-task'] == "def") %}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="reginterest-upload-loa" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
@@ -79,7 +79,7 @@
 
       {% else %}
       <!--If the Doc is deficient-->
-      {% if (data['docs-submission'] == "def") %}
+      {% if (data['upload-pre-task'] == "def") %}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="reginterest-upload-pre" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">
@@ -132,7 +132,7 @@
 
     {% else %}
       <!--If the LOA is deficient-->
-      {% if (data['loa-submission'] == "def") %}
+      {% if (data['invite-loa-task'] == "def") %}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="invite-upload-loa" class="govuk-link--no-visited-state" aria-describedby="organisation-loa-status">

@@ -28,10 +28,36 @@
           Status
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>
-            {{data ['invite-rep-task'] or "Draft"}}<br>
-            <span id="date"></span>
-          </p>
+          {% if data['invite-rep-task'] == "deficient" %}
+            <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+            <span id="date"></span></p>
+            {{ govukButton({
+              text: "Review documentation",
+              href: "tasklist/invite-rep-tasks"
+            }) }}  
+            {% else %}
+            {% if data['invite-rep-task'] == "Draft" %}
+              <p>Draft<br>
+              <span id="date"></span></p>
+              {% else %}
+              {% if data['invite-rep-task'] == "Sent" %}
+                <p>Invite sent<br>
+                <span id="date"></span></p>
+                {% else %}
+                {% if data['invite-rep-task'] == "Accepted" %}
+                  <p>Invite accepted <br>Awating TRA approval<br>
+                  <span id="date"></span></p>
+                  {% else %}
+                  {% if data['invite-rep-task'] == "Approved" %}
+                    <p>Invite approved by the TRA <br>
+                    <span id="date"></span></p>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -56,54 +82,42 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Details
+          Representative details
         </dt>
         <dd class="govuk-summary-list__value">
           {{data['invite-rep-name'] or data['rep-user3'] }}
           <br>
           {{data['invite-rep-email'] or data['rep-email3'] }}
-          <br>
-
-          <!--if it is a complete app show address details-->
-          {% if data['invite-rep-task'] == "Sent" %}
-
-            <!-- And show new or existing org name-->     
-              {% if (data['invite-uk-reg'] == "yes") %}
-                Steel UK
-                  {% else %}
-                    {% if (data['invite-uk-reg'] == "no") %}
-                      {{data['invite-org-name']}}<br>
-                        {% else %}
-                    {% endif %}
-              {% endif %}
-          {% endif %}
+          <br><br>
+          BlueSteel Partners
         </dd>        
       </div>
     
-      {% if data['invite-rep-task'] == "Sent" %}
+      {% if data['invite-rep-task'] != "Draft"  %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Letter of Authority
           </dt>
           <dd class="govuk-summary-list__value">
-            <!--if it is a complete app show doc details-->
-            {% if data['reginterest-task'] == "Submitted" %}
               <a href="">loa.docx</a>
-            {% endif %}
           </dd>
         </div>
       {% endif %} 
     </dl>
 
-    {% if data['invite-rep-task'] == "Draft" %}
+   
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue application",
-          href: "tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
-        }) }}    
-        <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete application</a>
+        {% if data['invite-rep-task'] == "Draft" %}
+          {{ govukButton({
+            text: "Continue application",
+            href: "tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
+          }) }}  
+        {% endif %} 
+        {% if data['invite-rep-task'] == "Sent" or data['invite-rep-task'] == "Draft"  %} 
+          <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
+        {% endif %} 
       </div>
-    {% endif %}
+    
 </div>
 
   <div class="govuk-grid-column-one-third">

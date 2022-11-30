@@ -31,17 +31,17 @@
         </dt>
         <dd class="govuk-summary-list__value">
           
-            {% if data['submission-status'] == "def" %}
-              <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
-              <span id="date"></span></p>
-              {{ govukButton({
-                text: "Review documentation",
-                href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-              }) }}  
-              {% else %}
-              <p>{{data ['reginterest-task']}}<br>
-              <span id="date"></span></p>
-            {% endif %}
+          {% if data['reginterest-task'] == "deficient" %}
+            <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+            <span id="date"></span></p>
+            {{ govukButton({
+              text: "Review documentation",
+              href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
+            }) }}  
+            {% else %}
+            <p>{{data ['reginterest-task']}}<br>
+            <span id="date"></span></p>
+          {% endif %}
             
         </dd>
       </div>
@@ -153,7 +153,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <!--if it is a complete app show doc details-->
-            {% if data['reginterest-task'] == "Submitted" %}
+            {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" %}
               <a href="">loa.docx</a>
             {% endif %}
           </dd>
@@ -165,7 +165,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <!--if it is a complete app show doc details-->
-          {% if data['reginterest-task'] == "Submitted" %}
+          {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" %}
             <a href="">confidentialdocument1.docx</a><br>
             <a href="">unconfidentialdocument1.docx</a>
           {% endif %}

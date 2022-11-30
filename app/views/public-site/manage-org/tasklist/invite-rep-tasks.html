@@ -27,7 +27,7 @@
       Invite a representative
     </h1>
     <!--Deficiency notice -->
-    {% if data['submission-status'] == "def" %}
+    {% if data['invite-rep-task'] == "deficient" %}
       <div class="address-card">
         <div class="address-container">
           <div class="govuk-warning-text">
@@ -35,10 +35,9 @@
             <p class="govuk-warning-text__text">
               <strong>
                 <span class="govuk-warning-text__assistive">Warning</span>
-                Deficiency Notice
+                You need to review your documentation
               </strong>
             </p>
-            <p class="govuk-warning-text__text-p">We have reviewed your submission and there are areas where we need further information or clarification. Review the highlighted documentation. </p>
           </div>
         </div>
       </div>

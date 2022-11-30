@@ -187,8 +187,9 @@
                 <p>
                   <!-- Show new or existing org name-->   
                   {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=existing-org#manage-team" class="govuk-link--no-visited-state"></a>{% if data['invite-rep-what-org'] == "existing-org" %}</a>
-                    {{ data['invite-rep-name'] or data['rep-user1'] }} - {{data['representative2']}} <br>                   
+                  <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=existing-org#manage-team" class="govuk-link--no-visited-state"></a>
+                  {% if data['invite-rep-what-org'] == "existing-org" %}</a>
+                    {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>                   
                     {% else %}
 
                     {% if data['invite-rep-what-org'] == "new-org" %}
@@ -196,7 +197,34 @@
                       {{data['invite-rep-org-name'] or data['representative2'] }}<br>
                     {% endif %}
                   {% endif %}
-                  Status: {{data['invite-rep-task']}} (<span id="date3"></span>)
+                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Draft" class="govuk-link--no-visited-state">Status: {{data['invite-rep-task']}}</a> (<span id="date3"></span>)
+                </p>
+                <p>
+                  <!-- Show new or existing org name-->   
+                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
+                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Sent" class="govuk-link--no-visited-state">Status: Sent</a> (22 Dec 2022)
+                </p>
+                <p>
+                  <!-- Show new or existing org name-->   
+                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
+                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Accepted" class="govuk-link--no-visited-state">Status: Invite accepted</a> (22 
+                  Dec 2022)
+                </p>
+                <p>
+                  <!-- Show new or existing org name-->   
+                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
+                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Approved" class="govuk-link--no-visited-state">Status: Invite approved</a> (22 
+                  Dec 2022)
+                </p>
+                <p>
+                  <!-- Show new or existing org name-->   
+                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
+                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=deficient" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
+                  Dec 2022)
                 </p>
               </div>
             </div>
