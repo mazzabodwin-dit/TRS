@@ -63,9 +63,11 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['third-party'] == "no" %}
-              {{data['party-user111']}}
+              {{data['party-user111']}}<br>
+              {{data['party-email111']}}
               {% else %}
-              {{data ['party-user1']}}
+              {{data ['party-user1']}}<br>
+              {{data['party-email1']}}
             {% endif %} 
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -141,7 +143,8 @@
               Case contact 
             </dt>
             <dd class="govuk-summary-list__value">      
-                {{data ['rep-user1']}}
+                {{data ['rep-user1']}}<br>
+                {{data['rep-user1']}}
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -221,7 +224,8 @@
               Submitted by
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data ['party-user1']}}      
+              {{data ['party-user1']}}<br>
+              {{data ['party-email1']}}      
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -264,7 +268,8 @@
               Case contact 
             </dt>
             <dd class="govuk-summary-list__value">      
-                {{data ['rep-user1']}}
+                {{data ['rep-user1']}}<br>
+                {{data ['rep-email1']}}
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
