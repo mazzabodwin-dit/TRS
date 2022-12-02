@@ -29,9 +29,9 @@
       {% endif %}
     </span>
     <h1 class="govuk-heading-xl">
-      Check duplicates
+      Review matches
     </h1>
-    <p>We have found 1 matching organisation you need to check.</p>
+    <p>We have found 1 matching organisation you need to review.</p>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -318,7 +318,7 @@
       {% if (data['who-signin'] == "lead") %}
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Resolve duplicates"
+            text: "Resolve matches"
           }) }}
           <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
         </div>
@@ -326,7 +326,7 @@
         
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Resolve duplicates",
+            text: "Resolve matches",
             disabled: true
           }) }}
           <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>

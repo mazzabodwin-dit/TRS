@@ -340,7 +340,7 @@ router.post('/reginterest-merge-rep1-route', function (req, res) {
     }
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-is-dup?merge-duplicates=2of2')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate')
     }
 })
 
@@ -357,7 +357,7 @@ router.post('/reginterest-merge-rep2-route', function (req, res) {
     }
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-complete')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate')
     }
 })
 

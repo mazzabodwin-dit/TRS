@@ -252,16 +252,16 @@
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
           text: "Confirm and continue",
-          href: "reginterest-merge-not-duplicate-confirm?merge-duplicates=1c&merge-rep-task=started"
+          href: "reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=started"
         }) }}    
         {% else %}
-        {% if (data['merge-duplicates'] == "2of2") %}
+        {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1b") %}
             {{ govukButton({
               text: "Confirm and continue",
-              href: "reginterest-merge-not-duplicate-confirm?merge-duplicates=1a&merge-rep-task=started"
+              href: "reginterest-merge-rep-complete?merge-rep-task=started"
             }) }}    
           {% else %}
-          {% if (data['merge-duplicates'] == "1a") or (data['merge-duplicates'] == "1c") %}
+          {% if (data['merge-duplicates'] == "1b") %}
               {{ govukButton({
                 text: "Confirm and continue",
                 href: "reginterest-merge-not-duplicate-confirm?merge-duplicates=0&merge-rep-task=complete"
