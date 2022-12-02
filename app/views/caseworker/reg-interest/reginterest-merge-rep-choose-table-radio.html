@@ -26,7 +26,7 @@
     </h1>
     <!--Show a merge button for Representative -->
     {% if (data['merge-duplicates'] == "1of2") %}
-      <form action="reginterest-merge-rep-isdup?merge-duplicates=2of2&merge-rep-task=started" method="post" id="reginterest-merge-form">
+      <form action="reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=started" method="post" id="reginterest-merge-form">
       {% else %}
       {% if (data['merge-duplicates'] == "2of2") %}
         <form action="reginterest-merge-rep-complete?merge-rep-task=started" method="post" id="reginterest-merge-form">
