@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 
 {% endblock %}
 
@@ -29,9 +29,9 @@
       {% endif %}
     </span>
     <h1 class="govuk-heading-xl">
-      Check duplicates
+      Review matches
     </h1>
-    <p>We have found 2 matching organisations you need to check.</p>
+    <p>We have found 2 matching organisations you need to review.</p>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -134,41 +134,8 @@
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
     <!--Show header according to how many dups there are-->
     {% if data['merge-duplicates'] == "1of2" %}
-      <h2 class="govuk-heading-s merge-header">
-        <span class="govuk-heading-s__merge3">Matches</span>
-
-        <nav class="govuk-pagination right-aligned-link" role="navigation" aria-label="results">
-          <div class="govuk-pagination__prev">
-            <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-              <span class="govuk-pagination__link-title">Previous</span></a>
-          </div>
-          <ul class="govuk-pagination__list">
-            <li class="govuk-pagination__item">
-              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
-                1
-              </a>
-            </li>
-            <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
-            <li class="govuk-pagination__item govuk-pagination__item--current">
-              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7" aria-current="page">
-                7
-              </a>
-            </li>
-
-            <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
-            <li class="govuk-pagination__item">
-              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
-                42
-              </a>
-            </li>
-          </ul>
-          <div class="govuk-pagination__next">
-            <a class="govuk-link govuk-pagination__link" href="#" rel="next">
-              <span class="govuk-pagination__link-title">Next</span> 
-              </a>
-          </div>
-        </nav>
-        
+    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
+    
         {{ govukPagination({
           classes: "right-aligned-link",
           next: {
@@ -189,7 +156,7 @@
       </h2>
       {% else %}
       {% if data['merge-duplicates'] == "2of2" %}
-        <h2 class="govuk-heading-s merge-header clearfix"><span class="govuk-heading-s__merge3">Matches</span>
+          <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
 
           {{ govukPagination({
             classes: "right-aligned-link",
@@ -278,7 +245,7 @@
       {% else %}
       {% if (data['merge-duplicates'] == "2of2") %}
         <div class="address-card address-card-duplicate">
-          <div class="address-container">   
+          <div class="address-container clearfix">   
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>   
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
@@ -346,37 +313,39 @@
         </div>
       {% endif %}
     {% endif %}
-    <nav class="govuk-pagination" role="navigation" aria-label="results">
-      <div class="govuk-pagination__prev">
-        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-          <span class="govuk-pagination__link-title">Previous</span></a>
-      </div>
-      <ul class="govuk-pagination__list">
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
-            1
-          </a>
-        </li>
-        <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
-        <li class="govuk-pagination__item govuk-pagination__item--current">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7" aria-current="page">
-            7
-          </a>
-        </li>
+    <!--
+      <nav class="govuk-pagination right-aligned-link" role="navigation" aria-label="results">
+          <div class="govuk-pagination__prev">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+              <span class="govuk-pagination__link-title">Previous</span></a>
+          </div>
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+            <li class="govuk-pagination__item govuk-pagination__item--current">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7" aria-current="page">
+                7
+              </a>
+            </li>
 
-        <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
-            42
-          </a>
-        </li>
-      </ul>
-      <div class="govuk-pagination__next">
-        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
-          <span class="govuk-pagination__link-title">Next</span> 
-          </a>
-      </div>
-    </nav>
+            <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
+                42
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+              <span class="govuk-pagination__link-title">Next</span> 
+              </a>
+          </div>
+        </nav>
+        -->
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -402,19 +371,20 @@
       {% if (data['who-signin'] == "lead") %}
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Resolve duplicates"
+            text: "Resolve matches"
           }) }}
           <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
         </div>
         {% else %}
-        
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Resolve duplicates",
-            disabled: true
-          }) }}
-          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
-        </div>
+        {% if data['who-signin'] =="invest" %}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Resolve matches",
+              disabled: true
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+          </div>
+        {% endif %}
       {% endif %}
     </form>
   </div>

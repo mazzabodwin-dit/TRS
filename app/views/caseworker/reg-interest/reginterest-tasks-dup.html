@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <h2 class="govuk-heading-m" id="subsection-title">Check duplicates</h2>
+      <h2 class="govuk-heading-m" id="subsection-title">Review matches</h2>
       <p>Organisations are matched when one or more of their registered details are the same as another organisation.</p>
       {% if data['verify-type'] =="reg-interest" %}
         <p>You need to check if they are duplicates before you can review this registration of interest.</p>
@@ -129,7 +129,7 @@
                 <span class="govuk-visually-hidden--desktop td-header">Status: </span>Not started
               </td>  
               <td class="govuk-table__cell action">
-                <a href="reginterest-merge-int-review" class="govuk-link govuk-link--no-visited-state">Check duplicates<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
+                <a href="reginterest-merge-int-review" class="govuk-link govuk-link--no-visited-state">Review matches<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
               </td>             
             </tr>
           {% endif %}           
@@ -144,7 +144,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Status: </span>Not started
             </td>  
             <td class="govuk-table__cell action">
-              <a href="reginterest-merge-rep-review" class="govuk-link govuk-link--no-visited-state">Check duplicates<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
+              <a href="reginterest-merge-rep-review" class="govuk-link govuk-link--no-visited-state">Review matches<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
             </td>             
           </tr>
         </body>
@@ -167,7 +167,7 @@
             <a href="" class="govuk-link--no-visited-state">{{data ['party-user1']}}</a>
           {% endif %} 
           </li> 
-          {% if data['third-party'] == "yes" %}
+          {% if data['third-party'] == "yes" or data['verify-type'] =="rep-invite" %}
             <li>
               <strong>Representative </strong><br>
               <a href="/caseworker/orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data ['representative1']}}</a><br>
