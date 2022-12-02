@@ -116,7 +116,23 @@
             </th>
           </tr>
         </thead>
-        <tbody class="govuk-table__body">             
+        <tbody class="govuk-table__body">  
+          {% if data['verify-type'] =="reg-interest" %}
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Matches: </span>1
+              </td>  
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Status: </span>Not started
+              </td>  
+              <td class="govuk-table__cell action">
+                <a href="reginterest-merge-int-review" class="govuk-link govuk-link--no-visited-state">Check duplicates<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
+              </td>             
+            </tr>
+          {% endif %}           
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
@@ -128,25 +144,9 @@
               <span class="govuk-visually-hidden--desktop td-header">Status: </span>Not started
             </td>  
             <td class="govuk-table__cell action">
-              <a href="reginterest-merge-rep-party" class="govuk-link govuk-link--no-visited-state">Check duplicates<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
+              <a href="reginterest-merge-rep-review" class="govuk-link govuk-link--no-visited-state">Check duplicates<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
             </td>             
           </tr>
-          {% if data['verify-type'] =="reg-interest" %}
-            <tr class="govuk-table__row no-border">
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Matches: </span>2
-              </td>  
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Status: </span>Not started
-              </td>  
-              <td class="govuk-table__cell action">
-                <a href="reginterest-merge-int-party" class="govuk-link govuk-link--no-visited-state">Check duplicates<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
-              </td>             
-            </tr>
-          {% endif %}
         </body>
       </table>  
         

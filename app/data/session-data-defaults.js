@@ -79,7 +79,7 @@ module.exports = {
   "dup-party-org-number1": "765238953", 
   "dup-party-web1": null, 
   "dup-party-vat1": "987654321", 
-  "dup-party-eori1": "GB987654321",
+  "dup-party-eori1": "GB123456789",
   "dup-party-duns1": "450483782",
 
   "dup-party2": "Steel UK",
