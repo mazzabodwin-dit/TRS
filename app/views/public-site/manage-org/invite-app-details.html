@@ -58,23 +58,19 @@
           {% endif %}
 
 
-           {% if data['invite-rep-task'] == "all" %}
-              <p>Draft<br><br>
-                <p>Invite sent<br>Awating invitee acceptance<br><br>
-                  <p>Invite accepted <br>Awating TRA approval<br><br>
-                    <p>Invite accepted <br>Approved by the TRA <br><br>
-                     <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
-                    </p>
-                    {{ govukButton({
-                      text: "Review documentation",
-                      href: "tasklist/invite-rep-tasks"
-                    }) }}  
-                    
-                 
-            {% endif %}
+          {% if data['invite-rep-task'] == "all" %}
+            <p>Draft<br><br>
+              <p>Invite sent<br>Awating invitee acceptance<br><br>
+                <p>Invite accepted <br>Awating TRA approval<br><br>
+                  <p>Invite accepted <br>Approved by the TRA <br><br>
+                    <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+                  </p>
+                  {{ govukButton({
+                    text: "Review documentation",
+                    href: "tasklist/invite-rep-tasks"
+                  }) }}  
             <p><span id="date"></span></p>
-
-
+          {% endif %}
         </dd>
       </div>
       <div class="govuk-summary-list__row">

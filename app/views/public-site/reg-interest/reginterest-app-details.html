@@ -33,14 +33,39 @@
           
           {% if data['reginterest-task'] == "deficient" %}
             <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
-            <span id="date"></span></p>
             {{ govukButton({
               text: "Review documentation",
               href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
             }) }}  
-            {% else %}
-            <p>{{data ['reginterest-task']}}<br>
             <span id="date"></span></p>
+            {% else %}
+             {% if data['reginterest-task'] == "Draft" %}
+              <p>Draft<br>
+              <span id="date"></span></p>
+              {% else %}
+              {% if data['reginterest-task'] == "Sent" %}
+                <p>Invite sent<br>
+                <span id="date"></span></p>
+                {% else %}
+                {% if data['reginterest-task'] == "Accepted" %}
+                  <p>Invite accepted <br>Awating TRA approval<br>
+                  <span id="date"></span></p>
+                  {% else %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+          {% if data['reginterest-task'] == "all" %}
+            <p>Draft<br><br>
+              <p>Sent<br>Awating TRA approval<br><br>
+                <p>Accepted <br>Approved by the TRA <br><br>
+                  <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+                  {{ govukButton({
+                    text: "Review documentation",
+                    href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
+                  }) }}  
+            <p><span id="date"></span></p>
           {% endif %}
             
         </dd>
