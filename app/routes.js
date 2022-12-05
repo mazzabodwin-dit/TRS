@@ -374,7 +374,7 @@ router.post('/reginterest-merge-rep3-route', function (req, res) {
     }
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-confirm?merge-rep-task=In progress')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-not-duplicate?merge-rep-task=In progress')
     }
 })
 

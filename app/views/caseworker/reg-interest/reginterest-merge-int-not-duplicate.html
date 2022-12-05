@@ -17,147 +17,20 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">
       Resolve matches
     </span>
 
     <h1 class="govuk-heading-xl">
-      Confirm not a duplicate<br>
-      (1of2)
+      Confirm not a duplicate
     </h1>
-    <p>Are you sure the matching organisation is not a duplicate?</p>
-
-<!--
-    <table class="govuk-table merge">
-        <caption class="govuk-table__caption">
-          <span class="govuk-visually-hidden">A table showing the selected organisation and the matching organisation</span>
-        </caption>    
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Field</th>
-            <th scope="col" class="govuk-table__header">Selected organisation </th>
-            <th scope="col" class="govuk-table__header">
-                Matching organisation
-            </th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">
-                {{data['party1'] }}
-            </td>
-              <td class="govuk-table__cell">
-                {{data['dup-party1'] }}
-              </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Address</th>
-            <td class="govuk-table__cell">
-              {{data['party-address1'] }}
-            </td>
-            <td class="govuk-table__cell">
-              {{data['dup-party-address1'] }}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Postcode/ zip</th>
-            <td class="govuk-table__cell">
-              {{data['party-postcode1'] }}
-            </td>
-            <td class="govuk-table__cell">
-              {{data['dup-party-postcode1'] }}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Country</th>
-            <td class="govuk-table__cell">
-              {{data['party-country1'] }}
-            </td>
-            <td class="govuk-table__cell">
-              {{data['dup-party-country1'] }}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Reg number</th>
-            <td class="govuk-table__cell">
-              {{data['party-org-number1'] }}
-            </td>
-            <td class="govuk-table__cell">
-              {% if (data['dup-party-org-number1'] == null) %}
-                {% else %}
-                  {{data['dup-party-org-number1'] }}
-              {% endif %}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Website</th>
-            <td class="govuk-table__cell">
-              {{data['party-web1'] }}
-            </td>
-            <td class="govuk-table__cell">
-              {% if (data['dup-party-web1'] == null) %}
-                {% else %}                      
-                  {{data['dup-party-web1'] }}
-              {% endif %}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">VAT number</th>
-            <td class="govuk-table__cell">
-              {% if (data['party-vat1'] == null) %}
-                {% else %}
-                  {{data['party-vat1'] }}
-              {% endif %}
-            </td>
-            <td class="govuk-table__cell">
-              {% if (data['dup-party-vat1'] == null) %}
-                {% else %}
-                  {{data['dup-party-vat1'] }}
-              {% endif %}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">EORI number</th>
-            <td class="govuk-table__cell">
-              {% if (data['party-eori1'] == null) %}
-                  {% else %}
-                    {{data['party-eori1'] }}
-                {% endif %}
-
-            </td>
-            <td class="govuk-table__cell">
-              {% if (data['dup-party-eori1'] == null) %}
-                {% else %}
-                 <mark>{{data['dup-party-eori1'] }}</mark>
-              {% endif %}
-            </td>
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">DUNS number</th>
-            <td class="govuk-table__cell">
-              {% if (data['party-duns1'] == null) %}  
-                {% else %}
-                {{data['party-duns1'] }}
-              {% endif %}
-            </td>
-            <td class="govuk-table__cell">
-              {% if (data['dup-party-duns1'] == null) %}
-                {% else %}
-                  {{data['dup-party-duns1'] }}
-              {% endif %}
-            </td>
-          </tr>
-        </tbody>
-      </table> 
-
-    -->
+    <p>Are you sure the matching organisation is not a duplicate of the selected organisation?</p>
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Confirm and continue",
-        href: "reginterest-merge-int-confirm" 
+        text: "Not a duplicate",
+        href: "reginterest-merge-int-check" 
       }) }}      
 
       <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>

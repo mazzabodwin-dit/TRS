@@ -237,14 +237,14 @@
      <!--Show a Not duplicate button for representative -->
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
-          text: "Confirm and continue",
+          text: "Not a duplicate",
           href: "reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=In progress"
         }) }}    
         {% else %}
-        {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1b") %}
+        {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1c") %}
           {{ govukButton({
-            text: "Confirm and continue",
-            href: "reginterest-merge-rep-confirm"
+            text: "Not a duplicate",
+            href: "reginterest-merge-rep-check"
           }) }}    
         {% endif %}
       {% endif %}
