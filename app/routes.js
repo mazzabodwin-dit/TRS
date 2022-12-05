@@ -362,6 +362,23 @@ router.post('/reginterest-merge-rep2-route', function (req, res) {
 })
 
 // Run this code on reginterest-merge-is-dup - which option is chosen:
+router.post('/reginterest-merge-rep3-route', function (req, res) {
+
+    // Make a variable and give it the value from 'reginterest-matching-orgs-question'
+    var reginterestmatchingorgsquestion = req.session.data['reginterest-matching-orgs-question']
+
+    // Check whether the variable matches a condition
+    if (reginterestmatchingorgsquestion == "yes") {
+        // Send user to next page
+        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-rep-task=In progress')
+    }
+    if (reginterestmatchingorgsquestion == "no") {
+        // Send user to next page
+        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-confirm?merge-rep-task=In progress')
+    }
+})
+
+// Run this code on reginterest-merge-is-dup - which option is chosen:
 router.post('/reginterest-merge-int-route', function (req, res) {
 
     // Make a variable and give it the value from 'reginterest-matching-orgs-question'

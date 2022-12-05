@@ -44,12 +44,6 @@
         </h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Contact:</dt>
-            <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a><br>
-            {{data['rep-email1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Address:</dt>
             <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
               {{data['rep-postcode1']}}<br>
@@ -133,49 +127,54 @@
     <div class="govuk-grid-column-one-half">
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
     <!--Show header according to how many dups there are-->
-    {% if data['merge-duplicates'] == "1of2" %}
-    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
-    
-        {{ govukPagination({
-          classes: "right-aligned-link",
-          next: {
-            href: "?merge-duplicates=2of2"
-          },
-          items: [
-            {
-              number: 1,
-              current: true,
-              href: "?merge-duplicates=1of2"
-            },
-            {
-              number: 2,
-              href: "?merge-duplicates=2of2"
-            }
-          ]
-        }) }}
+    {% if data['merge-duplicates'] == "1c" %}
+      <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matching organisation </span>
       </h2>
       {% else %}
-      {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
-
+      {% if data['merge-duplicates'] == "1of2" %}
+        <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
+      
           {{ govukPagination({
             classes: "right-aligned-link",
-            previous: {
-              href: "?merge-duplicates=1of2"
+            next: {
+              href: "?merge-duplicates=2of2"
             },
             items: [
               {
                 number: 1,
+                current: true,
                 href: "?merge-duplicates=1of2"
               },
               {
                 number: 2,
-                current: true,
                 href: "?merge-duplicates=2of2"
               }
             ]
           }) }}
         </h2>
+        {% else %}
+        {% if data['merge-duplicates'] == "2of2" %}
+          <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
+
+            {{ govukPagination({
+              classes: "right-aligned-link",
+              previous: {
+                href: "?merge-duplicates=1of2"
+              },
+              items: [
+                {
+                  number: 1,
+                  href: "?merge-duplicates=1of2"
+                },
+                {
+                  number: 2,
+                  current: true,
+                  href: "?merge-duplicates=2of2"
+                }
+              ]
+            }) }}
+          </h2>
+        {% endif %}
       {% endif %}
     {% endif %}
 
@@ -187,12 +186,6 @@
           <h3 class="govuk-heading-m clearfix"><a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
           </h3>
           <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Contact:</dt>
-              <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a><br>
-              {{data['party-email111']}}
-              </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Address:</dt>
               <dd class="govuk-summary-list__value">{{data['dup-party-address1']}}<br>
@@ -243,18 +236,12 @@
         </div>
       </div>
       {% else %}
-      {% if (data['merge-duplicates'] == "2of2") %}
+      {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1c") %}
         <div class="address-card address-card-duplicate">
           <div class="address-container clearfix">   
             <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>   
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Contact:</dt>
-                <dd class="govuk-summary-list__value"><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a><br>
-                {{data['dup-email3']}}
-                </dd>
-              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address:</dt>
                 <dd class="govuk-summary-list__value">{{data['dup-party-address3']}}<br>
@@ -367,11 +354,11 @@
         </div>
       </div>
     {% endif %}
-    <form action="reginterest-merge-rep-is-dup?merge-duplicates=1of2" method="post" id="reginterest-review-merge-form">
+    <form action="reginterest-merge-rep-is-dup" method="post" id="reginterest-review-merge-form">
       {% if (data['who-signin'] == "lead") %}
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Resolve matches"
+            text: "Resolve matching organisations"
           }) }}
           <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
         </div>
@@ -379,7 +366,7 @@
         {% if data['who-signin'] =="invest" %}
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Resolve matches",
+              text: "Resolve matching organisations",
               disabled: true
             }) }}
             <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>

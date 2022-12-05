@@ -24,6 +24,7 @@
      <h1 class="govuk-heading-xl">
       Select the details to keep
     </h1>
+    <p>Select the information that should be kept when these two organisations are merged.</p>
     <!--Show a merge button for Representative -->
     {% if (data['merge-duplicates'] == "1of2") %}
       <form action="reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=In progress" method="post" id="reginterest-merge-form">
@@ -35,18 +36,22 @@
 
       <table class="govuk-table merge">
         <caption class="govuk-table__caption govuk-visually-hidden"> 
-          A table to select the information from the selected organisation or the matching organisation that should be kept after the merge.
+          A table to select which information should be kept during a merge.
         </caption>  
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Field</th>
             <th scope="col" class="govuk-table__header">Selected organisation </th>
             <th scope="col" class="govuk-table__header">
-              {% if (data['merge-duplicates'] == "1of2") %}
-                Matching organisation (1 of 2)
+              {% if (data['merge-duplicates'] == "1c") %}
+                Matching organisation
                 {% else %}
-                Matching organisation (2 of 2)
-              {% endif %} 
+                {% if (data['merge-duplicates'] == "1of2") %}
+                  Matching organisation (1 of 2)
+                  {% else %}
+                  Matching organisation (2 of 2)
+                {% endif %} 
+              {% endif %}
             </th>
           </tr>
         </thead>

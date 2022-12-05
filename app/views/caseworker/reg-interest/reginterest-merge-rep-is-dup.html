@@ -15,21 +15,31 @@
 {% endblock %}
 
 {% block content %}
-{% if (data['merge-duplicates'] == "1of2") %}
-  <form action="/reginterest-merge-rep1-route" method="post" id="reginterest-merge-form">
+
+{% if (data['merge-duplicates'] == "1c") %}
+  <form action="/reginterest-merge-rep3-route" method="post" id="reginterest-merge-form">
   {% else %}
-  <form action="/reginterest-merge-rep2-route" method="post" id="reginterest-merge-form">
+  {% if (data['merge-duplicates'] == "1of2") %}
+    <form action="/reginterest-merge-rep1-route" method="post" id="reginterest-merge-form">
+    {% else %}
+    <form action="/reginterest-merge-rep2-route" method="post" id="reginterest-merge-form">
+  {% endif %}
 {% endif %}
+  
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">
         Resolve matches
       </span>
       <h1 class="govuk-heading-xl">
-        {% if (data['merge-duplicates'] == "1of2") %}
-          Check matching organisation <br>(1 of 2)
+        {% if (data['merge-duplicates'] == "1c") %}
+          Select if duplicate
           {% else %}
-          Check matching organisation <br>(2 of 2)
+          {% if (data['merge-duplicates'] == "1of2") %}
+            Select if duplicate <br>(1 of 2)
+            {% else %}
+            Select if duplicate <br>(2 of 2)
+          {% endif %} 
         {% endif %} 
         </h1>
 
@@ -46,11 +56,15 @@
             <th scope="col" class="govuk-table__header">Field</th>
             <th scope="col" class="govuk-table__header">Selected organisation </th>
             <th scope="col" class="govuk-table__header">
-              {% if (data['merge-duplicates'] == "1of2") %}
-                Matching organisation (1 of 2)
+              {% if (data['merge-duplicates'] == "1c") %}
+                Matching organisation
                 {% else %}
-                Matching organisation (2 of 2)
-              {% endif %} 
+                {% if (data['merge-duplicates'] == "1of2") %}
+                  Matching organisation (1 of 2)
+                  {% else %}
+                  Matching organisation (2 of 2)
+                {% endif %} 
+              {% endif %}
             </th>
           </tr>
         </thead>
