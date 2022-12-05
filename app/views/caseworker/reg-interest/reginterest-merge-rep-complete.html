@@ -4,8 +4,10 @@
 Cancel merge - {{serviceName}}
 {% endblock %}
 
+{% set bodyClasses = 'caseworker-width' %}
+
 {% block header %}
- {% include "includes/header-public.html" %}
+ {% include "includes/header-caseworker.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,26 +32,32 @@ Cancel merge - {{serviceName}}
       </ul>    
 
       {% if data['verify-type'] =="rep-invite" %}
-        <p>You can continue reviewing the representative invite.</p>
         <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Return to representative invite"
+          }) }} 
+        </div> 
         {% else %}
         {% if data['verify-type'] =="reg-interest"%}
           {% if data['duplicate-org'] == "int" or data['duplicate-org'] == "rep" %}
-            <p>You can continue reviewing the registration of interest.</p>
             <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to registration of interest"
+              }) }} 
+            </div> 
             {% else %}
-            <p>You can continue reviewing the other matching organisations.</p>
             <form action="/caseworker/reg-interest/reginterest-tasks-dup" method="post" id="cancel-invite-form">
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to representative invite"
+              }) }} 
+            </div> 
           {% endif %}
         {% endif %}
       {% endif %}
-
-
-
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue"
-        }) }}    
+  
       </form>
     </div>
   </div>

@@ -275,7 +275,7 @@
     <details class="case-details govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          Organisations marked as not duplicates: 1
+          Organisations marked as not a duplicate: 1
         </span>
       </summary>
       <div class="govuk-details__text">
@@ -341,13 +341,14 @@
         </div>
       </div>
     </details>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     {% if data['merge-duplicates'] =="1of2" or data['merge-duplicates'] =="2of2" %}
       {{ govukWarningText({
         text: "Merging organisations cannot be undone",
         iconFallbackText: "Warning"
       }) }}
     {% endif %}
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
