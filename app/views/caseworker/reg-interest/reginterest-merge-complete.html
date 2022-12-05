@@ -33,7 +33,7 @@ Cancel merge - {{serviceName}}
 
       {% if data['verify-type'] =="rep-invite" %}
         <p>You can continue reviewing the representative invite.</p>
-        <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none&third=party=yes&loa-sufficient=yes" method="post" id="cancel-invite-form">
+        <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
         {% else %}
         {% if data['verify-type'] =="reg-interest"%}
           {% if data['duplicate-org'] == "int" or data['duplicate-org'] == "rep" %}
@@ -50,8 +50,7 @@ Cancel merge - {{serviceName}}
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue",
-          classes: "govuk-button--warning"
+          text: "Continue"
         }) }}    
       </form>
     </div>
