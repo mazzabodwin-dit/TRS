@@ -31,30 +31,7 @@
         </h1>
       {% endif %}
     {% endif %}
-
-    <!-- Dup org warning-->
-    {% if data['duplicate-org'] == "rep" %}
-      <div class="address-card">
-        <div class="address-container">
-          <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <p class="govuk-warning-text__text">
-              <strong>
-                <span class="govuk-warning-text__assistive">Warning</span>
-                The organisation in this representative invite matches other organisation(s) in our records.
-              </strong>
-            </p>
-            <p class="govuk-warning-text__text-p">You need to check if they are duplicates before you can review this representative invite.</p>
-            <p class="govuk-warning-text__text-p">
-              <button class="govuk-button" data-module="govuk-button">
-                Review submisison
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-
+    
     <!--Intro -->
     {% if data['verify-type'] =="reg-interest" %}
       <p>Approval of this request will give the interested party the opportunity to take part in this investigation.</p>

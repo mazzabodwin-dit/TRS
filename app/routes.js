@@ -336,11 +336,11 @@ router.post('/reginterest-merge-rep1-route', function (req, res) {
     // Check whether the variable matches a condition
     if (reginterestmatchingorgsquestion == "yes") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-rep-task=In progress')
     }
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate?merge-rep-task=In progress')
     }
 })
 
@@ -353,11 +353,11 @@ router.post('/reginterest-merge-rep2-route', function (req, res) {
     // Check whether the variable matches a condition
     if (reginterestmatchingorgsquestion == "yes") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-rep-task=In progress')
     }
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate?merge-rep-task=In progress')
     }
 })
 

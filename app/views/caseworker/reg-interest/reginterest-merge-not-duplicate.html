@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">
-        Resolve duplicates
+        Resolve matches
       </span>
 
     <h1 class="govuk-heading-xl">
@@ -105,7 +105,7 @@
               {% endif %}
               {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
                 <td class="govuk-table__cell"> 
-                      {{data['dup-party-country3'] }}
+                      <mark>{{data['dup-party-country3'] }}</mark>
                 </td>
               {% endif %}
             </tr>
@@ -128,7 +128,7 @@
                       {% if (data['dup-party-org-number3'] == null) %}
                           (empty)
                         {% else %}
-                          {{data['dup-party-org-number3'] }}
+                          <mark>{{data['dup-party-org-number3'] }}</mark>
                       {% endif %}
                 </td>
               {% endif %}
@@ -152,7 +152,7 @@
                     {% if (data['dup-party-web3'] == null) %}
                           (empty)
                         {% else %}                      
-                          {{data['dup-party-web3'] }}
+                          <mark>{{data['dup-party-web3'] }}</mark>
                       {% endif %}
                 </td>
               {% endif %}
@@ -180,7 +180,7 @@
                       {% if (data['dup-party-vat3'] == null) %}
                         (empty)
                         {% else %}
-                          {{data['dup-party-vat3'] }}
+                          <mark>{{data['dup-party-vat3'] }}</mark>
                       {% endif %}
                 </td>
               {% endif %}
@@ -251,27 +251,21 @@
      <!--Show a Not duplicate button for representative -->
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
-          text: "Confirm and continue",
-          href: "reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=started"
+          text: "Save and continue",
+          href: "reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=In progress"
         }) }}    
         {% else %}
         {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1b") %}
             {{ govukButton({
-              text: "Confirm and continue",
-              href: "reginterest-merge-rep-complete?merge-rep-task=started"
+              text: "Save and continue",
+              href: "reginterest-merge-rep-confirm"
             }) }}    
           {% else %}
           {% if (data['merge-duplicates'] == "1b") %}
               {{ govukButton({
-                text: "Confirm and continue",
-                href: "reginterest-merge-not-duplicate-confirm?merge-duplicates=0&merge-rep-task=complete"
-              }) }}    
-            {% else %}
-            <!--Or show a button that is for Interested Party only-->
-              {{ govukButton({
-                text: "Confirm and continue",
-                href: "reginterest-merge-not-duplicate-confirm?merge-duplicates=0&merge-task=complete"
-              }) }}    
+                text: "Save and continue",
+                href: "reginterest-merge-int-confirm"
+              }) }}      
           {% endif %}
         {% endif %}
       {% endif %}

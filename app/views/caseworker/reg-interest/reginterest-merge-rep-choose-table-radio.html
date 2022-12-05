@@ -19,23 +19,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">
-      Resolve duplicates
+      Resolve matches
     </span>
      <h1 class="govuk-heading-xl">
       Select the details to keep
     </h1>
     <!--Show a merge button for Representative -->
     {% if (data['merge-duplicates'] == "1of2") %}
-      <form action="reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=started" method="post" id="reginterest-merge-form">
+      <form action="reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=In progress" method="post" id="reginterest-merge-form">
       {% else %}
       {% if (data['merge-duplicates'] == "2of2") %}
-        <form action="reginterest-merge-rep-complete?merge-rep-task=started" method="post" id="reginterest-merge-form">
+        <form action="reginterest-merge-rep-confirm" method="post" id="reginterest-merge-form">
       {% endif %}
     {% endif %}
 
       <table class="govuk-table merge">
         <caption class="govuk-table__caption govuk-visually-hidden"> 
-          Select the information from either the selected organisation or the matching organisation that should be kept after the merge.
+          A table to select the information from the selected organisation or the matching organisation that should be kept after the merge.
         </caption>  
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">

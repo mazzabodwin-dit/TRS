@@ -115,7 +115,7 @@
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
               <td class="govuk-table__cell"> 
-                {{data['dup-party-country3'] }}
+                <mark>{{data['dup-party-country3'] }}</mark>
               </td>
             {% endif %}
           </tr>
@@ -129,7 +129,7 @@
                 {% if (data['dup-party-org-number1'] == null) %}
                     (empty)
                   {% else %}
-                    {{data['dup-party-org-number1'] }}
+                    <mark>{{data['dup-party-org-number1'] }}</mark>
                 {% endif %}
               </td>
             {% endif %}
@@ -138,7 +138,7 @@
                 {% if (data['dup-party-org-number3'] == null) %}
                     (empty)
                   {% else %}
-                    {{data['dup-party-org-number3'] }}
+                    <mark>{{data['dup-party-org-number3'] }}</mark>
                 {% endif %}
               </td>
             {% endif %}
@@ -162,7 +162,7 @@
                 {% if (data['dup-party-web3'] == null) %}
                       (empty)
                     {% else %}                      
-                      {{data['dup-party-web3'] }}
+                      <mark>{{data['dup-party-web3'] }}</mark>
                   {% endif %}
               </td>
             {% endif %}
@@ -190,7 +190,7 @@
                 {% if (data['dup-party-vat3'] == null) %}
                   (empty)
                   {% else %}
-                    {{data['dup-party-vat3'] }}
+                    <mark>{{data['dup-party-vat3'] }}</mark>
                 {% endif %}
               </td>
             {% endif %}
@@ -282,7 +282,7 @@
           {{ govukButton({
             text: "Continue"
           }) }}  
-        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
+        <a class="govuk-link govuk-link--no-visited-state"  href="reginterest-tasks-dup">Save and exit</a>
       </div>
     </div>
   </div>

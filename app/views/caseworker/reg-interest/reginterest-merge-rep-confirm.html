@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">
-      Resolve duplicates
+      Resolve matches
      </span>      
     <h1 class="govuk-heading-xl">
       Confirm organisation's final details
@@ -68,7 +69,7 @@
             </summary>
             <div class="govuk-details__text">
               <ul class="govuk-list">
-                <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified on case" title="Verified on case" width="32px"><span class="govuk-body-s"> 29 July 2021</span></li>
+                <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}} - {{data['case-name6']}}</a> ({{data['rep-role6']}}) <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Accepted on to case icon" title="Accepted on to case" width="28px"><span class="govuk-body-s"> 29 July 2021</span></li>
               </ul>
             </div>
           </details>
@@ -77,12 +78,13 @@
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Cases acting as a representative: 1
+                Cases acting as a representative: 2
               </span>
             </summary>
             <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified on case" title="Verified on case" width="32px"><span class="govuk-body-s"> 21 Jan 2022</span></li>
+                  <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Accepted on to case icon" title="Accepted on to case" width="28px"><span class="govuk-body-s"> 21 Jan 2022</span></li>
+                   <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Accepted on to case icon" title="Accepted on to case" width="28px"><span class="govuk-body-s"> 29 July 2022</span></li>
                 </ul>
             </div>
           </details>
@@ -91,7 +93,7 @@
           <details class="case-details govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Users: 3
+                Users: 4
               </span>
             </summary>
             <div class="govuk-details__text">
@@ -99,6 +101,7 @@
                 <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
                 <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
                 <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
+                <li><a href="#" class="govuk-link--no-visited-state">{{data['dup-user3']}}</a> - {{data['dup-email3']}}</li>
               </ul>
             </div>
           </details>
@@ -237,7 +240,7 @@
               </summary>
               <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/verfied-tick.png" class="verified-check" alt="Verified on case" title="Verified on case" width="32px"><span class="govuk-body-s"> 29 July 2022</span></li>
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Accepted on to case icon" title="Accepted on to case" width="28px"><span class="govuk-body-s"> 29 July 2022</span></li>
                 </ul>
               </div>
             </details>
@@ -263,7 +266,7 @@
 
 
 
-      <form action="reginterest-tasks?merge-rep-task=pending" method="post" id="reginterest-merge-complete-form">
+      
         {{ govukWarningText({
           text: "Merging organisations cannot be undone",
           iconFallbackText: "Warning"
@@ -286,15 +289,11 @@
         </div>
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Complete merge"
+            text: "Merge organisations",
+            href: "reginterest-merge-complete?merge-rep-task=Complete"
           }) }}   
-          {{ govukButton({
-            text: "Save and exit",
-            classes: "govuk-button--secondary"
-          }) }} 
-          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-rep-party">Edit merge</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel merge</a>
         </div>
-      </form>
       
 
     
