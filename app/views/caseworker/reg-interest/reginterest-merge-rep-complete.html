@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Cancel merge - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Matching organisations resolved
+        </h1>
+      </div>
+
+      <p>The duplicate organisations have been merged.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Case are now registered under one organisation</li>
+        <li>Users are now registered under one organisation</li>
+        <li>Lead investigators assigned to the matching cases have been notified</li>
+      </ul>
+
+      <p>The matching organisation(s) have been marked as not being duplicates.</p>
+    
+
+      {% if data['verify-type'] =="rep-invite" %}
+        <p>You can continue reviewing the representative invite.</p>
+        <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
+        {% else %}
+        {% if data['verify-type'] =="reg-interest"%}
+          {% if data['duplicate-org'] == "int" or data['duplicate-org'] == "rep" %}
+            <p>You can continue reviewing the registration of interest.</p>
+            <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
+            {% else %}
+            <p>You can continue reviewing the other matching organisations.</p>
+            <form action="/caseworker/reg-interest/reginterest-tasks-dup" method="post" id="cancel-invite-form">
+          {% endif %}
+        {% endif %}
+      {% endif %}
+
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}    
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}

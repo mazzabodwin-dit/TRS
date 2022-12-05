@@ -23,7 +23,11 @@
     </span>
 
     <h1 class="govuk-heading-xl">
-      Confirm not a duplicate
+      {% if (data['merge-duplicates'] == "1of2") %}
+          Confirm not a duplicate <br>(1 of 2)
+          {% else %}
+          Confirm not a duplicate <br>(2 of 2)
+        {% endif %} 
     </h1>
     <p>Confirm the matching organsation is not a duplicate.
     </p>
@@ -112,7 +116,6 @@
           {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-org-number1'] == null) %}
-                      (empty)
                     {% else %}
                       <mark>{{data['dup-party-org-number1'] }}</mark>
                   {% endif %}
@@ -121,7 +124,6 @@
           {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-org-number3'] == null) %}
-                      (empty)
                     {% else %}
                       <mark>{{data['dup-party-org-number3'] }}</mark>
                   {% endif %}
@@ -136,7 +138,6 @@
           {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-web1'] == null) %}
-                      (empty)
                     {% else %}                      
                       {{data['dup-party-web1'] }}
                   {% endif %}
@@ -145,7 +146,6 @@
           {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
             <td class="govuk-table__cell">
                 {% if (data['dup-party-web3'] == null) %}
-                      (empty)
                     {% else %}                      
                       <mark>{{data['dup-party-web3'] }}</mark>
                   {% endif %}
@@ -156,7 +156,6 @@
           <th scope="row" class="govuk-table__header">VAT number</th>
           <td class="govuk-table__cell">
                 {% if (data['rep-vat1'] == null) %}
-                    (empty)
                   {% else %}
                     {{data['rep-vat1'] }}
                 {% endif %}
@@ -164,7 +163,6 @@
           {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-vat1'] == null) %}
-                    (empty)
                     {% else %}
                       {{data['dup-party-vat1'] }}
                   {% endif %}
@@ -173,7 +171,6 @@
           {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-vat3'] == null) %}
-                    (empty)
                     {% else %}
                       <mark>{{data['dup-party-vat3'] }}</mark>
                   {% endif %}
@@ -184,7 +181,6 @@
           <th scope="row" class="govuk-table__header">EORI number</th>
           <td class="govuk-table__cell">
                 {% if (data['rep-eori1'] == null) %}
-                    (empty)
                     {% else %}
                       {{data['rep-eori1'] }}
                   {% endif %}
@@ -193,7 +189,6 @@
           {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-eori1'] == null) %}
-                    (empty)
                     {% else %}
                       {{data['dup-party-eori1'] }}
                   {% endif %}
@@ -202,7 +197,6 @@
           {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-eori3'] == null) %}
-                    (empty)
                     {% else %}
                       {{data['dup-party-eori3'] }}
                   {% endif %}
@@ -214,7 +208,6 @@
           <td class="govuk-table__cell">
                 {% if (data['rep-duns1'] == null) %}
                   <label class="govuk-label govuk-radios__label" for="duns-rep">
-                    (empty)
                   {% else %}
                     {{data['rep-duns1'] }}
                 {% endif %}
@@ -222,7 +215,6 @@
           {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-duns1'] == null) %}
-                      (empty)
                     {% else %}
                       {{data['dup-party-duns1'] }}
                   {% endif %}
@@ -231,7 +223,6 @@
           {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
             <td class="govuk-table__cell">
                   {% if (data['dup-party-duns3'] == null) %}
-                      (empty)
                     {% else %}
                       {{data['dup-party-duns3'] }}
                   {% endif %}
@@ -245,22 +236,15 @@
      <!--Show a Not duplicate button for representative -->
       {% if (data['merge-duplicates'] == "1of2") %}
         {{ govukButton({
-          text: "Save and continue",
+          text: "Confirm and continue",
           href: "reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=In progress"
         }) }}    
         {% else %}
         {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1b") %}
-            {{ govukButton({
-              text: "Save and continue",
-              href: "reginterest-merge-rep-confirm"
-            }) }}    
-          {% else %}
-          {% if (data['merge-duplicates'] == "1b") %}
-              {{ govukButton({
-                text: "Save and continue",
-                href: "reginterest-merge-int-confirm"
-              }) }}      
-          {% endif %}
+          {{ govukButton({
+            text: "Confirm and continue",
+            href: "reginterest-merge-rep-confirm"
+          }) }}    
         {% endif %}
       {% endif %}
       <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>

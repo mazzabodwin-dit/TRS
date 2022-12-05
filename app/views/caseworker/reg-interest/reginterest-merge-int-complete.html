@@ -16,20 +16,14 @@ Cancel merge - {{serviceName}}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-       <div class="govuk-panel govuk-panel--confirmation">
-          <h1 class="govuk-panel__title">
-            Merge complete
-          </h1>
-        </div>
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Matching organisations resolved
+        </h1>
+      </div>
 
-      <p>The matching organisations have been merged.</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Case are now registered under one organisation</li>
-        <li>Users are now registered under one organisation</li>
-        <li>Lead investigators assigned to the matching cases have been notified</li>
-      </ul>
-
-
+      <p>The organisation(s) have been marked as not being duplicates.</p>
+    
 
       {% if data['verify-type'] =="rep-invite" %}
         <p>You can continue reviewing the representative invite.</p>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Choose data – {{serviceName}}
+  Confirm not duplicate – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -11,26 +11,24 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
-<form action="/reginterest-merge-int-route" method="post" id="reginterest-merge-form">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">
-        Resolve matches
-      </span>
-      <h1 class="govuk-heading-xl">
-        Check matching organisation
-      </h1>
-    </div>
-  </div>
 
-  
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <table class="govuk-table merge">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">
+      Resolve matches
+    </span>
+
+    <h1 class="govuk-heading-xl">
+      Confirm not a duplicate
+    </h1>
+    <p>Confirm the matching organsation is not a duplicate.
+    </p>
+
+    <table class="govuk-table merge">
         <caption class="govuk-table__caption">
           <span class="govuk-visually-hidden">A table showing the selected organisation and the matching organisation</span>
         </caption>    
@@ -138,10 +136,9 @@
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">DUNS number</th>
             <td class="govuk-table__cell">
-              {% if (data['party-duns1'] == null) %}
-                  
+              {% if (data['party-duns1'] == null) %}  
                 {% else %}
-                  {{data['party-duns1'] }}
+                {{data['party-duns1'] }}
               {% endif %}
             </td>
             <td class="govuk-table__cell">
@@ -154,37 +151,18 @@
         </tbody>
       </table> 
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "reginterest-matching-orgs-question",
-        fieldset: {
-          legend: {
-            text: "Is the matching organisation a duplicate?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        }, 
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}  
+    
 
-      <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Continue"
-          }) }}  
-        <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
-      </div>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Confirm and continue",
+        href: "reginterest-merge-int-confirm" 
+      }) }}      
+
+      <a class="govuk-link" govuk-link--no-visited-state href="javascript: history.back()">Back</a>
     </div>
   </div>
-</form>
+</div>
 
 {% endblock %}
 {% block footer %}

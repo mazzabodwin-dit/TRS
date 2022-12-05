@@ -126,7 +126,8 @@
                 <span class="govuk-visually-hidden--desktop td-header">Matches: </span>1
               </td>  
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['merge-int-task']}}
+                <span class="govuk-visually-hidden--desktop td-header">Status: </span>
+                  {{data['merge-int-task'] or "Not started"}}
               </td>  
               <td class="govuk-table__cell action">
                 <a href="reginterest-merge-int-review?merge-duplicates=1b" class="govuk-link govuk-link--no-visited-state">Review matches<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
@@ -141,7 +142,8 @@
               <span class="govuk-visually-hidden--desktop td-header">Matches: </span>2
             </td>  
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['merge-rep-task']}}
+              <span class="govuk-visually-hidden--desktop td-header">Status: </span>
+              {{data['merge-rep-task'] or "Not started" }}
             </td>  
             <td class="govuk-table__cell action">
               <a href="reginterest-merge-rep-review?merge-duplicates=1of2" class="govuk-link govuk-link--no-visited-state">Review matches<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
