@@ -41,15 +41,19 @@
               <span id="date"></span></p>
               {% else %}
               {% if data['invite-rep-task'] == "Sent" %}
-                <p>Invite sent<br>
+                <p>Invite sent<br>Awaiting invitee acceptance<br>
                 <span id="date"></span></p>
                 {% else %}
                 {% if data['invite-rep-task'] == "Accepted" %}
-                  <p>Invite accepted <br>Awating TRA approval<br>
+                  <p>Invite accepted <br>Awaiting TRA approval<br>
                   <span id="date"></span></p>
                   {% else %}
                   {% if data['invite-rep-task'] == "Approved" %}
-                    <p>Invite approved by the TRA <br>
+                    <p>Invite approved<br>Approved by the TRA <br>
+                    <span id="date"></span></p>
+                  {% endif %}
+                  {% if data['invite-rep-task'] == "Rejected" %}
+                    <p>Invite rejected by the TRA <br>
                     <span id="date"></span></p>
                   {% endif %}
                 {% endif %}
@@ -60,15 +64,16 @@
 
           {% if data['invite-rep-task'] == "all" %}
             <p>Draft<br><br>
-              <p>Invite sent<br>Awating invitee acceptance<br><br>
-                <p>Invite accepted <br>Awating TRA approval<br><br>
-                  <p>Invite accepted <br>Approved by the TRA <br><br>
-                    <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
-                  </p>
-                  {{ govukButton({
-                    text: "Review documentation",
-                    href: "tasklist/invite-rep-tasks"
-                  }) }}  
+            <p>Invite sent<br>Awaiting invitee acceptance<br></p>
+            <p>Invite accepted <br>Awaiting TRA approval<br></p>
+            <p>Invite approved <br>Approved by the TRA <br></p>
+            <p>Invite rejected <br>Invite rejected by the TRA <br></p>
+            <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+            </p>
+            {{ govukButton({
+              text: "Review documentation",
+              href: "tasklist/invite-rep-tasks"
+            }) }}  
             <p><span id="date"></span></p>
           {% endif %}
         </dd>
