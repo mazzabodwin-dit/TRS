@@ -350,7 +350,8 @@
     {% endif %}
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    {% if data['merge-duplicates'] =="1of2" or data['merge-duplicates'] =="2of2" %}
+     {% if data['reginterest-matching-orgs-question'] =="no" and data['merge-duplicates'] =="1b" %}
+      {% else %}
       {{ govukWarningText({
         text: "Merging organisations cannot be undone",
         iconFallbackText: "Warning"
