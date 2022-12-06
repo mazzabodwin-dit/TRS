@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dashboard - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+
+{% if data ['tasklist-type'] =="reg-interest"%}
+  <a href="/public-site/dashboard-deficient-case"></href><img src="/public/images/deficient-invite.jpg"></a>
+  {% else %}
+  <a href="/public-site/manage-org/invite-app-details"></href><img src="/public/images/deficient-invite.jpg"></a>
+{% endif %}
+
+
+{% endblock %}
+
+{% block content %}
+
+   
+{% endblock %}
