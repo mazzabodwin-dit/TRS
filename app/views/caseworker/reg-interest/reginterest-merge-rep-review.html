@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Duplicate representative – {{serviceName}}
+  Review organisations – {{serviceName}}
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -31,7 +31,11 @@
     <h1 class="govuk-heading-xl">
       Review matches
     </h1>
-    <p>We have found 2 matching organisations you need to review.</p>
+    {% if data['merge-duplicates'] == "1c" %}
+      <p>We have found 1 matching organisation you need to review.</p>
+      {% else %}
+      <p>We have found 2 matching organisations you need to review.</p>
+    {% endif %}
   </div>
 </div>
 <div class="govuk-grid-row">
