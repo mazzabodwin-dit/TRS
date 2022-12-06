@@ -36,7 +36,7 @@
             {{ govukButton({
               text: "Review documentation",
               href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-            }) }}  <br>
+            }) }}  
             <span id="date"></span></p>
             {% else %}
              {% if data['reginterest-task'] == "Draft" %}
@@ -44,21 +44,26 @@
               <span id="date"></span></p>
               {% else %}
               {% if data['reginterest-task'] == "Sent" %}
-                <p>Invite sent<br>
+                <p>Submitted<br>Awaiting TRA approval<br>
                 <span id="date"></span></p>
                 {% else %}
+                {% if data['reginterest-task'] == "Rejected" %}
+                  <p>Rejected<br>Registration of interest was rejected by the TRA<br>
+                  <span id="date"></span></p>
+                {% endif %}
               {% endif %}
             {% endif %}
           {% endif %}
 
           {% if data['reginterest-task'] == "all" %}
             <p>Draft<br><br>
-              <p>Submitted<br>Awating TRA approval<br><br>
-                  <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
-                  {{ govukButton({
-                    text: "Review documentation",
-                    href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-                  }) }}  
+            <p>Submitted<br>Awaiting TRA approval<br><br>
+            <p>Rejected<br>Registration of interest was rejected by the TRA<br><br>
+                <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+                {{ govukButton({
+                  text: "Review documentation",
+                  href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
+                }) }}  
             <p><span id="date"></span></p>
           {% endif %}
             
@@ -70,11 +75,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <p><a href="">
-            {% if (data['regnterest-due-date'] == "current") %}
-              {{data ['case-ref1']}} - {{data ['case-name1']}}
-              {% else %}
-                {{data['case-ref']}} - {{data['case-name']}}
-            {% endif %}</a><br>
+            {{data ['case-ref1']}} - {{data ['case-name1']}}</a>
           </p>
         </dd>
       </div>
