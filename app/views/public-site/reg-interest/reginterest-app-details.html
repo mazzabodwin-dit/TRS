@@ -32,12 +32,12 @@
         <dd class="govuk-summary-list__value">
           
           {% if data['reginterest-task'] == "deficient" %}
-            <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+            <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong></p>
             {{ govukButton({
               text: "Review documentation",
               href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-            }) }}  
-            <span id="date"></span></p>
+            }) }} 
+            <p><span id="date"></span></p>
             {% else %}
              {% if data['reginterest-task'] == "Draft" %}
               <p>Draft<br>
@@ -58,12 +58,12 @@
           {% if data['reginterest-task'] == "all" %}
             <p>Draft<br></p>
             <p>Submitted<br>Awaiting TRA approval<br></p>
-            <p>Rejected<br>Registration of interest was rejected by the TRA<br></p>
-                <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
+            <p>Rejected<br>Registration of interest was rejected by the TRA<br><br></p>
+                <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong></p>
                 {{ govukButton({
                   text: "Review documentation",
                   href: "reginterest-tasks?tasklist-type=reg-interest&regcase-task=complete"
-                }) }}  
+                }) }}  </p>
             <p><span id="date"></span></p>
           {% endif %}
             
@@ -74,7 +74,7 @@
           Case details
         </dt>
         <dd class="govuk-summary-list__value">
-          <p><a href="">
+          <p><a href="" class="govuk-link--no-visited-state">
             {{data ['case-ref1']}} - {{data ['case-name1']}}</a>
           </p>
         </dd>
@@ -173,8 +173,8 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <!--if it is a complete app show doc details-->
-            {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" %}
-              <a href="">loa.docx</a>
+            {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" or data['reginterest-task'] =="all" %}
+              loa.docx
             {% endif %}
           </dd>
         </div>
@@ -185,9 +185,9 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <!--if it is a complete app show doc details-->
-          {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" %}
-            <a href="">confidentialdocument1.docx</a><br>
-            <a href="">unconfidentialdocument1.docx</a>
+          {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" or data['reginterest-task'] =="all" %}
+           confidentialdocument1.docx<br>
+           unconfidentialdocument1.docx
           {% endif %}
         </dd>
       </div>   
