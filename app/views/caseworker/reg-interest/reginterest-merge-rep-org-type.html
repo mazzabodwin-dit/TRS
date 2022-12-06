@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Choose data – {{serviceName}}
+{% endblock %}
+
+{% set bodyClasses = 'caseworker-width' %}
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<form action="reginterest-merge-rep-check" method="post" id="reginterest-merge-form">
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+        Review matching organisations
+      </span>
+      <h1 class="govuk-heading-xl">
+          Select organisation type
+        </h1>
+        <p>The matching organisations are registered as different types on the following case:<br>{{data['case-ref5']}} - {{data['case-name5']}}</p>
+
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "reginterest-matching-orgs-question",
+        fieldset: {
+          legend: {
+            text: "Select the correct organisation type",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        }, 
+        items: [
+          {
+            value: "Producer",
+            text: "Producer"
+          },
+          {
+            value: "Exporter",
+            text: "Exporter"
+          }
+        ]
+      }) }}  
+
+      <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}  
+        <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
+
+
