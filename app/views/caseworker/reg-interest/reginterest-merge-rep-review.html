@@ -18,18 +18,9 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">  
-    <span class="govuk-caption-xl">
-      {% if data['verify-type'] =="reg-interest" %}
-        Registration of interest
-        {% else %}
-        {% if data['verify-type'] =="rep-invite" %}
-          Representative invite
-        {% endif %}
-      {% endif %}
-    </span>
+  <div class="govuk-grid-column-full">  
     <h1 class="govuk-heading-xl">
-      Review matches
+      Review matching organisations
     </h1>
     {% if data['merge-duplicates'] == "1c" %}
       <p>We have found 1 matching organisation you need to review.</p>
