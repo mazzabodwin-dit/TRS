@@ -113,8 +113,8 @@ module.exports = {
   "rep-org-number1": "765238953", 
   "rep-web1": "www.BlueSteelPartners.com", 
   "rep-vat1": "223456789", 
-  "rep-eori1": "GB205672212000",
-  "rep-duns1": "150483782",
+  "rep-eori1": null,
+  "rep-duns1": null,
 
   "dup-party3": "Bluesteel",
   "dup-party-address3": "243 Cupboard Lane, Leeds",
@@ -123,12 +123,11 @@ module.exports = {
   "dup-party-org-number3": "765238953",
   "dup-party-web3": "bluesteelpartners.com", 
   "dup-party-vat3": "223456789", 
-  "dup-party-eori3": null,
+  "dup-party-eori3": "GB205672212000",
   "dup-party-duns3": null,
   "dup-user3": "Jonty Bodwin",
   "dup-email3": "jonty.bodwin@BlueSteelPartners.com",
 
-  
 
   //KEY USER - who-signin=rep-invite
   //"representative1": "BlueSteel Partners",

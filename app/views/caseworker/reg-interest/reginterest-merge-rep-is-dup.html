@@ -88,50 +88,29 @@
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Address</th>
             <td class="govuk-table__cell">
-              {{data['rep-address1'] }}
+              {% if data['merge-duplicates'] == "2of2" %}
+                {{data['dup-party-address3'] }}<br>
+                {{data['dup-party-postcode3'] }}<br>
+                {{data['dup-party-country3'] }}
+                {% else %}
+                {{data['rep-address1'] }}<br>
+                {{data['rep-postcode1'] }}<br>
+                {{data['rep-country1'] }}
+              {% endif %}
             </td>
-            {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
-                {{data['dup-party-address1'] }}
-              </td>
-            {% endif %}
-            {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
-                {{data['dup-party-address3'] }}
-              </td>
-            {% endif %}
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Postcode/ zip</th>
             <td class="govuk-table__cell">
-              {{data['rep-postcode1'] }}
-            </td>
-            {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
-                {{data['dup-party-postcode1'] }}
-              </td>
-            {% endif %}
-            {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
-                {{data['dup-party-postcode3'] }}
-              </td>
-            {% endif %}
-          </tr>
-          <tr class="govuk-table__row no-border">
-            <th scope="row" class="govuk-table__header">Country</th>
-            <td class="govuk-table__cell">
-              {{data['rep-country1'] }}
-            </td>
-            {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
+                {{data['dup-party-address1'] }}<br>
+                {{data['dup-party-postcode1'] }}<br>
                 {{data['dup-party-country1'] }}
-              </td>
-            {% endif %}
-            {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell"> 
-                <mark>{{data['dup-party-country3'] }}</mark>
-              </td>
-            {% endif %}
+                {% else %}
+                {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
+                  {{data['dup-party-address3'] }}<br>
+                  {{data['dup-party-postcode3'] }}<br>
+                  {{data['dup-party-country3'] }}
+                {% endif %}
+              {% endif %}
+            </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Reg number</th>
