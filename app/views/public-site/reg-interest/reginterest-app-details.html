@@ -31,7 +31,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           
-          {% if data['reginterest-task'] == "deficient" %}
+          {% if data['reginterest-task'] == "Deficient" %}
             <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong></p>
             {{ govukButton({
               text: "Review documentation",
@@ -48,7 +48,7 @@
                 <span id="date"></span></p>
                 {% else %}
                 {% if data['reginterest-task'] == "Rejected" %}
-                  <p>Rejected<br>Registration of interest was rejected by the TRA<br>
+                  <p>Rejected<br>The TRA rejected your registration of interest<br>
                   <span id="date"></span></p>
                 {% endif %}
               {% endif %}
@@ -173,7 +173,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <!--if it is a complete app show doc details-->
-            {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" or data['reginterest-task'] =="all" %}
+            {% if data['reginterest-task'] != "Draft" %}
               loa.docx
             {% endif %}
           </dd>
@@ -185,7 +185,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           <!--if it is a complete app show doc details-->
-          {% if data['reginterest-task'] == "Submitted" or data['reginterest-task'] =="deficient" or data['reginterest-task'] =="all" %}
+          {% if data['reginterest-task'] != "Draft" %}
            confidentialdocument1.docx<br>
            unconfidentialdocument1.docx
           {% endif %}

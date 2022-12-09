@@ -62,7 +62,7 @@
           {% endif %}
 
 
-          {% if data['invite-rep-task'] == "all" %}
+          {% if data['invite-rep-task'] == "All" %}
             <p>Draft<br><br>
             <p>Invite sent<br>Awaiting invitee acceptance<br></p>
             <p>Invite accepted <br>Awaiting TRA approval<br></p>
@@ -125,14 +125,20 @@
 
    
       <div class="govuk-button-group">
-        {% if data['invite-rep-task'] == "Draft" %}
+        {% if data['invite-rep-task'] == "Draft" or data['invite-rep-task'] == "All" %}
           {{ govukButton({
             text: "Continue application",
             href: "tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
           }) }}  
-        {% endif %} 
-        {% if data['invite-rep-task'] == "Sent" or data['invite-rep-task'] == "Draft"  %} 
           <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
+        {% endif %} 
+      </div>
+      <div class="govuk-button-group">
+        {% if data['invite-rep-task'] == "Sent" or data['invite-rep-task'] == "All" %}
+          {{ govukButton({
+            text: "Cancel invite",
+            href: "invite-user-cancel"
+          }) }}  
         {% endif %} 
       </div>
     
