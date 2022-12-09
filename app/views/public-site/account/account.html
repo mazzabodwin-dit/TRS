@@ -30,7 +30,11 @@
       <h1 class="govuk-heading-xl">
         Manage my account
       </h1>
-      <h2 class="govuk-heading-m">Your details</h2>
+      <h2 class="govuk-heading-m">Your details
+        <p class="right-aligned-link">
+        <a href="account-details" class="govuk-link--no-visited-state govuk-heading-s">Edit your details</a>
+      </p>
+      </h2>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -92,17 +96,23 @@
             Account permission
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if (data['user-permissions'] == "User") or (data['user-permissions'] == "Admin user")  %}
-              {{data['user-permissions']}}
+            {% if data['user-permissions'] == "Admin user"  %}
+              Admin user
                 {% else %}
-                  Admin
+                  User
             {% endif %}
 
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Your organisation</h2>
+      <h2 class="govuk-heading-m">Your organisation
+        {% if data['user-permissions'] == "Admin user" %}
+        <p class="right-aligned-link">
+          <a href="account-org" class="govuk-link--no-visited-state govuk-heading-s">Edit your organisation</a>
+        </p>
+        {% endif %}
+      </h2>
       <dl class="govuk-summary-list">
 
         <div class="govuk-summary-list__row">
@@ -191,12 +201,9 @@
 
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">Update sign in details</h2>
+        <h2 class="govuk-heading-m" id="subsection-title">Change sign in details</h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a class="govuk-link--no-visited-state" href="account-details">Change your account details</a>
-            </li> 
             <li>
               <a class="govuk-link--no-visited-state" href="account-2fa">Change your Two-factor authentication</a>
             </li>  

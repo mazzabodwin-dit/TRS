@@ -102,7 +102,7 @@ module.exports = {
   "rep-role1": "Representative",
   "rep-user1": "Bob Hoskins",
   "rep-email1": "bobhoskins@BlueSteelPartners.com",
-  "rep-user-role1": "Admin",
+  "rep-user-role1": "Admin user",
   "rep-mobile1": "+44 7854329445",
   "rep-mobile-national1": "07854329445",
   "rep-submission1": "Registration of Interest received",

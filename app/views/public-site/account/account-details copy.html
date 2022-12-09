@@ -151,6 +151,120 @@
             {% endcall %}
 
             {% else %}
+            <!--Determine who is signed in Invited Rep - regular user-->
+            {% if (data['who-signin'] == "rep-invite") %}
+              {{ govukInput({
+                label: {
+                  text: "Your name",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "invite-user-name",
+                name: "invite-user-name",
+                type: "text",
+                autocomplete: "name",
+                value: data['invite-rep-name'] or data['rep-user3']
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Your email address",
+                  classes: "govuk-label--s"
+                },
+              
+                id: "invite-user-email",
+                name: "invite-user-email",
+                classes: "govuk-input--width-20 govuk-input--readonly",
+                type: "email",
+                autocomplete: "email",
+                attributes: {
+                  "readonly": true
+                },
+                value: data['invite-rep-email'] or data['rep-email3']
+              }) }}
+
+              {% call govukFieldset({
+                  legend: {
+                    text: "Your mobile number",
+                    classes: "govuk-fieldset__legend--s",
+                    isPageHeading: true
+                  }
+                }) %}
+
+                {% include "includes/country-code-list.html" %}    
+
+                {{ govukInput({
+                  id: "2FA-mobile",
+                  name: "2FA-mobile",
+                  type: "tel",
+                  autocomplete: "tel",
+                  classes: "govuk-!-width-one-third",
+                  label: {
+                    text: "Mobile number"
+                  },
+                  value: data['invite-rep-mobile'] or '07821945085'
+                }) }}
+              {% endcall %}             
+
+              {% else %}
+              <!--Determine who is signed in Invited Int party - regular user-->
+              {% if (data['who-signin'] == "org-invite") %}
+                {{ govukInput({
+                  label: {
+                    text: "Your name",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "invite-user-name",
+                  name: "invite-user-name",
+                  type: "text",
+                  autocomplete: "name",
+                  value: data['invite-user-name'] or data['party-user11']
+                }) }}
+
+                {{ govukInput({
+                  label: {
+                    text: "Your email address",
+                    classes: "govuk-label--s"
+                  },
+                  id: "invite-user-email",
+                  name: "invite-user-email",
+                  classes: "govuk-input--width-20 govuk-input--readonly",
+                  type: "email",
+                  autocomplete: "email",
+                  attributes: {
+                    "readonly": true
+                  },
+                  value: data['invite-user-email'] or data['party-email11']
+                }) }}
+
+                {% call govukFieldset({
+                    legend: {
+                      text: "Your mobile number",
+                      classes: "govuk-fieldset__legend--s",
+                      isPageHeading: true
+                    }
+                  }) %}
+
+                  {% include "includes/country-code-list.html" %}    
+
+                  {{ govukInput({
+                    id: "2FA-mobile",
+                    name: "2FA-mobile",
+                    type: "tel",
+                    autocomplete: "tel",
+                    classes: "govuk-!-width-one-third",
+                    label: {
+                      text: "Mobile number"
+                    },
+                    value: data['invite-user-mobile'] or '07821945085'
+                  }) }}
+                {% endcall %} 
+
+              {% endif %}
+            {% endif %}
           {% endif %}
         {% endif %}
   

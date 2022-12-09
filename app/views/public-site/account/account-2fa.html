@@ -40,25 +40,10 @@
         </h1>
 
         <p>When you sign in, we will send you a code as part of our two-factor authentication. This helps ensure that your account is kept safe and secure.</p>
-
-   
         
         {% set mobileHtml %} 
-
-          {% include "includes/country-code-list.html" %}    
-
-            {{ govukInput({
-              id: "2FA-mobile",
-              name: "2FA-mobile",
-              type: "tel",
-              autocomplete: "tel",
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "Enter your mobile number"
-              },
-              value: data['createaccount-mobile' ] or '07821945085'
-            }) }}
-          
+          Moble number: 
+          <strong>+447821945085</strong> 
         {% endset -%}
 
         {% set emailText %}
@@ -96,16 +81,12 @@
           items: [
           {
             value: "mobile",
-            text: "Mobile",
-            checked: false,
-            conditional: {
-              html: mobileHtml
-            }
+            html: mobileHtml
           },
           {
-              value: "email",
-              html: emailText
-            }
+            value: "email",
+            html: emailText
+          }
           ]
         }) }}
         
