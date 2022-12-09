@@ -103,13 +103,18 @@
 
             {% if (data['who-signin'] == "org") or (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
               <p>
-                <a href="" class="govuk-link govuk-link--no-visited-state">
                 {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}</a><br>         
                 Interested party: {{ data['party1']}}   
                 <br>
-                Status: Questionnaires sent (14 May 2022)
+                 <a href="" class="govuk-link govuk-link--no-visited-state">Status: Questionnaires sent</a> (14 May 2022)
               </p>
             {% endif %}
+            <p>
+              {{data ['invite-rep-what-case'] or "AS0003 - Nokias from Nicaragua"}}<br>  
+              Interested party: {{data['party1']}} <br>
+              <a href="dashboard-deficient-case?reginterest-task=Deficient" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
+              Dec 2022)
+            </p> 
           </div>
         </div>
             
@@ -127,9 +132,7 @@
                 </p>
               </h2>
               <p>
-                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
                 {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>
-
                 <!-- Show the reg of interest according to who has signed in: Org-->
                 {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
 
@@ -164,8 +167,32 @@
                     {% endif %}
                   {% endif %}
                 {% endif %}<br>
-                  
-                Status: {{data ['reginterest-task']}} (<span id="date2"></span>)
+                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state"> 
+                Status: {{data ['reginterest-task']}}</a> (<span id="date2"></span>)
+              </p>
+              <p>
+                {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                Interested party: {{data['party1']}} <br>
+                <a href="reg-interest/reginterest-app-details?reginterest-task=Draft&reginterest-what-org=new-org" class="govuk-link--no-visited-state">Status: Draft</a> (22 
+                Dec 2022)
+              </p>
+              <p>
+                {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                Interested party: {{data['party1']}} <br>
+                <a href="reg-interest/reginterest-app-details?reginterest-task=Sent&reginterest-what-org=new-org" class="govuk-link--no-visited-state">Status: Submitted</a> (22 
+                Dec 2022)
+              </p>
+              <p>
+                {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                Interested party: {{data['party1']}} <br>
+                <a href="reg-interest/reginterest-app-details?reginterest-task=Deficient&reginterest-what-org=new-org" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
+                Dec 2022)
+              </p>
+              <p>
+                {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                Interested party: {{data['party1']}} <br>
+                <a href="reg-interest/reginterest-app-details?reginterest-task=Rejected&reginterest-what-org=new-org" class="govuk-link--no-visited-state">Status: Rejected</a> (22 
+                Dec 2022)
               </p>
             </div>
           </div>
@@ -175,55 +202,47 @@
         <!-- Representative invites -->
         <!--This is only shown to orgs that have invited a rep to represent them-->
         {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-          {% if (data['invite-rep-task'] == "Draft") or (data['invite-rep-task'] == "Sent") %}
+          {% if (data['invite-rep-task'] != "Complete") %}
             <div class="address-card">
               <div class="address-container">
                 <h2 class="govuk-heading-m">
-                  Representative invites
+                  Representative invite
                   <p class="right-aligned-link">
                     <a href="/public-site/manage-org/manage-org#manage-team" class="govuk-link--no-visited-state">Manage team</a>
                   </p> 
                 </h2>
                 <p>
-                  <!-- Show new or existing org name-->   
-                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=existing-org#manage-team" class="govuk-link--no-visited-state"></a>
-                  {% if data['invite-rep-what-org'] == "existing-org" %}</a>
+                  <!--Status-->   
+                  {{ data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
+                  {% if data['invite-rep-what-org'] == "existing-org" %}
                     {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>                   
                     {% else %}
-
-                    {% if data['invite-rep-what-org'] == "new-org" %}
-                      <a href="/public-site/manage-org/manage-org?show-invite-rep=yes&invite-rep-what-org=new-org#manage-team" class="govuk-link--no-visited-state">{{ data['invite-rep-name'] or data['rep-user2'] }}</a> <br> 
-                      {{data['invite-rep-org-name'] or data['representative2'] }}<br>
-                    {% endif %}
+                     {{ data['invite-rep-name'] or data['rep-user2'] }} - 
+                     {{data['invite-rep-org-name'] or data['representative2'] }}<br>
                   {% endif %}
-                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Draft" class="govuk-link--no-visited-state">Status: {{data['invite-rep-task']}}</a> (<span id="date3"></span>)
+                  <a href="/public-site/manage-org/invite/invite-app-details" class="govuk-link--no-visited-state">Status: {{data['invite-rep-task']}}</a> (<span id="date3"></span>)
                 </p>
                 <p>
-                  <!-- Show new or existing org name-->   
                   {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
                   {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Sent" class="govuk-link--no-visited-state">Status: Sent</a> (22 Dec 2022)
+                  <a href="/public-site/manage-org/invite/invite-app-details?invite-rep-task=Sent" class="govuk-link--no-visited-state">Status: Sent</a> (22 Dec 2022)
                 </p>
                 <p>
-                  <!-- Show new or existing org name-->   
                   {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
                   {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Accepted" class="govuk-link--no-visited-state">Status: Invite accepted</a> (22 
+                  <a href="/public-site/manage-org/invite/invite-app-details?invite-rep-task=Accepted" class="govuk-link--no-visited-state">Status: Invite accepted</a> (22 
                   Dec 2022)
                 </p>
                 <p>
-                  <!-- Show new or existing org name-->   
                   {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
                   {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=Approved" class="govuk-link--no-visited-state">Status: Invite approved</a> (22 
+                  <a href="/public-site/manage-org/invite/invite-app-details?invite-rep-task=Approved" class="govuk-link--no-visited-state">Status: Invite approved</a> (22 
                   Dec 2022)
                 </p>
                 <p>
-                  <!-- Show new or existing org name-->   
                   {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
                   {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite-app-details?invite-rep-task=deficient" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
+                  <a href="/public-site/manage-org/invite/invite-app-details?invite-rep-task=deficient" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
                   Dec 2022)
                 </p>
               </div>
