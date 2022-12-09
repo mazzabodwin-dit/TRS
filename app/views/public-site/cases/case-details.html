@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Activate your account - {{serviceName}}
+  {{data['case-ref']}} - {{data['case-name']}} - {{serviceName}}
 {% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'cases-invest' %}
 
 {% block header %}
   {% include "includes/header-public.html" %}

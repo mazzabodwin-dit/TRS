@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage cases – {{serviceName}}
+{% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'cases-nav' %}
+
+
+{% block header %}
+  {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Manage cases
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Manage cases
+    </h1>
+
+    {% set manageCasesHTML %}
+      <h2 class="govuk-heading-m">My cases
+        <p class="right-aligned-link govuk-heading-s">
+          <a href="/public-site/reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state">Register interest in case</a>
+        </p>
+      </h2>
+      <p>Manage the cases your organisation is involved in.</p>
+      <form>
+        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+          <div class="govuk-form-group table-sort-select">
+            <label class="govuk-label govuk-!-display-inline" for="sort-cases">
+              Sort cases by
+            </label>
+            <select class="govuk-select" id="sort-cases" name="sort-cases">
+              <option value="Case No." selected>Case No.</option>
+              <option value="Case">Case</option>
+              <option value="Status">Status</option>
+              <option value="Case stage">Case stage</option>
+              <option value="Update">Update</option>
+            </select>
+
+            <label class="govuk-label govuk-visually-hidden" for="direction-cases">
+              Direction
+            </label>
+            <select class="govuk-select" id="direction-cases" name="direction-cases">
+              <option value="Decending" selected>Decending</option>
+              <option value="Accending">Accending</option>
+            </select>
+
+            {{ govukButton({
+              text: "Sort cases",
+              classes: "govuk-button--secondary"
+            }) }}
+          </div>
+        </div>
+      </form>
+
+      <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your organisation's case</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" aria-sort="ascending">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case stage
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header" data-sortby="date">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Update 
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['party-status1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case stage: </span>{{data['status1']}}
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Update: </span>{{data['updated1']}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['party-status5']}}
+            </td>     
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case stage: </span>{{data['status5']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Update: </span>{{data['updated5']}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Status: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-status6']}}</a>
+            </td>    
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case stage: </span>{{data['status6']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Update: </span>{{data['updated6']}}
+            </td>
+          </tr>
+          
+        </body>
+      </table>  
+      
+    {% endset %}
+    
+    
+    {{ govukTabs ({
+      items: [
+      
+      { 
+        label: "Manage cases",
+        id: "manage-cases",
+        panel: {
+          html: manageCasesHTML
+        }
+      }
+      ]
+    }) }}
+    
+  </div>
+
+</div>
+
+
+{% endblock %}
+{% block footer %}
+{%include "includes/footer.html" %}
+{% endblock %}
