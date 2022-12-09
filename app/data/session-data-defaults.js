@@ -291,7 +291,7 @@ module.exports = {
   //"rep-user6": "Arnie Swarts",
  // "rep-email6": "arnieswarts@BlueSteelPartners.com",
   "rep-status6": "Deficiency notice issued",
-  "rep-user-role6": "Regular",
+  "rep-user-role6": "User",
   "rep-role6": "Contributor",
 
 

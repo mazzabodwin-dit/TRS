@@ -184,7 +184,7 @@ router.post('/invite-type-route', function (req, res) {
     // Check whether the variable matches a condition
     if (regType == "invite-own-org") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/invite-user-details')
+        res.redirect('/public-site/manage-org/invite/invite-user-details')
     }
     if (regType == "invite-rep") {
         // Send user to next page
@@ -201,7 +201,7 @@ router.post('/invite-type-no-case-route', function (req, res) {
     // Check whether the variable matches a condition
     if (regType == "invite-own-org") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/invite-user-details')
+        res.redirect('/public-site/manage-org/invite/invite-user-details')
     }
     if (regType == "invite-rep") {
         // Send user to next page
