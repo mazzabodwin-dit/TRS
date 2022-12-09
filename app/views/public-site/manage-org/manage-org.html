@@ -5,7 +5,7 @@
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
-{% set bodyClasses = 'org-nav' %}
+{% set bodyClasses = 'cases-nav' %}
 
 
 {% block header %}
@@ -383,6 +383,41 @@
             {% endif %}
           {% endif %}
         {% endif %}
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep-details-invite-sent" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3'] }}
+          </td>
+          <td class="govuk-table__cell field-italics">
+            <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span> Draft
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
+          </td>
+          <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-app-details?invite-rep-task=Draft" class="govuk-link--no-visited-state">View details</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep-details-invite-sent" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3'] }}
+          </td>
+          <td class="govuk-table__cell field-italics">
+            <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Sent
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-app-details?invite-rep-task=Sent" class="govuk-link--no-visited-state">View details</a>
+          </td>
+        </tr>
       </body>
     </table>
 
