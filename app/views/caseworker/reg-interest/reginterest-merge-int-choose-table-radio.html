@@ -23,12 +23,12 @@
     </span>
     <h1 class="govuk-heading-xl">
       {% if (data['merge-duplicates'] == "1c") %}
-        Select the details to keep
+        Select details to keep when the records are merged
         {% else %}
         {% if (data['merge-duplicates'] == "1of2") %}
-          Select the details to keep <br>(1 of 2)
+          Select details to keep when the records are merged (1 of 2)
           {% else %}
-          Select the details to keep <br>(2 of 2)
+          Select details to keep when the records are merged (2 of 2)
         {% endif %} 
       {% endif %} 
     </h1>

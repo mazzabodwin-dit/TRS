@@ -23,16 +23,15 @@
     </span>
     <h1 class="govuk-heading-xl">
       {% if (data['merge-duplicates'] == "1c") %}
-        Select the details to keep
+        Select details to keep when the records are merged
         {% else %}
         {% if (data['merge-duplicates'] == "1of2") %}
-          Select the details to keep <br>(1 of 2)
+          Select details to keep when the records are merged (1 of 2)
           {% else %}
-          Select the details to keep <br>(2 of 2)
+          Select details to keep when the records are merged (2 of 2)
         {% endif %} 
       {% endif %} 
     </h1>
-    <p>Select the information that should be kept when these two organisations are merged.</p>
     <!--Show a merge button for Representative -->
     {% if (data['merge-duplicates'] == "1of2") %}
       <form action="reginterest-merge-rep-is-dup?merge-duplicates=2of2&merge-rep-task=In progress" method="post" id="reginterest-merge-form">
@@ -338,7 +337,7 @@
                 {% else %}
                 <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="duns-rep" name="rep-duns1" type="radio" value="{{data['rep-duns1']}}" checked>
+                      <input class="govuk-radios__input" id="duns-rep" name="rep-duns1" type="radio" value="{{data['rep-duns1']}}">
                       <label class="govuk-label govuk-radios__label" for="duns-rep">
                         {{data['rep-duns1'] }}
                       </label>
@@ -356,7 +355,7 @@
                         <br>
                       </label>
                       {% else %}
-                      <input class="govuk-radios__input" id="duns-dup1" name="rep-duns1" type="radio" value="{{data['dup-party-duns1']}}">
+                      <input class="govuk-radios__input" id="duns-dup1" name="rep-duns1" type="radio" value="{{data['dup-party-duns1']}}" checked>
                       <label class="govuk-label govuk-radios__label" for="duns-dup1">
                         {{data['dup-party-duns1'] }}
                       </label>
