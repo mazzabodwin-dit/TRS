@@ -333,7 +333,7 @@
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">DUNS number</th>
             <td class="govuk-table__cell">
-              {% if data['merge-duplicates'] == "2of2" %}   
+              {% if data['merge-duplicates'] == "2of2" or data['merge-duplicates'] == "1c" %}   
                 {% else %}
                 <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                   <div class="govuk-radios__item">
