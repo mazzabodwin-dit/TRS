@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Invite details – {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+ <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">
+      Invite details
+    </h1>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Invite sent<br>Awaiting invitee acceptance<br>
+          <span id="date"></span></p>
+        </dd>
+      </div>
+      <script>
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date").innerHTML = formattedDate;
+      </script>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          User details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['invite-rep-name'] or data['party-user11'] }}
+          <br>
+          {{data['invite-rep-email'] or data['party-email11'] }}
+        </dd>        
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cases
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p><a href="">
+              {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
+             </a><br>
+          </p>
+        </dd>
+      </div>
+    </dl>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Cancel invite",
+        href: "invite-user-cancel"
+      }) }} 
+      <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock %}
+

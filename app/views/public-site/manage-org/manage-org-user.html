@@ -33,14 +33,12 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
       Manage users
-    </h1>
-
-    {% set manageTeamHTML %}
-    <h2 class="govuk-heading-m">My team
       <span class="govuk-body right-aligned-link">
         <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state govuk-heading-s">Invite new user</a>
       </span>
-    </h2>
+    </h1>
+
+      
     <p>Manage your users giving them access to specific cases or admin rights for managing this account.</p>
 
     <form>
@@ -72,7 +70,7 @@
       </div>
     </form>
 
-    <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
+    <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
         A table listing all of the users that have access to this organisations account
       </caption>
@@ -182,7 +180,7 @@
                   <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-user-cancel?cancel-invite=org" class="govuk-link--no-visited-state">Cancel invite</a>
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-app-details-org" class="govuk-link--no-visited-state">View invite</a>
                 </td>
               </tr>
             {% endif %}
@@ -222,7 +220,7 @@
               <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-user-cancel" class="govuk-link--no-visited-state">Cancel invite</a>
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-app-details-org" class="govuk-link--no-visited-state">View invite</a>
             </td>
           </tr>  
           <tr class="govuk-table__row no-border">
@@ -398,132 +396,12 @@
         {% endif %}
       </body>
     </table>
-
-    {% endset %}
-
-    <!--
-
-    {% set manageRepsHTML %}
-    <h2 class="govuk-heading-m">Manage representatives
-    </h2>
-    <p>Manage your users giving them administration rights for your organsiations account or access to cases.</p>
-
-    <form>
-
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-!-display-inline" for="sort-user">
-            Sort users by
-          </label>
-          <select class="govuk-select" id="sort-user" name="sort-user">
-            <option value="User" selected>User</option>
-            <option value="Email">Email</option>
-            <option value="Account role">Account role</option>
-          </select>
-
-          <label class="govuk-label govuk-visually-hidden" for="direction-users">
-            Direction
-          </label>
-          <select class="govuk-select" id="direction-users" name="direction-users">
-            <option value="Decending" selected>Decending</option>
-            <option value="Accending">Accending</option>
-          </select>
-
-        {{ govukButton({
-          text: "Sort users",
-          classes: "govuk-button--secondary"
-        }) }}
-        </div>    
-      </div>
-    </form>
-
-    <table class="govuk-table sortable table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-        A table listing all of the representatives that have access to this organisations account
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" aria-sort="ascending">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>User
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Email
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Account role
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header no-sort">
-              <span class="govuk-visually-hidden--desktop">Action: </span>
-          </th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="case" class="govuk-link--no-visited-state">{{data['contact1']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['contact-email1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Account role: </span>{{data['contact-role1']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">View invite</a>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="case" class="govuk-link--no-visited-state">{{data['contact3']}}</a>
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['contact-email3']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Account role: </span>{{data['contact-role3']}}
-          </td>
-          <td class="govuk-table__cell">
-            <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Assign case</a>
-          </td>
-        </tr>
-
-      </body>
-    </table>
-
-    {% endset %}
-
-    -->
-    
-    
-    {{ govukTabs ({
-      items: [
-      
-      { 
-        label: "My team",
-        id: "manage-team",
-        panel: {
-          html: manageTeamHTML
-        }
-      }
-      ]
-    }) }}
     
   </div>
-
 </div>
 
 
 {% endblock %}
 {% block footer %}
-{%include "includes/footer.html" %}
+{% include "includes/footer.html" %}
 {% endblock %}

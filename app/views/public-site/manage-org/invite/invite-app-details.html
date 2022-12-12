@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Invite representative – {{serviceName}}
+  Representative invite – {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -124,25 +124,26 @@
     </dl>
 
    
-      <div class="govuk-button-group">
-        {% if data['invite-rep-task'] == "Draft" or data['invite-rep-task'] == "All" %}
-          {{ govukButton({
-            text: "Continue application",
-            href: "tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
-          }) }}  
-          <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
-        {% endif %} 
-      </div>
-      <div class="govuk-button-group">
-        {% if data['invite-rep-task'] == "Sent" or data['invite-rep-task'] == "All" %}
-          {{ govukButton({
-            text: "Cancel invite",
-            href: "invite-user-cancel"
-          }) }}  
-        {% endif %} 
-      </div>
+    <div class="govuk-button-group">
+      {% if data['invite-rep-task'] == "Draft" or data['invite-rep-task'] == "All" %}
+        {{ govukButton({
+          text: "Continue application",
+          href: "tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
+        }) }}  
+        <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
+      {% endif %} 
+    </div>
+    <div class="govuk-button-group">
+      {% if data['invite-rep-task'] == "Sent" or data['invite-rep-task'] == "All" %}
+        {{ govukButton({
+          text: "Cancel invite",
+          href: "invite-user-cancel"
+        }) }}  
+        <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+      {% endif %} 
+    </div>  
     
-</div>
+  </div>
 
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
@@ -169,5 +170,5 @@
 </div>
 {% endblock %}
 {% block footer %}
-{%include "includes/footer.html" %}
+{% include "includes/footer.html" %}
 {% endblock %}
