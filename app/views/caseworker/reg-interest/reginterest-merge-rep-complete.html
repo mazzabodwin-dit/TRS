@@ -24,7 +24,7 @@
         </h1>
       </div>
 
-      {% if data['merge-duplicates'] == "1c" %} 
+      {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "1b" %} 
         {% if data['reginterest-matching-orgs-question'] =="no" %}
           <p>Matching organisation(s) marked as not duplicate.</p>
           {% else %}
