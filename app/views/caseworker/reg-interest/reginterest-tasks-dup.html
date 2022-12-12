@@ -38,10 +38,10 @@
               <strong> 
                 <span class="govuk-warning-text__assistive">Warning</span>
                 {% if data['verify-type'] =="reg-interest" %}
-                  One or more organisations in this registration of interest matches other organisation(s) in our records. 
+                    The organisation in this registration of interest invite matches other organisations in our records.  
                   {% else %}
                   {% if data['verify-type'] =="rep-invite" %}
-                    The organisation in this representative invite matches other organisation(s) in our records. 
+                    The organisation in this representative invite matches other organisations in our records. 
                   {% endif %}
                 {% endif %}
               </strong>
@@ -50,8 +50,8 @@
         </div>
       </div>
 
-      <h2 class="govuk-heading-m" id="subsection-title">Review matches</h2>
-      <p>Organisations are matched when one or more of their registered details are the same as another organisation.</p>
+      <h2 class="govuk-heading-m" id="subsection-title">Review matching organisations</h2>
+      <p>Organisations are matching when one or more of their registered details are the same as another organisation.</p>
       {% if data['verify-type'] =="reg-interest" %}
         <p>You need to check if they are duplicates before you can review this registration of interest.</p>
         {% else %}
@@ -68,7 +68,7 @@
             </label>
             <select class="govuk-select" id="sort-dup" name="sort-dup">
               <option value="Organisation" selected>Organisation</option>
-              <option value="Matches">Matches</option>
+              <option value="Matches">Matching organisations</option>
               <option value="Status">Status</option>
             </select>
 
@@ -101,7 +101,7 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Matches
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Matching organisations
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -130,7 +130,7 @@
                   {{data['merge-int-task'] or "Not started"}}
               </td>  
               <td class="govuk-table__cell action">
-                <a href="reginterest-merge-int-review?merge-duplicates=1b" class="govuk-link govuk-link--no-visited-state">Review matches<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
+                <a href="reginterest-merge-int-review?merge-duplicates=1b" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['party1']}}</span>
               </td>             
             </tr>
           {% endif %}           
@@ -150,7 +150,7 @@
               {{data['merge-rep-task'] or "Not started" }}
             </td>  
             <td class="govuk-table__cell action">
-              <a href="reginterest-merge-rep-review" class="govuk-link govuk-link--no-visited-state">Review matches<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
+              <a href="reginterest-merge-rep-review" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['representative1']}}</span>
             </td>             
           </tr>
         </body>
