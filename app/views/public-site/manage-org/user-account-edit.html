@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Edit account details - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manage-org-user">Manage users</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="user-account-own-org">User account details</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Edit account details
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Edit account details
+      </h1>
+
+      <form action="user-account-own-org" method="post" id="account-update-details-form">       
+      
+      {{ govukInput({
+        label: {
+          text: "Name",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "party-user11",
+        name: "party-user11",
+        type: "text",
+        autocomplete: "name",
+        value: data['party-user11']
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--s"
+        },
+        id: "party-email11",
+        name: "party-email11",
+        classes: "govuk-input--width-20 govuk-input--readonly",
+        type: "email",
+        autocomplete: "email",
+        attributes: {
+          "readonly": true
+        },
+        value: data['party-email11']
+      }) }}
+
+      {% call govukFieldset({
+          legend: {
+            text: "Mobile number",
+            classes: "govuk-fieldset__legend--s",
+            isPageHeading: true
+          }
+        }) %}
+
+        {% include "includes/country-code-list.html" %}    
+
+        {{ govukInput({
+          id: "party-mobile11",
+          name: "party-mobile11",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Mobile number"
+          },
+          value: data['party-mobile11'] or "+447821945034"
+        }) }}
+      {% endcall %} 
+
+
+  
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Submit"
+          }) }}    
+          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+        </div>
+
+        </form>
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+ {% include "includes/footer.html" %}
+{% endblock %}

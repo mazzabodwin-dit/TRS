@@ -110,7 +110,104 @@
       <tbody class="govuk-table__body">
 
         <!--Determine who is signed in -->
-        {% if (data['user-status'] == "all") %}
+        
+        {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite")  %}
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email6']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['rep-user-role6']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Cases: </span>2
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Assign/remove case</a>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['rep-user-role1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Cases: </span>3
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Assign/remove case</a>
+            </td>
+          </tr>
+
+          {% else %}
+          {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite")  %}
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Admin user
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Cases: </span>1
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="user-account#cases" class="govuk-link--no-visited-state">Assign/remove case</a>
+              </td>
+            </tr>
+            {% if (data['show-invite-org'] == "yes") %}
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">User: </span>{{data['invite-user-name'] or data['party-user11'] }}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
+                </td>
+                <td class="govuk-table__cell field-italics">
+                  <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-user-cancel?cancel-invite=org" class="govuk-link--no-visited-state">Cancel invite</a>
+                </td>
+              </tr>
+            {% endif %}
+            {% if (data['show-invite-rep'] == "yes") %}
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">User: </span>{{data['invite-user-name'] or data['rep-user3'] }}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-user-email'] or data['rep-email3'] }}
+                </td>
+                <td class="govuk-table__cell field-italics">
+                  <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite/invite-app-details?invite-rep-task=Draft" class="govuk-link--no-visited-state">View invite</a>
+                </td>
+              </tr>
+            {% endif %}
+          {% endif %}
+
+        <!--All status-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">User: </span>{{data['party-user11']}}
@@ -130,7 +227,7 @@
           </tr>  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
             </td>
             <td class="govuk-table__cell field-grey">
               <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
@@ -147,7 +244,7 @@
           </tr>  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
             </td>
             <td class="govuk-table__cell field-grey">
               <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
@@ -164,7 +261,7 @@
           </tr>  
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
             </td>
             <td class="govuk-table__cell field-grey">
               <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
@@ -283,7 +380,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep-details-invite-sent" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-rep" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3'] }}
@@ -298,129 +395,6 @@
               <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Assign/remove case</a>
             </td>
           </tr>
-          {% else%}
-          {% if (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite")  %}
-
-            <tr class="govuk-table__row no-border">
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email6']}}
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['rep-user-role6']}}
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Cases: </span>2
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Assign/remove case</a>
-              </td>
-            </tr>
-
-            <tr class="govuk-table__row no-border">
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email1']}}
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['rep-user-role1']}}
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Cases: </span>3
-              </td>
-              <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Assign/remove case</a>
-              </td>
-            </tr>
-
-            {% else %}
-            {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite")  %}
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="/public-site/manage-org/user-account#account-details" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Admin user
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Cases: </span>1
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="user-account#cases" class="govuk-link--no-visited-state">Assign/remove case</a>
-                </td>
-              </tr>
-              {% if (data['show-invite-org'] == "yes") %}
-                <tr class="govuk-table__row no-border">
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-details-invite-sent" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
-                  </td>
-                  <td class="govuk-table__cell field-italics">
-                    <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Invite sent
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel?cancel-invite=org" class="govuk-link--no-visited-state">Cancel invite</a>
-                  </td>
-                </tr>
-              {% endif %}
-
-              {% if (data['show-invite-rep'] == "yes" or data['invite-rep-task'] == "Draft") and (data['invite-rep-what-org'] == "new-org") %}
-                <tr class="govuk-table__row no-border">
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep2-details-invite-sent" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user2'] }}</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-rep-email'] or data['rep-email2'] }}
-                  </td>
-                  <td class="govuk-table__cell field-italics">
-                    <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['invite-rep-task']}}
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
-                  </td>
-                  <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel?cancel-invite=rep" class="govuk-link--no-visited-state">Cancel invite</a>
-                  </td>
-                </tr>
-                {% else %}
-                {% if (data['show-invite-rep'] == "yes" or data['invite-rep-task'] == "Draft") and (data['invite-rep-what-org'] == "existing-org") %}
-                  <tr class="govuk-table__row no-border">
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="rep-details-invite-sent" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user1'] }}</a>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['invite-rep-email'] or data['rep-email1'] }}
-                    </td>
-                    <td class="govuk-table__cell field-italics">
-                      <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['invite-rep-task']}}
-                    </td>
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
-                    </td>
-                    <td class="govuk-table__cell">
-                      {% if (data['invite-rep-task'] == "Draft") %}
-                        <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Delete invite</a>
-                        {% else %}
-                        <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="invite-user-cancel?cancel-invite=rep" class="govuk-link--no-visited-state">Cancel invite</a>
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endif %}
         {% endif %}
       </body>
     </table>
