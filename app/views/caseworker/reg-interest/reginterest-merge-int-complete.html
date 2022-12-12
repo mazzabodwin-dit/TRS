@@ -25,10 +25,28 @@
       </h1>
     </div>
 
-    <p>Matching organisation(s) marked as not duplicate.</p>
+    {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "1b" %} 
+        {% if data['reginterest-matching-orgs-question'] =="no" %}
+          <p>Matching organisation(s) marked as not duplicate.</p>
+          {% else %}
+          <p>The duplicate organisations have been merged.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Cases are now registered under one organisation</li>
+            <li>Users are now registered under one organisation</li>
+            <li>Lead investigators assigned to the matching cases have been notified</li>
+          </ul> 
+        {% endif %} 
+        {% else %}
+        <p>The duplicate organisations have been merged.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Cases are now registered under one organisation</li>
+          <li>Users are now registered under one organisation</li>
+          <li>Lead investigators assigned to the matching cases have been notified</li>
+        </ul> 
+      {% endif %}  
   
 
-      {% if data['verify-type'] =="rep-invite" %}
+    {% if data['verify-type'] =="rep-invite" %}
       <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
       <div class="govuk-button-group">
         {{ govukButton({
@@ -54,10 +72,6 @@
         {% endif %}
       {% endif %}
     {% endif %}
-
-
-
-    
     </form>
   </div>
 </div>
