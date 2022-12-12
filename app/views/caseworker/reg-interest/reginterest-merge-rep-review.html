@@ -343,7 +343,7 @@
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong> 
                 <span class="govuk-warning-text__assistive">Warning</span>
-                  You do not have permission to complete a merge. Only Lead Investigators or higher are allowed.
+                  You do not have permission to complete a merge. Only lead investigators or above can merge records.
               </strong>
             </p>
           </div>
@@ -354,20 +354,18 @@
       {% if data['who-signin'] =="invest" %}
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Resolve matching organisations",
+            text: "Continue review",
             disabled: true
           }) }}
           <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
         </div>
         {% else %}
-        {% if (data['who-signin'] == "lead") %}
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Resolve matching organisations"
-            }) }}
-            <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
-          </div>
-        {% endif %}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue review"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
+        </div>
       {% endif %}
     </form>
   </div>
