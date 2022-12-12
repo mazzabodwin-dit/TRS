@@ -33,13 +33,14 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
       Manage users
-      <span class="govuk-body right-aligned-link">
-        <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state govuk-heading-s">Invite new user</a>
-      </span>
     </h1>
 
       
-    <p>Manage your users giving them access to specific cases or admin rights for managing this account.</p>
+    <p>Manage your users giving them access to cases or admin rights for this account.
+        <span class="govuk-body right-aligned-link">
+        <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
+      </span>
+    </p>
 
     <form>
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
@@ -231,23 +232,6 @@
               <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
             </td>
             <td class="govuk-table__cell field-grey">
-              <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>De-activated
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Activate</a>
-            </td>
-          </tr>  
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
-            </td>
-            <td class="govuk-table__cell field-grey">
-              <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
-            </td>
-            <td class="govuk-table__cell field-grey">
               <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Admin user
             </td>
             <td class="govuk-table__cell">
@@ -273,7 +257,24 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Assign/remove case</a>
             </td>
-          </tr>  
+          </tr>
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+            </td>
+            <td class="govuk-table__cell field-grey">
+              <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
+            </td>
+            <td class="govuk-table__cell field-grey">
+              <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>De-activated
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Activate</a>
+            </td>
+          </tr>    
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop td-header">User: </span>{{data['rep-user3'] }}
