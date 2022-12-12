@@ -28,11 +28,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Manage my account
+        Manage account
       </h1>
       <h2 class="govuk-heading-m">Your details
         <span class="govuk-body right-aligned-link">
-          <a href="account-details" class="govuk-link--no-visited-state govuk-heading-s">Edit your details</a>
+          <a href="account-details" class="govuk-link--no-visited-state">Edit your details</a>
         </span>
       </h2> 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -105,8 +105,8 @@
         </div>
       </dl>
        <h2 class="govuk-heading-m">Your cases
-        <span class="right-aligned-link ">
-          <a href="account-org" class="govuk-link--no-visited-state govuk-heading-s">Edit your cases</a>
+        <span class="govuk-body right-aligned-link ">
+          <a href="account-org" class="govuk-link--no-visited-state">Edit your cases</a>
         </span>
       </h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -124,7 +124,7 @@
       <h2 class="govuk-heading-m">Your organisation
         {% if data['user-permissions'] == "Admin user" %}
         <span class="govuk-body right-aligned-link">
-          <a href="account-org" class="govuk-link--no-visited-state govuk-heading-s">Edit your organisation</a>
+          <a href="account-org" class="govuk-link--no-visited-state">Edit your organisation</a>
         </span>
         {% endif %}
       </h2>
