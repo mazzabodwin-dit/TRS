@@ -96,6 +96,8 @@ module.exports = {
   //KEY USER: who-signin=org-invite
   "party-user11": "Lara Crist",
   "party-email11": "l.crist@steeluk.com",
+  "party-user6": "Rodney Trigger",
+  "party-email6": "r.trigger@steeluk.com",
 
   //KEY USER: who-signin=rep
   "representative1": "BlueSteel Partners",
