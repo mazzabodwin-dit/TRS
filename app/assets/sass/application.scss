@@ -125,6 +125,11 @@ $govuk-assets-path: '/govuk/assets/';
   margin-bottom: 10px;
 }
 
+.address-container .govuk-warning-text  {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
 .verified-check {
   margin: 0px 0px -10px 10px;
 }
@@ -203,7 +208,7 @@ $govuk-assets-path: '/govuk/assets/';
   top: 10px;
 }
 
-/* FEEDBAK RATING  https://www.cssscript.com/star-rating-radio/ */
+/* FEEDBACK RATING  https://www.cssscript.com/star-rating-radio/ */
 
 @at-root.star-rating3__stars {
   position: relative;
@@ -322,9 +327,4 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-warning-text__text-p button  {
   margin-bottom: 0px;
-}
-
-.address-container .govuk-warning-text  {
-  margin-bottom: 0px;
-  padding: 0px;
 }
