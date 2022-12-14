@@ -41,20 +41,16 @@
               <span id="date"></span></p>
               {% else %}
               {% if data['invite-rep-task'] == "Sent" %}
-                <p>Invite sent<br>Awaiting invitee acceptance<br>
-                <span id="date"></span></p>
+                <p>Invite sent<br>Waiting for invitee acceptance</p>
+                <p><span id="date"></span></p>
                 {% else %}
                 {% if data['invite-rep-task'] == "Accepted" %}
-                  <p>Invite accepted <br>Awaiting TRA approval<br>
-                  <span id="date"></span></p>
+                  <p>Waiting TRA approval <br>Invitee accepted your invite</p>
+                  <p><span id="date"></span></p>
                   {% else %}
-                  {% if data['invite-rep-task'] == "Approved" %}
-                    <p>Invite approved<br>Approved by the TRA <br>
-                    <span id="date"></span></p>
-                  {% endif %}
                   {% if data['invite-rep-task'] == "Rejected" %}
-                    <p>Invite rejected by the TRA <br>
-                    <span id="date"></span></p>
+                    <p>Rejected<br>Invite rejected by the TRA</p>
+                    <p><span id="date"></span></p>
                   {% endif %}
                 {% endif %}
               {% endif %}
@@ -103,11 +99,45 @@
           Representative details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data['invite-rep-name'] or data['rep-user3'] }}
-          <br>
-          {{data['invite-rep-email'] or data['rep-email3'] }}
-          <br><br>
-          BlueSteel Partners
+          {% if data['invite-rep-task'] == "Deficient" %}
+            {{data['party-rep-name'] or data['party-user5'] }}
+            <br>
+            {{data['invite-rep-email'] or data['party-email5'] }}
+            <br><br>
+            {{data['party5']}}
+            {% else %}
+            {% if data['invite-rep-task'] == "Draft" %}
+              {{data['invite-rep-name'] or data['rep-user3'] }}
+              <br>
+              {{data['invite-rep-email'] or data['rep-email3'] }}
+              <br><br>
+              {{data['representative1']}}
+              {% else %}
+              {% if data['invite-rep-task'] == "Sent" %}
+                {{data['party-rep-name'] or data['party-user2'] }}
+                <br>
+                {{data['invite-rep-email'] or data['party-email2'] }}
+                <br><br>
+                {{data['party2']}}
+                {% else %}
+                {% if data['invite-rep-task'] == "Accepted" %}
+                  {{data['invite-rep-name'] or data['party-user3'] }}
+                  <br>
+                  {{data['invite-rep-email'] or data['party-email3'] }}
+                  <br><br>
+                  {{data['party3']}}
+                  {% else %}
+                  {% if data['invite-rep-task'] == "Rejected" %}
+                    {{data['invite-rep-name'] or data['party-user4'] }}
+                    <br>
+                    {{data['invite-rep-email'] or data['party-email4'] }}
+                    <br><br>
+                    {{data['party4']}}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
         </dd>        
       </div>
     
