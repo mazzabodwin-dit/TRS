@@ -55,10 +55,10 @@
           Cases
         </dt>
         <dd class="govuk-summary-list__value">
-          <p><a href="">
-              {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}
-             </a><br>
-          </p>
+          <ul class="govuk-list">
+            <li> {{ data['case-ref1']}} - {{ data['case-name1']}}</li>
+            <li>{{ data['case-ref2'] }} - {{ data['case-name2'] }}</li>
+          </ul>
         </dd>
       </div>
     </dl>
