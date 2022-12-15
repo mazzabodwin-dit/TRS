@@ -60,58 +60,22 @@
         {% endif %}
       {% endif %}
 
-      <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-!-display-inline" for="sort-dup">
-              Sort organisations by
-            </label>
-            <select class="govuk-select" id="sort-dup" name="sort-dup">
-              <option value="Organisation" selected>Organisation</option>
-              <option value="Matches">Matching organisations</option>
-              <option value="Status">Status</option>
-            </select>
-
-            <label class="govuk-label govuk-visually-hidden" for="direction-dup">
-              Direction
-            </label>
-            <select class="govuk-select" id="direction-dup" name="direction-dup">
-              <option value="Decending" selected>Decending</option>
-              <option value="Accending">Accending</option>
-            </select>
-          </div>
-
-          {{ govukButton({
-            text: "Sort",
-            classes: "govuk-button--secondary"
-          }) }}
-        </div>
-      </form> 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
           A table listing all of the parties waiting to be verified
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header" aria-sort="ascending">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
+            <th class="govuk-table__header">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation
             </th>
             <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Matching organisations
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Matching organisations
             </th>
             <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
             </th>
-            <th class="govuk-table__header no-sort">
+            <th class="govuk-table__header">
                 <span class="govuk-visually-hidden--desktop">Action:</span>
             </th>
           </tr>
