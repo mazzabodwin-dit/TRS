@@ -157,20 +157,7 @@
           {% else %}
           <!--Determine who is signed in Interested party admin-->
           {% if (data['who-signin'] == "org") %}
-            {{ govukInput({
-                label: {
-                  text: "Your name",
-                  classes: "govuk-label--s",
-                  isPageHeading: false
-                },
-                classes: "govuk-input--width-20",
-                id: "invite-user-name",
-                name: "invite-user-name",
-                type: "text",
-                autocomplete: "name",
-                value: data['createaccount-name'] or data['party-user1']
-              }) }}
-
+            
               {{ govukInput({
                 label: {
                   text: "Name of organisation",

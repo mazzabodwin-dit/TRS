@@ -36,18 +36,38 @@
             Account details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['party-user1']}}<br>
-            {{data['party-email1']}}<br>
-            {{data['party-mobile1'] or "+447821945034"}}<br><br>
+            {% if data['user-permissions'] =="Admin user" %}
+              {{data['party-user1']}}<br>
+              {{data['party-email1']}}<br>
+              {{data['party-mobile1'] or "+447821945034"}}
+              {% else %}
+              {{data['party-user11']}}<br>
+              {{data['party-email11']}}<br>
+              {{data['party-mobile11'] or "+447821945034"}}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           <a class="govuk-link--no-visited-state" href="account-edit-user">
+              Edit<span class="govuk-visually-hidden"> account details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation
+          </dt>
+          <dd class="govuk-summary-list__value">
             {{data['party1'] }}<br>
             {{data['party-address1']}} <br>
             {{data['party-postcode1']}}<br>
             {{data['party-country1']}}          
           </dd>
           <dd class="govuk-summary-list__actions">
-           <a class="govuk-link--no-visited-state" href="account-edit">
-              Edit<span class="govuk-visually-hidden"> account details</span>
-            </a>
+            {% if data['user-permissions'] =="Admin user" %}
+              <a class="govuk-link--no-visited-state" href="account-edit-org">
+                Edit<span class="govuk-visually-hidden"> organisation details</span>
+              </a>
+            {% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -70,7 +90,7 @@
             Permission
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['account-user-permissions'] or "Admin"}}
+            {{ data['user-permissions'] or "Admin user"}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <!--
@@ -85,12 +105,12 @@
             Cases
           </dt>
           <dd class="govuk-summary-list__value">
-            <p><a href="" class="govuk-link--no-visited-state">{{data['case-ref1']}} - {{data['case-name1']}}</a><br>(Primary contact)</p>
-            <p><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a><br> (Primary contact)</p>
+            <p>{{data['case-ref1']}} - {{data['case-name1']}}<br>(Primary contact)</p>
+            <p>{{data['case-ref2']}} - {{data['case-name2']}}<br> (Primary contact)</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link--no-visited-state" href="#">
-              	Assign/remove <span class="govuk-visually-hidden"> case</span>
+              	Edit <span class="govuk-visually-hidden"> case</span>
             </a>
           </dd>
         </div>                                   
