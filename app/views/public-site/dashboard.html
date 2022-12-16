@@ -206,45 +206,25 @@
             <div class="address-card">
               <div class="address-container">
                 <h2 class="govuk-heading-m">
-                  Representative invite
+                  Pending invites
                   <span class="govuk-body right-aligned-link">
-                    <a href="/public-site/manage-org/manage-org#manage-team" class="govuk-link--no-visited-state">Manage team</a>
+                  <a href="/public-site/manage-org/manage-org-user" class="govuk-link--no-visited-state">Manage users </a>
                   </span> 
                 </h2>
-                <p>
-                  <!--Status-->   
-                  {{ data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  {% if data['invite-rep-what-org'] == "existing-org" %}
-                    {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>                   
-                    {% else %}
-                     {{ data['invite-rep-name'] or data['rep-user2'] }} - 
-                     {{data['invite-rep-org-name'] or data['representative2'] }}<br>
-                  {% endif %}
-                  <a href="/public-site/manage-org/invite/invite-app-details-rep" class="govuk-link--no-visited-state">Status: {{data['invite-rep-task']}}</a> (<span id="date3"></span>)
-                </p>
-                <p>
-                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">Status: Sent</a> (22 Dec 2022)
-                </p>
-                <p>
-                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite/invite-app-details-rep?invite-rep-task=Accepted" class="govuk-link--no-visited-state">Status: Invite accepted</a> (22 
-                  Dec 2022)
-                </p>
-                <p>
-                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite/invite-app-details-rep?invite-rep-task=Approved" class="govuk-link--no-visited-state">Status: Invite approved</a> (22 
-                  Dec 2022)
-                </p>
-                <p>
-                  {{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}<br>  
-                  {{ data['invite-rep-name'] or data['rep-user3'] }} - {{data['representative1']}} <br>
-                  <a href="/public-site/manage-org/invite/invite-app-details-rep?invite-rep-task=deficient" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
-                  Dec 2022)
-                </p>
+                <p>You have <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">5 pending invites</a></p>
+                <p>You have <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">1 invite with deficient documentation </a></p>
+              </div>
+            </div>
+
+            <div class="address-card">
+              <div class="address-container">
+                <h2 class="govuk-heading-m">
+                  Pending invites
+                  <span class="govuk-body right-aligned-link">
+                    <a href="/public-site/manage-org/manage-org-user" class="govuk-link--no-visited-state">Manage users </a>
+                  </span> 
+                </h2>
+                <p>You have 0 pending invites</p>
               </div>
             </div>
           {% endif %}

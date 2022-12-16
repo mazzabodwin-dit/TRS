@@ -45,7 +45,7 @@
                 <p><span id="date"></span></p>
                 {% else %}
                 {% if data['invite-rep-task'] == "Accepted" %}
-                  <p>Waiting TRA approval <br>Invitee accepted your invite</p>
+                  <p>Waiting TRA review <br>Invitee accepted your invite</p>
                   <p><span id="date"></span></p>
                   {% else %}
                   {% if data['invite-rep-task'] == "Rejected" %}
@@ -60,10 +60,10 @@
 
           {% if data['invite-rep-task'] == "All" %}
             <p>Draft<br><br>
-            <p>Invite sent<br>Awaiting invitee acceptance<br></p>
-            <p>Invite accepted <br>Awaiting TRA approval<br></p>
+            <p>Invite sent<br>Waiting invitee acceptance<br></p>
+            <p>Waiting TRA review <br>Invitee accepted your invite</p>
             <p>Invite approved <br>Approved by the TRA <br></p>
-            <p>Invite rejected <br>Invite rejected by the TRA <br><br></p>
+            <p>Rejected<br>Invite rejected by the TRA<br></p>
             <p><strong class="govuk-tag govuk-tag--pink" id="pre-sampling-upload-status">Deficient documentation</strong><br>
             </p>
             {{ govukButton({
