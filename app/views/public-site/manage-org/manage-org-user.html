@@ -51,7 +51,7 @@
   <div class="govuk-grid-column-full">
 
     {% set manageTeamHTML %}
-      <h2 class="govuk-heading-m">My team
+      <h2 class="govuk-heading-m">Users
         <span class="govuk-body right-aligned-link">
           <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
         </span>
@@ -238,12 +238,12 @@
     {% endset %}
 
     {% set manageInvitesTML %}
-      <h2 class="govuk-heading-m">Pending invites
+      <h2 class="govuk-heading-m">Invites
         <span class="govuk-body right-aligned-link">
           <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
         </span>
       </h2>
-      <p>You have 5 pending invites</p>
+      <p>Review your invites.</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -498,14 +498,14 @@
     {{ govukTabs ({
       items: [
       { 
-        label: "My team",
+        label: "Users",
         id: "manage-team",
         panel: {
           html: manageTeamHTML
         }
       },
       { 
-        label: "Pending invites (5)",
+        label: "Invites (5)",
         id: "manage-invites",
         panel: {
           html: manageInvitesTML

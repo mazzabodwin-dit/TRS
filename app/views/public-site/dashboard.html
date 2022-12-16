@@ -47,17 +47,37 @@
     
       {% if (data['account-activated'] == "yes") %}
         <!--This info is only shown to new users with no cases/ invites etc-->
-        <p><a href="" class="govuk-link--no-visited-state">Register interest in a case</a></p>  
-        <p>This will allow you to: </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>take part in an investigation</li>
-          <li>get updates on important developments</li>
-          <li>comment on TRA findings before a final decision is made</li>
-          <li>request reconsideration of a final determination in a case</li>
-        </ul>
+         <div class="address-card">
+            <div class="address-container">
+              <h2 class="govuk-heading-m clearfix">
+                Register an interest in a case
+                <span class="govuk-body right-aligned-link">
+                  <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
+                </span>
+              </h2>
+              <p><a href="" class="govuk-link--no-visited-state">Register interest in a case</a> if you want to be able to</p>  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>take part in an investigation</li>
+                <li>get updates on important developments</li>
+                <li>comment on TRA findings before a final decision is made</li>
+                <li>request reconsideration of a final determination in a case</li>
+              </ul>
+            </div>
+          </div>
         {% if data['user-permissions'] != "User" %}
-          <p><a href="" class="govuk-link--no-visited-state">Manage team</a></p>
-          <p>Grant access to your organisation's active cases or invite new users into your team.</p>
+          <div class="address-card">
+            <div class="address-container">
+              <h2 class="govuk-heading-m clearfix">
+                Invite users
+                <span class="govuk-body right-aligned-link ">
+                </span> 
+              </h2>
+              <p>Give access to your organisation's active cases by inviting users to join your account.</p>
+              <p><a href="" class="govuk-link--no-visited-state">Invite user</a></p>
+
+            </div>
+          </div>
+          <p><a href="" class="govuk-link--no-visited-state">Manage users</a></p>
         {% endif %}    
         <p><a href="" class="govuk-link--no-visited-state">Manage your account details</a></p>
         {% else %}
@@ -68,7 +88,7 @@
         {% if (data['who-signin'] == "rep-invite") and (data['invite-rep-task'] == "Sent") %}
           <div class="address-card">
             <div class="address-container">
-              <h2 class="govuk-heading-m">
+              <h2 class="govuk-heading-m clearfix">
                 My invites
               </h2>
               <p>Invited by: Steel UK
@@ -85,10 +105,10 @@
         <!-- MY CASES -->
         <div class="address-card">
           <div class="address-container">
-            <h2 class="govuk-heading-m">
+            <h2 class="govuk-heading-m clearfix">
               My cases
               <span class="right-aligned-link govuk-body">
-                <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
+                <a href="/public-site/manage-org/manage-org-case" class="govuk-link--no-visited-state">Manage cases</a>
               </span> 
             </h2>
             {% if (data[''] == "") %}
@@ -125,10 +145,10 @@
         {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
           <div class="address-card">
             <div class="address-container">
-              <h2 class="govuk-heading-m">
-                Registration of Interest
+              <h2 class="govuk-heading-m clearfix">
+                Registration of interest
                 <span class="govuk-body right-aligned-link">
-                  <a href="/public-site/manage-org/manage-org#manage-cases" class="govuk-link--no-visited-state">Manage cases</a>
+                  <a href="/public-site/manage-org/manage-org-case" class="govuk-link--no-visited-state">Manage cases</a>
                 </span>
               </h2>
               <p>
@@ -198,36 +218,44 @@
           </div>
         {% endif %}
 
-        <!-- Representative invites -->
-        <!-- Representative invites -->
-        <!--This is only shown to orgs that have invited a rep to represent them-->
-        {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
-          {% if (data['invite-rep-task'] != "Complete") %}
-            <div class="address-card">
-              <div class="address-container">
-                <h2 class="govuk-heading-m">
-                  Pending invites
-                  <span class="govuk-body right-aligned-link">
-                  <a href="/public-site/manage-org/manage-org-user" class="govuk-link--no-visited-state">Manage users </a>
-                  </span> 
-                </h2>
-                <p>You have <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">5 pending invites</a></p>
-                <p>You have <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">1 invite with deficient documentation </a></p>
-              </div>
+        <!-- Invites -->
+        <!-- Invites -->
+        {% if (data['invite-rep-task'] == null ) %}
+          <div class="address-card">
+            <div class="address-container">
+              <h2 class="govuk-heading-m clearfix">
+                Invite users
+                <span class="govuk-body right-aligned-link ">
+                </span> 
+              </h2>
+              <p>Give access to your organisation's active cases by inviting users to join your account.</p>
+              <p><a href="" class="govuk-link--no-visited-state">Invite user</a></p>
             </div>
-
-            <div class="address-card">
-              <div class="address-container">
-                <h2 class="govuk-heading-m">
-                  Pending invites
-                  <span class="govuk-body right-aligned-link">
-                    <a href="/public-site/manage-org/manage-org-user" class="govuk-link--no-visited-state">Manage users </a>
-                  </span> 
-                </h2>
-                <p>You have 0 pending invites</p>
-              </div>
+          </div>
+          {% else %}
+          <div class="address-card">
+            <div class="address-container">
+              <h2 class="govuk-heading-m clearfix">
+                 User invites
+                <span class="govuk-body right-aligned-link">
+                <a href="/public-site/manage-org/manage-org-user" class="govuk-link--no-visited-state">Invite new user</a>
+                </span> 
+              </h2>
+              <p>You have pending invites to this organisations account:</p>
+              <ul class="govuk-list">
+                <li>
+                  <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">2 draft invites</a>
+                </li>
+                <li>
+                  <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">5 pending invites</a>  
+                </li>
+                <li>
+                  <a href="manage-org/manage-org-user#manage-invites" class="govuk-link--no-visited-state">1 invite with deficient documentation </a>
+                </li>
+              </ul>
             </div>
-          {% endif %}
+          </div>
+          
         {% endif %}
 
         <script>
@@ -273,20 +301,6 @@
             <li>
               <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an investigation</a> 
             </li>
-            {% if data['user-permissions'] != "User" %}
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/manage-org#manage-team">Manage team</a>
-              </li>  
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/invite/invite-user-type">Invite team member</a>
-              </li>  
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/invite/invite-user-type">Invite representative</a>
-              </li>  
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="manage-org/">Manage cases</a>
-              </li>
-            {% endif %}
           </ul>
         </nav>
       </aside>
