@@ -30,93 +30,174 @@
       <h1 class="govuk-heading-xl">
        Manage account
       </h1>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Account details
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['user-permissions'] =="Admin user" %}
-              {{data['party-user1']}}<br>
-              {{data['party-email1']}}<br>
-              {{data['party-mobile1'] or "+447821945034"}}
-              {% else %}
-              {{data['party-user11']}}<br>
-              {{data['party-email11']}}<br>
-              {{data['party-mobile11'] or "+447821945034"}}
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link--no-visited-state" href="account-edit-user">
-              Edit<span class="govuk-visually-hidden"> account details</span>
-            </a>
-          </dd>
+     
+      {% set accountHtml %}
+        <h2 class="govuk-heading-m">My details</h2>
+        <div class="address-card">
+          <div class="address-container">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Account details
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['user-permissions'] =="Admin user" %}
+                    {{data['party-user1']}}<br>
+                    {{data['party-email1']}}<br>
+                    {{data['party-mobile1'] or "+447821945034"}}
+                    {% else %}
+                    {{data['party-user11']}}<br>
+                    {{data['party-email11']}}<br>
+                    {{data['party-mobile11'] or "+447821945034"}}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link--no-visited-state" href="account-edit-user">
+                    Edit<span class="govuk-visually-hidden"> account details</span>
+                  </a>
+                </dd>
+              </div> 
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Permission
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['user-permissions'] or "Admin user"}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!--
+                  <a class="govuk-link--no-visited-state" href="">
+                    Change<span class="govuk-visually-hidden"> account permissions</span>
+                  </a>
+                  -->
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['account-user-status'] or "Active"}}          
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!--
+                  <a class="govuk-link--no-visited-state" href="">
+                    Change<span class="govuk-visually-hidden"> account status</span>
+                  </a>
+                  -->
+                </dd>
+              </div>                     
+            </dl>
+          </div>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Organisation
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['party1'] }}<br>
-            {{data['party-address1']}} <br>
-            {{data['party-postcode1']}}<br>
-            {{data['party-country1']}}          
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            {% if data['user-permissions'] =="Admin user" %}
-              <a class="govuk-link--no-visited-state" href="account-edit-org">
-                Edit<span class="govuk-visually-hidden"> organisation details</span>
-              </a>
-            {% endif %}
-          </dd>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link--no-visited-state" href="account-2fa">Change your Two-factor authentication</a>
+          </li>  
+          <li>
+            <a class="govuk-link--no-visited-state" href="account-changepass">Change your password</a>
+          </li>    
+        </ul>
+      {% endset -%}
+
+      {% set orgHtml %}
+        <h2 class="govuk-heading-m">Account</h2>
+        <p>This account belongs to the following organisation:
+        <div class="address-card">
+          <div class="address-container">
+            <h3 class="govuk-heading-m clearfix">{{data['party1']}}
+              <p class="right-aligned-link">
+                <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=org-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
+              </p> 
+            </h3> 
+            <dl class="govuk-summary-list">
+              <!--Show the right info for who has logged in-->
+              {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Registered address:</dt>
+                  <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
+                    {{data['party-postcode1']}}<br>
+                    {{data['party-country1']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-org-number1']}} 
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Web address: </dt>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                  <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
+                </div>
+                {% else %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Registered address:</dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
+                    {{data['rep-postcode1']}}<br>
+                    {{data['rep-country1']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} 
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Web address: </dt>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
+                </div>
+              {% endif %}
+            </dl> 
+          </div>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['account-user-status'] or "Active"}}          
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!--
-            <a class="govuk-link--no-visited-state" href="">
-              Change<span class="govuk-visually-hidden"> account status</span>
-            </a>
-            -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Permission
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['user-permissions'] or "Admin user"}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!--
-            <a class="govuk-link--no-visited-state" href="">
-              Change<span class="govuk-visually-hidden"> account permissions</span>
-            </a>
-            -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Cases
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{data['case-ref1']}} - {{data['case-name1']}}<br>(Primary contact)</p>
-            <p>{{data['case-ref2']}} - {{data['case-name2']}}<br> (Primary contact)</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link--no-visited-state" href="#">
-              	Edit <span class="govuk-visually-hidden"> case</span>
-            </a>
-          </dd>
-        </div>                                   
-      </dl>
+      {% endset -%}
+
+      {{ govukTabs({
+        items: [
+         {
+            label: "My details",
+            id: "account-details",
+            panel: {
+              html: accountHtml
+            }
+          },
+           {
+            label: "Account",
+            id: "org-details",
+            panel: {
+              html: orgHtml
+            }
+          }
+        ]
+      }) }}
+     
     </div>
 
+    <!--
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">Change sign in details</h2>
@@ -140,6 +221,7 @@
         </nav>
       </aside>
     </div>
+    <-->
   </div>
 {% endblock %}
 

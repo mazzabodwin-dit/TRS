@@ -113,17 +113,16 @@
             </h2>
             {% if (data[''] == "") %}
               <p>
-                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">
-                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}</a><br>         
+                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>         
                 Interested party: Steel UK   
                 <br>
-                Status: Pending TRA approval (<span id="date"></span>)
+                <a href="reg-interest/reginterest-app-details" class="govuk-link govuk-link--no-visited-state">Status: Pending TRA approval</a> (<span id="date"></span>)
               </p>
             {% endif %}
 
             {% if (data['who-signin'] == "org") or (data['who-signin'] == "rep") or (data['who-signin'] == "rep-invite") %}
               <p>
-                {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}</a><br>         
+                {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}<br>         
                 Interested party: {{ data['party1']}}   
                 <br>
                  <a href="" class="govuk-link govuk-link--no-visited-state">Status: Questionnaires sent</a> (14 May 2022)
@@ -132,7 +131,7 @@
             <p>
               {{data ['invite-rep-what-case'] or "AS0003 - Nokias from Nicaragua"}}<br>  
               Interested party: {{data['party1']}} <br>
-              <a href="dashboard-deficient-case?reginterest-task=Deficient" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
+              <a href="cases/case-details-deficient-v1" class="govuk-link--no-visited-state">Status: Deficient documents</a> (22 
               Dec 2022)
             </p> 
           </div>
@@ -241,10 +240,17 @@
                 <a href="/public-site/manage-org/manage-org-user" class="govuk-link--no-visited-state">Manage users</a>
                 </span> 
               </h2>
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon update-icon" aria-hidden="true">!</span>
+                <p class="govuk-warning-text__text update-text">
+                  <strong>
+                    <span class="govuk-warning-text__assistive">Update</span>
+                    1 invite with deficient documentation
+                  </strong>
+                </p>
+              </div>
+              
               <ul class="govuk-list govuk-list--bullet">
-                <li>
-                  1 invite with deficient documentation
-                </li>
                 <li>
                  4 pending invites
                 </li>

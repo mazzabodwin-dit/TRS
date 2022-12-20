@@ -222,3 +222,8 @@ table.sortable td button {
 table.sortable .govuk-form-group {
   margin-bottom: 0px;
 }
+
+// Highlight status e.g. Deficient
+table.sortable .app-task-list__tag {
+  float: left;
+}

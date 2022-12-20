@@ -17,14 +17,10 @@
       <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manage-org-user">Manage users</a>
+      <a class="govuk-breadcrumbs__link" href="../manage-org/manage-org-user">Manage users</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      {% if data['own-org-user'] =="party-user11" %}
-        {{data['party-user11']}}
-        {% else %}
-        {{data['party-user6']}}
-      {% endif %}
+      {{data['party-user1']}}
     </li>
   </ol>
 </div>
@@ -35,24 +31,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      {% if data['own-org-user'] =="party-user11" %}
-        {{data['party-user11']}}
-        {% else %}
-        {{data['party-user6']}}
-      {% endif %}
+      Jane Winder
     </h1>
-
-    {% if data['party-user6-status'] =="Inactive" %}
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <p class="govuk-warning-text__text">
-          <strong>
-            <span class="govuk-warning-text__assistive">Warning</span>
-            You have 1 pending invite with deficient documentation
-          </strong>
-        </p>
-      </div>
-    {% endif %}
 
     {% set accountHtml %}
       <h2 class="govuk-heading-m">User details</h2>
@@ -64,16 +44,15 @@
                 Contact details
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['own-org-user'] =="party-user11" %}
+                {% if data['user-permissions'] =="Admin user" %}
+                  {{data['party-user1']}}<br>
+                  {{data['party-email1']}}<br>
+                  {{data['party-mobile1'] or "+447821945034"}}
+                  {% else %}
                   {{data['party-user11']}}<br>
                   {{data['party-email11']}}<br>
-                  {{data['party-mobile11'] or "+447821945034"}}  
-                  {% else %}
-                  {{data['party-user6']}}<br>
-                  {{data['party-email6']}}<br>
-                  {{data['party-mobile6'] or "+447821945034"}}  
+                  {{data['party-mobile11'] or "+447821945034"}}
                 {% endif %}
-                
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link--no-visited-state" href="account-edit-user">
@@ -86,11 +65,7 @@
                 Permission
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['own-org-user'] =="party-user11" %}
-                  User
-                  {% else %}
-                  User
-                {% endif %}
+                {{ data['user-permissions'] or "Admin user"}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link--no-visited-state" href="user-account-permiss">
@@ -103,12 +78,7 @@
                 Status
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['own-org-user'] =="party-user11" %}
-                  {{data['party-user11-status'] or "Active"}} 
-                  {% else %}
-                  {{data['party-user6-status'] or "Inactive"}} 
-                {% endif %}
-                         
+                {{data['account-user-status'] or "Active"}}          
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link--no-visited-state" href="user-account-status">
@@ -238,7 +208,7 @@
           
         </body>
       </table> 
-    {% endset -%}
+    {% endset -%}     
 
     {{ govukTabs({
       items: [

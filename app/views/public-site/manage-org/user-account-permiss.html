@@ -20,7 +20,7 @@
       <a class="govuk-breadcrumbs__link" href="manage-org-user">Manage users</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="user-account-rep">User account details</a>
+      <a class="govuk-breadcrumbs__link" href="user-account-rep">User details</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       Change account permissions
@@ -37,9 +37,10 @@
 
       <form action="user-account-own-org" method="post" id="account-update-details-form"> 
 
-            {{ govukRadios({
-              idPrefix: "account-user-permissions",
-              name: "account-user-permissions",
+        {% if data['own-org-user'] =="party-user11" %}
+          {{ govukRadios({
+              idPrefix: "party-user11-permissions",
+              name: "party-user11-permissions",
               fieldset: {
                 legend: {
                   text: "Change account permissions",
@@ -51,16 +52,41 @@
               {
                 value: "User",
                 text: "User: they can access and interact with specific cases",
-                checked: checked("invite-user-permissions", "User")
+                checked: checked("party-user11-permissions", "User")
               },
               {
                 value: "Admin user",
                 text: "Admin user: they can access and interact with cases, assign cases and manage other team members",
-                checked: checked("invite-user-permissions", "Admin user")
+                checked: checked("party-user11-permissions", "Admin user")
                 }
               ]
-            }) }}          
-  
+            }) }}    
+          {% else %}
+          {{ govukRadios({
+              idPrefix: "party-user6-permissions",
+              name: "party-user6-permissions",
+              fieldset: {
+                legend: {
+                  text: "Change account permissions",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+              {
+                value: "User",
+                text: "User: they can access and interact with specific cases",
+                checked: checked("party-user6-permissions", "User")
+              },
+              {
+                value: "Admin user",
+                text: "Admin user: they can access and interact with cases, assign cases and manage other team members",
+                checked: checked("party-user6-permissions", "Admin user")
+                }
+              ]
+            }) }}    
+        {% endif %}
+
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Submit"

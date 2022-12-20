@@ -125,6 +125,8 @@ $govuk-assets-path: '/govuk/assets/';
   margin-bottom: 10px;
 }
 
+// How the warning message looks in an address container used at the top of page
+
 .address-container .govuk-warning-text  {
   margin-bottom: 0px;
   padding: 0px;
@@ -138,6 +140,21 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-warning-text__text-p button  {
   margin-bottom: 0px;
 }
+//
+
+// Dashboard warning messages for case/ invite updates
+.govuk-warning-text__icon.update-icon  {
+  margin-top: -1px;
+  font-size: 24px;
+  line-height: 20px;
+  min-width: 27px;
+  min-height: 27px;
+}
+
+.govuk-warning-text__text.update-text {
+  padding-left: 35px;
+}
+//
 
 .verified-check {
   margin: 0px 0px -10px 10px;
