@@ -24,7 +24,7 @@
           titleText: "There is a problem",
           errorList: [
             {
-              text: "Select a rating of between 1 to 5 stars",
+              text: "You need to select a rating of between 1 to 5 stars",
               href: "#feedback-error"
             }
           ]
@@ -37,7 +37,7 @@
               </h2>
             </legend>
             <p id="feedback-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> You need to select a rating of between 1 to 5 stars
+              <span class="govuk-visually-hidden">Error:</span> Select a rating of between 1 to 5 stars
             </p>
             <div class="govuk-radios star-rating3__stars" data-module="govuk-radios">
               <input class="star-rating3__input" type="radio" name="task-rating" value="1" id="task-rating-1" {{ checked("task-rating", "1") }} onclick="hide2();" />
