@@ -55,7 +55,8 @@
               <option value="Case stage">Case stage</option>
               <option value="Update">Update</option>
             </select>
-
+          </div>
+          <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
               Direction
             </label>
@@ -63,13 +64,12 @@
               <option value="Decending" selected>Decending</option>
               <option value="Accending">Accending</option>
             </select>
-
-            {{ govukButton({
-              text: "Sort cases",
-              classes: "govuk-button--secondary"
-            }) }}
           </div>
-        </div>
+          {{ govukButton({
+            text: "Sort cases",
+            classes: "govuk-button--secondary"
+          }) }}
+       </div>
       </form>
 
       <table class="govuk-table sortable table-border mobile-table-border" id="table-header">

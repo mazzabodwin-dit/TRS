@@ -163,7 +163,6 @@
     <h2 class="govuk-heading-m">Open cases</h2>
     <p>Manage the cases your organisation is involved in.</p>
     <form>
-      
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-!-display-inline" for="sort-cases">
@@ -178,7 +177,8 @@
             <option value="Updated">Updated</option>
             <option value="Primary">Primary</option>
           </select>
-
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-cases">
             Direction
           </label>
@@ -186,12 +186,11 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
-
+        </div>
           {{ govukButton({
             text: "Sort cases",
             classes: "govuk-button--secondary"
           }) }}
-        </div>
       </div>
     </form>
 
@@ -385,7 +384,8 @@
             <option value="Updated">Updated</option>
             <option value="Primary">Primary</option>
           </select>
-
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-cases2">
             Direction
           </label>
@@ -393,12 +393,11 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
-
+        </div>
           {{ govukButton({
             text: "Sort cases",
             classes: "govuk-button--secondary"
           }) }}
-        </div>
       </div>
     </form>
 

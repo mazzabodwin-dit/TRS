@@ -54,7 +54,8 @@
             <option value="Account role">Account role</option>
             <option value="Number of cases">Number of cases</option>
           </select>
-
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
             Direction
           </label>
@@ -62,12 +63,11 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
-
+        </div>
         {{ govukButton({
           text: "Sort users",
           classes: "govuk-button--secondary"
         }) }}
-        </div>    
       </div>
     </form>
 
@@ -343,7 +343,8 @@
             <option value="Account role">Account role</option>
             <option value="Number of cases">Number of cases</option>
           </select>
-
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
             Direction
           </label>
@@ -351,12 +352,11 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
-
+        </div>
         {{ govukButton({
           text: "Sort users",
           classes: "govuk-button--secondary"
         }) }}
-        </div>    
       </div>
     </form>
     <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">

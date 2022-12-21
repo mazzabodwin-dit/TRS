@@ -42,7 +42,8 @@
             <option value="Status">Status</option>
             <option value="Reg due">Reg due</option>
           </select>
-        
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-cases">
             Direction
           </label>
@@ -50,11 +51,11 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
-          {{ govukButton({
-            text: "Sort",
-            classes: "govuk-button--secondary"
-          }) }}
         </div>
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
       </div>
     </form>     
 
