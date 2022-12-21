@@ -29,21 +29,19 @@
 
       <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-confirm-form">  
     
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--xl" for="search-reg-org">
               Your organisation details
             </label>
           </h1>
-          <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="event-name">
-                Search Companies House to find your UK registered company details. This is the organisation you are directly employed by.
-            </label>
-            <p id="search-api" class="govuk-error-message ">
-              <span class="govuk-visually-hidden">Error:</span> The Companies House search is currently not working. Try again shortly, or <span class="govuk-error-summary__list"><a href="createaccount-your-org" class="govuk-link">enter your organisation details manually</a></span>.
-            </p>
-            <input class="govuk-input" id="event-name" name="event-name" type="text" placeholder="Enter a registered company name or number">
+          <div id="search-hint" class="govuk-hint">
+            Search Companies House to find your UK registered company details. This is the organisation you are directly employed by.
           </div>
+          <p id="search-api" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> The Companies House search is currently not working. Try again shortly, or <span class="govuk-error-summary__list"><a href="createaccount-your-org" class="govuk-link">enter your organisation details manually</a></span>.
+          </p>
+            <input class="govuk-input" id="event-name" name="event-name" type="text" placeholder="Enter a registered company name or number" aria-describedby="search-hint">
         </div>
 
         <div style="display:none;" id="selected_company_wrapper">
