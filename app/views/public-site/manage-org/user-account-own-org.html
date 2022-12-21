@@ -54,7 +54,7 @@
       {% endif %}
     </h1>
 
-    {% if data['party-user6-status'] =="Inactive" or data['party-user3-status'] =="Inactive" %}
+    {% if (data['account-user'] =="party-user6" and data['party-user6-status'] =="Inactive") or (data['account-user'] =="party-user3" and data['party-user3-status'] =="Inactive") %}
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <p class="govuk-warning-text__text">
@@ -68,7 +68,7 @@
 
     {% set accountHtml %}
       <h2 class="govuk-heading-m">User details</h2>
-        <div class="address-card">
+      <div class="address-card">
         <div class="address-container">
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
@@ -156,7 +156,7 @@
                     {% endif %}
                   {% endif %}
                 {% endif %}
-                         
+                        
               </dd>
               <dd class="govuk-summary-list__actions">
                 {% if data['account-user'] =="party-user1" %}
