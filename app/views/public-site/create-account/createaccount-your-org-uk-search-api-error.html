@@ -42,7 +42,7 @@
             <p id="search-api" class="govuk-error-message ">
               <span class="govuk-visually-hidden">Error:</span> The Companies House search is currently not working. Try again shortly, or <span class="govuk-error-summary__list"><a href="createaccount-your-org" class="govuk-link">enter your organisation details manually</a></span>.
             </p>
-            <input class="govuk-input" id="event-name" name="event-name" type="text" disabled>
+            <input class="govuk-input" id="event-name" name="event-name" type="text" placeholder="Enter a registered company name or number">
           </div>
         </div>
 
@@ -59,8 +59,7 @@
    
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Add company details manually",
-            disabled: true
+            text: "Add company details manually"
           }) }}    
          <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
 
