@@ -35,11 +35,39 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="user-account-own-org" method="post" id="account-update-details-form"> 
+        {% if data['account-user'] =="party-user11" %}
+          <form action="user-account-own-org" method="post" id="account-update-details-form"> 
 
+          {{ govukRadios({
+            idPrefix: "party-user11-status",
+            name: "party-user11-status",
+            fieldset: {
+              legend: {
+                text: "Change account status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+            {
+              value: "Active",
+              text: "Active user: some words here",
+              checked: checked("party-user11-status", "User")
+            },
+            {
+              value: "Inactive",
+              text: "Inactive user: user some words here",
+              checked: checked("party-user11-status", "Admin user")
+              }
+            ]
+          }) }}
+
+          {% else %}
+          {% if data['account-user'] =="party-user6" %}
+            <form action="user-account-own-org" method="post" id="account-update-details-form"> 
             {{ govukRadios({
-              idPrefix: "account-user-status",
-              name: "account-user-status",
+              idPrefix: "party-user6-status",
+              name: "party-user6-status",
               fieldset: {
                 legend: {
                   text: "Change account status",
@@ -51,20 +79,45 @@
               {
                 value: "Active",
                 text: "Active user: some words here",
-                checked: checked("account-user-status", "User")
+                checked: checked("party-user6-status", "User")
               },
               {
                 value: "Inactive",
                 text: "Inactive user: some words here",
-                checked: checked("account-user-status", "Admin user")
+                checked: checked("party-user6-status", "Admin user")
                 }
               ]
             }) }}
+            {% else %}
+            {% if data['account-user'] =="rep-user3" %}
+             <form action="user-account-rep" method="post" id="account-update-details-form"> 
+              {{ govukRadios({
+                idPrefix: "rep-user3-status",
+                name: "rep-user3-status",
+                fieldset: {
+                  legend: {
+                    text: "Change account status",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                items: [
+                {
+                  value: "Active",
+                  text: "Active user: some words here",
+                  checked: checked("rep-user3-status", "User")
+                },
+                {
+                  value: "Inactive",
+                  text: "Inactive user: some words here",
+                  checked: checked("rep-user3-status", "Admin user")
+                  }
+                ]
+              }) }}
+            {% endif %}
+          {% endif %}
+        {% endif %}
 
-
-
-           
-  
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Submit"

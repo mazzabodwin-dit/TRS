@@ -166,7 +166,7 @@
             {% else %}
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-sign-in" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user1" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
@@ -178,41 +178,66 @@
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>1
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="user-account#cases" class="govuk-link--no-visited-state">Assign/remove case</a>
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span>
+                {% if data['party-user1-status'] == "Inactive" %}           
+                  <a href="user-account-status?account-user=party-user1" class="govuk-link--no-visited-state">Change status</a>
+                  {% else %}
+                  <a href="" class="govuk-link--no-visited-state">Assign/remove case</a>
+                {% endif %}
               </td>
             </tr>
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?own-org-user=party-user11" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user11" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
               </td>
               <td class="govuk-table__cell field-grey">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
               </td>
               <td class="govuk-table__cell field-grey">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>User
+                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>
+                {% if data['party-user11-status'] != "Inactive" %} 
+                  {{data['party-user11-permiss'] or "User"}} 
+                  {% else %}
+                  {{data['party-user11-status'] or "Inactive" }} 
+                {% endif %}
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>1
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Assign/remove case</a>
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span>
+                {% if data['party-user11-status'] == "Inactive" %}           
+                  <a href="user-account-status?account-user=party-user11" class="govuk-link--no-visited-state">Change status</a>
+                  {% else %}
+                  <a href="" class="govuk-link--no-visited-state">Assign/remove case</a>
+                {% endif %}
               </td>
             </tr>
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?own-org-user=party-user6" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user6" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
               </td>
               <td class="govuk-table__cell field-grey">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email6']}}
               </td>
               <td class="govuk-table__cell field-grey">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Inactive
+                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>
+                {% if data['party-user6-status'] != "Inactive" %} 
+                  {{data['party-user6-permiss'] or "User"}} 
+                  {% else %}
+                  {{data['party-user6-status'] or "Inactive" }} 
+                {% endif %}
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>0
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="#" class="govuk-link--no-visited-state">Activate</a>
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span>
+                {% if data['party-user6-status'] == "Inactive" %}           
+                  <a href="user-account-status?account-user=party-user6" class="govuk-link--no-visited-state">Change status</a>
+                  {% else %}
+                  <a href="" class="govuk-link--no-visited-state">Assign/remove case</a>
+                {% endif %}
               </td>
             </tr>    
             <tr class="govuk-table__row no-border">
@@ -223,13 +248,23 @@
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3'] }}
               </td>
               <td class="govuk-table__cell field-italics">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Representative
+                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>
+                {% if data['rep-user3-status'] != "Inactive" %} 
+                  {{data['rep-user3-permiss'] or "Representative"}} 
+                  {% else %}
+                  {{data['rep-user3-status'] or "Inactive" }} 
+                {% endif %}
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>1
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link--no-visited-state">Assign/remove case</a>
+                <span class="govuk-visually-hidden--desktop td-header">Action: </span>
+                {% if data['rep-user3-status'] == "Inactive" %}           
+                  <a href="user-account-status?account-user=rep-user3" class="govuk-link--no-visited-state">Change status</a>
+                  {% else %}
+                  <a href="" class="govuk-link--no-visited-state">Assign/remove case</a>
+                {% endif %}
               </td>
             </tr>
           {% endif %}

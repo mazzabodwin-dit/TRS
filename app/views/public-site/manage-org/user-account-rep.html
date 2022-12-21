@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  User account details - {{serviceName}}
+  User details - {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -20,7 +20,7 @@
       <a class="govuk-breadcrumbs__link" href="manage-org-user">Manage users</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      User details
+      {{data['rep-user3']}}
     </li>
   </ol>
 </div>
@@ -28,81 +28,196 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-       User account details
-      </h1>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Contact details
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['rep-user3']}}<br>
-            {{data['rep-email3']}}<br>
-            +447821945085<br><br>
-            {{data['representative1'] }}<br>
-            {{data['party-address1']}} <br>
-            {{data['party-postcode1']}}<br>
-            {{data['party-country1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!--<a class="govuk-link--no-visited-state" href="user-account-status">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-            </a>
-             -->
-          </dd>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      {{data['rep-user3']}}
+    </h1>
+
+    {% if data['party-user6-status'] =="Inactive" %}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <p class="govuk-warning-text__text">
+          <strong>
+            <span class="govuk-warning-text__assistive">Warning</span>
+            This account has been marked as Inactive
+          </strong>
+        </p>
+      </div>
+    {% endif %}
+
+    {% set accountHtml %}
+      <h2 class="govuk-heading-m">User details</h2>
+        <div class="address-card">
+        <div class="address-container">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['rep-user3']}}<br>
+                {{data['rep-email3']}}<br>
+                {{data['rep-mobile3'] or "+447821945034"}}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Permission
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Representative
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['rep-user3-status'] or "Active"}}    
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link--no-visited-state" href="user-account-status?account-user=rep-user3">
+                  Change<span class="govuk-visually-hidden"> account status</span>
+                </a>
+              </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Account:</dt>
+              <dd class="govuk-summary-list__value">
+                {{data['representative1']}} <br>
+                {{data['rep-address1']}} <br>
+                {{data['rep-postcode1']}}<br>
+                {{data['rep-country1']}}
+              </dd>
+            </div>
+          </dl>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Active          
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link--no-visited-state" href="user-account-status">
-              Change<span class="govuk-visually-hidden"> account tatus</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Permission
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Representative
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!--
-              <a class="govuk-link--no-visited-state" href="user-account-permiss">
-                Change<span class="govuk-visually-hidden"> account permissions</span>
-              </a>
-            -->
-          </dd>
-         
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Cases
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p><a href="" class="govuk-link--no-visited-state">{{data['case-ref1']}} - {{data['case-name1']}}</a><br>(Primary contact)</p>
-            <p><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a><br> (Primary contact)</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link--no-visited-state" href="#">
-              	Assign/remove<span class="govuk-visually-hidden"> cases</span>
-            </a>
-          </dd>
-        </div>                                   
-      </dl>
-      <span class="govuk-body">
-          <a href="" class="govuk-link--no-visited-state">Remove user</a>
-        </span>
-    </div>
+      </div>
+    {% endset -%}
+
+    {% set casesHtml %}
+      <h2 class="govuk-heading-m clearfix">User cases
+      <span class="govuk-body right-aligned-link">
+        <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
+      </span>
+      </h2>
+      <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your organisation's case</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" aria-sort="ascending">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Representing
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case permissions
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header no-sort">
+                <span class="govuk-visually-hidden--desktop">Action: </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+            </td>
+            <td class="govuk-table__cell num">
+              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            </td>
+          </tr>
+          
+        </body>
+      </table> 
+    {% endset -%}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "User details",
+          id: "account-details",
+          panel: {
+            html: accountHtml
+          }
+        },
+        {
+          label: "User cases",
+          id: "cases",
+          panel: {
+            html: casesHtml
+          }
+        }
+      ]
+    }) }}
   </div>
+</div>
 {% endblock %}
 
 {% block footer %}
