@@ -31,7 +31,7 @@
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-!-display-inline" for="sort-active-org">
-              Sort active organisations cases by
+              Sort active organisations by
             </label>
             <select class="govuk-select" id="sort-active-org" name="sort-active-org">
               <option value="Organisation" selected>Organisation</option>
@@ -41,25 +41,25 @@
               <option value="No. users">No. users</option>
               <option value="Registered">Registered</option>
             </select>
-
-            <label class="govuk-label govuk-visually-hidden" for="direction-active-org">
+          </div>
+          <div class="govuk-form-group table-sort-select">
+            <label class="govuk-label govuk-visually-hidden" for="direction-active-orgs">
               Direction
             </label>
-            <select class="govuk-select" id="direction-active-org" name="direction-active-org">
+            <select class="govuk-select" id="direction-active-orgs" name="direction-active-orgs">
               <option value="Decending" selected>Decending</option>
               <option value="Accending">Accending</option>
             </select>
-
-            {{ govukButton({
-              text: "Sort organisations",
-              classes: "govuk-button--secondary"
-            }) }}
           </div>
+          {{ govukButton({
+            text: "Sort organisations",
+            classes: "govuk-button--secondary"
+          }) }}
         </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
           A table listing all of the active organisations
         </caption>
         <thead class="govuk-table__head">
@@ -290,7 +290,8 @@
               <option value="Submission">Submission</option>
               <option value="Submitted">Submitted</option>
             </select>
-
+          </div>
+          <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-visually-hidden" for="direction-party">
               Direction
             </label>
@@ -307,7 +308,7 @@
         </div>
       </form>  
       <table class="govuk-table sortable mobile-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
           A table listing all of the organisation waiting to be approved on to a case
         </caption>
         <thead class="govuk-table__head">
@@ -423,7 +424,8 @@
               <option value="Matches">Matches</option>
               <option value="Status">Status</option>
             </select>
-
+          </div>
+          <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-visually-hidden" for="direction-dup">
               Direction
             </label>
@@ -440,7 +442,7 @@
         </div>
       </form> 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
           A table listing all of the parties waiting to be verified
         </caption>
         <thead class="govuk-table__head">

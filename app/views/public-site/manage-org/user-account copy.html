@@ -41,7 +41,7 @@
       </span>
       </h2>
       <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">A table listing all of your organisation's case</caption>
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your organisation's case</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
@@ -136,8 +136,8 @@
         <h2 class="govuk-heading-m">Account details</h2>
         <div class="address-card">
           <div class="address-container">
-             <h3 class="govuk-heading-m">{{data['party-user1']}}
-              <p class="right-aligned-link govuk-heading-s">
+             <h3 class="govuk-heading-m clearfix">{{data['party-user1']}}
+              <p class="right-aligned-link">
                 <a href="" class="govuk-link--no-visited-state">Edit</a>
               </p> 
             </h3> 
@@ -195,8 +195,8 @@
         <h2 class="govuk-heading-m">Organisation details</h2>
         <div class="address-card">
           <div class="address-container">
-            <h3 class="govuk-heading-m">{{data['party1']}}
-              <p class="right-aligned-link govuk-heading-s">
+            <h3 class="govuk-heading-m clearfix">{{data['party1']}}
+              <p class="right-aligned-link">
                 <a href="/caseworker/orgs/org-edit-rep-dets?org-edit-type=org-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
               </p> 
             </h3> 

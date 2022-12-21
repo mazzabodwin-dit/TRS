@@ -35,7 +35,7 @@
   } 
 
   /* border for all mobile tables*/
-  .sortable .mobile-table-border {
+  .sortable.mobile-table-border {
     border: solid 1px govuk-colour("mid-grey");
   }
 
@@ -198,7 +198,7 @@ table.sortable th:not([aria-sort]) button:hover span::after {
 }
 
 #table-sort .govuk-button--secondary, #table-filter .govuk-button--secondary {
-width: initial;
+float: left;
 }
 
 /* This is the select button in the caseworker table in reg interest */

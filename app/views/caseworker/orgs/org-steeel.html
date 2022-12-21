@@ -34,8 +34,8 @@
       </div>
       
     {% set casesHTML %}
-      <h3 class="govuk-heading-m">Cases
-        <p class="right-aligned-link govuk-heading-s">
+      <h3 class="govuk-heading-m clearfix">Cases
+        <p class="right-aligned-link">
           <a href="" class="govuk-link--no-visited-state">Invite organisation to case</a>
         </p> 
       </h3>
@@ -46,13 +46,15 @@
               Sort your cases by
             </label>
            <select class="govuk-select" id="sort-cases" name="sort-cases">
-              <option value="No." selected>No.</option>
+              <option value="No." selected>Case No.</option>
               <option value="Case">Case</option>
               <option value="Interested party">Interested party</option>
               <option value="Primary">Primary contact</option>              
               <option value="Case role">Case role</option>
               <option value="Representative">Representative</option> 
-            </select>
+            </select>           
+          </div>
+          <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
               Direction
             </label>
@@ -69,8 +71,8 @@
         </div>
       </form>  
   
-      <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+      <table class="govuk-table sortable mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
           A table listing all of the cases this organisation is involved in
         </caption>
         <thead class="govuk-table__head">
@@ -140,8 +142,8 @@
     {% endset %}
 
     {% set usersHTML %}
-    <h3 class="govuk-heading-m">Users
-      <p class="right-aligned-link govuk-heading-s">
+    <h3 class="govuk-heading-m clearfix">Users
+      <p class="right-aligned-link">
         <a href="" class="govuk-link--no-visited-state">Invite user to case</a>
       </p> 
     </h3>
@@ -149,13 +151,14 @@
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-!-display-inline" for="sort-users">
-            Sort your cases by
+            Sort users by
           </label>
           <select class="govuk-select" id="sort-users" name="sort-users">
             <option value="No." selected>Name</option>
             <option value="Case">Email</option>
           </select>
-
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
             Direction
           </label>
@@ -172,8 +175,8 @@
       </div>
     </form>  
 
-    <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+    <table class="govuk-table sortable mobile-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
         A table listing all of the users that are related to this organisation's account
       </caption>
       <thead class="govuk-table__head">
@@ -225,8 +228,8 @@
     </h3>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-m">{{data['dup-party1']}}
-          <p class="right-aligned-link govuk-heading-s">
+        <h3 class="govuk-heading-m clearfix">{{data['dup-party1']}}
+          <p class="right-aligned-link">
             <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=org-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
           </p> 
         </h3> 

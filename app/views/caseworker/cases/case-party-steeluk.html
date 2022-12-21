@@ -31,17 +31,17 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-l">
+    <h2 class="govuk-heading-l clearfix">
       {{data['party1']}} 
-      <p class="right-aligned-link govuk-heading-s">
+      <p class="right-aligned-link">
         <a href="invite-party" class="govuk-link--no-visited-state">Action here</a>
       </p> 
     </h2>    
     <div class="govuk-inset-text govuk-inset-text__reginterest">
-         <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
-         <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes" class="govuk-link govuk-link--no-visited-state">Registration of Interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
-         <strong>{{data['representative1']}}</strong> has been <a href="" class="govuk-link--no-visited-state">invited to represent</a> <strong>{{data['party1']}}</strong>
-      </div> 
+      <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
+      <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes" class="govuk-link govuk-link--no-visited-state">Registration of Interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
+      <strong>{{data['representative1']}}</strong> has been <a href="" class="govuk-link--no-visited-state">invited to represent</a> <strong>{{data['party1']}}</strong>
+    </div> 
    
 
     {% set caseOverviewHTML %}
@@ -58,7 +58,8 @@
             <option value="Submission">Submission</option>
             <option value="Submitted">Submitted</option>
           </select>
-
+        </div>
+        <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-submission">
             Direction
           </label>
@@ -76,7 +77,7 @@
     </form>  
 
     <table class="govuk-table sortable mobile-table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
         A table listing all of the submissions waiting to be reviewed
       </caption>
       <thead class="govuk-table__head">
@@ -142,8 +143,8 @@
     {% endset %}
     
     {% set casesHTML %}
-      <h3 class="govuk-heading-m">Cases
-        <p class="right-aligned-link govuk-heading-s">
+      <h3 class="govuk-heading-m clearfix">Cases
+        <p class="right-aligned-link">
           <a href="" class="govuk-link--no-visited-state">Invite organisation to case</a>
         </p> 
       </h3>
@@ -161,6 +162,8 @@
               <option value="Case role">Case role</option>
               <option value="Representative">Representative</option> 
             </select>
+          </div>
+          <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
               Direction
             </label>
@@ -177,9 +180,9 @@
         </div>
       </form>  
   
-      <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-          A table listing all of the cases this organisation is involved in
+      <table class="govuk-table sortable mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
+          A table listing all of the cases the organisation is involved in
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -248,8 +251,8 @@
     {% endset %}
 
     {% set usersHTML %}
-    <h3 class="govuk-heading-m">Users
-      <p class="right-aligned-link govuk-heading-s">
+    <h3 class="govuk-heading-m clearfix">Users
+      <p class="right-aligned-link">
         <a href="" class="govuk-link--no-visited-state">Invite user to case</a>
       </p> 
     </h3>
@@ -257,13 +260,14 @@
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-!-display-inline" for="sort-users">
-            Sort your cases by
+            Sort your users by
           </label>
           <select class="govuk-select" id="sort-users" name="sort-users">
             <option value="No." selected>Name</option>
             <option value="Case">Email</option>
           </select>
-
+        </div>
+         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
             Direction
           </label>
@@ -280,9 +284,9 @@
       </div>
     </form>  
 
-    <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden">
-        A table listing all of the users that are related to this organisation's account
+    <table class="govuk-table sortable mobile-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
+        A table listing all of the users that are related to the organisation's account
       </caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -333,8 +337,8 @@
     </h3>
     <div class="address-card">
       <div class="address-container">
-        <h3 class="govuk-heading-m">{{data['party1']}}
-          <p class="right-aligned-link govuk-heading-s">
+        <h3 class="govuk-heading-m clearfix">{{data['party1']}}
+          <p class="right-aligned-link">
             <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=org-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
           </p> 
         </h3> 
@@ -372,8 +376,6 @@
       </div>
     </div>   
     {% endset %}
-
-
 
     {{ govukTabs ({
       items: [
