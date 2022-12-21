@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your organisation details - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#search-no-js">You need to enable Javascript</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form action="createaccount-your-org-dets" method="post" id="createaccount-your-org-confirm-form">  
+    
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="search-reg-org">
+              Your organisation details
+            </label>
+          </h1>
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label" for="event-name">
+                Search Companies House to find your UK registered company details. This is the organisation you are directly employed by.
+            </label>
+            <p id="search-no-js" class="govuk-error-message ">
+              <span class="govuk-visually-hidden">Error:</span> Turn on Javascript to use the Companies House search.
+              Or you will need to <span class="govuk-error-summary__list"><a href="createaccount-your-org" class="govuk-link">enter your company details manually</a></span>.
+            </p>
+            <input class="govuk-input" id="event-name" name="event-name" type="text" disabled>
+          </div>
+        </div>
+
+        <div style="display:none;" id="selected_company_wrapper">
+          <p>Check the details below carefully. If it does not match the details of your organisation, you should go back to the previous page and select "No".</p>
+          <div class="govuk-inset-text" id="selected_company"></div>
+        </div>
+
+        {{ govukDetails({
+          summaryText: "If you can’t find your organisation",
+          html: ' <p class="govuk-body">Search for your organisation on the <a href="https://www.gov.uk/get-information-about-a-company" target="_blank" rel="noopener noreferrer" class="govuk-link">Companies House register (opens in a new tab)</a>.</p>
+          <p>If the organisation is not on the register it is not a UK registered company. Go back to the previous page and select "No". </p>'
+        }) }}
+   
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Add company details manually",
+            disabled: true
+          }) }}    
+         <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
+
+      </form>        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
