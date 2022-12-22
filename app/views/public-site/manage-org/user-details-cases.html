@@ -97,12 +97,15 @@ Manage user cases - {{serviceName}}
           </th>
           <th class="govuk-table__header">
             <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case permissions
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case stage
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
-          <th class="govuk-table__header no-sort">
-              <span class="govuk-visually-hidden--desktop">Action: </span>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Update
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
           </th>
         </tr>
       </thead>
@@ -120,7 +123,7 @@ Manage user cases - {{serviceName}}
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Case stage: </span>{{data['status1']}}
           </td>
-          <td class="govuk-table__cell num">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop td-header">Update: </span>{{data['updated1']}}
           </td>
         </tr>
