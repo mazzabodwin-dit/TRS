@@ -202,7 +202,7 @@
     {% endset -%}
 
     {% set casesHtml %}
-      <h2 class="govuk-heading-m clearfix">User cases
+      <h2 class="govuk-heading-m clearfix">Users cases
       <span class="govuk-body right-aligned-link">
         <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
       </span>
@@ -231,12 +231,15 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case permissions
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case contact
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header no-sort">
-                <span class="govuk-visually-hidden--desktop">Action: </span>
+              <span class="govuk-visually-hidden--desktop">Action 1: </span>
+            </th>
+            <th class="govuk-table__header no-sort">
+              <span class="govuk-visually-hidden--desktop">Action 2: </span>
             </th>
           </tr>
         </thead>
@@ -252,10 +255,13 @@
               <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+              <span class="govuk-visually-hidden--desktop td-header">Primary contact: </span>No
             </td>
-            <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Assign/remove case</a> 
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action 1: </span><a href="../cases/case-contacts" class="govuk-link govuk-link--no-visited-state">Edit contacts <span class="govuk-visually-hidden--desktop td-header">for {{data['case-ref1']}}</span> </a> 
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove <span class="govuk-visually-hidden--desktop td-header">from {{data['case-ref1']}}</span> </a> 
             </td>
           </tr>
 
@@ -270,10 +276,13 @@
               <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+              <span class="govuk-visually-hidden--desktop td-header">Primary contact: </span>Yes
             </td>
-            <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Assign/remove case</a> 
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Edit contacts <span class="govuk-visually-hidden--desktop td-header">for {{data['case-ref1']}}</span> </a> 
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove <span class="govuk-visually-hidden--desktop td-header"> {{data['case-ref1']}}</span> </a> 
             </td>
           </tr>
 
@@ -288,10 +297,13 @@
               <span class="govuk-visually-hidden--desktop td-header">Representing: </span>{{data['party1']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop td-header">Case permissions </span>Primary contact
+              <span class="govuk-visually-hidden--desktop td-header">Primary contact: </span>Yes
             </td>
-            <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop td-header">Action: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove from case</a> 
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Edit contacts <span class="govuk-visually-hidden--desktop td-header">for {{data['case-ref1']}}</span> </a> 
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop td-header">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Remove <span class="govuk-visually-hidden--desktop td-header">from {{data['case-ref1']}}</span> </a> 
             </td>
           </tr>
           
@@ -309,7 +321,7 @@
           }
         },
         {
-          label: "User cases",
+          label: "Users cases",
           id: "user-cases",
           panel: {
             html: casesHtml

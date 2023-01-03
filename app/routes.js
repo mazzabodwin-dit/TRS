@@ -184,11 +184,11 @@ router.post('/invite-type-route', function (req, res) {
     // Check whether the variable matches a condition
     if (regType == "invite-own-org") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/invite/invite-user-details')
+        res.redirect('/public-site/manage-users/invite/invite-user-details')
     }
     if (regType == "invite-rep") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/tasklist/invite-rep-tasks?tasklist-type=invite-rep')
+        res.redirect('/public-site/manage-users/tasklist/invite-rep-tasks?tasklist-type=invite-rep')
     }
 })
 
@@ -201,11 +201,11 @@ router.post('/invite-type-no-case-route', function (req, res) {
     // Check whether the variable matches a condition
     if (regType == "invite-own-org") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/invite/invite-user-details')
+        res.redirect('/public-site/manage-users/invite/invite-user-details')
     }
     if (regType == "invite-rep") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/tasklist/invite-case-none')
+        res.redirect('/public-site/manage-users/tasklist/invite-case-none')
     }
 })
 
@@ -218,11 +218,11 @@ router.post('/invite-contact-details-route', function (req, res) {
     // Check whether the variable matches a condition
     if (inviteRepWhatOrg == "existing-org") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/tasklist/invite-rep-contact')
+        res.redirect('/public-site/manage-users/tasklist/invite-rep-contact')
     }
     if (inviteRepWhatOrg == "new-org") {
         // Send user to next page
-        res.redirect('/public-site/manage-org/tasklist/invite-rep-contact-details')
+        res.redirect('/public-site/manage-users/tasklist/invite-rep-contact-details')
     }
 })
 
