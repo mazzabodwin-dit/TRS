@@ -46,68 +46,15 @@
       </div>
     {% endif %}
 
-    {% set accountHtml %}
-      <h2 class="govuk-heading-m">User details</h2>
-        <div class="address-card">
-        <div class="address-container">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Contact details
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['rep-user3']}}<br>
-                {{data['rep-email3']}}<br>
-                {{data['rep-mobile3'] or "+447821945034"}}  
-              </dd>
-              <dd class="govuk-summary-list__actions">
-              </dd>
-            </div> 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Permission
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Representative
-              </dd>
-              <dd class="govuk-summary-list__actions">
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Status
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['rep-user3-status'] or "Active"}}    
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link--no-visited-state" href="user-account-status?account-user=rep-user3">
-                  Change<span class="govuk-visually-hidden"> account status</span>
-                </a>
-              </dd>
-            </div> 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Account:</dt>
-              <dd class="govuk-summary-list__value">
-                {{data['representative1']}} <br>
-                {{data['rep-address1']}} <br>
-                {{data['rep-postcode1']}}<br>
-                {{data['rep-country1']}}
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    {% endset -%}
-
     {% set casesHtml %}
       <h2 class="govuk-heading-m clearfix">User cases
       <span class="govuk-body right-aligned-link">
         <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
       </span>
       </h2>
+      <p>Manage the users case involvement.</p>
       <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your organisation's case</caption>
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of the cases the users is involved in</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
@@ -198,20 +145,74 @@
       </table> 
     {% endset -%}
 
+    {% set accountHtml %}
+      <h2 class="govuk-heading-m">User details</h2>
+        <div class="address-card">
+        <div class="address-container">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['rep-user3']}}<br>
+                {{data['rep-email3']}}<br>
+                {{data['rep-mobile3'] or "+447821945034"}}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Permission
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Representative
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['rep-user3-status'] or "Active"}}    
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link--no-visited-state" href="user-account-status?account-user=rep-user3">
+                  Change<span class="govuk-visually-hidden"> account status</span>
+                </a>
+              </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Account:</dt>
+              <dd class="govuk-summary-list__value">
+                {{data['representative1']}} <br>
+                {{data['rep-address1']}} <br>
+                {{data['rep-postcode1']}}<br>
+                {{data['rep-country1']}}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    {% endset -%}
+
     {{ govukTabs({
       items: [
+        {
+          label: "Cases",
+          id: "cases",
+          panel: {
+            html: casesHtml
+          }
+        },
         {
           label: "User details",
           id: "account-details",
           panel: {
             html: accountHtml
-          }
-        },
-        {
-          label: "User cases",
-          id: "cases",
-          panel: {
-            html: casesHtml
           }
         }
       ]

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove user - {{serviceName}}
+{% endblock %}
+
+{% block header %}
+ {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/beta-banner.html"%}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Remove user
+      </h1>
+
+      <p>Are you sure you want to remove the user from this case? They will no longer be able to access or interact with the case.</p>
+
+      {% if data['account-user'] =="party-user1" %}
+        <p>{{data['party-user11'] }} - {{data['party-email11'] }}</p>
+        {% else %}
+        {% if data['account-user'] =="party-user11" %}
+          <p>{{data['party-user11'] }} - {{data['party-email11'] }}</p>
+          {% else %}
+          {% if data['account-user'] =="rep-user3" %}
+            <p>{{data['party-user3'] }} - {{data['party-email3'] }}</p>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+
+      <form action="" method="post" id="cancel-invite-form">
+        <input type="hidden" id="show-invite" name="show-invite" value="no">
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Remove user",
+            classes: "govuk-button--warning"
+          }) }}    
+        <a class="govuk-link govuk-link--no-visited-state"  href="javascript: history.back()">Back</a>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

@@ -67,7 +67,7 @@
             <select class="govuk-select" id="sort-user" name="sort-user">
               <option value="User" selected>User</option>
               <option value="Email">Email</option>
-              <option value="Account role">Account role</option>
+              <option value="Account role">Role</option>
               <option value="Number of cases">Number of cases</option>
             </select>
           </div>
@@ -107,7 +107,7 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Role/ Status
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Role
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -135,7 +135,7 @@
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email6']}}
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['rep-user-role6']}}
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['rep-user-role6']}}
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>2
@@ -153,7 +153,7 @@
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email1']}}
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>{{data['rep-user-role1']}}
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['rep-user-role1']}}
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>3
@@ -166,13 +166,13 @@
             {% else %}
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user1" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user1#account-details" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>Admin user
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>Admin user
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Cases: </span>3
@@ -188,13 +188,13 @@
             </tr>
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user11" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user11#account-details" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
               </td>
               <td class="govuk-table__cell field-grey">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email11']}}
               </td>
               <td class="govuk-table__cell field-grey">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>
                 {% if data['party-user11-status'] != "Inactive" %} 
                   {{data['party-user11-permiss'] or "User"}} 
                   {% else %}
@@ -209,19 +209,19 @@
                 {% if data['party-user11-status'] == "Inactive" %}           
                   <a href="user-account-status?account-user=party-user11" class="govuk-link--no-visited-state">Change status</a>
                   {% else %}
-                  <a href="" class="govuk-link--no-visited-state">View cases</a>
+                  <a href="user-account-own-org?account-user=party-user11" class="govuk-link--no-visited-state">View cases</a>
                 {% endif %}
               </td>
             </tr>
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user6" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-own-org?account-user=party-user6#account-details" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
               </td>
               <td class="govuk-table__cell field-grey">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['party-email6']}}
               </td>
               <td class="govuk-table__cell field-grey">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>
                 {% if data['party-user6-status'] != "Inactive" %} 
                   {{data['party-user6-permiss'] or "User"}} 
                   {% else %}
@@ -242,13 +242,13 @@
             </tr>    
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-rep" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
+                <span class="govuk-visually-hidden--desktop td-header">User: </span><a href="user-account-rep#account-details" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop td-header">Email: </span>{{data['rep-email3'] }}
               </td>
               <td class="govuk-table__cell field-italics">
-                <span class="govuk-visually-hidden--desktop td-header">Role/ Status: </span>
+                <span class="govuk-visually-hidden--desktop td-header">Role: </span>
                 {% if data['rep-user3-status'] != "Inactive" %} 
                   {{data['rep-user3-permiss'] or "Representative"}} 
                   {% else %}
@@ -263,7 +263,7 @@
                 {% if data['rep-user3-status'] == "Inactive" %}           
                   <a href="user-account-status?account-user=rep-user3" class="govuk-link--no-visited-state">Change status</a>
                   {% else %}
-                  <a href="" class="govuk-link--no-visited-state">View cases</a>
+                  <a href="user-account-rep" class="govuk-link--no-visited-state">View cases</a>
                 {% endif %}
               </td>
             </tr>
