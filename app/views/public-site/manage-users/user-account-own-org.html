@@ -80,7 +80,7 @@
         <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
       </span>
       </h2>
-      {% if data['account-user'] =="party-user11" %}
+      {% if data['account-user'] =="party-user11" or  data['account-user'] =="party-user6" %}
         <p>This user is not involved in any cases</p>
         {% else %}
         <p>Manage the users case involvement.</p>
@@ -149,29 +149,9 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row no-border">
-              <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
-              </td>
-              <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-              </td>
-              <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
-              </td>
-              <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
-              </td>
-              <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="../manage-cases/case-role?account-case=case1" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref1']}}</span> </a> 
-              </td>
-              <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="?account-case=case1" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref1']}}</span> </a> 
-              </td>
-            </tr>
-            {% if data['account-user'] =="party-user1" %}
+            {% if data['account-user'] =="rep-user3" %}
               <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell text-overflow">
+                <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
                 </td>
                 <td class="govuk-table__cell text-overflow">
@@ -183,16 +163,56 @@
                 <td class="govuk-table__cell text-overflow">
                   <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Key contact" }}
                 </td>
-                <td class="govuk-table__cell text-overflow">
+                <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="../manage-cases/case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref5']}}</span> </a> 
                 </td>
-                <td class="govuk-table__cell text-overflow">
+                <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="?account-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
                 </td>
               </tr>
-
+              {% else%}
               <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+                </td>
                 <td class="govuk-table__cell text-overflow">
+                  <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+                </td>
+                <td class="govuk-table__cell text-overflow">
+                  <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                </td>
+                <td class="govuk-table__cell text-overflow">
+                  <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="../manage-cases/case-role?account-case=case1" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref1']}}</span> </a> 
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="?account-case=case1" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref1']}}</span> </a> 
+                </td>
+              </tr>
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+                </td>
+                <td class="govuk-table__cell text-overflow">
+                  <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+                </td>
+                <td class="govuk-table__cell text-overflow">
+                  <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                </td>
+                <td class="govuk-table__cell text-overflow">
+                  <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Key contact" }}
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="../manage-cases/case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref5']}}</span> </a> 
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="?account-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
+                </td>
+              </tr>
+              <tr class="govuk-table__row no-border">
+                <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Case No. </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
                 </td>
                 <td class="govuk-table__cell text-overflow">
@@ -204,10 +224,10 @@
                 <td class="govuk-table__cell text-overflow">
                   <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case6-permissions'] or "Key contact" }}
                 </td>
-                <td class="govuk-table__cell text-overflow">
+                <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="../manage-cases/case-role?account-case=case6" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref6']}}</span> </a> 
                 </td>
-                <td class="govuk-table__cell text-overflow">
+                <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="?account-case=case6" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref6']}}</span> </a> 
                 </td>
               </tr>
@@ -215,7 +235,7 @@
           </body>
         </table>
       {% endif %} 
-    {% endset -%}
+    {% endset %}
 
     {% set accountHtml %}
       <h2 class="govuk-heading-m">User details</h2>
