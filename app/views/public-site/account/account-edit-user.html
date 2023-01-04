@@ -11,19 +11,7 @@
 {% block beforeContent %}
 {% include "includes/beta-banner.html"%}
 
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a href="account">Manage account</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      Edit account details
-    </li>
-  </ol>
-</div>
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 
 {% endblock %}
 
@@ -31,10 +19,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Edit account details
+        Edit contact details
       </h1>
 
-      <form action="account-update-success" method="post" id="account-update-details-form"> 
+      <form action="javascript: history.back()" method="post" id="account-update-details-form"> 
         <!--Determine who is signed in Rep admin-->
         {% if (data['who-signin'] == "rep") %}
           {{ govukInput({
