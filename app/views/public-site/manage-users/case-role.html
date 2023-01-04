@@ -19,7 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="../manage-users/user-account-own-org" method="post" id="case-role-update-form"> 
+      <form action="user-account-own-org" method="post" id="case-role-update-form"> 
 
         {% if data['account-case'] =="case1" %}
 
@@ -34,7 +34,7 @@
               }
             },
             hint: {
-              html: 'Choose if the user11 is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
+              html: 'Choose if the user is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
             },
             items: [
               {
@@ -44,7 +44,7 @@
               },
               {
                 value: "Key contact",
-                text: "Key contact: they can access and interact with the case, and are a key point of contact for communication between the organisation and the TRA.",
+                text: "Key contact: they can access and interact with the case, and are a key point of contact for communication with the TRA.",
                 checked: checked("case1-permissions", "Key contact")
               }
             ]
@@ -63,7 +63,7 @@
                 }
               },
               hint: {
-                html: 'Choose if the user1 is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
+                html: 'Choose if the user is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
               },
               items: [
                 {
@@ -73,7 +73,7 @@
                 },
                 {
                   value: "Key contact",
-                  text: "Key contact: they can access and interact with the case, and are a key point of contact for communication between the organisation and the TRA.",
+                  text: "Key contact: they can access and interact with the case, and are a key point of contact for communication with the TRA.",
                   checked: checked("case5-permissions", "Key contact")
                 }
               ]
@@ -101,7 +101,7 @@
                   },
                   {
                     value: "Key contact",
-                    text: "Key contact: they can access and interact with the case, and are a key point of contact for communication between the organisation and the TRA.",
+                    text: "Key contact: they can access and interact with the case, and are a key point of contact for communication with the TRA.",
                     checked: checked("case6-permissions", "Key contact")
                   }
                 ]

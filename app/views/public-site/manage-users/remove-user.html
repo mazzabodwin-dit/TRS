@@ -21,18 +21,31 @@ Remove user - {{serviceName}}
       </h1>
 
       <p>Are you sure you want to remove the user from this case? They will no longer be able to access or interact with the case.</p>
-
-      {% if data['account-user'] =="party-user1" %}
-        <p>{{data['party-user11'] }} - {{data['party-email11'] }}</p>
-        {% else %}
-        {% if data['account-user'] =="party-user11" %}
-          <p>{{data['party-user11'] }} - {{data['party-email11'] }}</p>
+      <p>
+        {% if data['account-user'] =="party-user1" %}
+          {{data['party-user11'] }} - {{data['party-email11'] }}
           {% else %}
-          {% if data['account-user'] =="rep-user3" %}
-            <p>{{data['party-user3'] }} - {{data['party-email3'] }}</p>
+          {% if data['account-user'] =="party-user11" %}
+            {{data['party-user11'] }} - {{data['party-email11'] }}
+            {% else %}
+            {% if data['account-user'] =="rep-user3" %}
+              {{data['rep-user3'] }} - {{data['rep-email3'] }}
+            {% endif %}
           {% endif %}
         {% endif %}
-      {% endif %}
+        <br>
+        {% if data['account-case'] =="case1" %}
+          {{data['case-ref1'] }} - {{data['case-name1'] }}
+          {% else %}
+          {% if data['account-case'] =="case5" %}
+            {{data['case-ref5'] }} - {{data['case-name5'] }}
+            {% else %}
+            {% if data['account-case'] =="case6" %}
+              <p>{{data['case-ref6'] }} - {{data['case-name6'] }}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </p>
 
       <form action="" method="post" id="cancel-invite-form">
         <input type="hidden" id="show-invite" name="show-invite" value="no">
