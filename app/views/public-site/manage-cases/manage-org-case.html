@@ -30,10 +30,25 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       Manage cases
     </h1>
+    <div class="address-card">
+      <div class="address-container">
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <p class="govuk-warning-text__text">
+            <strong>
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You have 1 registration of interest with deficient documentation
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-column-full">
 
     {% set manageCasesHTML %}
       <h2 class="govuk-heading-m clearfix">My cases
@@ -185,7 +200,7 @@
       items: [
       
       { 
-        label: "Manage cases",
+        label: "My cases",
         id: "manage-cases",
         panel: {
           html: manageCasesHTML

@@ -19,40 +19,42 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="javascript: history.back()" method="post" id="account-update-details-form"> 
+      <form action="../manage-users/user-account-own-org" method="post" id="case-role-update-form"> 
 
-        {% if data['account-user'] =="party-user11" %}
+        {% if data['account-case'] =="case1" %}
 
           {{ govukRadios({
-              idPrefix: "party-user11-case-case-permissions",
-              name: "party-user11--case-permissions",
-              fieldset: {
-                legend: {
-                  text: "What is the users role in this case?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl"
-                }
+            idPrefix: "case1-permissions",
+            name: "case1-permissions",
+            fieldset: {
+              legend: {
+                text: "What is the users role in this case?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: 'Choose if the user11 is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
+            },
+            items: [
+              {
+                value: "User",
+                text: "User: they can access and interact with the case on behalf of the organisation",
+                checked: checked("case1-permissions", "User")
               },
-              hint: {
-                html: 'Choose if the user is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
-              },
-              items: [
-                {
-                  value: "User",
-                  text: "User: they can access and interact with the case on behalf of the organisation",
-                  checked: checked("party-user6-case-permissions", "User")
-                },
-                {
-                  value: "Case contact",
-                  text: "Case contact: they are a key point of contact and can access and interact with the case on behalf of the organisation.",
-                  checked: checked("party-user6-case-permissions", "Primary contact")
-                }
-              ]
-            }) }}    
+              {
+                value: "Key contact",
+                text: "Key contact: they can access and interact with the case, and are a key point of contact for communication between the organisation and the TRA.",
+                checked: checked("case1-permissions", "Key contact")
+              }
+            ]
+          }) }}    
           {% else %}
-          {{ govukRadios({
-              idPrefix: "party-user6-case-permissions",
-              name: "party-user6-case-permissions",
+          {% if data['account-case'] =="case5" %}
+
+            {{ govukRadios({
+              idPrefix: "case5-permissions",
+              name: "case5-permissions",
               fieldset: {
                 legend: {
                   text: "What is the users role in this case?",
@@ -61,21 +63,51 @@
                 }
               },
               hint: {
-                html: 'Choose how {{party-user11}} interacts with the the case {{case-no}}'
+                html: 'Choose if the user1 is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
               },
               items: [
                 {
                   value: "User",
                   text: "User: they can access and interact with the case",
-                  checked: checked("party-user6-case-permissions", "User")
+                  checked: checked("case5-permissions", "User")
                 },
                 {
-                  value: "Case contact",
-                  text: "Case contact: they are a key point of contact for the organisations involvement in the case and can access and interact with the case.",
-                  checked: checked("party-user6-case-permissions", "Primary contact")
+                  value: "Key contact",
+                  text: "Key contact: they can access and interact with the case, and are a key point of contact for communication between the organisation and the TRA.",
+                  checked: checked("case5-permissions", "Key contact")
                 }
               ]
             }) }}    
+            {% else %}
+            {% if data['account-case'] =="case6" %}
+              {{ govukRadios({
+                idPrefix: "case6-permissions",
+                name: "case6-permissions",
+                fieldset: {
+                  legend: {
+                    text: "What is the users role in this case?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                hint: {
+                  html: 'Choose if the user is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
+                },
+                items: [
+                  {
+                    value: "User",
+                    text: "User: they can access and interact with the case",
+                    checked: checked("case6-permissions", "User")
+                  },
+                  {
+                    value: "Key contact",
+                    text: "Key contact: they can access and interact with the case, and are a key point of contact for communication between the organisation and the TRA.",
+                    checked: checked("case6-permissions", "Key contact")
+                  }
+                ]
+              }) }} 
+            {% endif %}   
+          {% endif %}
         {% endif %}
 
         <div class="govuk-button-group">
