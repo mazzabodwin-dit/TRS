@@ -264,3 +264,14 @@ $govuk-assets-path: '/govuk/assets/';
   text-align: center;
   padding-bottom: 10px;
 }
+
+/* Forcing things like web addresses and emails to break over a line*/
+.text-overflow {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+}

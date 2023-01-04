@@ -71,23 +71,23 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['representative1'] }}
             </td>
             {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                     {{data['dup-party1'] }}
               </td>
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell"> 
+              <td class="govuk-table__cell text-overflow"> 
                 {{data['dup-party3'] }}
               </td>
             {% endif %}
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Address</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if data['merge-duplicates'] == "2of2" %}
                 {{data['dup-party-address3'] }}<br>
                 {{data['dup-party-postcode3'] }}<br>
@@ -98,7 +98,7 @@
                 {{data['rep-country1'] }}
               {% endif %}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
                 {{data['dup-party-address1'] }}<br>
                 {{data['dup-party-postcode1'] }}<br>
@@ -114,11 +114,11 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Reg number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
                 {{data['rep-org-number1'] }}
             </td>
             {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-org-number1'] == null) %}
                   {% else %}
                     <mark>{{data['dup-party-org-number1'] }}</mark>
@@ -126,7 +126,7 @@
               </td>
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-org-number3'] == null) %}
                   {% else %}
                     <mark>{{data['dup-party-org-number3'] }}</mark>
@@ -136,11 +136,11 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Website</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['rep-web1'] }}
             </td>
             {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-web1'] == null) %}
                   {% else %}                      
                     {{data['dup-party-web1'] }}
@@ -148,7 +148,7 @@
               </td>
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-web3'] == null) %}
                   {% else %}                      
                     <mark>{{data['dup-party-web3'] }}</mark>
@@ -158,14 +158,14 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">VAT number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['rep-vat1'] == null) %}
                 {% else %}
                   {{data['rep-vat1'] }}
               {% endif %}
             </td>
             {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-vat1'] == null) %}
                   {% else %}
                     {{data['dup-party-vat1'] }}
@@ -173,7 +173,7 @@
               </td>
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-vat3'] == null) %}
                   {% else %}
                     <mark>{{data['dup-party-vat3'] }}</mark>
@@ -183,7 +183,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">EORI number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['rep-eori1'] == null) %}
                   {% else %}
                     {{data['rep-eori1'] }}
@@ -191,7 +191,7 @@
 
             </td>
             {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-eori1'] == null) %}
                   {% else %}
                     {{data['dup-party-eori1'] }}
@@ -199,7 +199,7 @@
               </td>
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-eori3'] == null) %}
                   {% else %}
                     {{data['dup-party-eori3'] }}
@@ -209,7 +209,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">DUNS number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['rep-duns1'] == null) %}
                 <label class="govuk-label govuk-radios__label" for="duns-rep">
                 {% else %}
@@ -217,7 +217,7 @@
               {% endif %}
             </td>
             {% if data['merge-duplicates'] == "1a" or data['merge-duplicates'] == "1of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-duns1'] == null) %}
                   {% else %}
                     {{data['dup-party-duns1'] }}
@@ -225,7 +225,7 @@
               </td>
             {% endif %}
             {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {% if (data['dup-party-duns3'] == null) %}
                   {% else %}
                     {{data['dup-party-duns3'] }}

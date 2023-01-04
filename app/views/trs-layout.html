@@ -161,42 +161,43 @@
   <p>An accessible, responsive, sortable table using html and javascript</p>
   {% set openCasesHTML %}
     <h2 class="govuk-heading-m">Open cases</h2>
-    <p>Manage the cases your organisation is involved in.</p>
+    <p>This table has no border on desktop because it is in a tab</p>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
+      <div id="table-sort" class="govuk-visually-hidden--desktop">
         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-!-display-inline" for="sort-cases">
-            Sort cases by
+              Sort your cases by
           </label>
           <select class="govuk-select" id="sort-cases" name="sort-cases">
-            <option value="Case No." selected>Case No.</option>
-            <option value="Case">Case</option>
-            <option value="Representing">Representing</option>
-            <option value="Role">Role</option>
-            <option value="Status">Status</option>
-            <option value="Updated">Updated</option>
-            <option value="Primary">Primary</option>
+              <option value="No." selected>No.</option>
+              <option value="Case">Case</option>
+              <option value="Type">Type</option>
+              <option value="Applicant">Applicant</option>
+              <option value="Initiated">Initiated</option>
+              <option value="Status">Status</option>
+              <option value="Alerts">Alerts</option>
           </select>
         </div>
         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-visually-hidden" for="direction-cases">
-            Direction
+              Direction
           </label>
           <select class="govuk-select" id="direction-cases" name="direction-cases">
-            <option value="Decending" selected>Decending</option>
-            <option value="Accending">Accending</option>
+              <option value="Decending" selected>Decending</option>
+              <option value="Accending">Accending</option>
           </select>
         </div>
-          {{ govukButton({
-            text: "Sort cases",
-            classes: "govuk-button--secondary"
-          }) }}
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
       </div>
     </form>
-
-
-    <table class="govuk-table sortable table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your organisations case</caption>
+    <table class="govuk-table sortable mobile-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
+         A table listing all of the representatives that have access to this organisations account
+      </caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" aria-sort="ascending">
@@ -213,13 +214,19 @@
           </th>
           <th class="govuk-table__header">
             <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Representing
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
           <th class="govuk-table__header">
             <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Role
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Initiated
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
@@ -229,298 +236,114 @@
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
-          <th class="govuk-table__header" data-sortby="date">
+          <th class="govuk-table__header">
             <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Updated 
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
           <th class="govuk-table__header">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Primary
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Alerts
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
           </th>
         </tr>
       </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>
+            <a href="cases/case-overview" class="govuk-link--no-visited-state">{{ data['case-ref1'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Case: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{ data['case-name1'] }}</a>
+            </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>
+            <span title="{{ data['case-type1'] }}">{{ data['case-typeabr1'] }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{ data['applicant1'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{ data['initiated1'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{ data['status1'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Next task: </span>{{ data['next-task1'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Alerts: </span><strong class="govuk-tag govuk-tag--red">7</strong>
+          </td>
+        </tr>
 
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role1']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status1']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated1']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-        </td>
-      </tr>
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span><a href="" class="govuk-link--no-visited-state">{{ data['case-ref4'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Case: </span><a href="" class="govuk-link--no-visited-state">{{ data['case-name4'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>
+            <span title="{{ data['case-type1'] }}">{{ data['case-typeabr4'] }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{ data['applicant4'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{ data['initiated4'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{ data['status4'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Next task: </span>{{ data['next-task4'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Alerts: </span><strong class="govuk-tag govuk-tag--green">0</strong>
+          </td>
+        </tr>
 
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name3']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
-        </td>   
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role3']}}
-        </td>     
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status3']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated3']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['user3']}}</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
-        </td>        
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role5']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status5']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated5']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['user5']}}</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref4']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name4']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
-        </td>     
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role4']}}
-        </td>   
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status4']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated4']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['user4']}}</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party6']}}</a>
-        </td>       
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role6']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status6']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated6']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['user6']}}</a>
-        </td>
-      </tr>
-
-    </table> 
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span><a href="" class="govuk-link--no-visited-state">{{ data['case-ref6'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Case: </span><a href="" class="govuk-link--no-visited-state">{{ data['case-name6'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>
+            <span title="{{ data['case-type1'] }}">{{ data['case-typeabr6'] }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{ data['applicant6'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{ data['initiated6'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{ data['status6'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Next task: </span>{{ data['next-task6'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Alerts: </span><strong class="govuk-tag govuk-tag--green">0</strong>
+          </td>
+        </tr>
+      </body>
+   </table>
 
     {% endset %}
 
     {% set completedCasesHTML %}
     <h2 class="govuk-heading-m">Closed cases</h2>
    
-    <p>Manage the cases your organisation is involved in.</p>
-    <form>
-      <div id="table-sort2" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-!-display-inline" for="sort-cases2">
-            Sort cases by
-          </label>
-          <select class="govuk-select" id="sort-cases2" name="sort-cases2">
-            <option value="Case No." selected>Case No.</option>
-            <option value="Case">Case</option>
-            <option value="Representing">Representing</option>
-            <option value="Role">Role</option>
-            <option value="Status">Status</option>
-            <option value="Updated">Updated</option>
-            <option value="Primary">Primary</option>
-          </select>
-        </div>
-        <div class="govuk-form-group table-sort-select">
-          <label class="govuk-label govuk-visually-hidden" for="direction-cases2">
-            Direction
-          </label>
-          <select class="govuk-select" id="direction-cases2" name="direction-cases2">
-            <option value="Decending" selected>Decending</option>
-            <option value="Accending">Accending</option>
-          </select>
-        </div>
-          {{ govukButton({
-            text: "Sort cases",
-            classes: "govuk-button--secondary"
-          }) }}
-      </div>
-    </form>
-
-    <table class="govuk-table sortable table-border" id="table-header">
-      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of your organisations case</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" aria-sort="ascending">
-            <button>
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button>
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button>
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Representing
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button>
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Role
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-            <button>
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header" data-sortby="date">
-            <button>
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Updated 
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
-          <th class="govuk-table__header">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Primary
-          </th>
-        </tr>
-      </thead>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role1']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status1']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated1']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref3']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name3']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
-        </td>   
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role3']}}
-        </td>     
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status3']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated3']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['user3']}}</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row no-border">
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case No. </span><a href="case" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Case: </span><a href="case" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Representing: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
-        </td>        
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Role: </span>{{data['case-role5']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Status: </span>{{data['status5']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Updated: </span>{{data['updated5']}}
-        </td>
-        <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop td-header">Primary user: </span><a href="" class="govuk-link--no-visited-state">{{data['user5']}}</a>
-        </td>
-      </tr>
-
-    </table> 
-    
+    <p>MThis tab is currently empty</p>
 
     {% endset %}
     
@@ -544,6 +367,186 @@
       }
       ]
     }) }}
+
+    <h2 class="govuk-heading-m">Table not in tabs</h2>
+   
+    <p>This table has a border in desktop</p>
+    <form>
+      <div id="table-sort" class="govuk-visually-hidden--desktop">
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-!-display-inline" for="sort-cases">
+              Sort your cases by
+          </label>
+          <select class="govuk-select" id="sort-cases" name="sort-cases">
+              <option value="No." selected>No.</option>
+              <option value="Case">Case</option>
+              <option value="Type">Type</option>
+              <option value="Applicant">Applicant</option>
+              <option value="Initiated">Initiated</option>
+              <option value="Status">Status</option>
+              <option value="Alerts">Alerts</option>
+          </select>
+        </div>
+        <div class="govuk-form-group table-sort-select">
+          <label class="govuk-label govuk-visually-hidden" for="direction-cases">
+              Direction
+          </label>
+          <select class="govuk-select" id="direction-cases" name="direction-cases">
+              <option value="Decending" selected>Decending</option>
+              <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </form>
+    <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">
+      <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
+         A table listing all of the representatives that have access to this organisations account
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Case
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Applicant
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Initiated
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Next task
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Alerts
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>
+            <a href="cases/case-overview" class="govuk-link--no-visited-state">{{ data['case-ref1'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Case: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{ data['case-name1'] }}</a>
+            </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>
+            <span title="{{ data['case-type1'] }}">{{ data['case-typeabr1'] }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{ data['applicant1'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{ data['initiated1'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{ data['status1'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Next task: </span>{{ data['next-task1'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Alerts: </span><strong class="govuk-tag govuk-tag--red">7</strong>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span><a href="" class="govuk-link--no-visited-state">{{ data['case-ref4'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Case: </span><a href="" class="govuk-link--no-visited-state">{{ data['case-name4'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>
+            <span title="{{ data['case-type1'] }}">{{ data['case-typeabr4'] }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{ data['applicant4'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{ data['initiated4'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{ data['status4'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Next task: </span>{{ data['next-task4'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Alerts: </span><strong class="govuk-tag govuk-tag--green">0</strong>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span><a href="" class="govuk-link--no-visited-state">{{ data['case-ref6'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Case: </span><a href="" class="govuk-link--no-visited-state">{{ data['case-name6'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>
+            <span title="{{ data['case-type1'] }}">{{ data['case-typeabr6'] }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Applicant: </span><a href="#" class="govuk-link--no-visited-state">{{ data['applicant6'] }}</a>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{ data['initiated6'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{ data['status6'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Next task: </span>{{ data['next-task6'] }}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Alerts: </span><strong class="govuk-tag govuk-tag--green">0</strong>
+          </td>
+        </tr>
+      </body>
+   </table>
+
 
 
      

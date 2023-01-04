@@ -46,46 +46,46 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
                 {{data['party1'] }}
             </td>
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 {{data['dup-party1'] }}
               </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Address</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['party-address1'] }}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['dup-party-address1'] }}
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Postcode/ zip</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['party-postcode1'] }}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['dup-party-postcode1'] }}
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Country</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['party-country1'] }}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['dup-party-country1'] }}
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Reg number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['party-org-number1'] }}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['dup-party-org-number1'] == null) %}
                 {% else %}
                   {{data['dup-party-org-number1'] }}
@@ -94,10 +94,10 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Website</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {{data['party-web1'] }}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['dup-party-web1'] == null) %}
                 {% else %}                      
                   {{data['dup-party-web1'] }}
@@ -106,13 +106,13 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">VAT number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['party-vat1'] == null) %}
                 {% else %}
                   {{data['party-vat1'] }}
               {% endif %}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['dup-party-vat1'] == null) %}
                 {% else %}
                   {{data['dup-party-vat1'] }}
@@ -121,14 +121,14 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">EORI number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['party-eori1'] == null) %}
                   {% else %}
                     {{data['party-eori1'] }}
                 {% endif %}
 
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['dup-party-eori1'] == null) %}
                 {% else %}
                  <mark>{{data['dup-party-eori1'] }}</mark>
@@ -137,14 +137,14 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">DUNS number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['party-duns1'] == null) %}
                   
                 {% else %}
                   {{data['party-duns1'] }}
               {% endif %}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               {% if (data['dup-party-duns1'] == null) %}
                 {% else %}
                   {{data['dup-party-duns1'] }}

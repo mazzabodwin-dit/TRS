@@ -48,7 +48,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">  
                   <input class="govuk-radios__input" id="name-party1" name="party1" type="radio" value="{{data['party1']}}" checked>
@@ -58,7 +58,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="name-dup1" name="party1" type="radio" value="{{data['dup-party1']}}" >
@@ -72,7 +72,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Address</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="address-dup" name="party-address1" type="radio" value="{{data['party-address1']}}" checked>
@@ -82,7 +82,7 @@
                 </div>
               </div>
             </td> 
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="address-dup1" name="party-address1" type="radio" value="{{data['dup-party-address1']}}">
@@ -96,7 +96,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Postcode/ zip</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="postcode-dup" name="party-postcode1" type="radio" value="{{data['party-postcode1']}}" checked>
@@ -106,7 +106,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="postcode-dup1" name="party-postcode1" type="radio" value="{{data['rep-postcode1']}}">
@@ -120,7 +120,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Country</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="country-int" name="party-country1" type="radio" value="{{data['party-country1']}}" checked>
@@ -130,7 +130,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="country-dup1" name="party-country1" type="radio" value="{{data['dup-party-country1']}}">
@@ -144,7 +144,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Reg number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">  
                   {% if (data['party-org-number1'] == null) %}
@@ -161,7 +161,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['dup-party-org-number1'] == null) %}
@@ -182,7 +182,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">Website</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">  
                 {% if (data['dup-party-web3'] == null) %}
@@ -199,7 +199,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['dup-party-web1'] == null) %}
@@ -220,7 +220,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">VAT number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['party-vat1'] == null) %}
@@ -237,7 +237,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['dup-party-vat1'] == null) %}
@@ -258,7 +258,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">EORI number</th>
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell text-overflow">
                 <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                   <div class="govuk-radios__item">  
                     {% if (data['party-eori1'] == null) %}
@@ -275,7 +275,7 @@
                   </div>
                 </div>
               </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['dup-party-eori1'] == null) %}
@@ -296,7 +296,7 @@
 
           <tr class="govuk-table__row no-border">
             <th scope="row" class="govuk-table__header">DUNS number</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                 {% if (data['party-duns1'] == null) %}
@@ -313,7 +313,7 @@
                 </div>
               </div>
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   {% if (data['dup-party-duns1'] == null) %}
