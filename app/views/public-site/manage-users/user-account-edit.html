@@ -19,10 +19,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Edit account details
+        Edit user details
       </h1>
 
-      <form action="user-account-own-org" method="post" id="account-update-details-form">       
+      <form action="javascript: history.back()" method="post" id="account-update-details-form">       
       
       {{ govukInput({
         label: {
@@ -73,7 +73,7 @@
           label: {
             text: "Mobile number"
           },
-          value: data['party-mobile11'] or "+447821945034"
+          value: data['party-mobile11'] or "07821945034"
         }) }}
       {% endcall %} 
 

@@ -234,9 +234,15 @@
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link--no-visited-state" href="account-edit-user">
+                {% if data['account-user'] =="party-user1" %}
+                <a class="govuk-link--no-visited-state" href="../account/account-edit-user">
                   Edit<span class="govuk-visually-hidden"> contact details</span>
                 </a>
+                {% else %}
+                <a class="govuk-link--no-visited-state" href="user-account-edit">
+                  Edit<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              {% endif %}
               </dd>
             </div> 
             <div class="govuk-summary-list__row">
