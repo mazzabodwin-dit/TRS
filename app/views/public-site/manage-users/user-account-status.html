@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="javascript: history.back()" method="post" id="account-update-details-form"> 
+      <form action="user-account" method="post" id="account-update-status-form"> 
 
         {% if data['account-user'] =="party-user11" %}
 
@@ -73,7 +73,6 @@
             }) }}
             {% else %}
             {% if data['account-user'] =="rep-user3" %}
-             <form action="user-account-rep" method="post" id="account-update-details-form"> 
               {{ govukRadios({
                 idPrefix: "rep-user3-status",
                 name: "rep-user3-status",

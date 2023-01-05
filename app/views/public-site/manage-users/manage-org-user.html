@@ -166,7 +166,7 @@
             {% else %}
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account-own-org?account-user=party-user1#account-details" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
+                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user1#account-details" class="govuk-link--no-visited-state">{{data['createaccount-name'] or data['party-user1'] }}</a>
               </td>
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
@@ -182,13 +182,13 @@
                 {% if data['party-user1-status'] == "Inactive" %}           
                   <a href="user-account-status?account-user=party-user1" class="govuk-link--no-visited-state">Change status</a>
                   {% else %}
-                  <a href="user-account-own-org?account-user=party-user1#user-cases" class="govuk-link--no-visited-state">View cases</a>
+                  <a href="user-account?account-user=party-user1#user-cases" class="govuk-link--no-visited-state">View cases</a>
                 {% endif %}
               </td>
             </tr>
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account-own-org?account-user=party-user11#account-details" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
+                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user11#account-details" class="govuk-link govuk-link--no-visited-state">{{data['party-user11']}}</a>
               </td>
               <td class="govuk-table__cell text-overflow field-grey">
                 <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email11']}}
@@ -215,7 +215,7 @@
             </tr>
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account-own-org?account-user=party-user6#account-details" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
+                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user6#account-details" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
               </td>
               <td class="govuk-table__cell text-overflow field-grey">
                 <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email6']}}
@@ -242,7 +242,7 @@
             </tr>    
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account-own-org?account-user=rep-user3#account-details" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
+                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=rep-user3#account-details" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
               </td>
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">Email: </span>{{data['rep-email3'] }}
@@ -263,13 +263,13 @@
                 {% if data['rep-user3-status'] == "Inactive" %}           
                   <a href="user-account-status?account-user=rep-user3" class="govuk-link--no-visited-state">Change status</a>
                   {% else %}
-                  <a href="user-account-own-org" class="govuk-link--no-visited-state">View cases</a>
+                  <a href="user-account" class="govuk-link--no-visited-state">View cases</a>
                 {% endif %}
               </td>
             </tr>
              <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
-                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account-own-org?account-user=rep-user3#account-details" class="govuk-link--no-visited-state">dfgkjdfgjsevaesroitjo4a kgthndfkjnd</a>
+                <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=rep-user3#account-details" class="govuk-link--no-visited-state">dfgkjdfgjsevaesroitjo4a kgthndfkjnd</a>
               </td>
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">Email: </span>dfjklhgdfkbdfkuhdfgkuh@dflgkdfjholiudfghloiudrfg.com
@@ -286,7 +286,7 @@
                 {% if data['rep-user3-status'] == "Inactive" %}           
                   <a href="user-account-status?account-user=rep-user3" class="govuk-link--no-visited-state">Change status</a>
                   {% else %}
-                  <a href="user-account-own-org" class="govuk-link--no-visited-state">View cases</a>
+                  <a href="user-account" class="govuk-link--no-visited-state">View cases</a>
                 {% endif %}
               </td>
             </tr>
