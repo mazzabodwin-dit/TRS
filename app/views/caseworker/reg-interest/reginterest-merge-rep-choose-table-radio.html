@@ -193,7 +193,7 @@
             <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  {% if data['merge-duplicates'] == "2of2" %}
+                  {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
                     <input class="govuk-radios__input" id="web-rep" name="rep-web1" type="radio" value="{{data['rep-web1']}}" checked disabled>
                     {% else %}
                     <input class="govuk-radios__input" id="web-rep" name="rep-web1" type="radio" value="{{data['rep-web1']}}" checked>
@@ -236,7 +236,7 @@
             <td class="govuk-table__cell text-overflow">
               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  {% if data['merge-duplicates'] == "2of2" %}
+                  {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "2of2" %}
                     <input class="govuk-radios__input" id="vat-dup" name="rep-vat1" type="radio" value="{{data['rep-vat1']}}" checked disabled>
                     {% else %}
                     <input class="govuk-radios__input" id="vat-dup" name="rep-vat1" type="radio" value="{{data['rep-vat1']}}" checked>
