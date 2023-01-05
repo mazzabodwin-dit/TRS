@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="user-account" method="post" id="account-update-status-form"> 
+      <form action="user-account#account-details" method="post" id="account-update-status-form"> 
 
         {% if data['account-user'] =="party-user11" %}
 
@@ -78,7 +78,7 @@
                 name: "rep-user3-status",
                 fieldset: {
                   legend: {
-                    text: "Change account status",
+                    text: "Select the users account status",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }

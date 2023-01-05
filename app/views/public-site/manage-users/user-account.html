@@ -344,6 +344,10 @@
                     {% else %}
                     {% if data['account-user'] =="party-user6" %}
                       {{data['party-user6-status'] or "Inactive"}} 
+                      {% else %}
+                      {% if data['account-user'] =="rep-user3" %}
+                        {{data['rep-user3-status'] or "Active"}} 
+                      {% endif %}
                     {% endif %}
                   {% endif %}
                 {% endif %}
@@ -361,6 +365,12 @@
                       <a class="govuk-link--no-visited-state" href="user-account-status?account-user=party-user6">
                         Change<span class="govuk-visually-hidden"> account status</span>
                       </a>
+                      {% else %}
+                      {% if data['account-user'] =="rep-user3" %}
+                        <a class="govuk-link--no-visited-state" href="user-account-status?account-user=rep-user3">
+                          Change<span class="govuk-visually-hidden"> account status</span>
+                        </a>
+                      {% endif %}
                     {% endif %}
                   {% endif %}
                 {% endif %}
