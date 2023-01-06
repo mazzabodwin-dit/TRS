@@ -71,6 +71,7 @@
                 }
               ]
             }) }}
+
             {% else %}
             {% if data['account-user'] =="rep-user3" %}
               {{ govukRadios({
@@ -96,6 +97,60 @@
                 }
                 ]
               }) }}
+
+              {% else %}
+              {% if data['account-user'] =="invite-user1" %}
+                {{ govukRadios({
+                  idPrefix: "invite-user1-status",
+                  name: "invite-user1-status",
+                  fieldset: {
+                    legend: {
+                      text: "Select the users account status",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  items: [
+                  {
+                    value: "Active",
+                    text: "Active user: some words here",
+                    checked: checked("invite-user1-status", "Active")
+                  },
+                  {
+                    value: "Inactive",
+                    text: "Inactive user: some words here",
+                    checked: checked("invite-user1-status", "Inactive")
+                  }
+                  ]
+                }) }}
+
+                {% else %}
+                {% if data['account-user'] =="invite-user2" %}
+                  {{ govukRadios({
+                    idPrefix: "invite-user2-status",
+                    name: "invite-user2-status",
+                    fieldset: {
+                      legend: {
+                        text: "Select the users account status",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--xl"
+                      }
+                    },
+                    items: [
+                    {
+                      value: "Active",
+                      text: "Active user: some words here",
+                      checked: checked("invite-user12status", "Active")
+                    },
+                    {
+                      value: "Inactive",
+                      text: "Inactive user: some words here",
+                      checked: checked("invite-user2-status", "Inactive")
+                    }
+                    ]
+                  }) }}
+                {% endif %}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}

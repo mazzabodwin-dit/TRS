@@ -31,6 +31,14 @@
             {% else %}
             {% if data['account-user'] =="rep-user3" %}
               {{data['rep-user3']}}
+              {% else %}
+              {% if data['account-user'] =="invite-user1" %}
+                {{data['invite-rep-name'] or data['rep-user3']}}
+                {% else %}
+                {% if data['account-user'] =="invite-user2" %}
+                  {{data['invite-org-name'] or data['party-user11']}}
+                {% endif %}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}
@@ -56,6 +64,14 @@
             {% else %}
             {% if data['account-user'] =="rep-user3" %}
               {{data['rep-user3']}}
+              {% else %}
+              {% if data['account-user'] =="invite-user1" %}
+                {{data['invite-rep-name'] or data['rep-user3']}}
+                {% else %}
+                {% if data['account-user'] =="invite-user2" %}
+                  {{data['invite-org-name'] or data['party-user11']}}
+                {% endif %}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}
@@ -149,7 +165,7 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            {% if data['account-user'] =="rep-user3" %}
+            {% if data['account-user'] =="rep-user3" or data['account-user'] =="invite-user1" or data['account-user'] =="invite-user2"  %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
@@ -265,7 +281,19 @@
                       {% if data['account-user'] =="rep-user3" %}
                         {{data['rep-user3']}}<br>
                         {{data['rep-email3']}}<br>
-                        {{data['rep-mobile3'] or "+447821945034"}}  
+                        {{data['rep-mobile3'] or "+447821945034"}} 
+                        {% else %}
+                      {% if data['account-user'] =="invite-user1" %}
+                        {{data['invite-rep-name'] or data['rep-user3']}}<br>
+                        {{data['invite-rep-email'] or data['rep-email3']}}<br>
+                        {{data['rep-mobile3'] or "+447821945034"}} 
+                        {% else %}
+                      {% if data['account-user'] =="invite-user2" %}
+                        {{data['invite-org-name'] or data['party-user11']}}<br>
+                        {{data['invite-org-email'] or data['party-email11']}}<br>
+                        {{data['party-mobile11'] or "+447821945034"}}  
+                      {% endif %}   
+                      {% endif %}   
                       {% endif %}  
                     {% endif %}
                   {% endif %}
@@ -303,26 +331,41 @@
                       {% else %}
                       {% if data['account-user'] =="rep-user3" %}
                         Representative
+                        {% else %}
+                        {% if data['account-user'] =="invite-user1" %}
+                          Representative 
+                          {% else %}
+                          {% if data['account-user'] =="invite-user2" %}
+                            {{data['invite-user-permissions'] or "User"}} 
+                          {% endif %}
+                        {% endif %}
                       {% endif %}  
                     {% endif %}
                   {% endif %}
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                {% if data['account-user'] =="party-user1" %}
+                {% if data['account-user'] =="party-user11" %}
+                <!--If the user is inactive then do not show link to change permission-->
+                  {% if data['party-user11-status'] == "Inactive" %} 
+                    {% else %}
+                    <a class="govuk-link--no-visited-state" href="user-account-permiss?account-user=party-user11">
+                      Change<span class="govuk-visually-hidden"> account permissions</span>
+                    </a>
+                  {% endif %}
                   {% else %}
-                  {% if data['account-user'] =="party-user11" %}
-                    {% if data['party-user11-status'] == "Inactive" %} 
+                  {% if data['account-user'] =="party-user6" %}
+                    {% if data['party-user6-status'] == "Inactive" %} 
                       {% else %}
-                      <a class="govuk-link--no-visited-state" href="user-account-permiss?account-user=party-user11">
+                      <a class="govuk-link--no-visited-state" href="user-account-permiss?account-user=party-user6">
                         Change<span class="govuk-visually-hidden"> account permissions</span>
                       </a>
                     {% endif %}
                     {% else %}
-                    {% if data['account-user'] =="party-user6" %}
-                      {% if data['party-user6-status'] == "Inactive" %} 
+                    {% if data['account-user'] =="invite-user2" %}
+                      {% if data['invite-user2-status'] == "Inactive" %} 
                         {% else %}
-                        <a class="govuk-link--no-visited-state" href="user-account-permiss?account-user=party-user6">
+                        <a class="govuk-link--no-visited-state" href="user-account-permiss?account-user=invite-user2">
                           Change<span class="govuk-visually-hidden"> account permissions</span>
                         </a>
                       {% endif %}
@@ -347,6 +390,14 @@
                       {% else %}
                       {% if data['account-user'] =="rep-user3" %}
                         {{data['rep-user3-status'] or "Active"}} 
+                        {% else %}
+                        {% if data['account-user'] =="invite-user1" %}
+                          {{data['invite-user1-status'] or "Active"}} 
+                          {% else %}
+                          {% if data['account-user'] =="invite-user2" %}
+                            {{data['invite-user2-status'] or "Active"}} 
+                          {% endif %}
+                        {% endif %}
                       {% endif %}
                     {% endif %}
                   {% endif %}
@@ -370,13 +421,35 @@
                         <a class="govuk-link--no-visited-state" href="user-account-status?account-user=rep-user3">
                           Change<span class="govuk-visually-hidden"> account status</span>
                         </a>
+                        {% else %}
+                        {% if data['account-user'] =="invite-user1" %}
+                          <a class="govuk-link--no-visited-state" href="user-account-status?account-user=invite-user1">
+                            Change<span class="govuk-visually-hidden"> account status</span>
+                          </a>
+                          {% else %}
+                          {% if data['account-user'] =="invite-user2" %}
+                            <a class="govuk-link--no-visited-state" href="user-account-status?account-user=invite-user2">
+                              Change<span class="govuk-visually-hidden"> account status</span>
+                            </a>
+                          {% endif %}
+                        {% endif %}
                       {% endif %}
                     {% endif %}
                   {% endif %}
                 {% endif %}
               </dd>
             </div> 
-            {% if (data['who-signin'] == "org") or (data['who-signin'] == "org-invite") %}
+            {% if (data['account-user'] == "rep-user3") or (data['account-user'] == "invite-user1") %}
+               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Account:</dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['representative1']}} <br>
+                  {{data['rep-address1']}} <br>
+                  {{data['rep-postcode1']}}<br>
+                  {{data['rep-country1']}}
+                </dd>
+              </div>
+              {% else %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Account:</dt>
                 <dd class="govuk-summary-list__value">
@@ -384,16 +457,6 @@
                   {{data['party-address1']}} <br>
                   {{data['party-postcode1']}}<br>
                   {{data['party-country1']}}
-                </dd>
-              </div>
-              {% else %}
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Account:</dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['representative1']}} <br>
-                  {{data['rep-address1']}} <br>
-                  {{data['rep-postcode1']}}<br>
-                  {{data['rep-country1']}}
                 </dd>
               </div>
             {% endif %}                    
