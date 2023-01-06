@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Choose case - {{serviceName}}
+  Invite rep - {{serviceName}}
 {% endblock %}
 
 {% block header %}
@@ -84,7 +84,7 @@
 
 <!-- Content starts -->
 
-            <p>Dear {{ data['invite-rep-name'] or data['rep-user2'] }} </p>
+            <p>Dear {{ data['invite-rep-name'] or data['rep-user3'] }} </p>
             <p>You have been invited by Jane Winder to represent Steel UK in the following trade remedies case:</p>
             <p>{{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}</p>  
             <p>To accept the invite, click on the link and create a Trade Remedies account:</p> 

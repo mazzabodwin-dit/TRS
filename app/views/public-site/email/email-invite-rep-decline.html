@@ -80,7 +80,7 @@
           <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px;">
 
 <!-- Content starts -->
-            <p>Dear Bob Hoskins</p>
+            <p>Dear {{ data['invite-rep-name'] or data['rep-user3'] }} </p>
             <p>The invite for Bluesteel Partners to represent Steel UK has been declined in the following case:</p>
             <p>{{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}</p> 
             <p>If you would like more information, please contact us.</p>

@@ -83,13 +83,7 @@
           <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px;">
 
 <!-- Content starts -->
-            <p>Dear 
-              {% if (data['invite-rep-what-org'] == "existing-org") or (data['invite-rep-what-org'] == null) %}
-                {{ data['invite-rep-name'] or data['rep-user1'] }}         
-                {% else %}
-                  {{ data['invite-rep-name'] or data['rep-user2'] }} 
-              {% endif %}
-            </p>
+            <p>Dear {{ data['invite-rep-name'] or data['rep-user3'] }} </p>
             <p>You have been invited by Jane Winder to represent Steel UK in the following trade remedies case:</p>
             <p>{{data ['invite-rep-what-case'] or "AD2224 - Steel plate from Russia"}}</p>
             <p>To accept the invite click on the link and sign in:</p>
