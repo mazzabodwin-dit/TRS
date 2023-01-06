@@ -30,7 +30,7 @@
       <p>We have sent an invite to:</p>
         <p>{{data['invite-user-name'] or data['party-user11']}} - {{data['invite-user-email'] or data['party-email11']}}<br>
         Permission: {{data['invite-user-permissions'] or "Admin user"}}<br>
-        Cases: {% if data['invite-case'] == "None" %}
+        Cases: {% if data['invite-case'] == "None" or data['invite-case'] == Null %}
           None
           {% else %}
           <ul class="govuk-list">

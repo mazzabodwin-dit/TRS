@@ -79,7 +79,7 @@
           Cases invited to
         </dt>
         <dd class="govuk-summary-list__value">
-        {% if data['invite-case'] == "None" %}
+        {% if data['invite-case'] == "None" or data['invite-case'] == Null %}
           None
           {% else %}
           <ul class="govuk-list">
