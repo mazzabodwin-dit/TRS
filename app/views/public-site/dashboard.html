@@ -44,60 +44,9 @@
         </div>
       </div>
       {% else %}
-    
-      {% if (data['account-activated'] == "yes") %}
-        <!--This info is only shown to new users with no cases/ invites etc-->
-         <div class="address-card">
-            <div class="address-container">
-              <h2 class="govuk-heading-m clearfix">
-                Register interest in a case
-                <span class="govuk-body right-aligned-link">
-                  <a href="/public-site/manage-cases/manage-org-case" class="govuk-link--no-visited-state">Manage cases</a>
-                </span>
-              </h2>
-              <p><a href="reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state">Register interest</a> if you want to be able to</p>  
-              <ul class="govuk-list govuk-list--bullet">
-                <li>take part in an investigation</li>
-                <li>get updates on important developments</li>
-                <li>comment on TRA findings before a final decision is made</li>
-                <li>request reconsideration of a final determination in a case</li>
-              </ul>
-            </div>
-          </div>
-        {% if data['user-permissions'] != "User" %}
-          <div class="address-card">
-            <div class="address-container">
-              <h2 class="govuk-heading-m clearfix">
-                Invite users
-                <span class="govuk-body right-aligned-link ">
-                </span> 
-              </h2>
-              <p>Give access to your organisation's active cases by inviting users to join your account.</p>
-              <p><a href="manage-users/invite/invite-user-type" class="govuk-link--no-visited-state">Invite user</a></p>
-
-            </div>
-          </div>
-        {% endif %}    
-        {% else %}
-
-        <!-- MY INVITES -->
-        <!-- MY INVITES -->
-        <!--This is only shown in Rep account-->     
-        {% if (data['who-signin'] == "rep-invite") and (data['invite-rep-task'] == "Sent") %}
-          <div class="address-card">
-            <div class="address-container">
-              <h2 class="govuk-heading-m clearfix">
-                My invites
-              </h2>
-              <p>Invited by: Steel UK
-                <br>
-                {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
-                Status: Awaiting TRA verification (<span id="date3"></span>)                
-              </p>
-            </div>
-          </div>
-        {% endif %}
-
+      <!--Show all of the lovely content-->
+     
+      {% if data['my-cases'] == "yes" %}
         <!-- MY CASES -->
         <!-- MY CASES -->
         <!-- MY CASES -->
@@ -123,7 +72,7 @@
                 {{data ['case-ref2'] or "AD2224"}} - {{data ['case-name2'] or "Steel plate from Russia"}}<br>         
                 Interested party: {{ data['party1']}}   
                 <br>
-                 <a href="" class="govuk-link govuk-link--no-visited-state">Status: Questionnaires sent</a> (14 May 2022)
+                <a href="" class="govuk-link govuk-link--no-visited-state">Status: Questionnaires sent</a> (14 May 2022)
               </p>
             {% endif %}
             <p>
@@ -134,11 +83,11 @@
             </p> 
           </div>
         </div>
-            
-        <!-- Reg interest -->
-        <!-- Reg interest -->
-        <!-- Reg interest -->
+        {% endif %}
 
+        <!-- REGISTRATION OF INTEREST -->
+        <!-- REGISTRATION OF INTEREST -->
+        <!-- REGISTRATION OF INTEREST -->
         {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
           <div class="address-card">
             <div class="address-container">
@@ -213,11 +162,56 @@
               </p>
             </div>
           </div>
-        {% endif %}
+          {% else %}
+          {% if data['my-cases'] != "yes" %}
 
-        <!-- Invites -->
-        <!-- Invites -->
-        {% if (data['invite-rep-task'] == null ) %}
+            <!-- No cases show promo Reg interest -->
+            <!-- No cases show promo Reg interest -->
+            <!-- No cases show promo Reg interest -->
+            <div class="address-card">
+              <div class="address-container">
+                <h2 class="govuk-heading-m clearfix">
+                  Register interest in a case
+                  <span class="govuk-body right-aligned-link">
+                    <a href="/public-site/manage-cases/manage-org-case" class="govuk-link--no-visited-state">Manage cases</a>
+                  </span>
+                </h2>
+                <p><a href="reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state">Register interest</a> if you want to be able to</p>  
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>take part in an investigation</li>
+                  <li>get updates on important developments</li>
+                  <li>comment on TRA findings before a final decision is made</li>
+                  <li>request reconsideration of a final determination in a case</li>
+                </ul>
+              </div>
+            </div>
+          {% endif%}
+        {% endif %}
+ 
+      <!-- INVITES FOR A REP -->
+      <!-- INVITES FOR A REP -->
+      <!--This is only shown in Rep account-->     
+      {% if (data['who-signin'] == "rep-invite") and (data['invite-rep-task'] == "Sent") %}
+        <div class="address-card">
+          <div class="address-container">
+            <h2 class="govuk-heading-m clearfix">
+              My invites
+            </h2>
+            <p>Invited by: Steel UK
+              <br>
+              {{data ['case-ref'] or "AD2224"}} - {{data ['case-name'] or "Steel plate from Russia"}}<br>
+              Status: Awaiting TRA verification (<span id="date3"></span>)                
+            </p>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- PENDING INVITES -->
+      <!-- PENDING INVITES -->
+      <!-- PENDING INVITES -->
+      <!-- Only an admin can see these -->
+      {% if data['user-permissions'] == "Admin user" %}
+        {% if (data['invite-rep-task'] != "Sent" ) and (data['invite-org-task'] != "Sent" ) %}
           <div class="address-card">
             <div class="address-container">
               <h2 class="govuk-heading-m clearfix">
@@ -238,55 +232,58 @@
                 <a href="/public-site/manage-users/manage-org-user" class="govuk-link--no-visited-state">Manage users</a>
                 </span> 
               </h2>
-              <div class="govuk-warning-text">
-                <span class="govuk-warning-text__icon update-icon" aria-hidden="true">!</span>
-                <p class="govuk-warning-text__text update-text">
-                  <strong>
-                    <span class="govuk-warning-text__assistive">Update</span>
-                    1 invite with deficient documentation
-                  </strong>
-                </p>
-              </div>
               
-              <ul class="govuk-list govuk-list--bullet">
-                <li>
-                 4 pending invites
-                </li>
-                <li>
-                 1 draft invite
-                </li>
-              </ul>
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon update-icon" aria-hidden="true">!</span>
+                  <p class="govuk-warning-text__text update-text">
+                    <strong>
+                      <span class="govuk-warning-text__assistive">Update</span>
+                      1 invite with deficient documentation
+                    </strong>
+                  </p>
+                </div>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                     {% if (data['invite-org-task'] == "Sent") and (data['invite-rep-task'] == "Sent") %}  
+                        2 pending invites
+                        {% else %}
+                        1 pending invite
+                      {% endif %}
+                  </li>
+                  <li>
+                    1 draft invite
+                  </li>
+                </ul>
               <p><a href="/public-site/manage-users/manage-org-user#manage-invites" class="govuk-link--no-visited-state">View invites</a></p>
             </div>
           </div>
-          
         {% endif %}
-
-        <script>
-            const date = new Date();
-            const formattedDate = date.toLocaleDateString('en-GB', {
-              day: '2-digit', month: 'short', year: 'numeric'
-            }).replace(/ /g, ' ');
-            document.getElementById("date").innerHTML = formattedDate;
-        </script>
-
-        <script>
-          const date2 = new Date();
-          const formattedDate2 = date2.toLocaleDateString('en-GB', {
-            day: '2-digit', month: 'short', year: 'numeric'
-          }).replace(/ /g, ' ');
-          document.getElementById("date2").innerHTML = formattedDate2;
-        </script>
-
-        <script>
-          const date3 = new Date();
-          const formattedDate3 = date3.toLocaleDateString('en-GB', {
-            day: '2-digit', month: 'short', year: 'numeric'
-          }).replace(/ /g, ' ');
-          document.getElementById("date3").innerHTML = formattedDate3;
-        </script>
       {% endif %}
-    {% endif %}
+
+      <script>
+          const date = new Date();
+          const formattedDate = date.toLocaleDateString('en-GB', {
+            day: '2-digit', month: 'short', year: 'numeric'
+          }).replace(/ /g, ' ');
+          document.getElementById("date").innerHTML = formattedDate;
+      </script>
+
+      <script>
+        const date2 = new Date();
+        const formattedDate2 = date2.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date2").innerHTML = formattedDate2;
+      </script>
+
+      <script>
+        const date3 = new Date();
+        const formattedDate3 = date3.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date3").innerHTML = formattedDate3;
+      </script>
+    {% endif%}
   </div>
 
   <div class="govuk-grid-column-one-third">
