@@ -367,7 +367,7 @@
         </thead>
         <tbody class="govuk-table__body">
             
-          {% if (data['show-invite-org'] == "yes") %}
+          {% if (data['invite-org-task'] == "Sent") %}
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['invite-rep-name'] or data['party-user11'] }}
@@ -386,7 +386,7 @@
               </td>
             </tr>
           {% endif %}
-          {% if (data['show-invite-rep'] == "yes") %}
+          {% if (data['invite-rep-task'] == "Sent") %}
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['invite-user-name'] or data['rep-user3'] }}
