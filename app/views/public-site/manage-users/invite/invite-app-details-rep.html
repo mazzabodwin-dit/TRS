@@ -119,18 +119,18 @@
             {{data['party5']}}
             {% else %}
             {% if data['invite-rep-task'] == "Draft" %}
-              {{data['invite-rep-name'] or data['rep-user3'] }}
+             {{data['party-rep-name'] or data['party-user2'] }}
               <br>
-              {{data['invite-rep-email'] or data['rep-email3'] }}
+              {{data['invite-rep-email'] or data['party-email2'] }}
               <br><br>
-              {{data['representative1']}}
+              {{data['party2']}}
               {% else %}
               {% if data['invite-rep-task'] == "Sent" %}
-                {{data['party-rep-name'] or data['party-user2'] }}
+                {{data['invite-rep-name'] or data['rep-user3'] }}
                 <br>
-                {{data['invite-rep-email'] or data['party-email2'] }}
+                {{data['invite-rep-email'] or data['rep-email3'] }}
                 <br><br>
-                {{data['party2']}}
+                {{data['representative1']}}
                 {% else %}
                 {% if data['invite-rep-task'] == "Accepted" %}
                   {{data['invite-rep-name'] or data['party-user3'] }}
@@ -169,8 +169,8 @@
     <div class="govuk-button-group">
       {% if data['invite-rep-task'] == "Draft" or data['invite-rep-task'] == "All" %}
         {{ govukButton({
-          text: "Continue application",
-          href: "tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
+          text: "Continue invite",
+          href: "../tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
         }) }}  
         <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
       {% endif %} 

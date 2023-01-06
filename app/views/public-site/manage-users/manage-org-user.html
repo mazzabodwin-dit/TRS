@@ -358,25 +358,25 @@
             </thead>
             <tbody class="govuk-table__body">
                 
-            {% if (data['show-invite-org'] == "yes") %}
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell text-overflow">
-                  <span class="govuk-visually-hidden--desktop">User: </span>{{data['invite-user-name'] or data['party-user11'] }}
-                </td>
-                <td class="govuk-table__cell text-overflow">
-                  <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-email'] or "User" }}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Status: </span>Invite sent
-                </td>
-                <td class="govuk-table__cell ">
-                  <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-org" class="govuk-link--no-visited-state">View invite</a>
-                </td>
-              </tr>
-              {% else %}
+              {% if (data['show-invite-org'] == "yes") %}
+                <tr class="govuk-table__row no-border">
+                  <td class="govuk-table__cell text-overflow">
+                    <span class="govuk-visually-hidden--desktop">User: </span>{{data['invite-user-name'] or data['party-user11'] }}
+                  </td>
+                  <td class="govuk-table__cell text-overflow">
+                    <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-email'] or "User" }}
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop">Status: </span>Invite sent
+                  </td>
+                  <td class="govuk-table__cell ">
+                    <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-org" class="govuk-link--no-visited-state">View invite</a>
+                  </td>
+                </tr>
+              {% endif %}
               {% if (data['show-invite-rep'] == "yes") %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell text-overflow">
@@ -392,11 +392,10 @@
                     <span class="govuk-visually-hidden--desktop">Status: </span>Invite sent
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Draft" class="govuk-link--no-visited-state">View invite</a>
+                    <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">View invite</a>
                   </td>
                 </tr>
               {% endif %}
-            {% endif %}
             </body>
           </table>
         {% endset %}
