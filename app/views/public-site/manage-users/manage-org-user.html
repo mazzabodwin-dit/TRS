@@ -35,8 +35,10 @@
       Manage users
     </h1>
   </div>
-<!--If there is a sent invite show tabs-->
-  {% if (data['invite-org-task'] == "Sent") or (data['invite-rep-task'] == "Sent") %}
+<!--If there is an invite show tabs-->
+<!--If there is an invite invite show tabs-->
+<!--If there is an invite invite show tabs-->
+  {% if (data['invite-org-task'] == "Sent" or data['invite-rep-task'] == "Sent") or (data['invite-org-task'] == "Accepted" or data['invite-rep-task'] == "Accepted") %}
     <div class="govuk-grid-column-full">
 
       {% set manageTeamHTML %}
@@ -218,7 +220,7 @@
             <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
           </span>
         </h2>
-        {% if (data['invite-org-task'] == "Sent") and (data['invite-rep-task'] == "Sent") %}            
+        {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Sent") or (data['invite-rep-task'] == "Accepted" and data['invite-org-task'] == "Sent") %}            
           <p>You have 2 pending invites</p>
           {% else %}
           <p>You have 1 pending invite</p>
@@ -307,7 +309,8 @@
                 </td>
               </tr>
             {% endif %}
-            <!--Determine the number of invites in the tab -->
+            
+            <!--Rep invite -->
             {% if (data['invite-rep-task'] == "Sent") %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell text-overflow">
@@ -326,6 +329,26 @@
                   <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">View invite</a>
                 </td>
               </tr>
+              {% else %}
+              {% if (data['invite-rep-task'] == "Accepted") %}
+                <tr class="govuk-table__row no-border">
+                  <td class="govuk-table__cell text-overflow">
+                    <span class="govuk-visually-hidden--desktop">User: </span>{{data['invite-rep-name'] or data['rep-user3'] }}
+                  </td>
+                  <td class="govuk-table__cell text-overflow">
+                    <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-rep-email'] or data['rep-email3'] }}
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop">Account role: </span>Representative
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop">Status: </span>Waiting TRA review
+                  </td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">View invite</a>
+                  </td>
+                </tr>
+              {% endif %}
             {% endif %}
           </body>
         </table>
@@ -333,7 +356,7 @@
 
       <!--Determine the number of invites in the tab -->
       {% set inviteNumberHTML %}
-        {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Sent") or (data['invite-org-task'] == "Accepted" and data['invite-rep-task'] == "Accepted") %}  
+        {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Sent") or (data['invite-rep-task'] == "Accepted" and data['invite-org-task'] == "Sent") %}  
           Invites (2)
           {% else %}
           Invites (1)
@@ -505,7 +528,7 @@
                 {% endif %}
               </td>
             </tr>
-            <!--If the user Approved the invite move them from 'Invites' tab to Account users tab-->
+            <!--If the user Approved the invite move from 'Invites' tab to Account users tab-->
             {% if (data['invite-org-task'] == "Approved") %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell text-overflow">
@@ -544,35 +567,22 @@
   {{ govukFooter({
     meta: {
       items: [
-        {
-          href: "#1",
-          text: "Help"
-        },
-        {
-          href: "#2",
-          text: "Cookies"
-        },
-        {
-          href: "/public-site/terms-privacy",
-          text: "Terms & Privacy"
-        },
-        {
-          href: "#4",
-          text: "Accessibility"
-        },
+      
         {
           href: "/prototype-admin/clear-data",
           text: "Clear data"
         },
         {
+          href: "?invite-org-task=Approved",
+          text: "Org accepts invite"
         },
         {
-          href: "?invite-org-task=Approved",
-          text: "TRA approve org"
+          href: "?invite-rep-task=Accepted#manage-invites",
+          text: "Rep accept invite"
         },
         {
           href: "?invite-rep-task=Approved",
-          text: "TRA approve Rep"
+          text: "Rep approved by TRA"
         }
       ]
     }
