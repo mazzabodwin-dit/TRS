@@ -135,8 +135,8 @@
               </tr>
 
               {% else %}
-              <!--If the user accepted the invite move them from 'Invites' tab to Account users tab-->
-              {% if (data['invite-rep-task'] == "accepted") %}
+              <!--If the user Approved by TRA the invite move them from 'Invites' tab to Account users tab-->
+              {% if (data['invite-rep-task'] == "Approved") %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell text-overflow">
                     <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user1" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
@@ -182,8 +182,8 @@
                   {% endif %}
                 </td>
               </tr>
-              <!--If the user accepted the invite move them from 'Invites' tab to Account users tab-->
-              {% if (data['invite-org-task'] == "accepted") %}
+              <!--If the user Approved the invite move them from 'Invites' tab to Account users tab-->
+              {% if (data['invite-org-task'] == "Approved") %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell text-overflow">
                     <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user2" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
@@ -333,7 +333,7 @@
 
       <!--Determine the number of invites in the tab -->
       {% set inviteNumberHTML %}
-        {% if (data['invite-org-task'] == "Sent") and (data['invite-rep-task'] == "Sent") %}  
+        {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Sent") or (data['invite-org-task'] == "Accepted" and data['invite-rep-task'] == "Accepted") %}  
           Invites (2)
           {% else %}
           Invites (1)
@@ -458,8 +458,8 @@
             </tr>
 
             {% else %}
-            <!--If the user accepted the invite move them from 'Invites' tab to Account users tab-->
-            {% if (data['invite-rep-task'] == "accepted") %}
+            <!--If the user Approved the invite move them from 'Invites' tab to Account users tab-->
+            {% if (data['invite-rep-task'] == "Approved") %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell text-overflow">
                   <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user1" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
@@ -505,8 +505,8 @@
                 {% endif %}
               </td>
             </tr>
-            <!--If the user accepted the invite move them from 'Invites' tab to Account users tab-->
-            {% if (data['invite-org-task'] == "accepted") %}
+            <!--If the user Approved the invite move them from 'Invites' tab to Account users tab-->
+            {% if (data['invite-org-task'] == "Approved") %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell text-overflow">
                   <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user2" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
@@ -567,12 +567,12 @@
         {
         },
         {
-          href: "?invite-org-task=accepted",
-          text: "Org accept"
+          href: "?invite-org-task=Approved",
+          text: "TRA approve org"
         },
         {
-          href: "?invite-rep-task=accepted",
-          text: "Rep accept"
+          href: "?invite-rep-task=Approved",
+          text: "TRA approve Rep"
         }
       ]
     }
