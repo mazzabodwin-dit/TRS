@@ -65,6 +65,10 @@
                   {{data['invite-rep-name'] or data['rep-user3'] }}<br>
                   {{data['invite-rep-email'] or data['rep-email3'] }}<br>
                   {{data['invite-rep-org-name'] or data['representative1'] }}<br>
+                  {% else %}
+                  {{data['party-user5'] }}<br>
+                  {{data['party-email5'] }}<br>
+                  {{data['party5'] }}<br>
                 {% endif %}
               {% endif %}
             {% endif %}
