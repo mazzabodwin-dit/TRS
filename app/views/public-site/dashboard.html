@@ -213,7 +213,7 @@
     
       {% if data['user-permissions'] == "Admin user" %}
 
-        {% if (data['invite-org-task'] == "Approved" and data['invite-rep-task'] == "Approved") or (data['invite-org-task'] == "none" and data['invite-rep-task'] == "none") %}  
+        {% if (data['invite-org-task'] == "Approved" and data['invite-rep-task'] == "Approved") or (data['invite-org-task'] == "none" and data['invite-rep-task'] == "none") or (data['invite-org-task'] == null and data['invite-rep-task'] == null ) %}  
 
           <div class="address-card">
             <div class="address-container">
