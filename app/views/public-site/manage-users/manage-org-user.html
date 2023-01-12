@@ -114,13 +114,18 @@
             {% if data['invite-rep-task'] == "Approved" or data['manage-user-states'] == "All" %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell text-overflow">
-                  <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user1" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
+                  <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-rep-name" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
                 </td>
                 <td class="govuk-table__cell text-overflow">
                   <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-rep-email'] or data['rep-email3'] }}
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Account role: </span>Representative
+                  <span class="govuk-visually-hidden--desktop">Account role: </span>
+                  {% if data['invite-rep-status'] != "Inactive" %} 
+                    Representative
+                    {% else %}
+                    Inactive 
+                  {% endif %}
                 </td>
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Cases: </span>1
@@ -152,16 +157,22 @@
                   <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-permission'] or data['party-user11-permission'] }}
+                  <span class="govuk-visually-hidden--desktop">Account role: </span>
+                  {% if data['invite-user-status'] != "Inactive" %} 
+                    {{data['invite-user-permission'] or data['party-user11-permission'] }} 
+                    {% else %}
+                    {{data['invite-user-status'] or data['party-user11-status'] }} 
+                  {% endif %}
                 </td>
                 <td class="govuk-table__cell">
                   {% if data['invite-case'] =="None" or data['invite-case'] == null %}
                     <span class="govuk-visually-hidden--desktop">Cases: </span>0
                     {% else %}
-                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Rainbow Trout from Republic of Turkey" %}
+                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" %}
                       <span class="govuk-visually-hidden--desktop">Cases: </span>2
                       {% else %}
-                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "AS3464 - Rainbow Trout from Republic of Turkey" %}
+                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "AS3464 - Garnets from Gabon" %}
+                        <span class="govuk-visually-hidden--desktop">Cases: </span>1
                       {% endif %}
                     {% endif %}
                   {% endif %}
@@ -582,13 +593,18 @@
                 {% if data['invite-rep-task'] == "Approved" or data['manage-user-states'] == "All" %}
                   <tr class="govuk-table__row no-border">
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user1" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
+                      <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-rep-name" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-rep-email'] or data['rep-email3'] }}
                     </td>
                     <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Account role: </span>Representative
+                      <span class="govuk-visually-hidden--desktop">Account role: </span>
+                      {% if data['invite-rep-status'] != "Inactive" %} 
+                        Representative
+                        {% else %}
+                        Inactive 
+                      {% endif %}
                     </td>
                     <td class="govuk-table__cell">
                       <span class="govuk-visually-hidden--desktop">Cases: </span>1
@@ -620,19 +636,23 @@
                       <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
                     </td>
                     <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-permission'] or data['party-user11-permission'] }} 
+                      <span class="govuk-visually-hidden--desktop">Account role: </span>
+                      {% if data['invite-user-status'] != "Inactive" %} 
+                        {{data['invite-user-permission'] or data['party-user11-permission'] }} 
+                        {% else %}
+                        {{data['invite-user-status'] or data['party-user11-status'] }} 
+                      {% endif %}
                     </td>
                     <td class="govuk-table__cell">
                       {% if data['invite-case'] =="None" or data['invite-case'] == null %}
                         <span class="govuk-visually-hidden--desktop">Cases: </span>0
                         {% else %}
-                        {% if data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Rainbow Trout from Republic of Turkey" %}
+                        {% if data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" %}
                           <span class="govuk-visually-hidden--desktop">Cases: </span>2
                           {% else %}
-                          {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "AS3464 - Rainbow Trout from Republic of Turkey" %}
+                          {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "AS3464 - Garnets from Gabon" %}
                             <span class="govuk-visually-hidden--desktop">Cases: </span>1
                             {% else %}
-                            ff
                           {% endif %}
                         {% endif %}
                       {% endif %}
@@ -910,13 +930,18 @@
               {% if data['invite-rep-task'] == "Approved" %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell text-overflow">
-                    <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user1" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
+                    <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-rep-name" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
                   </td>
                   <td class="govuk-table__cell text-overflow">
                     <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-rep-email'] or data['rep-email3'] }}
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Account role: </span>Representative
+                    <span class="govuk-visually-hidden--desktop">Account role: </span>
+                    {% if data['invite-rep-status'] != "Inactive" %} 
+                      Representative
+                      {% else %}
+                      Inactive 
+                    {% endif %}
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop">Cases: </span>1
@@ -948,7 +973,12 @@
                     <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-permission'] or data['party-user11-permission'] }}
+                    <span class="govuk-visually-hidden--desktop">Account role: </span>
+                    {% if data['invite-user-status'] != "Inactive" %} 
+                      {{data['invite-user-permission'] or data['party-user11-permission'] }} 
+                      {% else %}
+                      {{data['invite-user-status'] or data['party-user11-status'] }} 
+                    {% endif %}
                   </td>
                   <td class="govuk-table__cell">
                     {% if data['invite-case'] =="None" or data['invite-case'] == null %}
@@ -960,7 +990,6 @@
                         {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "AS3464 - Garnets from Gabon" %}
                           <span class="govuk-visually-hidden--desktop">Cases: </span>1
                           {% else %}
-                          dd
                         {% endif %}
                       {% endif %}
                     {% endif %}

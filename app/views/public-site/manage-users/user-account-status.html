@@ -47,7 +47,7 @@
           }) }}
 
           {% else %}
-          {% if data['account-user'] =="party-user6" or data['account-user'] == "rep-user6" %}
+          {% if data['account-user'] =="party-user6" %}
             {{ govukRadios({
               idPrefix: "party-user6-status",
               name: "party-user6-status",
@@ -71,7 +71,34 @@
                 }
               ]
             }) }}
-           
+
+            {% else %}
+            {% if data['account-user'] =="invite-rep-name" or data['account-user'] == "rep-user3" %}
+              {{ govukRadios({
+                idPrefix: "invite-rep-status",
+                name: "invite-rep-status",
+                fieldset: {
+                  legend: {
+                  text: "Select the users account status",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                items: [
+                {
+                    value: "Active",
+                    text: "Active user: some words here",
+                    checked: checked("invite-rep-status", "Active")
+                  },
+                  {
+                    value: "Inactive",
+                    text: "Inactive user: some words here",
+                    checked: checked("invite-rep-status", "Inactive")
+                  }
+                ]
+              }) }}
+            
+            {% endif %}
           {% endif %}
         {% endif %}
 
