@@ -102,13 +102,10 @@
 
       {% set orgHtml %}
         <h2 class="govuk-heading-m">Account</h2>
-        <p>This account belongs to the following organisation:
+        <p>This account belongs to the following organisation:<p>
         <div class="address-card">
           <div class="address-container">
             <h3 class="govuk-heading-m clearfix">{{data['party1']}}
-              <p class="right-aligned-link">
-                <a href="account-edit-org" class="govuk-link--no-visited-state">Edit</a>
-              </p> 
             </h3> 
             <dl class="govuk-summary-list">
               <!--Show the right info for who has logged in-->
@@ -172,6 +169,7 @@
                 </div>
               {% endif %}
             </dl> 
+            <p>Please contact the TRA if you need update any of these details.<p>
           </div>
         </div>
       {% endset -%}
