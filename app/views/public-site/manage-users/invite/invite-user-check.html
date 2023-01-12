@@ -64,7 +64,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
             <!-- Show client permissions-->
-            {{data['invite-user-permissions'] or "Admin user"}}<br>
+           {{data['invite-user-role'] or data['party-user11-permission'] }}<br>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="invite-user-permissions" class="govuk-link govuk-link--no-visited-state">
