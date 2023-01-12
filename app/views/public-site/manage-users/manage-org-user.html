@@ -29,7 +29,7 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row"> 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       Manage users
@@ -43,7 +43,7 @@
       {% set manageTeamHTML %}
         <h2 class="govuk-heading-m">Account users
           <span class="govuk-body right-aligned-link">
-            <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
+            <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite user</a>
           </span>
         </h2>
         <p>Manage users giving them access to cases or admin rights for this account.</p>
@@ -133,7 +133,7 @@
                   {% if data['party-user1-status'] == "Inactive" %}           
                     <a href="user-account-status?account-user=invite-user1" class="govuk-link--no-visited-state">Activate user</a>
                     {% else %}
-                    <a href="" class="govuk-link--no-visited-state">Invite to case</a>
+                    <a href="manage-users/tasklist/invite-rep-tasks?tasklist-type=invite-rep" class="govuk-link--no-visited-state">Invite user</a>
                   {% endif %}
                 </td>
               </tr>
@@ -223,7 +223,7 @@
       {% set manageInvitesHTML %}
         <h2 class="govuk-heading-m">Invites
           <span class="govuk-body right-aligned-link">
-            <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
+            <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite user</a>
           </span>
         </h2>
         <p>You have 5 pending invites</p>
@@ -637,7 +637,7 @@
           {% set manageTeamHTML %}
             <h2 class="govuk-heading-m">Account users
               <span class="govuk-body right-aligned-link">
-                <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
+                <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite user</a>
               </span>
             </h2>
             <p>Manage users giving them access to cases or admin rights for this account.</p>
@@ -727,7 +727,7 @@
                       {% if data['party-user1-status'] == "Inactive" %}           
                         <a href="user-account-status?account-user=invite-user1" class="govuk-link--no-visited-state">Activate user</a>
                         {% else %}
-                        <a href="" class="govuk-link--no-visited-state">Invite to case</a>
+                        <a href="" class="govuk-link--no-visited-state">Invite user</a>
                       {% endif %}
                     </td>
                   </tr>
@@ -816,7 +816,7 @@
           {% set manageInvitesHTML %}
             <h2 class="govuk-heading-m">Invites
               <span class="govuk-body right-aligned-link">
-                <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
+                <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite user</a>
               </span>
             </h2>
             {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Sent") or (data['invite-rep-task'] == "Accepted" and data['invite-org-task'] == "Sent") %}            
@@ -987,7 +987,7 @@
         <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">Account users
             <span class="govuk-body right-aligned-link">
-              <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite new user</a>
+              <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite user</a>
             </span>
           </h2>
           <p>Manage users giving them access to cases or admin rights for this account.</p>
@@ -1077,7 +1077,7 @@
                     {% if data['party-user1-status'] == "Inactive" %}           
                       <a href="user-account-status?account-user=invite-user1" class="govuk-link--no-visited-state">Activate user</a>
                       {% else %}
-                      <a href="" class="govuk-link--no-visited-state">Invite to case</a>
+                      <a href="" class="govuk-link--no-visited-state">Invite user</a>
                     {% endif %}
                   </td>
                 </tr>
