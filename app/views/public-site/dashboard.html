@@ -213,22 +213,7 @@
     
       {% if data['user-permissions'] == "Admin user" %}
 
-        {% if (data['invite-org-task'] == "Approved" and data['invite-rep-task'] == "Approved") or (data['invite-org-task'] == "none" and data['invite-rep-task'] == "none") or (data['invite-org-task'] == null and data['invite-rep-task'] == null ) %}  
-
-          <div class="address-card">
-            <div class="address-container">
-              <h2 class="govuk-heading-m clearfix">
-                Invite users
-                <span class="govuk-body right-aligned-link ">
-                </span> 
-              </h2>
-              <p>Give access to your organisation's active cases by inviting users to join your account.</p>
-              <p><a href="manage-users/invite/invite-user-type" class="govuk-link--no-visited-state">Invite user</a></p>
-            </div>
-          </div>
-          {% else %}
-
-          {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Approved" ) or (data['invite-rep-task'] == "Sent" and data['invite-org-task'] != "Sent" ) %}
+        {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Approved" ) or (data   ['invite-rep-task'] == "Sent" and data['invite-org-task'] != "Sent" ) %}
       
           <div class="address-card">
             <div class="address-container">
@@ -277,8 +262,24 @@
                 </div>
               </div>
               {% else %} 
-                {% if (data['invite-org-task'] == "Approved") and (data['invite-rep-task'] == "Accepted") %}
-                  <!--SWaiting for review and deficient invites-->
+              {% if (data['invite-org-task'] == "Approved") and (data['invite-rep-task'] == "Accepted") %}
+                <!--SWaiting for review and deficient invites-->
+                <div class="address-card">
+                  <div class="address-container">
+                    <h2 class="govuk-heading-m clearfix">
+                      User invites
+                    </h2>
+                    <p>You have pending invites:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>1 invites waiting for TRA review</li>
+                    </ul>
+                    <p><a href="/public-site/manage-users/manage-org-user#manage-invites" class="govuk-link--no-visited-state">View invites</a></p>
+                  </div>
+                </div>
+
+                {% else %} 
+                {% if (data['invite-org-task'] == "Deficient") or (data['invite-rep-task'] == "Deficient") %}
+                  <!--Deficient invites-->
                   <div class="address-card">
                     <div class="address-container">
                       <h2 class="govuk-heading-m clearfix">
@@ -286,40 +287,36 @@
                       </h2>
                       <p>You have pending invites:</p>
                       <ul class="govuk-list govuk-list--bullet">
-                        <li>1 invites waiting for TRA review</li>
+                        <li>
+                          <strong>
+                            1 invite with deficient documentation
+                          </strong>
+                        </li>
+                        <li>1 invite waiting for invitee acceptance</li>
+                        <li>1 invite waiting for TRA review</li>
                       </ul>
                       <p><a href="/public-site/manage-users/manage-org-user#manage-invites" class="govuk-link--no-visited-state">View invites</a></p>
                     </div>
                   </div>
-
-                  {% else %} 
-                  {% if (data['invite-org-task'] == "Deficient") or (data['invite-rep-task'] == "Deficient") %}
-                    <!--Deficient invites-->
-                    <div class="address-card">
-                      <div class="address-container">
-                        <h2 class="govuk-heading-m clearfix">
-                          User invites
-                        </h2>
-                        <p>You have pending invites:</p>
-                        <ul class="govuk-list govuk-list--bullet">
-                          <li>
-                            <strong>
-                              1 invite with deficient documentation
-                            </strong>
-                          </li>
-                          <li>1 invite waiting for invitee acceptance</li>
-                          <li>1 invite waiting for TRA review</li>
-                        </ul>
-                        <p><a href="/public-site/manage-users/manage-org-user#manage-invites" class="govuk-link--no-visited-state">View invites</a></p>
-                      </div>
+                  {% else %}
+                  <div class="address-card">
+                    <div class="address-container">
+                      <h2 class="govuk-heading-m clearfix">
+                        Invite users
+                        <span class="govuk-body right-aligned-link ">
+                        </span> 
+                      </h2>
+                      <p>Give access to your organisation's active cases by inviting users to join your account.</p>
+                      <p><a href="manage-users/invite/invite-user-type" class="govuk-link--no-visited-state">Invite user</a></p>
                     </div>
-                  {% endif %}
+                  </div>
                 {% endif %}
               {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}
       {% endif %}
+      
 
 
 

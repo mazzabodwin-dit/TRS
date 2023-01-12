@@ -150,14 +150,14 @@
                 <span class="govuk-visually-hidden--desktop">Account role: </span>Admin user
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop">Cases: </span>3
+                <span class="govuk-visually-hidden--desktop">Cases: </span>2
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop">Action: </span>
                 {% if data['party-user1-status'] == "Inactive" %}           
                   <a href="user-account-status?account-user=invite-user2" class="govuk-link--no-visited-state">Activate user</a>
                   {% else %}
-                  <a href="" class="govuk-link--no-visited-state">Assign to case</a>
+                  <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign to case</a>
                 {% endif %}
               </td>
             </tr>
@@ -174,14 +174,23 @@
                   <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-role'] or "User" }}
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Cases: </span>1
+                  {% if data['invite-case'] =="None" or data['invite-case'] == null %}
+                    <span class="govuk-visually-hidden--desktop">Cases: </span>0
+                    {% else %}
+                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia,TS0002 - Rainbow Trout from Republic of Turkey" %}
+                      <span class="govuk-visually-hidden--desktop">Cases: </span>2
+                      {% else %}
+                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "TS0002 - Rainbow Trout from Republic of Turkey" %}
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
                 </td>
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Action: </span>
                   {% if data['party-user1-status'] == "Inactive" %}           
                     <a href="user-account-status?account-user=party-user1" class="govuk-link--no-visited-state">Activate user</a>
                     {% else %}
-                    <a href="" class="govuk-link--no-visited-state">Assign to case</a>
+                    <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign to case</a>
                   {% endif %}
                 </td>
               </tr>
@@ -380,7 +389,7 @@
                 <span class="govuk-visually-hidden--desktop">Status: </span>Invite sent
               </td>
               <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">View invite</a>
+                <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">View invite</a>
               </td>
             </tr>
             <tr class="govuk-table__row no-border">
@@ -424,7 +433,7 @@
       {% set draftAssignHTML %}
         <h2 class="govuk-heading-m">Draft user assignments
           <span class="govuk-body right-aligned-link">
-            <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
+            <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign user to case</a>
           </span>
         </h2>
         <p>You have 1 draft user assigment</p>
@@ -744,14 +753,14 @@
                     <span class="govuk-visually-hidden--desktop">Account role: </span>Admin user
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Cases: </span>3
+                    <span class="govuk-visually-hidden--desktop">Cases: </span>2
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop">Action: </span>
                     {% if data['party-user1-status'] == "Inactive" %}           
                       <a href="user-account-status?account-user=invite-user2" class="govuk-link--no-visited-state">Activate user</a>
                       {% else %}
-                      <a href="" class="govuk-link--no-visited-state">Assign to case</a>
+                      <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign to case</a>
                     {% endif %}
                   </td>
                 </tr>
@@ -759,7 +768,7 @@
                 {% if data['invite-org-task'] == "Approved" or data['manage-user-states'] == "All" %}
                   <tr class="govuk-table__row no-border">
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user2" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
+                      <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user2" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}sdfdsfds</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
@@ -768,14 +777,26 @@
                       <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-role'] or "User" }}
                     </td>
                     <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Cases: </span>1
+                      {% if data['invite-case'] =="None" or data['invite-case'] == null %}
+                        <span class="govuk-visually-hidden--desktop">Cases: </span>0
+                        {% else %}
+                        {% if data['invite-case'] == "AD2224 - Steel plate from Russia,TS0002 - Rainbow Trout from Republic of Turkey" %}
+                          <span class="govuk-visually-hidden--desktop">Cases: </span>2
+                          {% else %}
+                          {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "TS0002 - Rainbow Trout from Republic of Turkey" %}
+                            <span class="govuk-visually-hidden--desktop">Cases: </span>1
+                            {% else %}
+                            ff
+                          {% endif %}
+                        {% endif %}
+                      {% endif %}
                     </td>
                     <td class="govuk-table__cell">
                       <span class="govuk-visually-hidden--desktop">Action: </span>
                       {% if data['party-user1-status'] == "Inactive" %}           
                         <a href="user-account-status?account-user=party-user1" class="govuk-link--no-visited-state">Activate user</a>
                         {% else %}
-                        <a href="" class="govuk-link--no-visited-state">Assign to case</a>
+                        <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign to case</a>
                       {% endif %}
                     </td>
                   </tr>
@@ -1094,14 +1115,14 @@
                   <span class="govuk-visually-hidden--desktop">Account role: </span>Admin user
                 </td>
                 <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Cases: </span>3
+                  <span class="govuk-visually-hidden--desktop">Cases: </span>2
                 </td>
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Action: </span>
                   {% if data['party-user1-status'] == "Inactive" %}           
                     <a href="user-account-status?account-user=invite-user2" class="govuk-link--no-visited-state">Activate user</a>
                     {% else %}
-                    <a href="" class="govuk-link--no-visited-state">Assign to case</a>
+                    <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign to case</a>
                   {% endif %}
                 </td>
               </tr>
@@ -1118,14 +1139,26 @@
                     <span class="govuk-visually-hidden--desktop">Account role: </span>{{data['invite-user-role'] or "User" }}
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Cases: </span>1
+                    {% if data['invite-case'] =="None" or data['invite-case'] == null %}
+                      <span class="govuk-visually-hidden--desktop">Cases: </span>0
+                      {% else %}
+                        {% if data['invite-case'] == "AD2224 - Steel plate from Russia,TS0002 - Rainbow Trout from Republic of Turkey" %}
+                        <span class="govuk-visually-hidden--desktop">Cases: </span>2
+                        {% else %}
+                        {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['invite-case'] == "TS0002 - Rainbow Trout from Republic of Turkey" %}
+                          <span class="govuk-visually-hidden--desktop">Cases: </span>1
+                          {% else %}
+                          dd
+                        {% endif %}
+                      {% endif %}
+                    {% endif %}
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop">Action: </span>
                     {% if data['party-user1-status'] == "Inactive" %}           
                       <a href="user-account-status?account-user=party-user1" class="govuk-link--no-visited-state">Activate user</a>
                       {% else %}
-                      <a href="" class="govuk-link--no-visited-state">Assign to case</a>
+                      <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign to case</a>
                     {% endif %}
                   </td>
                 </tr>

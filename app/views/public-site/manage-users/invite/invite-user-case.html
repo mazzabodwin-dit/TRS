@@ -26,14 +26,6 @@
 
       <form action="invite-user-check" method="post" id="invite-case-form">   
 
-        {% set Case1HTML %}
-        {{ data['case-ref1']}} - {{ data['case-name1']}}
-        {% endset %}
-
-        {% set Case2HTML %}
-        {{ data['case-ref2'] }} - {{ data['case-name2'] }}
-        {% endset %}
-
         {{ govukCheckboxes({
           idPrefix: "invite-case",
           name: "invite-case",
@@ -49,14 +41,14 @@
           },
           items: [
             {
-              value: Case1HTML,
-              html: Case1HTML,
-              checked: checked("invite-case", "case1")
+              value: "AD2224 - Steel plate from Russia",
+              html: "AD2224 - Steel plate from Russia",
+              checked: checked("invite-case", "AD2224 - Steel plate from Russia")
             },
             {
-              value: Case2HTML,
-              html: Case2HTML,
-              checked: checked("invite-case", "case2")
+              value: "TS0002 - Rainbow Trout from Republic of Turkey",
+              html: "TS0002 - Rainbow Trout from Republic of Turkey",
+              checked: checked("invite-case", "TS0002 - Rainbow Trout from Republic of Turkey" )
             },
             {
               divider: "or"
@@ -64,7 +56,7 @@
             {
               value: "None",
               text: "None, I will assign a case later",
-              checked: checked("invite-case", "none"),
+              checked: checked("invite-case", "None"),
               behaviour: "exclusive"
             }
           ]
