@@ -219,6 +219,9 @@
             <div class="address-container">
               <h2 class="govuk-heading-m clearfix">
                 User invites 
+                <span class="govuk-body right-aligned-link">
+                  <a href="/public-site/manage-cases/manage-org-user" class="govuk-link--no-visited-state">Manage users</a>
+                </span>
               </h2>
               <p>You have pending invites:</p>
               <ul class="govuk-list govuk-list--bullet">
@@ -278,7 +281,7 @@
                 </div>
 
                 {% else %} 
-                {% if (data['invite-org-task'] == "Deficient") or (data['invite-rep-task'] == "Deficient") %}
+                {% if (data['invite-org-task'] == "Deficient") or (data['invite-rep-task'] == "Deficient") or data['manage-user-states'] =="All" %}
                   <!--Deficient invites-->
                   <div class="address-card">
                     <div class="address-container">
@@ -292,7 +295,7 @@
                             1 invite with deficient documentation
                           </strong>
                         </li>
-                        <li>1 invite waiting for invitee acceptance</li>
+                        <li>2 invites waiting for invitee acceptance</li>
                         <li>1 invite waiting for TRA review</li>
                       </ul>
                       <p><a href="/public-site/manage-users/manage-org-user#manage-invites" class="govuk-link--no-visited-state">View invites</a></p>
