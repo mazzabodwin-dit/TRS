@@ -21,7 +21,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">   
+    <div class="govuk-grid-column-two-thirds">    
     
       <form action="user-account" method="post" id="assign-case-form">   
 
@@ -47,12 +47,23 @@
                 checked: checked("invite-case", "AD2224 - Steel plate from Russia")
               },
               {
+                value: "Case2AS3464 - Garnets from Gabon",
+                html: "AS3464 - Garnets from Gabon",
+                hint: {
+                  html: "Steel UK"
+                },
+                checked: checked("invite-case", "AS3464 - Garnets from Gabon(Steel)")
+              },
+              {
                 value: "AS3464 - Garnets from Gabon",
                 html: "AS3464 - Garnets from Gabon",
-                checked: checked("invite-case", "AS3464 - Garnets from Gabon" )
+                hint: {
+                  html: "Best Barnets Corp"
+                },
+                checked: checked("invite-case", "AS3464 - Garnets from Gabon(Best)")
               }
             ]
-          }) }}
+          }) }}      
 
           {% else %}
           {% if (data['invite-case'] == "AD2224 - Steel plate from Russia") %}
@@ -72,15 +83,26 @@
               },
               items: [
                 {
-                  value: "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon",
+                  value: "Case2AS3464 - Garnets from Gabon",
                   html: "AS3464 - Garnets from Gabon",
-                  checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" )
+                  hint: {
+                    html: "Steel UK"
+                  },
+                  checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon(Steel)")
+                },
+                {
+                  value: "AS3464 - Garnets from Gabon",
+                  html: "AS3464 - Garnets from Gabon",
+                  hint: {
+                    html: "Best Barnets Corp"
+                  },
+                  checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon(Best)")
                 }
               ]
-            }) }}
+            }) }} 
 
             {% else %}
-            {% if (data['invite-case'] == "AS3464 - Garnets from Gabon") %}
+            {% if (data['invite-case'] == "AS3464 - Garnets from Gabon(Steel)") %}
 
               {{ govukCheckboxes({
                 idPrefix: "invite-case",
@@ -97,12 +119,20 @@
                 },
                 items: [
                   {
-                    value: "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon",
+                    value: "AD2224 - Steel plate from Russia",
                     html: "AD2224 - Steel plate from Russia",
-                    checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon")
+                    checked: checked("invite-case", "AS3464 - Garnets from Gabon(Steel), AD2224 - Steel plate from Russia")
+                  },
+                  {
+                    value: "AS3464 - Garnets from Gabon",
+                    html: "AS3464 - Garnets from Gabon",
+                    hint: {
+                      html: "Best Barnets Corp"
+                    },
+                    checked: checked("invite-case", "AS3464 - Garnets from Gabon(Steel), AS3464 - Garnets from Gabon(Best)")
                   }
                 ]
-              }) }}
+              }) }} 
 
               {% else %}
               {% if (data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon") %}
