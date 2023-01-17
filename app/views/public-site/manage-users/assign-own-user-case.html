@@ -23,39 +23,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">   
     
+
       <form action="user-account" method="post" id="assign-case-form">   
-
-        {% if data['invite-case'] =="None" or data['invite-case'] == null %}
-
-          {{ govukCheckboxes({
-            idPrefix: "invite-case",
-            name: "invite-case",
-            fieldset: {
-              legend: {
-                text: "Which case?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            hint: {
-              text: "Select the cases they can take part in."
-            },
-            items: [
-              {
-                value: "AD2224 - Steel plate from Russia",
-                html: "AD2224 - Steel plate from Russia",
-                checked: checked("invite-case", "AD2224 - Steel plate from Russia")
-              },
-              {
-                value: "AS3464 - Garnets from Gabon",
-                html: "AS3464 - Garnets from Gabon",
-                checked: checked("invite-case", "AS3464 - Garnets from Gabon" )
-              }
-            ]
-          }) }}
-
+        {% if (data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon") %}
+          <h1 class="govuk-heading-xl">
+            Which case?
+            <br>
+          </h1>
+          <p> There are no more cases available to assign to this user.</p>
+           <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Back"
+            }) }}    
+          </div>
           {% else %}
-          {% if (data['invite-case'] == "AD2224 - Steel plate from Russia") %}
+
+          {% if data['invite-case'] =="None" or data['invite-case'] == null %}
 
             {{ govukCheckboxes({
               idPrefix: "invite-case",
@@ -72,15 +55,20 @@
               },
               items: [
                 {
-                  value: "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon",
+                  value: "AD2224 - Steel plate from Russia",
+                  html: "AD2224 - Steel plate from Russia",
+                  checked: checked("invite-case", "AD2224 - Steel plate from Russia")
+                },
+                {
+                  value: "AS3464 - Garnets from Gabon",
                   html: "AS3464 - Garnets from Gabon",
-                  checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" )
+                  checked: checked("invite-case", "AS3464 - Garnets from Gabon" )
                 }
               ]
             }) }}
 
             {% else %}
-            {% if (data['invite-case'] == "AS3464 - Garnets from Gabon") %}
+            {% if (data['invite-case'] == "AD2224 - Steel plate from Russia") %}
 
               {{ govukCheckboxes({
                 idPrefix: "invite-case",
@@ -98,37 +86,53 @@
                 items: [
                   {
                     value: "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon",
-                    html: "AD2224 - Steel plate from Russia",
-                    checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon")
+                    html: "AS3464 - Garnets from Gabon",
+                    checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" )
                   }
                 ]
               }) }}
 
               {% else %}
-              {% if (data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon") %}
-                <h1 class="govuk-heading-xl">
-                  Which case?
-                  <br>
-                </h1>
-                <p> There are no more cases available to assign to this user</p>
+              {% if (data['invite-case'] == "AS3464 - Garnets from Gabon") %}
+
+                {{ govukCheckboxes({
+                  idPrefix: "invite-case",
+                  name: "invite-case",
+                  fieldset: {
+                    legend: {
+                      text: "Which case?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  hint: {
+                    text: "Select the cases they can take part in."
+                  },
+                  items: [
+                    {
+                      value: "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon",
+                      html: "AD2224 - Steel plate from Russia",
+                      checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon")
+                    }
+                  ]
+                }) }}              
               {% endif %}
             {% endif %}
           {% endif %}
-        {% endif %}
-
-        {{ govukDetails({
-          summaryText: "Why can't I see other active cases?",
-          html: '<p>You can only select cases that you are currently participating in.</p>
-          <p> You can <a href="" class="govuk-link">register interest</a> in a case and if accepted you can invite others.</p>'
-        }) }}
         
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Continue"
-          }) }}    
-          <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-        </div>
-
+          {{ govukDetails({
+            summaryText: "Why can't I see other active cases?",
+            html: '<p>You can only select cases that your organisation is currently participating in.</p>
+            <p> You can <a href="" class="govuk-link">register interest</a> in a case and if accepted you can invite others.</p>'
+          }) }}
+          
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}    
+            <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+          </div>
+        {% endif %}
       </form> 
     </div>
   </div>
