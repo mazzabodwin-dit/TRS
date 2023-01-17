@@ -23,9 +23,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">    
     
-      <form action="user-account" method="post" id="assign-case-form">   
+      <form action="" method="post" id="assign-case-form">   
 
-        {% if data['invite-case'] =="None" or data['invite-case'] == null %}
 
           {{ govukCheckboxes({
             idPrefix: "invite-case",
@@ -64,87 +63,6 @@
               }
             ]
           }) }}      
-
-          {% else %}
-          {% if (data['invite-case'] == "AD2224 - Steel plate from Russia") %}
-
-            {{ govukCheckboxes({
-              idPrefix: "invite-case",
-              name: "invite-case",
-              fieldset: {
-                legend: {
-                  text: "Which case?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl"
-                }
-              },
-              hint: {
-                text: "Select the cases they can take part in."
-              },
-              items: [
-                {
-                  value: "Case2AS3464 - Garnets from Gabon",
-                  html: "AS3464 - Garnets from Gabon",
-                  hint: {
-                    html: "Steel UK"
-                  },
-                  checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon(Steel)")
-                },
-                {
-                  value: "AS3464 - Garnets from Gabon",
-                  html: "AS3464 - Garnets from Gabon",
-                  hint: {
-                    html: "Best Barnets Corp"
-                  },
-                  checked: checked("invite-case", "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon(Best)")
-                }
-              ]
-            }) }} 
-
-            {% else %}
-            {% if (data['invite-case'] == "AS3464 - Garnets from Gabon(Steel)") %}
-
-              {{ govukCheckboxes({
-                idPrefix: "invite-case",
-                name: "invite-case",
-                fieldset: {
-                  legend: {
-                    text: "Which case?",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--xl"
-                  }
-                },
-                hint: {
-                  text: "Select the cases they can take part in."
-                },
-                items: [
-                  {
-                    value: "AD2224 - Steel plate from Russia",
-                    html: "AD2224 - Steel plate from Russia",
-                    checked: checked("invite-case", "AS3464 - Garnets from Gabon(Steel), AD2224 - Steel plate from Russia")
-                  },
-                  {
-                    value: "AS3464 - Garnets from Gabon",
-                    html: "AS3464 - Garnets from Gabon",
-                    hint: {
-                      html: "Best Barnets Corp"
-                    },
-                    checked: checked("invite-case", "AS3464 - Garnets from Gabon(Steel), AS3464 - Garnets from Gabon(Best)")
-                  }
-                ]
-              }) }} 
-
-              {% else %}
-              {% if (data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon") %}
-                <h1 class="govuk-heading-xl">
-                  Which case?
-                  <br>
-                </h1>
-                <p> There are no more cases available to assign to this user</p>
-              {% endif %}
-            {% endif %}
-          {% endif %}
-        {% endif %}
 
         {{ govukDetails({
           summaryText: "Why can't I see other active cases?",
