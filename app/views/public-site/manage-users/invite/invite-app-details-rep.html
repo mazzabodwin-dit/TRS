@@ -13,20 +13,7 @@
 
 {% block beforeContent %}
  {% include "includes/beta-banner.html"%}
-
- <div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../../dashboard">Dashboard</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../manage-org-user">Manage users</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      Representative invite
-    </li>
-  </ol>
-</div>
+  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 
 {% endblock %}
 
@@ -188,29 +175,6 @@
       {% endif %} 
     </div>  
     
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">Read the guidance documents</h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a class="link" href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process" target="_blank">Trade remedies investigations process (opens in a new window or tab)</a>
-          </li>  
-          
-          <li>
-            <br>
-            <strong>Email the case team</strong>   
-              {% if (data['regnterest-due-date'] == "current") %}
-                <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref1']}}@traderemedies.gov.uk</a>
-                {% else %}       
-                  <a class="govuk-link govuk-link--no-visited-state" href="">{{data['case-ref']}}@traderemedies.gov.uk</a>
-              {% endif %}
-          </li> 
-        </ul>
-      </nav>
-    </aside>
   </div>
 </div>
 {% endblock %}

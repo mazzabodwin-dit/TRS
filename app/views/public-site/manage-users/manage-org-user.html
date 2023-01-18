@@ -206,7 +206,7 @@
       {% endset %}
     
       {% set manageInvitesHTML %}
-        <h2 class="govuk-heading-m">Invites
+        <h2 class="govuk-heading-m">Pending invites
           <span class="govuk-body right-aligned-link">
             <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Invite user</a>
           </span>
@@ -497,7 +497,7 @@
           }
         },
         { 
-          label: "Invites (5)",
+          label: "Pending invites (5)",
           id: "manage-invites",
           panel: {
             html: manageInvitesHTML
@@ -828,9 +828,9 @@
           <!--Determine the number of invites in the tab -->
           {% set inviteNumberHTML %}
             {% if (data['invite-org-task'] == "Sent" and data['invite-rep-task'] == "Sent") or (data['invite-rep-task'] == "Accepted" and data['invite-org-task'] == "Sent") %}  
-              Invites (2)
+              Pending invites (2)
               {% else %}
-              Invites (1)
+              Pending invites (1)
             {% endif %}
           {% endset %}
 
