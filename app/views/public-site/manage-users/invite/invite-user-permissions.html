@@ -28,8 +28,8 @@
 
         
         {{ govukRadios({
-          idPrefix: "invite-user-permissions",
-          name: "invite-user-permissions",
+          idPrefix: "invite-user-permission",
+          name: "invite-user-permission",
           fieldset: {
             legend: {
               text: "Select permissions",
@@ -41,12 +41,12 @@
           {
             value: "User",
             text: "User: they can access and interact with specific cases",
-            checked: checked("invite-user-permissions", "User")
+            checked: checked("invite-user-permission", "User")
           },
           {
             value: "Admin user",
             text: "Admin user: they can access and interact with cases, assign cases and manage other team members",
-            checked: checked("invite-user-permissions", "Admin user")
+            checked: checked("invite-user-permission", "Admin user")
             }
           ]
         }) }}
