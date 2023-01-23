@@ -24,7 +24,8 @@
     </h1>
     <p>Approve the Letter of Authority to allow the representative to submit documents on behalf of the interested party.</p>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
-      <a href="../orgs/org-bluesteel" class="govuk-link govuk-link--no-visited-state">{{data['representative2']}}</a> has been verified on <a href="">1 case</a>
+      <strong>{{data['representative1']}}</strong> has been approved on to 2 cases <br>
+      The last approval was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong>
     </div> 
   </div>
   <div class="govuk-grid-column-one-third">
@@ -34,15 +35,15 @@
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
             <strong>Interested party</strong><br>
-            {{data['party1'] or "Steel UK"}}
+            {{data['party1']}}
           </li> 
           <li>
             <strong>Representative </strong><br>
-            {{data ['representative2'] or "Lawyers Inc" }}
+            {{data ['representative1'] }}
           </li>
           <li>
             <strong>Representative contact</strong><br>
-            {{data ['rep-user2'] or "Trevor McDoodle"}}
+            {{data ['rep-user1'] }}
           </li>
         </ul>
       </nav>

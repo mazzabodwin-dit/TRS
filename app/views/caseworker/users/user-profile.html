@@ -5,14 +5,13 @@
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
-{% set bodyClasses = 'org-nav' %}
+{% set bodyClasses = 'caseworker-width user-nav' %}
 
 {% block header %}
-  {% include "includes/header-public.html" %}
+  {% include "includes/header-caseworker.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html"%}
 
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
@@ -20,7 +19,7 @@
       <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manage-org-user">Manage users</a>
+      <a class="govuk-breadcrumbs__link" href="users-all">All users</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       {% if data['account-user'] =="party-user1" %}

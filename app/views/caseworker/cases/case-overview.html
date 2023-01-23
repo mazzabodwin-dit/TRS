@@ -36,7 +36,7 @@
       
       {% set newPartyHTML %}
       <h3 class="govuk-heading-m">Parties to review</h3>  
-      <p>There are <strong>3</strong> parties waiting to be reviewed.</p>
+      <p>There are <strong>3</strong> requests waiting to be reviewed.</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -44,9 +44,9 @@
               Sort parties by
             </label>
             <select class="govuk-select" id="sort-party" name="sort-party">
-              <option value="Party" selected>Interested party</option>
+              <option value="Party" selected>Interested party</option>              
+              <option value="Submission">Request</option>
               <option value="Submitted by">Submitted by</option>
-              <option value="Submission">Submission</option>
               <option value="Submitted">Submitted</option>
             </select>
           </div>
@@ -81,13 +81,13 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Request
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -108,10 +108,10 @@
               <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission1']}}
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>22 May 2022
@@ -126,16 +126,16 @@
               <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission2']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission2']}}
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>{{data['submission-date2']}}
             </td>  
             <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=rep-invite&duplicate-org=rep&merge-duplicates=1of2&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party1']}}</span></a>
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=rep-invite&duplicate-org=none&third=party=yes&loa-sufficient=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party1']}}</span></a>
             </td>             
           </tr>
   
@@ -144,10 +144,10 @@
               <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission1']}}
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>28 May 2022
@@ -172,8 +172,8 @@
             </label>
             <select class="govuk-select" id="sort-submission" name="sort-submission">
               <option value="Interested party" selected>Interested party</option>
-              <option value="Submitted by">Submitted by</option>
               <option value="Submission">Submission</option>
+              <option value="Submitted by">Submitted by</option>
               <option value="Submitted">Submitted</option>
             </select>
           </div>
@@ -208,13 +208,13 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -229,35 +229,17 @@
             </th>
           </tr>
         </thead>
-        <tbody class="govuk-table__body">  
-                 
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party4']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user4']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission4']}}
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted: </span>12 May 2022
-            </td>
-            <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party4']}}</span></a>
-            </td>    
-          </tr>
-  
+        <tbody class="govuk-table__body"> 
+            
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
+              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['submission3']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['submission3']}}
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>13 April 2021
@@ -266,16 +248,33 @@
               <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party3']}}</span></a>
             </td>    
           </tr>
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Request: </span>Registration documentation
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submitted: </span>22 May 2022
+            </td>  
+            <td class="govuk-table__cell action">
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['dup-party1']}}</span></a>
+            </td>             
+          </tr> 
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['representative2']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submission: </span>Letter of Authority
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission2']}}
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>{{data['submission-date2']}}
@@ -287,13 +286,13 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-dets" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submission: </span>Registration documentation
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>{{data['register-date1']}}

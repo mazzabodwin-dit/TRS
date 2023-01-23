@@ -281,7 +281,7 @@
 
     {% set confirmPartyHTML %}
       <h2 class="govuk-heading-m">To verify</h2>
-      <p>There are <strong>3</strong> organisations waiting to be approved</p>
+      <p>There are <strong>3</strong> requests waiting to be reviewed</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -289,10 +289,10 @@
               Sort parties by
             </label>
             <select class="govuk-select" id="sort-party" name="sort-party">
-              <option value="Organisation" selected>Organisation</option>
-              <option value="Contact">Contact</option>
-              <option value="Submission">Submission</option>
-              <option value="Submitted">Submitted</option>
+              <option value="Interested party" selected>Interested party</option>
+              <option value="Submission">Submission</option>              
+              <option value="Submitted by">Submitted by</option>
+              <option value="Request">Request</option>
             </select>
           </div>
           <div class="govuk-form-group table-sort-select">
@@ -319,19 +319,19 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Contact
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Request
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted by
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -346,63 +346,77 @@
             </th>
           </tr>
         </thead>
-        <tbody class="govuk-table__body">  
+        <tbody class="govuk-table__body"> 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission1']}}
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submitted: </span>28 May 2022
-            </td>   
-            <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=yes&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden">{{data['party1']}}
-              </span></a>
-            </td>        
-          </tr> 
-
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="#" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission5']}}
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>22 May 2022
             </td>  
             <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=rep-invite&duplicate-org=none&third=party=yes&loa-sufficient=yes" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden">{{data['representative1']}}</span></a>
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no&notify-contact=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['dup-party1']}}</span></a>
             </td>             
-          </tr>
-
+          </tr>            
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission1']}}
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submitted: </span>22 May 2022
+            </td>  
+            <td class="govuk-table__cell action">
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no&notify-contact=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['dup-party1']}}</span></a>
+            </td>             
+          </tr>
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission2']}}
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="/caseworker/users/user-account?account-user=party-user1" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submitted: </span>{{data['submission-date2']}}
+            </td>  
+            <td class="govuk-table__cell action">
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=rep-invite&duplicate-org=none&third=party=yes&loa-sufficient=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party1']}}</span></a>
+            </td>             
+          </tr>
+  
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submitted: </span>28 May 2022
             </td>   
             <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no&notify-contact=no" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden">{{data['party1']}}
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['party1']}}
               </span></a>
             </td>        
           </tr> 
-
         </body>
       </table>   
     {% endset %}
