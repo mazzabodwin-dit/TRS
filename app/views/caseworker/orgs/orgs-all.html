@@ -26,7 +26,11 @@
     </h1>
 
     {% set activeOrgsHTML %}
-      <h2 class="govuk-heading-m">Active orgs</h2>
+      <h2 class="govuk-heading-m clearfix">Active orgs
+        <span class="govuk-body right-aligned-link">
+        <a href="merge-two-orgs" class="govuk-link--no-visited-state">Merge organisations</a>
+      </span> 
+      </h2>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -364,10 +368,10 @@
 
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="#" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
+              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Submission: </span>{{data['party-submission5']}}
@@ -376,7 +380,7 @@
               <span class="govuk-visually-hidden--desktop">Submitted: </span>22 May 2022
             </td>  
             <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden">{{data['party5']}}</span></a>
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Verify <span class="govuk-visually-hidden">{{data['representative1']}}</span></a>
             </td>             
           </tr>
 
@@ -410,8 +414,8 @@
 
     {% set dupOrgtHTML %}
       <h2 class="govuk-heading-m">Duplicates</h2> 
-      <p>There are <strong>5</strong> organisations with duplicates to review.</p> 
-      <p>Organisations are matched when one or more of their registered details are the same as another organisation. Select the listed organisations to decide if they should be merged with the matched organisation or kept as separate.</p>
+      <p>There are <strong>3</strong> organisations that match other organisations.</p> 
+      <p>Select an organisations to decide if they should be merged with the matched organisation or kept as separate.</p>
 
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
@@ -473,6 +477,20 @@
         <tbody class="govuk-table__body">             
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Matches: </span>2
+            </td>  
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Status: </span>Not started
+            </td>  
+            <td class="govuk-table__cell action">
+              <a href="/caseworker/reg-interest/reginterest-merge-rep-review?who-signin=lead&verify-type=rep-invite&duplicate-org=rep&third=party=yes&loa-sufficient=yes&merge-rep-task=Not%20started&merge-duplicates=1of2" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['dup-party3']}}</span>
+            </td>             
+          </tr>
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
@@ -482,12 +500,12 @@
               <span class="govuk-visually-hidden--desktop">Status: </span>Not started
             </td>  
             <td class="govuk-table__cell action">
-              <a href="" class="govuk-link govuk-link--no-visited-state">Review duplicates<a/><span class="govuk-visually-hidden"> for {{data['representative1']}}</span>
+              <a href="/caseworker/reg-interest/reginterest-merge-rep-review?who-signin=lead&verify-type=rep-invite&duplicate-org=rep&third=party=yes&loa-sufficient=yes&merge-rep-task=Not%20started&merge-duplicates=1of2" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['representative1']}}</span>
             </td>             
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Matches: </span>2
@@ -496,7 +514,7 @@
               <span class="govuk-visually-hidden--desktop">Status: </span>Not started
             </td>  
             <td class="govuk-table__cell action">
-              <a href="" class="govuk-link govuk-link--no-visited-state">Review duplicates<a/><span class="govuk-visually-hidden"> for {{data['party1']}}</span>
+              <a href="/caseworker/reg-interest/reginterest-merge-rep-review?who-signin=lead&verify-type=rep-invite&duplicate-org=rep&third=party=yes&loa-sufficient=yes&merge-rep-task=Not%20started&merge-duplicates=1of2" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['dup-party1']}}</span>
             </td>             
           </tr>
         </body>
@@ -528,7 +546,7 @@
         }
       },
       { 
-      label: "Duplicates (5)",
+      label: "Duplicates (3)",
       id: "dup-orgs",
       panel: {
         html: dupOrgtHTML

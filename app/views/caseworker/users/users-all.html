@@ -294,17 +294,17 @@
             </th>
           </tr>
         </thead>
-        <tbody class="govuk-table__body">     
-          <!--Odessa -->
+        <tbody class="govuk-table__body">   
+          <!--Demi -->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user3'] }}
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user3'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email3'] }}
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['rep-email3'] }}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?" class="govuk-link--no-visited-state">Verify</a>
@@ -313,13 +313,28 @@
           <!--George -->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user5'] }}
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user5'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email5'] }}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?" class="govuk-link--no-visited-state">Verify</a>
+            </td>
+          </tr>  
+          <!--Odessa -->
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user3'] }}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email3'] }}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?" class="govuk-link--no-visited-state">Verify</a>
@@ -392,7 +407,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user4'] }}
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['party-user4'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email4'] }}
@@ -401,7 +416,7 @@
               <span class="govuk-visually-hidden--desktop">Status: </span><a href="" class="govuk-link--no-visited-state">{{data['party4'] }}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Rejected" class="govuk-link--no-visited-state">Review rejection</a>
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Rejected" class="govuk-link--no-visited-state">Review</a>
             </td>
           </tr>
         </body>
@@ -480,7 +495,7 @@
           <!--Natalie - Always show-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user1" class="govuk-link--no-visited-state">{{data['caseworker-invest'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="1" class="govuk-link--no-visited-state">{{data['caseworker-invest'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-invest-email']}}
@@ -495,7 +510,7 @@
            <!--Jonana - Always show-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user1" class="govuk-link--no-visited-state">{{data['caseworker-lead'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['caseworker-lead'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-lead-email']}}
@@ -509,7 +524,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user1" class="govuk-link--no-visited-state">{{data['caseworker-head'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['caseworker-head'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-head-email']}}
@@ -523,7 +538,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user1" class="govuk-link--no-visited-state">{{data['caseworker-admin'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['caseworker-admin'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-admin-email']}}
