@@ -31,7 +31,14 @@ module.exports = {
 
 //Key caseworker users - Investigator not Lead
   "caseworker-invest": "Jonanna Barton",
+  "caseworker-invest-email": "Jonanna.Barton@tra.com",
   "caseworker-lead": "Natalie Inbruge",
+  "caseworker-lead-email": "Natalie.Inbruge@tra.com",
+  "caseworker-admin": "Simon Twizzel",
+  "caseworker-admin-email": "Simon.Twizzel@tra.com",
+  "caseworker-head": "Philamonia Trumpet",
+  "caseworker-head-email": "Philamonia.Trumpet@tra.com",
+
   "who-signin": "invest",
   
 //CASE 1
