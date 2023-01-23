@@ -105,12 +105,27 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['rep-email1'] }}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['representative1']}}
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Cases: </span>1
+              <span class="govuk-visually-hidden--desktop">Cases: </span>2
             </td>
           </tr>       
+          <!--Clay-->
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user6" class="govuk-link govuk-link--no-visited-state">{{data['party-user2']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party2']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Cases: </span>0
+            </td>
+          </tr>  
           <!--Demi - If the user Approved by TRA the invite move them from 'Invites' tab to Account users tab OR if you want to see all user states-->
           {% if data['invite-rep-task'] == "Approved" or data['manage-user-states'] == "All" %}
             <tr class="govuk-table__row no-border">
@@ -121,28 +136,13 @@
                 <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-rep-email'] or data['rep-email3'] }}
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['representative1']}}
+                <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
               </td>
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop">Cases: </span>1
               </td>
             </tr>
           {% endif %}
-          <!--Clay-->
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user6" class="govuk-link govuk-link--no-visited-state">{{data['party-user2']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email2']}}
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['party2']}}
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Cases: </span>0
-            </td>
-          </tr>  
           <!--George -->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
@@ -152,7 +152,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email5']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['party5']}}
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
@@ -167,10 +167,10 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['createaccount-email'] or data['party-email1'] }}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['party1']}}
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Cases: </span>2
+              <span class="govuk-visually-hidden--desktop">Cases: </span>1
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
@@ -181,7 +181,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['party1']}}
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
               {% if data['invite-case'] =="None" or data['invite-case'] == null %}
@@ -206,7 +206,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email3']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['party3']}}
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
@@ -221,7 +221,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email6']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span>{{data['party1']}}
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
