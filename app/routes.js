@@ -1,7 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
+
 
 // Headers
 // Setting a few spoecfic header to not use logged in user
@@ -564,4 +570,3 @@ router.post('/feedback-task-route', function (req, res) {
     }
 })
 
-module.exports = router
