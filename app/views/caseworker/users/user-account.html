@@ -4,11 +4,13 @@
   User details - {{serviceName}}
 {% endblock %}
 
-<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
-{% set bodyClasses = 'user-nav' %}
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+
+{% set bodyClasses = 'caseworker-width user-nav' %}
+
 
 {% block header %}
-  {% include "includes/header-public.html" %}
+ {% include "includes/header-caseworker.html" %}
 {% endblock %}
 
 {% block beforeContent %}
