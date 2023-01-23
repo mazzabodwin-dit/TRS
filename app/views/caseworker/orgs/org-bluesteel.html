@@ -10,7 +10,6 @@
 
 {% set bodyClasses = 'caseworker-width org-nav org-overview-nav' %}
 
-
 {% block header %}
  {% include "includes/header-caseworker.html" %}
 {% endblock %}
@@ -118,7 +117,7 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">No. </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
@@ -130,7 +129,7 @@
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Primary contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a>
             </td>
-            <td class="govuk-table__cell text-overflow">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Case Role: </span>{{data['party-case-role5']}}
             </td>
             <td class="govuk-table__cell text-overflow">
@@ -139,7 +138,7 @@
           </tr>
   
           <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">No. </span><a href="" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
@@ -151,7 +150,7 @@
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Primary contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a>
             </td>
-            <td class="govuk-table__cell text-overflow">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['rep-role6']}}
             </td>
             <td class="govuk-table__cell text-overflow">
@@ -221,6 +220,12 @@
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
+          <th class="govuk-table__header">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Cases
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
           <th class="govuk-table__header no-sort">
             <span class="govuk-visually-hidden--desktop">Action:</span>
           </th>
@@ -237,6 +242,9 @@
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Org role: </span>User
           </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Cases: </span>1
+          </td>
           <td class="govuk-table__cell action">
             <span class="govuk-visually-hidden--desktop">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden">{{data['rep-user6']}}</span></a>
           </td>
@@ -251,6 +259,9 @@
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Org role: </span>Admin user
           </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Cases: </span>2
+          </td>
           <td class="govuk-table__cell action">
             <span class="govuk-visually-hidden--desktop">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden">{{data['rep-user1']}}</span></a>
           </td>
@@ -264,6 +275,9 @@
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Org role: </span>Admin user
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Cases: </span>1
           </td>
           <td class="govuk-table__cell action">
             <span class="govuk-visually-hidden--desktop">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden">{{data['rep-user3']}}</span></a>

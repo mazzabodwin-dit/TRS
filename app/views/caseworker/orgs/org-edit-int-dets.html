@@ -4,11 +4,17 @@
   Edit organisation details - {{serviceName}}
 {% endblock %}
 
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+
+{% set bodyClasses = 'caseworker-width org-nav org-overview-nav' %}
+
+
+{% block header %}
+ {% include "includes/header-caseworker.html" %}
+{% endblock %}
+
 {% block beforeContent %}
-{% include "includes/beta-banner.html"%}
-
 <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
 {% endblock %}
 
 {% block content %}
