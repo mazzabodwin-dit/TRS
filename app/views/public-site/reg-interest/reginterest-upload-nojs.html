@@ -92,16 +92,6 @@
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2" id="doc1">
          Upload document 1
       </h2>
-
-      {% if data['doc1-non-conf'] == "uploading" %}
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Your document is being uploaded. Please wait to upload another document. <br><progress id="progress-scan"></progress>
-          </strong>
-        </div>
-      {% endif %}
      
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
@@ -129,7 +119,6 @@
                   <form action="#doc1">
                     <input class="govuk-file-upload upload-button" id="input-js" name="input-js" type="file">
                     <br><br>
-                    <input hidden type="text" id="doc1-non-conf" name="doc1-non-conf" value="uploading">
                     <input class="govuk-label upload-button" type="submit" value="Upload file">
                   </form>       
                 </div>
@@ -137,7 +126,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>     
     </div>
   </div>
 </div>
