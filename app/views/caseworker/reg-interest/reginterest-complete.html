@@ -34,7 +34,7 @@
             <p>Your decision will be notified to both parties.</p>
             {% else %}
             {% if data['third-party'] == "no" %}
-              <p>You have accepted the registration of interest for <strong>{{ data['dup-party1'] }}</strong> that was submitted by <strong>{{ data['party-user111'] }} - {{data['party-email111']}}</strong></p>
+              <p>You have accepted the registration of interest for <strong>{{ data['dup-party1'] }}</strong> that was submitted by <strong>{{ data['dup-user1'] }} - {{data['dup-email1']}}</strong></p>
               <p>We will notify your decision to the interested party.</p>
             {% endif %}
           {% endif %}
@@ -56,7 +56,7 @@
 
             {% else %}
             {% if data['third-party'] == "no" %}
-              <p>You have rejected the registration of interest for <strong>{{ data['dup-party1'] }}</strong> that was submitted by <strong>{{ data['party-user111'] }} - {{data['party-email111']}}</strong></p>
+              <p>You have rejected the registration of interest for <strong>{{ data['dup-party1'] }}</strong> that was submitted by <strong>{{ data['dup-user1'] }} - {{data['dup-email1']}}</strong></p>
             {% endif %}
           {% endif %}
         {% endif %}

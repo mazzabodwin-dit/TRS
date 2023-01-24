@@ -63,8 +63,8 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['third-party'] == "no" %}
-              {{data['party-user111']}}<br>
-              {{data['party-email111']}}
+              {{data['dup-user1']}}<br>
+              {{data['dup-email1']}}
               {% else %}
               {{data ['party-user1']}}<br>
               {{data['party-email1']}}
@@ -97,7 +97,7 @@
         {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Status
+            Org status
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['reginterest-valid-primary'] or "Verified"}}             

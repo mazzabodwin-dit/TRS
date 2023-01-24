@@ -67,8 +67,8 @@ module.exports = {
   "party-user1": "Jane Winder",
   "party-email1": "j.winder@steeluk.org",
   "party-role1": "Interested party",
-  "party-case-role1": "Importer",
-  "party-submission1": "Registration of Interest",
+  "party-type1": "Importer",
+  "party-submission1": "Registration of interest",
   "party-status1": "Representative invite received",
   "party-address1": "345, The Shard, London",
   "party-postcode1": "SE1 9QU",
@@ -79,27 +79,6 @@ module.exports = {
   "party-eori1": "GB123456789",
   "party-duns1": null,
 
-  "dup-party1": "Steeel",
-  "dup-party-address1": "22 High Drive, Shanghai",
-  "dup-party-postcode1": "345667",
-  "dup-party-country1": "China",
-  "dup-party-org-number1": "765238953", 
-  "dup-party-web1": null, 
-  "dup-party-vat1": "987654321", 
-  "dup-party-eori1": "GB123456789",
-  "dup-party-duns1": "450483782",
-
-  "dup-party2": "Steel UK",
-  "dup-party-address2": "24 The Street, Reading",
-  "dup-party-postcode2": "RG1 1AF",
-  "dup-party-country2": "United Kingdom",
-  "dup-party-org-number2": "456794936",
-  "dup-party-web2": "www.steeluk.org", 
-  "dup-party-vat2": "123456789", 
-  "dup-party-eori2": null,
-  "dup-party-duns2": null,
-
-  
   //KEY USER: who-signin=org-invite
   "party-user11": "Lara Crist",
   "party-email11": "l.crist@steeluk.com",
@@ -118,8 +97,7 @@ module.exports = {
   "rep-user-role1": "Admin user",
   "rep-mobile1": "+44 7854329445",
   "rep-mobile-national1": "07854329445",
-  "rep-submission1": "Registration of Interest received",
-
+  "rep-submission1": "Registration of interest received",
   "rep-address1": "305 Fleet Street, London",
   "rep-postcode1": "EC4Y 1JU",
   "rep-country1": "United Kingdom",
@@ -129,6 +107,38 @@ module.exports = {
   "rep-eori1": null,
   "rep-duns1": null,
 
+  //KEY USER - who-signin=rep-invite
+  "rep-role3": "Representative",
+  "rep-user3": "Demi Morre",  
+  "rep-email3": "demi.morre@BlueSteelPartners.com",
+  "rep-user-role3": "(Invite sent)",
+
+  //Duplicate 1
+  "dup-party1": "Steeel",
+  "dup-party-address1": "22 High Drive, Shanghai",
+  "dup-party-postcode1": "345667",
+  "dup-party-country1": "China",
+  "dup-party-org-number1": "765238953", 
+  "dup-party-web1": null, 
+  "dup-party-vat1": "987654321", 
+  "dup-party-eori1": "GB123456789",
+  "dup-party-duns1": "450483782",
+
+  "dup-user1": "Gusto McWee",  
+  "dup-email1": "t.mcwee@steeel.com",
+ 
+  //Duplicate 2
+  "dup-party2": "Steel UK",
+  "dup-party-address2": "24 The Street, Reading",
+  "dup-party-postcode2": "RG1 1AF",
+  "dup-party-country2": "United Kingdom",
+  "dup-party-org-number2": "456794936",
+  "dup-party-web2": "www.steeluk.org", 
+  "dup-party-vat2": "123456789", 
+  "dup-party-eori2": null,
+  "dup-party-duns2": null,
+
+  //Duplicate 3
   "dup-party3": "Bluesteel",
   "dup-party-address3": "243 Cupboard Lane, Leeds",
   "dup-party-postcode3": "LE1 1AF",
@@ -141,15 +151,7 @@ module.exports = {
   "dup-user3": "Jonty Bodwin",
   "dup-email3": "jonty.bodwin@BlueSteelPartners.com",
 
-
-  //KEY USER - who-signin=rep-invite
-  //"representative1": "BlueSteel Partners",
-  "rep-role3": "Representative",
-  "rep-user3": "Demi Morre",  
-  "rep-email3": "demi.morre@BlueSteelPartners.com",
-  "rep-user-role3": "(Invite sent)",
-
-   //KEY USER - who-signin=rep-invite2
+  //KEY USER - who-signin=rep-invite2
   "rep-role2": "Representative",
   "rep-user2": "Trevor McDoodle",  
   "rep-email2": "doodle@lawyersinc.com",
@@ -162,10 +164,12 @@ module.exports = {
   "party111": "Awesome Steel",
   "party-user111": "Itsa Steel",
   "party-email111": "itsa.steel@awesomesteel.cn",
+  "party-address111": "243 Cupboard Lane, Leeds",
+  "party-postcode111": "LE1 1AF",
   "party-country111": "China",
   "party-role111": "Interested party",
   "party-case-role111": "Unknown",
-  "party-submission111": "Registration of Interest",
+  "party-submission111": "Registration of interest",
   "party-comment111": "Unable to find concrete details about this organisation through any of the usual channels. They have not responded to any email requests.",
 
 //CASE 2 - case closed
