@@ -32,68 +32,8 @@
     <!--If there is a rep then the Int Party is Steel UK-->
     {% if data['third-party'] == "yes" %}
       <div class="address-card">
-        <div class="address-container">
-          <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
-            <p class="right-aligned-link">
-              <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=verify-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
-            </p> 
-          </h3> 
-          <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Case contact:</dt>
-              <dd class="govuk-summary-list__value">{{data['party-user1']}} <br>
-                {{data['party-email1']}}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Address:</dt>
-              <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
-                {{data['party-postcode1']}}<br>
-                {{data['party-country1']}}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Reg number: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-org-number1']}} <img src="/public/images/checkmark.png" class="verified-tick" alt="Valid Companies House registration number" title="Valid Companies House registration number" width="20px"><span class="govuk-body-s">Valid</span>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Web address: </dt>
-              <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">VAT no: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">EORI: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-              <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
-            </div>
-          </dl> 
-          <br>
-          <details class="case-details govuk-details">
-            <summary>
-                Cases acting as an interested party: 0
-            </summary>
-          </details>
-          <details class="case-details govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Users: 1
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list">
-                <li><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a> - {{data['party-email1']}}</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </div>
+        {% include "includes/org-steeluk-all.html" %}
+      </div> 
       <!--If there is not a rep then the Int Party is Steeel-->
       {% else %}
        <div class="govuk-inset-text govuk-inset-text__reginterest">
@@ -101,8 +41,8 @@
         <strong>{{data['dup-party1']}}</strong> has <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link govuk-link--no-visited-state">registered interest</a> in a case<br>
       </div>
       <div class="address-card">
-      {% include "includes/org-steeeluk-all.html" %}
-    </div> 
+        {% include "includes/org-steeel-all.html" %}
+      </div> 
     {% endif %}
 
     <form action="/reginterest-interested-party-route" method="post" id="reginterest-interested-party-form">

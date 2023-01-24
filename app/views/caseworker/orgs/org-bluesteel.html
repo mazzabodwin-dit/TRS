@@ -30,9 +30,10 @@
       <div class="govuk-inset-text govuk-inset-text__reginterest">
         <strong>{{data['representative1']}}</strong> has been approved on to 2 cases <br>
         The last approval was on <strong>21 Feb 2020</strong> by <strong>Bobby Caseworker</strong><br>
-        <strong>{{data['representative1']}}</strong> has been <a href="" class="govuk-link--no-visited-state">invited to represent</a> <strong>{{data['party1']}}</strong>
+        <strong>{{data['representative1']}}</strong> has been rejected from 1 case <br>
+        The last rejection was on <strong>13 March 2020</strong> by <strong>Edwina Worker</strong>
       </div> 
-      
+        
       {% set casesHTML %}
       <h3 class="govuk-heading-m">All cases
       </h3>
@@ -133,6 +134,23 @@
             </td>
             <td class="govuk-table__cell action">
               <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">View details <span class="govuk-visually-hidden">{{data['representative1']}}</span></a>
+            </td>
+          </tr>
+           <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">No. </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref2']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Case: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-name2']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party5']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Party type: </span><strong class="govuk-tag govuk-tag--pink app-task-list__tag">Rejected</strong>
+            </td>
+            <td class="govuk-table__cell action">
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">View details <span class="govuk-visually-hidden">{{data['dup-party111']}}</span></a>
             </td>
           </tr>
         </body>
