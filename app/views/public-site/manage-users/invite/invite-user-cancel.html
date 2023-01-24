@@ -24,8 +24,6 @@ Cancel invite - {{serviceName}}
         Cancel invite
       </h1>
 
-      <p>Are you sure you want to cancel this invite?</p>
-
       {% if data['cancel-invite'] =="org" %}
         <p>{{data['invite-user-name'] or data['party-user11'] }} - {{data['invite-user-email'] or data['party-email11'] }}</p>
         <form action="invite-user-cancel-confirm?show-invite-org=no#manage-team" method="post" id="cancel-invite-form">
@@ -37,6 +35,8 @@ Cancel invite - {{serviceName}}
         {% endif %}
           <form action="invite-user-cancel-confirm?show-invite-rep=no" method="post" id="cancel-invite-form">
       {% endif %}
+
+      <p>Are you sure you want to cancel this invite?</p>
 
 
 
