@@ -30,30 +30,25 @@
     <div class="govuk-grid-column-full">
       <div class="govuk-inset-text govuk-inset-text__reginterest">
          <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
-         <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes" class="govuk-link govuk-link--no-visited-state">Registration of Interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
-         <strong>{{data['representative1']}}</strong> has been <a href="" class="govuk-link--no-visited-state">invited to represent</a> <strong>{{data['party1']}}</strong>
+         <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes" class="govuk-link govuk-link--no-visited-state">registration of interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
+         <strong>{{data['party1']}}</strong> has <a href="" class="govuk-link--no-visited-state">invited representative</a> <strong>{{data['representative1']}}</strong> to a case
       </div> 
       
     {% set casesHTML %}
-      <h3 class="govuk-heading-m clearfix">Cases
-        <p class="right-aligned-link">
-          <a href="" class="govuk-link--no-visited-state">Invite organisation to case</a>
-        </p> 
+      <h3 class="govuk-heading-m">Cases
       </h3>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-!-display-inline" for="sort-cases">
-              Sort cases by
+              Sort your cases by
             </label>
            <select class="govuk-select" id="sort-cases" name="sort-cases">
               <option value="No." selected>Case No.</option>
               <option value="Case">Case</option>
               <option value="Interested party">Interested party</option>
-              <option value="Primary">Primary contact</option>              
-              <option value="Case role">Case role</option>
-              <option value="Representative">Representative</option> 
-            </select>
+              <option value="Party type">Party type</option> 
+            </select>           
           </div>
           <div class="govuk-form-group table-sort-select">
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
@@ -98,27 +93,18 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Primary contact
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party type
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
-            <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case role
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Representative
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
+            <th class="govuk-table__header no-sort">
+              <span class="govuk-visually-hidden--desktop">Action:</span>
             </th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
+            <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">No. </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
@@ -128,35 +114,31 @@
               <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Primary contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Party type: </span>Pending
             </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Case role: </span>None
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Representative: </span>None
+            <td class="govuk-table__cell action">
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="../cases/case-party-steeluk" class="govuk-link--no-visited-state">View details <span class="govuk-visually-hidden">{{data['dup-party1']}}</span></a>
             </td>
           </tr>
         </body>
-      </table>    
+      </table>     
 
     {% endset %}
 
     {% set usersHTML %}
-    <h3 class="govuk-heading-m clearfix">Users
-      <p class="right-aligned-link">
-        <a href="" class="govuk-link--no-visited-state">Invite user to case</a>
-      </p> 
+    <h3 class="govuk-heading-m">Users
     </h3>
     <form>
       <div id="table-sort" class="govuk-visually-hidden--desktop"> 
         <div class="govuk-form-group table-sort-select">
           <label class="govuk-label govuk-!-display-inline" for="sort-users">
-            Sort user by
+            Sort users by
           </label>
           <select class="govuk-select" id="sort-users" name="sort-users">
             <option value="No." selected>Name</option>
             <option value="Case">Email</option>
+            <option value="Account role">Account role</option>
+            <option value="Cases">Cases</option>
           </select>
         </div>
         <div class="govuk-form-group table-sort-select">
@@ -206,9 +188,6 @@
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
-          <th class="govuk-table__header no-sort">
-            <span class="govuk-visually-hidden--desktop">Action:</span>
-          </th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -225,9 +204,6 @@
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Cases: </span>2
           </td>
-          <td class="govuk-table__cell action">
-            <span class="govuk-visually-hidden--desktop">Action: </span><a href="#" class="govuk-link--no-visited-state">Edit details <span class="govuk-visually-hidden">{{data['party-user1']}}</span></a>
-          </td>
         </tr>
       </body>
     </table> 
@@ -237,45 +213,9 @@
     <h3 class="govuk-heading-m">Org details
     </h3>
     <div class="address-card">
-      <div class="address-container">
-        <h3 class="govuk-heading-m clearfix">{{data['party1']}}
-          <p class="right-aligned-link">
-            <a href="/caseworker/orgs/org-edit-int-dets?org-edit-type=org-int&party-type=int" class="govuk-link--no-visited-state">Edit</a>
-          </p> 
-        </h3> 
+      {% include "includes/org-steeluk.html" %}
+    </div>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Address:</dt>
-            <dd class="govuk-summary-list__value">{{data['party-address1']}} <br>
-              {{data['party-postcode1']}}<br>
-              {{data['party-country1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Reg number: </dt>
-            <dd class="govuk-summary-list__value">{{data['party-org-number1']}} <img src="/public/images/checkmark.png" class="verified-tick" alt="Valid Companies House registration number" title="Valid Companies House registration number" width="20px"><span class="govuk-body-s">Valid</span>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Web address: </dt>
-            <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['party-web1']}}</a></dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">VAT no: </dt>
-            <dd class="govuk-summary-list__value">{{data['party-vat1']}}</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">EORI: </dt>
-            <dd class="govuk-summary-list__value">{{data['party-eori1']}}</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">D-U-N-S: </dt>
-            <dd class="govuk-summary-list__value">{{data['party-duns1']}}</dd>
-          </div>
-        </dl> 
-      </div>
-    </div>   
     {% endset %}
 
 
