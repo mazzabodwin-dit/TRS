@@ -52,7 +52,7 @@
             <strong>Interested party</strong><br>
           {% if data['third-party'] == "no" %}
             <a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a><br>
-            <a href="" class="govuk-link--no-visited-state">{{data ['party-user111']}}</a>
+            <a href="" class="govuk-link--no-visited-state">{{data ['dup-user1']}}</a>
             {% else %}
             <a href="/caseworker/orgs/org-steeluk" class="govuk-link--no-visited-state">{{data ['party1']}}</a><br>
             <a href="" class="govuk-link--no-visited-state">{{data ['party-user1']}}</a>
@@ -73,7 +73,7 @@
               {% if data['third-party'] == "yes" %}
                 <a href="" class="govuk-link--no-visited-state">{{data ['rep-user1']}}</a>
                 {% else %}
-                <a href="" class="govuk-link--no-visited-state">{{data ['party-user111']}}</a>
+                <a href="" class="govuk-link--no-visited-state">{{data ['dup-user1']}}</a>
               {% endif%}
             {% endif%}
           </li>
