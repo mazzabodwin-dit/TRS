@@ -2,6 +2,23 @@
   <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
   </h3>
   <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+    {% if data['verify-type'] =="rep-invite" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Invite accepted by:</dt>
+        <dd class="govuk-summary-list__value">{{data['rep-user3']}} <br>
+          {{data['rep-email3']}}
+        </dd>
+      </div>
+      {% else %}
+      {% if data['verify-type'] =="reg-interest" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">User:</dt>
+          <dd class="govuk-summary-list__value">{{data['rep-user1']}} <br>
+            {{data['rep-email1']}}
+          </dd>
+        </div>
+      {% endif %}
+    {% endif %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Address:</dt>
       <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
