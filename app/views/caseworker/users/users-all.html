@@ -75,7 +75,7 @@
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-          A table listing all of the users that have access to this organisations account
+          A table listing all of the users that have access to the TRS
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -185,7 +185,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-user-name" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user11" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-user-email'] or data['party-email11'] }}
@@ -357,7 +357,6 @@
     {% set rejectedInvitesHTML %}
       <h2 class="govuk-heading-m">Rejected invites
       </h2>
-      <p>You have 1 rejected invite</p>
       <form>
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 
           <div class="govuk-form-group table-sort-select">
@@ -387,7 +386,7 @@
       </form>
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-          A table listing all of the users that have been rejected from representing your organisation
+          A table listing all of the users that have been rejected from representing an interested party
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -471,7 +470,7 @@
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-          A table listing all of the users that have access to this organisations account
+          A table listing all of the TRA users
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">

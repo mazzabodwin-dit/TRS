@@ -119,7 +119,7 @@
         </span>
       {% endif %}
       </h2>
-      {% if (data['account-user'] =="invite-user-name") and (data['invite-case'] =="None" or data['invite-case'] == null) %}
+      {% if (data['account-user'] =="invite-user-name" or data['account-user'] =="party-user11") and (data['invite-case'] =="None" or data['invite-case'] == null) %}
         <p>This user is not involved in any cases</p>
         {% else %}
         {% if (data['account-user'] =="party-user6") %}
@@ -133,10 +133,10 @@
                   Sort cases by
                 </label>
                 <select class="govuk-select" id="sort-cases" name="sort-cases">
-                  <option value="User" selected>Case no.</option>
-                  <option value="Email">Case</option>
-                  <option value="Account role">Representing</option>
-                  <option value="Number of cases">Case role</option>
+                  <option value="Case no." selected>Case no.</option>
+                  <option value="Case no.">Case no.</option>
+                  <option value="Interested party">Interested party</option>
+                  <option value="Case role">Case role</option>
                 </select>
               </div>
               <div class="govuk-form-group table-sort-select">
@@ -172,7 +172,7 @@
                 </th>
                 <th class="govuk-table__header">
                   <button class="govuk-button govuk-button--secondary">
-                    <span class="govuk-visually-hidden--desktop">Sort by: </span>Representing
+                    <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
                     <span class="indicator" aria-hidden="true"></span>
                   </button>
                 </th>
@@ -200,17 +200,18 @@
                     <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                   </td>
                   <td class="govuk-table__cell text-overflow">
-                    <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                    <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                   </td>
                   <td class="govuk-table__cell text-overflow">
                     <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Action 1: none </span>
+                    <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                    <span class="govuk-visually-hidden--desktop">Action 2: none </span>
                   </td>
+                  
                 </tr>
                 {% else %}
                 {% if data['account-user'] =="rep-user1" %}
@@ -222,16 +223,16 @@
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
                     </td>
                     <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 1: none</span> 
+                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
                     </td>
                     <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                      <span class="govuk-visually-hidden--desktop">Action 2: none </span>
                     </td>
                   </tr>
                   <tr class="govuk-table__row no-border">
@@ -242,7 +243,7 @@
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party5']}}
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -252,6 +253,26 @@
                     </td>
                     <td class="govuk-table__cell">
                       <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row no-border">
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref6']}}</a>
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['applicant6']}}
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
+                    </td>
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref6']}}</span> </a> 
+                    </td>
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref6']}}</span> </a> 
                     </td>
                   </tr>
                   {% else %}
@@ -264,16 +285,16 @@
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                       </td>
                       <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party4']}}
+                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party4']}}
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--red">Rejected</strong>
                       </td>
                       <td class="govuk-table__cell">
-                        <span class="govuk-visually-hidden--desktop">Action 1: none</span> 
+                        <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
                       </td>
-                      <td class="govuk-table__cell">
-                        <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                       <td class="govuk-table__cell">
+                        <span class="govuk-visually-hidden--desktop">Action 2: none</span> 
                       </td>
                     </tr>
                     {% else %}
@@ -285,7 +306,7 @@
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                       </td>
                       <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
@@ -305,7 +326,7 @@
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
                       </td>
                       <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -326,7 +347,7 @@
       {% endif %} 
     {% endset %}
 
-    {% set accountHtml %}
+    {% set userHtml %}
       <h2 class="govuk-heading-m">User details</h2>
       <div class="address-card">
         <div class="address-container">
@@ -390,43 +411,58 @@
             </div> 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Permission
+                Two-factor authentication
+              </dt>
+              <dd class="govuk-summary-list__value">
+                By {{ data['2fa'] or "text message"}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                
+                <a class="govuk-link--no-visited-state" href="account-2fa">
+                  Change<span class="govuk-visually-hidden"> two-factor authentication</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Password
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ***********
+              </dd>    
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link--no-visited-state" href="account-changepass">
+                  Change<span class="govuk-visually-hidden"> password</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Account permission
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['account-user'] =="party-user1" %}
                   {{data['party-user1-permissions'] or "Admin user"}} 
                   {% else %}
-                  {% if data['account-user'] =="invite-user-name" %}
-                    {{data['invite-user-permission'] or data['party-user11-permission'] }} 
+                  {% if data['account-user'] =="party-user11" %}
+                    {{data['party-user11-permission'] or "User" }} 
                     {% else %}
                     {% if data['account-user'] =="party-user6" %}
                       {{data['party-user6-permissions'] or "User"}} 
                       {% else %}
-                      {% if data['account-user'] =="invite-rep-name" or data['account-user'] =="rep-user3" %}
-                        Representative
+                      {% if data['account-user'] =="rep-user1" or data['account-user'] =="rep-user3" %}
+                        Admin user
                       {% endif %}  
                     {% endif %}
                   {% endif %}
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                {% if data['account-user'] =="invite-user-name" %}
-                  <!--If the user is inactive then do not show link to change permission-->
-                  {% if data['invite-user-status'] == "Inactive" %} 
-                    {% else %}
-                    <a class="govuk-link--no-visited-state" href="user-account-permiss">
-                      Change<span class="govuk-visually-hidden"> account permissions</span>
-                    </a>
-                  {% endif %}
+                {% if (data['account-user'] =="party-user1" and data['party-user1-status'] == "Inactive") or (data['account-user'] =="party-user11" and data['party-user11-status'] == "Inactive") or (data['account-user'] =="party-user6" and data['party-user6-status'] == "Inactive") or (data['account-user'] =="rep-user1" and data['rep-user1-status'] == "Inactive") or (data['account-user'] =="rep-user3" and data['rep-user3-status'] == "Inactive") %} 
                   {% else %}
-                  {% if data['account-user'] =="party-user6" %}
-                    {% if data['party-user6-status'] == "Inactive" %} 
-                      {% else %}
-                      <a class="govuk-link--no-visited-state" href="user-account-permiss">
-                        Change<span class="govuk-visually-hidden"> account permissions</span>
-                      </a>
-                    {% endif %}
-                  {% endif %}
+                  <a class="govuk-link--no-visited-state" href="user-account-permiss">
+                    Change<span class="govuk-visually-hidden"> account permission</span>
+                  </a>
                 {% endif %}
               </dd>
             </div>
@@ -438,14 +474,18 @@
                 {% if data['account-user'] =="party-user1" %}
                   {{data['party-user1-status'] or "Active"}} 
                   {% else %}
-                  {% if data['account-user'] =="invite-user-name" or data['account-user'] =="party-user11" %}
-                    {{data['invite-user-status'] or "Active"}} 
+                  {% if data['account-user'] =="party-user11" %}
+                    {{data['iparty-user11-status'] or "Active"}} 
                     {% else %}
                     {% if data['account-user'] =="party-user6" %}
                       {{data['party-user6-status'] or "Inactive"}} 
                       {% else %}
-                      {% if data['account-user'] =="invite-rep-name" or data['account-user'] =="rep-user3" %}
-                        {{data['invite-rep-status'] or "Active" }} 
+                      {% if data['account-user'] =="rep-user3" %}
+                        {{data['rep-user3-status'] or "Active" }} 
+                        {% else %}
+                        {% if data['account-user'] =="rep-user1" %}
+                          {{data['rep-user1-status'] or "Active" }} 
+                        {% endif %}
                       {% endif %}
                     {% endif %}
                   {% endif %}
@@ -453,65 +493,133 @@
                         
               </dd>
               <dd class="govuk-summary-list__actions">
-                {% if data['account-user'] =="party-user1" %}
+                {% if data['account-user'] =="party-user6" %}
+                  <a class="govuk-link--no-visited-state" href="user-account-status">
+                    Change<span class="govuk-visually-hidden"> account status</span>
+                  </a>
                   {% else %}
-                  {% if data['account-user'] =="invite-user-name" %}
-                    <a class="govuk-link--no-visited-state" href="user-account-status">
-                      Change<span class="govuk-visually-hidden"> account status</span>
-                    </a>
-                    {% else %}
-                    {% if data['account-user'] =="party-user6" %}
-                      <a class="govuk-link--no-visited-state" href="user-account-status">
-                        Change<span class="govuk-visually-hidden"> account status</span>
-                      </a>
-                      {% else %}
-                      {% if data['account-user'] =="rep-user3" or data['account-user'] =="invite-rep-name" %}
-                        <a class="govuk-link--no-visited-state" href="user-account-status">
-                          Change<span class="govuk-visually-hidden"> account status</span>
-                        </a>
-                      {% endif %}
-                    {% endif %}
-                  {% endif %}
+                  <a class="govuk-link--no-visited-state" href="user-account-status">
+                    Change<span class="govuk-visually-hidden"> account status</span>
+                  </a>
                 {% endif %}
               </dd>
-            </div> 
-            {% if (data['account-user'] == "rep-user3") or (data['account-user'] == "invite-rep-name") %}
-               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Account:</dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['representative1']}} <br>
-                  {{data['rep-address1']}} <br>
-                  {{data['rep-postcode1']}}<br>
-                  {{data['rep-country1']}}
-                </dd>
-              </div>
-              {% else %}
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Account:</dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['party1']}} <br>
-                  {{data['party-address1']}} <br>
-                  {{data['party-postcode1']}}<br>
-                  {{data['party-country1']}}
-                </dd>
-              </div>
-            {% endif %}                    
+            </div>             
           </dl>
         </div>
       </div>
-    {% endset -%}
+    {% endset %}
+
+    {% set accountHtml %}
+    <h2 class="govuk-heading-m">Account details</h2>
+      <div class="address-card">
+        {% if data['account-user'] == "party-user1" or data['account-user'] == "party-user11" or data['account-user'] == "party-user6"  %}
+          {% include "includes/org-steeluk-all.html" %}
+          {% else %}
+          {% if data['account-user'] == "rep-user1" or data['account-user'] == "rep-user3" %}
+            <div class="address-container">
+              <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+              </h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Address:</dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-address1']}} <br>
+                    {{data['rep-postcode1']}}<br>
+                    {{data['rep-country1']}}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Reg number: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-org-number1']}} <img src="/public/images/checkmark.png" class="verified-tick" alt="Valid Companies House registration number" title="Valid Companies House registration number" width="20px"><span class="govuk-body-s">Valid</span>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Web address: </dt>
+                  <dd class="govuk-summary-list__value"><a href="" target="_blank">{{data['rep-web1']}}</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">VAT no: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-vat1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">EORI: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-eori1']}}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">D-U-N-S: </dt>
+                  <dd class="govuk-summary-list__value">{{data['rep-duns1']}}</dd>
+                </div>
+              </dl> 
+              <br>
+              <!--Case / user details-->
+              <div>
+                <details class="case-details govuk-details" data-module="govuk-details">
+                  <summary class="">
+                      Cases acting as an interested party: 0
+                  </summary>
+                </details>
+                <details class="case-details govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Cases acting as a representative: 1
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                      <ul class="govuk-list">
+                        <li><a href="../cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref5']}} - {{data['case-name5']}}</a> <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Accepted on to case icon" title="Accepted on to case" width="28px"><span class="govuk-body-s"> 21 Jan 2022</span></li>
+                      </ul>
+                  </div>
+                </details>
+                <details class="case-details govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Cases rejected from: 1
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                      <ul class="govuk-list">
+                          <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/red-x-line-icon.png" class="pending-clock" alt="Rejected from case icon" title="Rejected from case" width="28px"><span class="govuk-body-s"> 13 Mar 2020</span></li> 
+                      </ul>
+                  </div>
+                </details>
+                <details class="case-details govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Users: 3
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <ul class="govuk-list">
+                      <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user6']}}</a> - {{data['rep-email6']}}</li>
+                      <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a> - {{data['rep-email1']}}</li>
+                      <li><a href="#" class="govuk-link--no-visited-state">{{data['rep-user3']}}</a> - {{data['rep-email3']}}</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>    
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endset %}
 
     {{ govukTabs({
       items: [
         {
           label: "Cases",
-          id: "user-cases",
+          id: "cases-cases",
           panel: {
             html: casesHtml
           }
         },
         {
           label: "User details",
+          id: "user-details",
+          panel: {
+            html: userHtml
+          }
+        },
+        {
+          label: "Account details",
           id: "account-details",
           panel: {
             html: accountHtml
