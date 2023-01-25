@@ -116,10 +116,10 @@
                   Sort cases by
                 </label>
                 <select class="govuk-select" id="sort-cases" name="sort-cases">
-                  <option value="User" selected>Case no.</option>
-                  <option value="Email">Case</option>
-                  <option value="Account role">Representing</option>
-                  <option value="Number of cases">Case role</option>
+                  <option value="Case no." selected>Case no.</option>
+                  <option value="Case no.">Case no.</option>
+                  <option value="Interested party">Interested party</option>
+                  <option value="Case role">Case role</option>
                 </select>
               </div>
               <div class="govuk-form-group table-sort-select">
@@ -155,7 +155,7 @@
                 </th>
                 <th class="govuk-table__header">
                   <button class="govuk-button govuk-button--secondary">
-                    <span class="govuk-visually-hidden--desktop">Sort by: </span>Representing
+                    <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
                     <span class="indicator" aria-hidden="true"></span>
                   </button>
                 </th>
@@ -183,7 +183,7 @@
                     <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                   </td>
                   <td class="govuk-table__cell text-overflow">
-                    <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                    <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                   </td>
                   <td class="govuk-table__cell text-overflow">
                     <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -227,7 +227,7 @@
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
                       </td>
                       <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -249,7 +249,7 @@
                             <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                           </td>
                           <td class="govuk-table__cell text-overflow">
-                            <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                            <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                           </td>
                           <td class="govuk-table__cell text-overflow">
                             <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
@@ -271,7 +271,7 @@
                               <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
                             </td>
                             <td class="govuk-table__cell text-overflow">
-                              <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                              <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                             </td>
                             <td class="govuk-table__cell text-overflow">
                               <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -296,7 +296,7 @@
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
@@ -316,7 +316,7 @@
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -336,7 +336,7 @@
       {% endif %} 
     {% endset %}
 
-    {% set accountHtml %}
+    {% set userHtml %}
       <h2 class="govuk-heading-m">User details</h2>
       <div class="address-card">
         <div class="address-container">
@@ -394,7 +394,7 @@
             </div> 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Permission
+                Account permission
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['account-user'] =="party-user1" %}
@@ -419,7 +419,7 @@
                   {% if data['invite-user-status'] == "Inactive" %} 
                     {% else %}
                     <a class="govuk-link--no-visited-state" href="user-account-permiss">
-                      Change<span class="govuk-visually-hidden"> account permissions</span>
+                      Change<span class="govuk-visually-hidden"> account permission</span>
                     </a>
                   {% endif %}
                   {% else %}
@@ -427,7 +427,7 @@
                     {% if data['party-user6-status'] == "Inactive" %} 
                       {% else %}
                       <a class="govuk-link--no-visited-state" href="user-account-permiss">
-                        Change<span class="govuk-visually-hidden"> account permissions</span>
+                        Change<span class="govuk-visually-hidden"> account permission</span>
                       </a>
                     {% endif %}
                   {% endif %}
@@ -509,16 +509,16 @@
       items: [
         {
           label: "Cases",
-          id: "user-cases",
+          id: "cases-cases",
           panel: {
             html: casesHtml
           }
         },
         {
           label: "User details",
-          id: "account-details",
+          id: "user-details",
           panel: {
-            html: accountHtml
+            html: userHtml
           }
         }
       ]
