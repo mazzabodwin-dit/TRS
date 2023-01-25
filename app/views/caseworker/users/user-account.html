@@ -33,14 +33,22 @@
           {% if data['account-user'] =="party-user6" %}
             {{data['party-user6']}}
             {% else %}
-            {% if data['account-user'] =="rep-user3" %}
-              {{data['rep-user3']}}
+            {% if data['account-user'] =="party-user4" %}
+              {{data['party-user4']}}
               {% else %}
-              {% if data['account-user'] =="invite-rep-name" %}
-                {{data['invite-rep-name'] or data['rep-user3']}}
+              {% if data['account-user'] =="rep-user3" %}
+                {{data['rep-user3']}}
                 {% else %}
-                {% if data['account-user'] =="invite-user-name" %}
-                  {{data['invite-user-name'] or data['party-user11']}}
+                {% if data['account-user'] =="rep-user1" %}
+                  {{data['rep-user1']}}
+                  {% else %}
+                  {% if data['account-user'] =="invite-rep-name" %}
+                    {{data['invite-rep-name'] or data['rep-user3']}}
+                    {% else %}
+                    {% if data['account-user'] =="invite-user-name" %}
+                      {{data['invite-user-name'] or data['party-user11']}}
+                    {% endif %}
+                  {% endif %}
                 {% endif %}
               {% endif %}
             {% endif %}
@@ -57,7 +65,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      {% if data['account-user'] =="party-user1" %}
+       {% if data['account-user'] =="party-user1" %}
         {{data['party-user1']}}
         {% else %}
         {% if data['account-user'] =="party-user11" %}
@@ -66,14 +74,22 @@
           {% if data['account-user'] =="party-user6" %}
             {{data['party-user6']}}
             {% else %}
-            {% if data['account-user'] =="rep-user3" %}
-              {{data['rep-user3']}}
+            {% if data['account-user'] =="party-user4" %}
+              {{data['party-user4']}}
               {% else %}
-              {% if data['account-user'] =="invite-rep-name" %}
-                {{data['invite-rep-name'] or data['rep-user3']}}
+              {% if data['account-user'] =="rep-user3" %}
+                {{data['rep-user3']}}
                 {% else %}
-                {% if data['account-user'] =="invite-user-name" %}
-                  {{data['invite-user-name'] or data['party-user11']}}
+                {% if data['account-user'] =="rep-user1" %}
+                  {{data['rep-user1']}}
+                  {% else %}
+                  {% if data['account-user'] =="invite-rep-name" %}
+                    {{data['invite-rep-name'] or data['rep-user3']}}
+                    {% else %}
+                    {% if data['account-user'] =="invite-user-name" %}
+                      {{data['invite-user-name'] or data['party-user11']}}
+                    {% endif %}
+                  {% endif %}
                 {% endif %}
               {% endif %}
             {% endif %}
@@ -99,7 +115,7 @@
       {% if data['account-user'] =="invite-rep-name" %}
       {% else %}
         <span class="govuk-body right-aligned-link">
-          <a href="assign-own-user-case" class="govuk-link--no-visited-state">Assign user to case</a>
+          <a href="" class="govuk-link--no-visited-state">Assign user to case?</a>
         </span>
       {% endif %}
       </h2>
@@ -187,19 +203,80 @@
                     <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
                   </td>
                   <td class="govuk-table__cell text-overflow">
-                    <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
+                    <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref5']}}</span> </a> 
+                    <span class="govuk-visually-hidden--desktop">Action 1: none </span>
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
+                    <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
                   </td>
                 </tr>
                 {% else %}
-                {% if data['account-user'] =="invite-user-name" %}
-                 
-                  {% if data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" %}
+                {% if data['account-user'] =="rep-user1" %}
+                  <tr class="govuk-table__row no-border">
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Action 1: none</span> 
+                    </td>
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row no-border">
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
+                    </td>
+                    <td class="govuk-table__cell text-overflow">
+                      <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
+                    </td>
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref5']}}</span> </a> 
+                    </td>
+                    <td class="govuk-table__cell">
+                      <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
+                    </td>
+                  </tr>
+                  {% else %}
+                  {% if data['account-user'] =="party-user4" %}
+                    <tr class="govuk-table__row no-border">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+                      </td>
+                      <td class="govuk-table__cell text-overflow">
+                        <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+                      </td>
+                      <td class="govuk-table__cell text-overflow">
+                        <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party4']}}
+                      </td>
+                      <td class="govuk-table__cell text-overflow">
+                        <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <span class="govuk-visually-hidden--desktop">Action 1: none</span> 
+                      </td>
+                      <td class="govuk-table__cell">
+                        <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                      </td>
+                    </tr>
+                    {% else %}
                     <tr class="govuk-table__row no-border">
                       <td class="govuk-table__cell">
                         <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
@@ -240,95 +317,7 @@
                         <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
                       </td>
                     </tr>
-                    {% else %}
-                      {% if data['invite-case'] == "AD2224 - Steel plate from Russia" or data['remove-case'] =="case5"  %}
-                        <tr class="govuk-table__row no-border">
-                          <td class="govuk-table__cell">
-                            <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
-                          </td>
-                          <td class="govuk-table__cell text-overflow">
-                            <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-                          </td>
-                          <td class="govuk-table__cell text-overflow">
-                            <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
-                          </td>
-                          <td class="govuk-table__cell text-overflow">
-                            <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
-                          </td>
-                          <td class="govuk-table__cell">
-                            <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case1" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref1']}}</span> </a> 
-                          </td>
-                          <td class="govuk-table__cell">
-                            <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case1" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref1']}}</span> </a> 
-                          </td>
-                        </tr>
-                        {% else %}
-                        {% if data['invite-case'] == "AS3464 - Garnets from Gabon" or data['remove-case'] =="case1" %}
-                          <tr class="govuk-table__row no-border">
-                            <td class="govuk-table__cell">
-                              <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
-                            </td>
-                            <td class="govuk-table__cell text-overflow">
-                              <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-                            </td>
-                            <td class="govuk-table__cell text-overflow">
-                              <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
-                            </td>
-                            <td class="govuk-table__cell text-overflow">
-                              <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
-                            </td>
-                            <td class="govuk-table__cell">
-                              <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref5']}}</span> </a> 
-                            </td>
-                            <td class="govuk-table__cell">
-                              <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
-                            </td>
-                          </tr>
-                        {% endif %}
-                      {% endif %}
-                    {% endif %}
-                 
-                  {% else %}
-                  <tr class="govuk-table__row no-border">
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
-                    </td>
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case1" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref1']}}</span> </a> 
-                    </td>
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case1" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref1']}}</span> </a> 
-                    </td>
-                  </tr>
-                  <tr class="govuk-table__row no-border">
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Representing: </span>{{data['party1']}}
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
-                    </td>
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="case-role?account-case=case5" class="govuk-link govuk-link--no-visited-state">Change role <span class="govuk-visually-hidden--desktop">for case {{data['case-ref5']}}</span> </a> 
-                    </td>
-                    <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 2: </span><a href="remove-user?remove-case=case5" class="govuk-link govuk-link--no-visited-state">Remove user<span class="govuk-visually-hidden--desktop"> from case {{data['case-ref5']}}</span> </a> 
-                    </td>
-                  </tr>
+                  {% endif %}
                 {% endif %}
               {% endif %}
             </body>
@@ -367,17 +356,23 @@
                         {{data['rep-email3']}}<br>
                         {{data['rep-mobile3'] or "+447821945034"}} 
                         {% else %}
-                      {% if data['account-user'] =="invite-rep-name" %}
-                        {{data['invite-rep-name'] or data['rep-user3']}}<br>
-                        {{data['invite-rep-email'] or data['rep-email3']}}<br>
-                        {{data['rep-mobile3'] or "+447821945034"}} 
-                        {% else %}
-                      {% if data['account-user'] =="invite-user-name" %}
-                        {{data['invite-user-name'] or data['party-user11']}}<br>
-                        {{data['invite-user-email'] or data['party-email11']}}<br>
-                        {{data['party-mobile11'] or "+447821945034"}}  
-                      {% endif %}   
-                      {% endif %}   
+                        {% if data['account-user'] =="rep-user1" %}
+                          {{data['rep-user1']}}<br>
+                          {{data['rep-email1']}}<br>
+                          {{data['rep-mobile1'] or "+447821945034"}} 
+                          {% else %}
+                          {% if data['account-user'] =="invite-rep-name" %}
+                            {{data['invite-rep-name'] or data['rep-user3']}}<br>
+                            {{data['invite-rep-email'] or data['rep-email3']}}<br>
+                            {{data['rep-mobile3'] or "+447821945034"}} 
+                            {% else %}
+                            {% if data['account-user'] =="invite-user-name" %}
+                              {{data['invite-user-name'] or data['party-user11']}}<br>
+                              {{data['invite-user-email'] or data['party-email11']}}<br>
+                              {{data['party-mobile11'] or "+447821945034"}}  
+                            {% endif %}   
+                          {% endif %} 
+                        {% endif %}  
                       {% endif %}  
                     {% endif %}
                   {% endif %}
