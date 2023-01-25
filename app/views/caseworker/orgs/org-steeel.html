@@ -16,6 +16,19 @@
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a href="orgs-all" class="govuk-breadcrumbs__link">All organisations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      {{data['dup-party1']}}
+    </li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
