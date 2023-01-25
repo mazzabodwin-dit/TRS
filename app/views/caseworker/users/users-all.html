@@ -106,6 +106,21 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body"> 
+          <!--Arni-->
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['rep-user6'] }}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['rep-email6'] }}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Cases: </span>1
+            </td>
+          </tr>   
           <!--Bob-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
@@ -168,6 +183,36 @@
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
             </td>
           </tr>  
+          <!--Gusto -->
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link govuk-link--no-visited-state">{{data['dup-user1']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['dup-email1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Cases: </span>0
+            </td>
+          </tr>  
+          <!--Itsa -->
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link govuk-link--no-visited-state">{{data['party-user111']}}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email111']}}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-awesomesteel" class="govuk-link--no-visited-state">{{data['party111']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Cases: </span>0
+            </td>
+          </tr>
           <!--Jane - Always show-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
@@ -183,6 +228,7 @@
               <span class="govuk-visually-hidden--desktop">Cases: </span>1
             </td>
           </tr>
+          <!--Lara-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user11" class="govuk-link--no-visited-state">{{data['invite-user-name'] or data['party-user11'] }}</a>
@@ -205,6 +251,21 @@
                   {% endif %}
                 {% endif %}
               {% endif %}
+            </td>
+          </tr>
+          <!--Mohawks-->
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user4" class="govuk-link--no-visited-state">{{data['party-user4'] }}</a>
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email4'] }}
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Cases: </span>0
             </td>
           </tr>
           <!--Odessa -->
@@ -314,7 +375,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['rep-email3'] }}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=rep-invite&duplicate-org=none&third=party=yes&loa-sufficient=yes" class="govuk-link--no-visited-state">Review</a>
@@ -348,84 +409,6 @@
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Review</a>
-            </td>
-          </tr>
-        </body>
-      </table>
-    {% endset %}
-  
-    {% set rejectedInvitesHTML %}
-      <h2 class="govuk-heading-m">Rejected invites
-      </h2>
-      <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-!-display-inline" for="sort-rejected">
-              Sort rejected invites by
-            </label>
-            <select class="govuk-select" id="sort-rejected" name="sort-rejected">
-              <option value="User" selected>User</option>
-              <option value="Email">Email</option>
-              <option value="Organisation">Organisation</option>
-            </select>
-          </div>
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-visually-hidden" for="direction-rejected">
-              Direction
-            </label>
-            <select class="govuk-select" id="direction-rejected" name="direction-rejected">
-              <option value="Decending" selected>Decending</option>
-              <option value="Accending">Accending</option>
-            </select>
-          </div>
-          {{ govukButton({
-            text: "Sort users",
-            classes: "govuk-button--secondary"
-          }) }}
-        </div>
-      </form>
-      <table class="govuk-table sortable mobile-table-border" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-          A table listing all of the users that have been rejected from representing an interested party
-        </caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" aria-sort="ascending">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>User
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Email
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Organisation
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th class="govuk-table__header no-sort">
-                <span class="govuk-visually-hidden--desktop">Action: </span>
-            </th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user4" class="govuk-link--no-visited-state">{{data['party-user4'] }}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email4'] }}
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Status: </span><a href="" class="govuk-link--no-visited-state">{{data['party4'] }}</a>
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Rejected" class="govuk-link--no-visited-state">Review</a>
             </td>
           </tr>
         </body>
@@ -578,13 +561,6 @@
         id: "manage-invites",
         panel: {
           html: manageInvitesHTML
-        }
-      },
-      { 
-        label: "Rejected invites",
-        id: "rejected-invites",
-        panel: {
-          html: rejectedInvitesHTML
         }
       },
       { 
