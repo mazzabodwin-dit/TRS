@@ -59,6 +59,33 @@
               </div> 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  Two-factor authentication
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  By {{ data['2fa'] or "text message"}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  
+                  <a class="govuk-link--no-visited-state" href="account-2fa">
+                    Change<span class="govuk-visually-hidden"> two-factor authentication</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Password
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  ***********
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link--no-visited-state" href="account-changepass">
+                    Change<span class="govuk-visually-hidden"> password</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Permission
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -90,14 +117,6 @@
             </dl>
           </div>
         </div>
-        <ul class="govuk-list">
-          <li>
-            <a class="govuk-link--no-visited-state" href="account-2fa">Change your Two-factor authentication</a>
-          </li>  
-          <li>
-            <a class="govuk-link--no-visited-state" href="account-changepass">Change your password</a>
-          </li>    
-        </ul>
       {% endset -%}
 
       {% set orgHtml %}

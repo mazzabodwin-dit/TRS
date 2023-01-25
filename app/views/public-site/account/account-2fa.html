@@ -21,7 +21,7 @@
     
     
 
-      <form action="account-update-success" method="post" id="account-2fa-form">   
+      <form action="account" method="post" id="account-2fa-form">   
 
         <h1 class="govuk-heading-xl">
           Change your two-factor authentication
@@ -30,12 +30,12 @@
         <p>When you sign in, we will send you a code as part of our two-factor authentication. This helps ensure that your account is kept safe and secure.</p>
         
         {% set mobileHtml %} 
-          Moble number: 
-          <strong>+447821945085</strong> 
+          By text message: 
+          <strong>+447821945034</strong> 
         {% endset -%}
 
         {% set emailText %}
-          Email address: 
+          By email:  
           <strong>
             <!--Determine who is signed in -->
             {% if (data['who-signin'] == "rep") %}
@@ -68,7 +68,7 @@
           },
           items: [
           {
-            value: "mobile",
+            value: "text message",
             html: mobileHtml
           },
           {
