@@ -65,7 +65,7 @@
       </caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" aria-sort="ascending">
+          <th class="govuk-table__header" aria-sort="descending">
             <button class="govuk-button govuk-button--secondary">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
               <span class="indicator" aria-hidden="true"></span>
@@ -109,22 +109,74 @@
       <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref8']}}
+          </td>
           <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name8']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type8']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status8']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated8']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date8']}}
+          </td>
+          <td class="govuk-table__cell action">
+            <a href=""><button class="govuk-button govuk-button--secondary">
+              Select <span class="govuk-visually-hidden--desktop">case {{data ['case-ref8']}}</span>
+            </button></a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref9']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name9']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type9']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status9']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated9']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date9']}}
+          </td>
+          <td class="govuk-table__cell action">
+            <a href=""><button class="govuk-button govuk-button--secondary">
+              Select <span class="govuk-visually-hidden--desktop">case {{data ['case-ref9']}}</span>
+            </button></a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref1']}}
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name1']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type1']}}
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status1']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
-            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['created1']}}
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated1']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Registration due: </span><span id="date"></span>
           </td>
           <td class="govuk-table__cell action">
@@ -135,22 +187,48 @@
         </tr>
 
         <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref10']}}
+          </td>
           <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name10']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type10']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status10']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated10']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date10']}}
+          </td>
+          <td class="govuk-table__cell action">
+            <a href=""><button class="govuk-button govuk-button--secondary">
+              Select <span class="govuk-visually-hidden--desktop">case {{data ['case-ref10']}}</span>
+            </button></a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref3']}}
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name3']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type3']}}
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status3']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
-            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['created3']}}
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated3']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date3']}}
           </td>
           <td class="govuk-table__cell action">
@@ -161,30 +239,84 @@
         </tr>
 
         <tr class="govuk-table__row no-border">
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref5']}}
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name5']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell ">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type5']}}
           </td>
           <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status5']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
-            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['created5']}}
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated5']}}
           </td>
-          <td class="govuk-table__cell text-overflow">
+          <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date5']}}
           </td>
           <td class="govuk-table__cell action">
-            <a href="reginterest-case-old?regcase-task=started&case-ref=AD0004&case-name=Garnets from Gabon&case-type=Anti-subsidy investigation&register-date=15 Jan 2021"><button class="govuk-button govuk-button--secondary">
+            <a href="reginterest-tasks?regcase-task=complete&case-ref=AD0004&case-name=Garnets from Gabon&case-type=Anti-subsidy investigation&register-date=15 Jan 2021"><button class="govuk-button govuk-button--secondary">
               Select <span class="govuk-visually-hidden--desktop">case {{data ['case-ref5']}}</span>
             </button></a>
           </td>
         </tr>
+
+        <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref4']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type4']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated4']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date4']}}
+          </td>
+          <td class="govuk-table__cell action">
+            <a href=""><button class="govuk-button govuk-button--secondary">
+              Select <span class="govuk-visually-hidden--desktop">case {{data ['case-ref4']}}</span>
+            </button></a>
+          </td>
+        </tr>
+
+         <tr class="govuk-table__row no-border">
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">No. </span>{{data ['case-ref6']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Case: </span>{{data ['case-name6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type6']}}
+          </td>
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Initiated: </span>{{data ['initiated6']}}
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden--desktop">Registration due: </span>{{data ['register-date6']}}
+          </td>
+          <td class="govuk-table__cell action">
+            <a href=""><button class="govuk-button govuk-button--secondary">
+              Select <span class="govuk-visually-hidden--desktop">case {{data ['case-ref6']}}</span>
+            </button></a>
+          </td>
+        </tr>
+
+
       </tdbody>
     </table>
 

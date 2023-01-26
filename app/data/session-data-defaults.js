@@ -41,27 +41,6 @@ module.exports = {
 
   "who-signin": "invest",
   
-//CASE 1
-  "case-ref1": "AD2224",
-  "case-name1": "Steel plate from Russia",
-  "case-typeabr1": "AD",
-  "case-type1": "Anti-dumping",
-  "commodity1": "Steel plate",
-  "country1": "Russia",
-  "created1": "12 May 2022",
-  "initiated1": "13 May 2022",
-  "register-date1": "21 September 2022",
-  "updated1": "14 August 2022",
-  "status1": "Initiation notices published",
-  "next-task1": "Publish questionnaires",
-
-
-  "applicant1": "Steelman Plc",
-  "app-user1": "Vladimir Boffoff",
-  "app-email1": "v.boffoff@Steelman.org",
-  "app-submission1": "Questionnaire",
-  "app-role1": "Applicant",
-
   //KEY USER: who-signin=org
   "party1": "Steel UK",
   "party-user1": "Jane Winder",
@@ -117,7 +96,7 @@ module.exports = {
   "dup-party1": "Steeel",
   "dup-party-address1": "22 High Drive, Shanghai",
   "dup-party-postcode1": "345667",
-  "dup-party-country1": "China",
+  "dup-party-country1": "People's Republic of China",
   "dup-party-org-number1": "765238953", 
   "dup-party-web1": null, 
   "dup-party-vat1": "987654321", 
@@ -166,11 +145,31 @@ module.exports = {
   "party-email111": "itsa.steel@awesomesteel.cn",
   "party-address111": "243 Cupboard Lane, Leeds",
   "party-postcode111": "LE1 1AF",
-  "party-country111": "China",
+  "party-country111": "People's Republic of China",
   "party-role111": "Interested party",
   "party-case-role111": "Unknown",
   "party-submission111": "Registration of interest",
   "party-comment111": "Unable to find concrete details about this organisation through any of the usual channels. They have not responded to any email requests.",
+
+//CASE 1
+  "case-ref1": "AD2224",
+  "case-name1": "Steel plate from Russia",
+  "case-typeabr1": "AD",
+  "case-type1": "Anti-dumping",
+  "commodity1": "Steel plate",
+  "country1": "Russia",
+  "created1": "12 May 2022",
+  "initiated1": "13 May 2022",
+  "register-date1": "21 September 2022",
+  "updated1": "14 August 2022",
+  "status1": "Initiation notices published",
+  "next-task1": "Publish questionnaires",
+
+  "applicant1": "Steelman Plc",
+  "app-user1": "Vladimir Boffoff",
+  "app-email1": "v.boffoff@Steelman.org",
+  "app-submission1": "Questionnaire",
+  "app-role1": "Applicant",
 
 //CASE 2 - case closed
   "case-ref2": "TS0002",
@@ -181,7 +180,7 @@ module.exports = {
   "applicant2": "Secretary of State",
   "created2": "01 Feb 2019",
   "initiated2": "04 Mar 2019",
-  "register-date2": "01 June 2019",
+  "register-date2": "30 June 19",
   "updated2": "30 Nov 2021",
   "country2": "Republic of Turkey",
   "status2": "	Final determination",
@@ -196,7 +195,7 @@ module.exports = {
 
 
 //CASE 3
-  "case-ref3": "AG0404",
+  "case-ref3": "AS0404",
   "case-name3": "Farnets from Fabon",
   "case-typeabr3": "AS",
   "case-type3": "Anti-subsidy investigation",
@@ -205,7 +204,7 @@ module.exports = {
   "country3": "Federation of Fabon",
   "created3": "13 April 2022",
   "initiated3": "16 April 2022",
-  "register-date3": "01 May 2022",
+  "register-date3": "11 May 2022",
   "updated3": "16 April 2022",
   "status3": "Case initiated",
   "next-task3": "Issue questionnaires",
@@ -220,7 +219,7 @@ module.exports = {
   "submission3": "Questionnaire",
 
 //CASE 4
-  "case-ref4": "BA0005",
+  "case-ref4": "SI0005",
   "case-name4": "Barnets from Tabon",
   "case-typeabr4": "SI",
   "case-type4": "Safeguarding Invesitgation",
@@ -231,8 +230,8 @@ module.exports = {
   "applicant-submission4": "Applicant",
   "applicant-role4": "Applicant",
   "created4": "	13 Nov 2020",
-  "initiated4": "20 Nov 2020",
-  "register-date4": "05 Dec 2020",
+  "initiated4": "20 Nov 20201",
+  "register-date4": "05 Dec 2021",
   "updated4": "23 Dec 2021",
   "country4": "United Kingdom",
   "status4": "Questionnaires issued",
@@ -258,7 +257,7 @@ module.exports = {
   "applicant5": "Secretary of State",
   "created5": "24 Dec 2020",
   "initiated5": "01 Jan 2021",
-  "register-date5": "15 Jan 2021",
+  "register-date5": "28 Feb 2023",
   "updated5": "08 Jan 2022",
   "country5": "Republic of Gabon",
   "status5": "Processing applications",
@@ -285,9 +284,7 @@ module.exports = {
   "rep-email6": "arnieswarts@BlueSteelPartners.com",
 
 
-  
-
-  //CASE 6
+//CASE 6
   "case-ref6": "SI9405",
   "case-name6": "Electric Bikes",
   "case-typeabr6": "SI",
@@ -295,10 +292,10 @@ module.exports = {
   "commodity6": "Electric Bikes",
   "applicant6": "Bikers Ltd",
   "created6": "07 July 2021",
-  "initiated6": "24 July 2021",
-  "register-date6": "07 Aug 2021",
+  "initiated6": "24 Jan 2022",
+  "register-date6": "05 Feb 2022",
   "updated6": "24 March 2022",
-  "country6": "Republic of China",
+  "country6": "Republic of People's Republic of China",
   "status6": "Post-verification analysis",
   "next-task6": "The Statement of Essential Facts",
   "next-notice6": "24 Sept 2022",
@@ -310,8 +307,6 @@ module.exports = {
   "rep-status6": "Deficiency notice issued",
   "rep-user-role6": "User",
   "rep-role6": "Contributor",
-
-
 
 //CASE 7 - DRAFT yet to be made public
   "case-ref7": "AD12234",
@@ -328,5 +323,101 @@ module.exports = {
   "status7": "DRAFT",
   "next-task7": "n/a",
   "next-notice7": "n/a/",
+
+//CASE 8
+  "case-ref8": "AD0012",
+  "case-name8": "Aluminium Extrusions from China",
+  "case-typeabr8": "AD",
+  "case-type8": "Anti-dumping",
+  "commodity8": "	Aluminium Extrusions",
+  "applicant8": "Secretary of State",
+  "created8": "15 Jun 2021",
+  "initiated8": "21 Jun 2021",
+  "register-date8": "23 Jun 2022",
+  "updated8": "16 Dec 2022",
+  "country8": "People's Republic of China",
+  "status8": "Final determination",
+  "next-task8": "n/a",
+  "next-notice8": "n/a/",
+
+//CASE 9 
+  "case-ref9": "AD0021",
+  "case-name9": "Single-mode Optical Fibre Cables from China",
+  "case-typeabr9": "AD",
+  "case-type9": "Anti-dumping",
+  "commodity9": "Optical fibre cables",
+  "applicant9": "PRYSMIAN CABLES & SYSTEMS LIMITED",
+  "created9": "07 March 2022",
+  "initiated9": "26 Apr 2022",
+  "register-date9": "12 May 2022",
+  "updated9": "12 Jan 2023",
+  "country9": "People's Republic of China",
+  "status9": "General publication - Questionnaire",
+  "next-task9": "n/a",
+  "next-notice9": "n/a/",
+
+//CASE 10 
+  "case-ref10": "AS0020",
+  "case-name10": "Ironing Boards from Turkey",
+  "case-typeabr10": "AD",
+  "case-type10": "Anti-subsidy",
+  "commodity10": "Ironing Boards",
+  "applicant10": "ANONYMOUS",
+  "created10": "01 Apr 2022",
+  "initiated10": "07 Apr 2022",
+  "register-date10": "21 June 2022",
+  "updated10": "19 Jan 2023",
+  "country10": "Republic of Turkey",
+  "status10": "	Questionnaire",
+  "next-task10": "n/a",
+  "next-notice10": "n/a/",
+
+//CASE 11 - DRAFT yet to be made public
+  "case-ref11": "AD12234",
+  "case-name11": "Corn-on-cob from Alaska",
+  "case-typeabr11": "AD",
+  "case-type11": "Anti-dumping",
+  "commodity11": "Corn-on-cob, sweetcorn",
+  "applicant11": "Secretary of State",
+  "created11": "07 March 2022",
+  "initiated11": "n/a",
+  "register-date11": "n/a",
+  "updated11": "24 July 2021",
+  "country11": "United States",
+  "status11": "DRAFT",
+  "next-task11": "n/a",
+  "next-notice11": "n/a/",
+
+//CASE 12 - DRAFT yet to be made public
+  "case-ref12": "AD12234",
+  "case-name12": "Corn-on-cob from Alaska",
+  "case-typeabr12": "AD",
+  "case-type12": "Anti-dumping",
+  "commodity12": "Corn-on-cob, sweetcorn",
+  "applicant12": "Secretary of State",
+  "created12": "07 March 2022",
+  "initiated12": "n/a",
+  "register-date12": "n/a",
+  "updated12": "24 July 2021",
+  "country12": "United States",
+  "status12": "DRAFT",
+  "next-task12": "n/a",
+  "next-notice12": "n/a/",
+
+//CASE 11 - DRAFT yet to be made public
+  "case-ref11": "AD12234",
+  "case-name11": "Corn-on-cob from Alaska",
+  "case-typeabr11": "AD",
+  "case-type11": "Anti-dumping",
+  "commodity11": "Corn-on-cob, sweetcorn",
+  "applicant11": "Secretary of State",
+  "created11": "07 March 2022",
+  "initiated11": "n/a",
+  "register-date11": "n/a",
+  "updated11": "24 July 2021",
+  "country11": "United States",
+  "status11": "DRAFT",
+  "next-task11": "n/a",
+  "next-notice11": "n/a/",
 
 }

@@ -34,19 +34,21 @@
     <h1 class="govuk-heading-xl">
       Manage cases
     </h1>
-    <div class="address-card">
-      <div class="address-container">
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <p class="govuk-warning-text__text">
-            <strong>
-              <span class="govuk-warning-text__assistive">Warning</span>
-              You have 1 registration of interest with deficient documentation
-            </strong>
-          </p>
+    {% if data[''] ==""%}
+      <div class="address-card">
+        <div class="address-container">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <p class="govuk-warning-text__text">
+              <strong>
+                <span class="govuk-warning-text__assistive">Warning</span>
+                You have 1 registration of interest with deficient documentation
+              </strong>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
   <div class="govuk-grid-column-full">
 
@@ -105,19 +107,19 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case stage
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header" data-sortby="date">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Update 
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submitted 
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -127,50 +129,85 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Case No. </span><a href="case-details" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Case: </span><a href="case-details" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data['party-status1']}}
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Case stage: </span>{{data['status1']}}
-            </td>
-            <td class="govuk-table__cell text-overflow num">
-              <span class="govuk-visually-hidden--desktop">Update: </span>{{data['updated1']}}
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="case-details" class="govuk-link--no-visited-state">Manage case <span class="govuk-visually-hidden--desktop"> {{data['case-ref6']}}</span</a>
-            </td>
-          </tr>
+          {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
 
-          <tr class="govuk-table__row no-border">
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data['party-status5']}}
-            </td>     
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Case stage: </span>{{data['status5']}}
-            </td>
-            <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Update: </span>{{data['updated5']}}
-            </td>
-            <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Manage case <span class="govuk-visually-hidden--desktop"> {{data['case-ref6']}}</span</a>
-            </td>
-          </tr>
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Case No. </span><a href="case-details" class="govuk-link--no-visited-state">{{data ['case-ref'] or "AD2224"}}</a>
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Case: </span><a href="case-details" class="govuk-link--no-visited-state">{{data ['case-name'] or "Steel plate from Russia"}}</a>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Submission </span>Registration of interest
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Status: </span>{{data['reginterest-task']}}
+              </td>
+              <td class="govuk-table__cell num">
+                <span class="govuk-visually-hidden--desktop">Submitted: </span><span id="date2"></span>
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Manage case <span class="govuk-visually-hidden--desktop"> {{data['case-ref']}}</span</a>
+              </td>
+            </tr>
+
+            {% else %}
+         
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Case No. </span><a href="case-details" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Case: </span><a href="case-details" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Status: </span>{{data['party-status1']}}
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Case stage: </span>{{data['status1']}}
+              </td>
+              <td class="govuk-table__cell text-overflow num">
+                <span class="govuk-visually-hidden--desktop">Update: </span>{{data['updated1']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Action: </span><a href="case-details" class="govuk-link--no-visited-state">Manage case <span class="govuk-visually-hidden--desktop"> {{data['case-ref6']}}</span</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref5']}}</a>
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Status: </span>{{data['party-status5']}}
+              </td>     
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Case stage: </span>{{data['status5']}}
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Update: </span>{{data['updated5']}}
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Action: </span><a href="" class="govuk-link--no-visited-state">Manage case <span class="govuk-visually-hidden--desktop"> {{data['case-ref6']}}</span</a>
+              </td>
+            </tr>
+
+          {% endif %}
           
         </body>
       </table>  
+
+      <script>
+        const date2 = new Date();
+        const formattedDate2 = date2.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, ' ');
+        document.getElementById("date2").innerHTML = formattedDate2;
+      </script>
       
     {% endset %}
     
