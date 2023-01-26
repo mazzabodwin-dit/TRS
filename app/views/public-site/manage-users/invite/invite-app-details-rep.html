@@ -160,7 +160,7 @@
       {% if data['invite-rep-task'] == "Draft" or data['invite-rep-task'] == "All" %}
         {{ govukButton({
           text: "Continue invite",
-          href: "../tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=complete"
+          href: "../tasklist/invite-rep-tasks?tasklist-type=invite-rep&invite-case-task=draft"
         }) }}  
         <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
       {% endif %} 
