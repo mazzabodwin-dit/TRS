@@ -26,41 +26,79 @@
 
       <form action="invite-user-check" method="post" id="invite-case-form">   
 
-        {{ govukCheckboxes({
-          idPrefix: "invite-case",
-          name: "invite-case",
-          fieldset: {
-            legend: {
-              text: "Which case?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "Select the cases they can take part in."
-          },
-          items: [
-            {
-              value: "AD2224 - Steel plate from Russia",
-              html: "AD2224 - Steel plate from Russia",
-              checked: checked("invite-case", "AD2224 - Steel plate from Russia")
+        {% if (data['reginterest-task'] == "Draft") or (data['reginterest-task'] == "Submitted") %}
+
+          {{ govukCheckboxes({
+            idPrefix: "invite-case",
+            name: "invite-case",
+            fieldset: {
+              legend: {
+                text: "Which case?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
-            {
-              value: "AS3464 - Garnets from Gabon",
-              html: "AS3464 - Garnets from Gabon",
-              checked: checked("invite-case", "AS3464 - Garnets from Gabon" )
+            hint: {
+              text: "Select the cases they can take part in."
             },
-            {
-              divider: "or"
+            items: [
+              {
+                value: "AS3464 - Garnets from Gabon",
+                html: "AS3464 - Garnets from Gabon",
+                checked: checked("invite-case", "AS3464 - Garnets from Gabon" )
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "None",
+                text: "None, I will assign a case later",
+                checked: checked("invite-case", "None"),
+                behaviour: "exclusive"
+              }
+            ]
+          }) }}
+
+          {% else %}
+
+          {{ govukCheckboxes({
+            idPrefix: "invite-case",
+            name: "invite-case",
+            fieldset: {
+              legend: {
+                text: "Which case?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
-            {
-              value: "None",
-              text: "None, I will assign a case later",
-              checked: checked("invite-case", "None"),
-              behaviour: "exclusive"
-            }
-          ]
-        }) }}
+            hint: {
+              text: "Select the cases they can take part in."
+            },
+            items: [
+              {
+                value: "AD2224 - Steel plate from Russia",
+                html: "AD2224 - Steel plate from Russia",
+                checked: checked("invite-case", "AD2224 - Steel plate from Russia")
+              },
+              {
+                value: "AS3464 - Garnets from Gabon",
+                html: "AS3464 - Garnets from Gabon",
+                checked: checked("invite-case", "AS3464 - Garnets from Gabon" )
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "None",
+                text: "None, I will assign a case later",
+                checked: checked("invite-case", "None"),
+                behaviour: "exclusive"
+              }
+            ]
+          }) }}
+
+        {% endif %}
+
 
         {{ govukDetails({
           summaryText: "Why can't I see other active cases?",
