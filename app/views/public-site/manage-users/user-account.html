@@ -103,12 +103,12 @@
       {% endif %}
       </h2>
       {% if (data['account-user'] =="invite-user-name") and (data['invite-case'] =="None" or data['invite-case'] == null) %}
-        <p>This user is not involved in any case.</p>
+        <p>This user is not involved in a case.</p>
         {% else %}
         {% if (data['account-user'] =="party-user6") %}
-         <p>This user is not involved in any case</p>
+         <p>This user is not involved in a case.</p>
           {% else %}
-          <p>Manage the users case involvement.</p>
+          <p>Assign a user to a case and manage their role and access. </p>
           <form>
             <div id="table-sort" class="govuk-visually-hidden--desktop"> 
               <div class="govuk-form-group table-sort-select">

@@ -31,7 +31,7 @@
             name: "case1-permissions",
             fieldset: {
               legend: {
-                text: "What is the users role in this case?",
+                text: "What is the user’s role in this case?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -44,7 +44,7 @@
               },
               {
                 value: "User",
-                text: "User: they can access and manage the case on behalf of the organisation. ",
+                text: "User: they can access and manage the case on behalf of the organisation.",
                 checked: checked("case1-permissions", "User")
               }
             ]
@@ -62,19 +62,16 @@
                   classes: "govuk-fieldset__legend--xl"
                 }
               },
-              hint: {
-                html: 'Choose if the user is to be a key point of contact for this organisations involvement in the case. You can have more than one person assigned to this role.'
-              },
               items: [
                 {
-                  value: "User",
-                  text: "User: they can access and interact with the case",
-                  checked: checked("case5-permissions", "User")
+                  value: "Case contact",
+                  text: "Case contact: they can access and manage the case, and are a key point of contact for communication with the TRA.",
+                  checked: checked("case5-permissions", "Case contact")
                 },
                 {
-                  value: "Case contact",
-                  text: "Case contact: they can access and interact with the case, and are a key point of contact for communication with the TRA.",
-                  checked: checked("case5-permissions", "Case contact")
+                  value: "User",
+                  text: "User: they can access and manage the case on behalf of the organisation.",
+                  checked: checked("case5-permissions", "User")
                 }
               ]
             }) }}    
@@ -95,14 +92,14 @@
                 },
                 items: [
                   {
-                    value: "User",
-                    text: "User: they can access and interact with the case",
-                    checked: checked("case6-permissions", "User")
+                    value: "Case contact",
+                    text: "Case contact: they can access and manage the case, and are a key point of contact for communication with the TRA.",
+                    checked: checked("case6-permissions", "Case contact")
                   },
                   {
-                    value: "Case contact",
-                    text: "Case contact: they can access and interact with the case, and are a key point of contact for communication with the TRA.",
-                    checked: checked("case6-permissions", "Case contact")
+                    value: "User",
+                    text: "User: they can access and manage the case on behalf of the organisation.",
+                    checked: checked("case6-permissions", "User")
                   }
                 ]
               }) }} 

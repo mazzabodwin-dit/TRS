@@ -27,7 +27,7 @@
       <form action="user-account" method="post" id="assign-case-form">   
         {% if (data['invite-case'] == "AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon") %}
           <h1 class="govuk-heading-xl">
-            Which case?
+            Which case can the user take part in?
             <br>
           </h1>
           <p> There are no more cases available to assign to this user.</p>
@@ -45,13 +45,13 @@
               name: "invite-case",
               fieldset: {
                 legend: {
-                  text: "Which case?",
+                  text: "Which case can the user take part in?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--xl"
                 }
               },
               hint: {
-                text: "Select the cases they can take part in."
+                text: "Select all that apply"
               },
               items: [
                 {
@@ -75,13 +75,13 @@
                 name: "invite-case",
                 fieldset: {
                   legend: {
-                    text: "Which case?",
+                    text: "Which case can the user take part in?",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }
                 },
                 hint: {
-                  text: "Select the cases they can take part in."
+                  text: "Select all that apply"
                 },
                 items: [
                   {
@@ -100,13 +100,13 @@
                   name: "invite-case",
                   fieldset: {
                     legend: {
-                      text: "Which case?",
+                      text: "Which case can the user take part in?",
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
                   },
                   hint: {
-                    text: "Select the cases they can take part in."
+                    text: "Select all that apply"
                   },
                   items: [
                     {
@@ -122,7 +122,7 @@
         
           {{ govukDetails({
             summaryText: "Why can't I see other active cases?",
-            html: '<p>You can only select cases that your organisation is currently participating in.</p>
+            html: '<p>You can only select cases that your organisation is taking part in.</p>
             <p> You can <a href="" class="govuk-link">register interest</a> in a case and if accepted you can invite others.</p>'
           }) }}
           

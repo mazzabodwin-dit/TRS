@@ -31,13 +31,13 @@
             name: "invite-case",
             fieldset: {
               legend: {
-                text: "Which case?",
+                text: "Which case can the user take part in?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-              text: "Select the cases they can take part in."
+              text: "Select all that apply"
             },
             items: [
               {
@@ -64,11 +64,11 @@
             ]
           }) }}      
 
-        {{ govukDetails({
-          summaryText: "Why can't I see other active cases?",
-          html: '<p>You can only select cases that you are currently participating in.</p>
-          <p> You can <a href="" class="govuk-link">register interest</a> in a case and if accepted you can invite others.</p>'
-        }) }}
+          {{ govukDetails({
+              summaryText: "Why can't I see other active cases?",
+              html: '<p>You can only select cases that your organisation is taking part in.</p>
+              <p> You can <a href="" class="govuk-link">register interest</a> in a case and if accepted you can invite others.</p>'
+          }) }}
         
         <div class="govuk-button-group">
           {{ govukButton({

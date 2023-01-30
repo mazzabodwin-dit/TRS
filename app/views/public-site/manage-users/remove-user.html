@@ -24,8 +24,6 @@ Remove user - {{serviceName}}
       <h1 class="govuk-heading-xl">
         Remove user
       </h1>
-
-      <p>Are you sure you want to remove the user from this case? They will no longer be able to access or manage the case.</p>
       <p>
         {% if data['account-user'] =="party-user1" %}
           {{data['party-user11'] }} - {{data['party-email11'] }}
@@ -55,6 +53,8 @@ Remove user - {{serviceName}}
           {% endif %}
         {% endif %}
       </p>
+
+      <p>Are you sure you want to remove the user from this case? They will no longer be able to access or manage the case.</p>
       
       {% if data['invite-case'] =="AD2224 - Steel plate from Russia,AS3464 - Garnets from Gabon" %}
         {% if data['remove-case'] =="case1" %}
