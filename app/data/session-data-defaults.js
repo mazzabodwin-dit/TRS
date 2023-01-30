@@ -63,6 +63,7 @@ module.exports = {
   "party-email11": "l.crist@steeluk.com",
   "party-user11-status": "Active",
   "party-user11-permission": "User",
+  
   "party-user6": "Rodney Trigger",
   "party-email6": "r.trigger@steeluk.com",
   "party-user6-status": "Inactive",
