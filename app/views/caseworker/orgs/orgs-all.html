@@ -49,7 +49,7 @@
             </label>
             <select class="govuk-select" id="sort-active-org" name="sort-active-org">
               <option value="Organisation" selected>Organisation</option>
-              <option value="Contact">Contact</option>
+              <option value="Registration number">Registration number</option>
               <option value="Country">Country</option>
               <option value="No. cases">No. cases</option>
               <option value="No. users">No. users</option>
@@ -85,13 +85,13 @@
               </button>
             </th>
             <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">Contact
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Country
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
             <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Country
+              <button class="govuk-button govuk-button--secondary">Registration number
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -121,10 +121,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-awesomesteel" class="govuk-link--no-visited-state">{{data['party111']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user111']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>People's Republic of China
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>China
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>0
@@ -141,10 +141,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user4']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>Republic of Gabon
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>Republic of Gabon
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>1
@@ -162,10 +162,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>45689357
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>2
@@ -183,10 +183,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user3']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>{{data['country3']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>{{data['country3']}}
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>X4647
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>1
@@ -204,10 +204,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user5']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Country: </span>Republic of Gabon
+            </td>
+             <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>1
@@ -225,10 +225,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative2']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user2']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>06875378567
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>1
@@ -245,10 +245,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['dup-user1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Country: </span>{{data['dup-party-country1']}}
+            </td>
+             <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>0
@@ -266,10 +266,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['party-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>357964356
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>0
@@ -287,10 +287,10 @@
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Contact: </span><a href="#" class="govuk-link--no-visited-state">{{data['app-user1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Country: </span>United Kingdom
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>7985693925
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>1
