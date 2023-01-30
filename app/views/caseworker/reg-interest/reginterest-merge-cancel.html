@@ -24,10 +24,10 @@
       <p>This will reset all of your selections, allowing you to start again.</p>
 
       {% if data['verify-type'] =="reg-interest" %}
-        <form action="/caseworker/reg-interest/reginterest-tasks-dup?duplicate-org=both&merge-duplicates=1of2&third-party=yes&loa-sufficient=yes" method="post" id="cancel-invite-form">
+        <form action="/caseworker/reg-interest/reginterest-tasks-dup?duplicate-org=both&merge-duplicates=1of2&third-party=yes&loa-sufficient=yes" method="post" id="cancel-merge-form">
         {% else %}
       {% if data['verify-type'] =="rep-invite" %}
-          <form action="/caseworker/reg-interest/reginterest-tasks-dup?merge-duplicates=1of2&duplicate-org=rep&third=party=yes&loa-sufficient=yes" method="post" id="cancel-invite-form">
+          <form action="/caseworker/reg-interest/reginterest-tasks-dup?merge-duplicates=1of2&duplicate-org=rep&third-party=yes&loa-sufficient=yes" method="post" id="cancel-merge-form">
         {% endif %}
       {% endif %}
 
