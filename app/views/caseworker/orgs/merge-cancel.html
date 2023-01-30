@@ -23,11 +23,7 @@
       <p>Are you sure you want to cancel this merge?</p>
       <p>This will reset all of your selections, allowing you to start again.</p>
 
-      <form action="merge-two-orgs?merge-duplicates=1of2&duplicate-org=rep&third=party=yes&loa-sufficient=yes" method="post" id="cancel-invite-form">
-
-
-
-
+      <form action="merge-two-orgs" method="post" id="cancel-merge-form">
       <input type="hidden" id="show-invite" name="show-invite" value="no">
       <div class="govuk-button-group">
         {{ govukButton({
