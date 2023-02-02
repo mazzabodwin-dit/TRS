@@ -29,19 +29,10 @@
 
 /* Action links that are right alignhed to a header...both sites*/
 .right-aligned-link {
-  /*float: none;*/
   float: right;
   padding-top: 0px;
 }
 
-/*@media (min-width: 40.0625em) {
-  .right-aligned-link {
-    float: right;
-    padding-top: 0px;
-
-  }
-}
-*/
 
 /* createaccount / reginterest - autocomplete on new company */
 
@@ -126,22 +117,36 @@
 }
 
 
-.govuk-pagination.right-aligned-link {
+/* Merge pagination */
+.left-aligned {
+  float: left;
+}
+
+.right-aligned {
+  float: right;
+}
+
+.govuk-pagination.right-aligned {
   margin-bottom: 10px;
 }
 
 .govuk-heading-s.merge-header {
-  margin-bottom: 0px;
+  margin-top: 10px;
+  padding-right: 10px;
 }
 
-.govuk-heading-s.merge-header2 {
-  margin-bottom: 30px;
+.govuk-pagination__item, .govuk-pagination__next, .govuk-pagination__prev {
+  min-width: 30px;
+  min-height: 30px;
+  padding: 10px 8px;
 }
 
-.govuk-heading-s__merge3 {
-  position: relative;
-  top: 10px;
+.govuk-pagination__next, .govuk-pagination__prev{
+   font-weight: 400;
 }
+
+/*
+
 
 /* FEEDBACK RATING  https://www.cssscript.com/star-rating-radio/ */
 

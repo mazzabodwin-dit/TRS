@@ -36,7 +36,7 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Selected organisation </span>
+    <h2 class="govuk-heading-s merge-header">Selected organisation
     </h2>
     <!--If there is a rep then the Int Party is Steel UK-->
     {% if data['third-party'] == "yes" %}
@@ -56,7 +56,7 @@
   <!--List of duplicates-->
   <div class="govuk-grid-column-one-half">
     <!--Show header according to how many dups there are - only showing 1-->
-    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
+    <h2 class="govuk-heading-s merge-header">Matches
     </h2>
     {% if data['third-party'] == "no" %}
       <div class="address-card address-card-duplicate">
@@ -116,7 +116,7 @@
       {% else %}        
       <div class="address-card address-card-duplicate">
         <div class="address-container">   
-          <h3 class="govuk-heading-m clearfix"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+          <h3 class="govuk-heading-m"><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
           </h3>
           <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
             <div class="govuk-summary-list__row">

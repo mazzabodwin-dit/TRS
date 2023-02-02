@@ -31,7 +31,7 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Selected organisation </span>
+    <h2 class="govuk-heading-s merge-header">Selected organisation
     </h2>
     <div class="address-card">
       {% include "includes/org-bluesteel-all.html" %}
@@ -43,14 +43,15 @@
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
     <!--Show header according to how many dups there are-->
     {% if data['merge-duplicates'] == "1c" %}
-      <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matching organisation </span>
+      <h2 class="govuk-heading-s merge-header"><span class="">Matching organisation </span>
       </h2>
       {% else %}
       {% if data['merge-duplicates'] == "1of2" %}
-        <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
+      <div class="clearfix">
+        <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
       
           {{ govukPagination({
-            classes: "right-aligned-link",
+            classes: "right-aligned",
             next: {
               href: "?merge-duplicates=2of2"
             },
@@ -67,14 +68,17 @@
             ]
           }) }}
         </h2>
+        </div>
         {% else %}
         {% if data['merge-duplicates'] == "2of2" %}
-          <h2 class="govuk-heading-s merge-header2"><span class="govuk-heading-s__merge3">Matches </span>
+        <div class="clearfix">
+          <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
 
             {{ govukPagination({
-              classes: "right-aligned-link",
+              classes: "right-aligned",
               previous: {
-                href: "?merge-duplicates=1of2"
+                href: "?merge-duplicates=1of2",
+                classes: "govuk-link--no-visited-state"
               },
               items: [
                 {
@@ -88,17 +92,352 @@
                 }
               ]
             }) }}
-          </h2>
+          </div>
+          {% else %}
+          {% if data['merge-duplicates'] == "all" and data['pagination'] == "all" %}
+            <p>Up to 6 matches use the following pattern:</p>
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                next: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: true,
+                    href: "#"
+                  },
+                  {
+                    number: 2,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 3,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 4,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 5,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 6,
+                    current: false,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                previous: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 2,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 3,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 4,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 5,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 6,
+                    current: true,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+            
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                previous: {
+                  href: "#"
+                },
+                next: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 2,
+                    current: true,
+                    href: "#"
+                  },
+                  {
+                    number: 3,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 4,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 5,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 6,
+                    current: false,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+            <br>
+            <p>If there are more than 6 matches then use the following pattern:</p> 
+            
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                next: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: true,
+                    href: "#"
+                  },
+                  {
+                    number: 2,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 3,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    ellipsis: true
+                  },
+                  {
+                    number: 100,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                previous: {
+                  href: "#"
+                },
+                next: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 2,
+                    current: true,
+                    href: "#"
+                  },
+                  {
+                    ellipsis: true
+                  },
+                  {
+                    number: 100,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+                {{ govukPagination({
+                  classes: "right-aligned",
+                  previous: {
+                    href: "#"
+                  },
+                  next: {
+                    href: "#"
+                  },
+                  items: [
+                    {
+                      number: 1,
+                      current: false,
+                      href: "#"
+                    },
+                    {
+                      ellipsis: true
+                    },
+                    {
+                      number: 3,
+                      current: true,
+                      href: "#"
+                    },
+                    {
+                      ellipsis: true
+                    },
+                    {
+                      number: 100,
+                      href: "#"
+                    }
+                  ]
+                }) }}  
+            </div>
+
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                previous: {
+                  href: "#"
+                },
+                next: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    ellipsis: true
+                  },
+                  {
+                    number: 98,
+                    current: true,
+                    href: "#"
+                  },
+                  {
+                    ellipsis: true
+                  },
+                  {
+                    number: 100,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+
+            <div class="clearfix">
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                previous: {
+                  href: "#"
+                },
+                next: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    ellipsis: true
+                  },
+                  {
+                    number: 99,
+                    current: true,
+                    href: "#"
+                  },
+                  {
+                    number: 100,
+                    href: "#"
+                  }
+                ]
+              }) }}      
+            </div> 
+            <div class="clearfix"> 
+              <h2 class="govuk-heading-s merge-header left-aligned">Matches</h2>
+              {{ govukPagination({
+                classes: "right-aligned",
+                previous: {
+                  href: "#"
+                },
+                items: [
+                  {
+                    number: 1,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    ellipsis: true
+                  },
+                  {
+                    number: 98,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 99,
+                    current: false,
+                    href: "#"
+                  },
+                  {
+                    number: 100,
+                    current: true,
+                    href: "#"
+                  }
+                ]
+              }) }}
+            </div>
+          {% endif %}
         {% endif %}
       {% endif %}
     {% endif %}
 
 
     <!--Show content according to how many dups there are-->  
-    {% if (data['merge-duplicates'] == "1of2") %}
+    {% if (data['merge-duplicates'] == "1of2") or data['merge-duplicates'] == "all" %}
       <div class="address-card address-card-duplicate">
         <div class="address-container">   
-          <h3 class="govuk-heading-m clearfix"><a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
+          <h3 class="govuk-heading-m"><a href="/caseworker/orgs/org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>  
           </h3>
           <dl class="govuk-summary-list govuk-!-margin-bottom-1"> 
             <div class="govuk-summary-list__row">
@@ -154,7 +493,7 @@
       {% if (data['merge-duplicates'] == "2of2") or (data['merge-duplicates'] == "1c") %}
         <div class="address-card address-card-duplicate">
         <div class="address-container">   
-          <h3 class="govuk-heading-m clearfix">
+          <h3 class="govuk-heading-m">
             <a href="" class="govuk-link--no-visited-state">{{data['dup-party3']}}</a>   
             </h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-1">
