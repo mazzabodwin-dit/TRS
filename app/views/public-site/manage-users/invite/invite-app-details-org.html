@@ -31,7 +31,11 @@
           Status
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>Invite sent<br>Awaiting invitee acceptance<br>
+          {% if data['invite-org-task'] == "Sent" %}
+            <p>Invite sent<br>Awaiting invitee acceptance<br>
+          {% else %}
+            <p>Draft</p>
+          {% endif %}
           <span id="date"></span></p>
         </dd>
       </div>
@@ -48,11 +52,18 @@
           User details
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data['invite-user-name'] or data['party-user11'] }}
-          <br>
-          {{data['invite-user-email'] or data['party-email11'] }}
-          <br>
-          Permission: {{data['invite-user-permission'] or "User" }}
+          {% if data['invite-org-task'] == "Sent" %}
+            {{data['invite-user-name'] or data['party-user11'] }}
+            <br>
+            {{data['invite-user-email'] or data['party-email11'] }}
+            <br>
+            Permission: {{data['invite-user-permission'] or "User" }}
+            {% else %}
+            {{data['party-user6'] }}
+            <br>
+            {{data['party-email6'] }}
+            <br>
+          {% endif %}
         </dd>        
       </div>
        <div class="govuk-summary-list__row">
@@ -74,12 +85,23 @@
     </dl>
 
     <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Cancel invite",
-        href: "invite-user-cancel"
-      }) }} 
-      <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+      {% if data['invite-org-task'] == "Draft" %}
+        {{ govukButton({
+          text: "Continue",
+          href: "invite-user-details"
+        }) }}  
+        <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
+      {% endif %} 
     </div>
+    <div class="govuk-button-group">
+      {% if data['invite-org-task'] == "Sent" %}
+        {{ govukButton({
+          text: "Cancel invite",
+          href: "invite-user-cancel"
+        }) }}  
+        <a class="govuk-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+      {% endif %} 
+    </div>  
   </div>
 </div>
 {% endblock %}

@@ -283,26 +283,6 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-              
-            {% if (data['invite-org-task'] == "Sent") %}
-              <tr class="govuk-table__row no-border">
-                <td class="govuk-table__cell text-overflow">
-                  <span class="govuk-visually-hidden--desktop">User: </span>{{data['invite-rep-name'] or data['party-user11'] }}
-                </td>
-                <td class="govuk-table__cell text-overflow">
-                  <span class="govuk-visually-hidden--desktop">Email: </span>{{data['invite-rep-email'] or data['party-email11'] }}
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Account role: </span>User
-                </td>
-                <td class="govuk-table__cell">
-                  <span class="govuk-visually-hidden--desktop">Status: </span>Invite sent
-                </td>
-                <td class="govuk-table__cell ">
-                  <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-org" class="govuk-link--no-visited-state">View invite</a>
-                </td>
-              </tr>
-            {% endif %}
             {% if (data['invite-rep-task'] == "Sent") %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell">
@@ -324,6 +304,26 @@
             {% endif %}
 
             <!--All status-->
+
+            <!--Rodney -->
+            <tr class="govuk-table__row no-border">
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user6']}}
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Email: </span>{{data['party-email6']}}
+              </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Account role: </span>User
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Status: </span>Draft
+              </td>
+              <td class="govuk-table__cell">
+                <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-org?invite-org-task=Draft" class="govuk-link--no-visited-state">View invite</a>
+              </td>
+            </tr>
+            <!--Lara -->
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user11']}}
@@ -338,9 +338,10 @@
                 <span class="govuk-visually-hidden--desktop">Status: </span>Invite sent
               </td>
               <td class="govuk-table__cell">
-                <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-org" class="govuk-link--no-visited-state">View invite</a>
+                <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-org?invite-org-task=Sent" class="govuk-link--no-visited-state">View invite</a>
               </td>
             </tr>
+            <!--Clay -->
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user2'] }}
@@ -357,7 +358,8 @@
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Draft" class="govuk-link--no-visited-state">View invite</a>
               </td>
-            </tr>  
+            </tr>
+            <!--Demi -->  
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['rep-user3'] }}
@@ -375,6 +377,7 @@
                 <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Sent" class="govuk-link--no-visited-state">View invite</a>
               </td>
             </tr>
+            <!--Odessa-->
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user3'] }}
@@ -392,6 +395,7 @@
                 <span class="govuk-visually-hidden--desktop">Action: </span><a href="invite/invite-app-details-rep?invite-rep-task=Accepted" class="govuk-link--no-visited-state">View invite</a>
               </td>
             </tr>
+            <!--George -->
             <tr class="govuk-table__row no-border">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span>{{data['party-user5'] }}
