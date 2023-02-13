@@ -1,5 +1,8 @@
 <div class="address-container">
   <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
+    <p class="right-aligned-link">
+      <a href="../orgs/org-edit-rep-dets?org-edit-type=verify-rep&party-type=rep" class="govuk-link--no-visited-state">Edit</a>
+    </p> 
   </h3>
   <dl class="govuk-summary-list govuk-!-margin-bottom-1">
     {% if data['verify-type'] =="rep-invite" %}
