@@ -393,11 +393,11 @@ router.post('/reginterest-merge-int-route', function (req, res) {
     // Check whether the variable matches a condition
     if (reginterestmatchingorgsquestion == "yes") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-int-choose-table-radio?merge-rep-task=In progress')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-int-choose-table-radio?merge-int-task=In progress')
     }
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-int-not-duplicate?merge-rep-task=In progress')
+        res.redirect('/caseworker/reg-interest/reginterest-merge-int-not-duplicate?merge-int-task=In progress')
     }
 })
 

@@ -22,15 +22,7 @@
       Review matching organisations
     </span>
     <h1 class="govuk-heading-xl">
-      {% if (data['merge-duplicates'] == "1c") %}
-        Select details to keep when the records are merged
-        {% else %}
-        {% if (data['merge-duplicates'] == "1of2") %}
-          Select details to keep when the records are merged (1 of 2)
-          {% else %}
-          Select details to keep when the records are merged (2 of 2)
-        {% endif %} 
-      {% endif %} 
+      Select details to keep when the records are merged
     </h1>
     <p>Select the information that should be kept when these two organisations are merged.</p>
     <form action="reginterest-merge-int-check" method="post" id="reginterest-merge-form">
