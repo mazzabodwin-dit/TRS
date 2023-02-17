@@ -50,7 +50,7 @@ router.post('/createaccount-existing-account-route', function (req, res) {
         res.redirect('/public-site/create-account/createaccount-existing-account-yes')
     } else {
         // Send user to ineligible page
-        res.redirect('/public-site/create-account/createaccount-your-account')
+        res.redirect('/public-site/create-account/createaccount-your-account?reg-type=create&user-permissions=Admin user')
     }
 })
 
