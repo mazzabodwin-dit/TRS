@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Existing account for your organisation? - {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Has anyone already set up an account for your organisation?
+      </h1>
+
+      <p>You must ask your admin to invite you to the organisation’s account. </p>
+      <p>Once you’re account is set up, you can make an application to the Trade Remedies Authority or register interest in a case. </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Done",
+          href: "../start"
+        }) }}    
+      </div>
+
+        
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

@@ -10,7 +10,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // Headers
-// Setting a few spoecfic header to not use logged in user
+// Setting a few specfic header to not use logged in user
 router.get('/public-site/public-cases', function (req, res) {
     if (req.session.data['signin'] == null) {
         // store it in session
@@ -35,6 +35,24 @@ router.get('/public-site/start', function (req, res) {
 // Pubic
 // Pubic
 // Pubic - Create account
+
+
+// Run this code on createaccount-existing-account: - existing org account or not?
+
+router.post('/createaccount-existing-account-route', function (req, res) {
+
+    // Make a variable and give it the value from 'createaccount-uk-reg'
+    var createaccountExistingAccount = req.session.data['createaccount-existing-account']
+
+    // Check whether the variable matches a condition
+    if (createaccountExistingAccount == "Yes") {
+        // Send user to next page
+        res.redirect('/public-site/create-account/createaccount-existing-account-yes')
+    } else {
+        // Send user to ineligible page
+        res.redirect('/public-site/create-account/createaccount-your-account')
+    }
+})
 
 // Run this code on createaccount-uk-org: - is org UK reg?
 router.post('/createaccount-uk-reg-route', function (req, res) {
@@ -316,6 +334,7 @@ router.post('/reginterest-loa-existing-route', function (req, res) {
     }
 })
 
+//Delete?
 // Run this code on reginterest-representative-party - which option is chosen:
 router.post('/verify-rep-invite-representative-party-route', function (req, res) {
 
@@ -398,159 +417,6 @@ router.post('/reginterest-merge-int-route', function (req, res) {
     if (reginterestmatchingorgsquestion == "no") {
         // Send user to next page
         res.redirect('/caseworker/reg-interest/reginterest-merge-int-not-duplicate?merge-int-task=In progress')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party1 - which option is chosen:
-router.post('/reginterest-merge-rep-party1-merge-1a-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1aquestion = req.session.data['reginterest-matching-orgs-1a-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1aquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-1a=isduplicate')
-    }
-    if (reginterestmatchingorgs1aquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-not-duplicate?merge-1a=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party4 - which option is chosen:
-router.post('/reginterest-merge-rep-party1-merge-1b-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1bquestion = req.session.data['reginterest-matching-orgs-1b-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1bquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-int-choose-table-radio?merge-duplicates=1b&merge-1b=isduplicate')
-    }
-    if (reginterestmatchingorgs1bquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate?merge-duplicates=1b&merge-1b=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party1 - which option is chosen:
-router.post('/reginterest-merge-rep-party1-merge-1c-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1cquestion = req.session.data['reginterest-matching-orgs-1c-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1cquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-choose-table-radio?merge-1c=isduplicate')
-    }
-    if (reginterestmatchingorgs1cquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate?merge-1c=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party3 - which option is chosen:
-router.post('/reginterest-merge-rep-party3-merge-1a-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1aquestion = req.session.data['reginterest-matching-orgs-1a-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1aquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-dup-confirm3?&merge-1a=isduplicate')
-    }
-    if (reginterestmatchingorgs1aquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate3?merge-1a=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party3 - which option is chosen:
-router.post('/reginterest-merge-rep-party3-merge-1c-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1cquestion = req.session.data['reginterest-matching-orgs-1c-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1cquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-dup-confirm3?merge-1c=isduplicate')
-    }
-    if (reginterestmatchingorgs1cquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate3?merge-1c=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party4 - which option is chosen:
-router.post('/reginterest-merge-rep-party4-merge-1a-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1aquestion = req.session.data['reginterest-matching-orgs-1a-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1aquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-dup-confirm4?merge-duplicates=2of2&merge-1a=isduplicate')
-    }
-    if (reginterestmatchingorgs1aquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate4?merge-duplicates=2of2&merge-1a=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party4 - which option is chosen:
-router.post('/reginterest-merge-rep-party4-merge-1c-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1cquestion = req.session.data['reginterest-matching-orgs-1c-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1cquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-dup-confirm4?merge-duplicates=1of2&merge-1c=isduplicate')
-    }
-    if (reginterestmatchingorgs1cquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate4?&merge-1c=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party4 - which option is chosen:
-router.post('/reginterest-merge-rep-party5-merge-1a-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1aquestion = req.session.data['reginterest-matching-orgs-1a-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1aquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-dup-confirm5?merge-duplicates=1of2&merge-1a=isduplicate')
-    }
-    if (reginterestmatchingorgs1aquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate5?merge-duplicates=1of2&merge-1a=notduplicate')
-    }
-})
-
-// Run this code on reginterest-merge-rep-party4 - which option is chosen:
-router.post('/reginterest-merge-rep-party5-merge-1c-route', function (req, res) {
-
-    // Make a variable and give it the value from 'reginterest-valid-primary'
-    var reginterestmatchingorgs1cquestion = req.session.data['reginterest-matching-orgs-1c-question']
-
-    // Check whether the variable matches a condition
-    if (reginterestmatchingorgs1cquestion == "yes") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-rep-dup-confirm5?merge-duplicates=2of2&merge-1c=isduplicate')
-    }
-    if (reginterestmatchingorgs1cquestion == "no") {
-        // Send user to next page
-        res.redirect('/caseworker/reg-interest/reginterest-merge-not-duplicate5?merge-duplicates=2of2&merge-1c=notduplicate')
     }
 })
 
