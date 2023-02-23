@@ -18,7 +18,7 @@
       </a>
     </div>
     <div class="govuk-header__content">
-      <a href="/" class="govuk-header__link govuk-header__link--service-name">Trade Remedies Authority</a>
+      <a href="/public-site/dashboard" class="govuk-header__link govuk-header__link--service-name">{{ serviceName }}</a>
     </div>
 
     <div class="govuk-header__account">
@@ -27,7 +27,7 @@
           <!--Determine who is signed in -->
 
           {% if (data['who-signin'] == "rep") %}
-            {{data['createaccount-name'] or data['rep-user1'] }}
+            cxfbcvbnxvcbxvcbnxvbn {{data['createaccount-name'] or data['rep-user1'] }}
             {% else %}
             {% if (data['who-signin'] == "org") %}
               {{data['createaccount-name'] or data['party-user1'] }}
