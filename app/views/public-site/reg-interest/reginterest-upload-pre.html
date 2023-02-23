@@ -152,7 +152,7 @@
             </div>  
             {% else %}  
             {% set id="1" %}
-            {% include 'includes/drag_drop_upload.html' %}
+            {% include 'includes/drag_drop_upload-nonconfi.html' %}
           {% endif %}  
         </div>
         <div class="govuk-grid-column-one-half">
@@ -200,7 +200,7 @@
             </div>  
             {% else %}  
             {% set id="2" %}
-            {% include 'includes/drag_drop_upload.html' %}
+            {% include 'includes/drag_drop_upload-confi.html' %}
           {% endif %}  
         </div>
       </div>
@@ -224,14 +224,14 @@
                         Non-confidential file
                     </h3>
                     {% set id="3" %}
-                    {% include 'includes/drag_drop_upload.html' %}
+                    {% include 'includes/drag_drop_upload-nonconfi.html' %}
                 </div>
                 <div class="govuk-grid-column-one-half">
                     <h3 class="govuk-heading-s govuk-!-text-align-centre">
                         Confidential file
                     </h3>
                     {% set id="4" %}
-                    {% include 'includes/drag_drop_upload.html' %}
+                    {% include 'includes/drag_drop_upload-confi.html' %}
                 </div>
                 <div class="remove-doc-panel">
                     <a href="#doc-2" alt="Delete panel" title="Delete panel" onclick="hideDoc2Panel()"
