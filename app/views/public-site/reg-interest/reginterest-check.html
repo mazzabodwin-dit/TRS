@@ -239,9 +239,9 @@
                             <br>
                             <strong>Email the case team</strong>
                             {% if (data['regnterest-due-date'] == "current") %}
-                                <a class="govuk-link govuk-link--no-visited-state" href="">{{ data['case-ref1'] }}@traderemedies.gov.uk</a>
+                                <a class="govuk-link govuk-link--no-visited-state" href="mailto:caseref@traderemedies.gov.uk">{{ data['case-ref1'] }}@traderemedies.gov.uk</a>
                             {% else %}
-                                <a class="govuk-link govuk-link--no-visited-state" href="">{{ data['case-ref'] }}@traderemedies.gov.uk</a>
+                                <a class="govuk-link govuk-link--no-visited-state" href="mailto:caseref@traderemedies.gov.uk">{{ data['case-ref'] }}@traderemedies.gov.uk</a>
                             {% endif %}
                         </li>
                     </ul>
