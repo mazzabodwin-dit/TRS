@@ -105,7 +105,7 @@ router.post('/reginterest-which-org-route', function (req, res) {
     // Check whether the variable matches a condition
     if (reginterestWho == "existing-org") {
         // Send user to next page
-        res.redirect('/public-site/reg-interest/reginterest-existing-org')
+        res.redirect('/public-site/reg-interest/reginterest-which-rep')
     }
 
     // Check whether the variable matches a condition
@@ -116,7 +116,7 @@ router.post('/reginterest-which-org-route', function (req, res) {
 })
 
 router.post('/reginterest-contact-route', function (req, res) {
-    var reginterestUKReg = req.session.data['reginterest-existing-org']
+    var reginterestUKReg = req.session.data['reginterest-which-rep']
     if (reginterestUKReg == "New Client") {
         req.session.data['reginterest-what-org'] = "new-org"
     }
