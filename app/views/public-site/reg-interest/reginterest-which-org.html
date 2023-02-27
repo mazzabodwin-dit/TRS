@@ -26,7 +26,7 @@
 
 
         <!-- According to whether it is an org or a rep show the "existing client" in the select -->
-            {{ govukRadios({
+        {{ govukRadios({
           idPrefix: "reginterest-what-org",
           name: "reginterest-what-org",
           fieldset: {
@@ -50,26 +50,20 @@
           ]
         }) }}
 
-            {{ govukDetails({
-             summaryText: "What is a representative?",
-            html: '<p>A representative is a person who works on behalf of the organisation registering interest, but isn\'t an employee of that organisation. This includes, for example, a person working for a law firm or a consulting business</p>'
+        {{ govukDetails({
+          summaryText: "What is a representative?",
+          text: "representative is a person who works on behalf of the organisation registering interest, but isn't an employee of that organisation. This includes, for example, a person working for a law firm or a consulting business"
           }) }}
-            <div class="govuk-button-group">
-                {{ govukButton({
-          text: "Continue"
-        }) }}
+           
 
-                <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks">Back</a>
-            </div>
+        <div class="govuk-button-group">
+            {{ govukButton({
+            text: "Continue"
+          }) }}
+        </div>
 
         </form>
-        <!-- Test data -->
-        <!--<div class="govuk-inset-text">
-            Test data: <br>
-            Which org started?: {{ data['which-org-started']}}<br>
-            Type of reg org: {{ data['reginterest-what-org']}}
-          </div>
-        -->
+        
     </div>
 
 
