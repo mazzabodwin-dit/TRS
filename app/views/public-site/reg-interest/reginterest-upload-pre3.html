@@ -54,6 +54,7 @@
         <p class="govuk-notification-banner__heading">
             You need to upload a confidential and non-confidential version of each document.
         </p>
+        <p>The confidential version is needed for the case investigation and the non-confidential version is published to our <a class="govuk-notification-banner__link" href="#">public case</a> page.</p>
       {% endset %}
 
       {{ govukNotificationBanner({
@@ -61,7 +62,8 @@
       }) }}
 
     {% endif %}
-    <p>Download the documentation and complete the relevant forms. Once complete, upload two versions of each: one confidential and one non-confidential (max. file size 30MB). 
+    <p>Download the documentation and complete the relevant forms. Once complete, upload two versions: one
+        confidential and one non-confidential (max. file size 30MB).</p>
     <p>To upload multiple documents, click 'Add another document'.</p>
 
     <ul class="govuk-list">
@@ -69,43 +71,35 @@
         {% if (data['pre-download'] == "yes" ) %}
           <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img
                   src="/public/images/doc.png" width="24px">
-              registration-documentation-form1.docx (344KB) </a><span>&#10003;</span>
+              registration-documentation-form.docx (344KB) </a><span>&#10003;</span>
         {% else %}
           <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img
                   src="/public/images/doc.png" width="24px">
-              registration-documentation-form1.docx (134KB) </a>
-        {% endif %}
-      </li>
-       <li>
-        {% if (data['pre-download'] == "yes" ) %}
-          <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img
-                  src="/public/images/doc.png" width="24px">
-              registration-doc-form2.docx (344KB) </a><span>&#10003;</span>
-        {% else %}
-          <a href="reginterest-upload-pre?pre-download=yes" class="govuk-link--no-visited-state"><img
-                  src="/public/images/doc.png" width="24px">
-              registration-doc-form2.docx (344KB) </a>
+              registration-documentation-form.docx (344KB) </a>
         {% endif %}
       </li>
     </ul>
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        How to create a non-confidential version of your registration documentation
-      </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>The non-confidential version of your documentation must have your commercially sensitive data or other confidential information removed. </p>
-        <p>These files are published to our <a class="govuk-notification-banner__link" href="#">public case</a> page, allowing all interested parties the opportunity to understand and review case evidence.</p>
-        <p>For more help, see: <a href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries" target="_blank" class="link govuk-link--no-visited-state">creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
-      </div>
-    </details>
   </div>
 </div>
 
 <div id="doc-1">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How to create a non-confidential version of your registration documentation
+        </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>So that all interested parties get the opportunity to understand case evidence, one version needs
+              to be non-confidential. Remove all sensitive data from your non-confidential files.</p>
+          <p>Create one confidential file containing all details, and one file containing only information
+              open to the public. For more help, see: <a
+                href="https://www.gov.uk/government/publications/the-uk-trade-remedies-investigations-process/an-introduction-to-our-investigations-process#confidential-information-and-non-confidential-summaries"
+                target="_blank" class="link govuk-link--no-visited-state">creating confidential and non-confidential documents (opens in a new window or tab)</a></p>
+        </div>
+      </details>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
           Upload document 1
       </h2>
