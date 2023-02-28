@@ -162,7 +162,7 @@
           <dd class="govuk-summary-list__value">
             <!--if it is a complete app show doc details-->
             {% if data['reginterest-task'] != "Draft" %}
-              loa.docx
+              <a href="#">loa.docx</a>
             {% endif %}
           </dd>
         </div>
@@ -174,8 +174,15 @@
         <dd class="govuk-summary-list__value">
           <!--if it is a complete app show doc details-->
           {% if data['reginterest-task'] != "Draft" %}
-           confidentialdocument1.docx<br>
-           unconfidentialdocument1.docx
+           Confidential documentation
+            <a href="#">confidentialdocument1.docx</a>
+            <a href="#">confidentialdocument2.docx</a>
+            <a href="#">confidentialdocument3.docx</a>
+            <br><br>
+            Non-confidential documentation
+            <a href="#">nonconfidentialdocument1.docx</a>
+            <a href="#">nonconfidentialdocument2.docx</a>
+            <a href="#">nonconfidentialdocument3.docx</a>
           {% endif %}
         </dd>
       </div>   
