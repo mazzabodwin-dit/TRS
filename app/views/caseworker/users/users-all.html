@@ -45,8 +45,7 @@
         </span>
       </h2>    
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-user">
               Sort users by
             </label>
@@ -57,7 +56,7 @@
               <option value="Number of cases">Number of cases</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-users">
               Direction
             </label>
@@ -68,9 +67,8 @@
           </div>
           {{ govukButton({
             text: "Sort users",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -310,8 +308,7 @@
       </h2>
       <p>There are 3 pending invites</p>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-pending">
               Sort users by
             </label>
@@ -321,7 +318,7 @@
               <option value="Organisation">Organisation</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-pending">
               Direction
             </label>
@@ -332,9 +329,8 @@
           </div>
           {{ govukButton({
             text: "Sort pending invites",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
@@ -423,8 +419,7 @@
       </h2>
     
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-user">
               Sort users by
             </label>
@@ -435,7 +430,7 @@
               <option value="Number of cases">Number of cases</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-users">
               Direction
             </label>
@@ -446,9 +441,8 @@
           </div>
           {{ govukButton({
             text: "Sort users",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">

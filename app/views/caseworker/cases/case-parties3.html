@@ -40,8 +40,7 @@
     <h3 class="govuk-heading-m">Parties to review</h3>  
     <p>There are <strong>3</strong> requests waiting to be reviewed.</p>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-party">
             Sort parties by
           </label>
@@ -52,7 +51,7 @@
             <option value="Submitted">Submitted</option>
           </select>
         </div>
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-visually-hidden" for="direction-party">
             Direction
           </label>
@@ -64,9 +63,8 @@
 
         {{ govukButton({
           text: "Sort",
-          classes: "govuk-button--secondary"
+          classes: "govuk-button--secondary table-sort"
         }) }}
-      </div>
     </form>  
   
     <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">

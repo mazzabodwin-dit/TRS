@@ -51,8 +51,7 @@
       <h3 class="govuk-heading-m">All cases
       </h3>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-cases">
               Sort your cases by
             </label>
@@ -63,7 +62,7 @@
               <option value="Party type">Party type</option> 
             </select>           
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
               Direction
             </label>
@@ -75,9 +74,8 @@
   
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>  
   
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -192,8 +190,7 @@
     <h3 class="govuk-heading-m">Users
     </h3>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-users">
             Sort users by
           </label>
@@ -203,7 +200,7 @@
             <option value="Account role">Account role</option>
           </select>
         </div>
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
             Direction
           </label>
@@ -215,9 +212,8 @@
 
         {{ govukButton({
           text: "Sort",
-          classes: "govuk-button--secondary"
+          classes: "govuk-button--secondary table-sort"
         }) }}
-      </div>
     </form>  
 
     <table class="govuk-table sortable mobile-table-border" id="table-header">

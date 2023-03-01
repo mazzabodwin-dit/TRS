@@ -127,8 +127,7 @@
           {% else %}
           <p>Manage the users case involvement.</p>
           <form>
-            <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-              <div class="govuk-form-group table-sort-select">
+              <div class="govuk-form-group table-sort">
                 <label class="govuk-label govuk-!-display-inline" for="sort-cases">
                   Sort cases by
                 </label>
@@ -139,7 +138,7 @@
                   <option value="Case role">Case role</option>
                 </select>
               </div>
-              <div class="govuk-form-group table-sort-select">
+              <div class="govuk-form-group table-sort">
                 <label class="govuk-label govuk-visually-hidden" for="direction-cases">
                   Direction
                 </label>
@@ -150,9 +149,8 @@
               </div>
               {{ govukButton({
                 text: "Sort cases",
-                classes: "govuk-button--secondary"
+                classes: "govuk-button--secondary table-sort"
               }) }}
-            </div>
           </form>
           <table class="govuk-table sortable table-border mobile-table-border" id="table-header">
             <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">A table listing all of the cases the users is involved in</caption>

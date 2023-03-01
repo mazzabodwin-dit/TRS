@@ -42,8 +42,7 @@
       </span> 
       </h2>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-active-org">
               Sort active organisations by
             </label>
@@ -56,7 +55,7 @@
               <option value="Registered">Registered</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-active-orgs">
               Direction
             </label>
@@ -67,9 +66,8 @@
           </div>
           {{ govukButton({
             text: "Sort organisations",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -312,8 +310,7 @@
       <h2 class="govuk-heading-m">To verify</h2>
       <p>There are <strong>4</strong> requests waiting to be reviewed</p>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-party">
               Sort parties by
             </label>
@@ -324,7 +321,7 @@
               <option value="Request">Request</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-party">
               Direction
             </label>
@@ -336,9 +333,8 @@
 
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>  
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
@@ -461,8 +457,7 @@
       <p>Select an organisations to decide if they should be merged with the matched organisation or kept as separate.</p>
 
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-dup">
               Sort organisations by
             </label>
@@ -472,7 +467,7 @@
               <option value="Status">Status</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-dup">
               Direction
             </label>
@@ -484,9 +479,8 @@
 
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form> 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">

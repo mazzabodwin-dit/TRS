@@ -60,8 +60,7 @@
       </h2>
       <p>Manage the cases your organisation is involved in.</p>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-cases">
               Sort cases by
             </label>
@@ -73,7 +72,7 @@
               <option value="Update">Update</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-cases">
               Direction
             </label>
@@ -84,9 +83,8 @@
           </div>
           {{ govukButton({
             text: "Sort cases",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-       </div>
       </form>
 
       <table class="govuk-table sortable table-border mobile-table-border" id="table-header">

@@ -42,6 +42,13 @@
   .sortable  .govuk-table__cell {
     border: none;
   }
+
+  /* For sorting on mobile or the visible one used in caseworker caes*/
+  .table-sort {
+    display: inline-block;
+    padding-right: 20px;
+  }
+
 }
 
 /**** Normal size viewport ****/
@@ -52,6 +59,11 @@
     border-top: solid 1px govuk-colour("mid-grey");
     border-left: solid 1px govuk-colour("mid-grey");
     border-right: solid 1px govuk-colour("mid-grey");
+  }
+
+  /* For the hiddlen select for sorting on mobile or the visible one used in caseworker caes*/
+  .table-sort {
+    display: none;
   }
 }
 
@@ -192,18 +204,13 @@ table.sortable th:not([aria-sort]) button:hover span::after {
   border-top: 7px solid govuk-colour("mid-grey");
 }
 
-/* For the hiddlen select for sorting on mobile or the visible one used in caseworker caes*/
+/* For filtering on caseworker cases*/
 .table-filter {
   display: inline-block;
   padding-right: 20px;
 }
 
-.table-sort-select {
-  float: left;
-  padding-right: 20px;
-}
-
-#table-sort .govuk-button--secondary, #table-filter .govuk-button--secondary {
+#table-filter .govuk-button--secondary {
 float: left;
 }
 

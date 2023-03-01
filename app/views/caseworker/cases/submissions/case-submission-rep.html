@@ -59,8 +59,7 @@
     <h3 class="govuk-heading-m">Submission
     </h3>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-cases">
             Sort submissions by
           </label>
@@ -73,9 +72,8 @@
 
         {{ govukButton({
           text: "Sort",
-          classes: "govuk-button--secondary"
+          classes: "govuk-button--secondary table-sort"
         }) }}
-      </div>
     </form>  
 
       
@@ -176,8 +174,7 @@
   <h3 class="govuk-heading-m">Original documentation
   </h3>
   <form>
-    <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-      <div class="govuk-form-group table-sort-select">
+      <div class="govuk-form-group table-sort">
         <label class="govuk-label govuk-!-display-inline" for="sort-cases">
           Sort original documentation by
         </label>
@@ -189,9 +186,8 @@
 
       {{ govukButton({
         text: "Sort",
-        classes: "govuk-button--secondary"
+        classes: "govuk-button--secondary table-sort"
       }) }}
-    </div>
   </form>  
 
     

@@ -31,8 +31,7 @@
     {% set openCasesHTML %}
     <h2 class="govuk-heading-m">Active cases</h2>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-open-cases">
             Sort active cases by
           </label>
@@ -45,7 +44,8 @@
             <option value="Status">Status</option>
             <option value="Alerts">Updated</option>
           </select>
-      
+        </div>
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-visually-hidden" for="direction-open-cases">
             Direction
           </label>
@@ -53,13 +53,12 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
-
-          {{ govukButton({
-            text: "Sort cases",
-            classes: "govuk-button--secondary"
-          }) }}
         </div>
-      </div>
+
+        {{ govukButton({
+          text: "Sort cases",
+          classes: "govuk-button--secondary table-sort"
+        }) }}
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
@@ -241,8 +240,7 @@
     {% set completedCasesHTML %}
     <h2 class="govuk-heading-m">Archvied cases</h2>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-closed-cases">
             Sort archived cases by
           </label>
@@ -255,7 +253,8 @@
             <option value="Initiated">Initiated</option>
             <option value="Closed">Closed</option>
           </select>
-        
+        </div>
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-visually-hidden" for="direction-closed-cases">
             Direction
           </label>
@@ -263,13 +262,12 @@
             <option value="Decending" selected>Decending</option>
             <option value="Accending">Accending</option>
           </select>
+        </div>
 
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>       
-      </div>
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
           A table listing all of the archived Trade Remedies investigations

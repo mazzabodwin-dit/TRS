@@ -52,33 +52,31 @@
         
       </form>  
       <form id="hidden-table-sort">
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-!-display-inline" for="sort-entries">
-              Sort entries by
-            </label>
-            <select class="govuk-select" id="sort-entries" name="sort-entries">
-              <option value="Date" selected>Date</option>
-              <option value="Event">Event</option>
-              <option value="User">User</option>
-              <option value="Milestone">Milestone</option>
-            </select>
-            </div>
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-visually-hidden" for="direction-entries">
-              Direction
-            </label>
-            <select class="govuk-select" id="direction-entries" name="direction-entries">
-              <option value="Decending" selected>Decending</option>
-              <option value="Accending">Accending</option>
-            </select>
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-!-display-inline" for="sort-entries">
+            Sort entries by
+          </label>
+          <select class="govuk-select" id="sort-entries" name="sort-entries">
+            <option value="Date" selected>Date</option>
+            <option value="Event">Event</option>
+            <option value="User">User</option>
+            <option value="Milestone">Milestone</option>
+          </select>
           </div>
-  
-          {{ govukButton({
-            text: "Sort",
-            classes: "govuk-button--secondary"
-          }) }}
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-visually-hidden" for="direction-entries">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-entries" name="direction-entries">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
         </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary table-sort"
+        }) }}
       </form>  
   
       <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">

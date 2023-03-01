@@ -37,8 +37,7 @@
     {% set openCasesHTML %}
       <h2 class="govuk-heading-m">Active cases</h2>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-open-cases">
               Sort active cases by
             </label>
@@ -52,7 +51,7 @@
               <option value="Alerts">Alerts</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-open-cases">
               Direction
             </label>
@@ -64,9 +63,8 @@
 
           {{ govukButton({
             text: "Sort active cases",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -247,8 +245,7 @@
     {% set draftCasesHTML %}
      <h2 class="govuk-heading-m">Draft cases</h2>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-draft-cases">
               Sort draft cases by
             </label>
@@ -261,7 +258,7 @@
               <option value="Status">Status</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-draft-cases">
               Direction
             </label>
@@ -273,9 +270,8 @@
 
           {{ govukButton({
             text: "Sort draft cases",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -351,8 +347,7 @@
     {% set transCasestHTML %}
       <h2 class="govuk-heading-m">Transition cases</h2>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-transitional-cases">
               Sort transitional cases by
             </label>
@@ -365,7 +360,7 @@
               <option value="Terminated">Terminated</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-transitional-cases">
               Direction
             </label>
@@ -377,9 +372,8 @@
             
           {{ govukButton({
             text: "Sort transition cases",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -455,8 +449,7 @@
     {% set closedCasestHTML %}
       <h2 class="govuk-heading-m">Archived cases</h2>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-closed-cases">
               Sort archived cases by
             </label>
@@ -468,7 +461,7 @@
               <option value="Status">Status</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-closed-cases">
               Direction
             </label>
@@ -480,9 +473,8 @@
 
           {{ govukButton({
             text: "Sort archived cases",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
