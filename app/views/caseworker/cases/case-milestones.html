@@ -35,21 +35,21 @@
     <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-l">Milestones</h2>
       <form id="events-table-filter">
-        <div id="table-filter"> 
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-events">
-              Filter entries by
-            </label>
-            <select class="govuk-select" id="filter-events" name="filter-events">
-              <option value="all" selected>All events</option>
+        <div class="govuk-form-group table-filter">
+          <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-roles">
+            Filter parties by
+          </label>
+          <select class="govuk-select" id="filter-roles" name="filter-roles">
+            <option value="all" selected>All events</option>
               <option value="milestones">Only milestones</option>
-            </select>
-          </div>
-          {{ govukButton({
-            text: "Show",
-            classes: "govuk-button--secondary"
-          }) }}
+          </select>
         </div>
+
+        {{ govukButton({
+          text: "Show",
+          classes: "govuk-button--secondary"
+        }) }}
+        
       </form>  
       <form id="hidden-table-sort">
         <div id="table-sort" class="govuk-visually-hidden--desktop"> 

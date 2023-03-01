@@ -38,26 +38,24 @@
       </p> 
     </h2>
     <form>
-      <div class="table-filter"> 
-        <div class="govuk-form-group table-sort-select clearfix">
-          <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-roles">
-            Filter parties by
-          </label>
-          <select class="govuk-select" id="filter-roles" name="filter-roles">
-            <option value="All parties" selected>All parties</option>
-            <option value="Unverified">Unverified parties</option>
-            <option value="Applicant">Applicant</option>
-            <option value="Importer">Importer</option>
-            <option value="Invited">Invited to case</option>
-            <option value="Unverified">Can't be verified</option>
-          </select>
-        </div>
-
-        {{ govukButton({
-          text: "Show",
-          classes: "govuk-button--secondary"
-        }) }}
+       <div class="govuk-form-group table-filter">
+        <label class="govuk-label govuk-!-display-inline govuk-visually-hidden--desktop" for="filter-roles">
+          Filter parties by
+        </label>
+        <select class="govuk-select" id="filter-roles" name="filter-roles">
+          <option value="All parties" selected>All parties</option>
+          <option value="Unverified">Unverified parties</option>
+          <option value="Applicant">Applicant</option>
+          <option value="Importer">Importer</option>
+          <option value="Unverified">Can't be verified</option>
+          <option value="Invited">Invited to case</option>
+        </select>
       </div>
+
+      {{ govukButton({
+        text: "Show",
+        classes: "govuk-button--secondary"
+      }) }}
     </form>
   
     <h3 class="govuk-heading-m">Unverified parties</h3>
