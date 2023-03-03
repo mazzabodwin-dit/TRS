@@ -43,7 +43,7 @@
     border: none;
   }
 
-  /* For sorting on mobile or the visible one used in caseworker caes*/
+  /* For sorting on mobile*/
   .table-sort {
     display: inline-block;
     padding-right: 10px;
@@ -61,7 +61,7 @@
     border-right: solid 1px govuk-colour("mid-grey");
   }
 
-  /* For the hiddlen select for sorting on mobile or the visible one used in caseworker caes*/
+  /* For the hiding the select boxes on desktop that are used for sorting on mobile */
   .table-sort {
     display: none;
   }
