@@ -47,19 +47,18 @@
         <strong>{{data['party1']}}</strong> has <a href="" class="govuk-link--no-visited-state">invited representative</a> <strong>{{data['representative1']}}</strong> to a case
     </div> 
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-submission">
             Sort sumbissions by
           </label>
           <select class="govuk-select" id="sort-submission" name="sort-submission">
             <option value="Request" selected>Request</option>
             <option value="Submitted by">Submitted by</option>
-            <option value="Status">Status</option>
             <option value="Date received">Date received</option>
+            <option value="Status">Status</option>
           </select>
         </div>
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-visually-hidden" for="direction-submission">
             Direction
           </label>
@@ -71,9 +70,8 @@
 
         {{ govukButton({
           text: "Sort",
-          classes: "govuk-button--secondary"
+          classes: "govuk-button--secondary table-sort"
         }) }}
-      </div>
     </form>  
 
     <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -94,20 +92,20 @@
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
+          <th class="govuk-table__header" aria-sort="ascending">
+            <button class="govuk-button govuk-button--secondary">
+              <span class="govuk-visually-hidden--desktop">Sort by: </span>Date received
+              <span class="indicator" aria-hidden="true"></span>
+            </button>
+          </th>
           <th class="govuk-table__header">
             <button class="govuk-button govuk-button--secondary">
               <span class="govuk-visually-hidden--desktop">Sort by: </span>Status
               <span class="indicator" aria-hidden="true"></span>
             </button>
           </th>
-           <th class="govuk-table__header" aria-sort="ascending">
-            <button class="govuk-button govuk-button--secondary">
-              <span class="govuk-visually-hidden--desktop">Sort by: </span>Date received
-              <span class="indicator" aria-hidden="true"></span>
-            </button>
-          </th>
           <th class="govuk-table__header no-sort">
-              <span class="govuk-visually-hidden--desktop">Action:</span>
+            <span class="govuk-visually-hidden--desktop">Action:</span>
           </th>
         </tr>
       </thead>
@@ -120,11 +118,11 @@
             <span class="govuk-visually-hidden--desktop">Submitted by: </span><a href="#" class="govuk-link--no-visited-state">{{data['rep-user1']}}</a>
           </td>
           <td class="govuk-table__cell text-overflow">
-            <span class="govuk-visually-hidden--desktop">Status: </span>Pending
-          </td>
-          <td class="govuk-table__cell text-overflow">
             <span class="govuk-visually-hidden--desktop">Date recieved: </span>22 May 2022
           </td> 
+          <td class="govuk-table__cell text-overflow">
+            <span class="govuk-visually-hidden--desktop">Party type: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+          </td>
           <td class="govuk-table__cell action">
             <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['party1']}}</span></a>
           </td>             
@@ -141,8 +139,7 @@
     </h3>
     <p>List of users that are invovled in this case on behalf of the organisation.</p>
     <form>
-      <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-        <div class="govuk-form-group table-sort-select">
+        <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-!-display-inline" for="sort-users">
             Sort by
           </label>
@@ -152,7 +149,7 @@
             <option value="Case role">Case role</option>
           </select>
         </div>
-         <div class="govuk-form-group table-sort-select">
+         <div class="govuk-form-group table-sort">
           <label class="govuk-label govuk-visually-hidden" for="direction-users">
             Direction
           </label>
@@ -164,9 +161,8 @@
 
         {{ govukButton({
           text: "Sort",
-          classes: "govuk-button--secondary"
+          classes: "govuk-button--secondary table-sort"
         }) }}
-      </div>
     </form>  
 
     <table class="govuk-table sortable mobile-table-border" id="table-header">

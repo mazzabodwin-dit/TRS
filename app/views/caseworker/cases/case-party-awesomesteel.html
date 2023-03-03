@@ -45,19 +45,18 @@
         <p>"{{data['party-comment111']}}"</p>
       </div>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-submission">
               Sort sumbissions by
             </label>
             <select class="govuk-select" id="sort-submission" name="sort-submission">
-              <option value="Interested party" selected>Interested party</option>
-              <option value="Contact">Contact</option>
-              <option value="Submission">Submission</option>
-              <option value="Submitted">Submitted</option>
+              <option value="Request" selected>Request</option>
+              <option value="Submitted by">Submitted by</option>
+              <option value="Date received">Date received</option>
+              <option value="Status">Status</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-submission">
               Direction
             </label>
@@ -69,9 +68,8 @@
 
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>  
 
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -156,8 +154,7 @@
         </p> 
       </h3>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-users">
               Sort your cases by
             </label>
@@ -166,7 +163,7 @@
               <option value="Case">Email</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-users">
               Direction
             </label>
@@ -178,9 +175,8 @@
 
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>  
 
       <table class="govuk-table sortable mobile-table-border desktop-table-border" id="table-header">

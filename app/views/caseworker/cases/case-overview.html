@@ -34,37 +34,35 @@
     <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-l">Overview</h2>
       
-      {% set newPartyHTML %}
+    {% set newPartyHTML %}
       <h3 class="govuk-heading-m">Parties to review</h3>  
       <p>There are <strong>3</strong> requests waiting to be reviewed.</p>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-!-display-inline" for="sort-party">
-              Sort parties by
-            </label>
-            <select class="govuk-select" id="sort-party" name="sort-party">
-              <option value="Party" selected>Interested party</option>              
-              <option value="Submission">Request</option>
-              <option value="Submitted by">Submitted by</option>
-              <option value="Submitted">Submitted</option>
-            </select>
-          </div>
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-visually-hidden" for="direction-party">
-              Direction
-            </label>
-            <select class="govuk-select" id="direction-party" name="direction-party">
-              <option value="Decending" selected>Decending</option>
-              <option value="Accending">Accending</option>
-            </select>
-          </div>
-  
-          {{ govukButton({
-            text: "Sort",
-            classes: "govuk-button--secondary"
-          }) }}
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-!-display-inline" for="sort-party">
+            Sort parties by
+          </label>
+          <select class="govuk-select" id="sort-party" name="sort-party">
+            <option value="Party" selected>Interested party</option>              
+            <option value="Submission">Request</option>
+            <option value="Submitted by">Submitted by</option>
+            <option value="Submitted">Submitted</option>
+          </select>
         </div>
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-visually-hidden" for="direction-party">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-party" name="direction-party">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary table-sort"
+        }) }}
       </form>  
   
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -135,7 +133,7 @@
               <span class="govuk-visually-hidden--desktop">Submitted: </span>{{data['submission-date2']}}
             </td>  
             <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=rep-invite&duplicate-org=none&third=party=yes&loa-sufficient=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party1']}}</span></a>
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?who-signin=invest&verify-type=rep-invite&duplicate-org=none&third-party=yes&loa-sufficient=yes" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">submission from {{data['party1']}}</span></a>
             </td>             
           </tr>
   
@@ -159,39 +157,37 @@
           </tr> 
         </body>
       </table>   
-      {% endset %}
+    {% endset %}
   
-      {% set submissionsHTML %}
+    {% set submissionsHTML %}
       <h3 class="govuk-heading-m">Submissions to review</h3> 
       <p>There are <strong>4</strong> submission waiting for to be reviewed.</p> 
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-!-display-inline" for="sort-submission">
-              Sort sumbissions by
-            </label>
-            <select class="govuk-select" id="sort-submission" name="sort-submission">
-              <option value="Interested party" selected>Interested party</option>
-              <option value="Submission">Submission</option>
-              <option value="Submitted by">Submitted by</option>
-              <option value="Submitted">Submitted</option>
-            </select>
-          </div>
-          <div class="govuk-form-group table-sort-select">
-            <label class="govuk-label govuk-visually-hidden" for="direction-submission">
-              Direction
-            </label>
-            <select class="govuk-select" id="direction-submission" name="direction-submission">
-              <option value="Decending" selected>Decending</option>
-              <option value="Accending">Accending</option>
-            </select>
-          </div>
-  
-          {{ govukButton({
-            text: "Sort",
-            classes: "govuk-button--secondary"
-          }) }}
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-!-display-inline" for="sort-submission">
+            Sort sumbissions by
+          </label>
+          <select class="govuk-select" id="sort-submission" name="sort-submission">
+            <option value="Interested party" selected>Interested party</option>
+            <option value="Submission">Submission</option>
+            <option value="Submitted by">Submitted by</option>
+            <option value="Submitted">Submitted</option>
+          </select>
         </div>
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-visually-hidden" for="direction-submission">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-submission" name="direction-submission">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary table-sort"
+        }) }}
       </form>  
   
       <table class="govuk-table sortable mobile-table-border" id="table-header">
@@ -304,14 +300,13 @@
           </tr>
         </body>
       </table>   
-      {% endset %}
+    {% endset %}
   
-      {% set submissionsPublishHTML %}
+    {% set submissionsPublishHTML %}
       <h3 class="govuk-heading-m">Submissions to publish</h3>  
       <p>There is <strong>1</strong> submission waiting to be published.</p>
       <form>
-        <div id="table-sort" class="govuk-visually-hidden--desktop"> 
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-published">
               Sort sumbissions by
             </label>
@@ -322,7 +317,7 @@
               <option value="Submitted">Submitted</option>
             </select>
           </div>
-          <div class="govuk-form-group table-sort-select">
+          <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-visually-hidden" for="direction-published">
               Direction
             </label>
@@ -334,9 +329,8 @@
   
           {{ govukButton({
             text: "Sort",
-            classes: "govuk-button--secondary"
+            classes: "govuk-button--secondary table-sort"
           }) }}
-        </div>
       </form>  
       <table class="govuk-table sortable mobile-table-border" id="table-header">
         <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
@@ -395,33 +389,33 @@
         </body>
       </table>  
 
-        {% endset %}
+      {% endset %}
   
-        {{ govukTabs ({
-          items: [
-          { 
-            label: "Parties to review (3)",
-            id: "new-party",
-            panel: {
-              html: newPartyHTML
-            }
-          },
-          { 
-            label: "Submissions to review (4)",
-            id: "new-submissions",
-            panel: {
-              html: submissionsHTML
-            }
-          },
-          { 
-            label: "Submissions to publish (1)",
-            id: "submissions-publish",
-            panel: {
-              html: submissionsPublishHTML
-            }
+      {{ govukTabs ({
+        items: [
+        { 
+          label: "Parties to review (3)",
+          id: "new-party",
+          panel: {
+            html: newPartyHTML
           }
-          ]
-        }) }}
+        },
+        { 
+          label: "Submissions to review (4)",
+          id: "new-submissions",
+          panel: {
+            html: submissionsHTML
+          }
+        },
+        { 
+          label: "Submissions to publish (1)",
+          id: "submissions-publish",
+          panel: {
+            html: submissionsPublishHTML
+          }
+        }
+        ]
+      }) }}
     </div>
   </div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
@@ -433,34 +427,125 @@
         <li>Applicant: <a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a></li>
         <li>Type: <a href="" class="govuk-link--no-visited-state">{{data['case-type1']}}</a></li>
         <li>Commodity: {{data['commodity1']}}</li>
+        <li>HS Code: 690990</li>
         <li>Status: {{data['status1']}}</li>
-        <li>Created: {{data['created1']}}</li>
-        <li><a href="" class="govuk-link--no-visited-state">Public file</a></li>
-      </ul>  
+        <li>Initiated: {{data['created1']}}</li>
+      </ul>
+      <h2 class="govuk-heading-m">Linked cases</h2>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">AD5832 - Steel Magnolia's from Mongolia</a>
+          <ul>
+            <li>{{data['case-ref1']}}: {{data['case-name1']}}
+              <ul>
+                <li><a href="" class="govuk-link--no-visited-state">AD3467 - Steel Plating from Poland</a>
+                  <ul>
+                    <li><a href="" class="govuk-link--no-visited-state">AD11234 - Polished Steel Plates from Paraguay</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
       <h2 class="govuk-heading-m">Case administration</h2>
       <ul class="govuk-list">
         <li><a href="" class="govuk-link--no-visited-state">Case documents</a></li>
         <li><a href="" class="govuk-link--no-visited-state">Administrator controls</a></li>
       </ul>  
-
-
     </div>
     <div class="govuk-grid-column-one-half">
       <h2 class="govuk-heading-m">Team members</h2> 
-      <h3 class="govuk-heading-s">TRA Investigators</h3>
-      <ul class="govuk-list">
-        <li><a href="" class="govuk-link--no-visited-state">Bob Tyler - bob.tyler@TRA.gov.uk</a></li>
-        <li><a href="" class="govuk-link--no-visited-state">Lauri Wotner - lauri.wotner@tra.gov.uk</a></li>
-        <li><a href="" class="govuk-link--no-visited-state">Colin Totnes - colin.totnes@tra.gov.uk</a></li>
-      </ul> 
-      <h3 class="govuk-heading-s">TRA Administrators</h3>
-      <ul class="govuk-list">
-        <li><a href="" class="govuk-link--no-visited-state">Johnny John- johnny.john@TRA.gov.uk</a></li>
-      </ul>  
       <h3 class="govuk-heading-s">Head of Investigations</h3>
       <ul class="govuk-list">
         <li><a href="" class="govuk-link--no-visited-state">Sabrina Watch - sabrina.watch@TRA.gov.uk</a></li>
+      </ul> 
+      <h3 class="govuk-heading-s">Lead Investigators</h3>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Bob Tyler - bob.tyler@TRA.gov.uk</a></li>
+      </ul> 
+      <h3 class="govuk-heading-s">Investigators</h3>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Lauri Wotner - lauri.wotner@tra.gov.uk</a></li>
+        <li><a href="" class="govuk-link--no-visited-state">Colin Totnes - colin.totnes@tra.gov.uk</a></li>
+      </ul> 
+      <h3 class="govuk-heading-s">Administrators</h3>
+      <ul class="govuk-list">
+        <li><a href="" class="govuk-link--no-visited-state">Johnny John- johnny.john@TRA.gov.uk</a></li>
       </ul>  
+       
+    </div>
+    <div class="govuk-grid-column-full">
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Team members</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Head of Investigations
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">Sabrina Watch - sabrina.watch@TRA.gov.uk</a></li>
+                </ul>  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="#">
+                  Edit<span class="govuk-visually-hidden"> Head of Investigations</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lead Investigators
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">Lizzo Twizzel - lizzo.twizzel@TRA.gov.uk</a></li>
+                </ul> 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="#">
+                  Edit<span class="govuk-visually-hidden"> investigators</span>
+                </a>
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Investigators
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">Bob Tyler - bob.tyler@TRA.gov.uk</a></li>
+                  <li><a href="" class="govuk-link--no-visited-state">Lauri Wotner - lauri.wotner@tra.gov.uk</a></li>
+                  <li><a href="" class="govuk-link--no-visited-state">Colin Totnes - colin.totnes@tra.gov.uk</a></li>
+                </ul> 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="#">
+                  Edit<span class="govuk-visually-hidden"> lead investigators</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Administrators
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li><a href="" class="govuk-link--no-visited-state">Johnny John- johnny.john@TRA.gov.uk</a></li>
+                </ul> 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="#">
+                  Edit<span class="govuk-visually-hidden"> Administrators</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
     </div>
   </div>
 {% endblock %}
