@@ -23,7 +23,7 @@
       <h1 class="govuk-heading-xl">Who is your primary client contact?</h1>
       <p>This is the main person you work with from the organisation you are representing.</p>
 
-      {% if data['reginterest-what-org'] == "new-org" %}
+      {% if data['reginterest-existing-org'] == "New Client" %}
         <form action="reginterest-uk-reg" novalidate method="post" id="reginterest-contact-name-form">  
           {% else %}
           <form action="reginterest-tasks?which-org-task=complete&reginterest-task=Draft" novalidate method="post" id="reginterest-contact-name-form">  
