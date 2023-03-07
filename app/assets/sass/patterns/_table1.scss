@@ -71,12 +71,6 @@
   padding: 10px 10px 10px 0;
 }
 
-//Forcing cell aligment
-td,
-th {
-  vertical-align: text-top;
-}
-
 .sortable tr.govuk-table__row td, .merge tr.govuk-table__row th, .merge tr.govuk-table__row td {
   padding-left: 8px;
   padding-right: 25px;
@@ -87,7 +81,7 @@ th {
   padding-right: 25px;
 }
 
-.sortable tr.govuk-table__row th, .sortable tr.govuk-table__row td {
+.sortable tr.govuk-table__row th {
   vertical-align: middle;
 }
 
