@@ -31,14 +31,21 @@ $(document).ready(function () {
           let company_wrapper_element = $('#' + company_wrapper_id)
           let selected_company_element = company_wrapper_element.find("div.govuk-inset-text")
 
+          let commodity_wrapper_id = 'selected_commodity_wrapper'
+          let commodity_wrapper_element = $('#' + commodity_wrapper_id)
+          let selected_commodity_element = commodity_wrapper_element.find("a#selected_commodity")
+
           if (data !== undefined) {
             // We only want to hide if the variable is defined
             if (data) {
 
               selected_company_element.html($('option:contains(' + data + ')').val())
+              selected_commodity_element.html($('option:contains(' + data + ')').val())
               company_wrapper_element.show()
+              commodity_wrapper_element.show()
             } else {
               company_wrapper_element.hide()
+              commodity_wrapper_element.hide()
             }
           }
         }
@@ -46,5 +53,6 @@ $(document).ready(function () {
     }
 
   })
+
 
 })
