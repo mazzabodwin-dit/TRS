@@ -8,7 +8,11 @@
 {% set bodyClasses = 'cases-invest' %}
 
 {% block header %}
-  {% include "includes/header-public.html" %}
+  {% if data['signed-out'] == "no" %}
+    {% include "includes/header-public.html" %}
+    {% else %}
+    {% include "includes/header-public-signedout.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block beforeContent %}
