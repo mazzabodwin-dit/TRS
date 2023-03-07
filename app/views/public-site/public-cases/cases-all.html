@@ -26,15 +26,45 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Trade Remedies Authority</span>
 
-    <h1 class="govuk-heading-l">
-      Active investigations
+    <h1 class="govuk-heading-xl">
+      Investigations
     </h1>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p>This page contains a list of our active and archived investigations. Link through to each case to see Public versions of the documents submitted by registered participants in the case.</p>
+    <p>This page contains a list of our active and complete investigations. </p>
+    <p>For your organisation to take part in a trade remedies investigation, <a href="/public-site/create-account/createaccount-your-account" class="govuk-link--no-visited-state">create an account</a> and register interest in the relevant case.</p>
+
+    <div class="govuk-form-group govuk-!-width-three-quarters">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="search-commodity">
+          Search
+        </label>
+      </h2>
+
+      <div id="sort-hint" class="govuk-hint">
+        Search for an investigation by commodity code
+      </div>
+      <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter a commodity code">
+        <option value="" class="selected"></option>
+        <option value="AS0020 - Ironing Boards from Turkey">7323 99 00 10</option>
+        <option value="AS0020 - Ironing Boards from Turkey">7323 99 00 90</option>
+        <option value="AS0020 - Ironing Boards from Turkey">8516 79 70 10</option>
+        <option value="AS0020 - Ironing Boards from Turkey">8516 90 00 51</option>
+      </select>
+    </div>
+
+    <div id="selected_commodity_wrapper" style="display:none;">
+      <p>This commodity is being reviewed in the following investigation:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#" class="govuk-link--no-visited-state" id="selected_commodity"></a></li>
+      </ul>
+      <br>
+      <br>
+    </div>
   </div>
+  
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
       <h2 class="govuk-heading-s" id="subsection-title">
@@ -43,14 +73,11 @@
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-            <a class="link" href="/public-cases/signin">Sign in to the Trade Remedies System</a> 
-          </li>
+            <a class="link" href="https://www.gov.uk/trade-tariff" target="_blank">Check your tariff (opens in a new window or tab)</a> 
+          </li>   
           <li>
-            <a class="link" href="https://www.gov.uk/government/organisations/trade-remedies-authority/about" target="_blank">About the Trade Remedies Authority (opens in a new window or tab)</a> 
-          </li>
-          <li>
-            <a class="link" href="https://www.gov.uk/government/organisations/trade-remedies-authority/about" target="_blank">Trade remedies investigation guidance (opens in a new window or tab)</a>
-          </li>      
+            <a class="link" href="https://www.gov.uk/government/collections/trade-remedies-notices" target="_blank"> Trade remedies notices (opens in a new window or tab)</a> 
+          </li>    
         </ul>
       </nav>
     </aside>
@@ -60,8 +87,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-  {% set openCasesHTML %}
-  <h2 class="govuk-heading-m">Active cases</h2>
+    
+     
+
+
+
+
+
+  {% set activeCasesHTML %}
+  <h2 class="govuk-heading-m">Active investigations</h2>
 
   <form>
     <div class="govuk-form-group table-sort">
@@ -95,7 +129,7 @@
 
   <table class="govuk-table sortable mobile-table-border" id="table-header">
     <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-      A table listing all of the open Trade Remedies cases
+      A table listing all of the active trade remedies investigations
     </caption>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -310,7 +344,7 @@
 
   <table class="govuk-table sortable mobile-table-border" id="table-header">
     <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-      A table listing all of the open Trade Remedies cases
+      A table listing all of the active trade remedies investigations
     </caption>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -556,11 +590,11 @@
   {% endset %}
 
   {% set completedCasesHTML %}
-  <h2 class="govuk-heading-m">Archvied cases</h2>
+  <h2 class="govuk-heading-m">Complete investigations</h2>
   <form>
       <div class="govuk-form-group table-sort">
         <label class="govuk-label govuk-!-display-inline" for="sort-closed-cases">
-          Sort archived cases by
+          Sort complete investigations by
         </label>
         <select class="govuk-select" id="sort-closed-cases" name="sort-closed-cases">
           <option value="Case No." selected>Case No.</option>
@@ -588,7 +622,7 @@
         }) }}
     <table class="govuk-table sortable mobile-table-border" id="table-header">
       <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-        A table listing all of the archived Trade Remedies investigations
+        A table listing all of the complete trade remedies investigations
       </caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -672,14 +706,14 @@
     items: [
     
     { 
-      label: "Active cases",
-      id: "open-cases",
+      label: "Active investigations",
+      id: "active-cases",
       panel: {
-        html: openCasesHTML
+        html: activeCasesHTML
       }
     },
     { 
-      label: "Archived cases",
+      label: "Complete investigations",
       id: "completed-cases",
       panel: {
         html: completedCasesHTML
