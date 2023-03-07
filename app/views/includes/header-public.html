@@ -27,7 +27,7 @@
           <!--Determine who is signed in -->
 
           {% if (data['who-signin'] == "rep") %}
-            cxfbcvbnxvcbxvcbnxvbn {{data['createaccount-name'] or data['rep-user1'] }}
+            {{data['createaccount-name'] or data['rep-user1'] }}
             {% else %}
             {% if (data['who-signin'] == "org") %}
               {{data['createaccount-name'] or data['party-user1'] }}
@@ -83,12 +83,12 @@
           </li> 
         {% endif %}     
         <li class="app-navigation__list-item app-navigation__list-item--invest" >
-          <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/public-site/public-cases/cases-all">
-            TRA Investigations
+          <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/public-site/public-cases/cases-all?signed-out=no">
+            Active investigations
           </a>
         </li>
         <li class="app-navigation__list-item app-navigation__list-item--notices">
-          <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/public-site/public-cases/notices">
+          <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link" href="/public-site/public-cases/notices?signed-out=no">
             Public Notices
           </a>
         </li>   
