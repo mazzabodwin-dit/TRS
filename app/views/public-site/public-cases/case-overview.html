@@ -3,7 +3,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Cases: Steel plate from Russia – {{ serviceName }}
+  Steel plate from Russia – {{ serviceName }}
 {% endblock %}
 
 <!-- This sets a body class for the whole page-->
@@ -24,13 +24,13 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        {{data['case-ref1']}}: {{data['case-name1']}}
-      </h1>
-    </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      {{data['case-ref1']}} - {{data['case-name1']}}
+    </h1>
   </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -42,143 +42,348 @@
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items" role="complementary">
       <h2 class="govuk-heading-s" id="subsection-title">
-        Email case team
+        Email Submission team
       </h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-             <a class="govuk-link govuk-link--no-visited-state" href="mailto:caseref@traderemedies.gov.uk">{{data['case-ref1']}}@traderemedies.gov.uk</a>
+             <a class="govuk-link govuk-link--no-visited-state" href="mailto:Submissionref@traderemedies.gov.uk">{{data['case-ref1']}}@traderemedies.gov.uk</a>
           </li>   
         </ul>
       </nav>
     </aside>
   </div>
 </div>
-
-  
       
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      {% set caseDetailsHTML %}
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['case-type1']}}
-            </dd>
-          </div><div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Applicant
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['applicant1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Status
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['status1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Last updated
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['updated1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Registration due by
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['register-date1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Initiation date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['initiated1']}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Commodies affected
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <ul class="govuk-list">
-                <li>7222202100</li>
-                <li>7222202900</li>
-                <li>7222203100</li>
-                <li>7222203900</li>
-                <li>7222208100</li>
-                <li>7222208900</li>
-              </ul>
-            </dd>
-          </div>
-            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Linked cases
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <ul class="govuk-list govuk-list--bullet">
-                <li><a href="" class="govuk-link--no-visited-state">AD5832 - Steel Magnolia's from Mongolia</a>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>{{data['case-ref1']}}: {{data['case-name1']}}
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li><a href="" class="govuk-link--no-visited-state">AD3467 - Steel Plating from Poland</a>
-                          <ul class="govuk-list govuk-list--bullet">
-                            <li><a href="" class="govuk-link--no-visited-state">AD11234 - Polished Steel Plates from Paraguay</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-      {% endset %}
+    {% set SubmissionDetailsHTML %}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Applicant
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['applicant1']}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['status1']}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last updated
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['updated1']}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration due by
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['register-date1']}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Initiation date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['initiated1']}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Commodies affected
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list">
+              <li>7222202100</li>
+              <li>7222202900</li>
+              <li>7222203100</li>
+              <li>7222203900</li>
+              <li>7222208100</li>
+              <li>7222208900</li>
+            </ul>
+          </dd>
+        </div>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Linked Submissions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="" class="govuk-link--no-visited-state">AD5832 - Steel Magnolia's from Mongolia</a>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>{{data['case-ref1']}}: {{data['case-name1']}}
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li><a href="" class="govuk-link--no-visited-state">AD3467 - Steel Plating from Poland</a>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li><a href="" class="govuk-link--no-visited-state">AD11234 - Polished Steel Plates from Paraguay</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
 
+    {% endset %}
 
-      {% set submissionsPublishHTML %}
-      {% endset %}
+    {% set submissionsHTML %}
+      <form>
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-!-display-inline" for="sort-Submissions">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort-Submissions" name="sort-Submissions">
+            <option value="No." selected>Submission No.</option>
+            <option value="Submission">Submission</option>
+            <option value="Type">Type</option>
+            <option value="Initiated">Register by</option>
+            <option value="Status">Status</option>
+            <option value="Updated">Updated</option>
+          </select>
+        </div>
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-visually-hidden" for="direction-Submissions">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-Submissions" name="direction-Submissions">
+            <option value="Decending" selected>Decending</option>
+            <option value="Accending">Accending</option>
+          </select>
+        </div>
+        {{ govukButton({
+          text: "Sort",
+          classes: "govuk-button--secondary table-sort"
+        }) }}
+        
+      </form>     
+      <table class="govuk-table sortable mobile-table-border" id="table-header">
+        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
+          A table listing all of Public File submissions for this investigation
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Published
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Submission
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Type
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>No. of files
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated8']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">General publication - Submission (from an interested party)</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status8']}}
+            </td>
+            
+          </tr>
 
-      {{ govukTabs ({
-        items: [
-        { 
-          label: "Details",
-          id: "case-details",
-          panel: {
-            html: caseDetailsHTML
-          }
-        },
-        { 
-          label: "Public file",
-          id: "public-file",
-          panel: {
-            html: submissionsHTML
-          }
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated9']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">	The Statement of Essential Facts</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status9']}}
+            </td>
+           
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated1']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">General publication - Case timeline</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status1']}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated10']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">General publication - Verification report</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status10']}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated3']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">Registration of Interest</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>British Stainless Steel Association
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Body
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status3']}}
+            </td>
+            
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated5']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">Questionnaire</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>VIRAJ PROFILES PRIVATE LIMITED
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Exporter
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status5']}}
+            </td>
+            
+          </tr>
+
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated4']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">General publication - Questionnaire</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status4']}}
+            </td>
+          </tr>
+          <tr class="govuk-table__row no-border">
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated6']}}
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">General publication - Notice of extension</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Party: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
+            </td>
+            <td class="govuk-table__cell ">
+              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status6']}}
+            </td>
+            
+          </tr>
+        </tdbody>
+      </table>
+    {% endset %}
+
+    {{ govukTabs ({
+      items: [
+      { 
+        label: "Details",
+        id: "Submission-details",
+        panel: {
+          html: SubmissionDetailsHTML
         }
-        ]
-      }) }}
+      },
+      { 
+        label: "Public file",
+        id: "public-file",
+        panel: {
+          html: submissionsHTML
+        }
+      }
+      ]
+    }) }}
 
-         
-    </div>
-   
+        
   </div>
- 
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
-
+  
+</div>
 
 {% endblock %}
 

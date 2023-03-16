@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  My cases – {{serviceName}}
+  TRA Investigations – {{serviceName}}
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
@@ -47,17 +47,17 @@
       </div>
       <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter a commodity code">
         <option value="" class="selected"></option>
-        <option value="AS0020 - Ironing Boards from Turkey">7323 99 00 10</option>
-        <option value="AS0020 - Ironing Boards from Turkey">7323 99 00 90</option>
-        <option value="AS0020 - Ironing Boards from Turkey">8516 79 70 10</option>
-        <option value="AS0020 - Ironing Boards from Turkey">8516 90 00 51</option>
+        <option value="AD2224 - Steel plate from Russia">7222202100</option>
+        <option value="AD2224 - Steel plate from Russia">7222202900</option>
+        <option value="AD2224 - Steel plate from Russia">7222203100</option>
+        <option value="AS0020 - Ironing Boards from Turkey">8722203900</option>
       </select>
     </div>
 
     <div class="govuk-inset-text" id="selected_commodity_wrapper" style="display:none;">
       <p>Investigation including this commodity:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="#" class="govuk-link--no-visited-state" id="selected_commodity"></a></li>
+        <li><a href="case-overview" class="govuk-link--no-visited-state" id="selected_commodity"></a></li>
       </ul>
       
     </div>
@@ -210,7 +210,7 @@
 
       <tr class="govuk-table__row no-border">
         <td class="govuk-table__cell">
-          <span class="govuk-visually-hidden--desktop">Case No.: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+          <span class="govuk-visually-hidden--desktop">Case No.: </span><a href="case-overview" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
         </td>
         <td class="govuk-table__cell ">
           <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
