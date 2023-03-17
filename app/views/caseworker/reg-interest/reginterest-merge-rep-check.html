@@ -24,16 +24,12 @@
     <h1 class="govuk-heading-xl">
       Review your answers
     </h1>
-    {% if data['merge-duplicates'] =="1of2" or data['merge-duplicates'] =="2of2" %}
-      <p>There is <strong>1 organisation</strong> to be merged with the selected organisation. </p>
+    {% if data['reginterest-matching-orgs-question'] == "no" %}
+      <p>There are <strong>0 organisations</strong> to be merged with the selected organisation. </p>
       {% else %}
-      {% if data['reginterest-matching-orgs-question'] == "no" %}
-        <p>There are <strong>0 organisations</strong> to be merged with the selected organisation. </p>
-        {% else %}
-        <p>There is <strong>1 organisation</strong> to be merged with the selected organisation. </p>
-      {% endif %}
+      <p>There is <strong>1 organisation</strong> to be merged with the selected organisation. </p>
     {% endif %}
-    <p>Our records will be updated with the following details:</p>
+    <p>Our records will show the following details:</p>
     <div class="address-card">
       <div class="address-container">
         <h3 class="govuk-heading-m clearfix"><a href="../orgs/org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>  
@@ -118,8 +114,7 @@
         </div>  
       </div>
     </div>
-    {% if data['reginterest-matching-orgs-question'] =="no" and data['merge-duplicates'] =="1c" %}
-      {% else %}
+    {% if data['reginterest-matching-orgs-question'] =="yes" %}
       <details class="case-details govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -275,9 +270,7 @@
           </div>
         </div>
       </details>
-    {% endif %}  
-    {% if data['reginterest-matching-orgs-question'] =="yes" and data['merge-duplicates'] =="1c" %}
-      {% else %}
+
       <details class="case-details govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -347,39 +340,67 @@
           </div>
         </div>
       </details>
+
+      {% else %}  
+      <details class="case-details govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Organisations marked as not a duplicate: 2
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <div class="address-card">
+            {% include "includes/org-steeel-all.html" %}
+          </div>
+        </div>
+         <div class="govuk-details__text">
+          <div class="address-card">
+            {% include "includes/org-bluesteel-all.html" %}
+          </div>
+        </div>
+      </details>
     {% endif %}
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-     {% if data['reginterest-matching-orgs-question'] =="no" and data['merge-duplicates'] =="1c" %}
+     {% if data['reginterest-matching-orgs-question'] =="no" %}
+     
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Submit",
+          href: "reginterest-merge-review-complete?merge-rep-task=Complete"
+        }) }}   
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel</a>
+      </div>
+
       {% else %}
       {{ govukWarningText({
         text: "Merging organisations cannot be undone",
         iconFallbackText: "Warning"
       }) }}
-    {% endif %}
-
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          Please confirm the following
-        </legend>
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="check-1" name="check" type="checkbox" value="caseworker-check">
-            <label class="govuk-label govuk-checkboxes__label" for="check-1">
-              I have authority to complete this merge
-            </label>
+    
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Please confirm the following
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="check-1" name="check" type="checkbox" value="caseworker-check">
+              <label class="govuk-label govuk-checkboxes__label" for="check-1">
+                I have authority to complete this merge
+              </label>
+            </div>
           </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Submit details",
-        href: "reginterest-merge-rep-complete?merge-rep-task=Complete"
-      }) }}   
-      <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel merge</a>
-    </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Merge organisations",
+          href: "reginterest-merge-complete?merge-rep-task=Complete"
+        }) }}   
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel merge</a>
+      </div>
+    {% endif %}
   </div>
 </div>
 

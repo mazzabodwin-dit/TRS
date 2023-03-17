@@ -1,3 +1,4 @@
+@@ -1,94 +0,0 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -21,31 +22,12 @@
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">
-        Matching organisations complete
+        Matching organisations resolved
       </h1>
     </div>
 
-    {% if data['merge-duplicates'] == "1c" or data['merge-duplicates'] == "1b" %} 
-        {% if data['reginterest-matching-orgs-question'] =="no" %}
-          <p>Matching organisation(s) marked as not duplicate.</p>
-          {% else %}
-          <p>The duplicate organisations have been merged.</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Cases are now registered under one organisation</li>
-            <li>Users are now registered under one organisation</li>
-            <li>Lead investigators assigned to the matching cases have been notified</li>
-          </ul> 
-        {% endif %} 
-        {% else %}
-        <p>The duplicate organisations have been merged.</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Cases are now registered under one organisation</li>
-          <li>Users are now registered under one organisation</li>
-          <li>Lead investigators assigned to the matching cases have been notified</li>
-        </ul> 
-      {% endif %}  
-  
-
+    <p>The matching organisation(s) have been marked as not duplicate with the selected organisation.</p>
+          
     {% if data['verify-type'] =="rep-invite" %}
       <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none&merge-rep-task=Complete" method="post" id="cancel-invite-form">
         <div class="govuk-button-group">
@@ -69,7 +51,7 @@
             <form action="/caseworker/reg-interest/reginterest-tasks-dup" method="post" id="cancel-invite-form">
               <div class="govuk-button-group">
                 {{ govukButton({
-                  text: "Review matching organisations"
+                  text: "Continue"
                 }) }} 
               </div> 
             </form>

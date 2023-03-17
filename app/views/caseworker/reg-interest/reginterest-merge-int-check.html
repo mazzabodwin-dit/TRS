@@ -30,7 +30,7 @@
       {% else %}
       <p>There is <strong>1 organisation</strong> to be merged with the selected organisation. </p>
     {% endif %}
-    <p>Our records will be updated with the following details:</p>
+    <p>Our records will show the following details:</p>
     <div class="address-card">
         <div class="address-container">
           <h3 class="govuk-heading-m"><a href="../orgs/org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>  
@@ -126,35 +126,45 @@
     {% endif %}
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    {% if data['reginterest-matching-orgs-question'] =="yes" %}
+    {% if data['reginterest-matching-orgs-question'] =="no" %}
+
+     <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Submit",
+          href: "reginterest-merge-review-complete?merge-rep-task=Complete"
+        }) }}   
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel</a>
+      </div>
+
+      {% else %}
       {{ govukWarningText({
         text: "Merging organisations cannot be undone",
         iconFallbackText: "Warning"
       }) }}
-    {% endif %}
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          Please confirm the following
-        </legend>
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="check-1" name="check" type="checkbox" value="caseworker-check">
-            <label class="govuk-label govuk-checkboxes__label" for="check-1">
-              I have authority to complete this merge
-            </label>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Please confirm the following
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="check-1" name="check" type="checkbox" value="caseworker-check">
+              <label class="govuk-label govuk-checkboxes__label" for="check-1">
+                I have authority to complete this merge
+              </label>
+            </div>
           </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Submit details",
-        href: "reginterest-merge-int-complete?merge-int-task=Complete"
-      }) }}   
-      <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel merge</a>
-    </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Merge organisations",
+          href: "reginterest-merge-complete?merge-int-task=Complete"
+        }) }}   
+        <a class="govuk-link govuk-link--no-visited-state" href="reginterest-merge-cancel">Cancel merge</a>
+      </div>
+    {% endif %}
   </div>
 </div>
 
