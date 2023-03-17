@@ -94,7 +94,10 @@
                   {{data['merge-int-task'] or "Not started"}}
               </td>  
               <td class="govuk-table__cell action">
-                <a href="reginterest-merge-int-review?merge-duplicates=1b" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['party1']}}</span>
+                {% if data['merge-int-task'] =="Complete" %}
+                  {% else %}
+                  <a href="reginterest-merge-int-review?merge-duplicates=1b" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['party1']}}</span>
+                {% endif %}
               </td>             
             </tr>
           {% endif %}           
@@ -114,10 +117,13 @@
               {{data['merge-rep-task'] or "Not started" }}
             </td>  
             <td class="govuk-table__cell action">
-              {% if data['merge-duplicates'] == "1c" %}
-                <a href="reginterest-merge-rep-review?merge-duplicates=1c" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['representative1']}}</span>
+              {% if data['merge-rep-task'] =="Complete" %}
                 {% else %}
-                <a href="reginterest-merge-rep-review?merge-duplicates=1of2" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['representative1']}}</span>
+                {% if data['merge-duplicates'] == "1c" %}
+                  <a href="reginterest-merge-rep-review?merge-duplicates=1c" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['representative1']}}</span>
+                  {% else %}
+                  <a href="reginterest-merge-rep-review?merge-duplicates=1of2" class="govuk-link govuk-link--no-visited-state">Select<a/><span class="govuk-visually-hidden"> {{data['representative1']}}</span>
+                {% endif %}
               {% endif %}
             </td>             
           </tr>
