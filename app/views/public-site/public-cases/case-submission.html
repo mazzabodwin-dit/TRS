@@ -31,7 +31,7 @@
         <a class="govuk-breadcrumbs__link" href="case-overview">{{data['case-ref1']}}</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        	Registration of Interest
+        	{{data['submission']}}
       </li>
     </ol>
   </div>
@@ -44,7 +44,7 @@
     <span class="govuk-caption-xl">{{data['case-ref1']}} - {{data['case-name1']}}</span>
 
     <h1 class="govuk-heading-xl">
-      Registration of Interest
+      {{data['submission']}}
     </h1>
   </div>
 </div>
@@ -56,6 +56,22 @@
     <dl class="govuk-summary-list govuk-summary-list--no-border">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          From
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['party']}}
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['type']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Submitted
         </dt>
         <dd class="govuk-summary-list__value">
@@ -64,31 +80,16 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Issued
+          Published
         </dt>
         <dd class="govuk-summary-list__value">
           20 May 2022
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          From
-        </dt>
-        <dd class="govuk-summary-list__value">
-          British Stainless Steel Association
-        </dd>
-      </div>
-       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Exporter
-        </dd>
-      </div>
     </dl>
 
     {% set submittedDocsHTML %}
+      <h2 class="govuk-heading-m">Submitted documents</h2>
       <ul class="govuk-list">
         <li>
           {% if (data['download1'] == "yes" ) %}
@@ -141,6 +142,7 @@
     {% endset %}
 
     {% set traDocsHTML %}
+    <h2 class="govuk-heading-m">TRA documents</h2>
       <ul class="govuk-list">
         <li>
           {% if (data['download1'] == "yes" ) %}
