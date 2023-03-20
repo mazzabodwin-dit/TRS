@@ -3,7 +3,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  All organisations – {{ serviceName }}
+  All organisations – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
@@ -34,6 +34,28 @@
     <h1 class="govuk-heading-xl">
       All organisations
     </h1>
+    <div class="govuk-form-group govuk-!-width-three-quarters">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="search-commodity">
+          Search
+        </label>
+      </h2>
+      <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter an organisation">
+        <option value="" class="selected"></option>
+        <option value="AD2224 - Steel plate from Russia">7222202100</option>
+        <option value="AD2224 - Steel plate from Russia">7222202900</option>
+        <option value="AD2224 - Steel plate from Russia">7222203100</option>
+        <option value="AS0020 - Ironing Boards from Turkey">8722203900</option>
+      </select>
+    </div>
+
+    <div class="govuk-inset-text" id="selected_commodity_wrapper" style="display:none;">
+      <p>Investigation including this commodity:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="case-overview" class="govuk-link--no-visited-state" id="selected_commodity"></a></li>
+      </ul>
+    </div>
+    <br>
 
     {% set activeOrgsHTML %}
       <h2 class="govuk-heading-m clearfix">Active orgs

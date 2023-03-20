@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  TRA Investigations – {{serviceName}}
+  TRA Investigations – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
@@ -56,8 +56,7 @@
           Search
         </label>
       </h2>
-
-      <div id="sort-hint" class="govuk-hint">
+      <div id="search-hint" class="govuk-hint">
         Search for an investigation by commodity code
       </div>
       <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter a commodity code">
