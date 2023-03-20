@@ -20,6 +20,23 @@
 {% endblock %}
 
 {% block beforeContent %}
+
+{% include "includes/beta-banner.html"%}
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../dashboard">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="cases-all">TRA active investigations</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        {{data['case-ref1']}}
+      </li>
+    </ol>
+  </div>
+  
 {% endblock %}
 
 {% block content %}
@@ -117,7 +134,7 @@
         </div>
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Linked Submissions
+            Linked cases
           </dt>
           <dd class="govuk-summary-list__value">
             <ul class="govuk-list govuk-list--bullet">
@@ -224,7 +241,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status8']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>2
             </td>
             
           </tr>
@@ -243,7 +260,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status9']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>2
             </td>
            
           </tr>
@@ -262,7 +279,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status1']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>1
             </td>
           </tr>
 
@@ -280,7 +297,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status10']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>2
             </td>
           </tr>
 
@@ -298,7 +315,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Body
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status3']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>34
             </td>
             
           </tr>
@@ -308,7 +325,7 @@
               <span class="govuk-visually-hidden--desktop">Updated: </span>{{data ['updated5']}}
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="#" class="govuk-link--no-visited-state">Questionnaire</a>
+              <span class="govuk-visually-hidden--desktop">Submission: </span><a href="case-submission-tra" class="govuk-link--no-visited-state">Questionnaire</a>
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Party: </span>VIRAJ PROFILES PRIVATE LIMITED
@@ -317,7 +334,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Exporter
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status5']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>12
             </td>
             
           </tr>
@@ -336,7 +353,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status4']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>1
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
@@ -353,7 +370,7 @@
               <span class="govuk-visually-hidden--desktop">Type: </span>Trade Remedies Authority
             </td>
             <td class="govuk-table__cell ">
-              <span class="govuk-visually-hidden--desktop">Status: </span>{{data ['status6']}}
+              <span class="govuk-visually-hidden--desktop">No. of files: </span>2
             </td>
             
           </tr>
