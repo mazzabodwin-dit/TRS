@@ -1,7 +1,13 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Verify parties on case – {{ serviceName }} - GOV.UK
+  {% if data['verify-type'] =="reg-interest" %}
+        Registration of interest
+        {% else %}
+        {% if data['verify-type'] =="rep-invite" %}
+            Representative invite
+        {% endif %}
+      {% endif %} – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -20,17 +26,16 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">{{data['case-ref1']}}: {{data['case-name1']}}</span>
 
-    {% if data['verify-type'] =="reg-interest" %}
-      <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-xl">
+      {% if data['verify-type'] =="reg-interest" %}
         Registration of interest
-      </h1>
-      {% else %}
-      {% if data['verify-type'] =="rep-invite" %}
-        <h1 class="govuk-heading-xl">
-          Representative invite
-        </h1>
+        {% else %}
+        {% if data['verify-type'] =="rep-invite" %}
+            Representative invite
+        {% endif %}
       {% endif %}
-    {% endif %}
+    </h1>
+
 
    
     <!--Intro -->

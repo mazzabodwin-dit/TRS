@@ -44,7 +44,7 @@
         <option value="" class="selected"></option>
         <option value="Awesome Steel, People's Republic of China">Awesome Steel</option>
         <option value="Steeel, People's Republic of China">Steeel</option>
-        <option value="Steel UK, United Kingdom	(357964356)">Steel UK</option>
+        <option value="Steel UK, United Kingdom	(357964356)">Steel UK (357964356)</option>
         <option value="Steelman Plc, United Kingdom">Steelman Plc (X4647)</option>
       </select>
     </div>
@@ -410,7 +410,7 @@
           </tr>            
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
@@ -427,7 +427,7 @@
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission2']}}
@@ -445,7 +445,7 @@
   
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="case-party-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Request: </span>{{data['party-submission1']}}
@@ -466,8 +466,8 @@
     {% endset %}
 
     {% set rejOrgtHTML %}
-      <h2 class="govuk-heading-m">Cannot be verified</h2> 
-      <p>There are <strong>0</strong> organisations that could not be verified</p> 
+      <h2 class="govuk-heading-m">Rejected from case</h2> 
+      <p>There are <strong>0</strong> organisations that were rejected from a case.</p> 
     {% endset %}
 
     {% set dupOrgtHTML %}
@@ -595,7 +595,7 @@
         }
       },
       { 
-        label: "Cannot be verified (0)",
+        label: "Rejected from case (1)",
         id: "rej-org",
         panel: {
           html: rejOrgtHTML

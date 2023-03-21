@@ -1,7 +1,13 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Verify parties on case – {{ serviceName }} - GOV.UK
+  {% if data['verify-type'] =="reg-interest" %}
+        Registration of interest
+        {% else %}
+        {% if data['verify-type'] =="rep-invite" %}
+          Representative invite
+        {% endif %}
+      {% endif %} – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}

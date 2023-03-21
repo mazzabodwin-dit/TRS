@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Unverified party – {{ serviceName }} - GOV.UK
+  {% if data['party-type'] == "int" %}
+        Unverified interested party
+        {% else %}
+          Unverified representative
+      {% endif %} – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -27,9 +31,9 @@
     </span>
     <h1 class="govuk-heading-xl">
       {% if data['party-type'] == "int" %}
-      Unverified interested party
-          {% else %}
-            Unverified representative
+        Unverified interested party
+        {% else %}
+          Unverified representative
       {% endif %}
     </h1>
     <h2 class="govuk-heading-m">Internal case notes</h2>
