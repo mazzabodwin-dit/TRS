@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Review organisations – {{serviceName}}
+  Review organisations – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% set bodyClasses = 'caseworker-width' %}
@@ -541,7 +541,7 @@
               </summary>
               <div class="govuk-details__text">
                 <ul class="govuk-list">
-                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Approved on to case icon" title="Approved on to case" width="28px"><span class="govuk-body-s"> 29 July 2022</span></li>
+                  <li><a href="" class="govuk-link--no-visited-state">{{data['case-ref2']}} - {{data['case-name2']}}</a> <img src="/public/images/green-checkmark-line-icon.png" class="pending-clock" alt="Approved on to case icon" title="Approved on to case"><span class="govuk-body-s"> 29 July 2022</span></li>
                 </ul>
               </div>
             </details>
@@ -631,7 +631,6 @@
           {{ govukButton({
             text: "Continue review"
           }) }}
-          <a class="govuk-link govuk-link--no-visited-state" href="reginterest-tasks-dup">Back</a>
         </div>
       {% endif %}
     </form>
