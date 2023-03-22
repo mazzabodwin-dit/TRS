@@ -291,9 +291,15 @@ module.exports = {
   "next-task6": "The Statement of Essential Facts",
   "next-notice6": "24 Sept 2022",
 
+  //KEY USER: who-signin=org-invite
+  "party-user66": "Jenny Jones",
+  "party-email66": "thejones@bikers.com",
+
+
   "rep-status6": "Deficiency notice issued",
   "rep-user-role6": "User",
   "rep-role6": "Contributor",
+
 
   //"representative1": "BlueSteel Partners",
   "rep-user6": "Arnie Swarts",
