@@ -134,7 +134,6 @@
                 <select class="govuk-select" id="sort-cases" name="sort-cases">
                   <option value="Case no." selected>Case no.</option>
                   <option value="Case no.">Case no.</option>
-                  <option value="Interested party">Interested party</option>
                   <option value="Case role">Case role</option>
                 </select>
               </div>
@@ -170,12 +169,6 @@
                 </th>
                 <th class="govuk-table__header">
                   <button class="govuk-button govuk-button--secondary">
-                    <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
-                    <span class="indicator" aria-hidden="true"></span>
-                  </button>
-                </th>
-                <th class="govuk-table__header">
-                  <button class="govuk-button govuk-button--secondary">
                     <span class="govuk-visually-hidden--desktop">Sort by: </span>Case role
                     <span class="indicator" aria-hidden="true"></span>
                   </button>
@@ -198,13 +191,10 @@
                     <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                   </td>
                   <td class="govuk-table__cell text-overflow">
-                    <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
-                  </td>
-                  <td class="govuk-table__cell text-overflow">
                     <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
                   </td>
                   <td class="govuk-table__cell">
-                    <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                    <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review request</a> 
                   </td>
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop">Action 2: none </span>
@@ -221,13 +211,10 @@
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                     </td>
                     <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
                     </td>
                     <td class="govuk-table__cell">
-                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                      <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="../reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=yes" class="govuk-link govuk-link--no-visited-state">Review request</a> 
                     </td>
                     <td class="govuk-table__cell">
                       <span class="govuk-visually-hidden--desktop">Action 2: none </span>
@@ -239,9 +226,6 @@
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party5']}}
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -259,9 +243,6 @@
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name6']}}</a>
-                    </td>
-                    <td class="govuk-table__cell text-overflow">
-                      <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['applicant6']}}
                     </td>
                     <td class="govuk-table__cell text-overflow">
                       <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
@@ -283,13 +264,10 @@
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
                       </td>
                       <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party4']}}
-                      </td>
-                      <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span><strong class="govuk-tag govuk-tag--red">Rejected</strong>
                       </td>
                       <td class="govuk-table__cell">
-                        <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review</a> 
+                        <span class="govuk-visually-hidden--desktop">Action 1: </span><a href="" class="govuk-link govuk-link--no-visited-state">Review request</a> 
                       </td>
                        <td class="govuk-table__cell">
                         <span class="govuk-visually-hidden--desktop">Action 2: none</span> 
@@ -302,9 +280,6 @@
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
-                      </td>
-                      <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case1-permissions'] or "User" }}
@@ -322,9 +297,6 @@
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name5']}}</a>
-                      </td>
-                      <td class="govuk-table__cell text-overflow">
-                        <span class="govuk-visually-hidden--desktop">Interested party: </span>{{data['party1']}}
                       </td>
                       <td class="govuk-table__cell text-overflow">
                         <span class="govuk-visually-hidden--desktop">Case role: </span>{{data['case5-permissions'] or "Case contact" }}
