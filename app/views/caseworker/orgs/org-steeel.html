@@ -41,10 +41,6 @@
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <div class="govuk-inset-text govuk-inset-text__reginterest">
-        <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
-        <strong>{{data['dup-party1']}}</strong> has <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link govuk-link--no-visited-state">registered interest</a> in a case<br>
-      </div>
       
     {% set casesHTML %}
       <h3 class="govuk-heading-m">Cases
@@ -55,10 +51,9 @@
               Sort your cases by
             </label>
            <select class="govuk-select" id="sort-cases" name="sort-cases">
-              <option value="No." selected>Case No.</option>
+              <option value="Case No." selected>Case No.</option>
               <option value="Case">Case</option>
-              <option value="Interested party">Interested party</option>
-              <option value="Party type">Party type</option> 
+              <option value="Case role">Case role</option> 
             </select>           
           </div>
           <div class="govuk-form-group table-sort">
@@ -85,7 +80,7 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" aria-sort="ascending">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>No.
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case No.
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -97,13 +92,7 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Interested party
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Party type
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Case role
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -115,19 +104,16 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">No. </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
+              <span class="govuk-visually-hidden--desktop">Case No. </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Case: </span><a href="cases/case-overview" class="govuk-link--no-visited-state">{{data['case-name1']}}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Interested party: </span><a href="#" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
-            </td>
-            <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Party type: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
             </td>
             <td class="govuk-table__cell action">
-              <span class="govuk-visually-hidden--desktop">Action: </span><a href="../cases/case-party-steeel" class="govuk-link--no-visited-state">View details <span class="govuk-visually-hidden">{{data['dup-party1']}}</span></a>
+              <span class="govuk-visually-hidden--desktop">Action: </span><a href="../reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no&notify-contact=yes" class="govuk-link--no-visited-state">View request <span class="govuk-visually-hidden">for case {{data['case-ref1']}}</span></a>
             </td>
           </tr>
         </body>

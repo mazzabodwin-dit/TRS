@@ -292,7 +292,7 @@
               <span class="govuk-visually-hidden--desktop">No. cases: </span>0
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">No. users: </span>1
+              <span class="govuk-visually-hidden--desktop">No. users: </span>3
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Registered: </span>28 May 2022
@@ -325,8 +325,8 @@
 
     {% endset %}
 
-    {% set confirmPartyHTML %}
-      <h2 class="govuk-heading-m">To verify</h2>
+    {% set requestsHTML %}
+      <h2 class="govuk-heading-m">Requests</h2>
       <p>There are <strong>4</strong> requests waiting to be reviewed</p>
       <form>
           <div class="govuk-form-group table-sort">
@@ -581,17 +581,17 @@
     {{ govukTabs ({
       items: [
       { 
-        label: "Active organisations",
+        label: "Active organisations (9)",
         id: "active-orgs",
         panel: {
           html: activeOrgsHTML
         }
       },
       { 
-      label: "To verify (4)",
-      id: "confirm-party",
+      label: "Requests (4)",
+      id: "requests",
       panel: {
-        html: confirmPartyHTML
+        html: requestsHTML
         }
       },
       { 
