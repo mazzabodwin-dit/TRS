@@ -26,7 +26,7 @@
           Change your password
         </h1>
 
-        <p>To change the password for this account enter a new password as well as your existing password for security.</p>
+        <p>To change the password for this account enter a new password.</p>
   
 <!-- Content contains accessibility code for screen readers based on this blog: https://incl.ca/show-hide-password-accessibility-and-password-hints-tutorial -->
         
@@ -64,23 +64,6 @@
             autocomplete: "new-password" 
           }) }}
         
-        </div>
-
-        <div class="input-with-button">
-          <button id="show-confirm" type="button" role="switch" aria-pressed="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            <span class="show-text2">Show</span>
-          </button>
-
-          {{ govukInput({
-            label: {
-              text: "Enter existing password"
-            },
-            classes: "govuk-input--width-15",
-            id: "password-confirm",
-            name: "password-confirm",
-            type: "password"
-          }) }}
-
         </div>
 
         <div class="govuk-button-group">
