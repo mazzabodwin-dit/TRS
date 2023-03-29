@@ -98,7 +98,7 @@
       {% endif %}
     </h1>
 
-    {% if (data['account-user'] =="invite-user-name" and data['invite-user-status'] =="Inactive") or (data['account-user'] =="party-user6" and data['party-user6-status'] =="Inactive") or (data['account-user'] =="invite-user1" and data['rep-user3-status'] =="Inactive") %}
+    {% if (data['account-user'] =="party-user1" and data['party-user1-status'] =="Inactive") or (data['account-user'] =="party-user11" and data['party-user11-status'] =="Inactive") or (data['account-user'] =="party-user6" and data['party-user6-status'] =="Inactive")  or (data['account-user'] =="rep-user1" and data['rep-user1-status'] =="Inactive") or (data['account-user'] =="rep-user3" and data['rep-user3-status'] =="Inactive")  %}
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <p class="govuk-warning-text__text">
@@ -182,7 +182,7 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% if data['account-user'] =="invite-rep-name" or data['account-user'] =="rep-user3"  %}
+              {% if data['account-user'] =="party-user1" or data['account-user'] =="rep-user3"  %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
@@ -335,7 +335,7 @@
                   {% if data['account-user'] =="party-user11" %}
                     {{data['party-user11']}}<br>
                     {{data['party-email11']}}<br>
-                    {{data['party-mobile11'] or "+447821945034"}}  
+                    {{data['party-mobile11'] }}  
                     {% else %}
                     {% if data['account-user'] =="party-user6" %}
                       {{data['party-user6']}}<br>
@@ -351,18 +351,6 @@
                           {{data['rep-user1']}}<br>
                           {{data['rep-email1']}}<br>
                           {{data['rep-mobile1'] or "+447821945034"}} 
-                          {% else %}
-                          {% if data['account-user'] =="invite-rep-name" %}
-                            {{data['invite-rep-name'] or data['rep-user3']}}<br>
-                            {{data['invite-rep-email'] or data['rep-email3']}}<br>
-                            {{data['rep-mobile3'] or "+447821945034"}} 
-                            {% else %}
-                            {% if data['account-user'] =="invite-user-name" %}
-                              {{data['invite-user-name'] or data['party-user11']}}<br>
-                              {{data['invite-user-email'] or data['party-email11']}}<br>
-                              {{data['party-mobile11'] or "+447821945034"}}  
-                            {% endif %}   
-                          {% endif %} 
                         {% endif %}  
                       {% endif %}  
                     {% endif %}
@@ -370,13 +358,9 @@
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                {% if data['account-user'] =="invite-rep-name" or data['account-user'] =="rep-user3" %}
-                  <!--do not show edit-->
-                  {% else %}
-                  <a class="govuk-link--no-visited-state" href="user-account-edit">
-                    Edit<span class="govuk-visually-hidden"> contact details</span>
-                  </a>
-                {% endif %}
+                <a class="govuk-link--no-visited-state" href="user-edit">
+                  Edit<span class="govuk-visually-hidden"> contact details</span>
+                </a>
               </dd>
             </div> 
             <div class="govuk-summary-list__row">
@@ -384,11 +368,11 @@
                 Two-factor authentication
               </dt>
               <dd class="govuk-summary-list__value">
-                By {{ data['2fa'] or "text message"}}
+                By {{ data['user-2fa'] or "email"}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 
-                <a class="govuk-link--no-visited-state" href="account-2fa">
+                <a class="govuk-link--no-visited-state" href="user-2fa">
                   Change<span class="govuk-visually-hidden"> two-factor authentication</span>
                 </a>
               </dd>
@@ -401,11 +385,48 @@
                 ***********
               </dd>    
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link--no-visited-state" href="account-changepass">
+                <a class="govuk-link--no-visited-state" href="user-changepass">
                   Change<span class="govuk-visually-hidden"> password</span>
                 </a>
               </dd>
             </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['account-user'] =="party-user1" %}
+                  {{data['party-user1-email-valid'] or "Validated"}} 
+                  {% else %}
+                  {% if data['account-user'] =="party-user11" %}
+                    {{data['party-user11-email-valid'] or "Validated"}} 
+                    {% else %}
+                    {% if data['account-user'] =="party-user6" %}
+                      {{data['party-user6-email-valid'] or "Validated"}} 
+                      {% else %}
+                      {% if data['account-user'] =="rep-user3" %}
+                        {{data['rep-user3-email-valid'] or "Validated" }} 
+                        {% else %}
+                        {% if data['account-user'] =="rep-user1" %}
+                          {{data['rep-user1-email-valid'] or "Validated" }} 
+                        {% endif %}
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}    
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                {% if data['account-user'] =="party-user6" %}
+                  <a class="govuk-link--no-visited-state" href="user-account-valid">
+                    Change<span class="govuk-visually-hidden"> email validation status</span>
+                  </a>
+                  {% else %}
+                  <a class="govuk-link--no-visited-state" href="user-account-valid">
+                    Change<span class="govuk-visually-hidden"> email validation status</span>
+                  </a>
+                {% endif %}
+              </dd>
+            </div>  
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Account permission
@@ -436,7 +457,7 @@
                 {% endif %}
               </dd>
             </div>
-            <div class="govuk-summary-list__row">
+             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Status
               </dt>
@@ -459,8 +480,7 @@
                       {% endif %}
                     {% endif %}
                   {% endif %}
-                {% endif %}
-                        
+                {% endif %}    
               </dd>
               <dd class="govuk-summary-list__actions">
                 {% if data['account-user'] =="party-user6" %}
@@ -473,7 +493,7 @@
                   </a>
                 {% endif %}
               </dd>
-            </div>             
+            </div>                
           </dl>
         </div>
       </div>

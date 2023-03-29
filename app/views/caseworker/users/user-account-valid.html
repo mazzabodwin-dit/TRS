@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change account permission - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+<!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
+{% set bodyClasses = 'user-nav' %}
+
+{% block header %}
+  {% include "includes/header-public.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html"%}
+
+<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="user-account#user-details" method="post" id="account-validated-form"> 
+        <!--Jane-->
+        {% if data['account-user'] =="party-user1" %}
+          {{ govukRadios({
+              idPrefix: "party-user1-email-valid",
+              name: "party-user1-email-valid",
+              fieldset: {
+                legend: {
+                  text: "Has the user email address been validated?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+              {
+                value: "Validated",
+                text: "Yes",
+                checked: checked("party-user1-email-valid", "Validated")
+              },
+              {
+                value: "Not validated",
+                text: "No",
+                checked: checked("party-user1-email-valid", "Not validated")
+              }
+              ]
+            }) }}    
+          {% else %}
+          <!--Lara-->
+          {% if data['account-user'] =="party-user11" %}
+            {{ govukRadios({
+              idPrefix: "party-user11-email-valid",
+              name: "party-user11-email-valid",
+              fieldset: {
+                legend: {
+                  text: "Has the user email address been validated?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+              {
+                value: "Validated",
+                text: "Yes",
+                checked: checked("party-user11-email-valid", "Validated")
+              },
+              {
+                value: "Not validated",
+                text: "No",
+                checked: checked("party-user11-email-valid", "Not validated")
+              }
+              ]
+            }) }}  
+            {% else %}
+            <!--Rodney-->
+            {% if data['account-user'] =="party-user6" %}
+              {{ govukRadios({
+                idPrefix: "party-user6-email-valid",
+                name: "party-user6-email-valid",
+                fieldset: {
+                  legend: {
+                  text: "Has the user email address been validated?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                items: [
+                {
+                  value: "Validated",
+                  text: "Yes",
+                  checked: checked("party-user6-email-valid", "Validated")
+                },
+                {
+                  value: "Not validated",
+                  text: "No",
+                  checked: checked("party-user6-email-valid", "Not validated")
+                }
+                ]
+              }) }}  
+              {% else %}
+              <!--Bob-->
+              {% if data['account-user'] =="rep-user1" %}
+                {{ govukRadios({
+                  idPrefix: "rep-user1-email-valid",
+                  name: "rep-user1-email-valid",
+                  fieldset: {
+                    legend: {
+                    text: "Has the user email address been validated?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  items: [
+                  {
+                    value: "Validated",
+                    text: "Yes",
+                    checked: checked("rep-user1-email-valid", "Validated")
+                  },
+                  {
+                    value: "Not validated",
+                    text: "No",
+                    checked: checked("rep-user1-email-valid", "Not validated")
+                  }
+                  ]
+                }) }}  
+                {% else %}
+                <!--Demi-->
+                {% if data['account-user'] =="rep-user3" %}
+                  {{ govukRadios({
+                    idPrefix: "rep-user3-email-valid",
+                    name: "rep-user3-email-valid",
+                    fieldset: {
+                      legend: {
+                      text: "Has the user email address been validated?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--xl"
+                      }
+                    },
+                    items: [
+                    {
+                      value: "Validated",
+                      text: "Yes",
+                      checked: checked("rep-user3-email-valid", "Validated")
+                    },
+                    {
+                      value: "Not validated",
+                      text: "No",
+                      checked: checked("rep-user3-email-valid", "Not validated")
+                    }
+                    ]
+                  }) }}  
+                {% endif %}  
+              {% endif %}  
+            {% endif %}  
+          {% endif %}  
+        {% endif %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Submit"
+          }) }}    
+           
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+ {% include "includes/footer.html" %}
+{% endblock %}
