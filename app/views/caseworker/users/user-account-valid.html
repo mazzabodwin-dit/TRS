@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Has the user email address been validated?" %}
+
 {% block pageTitle %}
-  Change account permission - {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
@@ -30,7 +32,7 @@
               name: "party-user1-email-valid",
               fieldset: {
                 legend: {
-                  text: "Has the user email address been validated?",
+                  html: header1,
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--xl"
                 }
@@ -56,7 +58,7 @@
               name: "party-user11-email-valid",
               fieldset: {
                 legend: {
-                  text: "Has the user email address been validated?",
+                  html: header1,
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--xl"
                 }
@@ -82,7 +84,7 @@
                 name: "party-user6-email-valid",
                 fieldset: {
                   legend: {
-                  text: "Has the user email address been validated?",
+                  html: header1,
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }
@@ -108,7 +110,7 @@
                   name: "rep-user1-email-valid",
                   fieldset: {
                     legend: {
-                    text: "Has the user email address been validated?",
+                    html: header1,
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
@@ -134,7 +136,7 @@
                     name: "rep-user3-email-valid",
                     fieldset: {
                       legend: {
-                      text: "Has the user email address been validated?",
+                      html: header1,
                         isPageHeading: true,
                         classes: "govuk-fieldset__legend--xl"
                       }

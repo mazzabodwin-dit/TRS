@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Change users two-factor authentication" %}
+
 {% block pageTitle %}
-  Change users two-factor authentication - {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
@@ -27,7 +29,7 @@
       <form action="user-account#user-details" method="post" id="users-profile-2fa-form">   
 
         <h1 class="govuk-heading-xl">
-          Change user two-factor authentication
+          {{header1}}
         </h1>
 
         <p>When the user signs in, we will send them a code as part of our two-factor authentication. This helps ensure that their account is kept safe and secure.</p>

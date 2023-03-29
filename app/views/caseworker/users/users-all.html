@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "All users" %}
+
 {% block pageTitle %}
-  All users – {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
@@ -20,7 +22,7 @@
       <a class="govuk-breadcrumbs__link" href="../dashboard">Dashboard</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      All users
+      {{header1}}
     </li>
   </ol>
 </div>
@@ -31,7 +33,7 @@
 <div class="govuk-grid-row"> 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      All users
+      {{header1}}
     </h1>
   </div>
   <!--If there is an invite show tabs-->

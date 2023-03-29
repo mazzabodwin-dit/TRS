@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Change account status" %}
+
 {% block pageTitle %}
-  Change account status - {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
@@ -29,7 +31,7 @@
             name: "party-user1-status",
             fieldset: {
               legend: {
-                text: "Select the user’s status",
+                html: header1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -55,7 +57,7 @@
               name: "party-user11-status",
               fieldset: {
                 legend: {
-                  text: "Select the user’s status",
+                  html: header1,
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--xl"
                 }
@@ -81,7 +83,7 @@
                 name: "party-user6-status",
                 fieldset: {
                   legend: {
-                  text: "Select the user’s status",
+                  html: header1,
                     classes: "govuk-fieldset__legend--xl"
                   }
                 },
@@ -106,7 +108,7 @@
                   name: "rep-user1-status",
                   fieldset: {
                     legend: {
-                    text: "Select the user’s status",
+                    html: header1,
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
@@ -132,7 +134,7 @@
                     name: "rep-user3-status",
                     fieldset: {
                       legend: {
-                      text: "Select the user’s status",
+                      html: header1,
                         isPageHeading: true,
                         classes: "govuk-fieldset__legend--xl"
                       }

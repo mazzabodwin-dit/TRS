@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Change user's password" %}
+
 {% block pageTitle %}
-  Change user password - {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block header %}
@@ -23,7 +25,7 @@
       <form action="user-account#user-details" method="post" id="account-changepass-form">
         
         <h1 class="govuk-heading-xl">
-          Change user password
+          {{header1}}
         </h1>
 
         <p>To change the password for this users account enter a new password.</p>

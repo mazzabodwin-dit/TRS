@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Edit user details" %}
+
 {% block pageTitle %}
-  Edit user details - {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block header %}
@@ -19,7 +21,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Edit user details
+        {{header1}}
       </h1>
 
       <form action="user-account#user-details" method="post" id="account-update-details-form"> 

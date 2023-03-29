@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Add new customer" %}
 
+
+{% block pageTitle %}
+  {{header1}} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
 {% block header %}
   {% include "includes/header-public.html" %}
@@ -13,296 +18,67 @@
 
 {% endblock %}
 
-{% set pageHeading = "Verify your identity" %}
-{% set pageSection = "" %}
-{% block pageTitle %}{{ macroPageTitle.pageTitle(pageHeading) }}{% endblock %}
-{% set orgName = data['orgName'] %}s
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-       {{ macroPageHeader.pageHeader(pageHeading,pageSection) }}
-
       <h1 class="govuk-heading-xl">
-        Edit user details
+        {{header1}}
       </h1>
 
       <form action="user-account#user-details" method="post" id="account-update-details-form"> 
-        <!--Jane-->
-        {% if (data['account-user'] == "party-user1") %}
-          {{ govukInput({
-            label: {
-              text: "User name",
-              classes: "govuk-label--s",
-              isPageHeading: false
-            },
-            classes: "govuk-input--width-20",
-            id: "party-user1",
-            name: "party-user1",
-            type: "text",
-            autocomplete: "name",
-            value: data['party-user1']
-          }) }}
+        {{ govukInput({
+          label: {
+            html: "User name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "party-user1",
+          name: "party-user1",
+          type: "text",
+          autocomplete: "name",
+          value: data['party-user1']
+        }) }}
 
-          {{ govukInput({
-            label: {
-              text: "User email address",
-              classes: "govuk-label--s"
-            },
+        {{ govukInput({
+          label: {
+            text: "User email address",
+            classes: "govuk-label--s"
+          },
+        
+          id: "party-email1",
+          name: "party-email1",
+          classes: "govuk-input--width-20",
+          type: "email",
+          autocomplete: "email",
+          value: data['party-email1']
+        }) }}
+
+        {% call govukFieldset({
+          legend: {
+            text: "User mobile number",
+            classes: "govuk-fieldset__legend--s",
+            isPageHeading: false
+          }
+        }) %}
+
+        {% include "includes/country-code-list-selected.html" %}    
+
+        {{ govukInput({
+          id: "party-mobile1",
+          name: "party-mobile1",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Mobile number"
+          },
+          value: data['party-mobile1'] or '07821945034'
+        }) }}
           
-            id: "party-email1",
-            name: "party-email1",
-            classes: "govuk-input--width-20",
-            type: "email",
-            autocomplete: "email",
-            value: data['party-email1']
-          }) }}
+      {% endcall %}
 
-          {% call govukFieldset({
-            legend: {
-              text: "User mobile number",
-              classes: "govuk-fieldset__legend--s",
-              isPageHeading: false
-            }
-          }) %}
-
-            {% include "includes/country-code-list-selected.html" %}    
-
-            {{ govukInput({
-              id: "party-mobile1",
-              name: "party-mobile1",
-              type: "tel",
-              autocomplete: "tel",
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "Mobile number"
-              },
-              value: data['party-mobile1'] or '07821945034'
-            }) }}
-              
-          {% endcall %}
-
-          {% else %}
-          <!--Lara -->
-          {% if (data['account-user'] == "party-user11") %}
-            {{ govukInput({
-              label: {
-                text: "Your name",
-                classes: "govuk-label--s",
-                isPageHeading: false
-              },
-              classes: "govuk-input--width-20",
-              id: "party-user11",
-              name: "party-user11",
-              type: "text",
-              autocomplete: "name",
-              value: data['party-user11']
-            }) }}
-
-            {{ govukInput({
-              label: {
-                text: "Your email address",
-                classes: "govuk-label--s"
-              },
-            
-              id: "party-email11",
-              name: "party-email11",
-              classes: "govuk-input--width-20",
-              type: "email",
-              autocomplete: "email",
-              value: data['party-email11']
-            }) }}
-
-            {% call govukFieldset({
-              legend: {
-                text: "Your mobile number",
-                classes: "govuk-fieldset__legend--s",
-                isPageHeading: false
-              }
-            }) %}
-
-              {% include "includes/country-code-list-selected.html" %}    
-
-              {{ govukInput({
-                id: "party-mobile11",
-                name: "party-mobile11",
-                type: "tel",
-                autocomplete: "tel",
-                classes: "govuk-!-width-one-third",
-                label: {
-                  text: "Mobile number"
-                },
-                value: data['party-mobile11'] or "07821945034"
-              }) }}
-              
-            {% endcall %}
-
-            {% else %}
-            <!--Rodney -->
-            {% if (data['account-user'] == "party-user6") %}
-              {{ govukInput({
-                label: {
-                  text: "Your name",
-                  classes: "govuk-label--s",
-                  isPageHeading: false
-                },
-                classes: "govuk-input--width-20",
-                id: "party-user6",
-                name: "party-user6",
-                type: "text",
-                autocomplete: "name",
-                value: data['party-user6']
-              }) }}
-
-              {{ govukInput({
-                label: {
-                  text: "Your email address",
-                  classes: "govuk-label--s"
-                },
-              
-                id: "party-email6",
-                name: "party-email6",
-                classes: "govuk-input--width-20 ",
-                type: "email",
-                autocomplete: "email",
-                value: data['party-email6']
-              }) }}
-
-              {% call govukFieldset({
-                legend: {
-                  text: "Your mobile number",
-                  classes: "govuk-fieldset__legend--s",
-                  isPageHeading: false
-                }
-                }) %}
-
-                {% include "includes/country-code-list-selected.html" %}    
-
-                {{ govukInput({
-                  id: "party-mobile6",
-                  name: "party-mobile6",
-                  type: "tel",
-                  autocomplete: "tel",
-                  classes: "govuk-!-width-one-third",
-                  label: {
-                    text: "Mobile number"
-                  },
-                  value: data['party-mobile6'] or '07821945034'
-                }) }}
-              {% endcall %}             
-
-              {% else %}
-              <!--Bob Hoskins-->
-              {% if (data['account-user'] == "rep-user1") %}
-                {{ govukInput({
-                  label: {
-                    text: "Your name",
-                    classes: "govuk-label--s",
-                    isPageHeading: false
-                  },
-                  classes: "govuk-input--width-20",
-                  id: "rep-user1",
-                  name: "rep-user1",
-                  type: "text",
-                  autocomplete: "name",
-                  value: data['rep-user1']
-                }) }}
-
-                {{ govukInput({
-                  label: {
-                    text: "Your email address",
-                    classes: "govuk-label--s"
-                  },
-                  id: "rep-email1",
-                  name: "rep-email1",
-                  classes: "govuk-input--width-20",
-                  type: "email",
-                  autocomplete: "email",
-                  value: data['rep-email1']
-                }) }}
-
-                {% call govukFieldset({
-                    legend: {
-                      text: "Your mobile number",
-                      classes: "govuk-fieldset__legend--s",
-                      isPageHeading: false
-                    }
-                  }) %}
-
-                  {% include "includes/country-code-list-selected.html" %}    
-
-                  {{ govukInput({
-                    id: "rep-mobile1",
-                    name: "rep-mobile1",
-                    type: "tel",
-                    autocomplete: "tel",
-                    classes: "govuk-!-width-one-third",
-                    label: {
-                      text: "Mobile number"
-                    },
-                    value: data['rep-mobile1'] or "07821945034"
-                  }) }}
-                {% endcall %} 
-
-                {% else %}
-                <!--Bob Hoskins-->
-                {% if (data['account-user'] == "rep-user3") %}
-                  {{ govukInput({
-                    label: {
-                      text: "Your name",
-                      classes: "govuk-label--s",
-                      isPageHeading: false
-                    },
-                    classes: "govuk-input--width-20",
-                    id: "rep-user3",
-                    name: "rep-user3",
-                    type: "text",
-                    autocomplete: "name",
-                    value: data['rep-user3']
-                  }) }}
-
-                  {{ govukInput({
-                    label: {
-                      text: "Your email address",
-                      classes: "govuk-label--s"
-                    },
-                    id: "rep-email3",
-                    name: "rep-email3",
-                    classes: "govuk-input--width-20",
-                    type: "email",
-                    autocomplete: "email",
-                    value: data['rep-email3']
-                  }) }}
-
-                  {% call govukFieldset({
-                    legend: {
-                      text: "Your mobile number",
-                      classes: "govuk-fieldset__legend--s",
-                      isPageHeading: false
-                      }
-                    }) %}
-
-                    {% include "includes/country-code-list-selected.html" %}    
-
-                    {{ govukInput({
-                      id: "rep-mobile3",
-                      name: "rep-mobile3",
-                      type: "tel",
-                      autocomplete: "tel",
-                      classes: "govuk-!-width-one-third",
-                      label: {
-                        text: "Mobile number"
-                      },
-                      value: data['rep-mobile3'] or "07821945034"
-                    }) }}
-                  {% endcall %} 
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endif %}
-        {% endif %}
-  
+       
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Submit"
