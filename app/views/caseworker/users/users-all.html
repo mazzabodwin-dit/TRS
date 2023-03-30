@@ -35,10 +35,28 @@
     <h1 class="govuk-heading-xl">
       {{header1}}
     </h1>
+
+    <div class="govuk-form-group govuk-!-width-three-quarters">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="search-users">
+          Search
+        </label>
+      </h2>
+      <select class="govuk-select autocomplete-select" id="search-users" data-selected-user-id="user-data" name="search-users" autocomplete-placeholder="Enter the user's name or email address" onchange="location = this.value;">
+        <option value="" class="selected"></option>
+        <option value="user-account?account-user=party-user1">{{data['party-user1']}} - {{data['party-email1']}}</option>
+        <option value="user-account?account-user=party-user11">{{data['party-user11']}} - {{data['party-email11']}}</option>
+        <option value="user-account?account-user=party-user6">{{data['party-user6']}} - {{data['party-email6']}}</option>
+        <option value="user-account?account-user=rep-user1">{{data['rep-user1']}} - {{data['rep-email1']}}</option>
+      </select>
+    </div>
+
+    <div class="govuk-inset-text" id="selected_user_wrapper" style="display:none;">
+      <p><a href="" class="govuk-link--no-visited-state" id="selected_user"></a></p>
+    </div>
+    <br>
   </div>
-  <!--If there is an invite show tabs-->
-  <!--If there is an invite invite show tabs-->
-  <!--If there is an invite invite show tabs-->
+
   <div class="govuk-grid-column-full">
     {% set manageCustomersHTML %}
       <h2 class="govuk-heading-m">Customers
