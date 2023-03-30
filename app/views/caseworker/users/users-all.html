@@ -42,7 +42,7 @@
           Search
         </label>
       </h2>
-      <select class="govuk-select autocomplete-select" id="search-users" data-selected-user-id="user-data" name="search-users" autocomplete-placeholder="Enter the user's name or email address" onchange="location = this.value;">
+      <select class="govuk-select autocomplete-select" id="search-users" data-go-to-url="yes" data-selected-user-id="user-data" name="search-users" autocomplete-placeholder="Enter the user's name or email address" onchange="location = this.value;">
         <option value="" class="selected"></option>
         <option value="user-account?account-user=party-user1">{{data['party-user1']}} - {{data['party-email1']}}</option>
         <option value="user-account?account-user=party-user11">{{data['party-user11']}} - {{data['party-email11']}}</option>
