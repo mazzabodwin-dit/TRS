@@ -39,10 +39,15 @@ $(document).ready(function () {
           let commodity_wrapper_element = $('#' + commodity_wrapper_id)
           let selected_commodity_element = commodity_wrapper_element.find("a#selected_commodity")
 
+          // Search for org in caseworker  - setting the div for showing the option value
+          let org_wrapper_id = 'selected_org_wrapper'
+          let org_wrapper_element = $('#' + org_wrapper_id)
+          let selected_org_element = org_wrapper_element.find("a#selected_org")
+
           // Search for users in caseworker - setting the div for showing the option value
-          let user_wrapper_id = 'selected_user_wrapper'
-          let user_wrapper_element = $('#' + user_wrapper_id)
-          let selected_user_element = user_wrapper_element.find("a#selected_user")
+          //let user_wrapper_id = 'selected_user_wrapper'
+          //let user_wrapper_element = $('#' + user_wrapper_id)
+          //let selected_user_element = user_wrapper_element.find("a#selected_user")
 
          
 
@@ -54,10 +59,14 @@ $(document).ready(function () {
               company_wrapper_element.show()
 
               selected_commodity_element.html($('option:contains(' + data + ')').text())
-              commodity_wrapper_element.show()  
+              commodity_wrapper_element.show()
               
-              selected_user_element.html($('option:contains(' + data + ')').text())
-              user_wrapper_element.show()               
+              selected_org_element.html($('option:contains(' + data + ')').text())
+              org_wrapper_element.show()  
+
+              //selected_user_element.html($('option:contains(' + data + ')').text())
+              //user_wrapper_element.show()  
+                          
 
               //Trying instead to go straight to a url when selecting an option BUT only #search-user autocomplete - not any of the others
               var user_url = $('option:contains(' + data + ')').val()
@@ -65,7 +74,7 @@ $(document).ready(function () {
 
               // Mary's attempt....
               // Change the href of the <a> in the div for showing the option value
-              document.getElementById("selected_commodity").href = ($('option:contains(' + data + ')').val())
+              document.getElementById("selected_org").href = ($('option:contains(' + data + ')').val())
 
             
               
