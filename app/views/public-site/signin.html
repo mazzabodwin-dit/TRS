@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "Sign in to Trade Remedies Service" %}
+
 {% block pageTitle %}
-  Sign in or create account - {{ serviceName }} - GOV.UK
+  {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +23,7 @@
         <p aria-live="polite" id="password-text" class="sr-only">Password hidden.</p>
 
         <h1 class="govuk-heading-xl">
-          Sign in to Trade Remedies Service
+          {{header1}}
         </h1>
 
         {% if data['loggedout'] =="yes" %}
