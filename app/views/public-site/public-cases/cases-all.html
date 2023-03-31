@@ -56,7 +56,7 @@
           Search for an investigation
         </label>
       </h2>
-      <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter case name or number, or commodity code">
+      <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter case name, number or commodity code">
         <option value="" class="selected"></option>
         <option value="AD2224 - Steel plate from Russia">7222202100 - AD2224 - Steel plate from Russia</option>
         <option value="AD2224 - Steel plate from Russia">7222202900</option>
@@ -87,7 +87,7 @@
             <a class="link" href="https://www.gov.uk/trade-tariff" target="_blank">Check your tariff (opens in a new window or tab)</a> 
           </li>   
           <li>
-            <a class="link" href="https://www.gov.uk/government/collections/trade-remedies-notices" target="_blank"> Trade remedies notices (opens in a new window or tab)</a> 
+            <a class="link" href="https://www.gov.uk/government/collections/trade-remedies-notices" target="_blank">Current trade remedies (opens in a new window or tab)</a> 
           </li>    
         </ul>
       </nav>
@@ -379,7 +379,7 @@
   {% endset %}
 
   {% set completedCasesHTML %}
-    <h2 class="govuk-heading-m">Complete investigations</h2>
+    <h2 class="govuk-heading-m">Completed investigations</h2>
     <form>
       <div class="govuk-form-group table-sort">
         <label class="govuk-label govuk-!-display-inline" for="sort-closed-cases">
@@ -388,7 +388,6 @@
         <select class="govuk-select" id="sort-closed-cases" name="sort-closed-cases">
           <option value="Case No." selected>Case No.</option>
           <option value="Case">Case</option>
-          <option value="Commodity">Commodity</option>
           <option value="Country">Country</option>
           <option value="Type">Type</option>
           <option value="Initiated">Initiated</option>
@@ -430,12 +429,6 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Commodity
-                <span class="indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th class="govuk-table__header">
-              <button class="govuk-button govuk-button--secondary">
                 <span class="govuk-visually-hidden--desktop">Sort by: </span>Country
                 <span class="indicator" aria-hidden="true"></span>
               </button>
@@ -470,13 +463,10 @@
             <span class="govuk-visually-hidden--desktop">Case: </span><a href="#" class="govuk-link--no-visited-state">{{data['case-name2']}}</a>
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Commodity: </span><span title="{{data['case-type1']}}">{{data['commodity2']}}</span>
+            <span class="govuk-visually-hidden--desktop">Country: </span>TR
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>{{data['country2']}}
-          </td>
-          <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Type: </span><abbr title="{{data['case-type2']}}">{{data['case-typeabr2']}}</abbr>
+            <span class="govuk-visually-hidden--desktop">Type: </span>{{data['case-type2']}}
           </td>
           <td class="govuk-table__cell ">
             <span class="govuk-visually-hidden--desktop">Register by: </span>{{data['created2']}}
@@ -503,7 +493,7 @@
       }
     },
     { 
-      label: "Complete investigations",
+      label: "Completed investigations",
       id: "completed-cases",
       panel: {
         html: completedCasesHTML
