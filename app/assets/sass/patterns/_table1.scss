@@ -67,6 +67,29 @@
   }
 }
 
+/* Table filter */
+.container {
+  overflow: hidden;
+}
+
+.sortable .hideTR {
+  display: none; /* Hidden by default */
+}
+
+
+/* The "show" class is added to the filtered elements */
+.sortable .showTR {
+  display: table-row;
+}
+
+/* Add a light grey background on mouse-over */
+.govuk-button--secondary.active {
+  background-color: #ddd;
+}
+
+/* //////////// */
+
+
 .govuk-table__header {
   padding: 10px 10px 10px 0;
 }

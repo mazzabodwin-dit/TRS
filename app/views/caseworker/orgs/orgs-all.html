@@ -34,35 +34,32 @@
     <h1 class="govuk-heading-xl">
       All organisations
     </h1>
-    <div class="govuk-form-group govuk-!-width-three-quarters">
-      <h2 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="search-commodity">
-          Search
-        </label>
-      </h2>
-      <select class="govuk-select autocomplete-select" id="search-org" name="search-org" autocomplete-placeholder="Enter the organisation name or registration number">
-        <option value="" class="selected"></option>
-        <option value="org-awesomesteel">Awesome Steel, People's Republic of China</option>
-        <option value="org-steeel">Steeel, People's Republic of China</option>
-        <option value="org-steeluk">Steel UK, United Kingdom	(357964356)</option>
-      </select>
-    </div>
-
-    <div class="govuk-inset-text" id="selected_org_wrapper" style="display:none;">
-      <p><a href="" class="govuk-link--no-visited-state" id="selected_org"></a></p>
-    </div>
-    <br>
-
+ 
     {% set activeOrgsHTML %}
-      <h2 class="govuk-heading-m clearfix">Active orgs
+      <h2 class="govuk-heading-m clearfix">All organisations
         <span class="govuk-body right-aligned-link">
         <a href="merge-two-orgs" class="govuk-link--no-visited-state">Merge organisations</a>
       </span> 
       </h2>
+
+      <div class="govuk-form-group  govuk-!-width-two-thirds">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="filterSearch">
+            Search
+          </label>
+        </h1>
+        <input class="govuk-input" id="filterSearch" name="filterSearch" type="text" onkeyup="tablefilterSearch()" placeholder="Enter the organisation name, registration number or country">
+      </div>
+
+      <div id="filterbuttonContainer">
+        <button class="govuk-button govuk-button--secondary active" onclick="filterSelection('all')"> All <span class="govuk-label govuk-visually-hidden">organisations</span> (9)</button>
+        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('none')"><span class="govuk-label govuk-visually-hidden">Organisations with </span> No case (3)</button>
+        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('rejected')"> Rejected <span class="govuk-label govuk-visually-hidden">organisations</span> (1)</button>
+      </div>
       <form>
           <div class="govuk-form-group table-sort">
             <label class="govuk-label govuk-!-display-inline" for="sort-active-org">
-              Sort active organisations by
+              Sort organisations by
             </label>
             <select class="govuk-select" id="sort-active-org" name="sort-active-org">
               <option value="Organisation" selected>Organisation</option>
@@ -132,7 +129,7 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all rejected none">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-awesomesteel" class="govuk-link--no-visited-state">{{data['party111']}}</a>
             </td>
@@ -152,7 +149,7 @@
               <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated5']}}
             </td>
           </tr>
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party4']}}</a>
             </td>
@@ -173,7 +170,7 @@
             </td>
           </tr>
 
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-bluesteel" class="govuk-link--no-visited-state">{{data['representative1']}}</a>
             </td>
@@ -194,7 +191,7 @@
             </td>
           </tr>
 
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party3']}}</a>
             </td>
@@ -202,7 +199,7 @@
               <span class="govuk-visually-hidden--desktop">Country: </span>{{data['country3']}}
             </td>
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">Registration number: </span>X4647
+              <span class="govuk-visually-hidden--desktop">Registration number: </span>X4547
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">No. cases: </span>1
@@ -215,7 +212,7 @@
             </td>
           </tr>
 
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['party5']}}</a>
             </td>
@@ -236,7 +233,7 @@
             </td>
           </tr>
 
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['representative2']}}</a>
             </td>
@@ -256,7 +253,7 @@
               <span class="govuk-visually-hidden--desktop">Registered: </span>28 April 2021
             </td>
           </tr>
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all none">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-steeel" class="govuk-link--no-visited-state">{{data['dup-party1']}}</a>
             </td>
@@ -277,7 +274,7 @@
             </td>
           </tr>
 
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all none">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="org-steeluk" class="govuk-link--no-visited-state">{{data['party1']}}</a>
             </td>
@@ -298,7 +295,7 @@
             </td>
           </tr>
 
-          <tr class="govuk-table__row no-border">
+          <tr class="govuk-table__row no-border hideTR all">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Organisation: </span><a href="" class="govuk-link--no-visited-state">{{data['applicant1']}}</a>
             </td>
@@ -580,7 +577,7 @@
     {{ govukTabs ({
       items: [
       { 
-        label: "Active organisations (9)",
+        label: "All organisations (9)",
         id: "active-orgs",
         panel: {
           html: activeOrgsHTML
@@ -592,24 +589,9 @@
       panel: {
         html: requestsHTML
         }
-      },
-      { 
-        label: "Rejected from case (1)",
-        id: "rej-org",
-        panel: {
-          html: rejOrgtHTML
-        }
-      },
-      { 
-      label: "Duplicates (3)",
-      id: "dup-orgs",
-      panel: {
-        html: dupOrgtHTML
-        }
       }
       ]
     }) }}
-    
     
   </div>
 
