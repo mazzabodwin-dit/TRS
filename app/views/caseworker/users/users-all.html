@@ -43,30 +43,31 @@
         </span>
       </h2> 
 
-      <div class="govuk-form-group  govuk-!-width-two-thirds">
+      <div class="govuk-form-group govuk-!-width-two-thirds" role="search">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--s" for="filterSearch">
             Search
           </label>
         </h1>
-        <input class="govuk-input" id="filterSearch" name="filterSearch" type="text" onkeyup="tablefilterSearch()" placeholder="Enter the customers name, email address or organisation">
+        <input class="govuk-input" id="filterSearch" name="filterSearch" type="search" onkeyup="tablefilterSearch()" placeholder="Enter the customers name, email address or organisation" aria-description="Search will filter the table of users">
       </div>
       <div id="filterbuttonContainer">
-        <button class="govuk-button govuk-button--secondary active" onclick="filterSelection('all')"> All <span class="govuk-label govuk-visually-hidden">customers</span> (11)</button>
-        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('none')"><span class="govuk-label govuk-visually-hidden">Customers with </span> No case (6)</button>
-        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('inactive')"> Inactive <span class="govuk-label govuk-visually-hidden">customers</span> (1)</button>
+        <button class="govuk-button govuk-button--secondary active" onclick="filterSelection('all')"> All <span class="govuk-label govuk-visually-hidden">customers</span></button>
+        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('none')"><span class="govuk-label govuk-visually-hidden">Customers with </span> No case</button>
+        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('inactive')"> Inactive <span class="govuk-label govuk-visually-hidden">customers</span></button>
       </div>
 
       <form id="sort-users">
-        <div class="govuk-form-group table-sort">
-          <label class="govuk-label govuk-!-display-inline" for="sort-user">
-            Sort users by
+        <div class="govuk-form-group table-sort" aria-description="Sort the customers in the table">
+          <label class="govuk-heading-s" for="sort-user">
+            Sort customers in the table by
           </label>
           <select class="govuk-select" id="sort-user" name="sort-user">
             <option value="User" selected>User</option>
             <option value="Email">Email</option>
             <option value="Organisation">Organisation</option>
             <option value="Number of cases">Number of cases</option>
+            <option value="Registered">Registered</option>
           </select>
         </div>
         <div class="govuk-form-group table-sort">
@@ -84,9 +85,9 @@
         }) }}
       </form>
 
-      <table class="govuk-table sortable mobile-table-border users-filter" id="table-header">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-          A table listing all of the users that have access to the TRS
+      <table class="govuk-table sortable mobile-table-border generic-filter" id="table-header">
+        <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden--desktop">
+          A table listing all of the customers
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -114,6 +115,12 @@
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
+             <th class="govuk-table__header">
+              <button class="govuk-button govuk-button--secondary">
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Registered
+                <span class="indicator" aria-hidden="true"></span>
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody class="govuk-table__body"> 
@@ -131,6 +138,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>1
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated5']}}
+            </td>
           </tr>   
           <!--Bob-->
           <tr class="govuk-table__row no-border hideTR all">
@@ -146,6 +156,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>2
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated6']}}
+            </td>
           </tr>       
           <!--Clay-->
           <tr class="govuk-table__row no-border hideTR all">
@@ -160,6 +173,9 @@
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>3
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated4']}}
             </td>
           </tr>  
           <!--Demi - If the user Approved by TRA the invite move them from 'Invites' tab to Account users tab OR if you want to see all user states-->
@@ -177,6 +193,9 @@
               <td class="govuk-table__cell">
                 <span class="govuk-visually-hidden--desktop">Cases: </span>1
               </td>
+              <td class="govuk-table__cell text-overflow">
+                <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated3']}}
+              </td>
             </tr>
           {% endif %}
           <!--George -->
@@ -193,6 +212,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated2']}}
+            </td>
           </tr>  
           <!--Gusto -->
           <tr class="govuk-table__row no-border hideTR all">
@@ -207,6 +229,9 @@
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>1
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['initiated1']}}
             </td>
           </tr>  
           <!--Itsa -->
@@ -223,6 +248,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['created6']}}
+            </td>
           </tr>
           <!--Jane-->
           <tr class="govuk-table__row no-border hideTR all none">
@@ -237,6 +265,9 @@
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['created5']}}
             </td>
           </tr>
           <!--Lara-->
@@ -253,6 +284,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['created4']}}
+            </td>
           </tr>
           <!--Mohawks-->
           <tr class="govuk-table__row no-border hideTR all none">
@@ -267,6 +301,9 @@
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
+            </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['created3']}}
             </td>
           </tr>
           <!--Odessa -->
@@ -283,6 +320,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>2
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['created2']}}
+            </td>
           </tr>  
           <!--Rodney -->
           <tr class="govuk-table__row no-border hideTR all none inactive">
@@ -298,6 +338,9 @@
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
             </td>
+            <td class="govuk-table__cell text-overflow">
+              <span class="govuk-visually-hidden--desktop">Registered: </span>{{data['created1']}}
+            </td>
           </tr>           
         </body>
       </table>
@@ -306,7 +349,7 @@
     {% set manageInvestigatorsHTML %}
       <h2 class="govuk-heading-m">Investigators
         <span class="govuk-body right-aligned-link">
-          <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Add user</a>
+          <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Add investigator</a>
         </span>
       </h2>
 
@@ -316,39 +359,39 @@
             Search
           </label>
         </h1>
-        <input class="govuk-input" id="filterSearch2" name="filterSearch2" type="text" onkeyup="tablefilterSearch2()" placeholder="Enter the investigators name, email address or role">
+        <input class="govuk-input" id="filterSearch2" name="filterSearch2" type="search" onkeyup="tablefilterSearch2()" placeholder="Enter the investigators name, email address or role">
       </div>
     
-      <form>
-          <div class="govuk-form-group table-sort">
-            <label class="govuk-label govuk-!-display-inline" for="sort-user">
-              Sort users by
-            </label>
-            <select class="govuk-select" id="sort-user" name="sort-user">
-              <option value="User" selected>User</option>
-              <option value="Email">Email</option>
-              <option value="Account Account role">Account role</option>
-              <option value="Number of cases">Number of cases</option>
-            </select>
-          </div>
-          <div class="govuk-form-group table-sort">
-            <label class="govuk-label govuk-visually-hidden" for="direction-users">
-              Direction
-            </label>
-            <select class="govuk-select" id="direction-users" name="direction-users">
-              <option value="Decending" selected>Decending</option>
-              <option value="Ascending ">Ascending </option>
-            </select>
-          </div>
-          {{ govukButton({
-            text: "Sort users",
-            classes: "govuk-button--secondary table-sort"
-          }) }}
+      <form id="sort-investigators">
+        <div class="govuk-form-group table-sort" aria-description="Sort the investigators in the table">
+          <label class="govuk-label govuk-label--s" for="sort-investigator">
+            Sort investigators in the table by
+          </label>
+          <select class="govuk-select" id="sort-investigator" name="sort-investigator">
+            <option value="User" selected>User</option>
+            <option value="Email">Email</option>
+            <option value="Account Account role">Account role</option>
+            <option value="Number of cases">Number of cases</option>
+          </select>
+        </div>
+        <div class="govuk-form-group table-sort">
+          <label class="govuk-label govuk-visually-hidden" for="direction-investigator">
+            Direction
+          </label>
+          <select class="govuk-select" id="direction-users" name="direction-investigator">
+            <option value="Decending" selected>Decending</option>
+            <option value="Ascending ">Ascending </option>
+          </select>
+        </div>
+        {{ govukButton({
+          text: "Sort investigators",
+          classes: "govuk-button--secondary table-sort"
+        }) }}
       </form>
 
       <table class="govuk-table sortable mobile-table-border investigators-filter" id="table-header2">
-        <caption class="govuk-table__caption govuk-body govuk-!-font-weight-regular govuk-visually-hidden--desktop">
-          A table listing all of the TRA users
+        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden--desktop">
+          A table listing all of the investigators
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">

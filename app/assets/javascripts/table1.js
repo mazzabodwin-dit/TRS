@@ -192,7 +192,7 @@ function formatDate(dateString) {
     var input, filter, table, tr, td, i ;
     input = document.getElementById("filterSearch");
     filter = input.value.toUpperCase();
-    table = document.getElementsByClassName("users-filter")[0];
+    table = document.getElementsByClassName("generic-filter")[0];
     tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query  
@@ -212,6 +212,7 @@ function formatDate(dateString) {
    }
   }
   
+  //Filter specific to investigatros as I can't work out how to make a function work more than once on the same page
   function tablefilterSearch2() {
     // Declare variables
     var input, filter, table, tr, td, i;
