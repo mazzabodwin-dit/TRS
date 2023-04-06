@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if (data['account-user'] == "new-customer") %}
+      {% if data['account-user'] == "new-customer" or data['account-user'] == "new-invest" %}
           <form action="user-account-org" method="post" id="account-changepass-form">
         {% else %}
           <form action="user-account#user-details" method="post" id="account-changepass-form">

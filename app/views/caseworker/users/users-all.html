@@ -350,7 +350,7 @@
     {% set manageInvestigatorsHTML %}
       <h2 class="govuk-heading-m">Investigators
         <span class="govuk-body right-aligned-link">
-          <a href="invite/invite-user-type?tasklist-type=invite-rep&existing-cases-reps=yes" class="govuk-link--no-visited-state">Add investigator</a>
+          <a href="user-edit?account-user=new-invest" class="govuk-link--no-visited-state">Add investigator</a>
         </span>
       </h2>
 
@@ -426,7 +426,7 @@
           <!--Natalie - Always show-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="1" class="govuk-link--no-visited-state">{{data['caseworker-invest'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="invest-account?account-user=caseworker-invest" class="govuk-link--no-visited-state">{{data['caseworker-invest'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-invest-email']}}
@@ -435,13 +435,13 @@
               <span class="govuk-visually-hidden--desktop">Account role: </span>Investigator
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Cases: </span>2
+              <span class="govuk-visually-hidden--desktop">Cases: </span>1
             </td>
           </tr>
            <!--Jonana - Always show-->
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['caseworker-lead'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="invest-account?account-user=caseworker-lead" class="govuk-link--no-visited-state">{{data['caseworker-lead'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-lead-email']}}
@@ -450,12 +450,12 @@
               <span class="govuk-visually-hidden--desktop">Account role: </span>Lead Investigator
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Cases: </span>5
+              <span class="govuk-visually-hidden--desktop">Cases: </span>3
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['caseworker-head'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="invest-account?account-user=caseworker-head" class="govuk-link--no-visited-state">{{data['caseworker-head'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-head-email']}}
@@ -464,18 +464,18 @@
               <span class="govuk-visually-hidden--desktop">Account role: </span>Head of Investigation
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Cases: </span>5
+              <span class="govuk-visually-hidden--desktop">Cases: </span>3
             </td>
           </tr>
           <tr class="govuk-table__row no-border">
             <td class="govuk-table__cell text-overflow">
-              <span class="govuk-visually-hidden--desktop">User: </span><a href="" class="govuk-link--no-visited-state">{{data['caseworker-admin'] }}</a>
+              <span class="govuk-visually-hidden--desktop">User: </span><a href="invest-account?account-user=caseworker-admin" class="govuk-link--no-visited-state">{{data['caseworker-admin'] }}</a>
             </td>
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-admin-email']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Account role: </span>TRA administrator
+              <span class="govuk-visually-hidden--desktop">Account role: </span>Administrator
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0
