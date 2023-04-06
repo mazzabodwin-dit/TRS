@@ -11,7 +11,7 @@
   }
 
   .sortable th {
-    @include govuk-visually-hidden();
+    display: none;
   }
 
   .sortable tr:nth-child(even) {

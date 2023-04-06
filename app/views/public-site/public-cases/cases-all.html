@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set header1 = "TRA Investigations" %}
+
 {% block pageTitle %}
-  TRA Investigations – {{ serviceName }} - GOV.UK
+  {{header1}} – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 <!-- This sets a body class for the whole page: indication which section the user is on in the navigation-->
@@ -25,7 +27,7 @@
         <a class="govuk-breadcrumbs__link" href="../dashboard">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        TRA active investigations
+        {{header1}}
       </li>
     </ol>
   </div>
@@ -58,17 +60,17 @@
       </h2>
       <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter case name, number or commodity code">
         <option value="" class="selected"></option>
-        <option value="AD2224 - Steel plate from Russia">7222202100 - AD2224 - Steel plate from Russia</option>
-        <option value="AD2224 - Steel plate from Russia">7222202900</option>
-        <option value="AD2224 - Steel plate from Russia">7222203100</option>
-        <option value="AS0020 - Ironing Boards from Turkey">8722203900</option>
-        <option value="AD2224 - Steel plate from Russia">AD2224 - Steel plate from Russia</option>
-        <option value="AS0020 - Ironing Boards from Turkey">AS0020 - Ironing Boards from Turkey</option>
+        <option value="AD2224 - Steel plate from Russia" id="1">7222202100 </option>
+        <option value="AD2224 - Steel plate from Russia" id="2">7222202900</option>
+        <option value="AD2224 - Steel plate from Russia" id="3">7222203100</option>
+        <option value="AD2224 - Steel plate from Russia" id="single">AD2224 - Steel plate from Russia</option>
+        <option value="AD3245 - Steel balls from Murcia" id="4">AD3245 - Steel balls from Murcia</option>
       </select>
     </div>
 
     <div class="govuk-inset-text" id="selected_commodity_wrapper" style="display:none;">
-      <ul class="govuk-list govuk-list--bullet">
+      <ul class="govuk-list">
+        <li id="selected_commodity2" style="display:none;"><a href="case-overview" class="govuk-link--no-visited-state">AS0020 - Ironing Boards from Turkey</a></li>
         <li><a href="case-overview" class="govuk-link--no-visited-state" id="selected_commodity"></a></li>
       </ul>
     </div>
@@ -121,7 +123,7 @@
         </label>
         <select class="govuk-select" id="direction-cases" name="direction-cases">
           <option value="Decending" selected>Decending</option>
-          <option value="Accending">Accending</option>
+          <option value="Ascending ">Ascending </option>
         </select>
       </div>
       {{ govukButton({
@@ -400,7 +402,7 @@
         </label>
         <select class="govuk-select" id="direction-closed-cases" name="direction-closed-cases">
           <option value="Decending" selected>Decending</option>
-          <option value="Accending">Accending</option>
+          <option value="Ascending ">Ascending </option>
         </select>
       </div>
 
