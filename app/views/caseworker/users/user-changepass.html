@@ -1,38 +1,44 @@
 {% extends "layout.html" %}
 
-{% set header1 = "Change user's password" %}
+{% set header1 = "User password" %}
 
 {% block pageTitle %}
   {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+
+{% set bodyClasses = 'caseworker-width user-nav' %}
+
+
 {% block header %}
-  {% include "includes/header-public.html" %}
+ {% include "includes/header-caseworker.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "includes/beta-banner.html"%}
-
   <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
 {% endblock %}
 
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {% if (data['account-user'] == "new-customer") %}
+          <form action="user-account-org" method="post" id="account-changepass-form">
+        {% else %}
+          <form action="user-account#user-details" method="post" id="account-changepass-form">
+      {% endif %}
       
-      <form action="user-account#user-details" method="post" id="account-changepass-form">
         
         <h1 class="govuk-heading-xl">
           {{header1}}
         </h1>
 
-        <p>To change the password for this users account enter a new password.</p>
   
 <!-- Content contains accessibility code for screen readers based on this blog: https://incl.ca/show-hide-password-accessibility-and-password-hints-tutorial -->
         
-        <p id="password-hints">The new password for this account must: 
+        <p id="password-hints">The password for this account must: 
 
   <!-- This text is only shown to screen readers -->        
           <span class="sr-only">Be at least 8 characters, have at least 1 number, have at least 1 uppercase letter, have at least one lowercase letter. and have at least 1 special character.</span></p>
@@ -68,12 +74,19 @@
         
         </div>
 
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Submit"
-          }) }}    
-           
-        </div>
+        {% if (data['account-user'] == "new-customer") %}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}    
+          </div>
+          {% else %}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Submit"
+            }) }}    
+          </div>
+        {% endif %}
       </form>
         
     </div>

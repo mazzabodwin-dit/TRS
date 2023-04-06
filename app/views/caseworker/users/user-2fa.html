@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set header1 = "Change users two-factor authentication" %}
+{% set header1 = "User two-factor authentication" %}
 
 {% block pageTitle %}
   {{header1}} - {{ serviceName }} - GOV.UK
@@ -16,10 +16,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html"%}
-
-<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
+  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -29,7 +26,8 @@
       <form action="user-account#user-details" method="post" id="users-profile-2fa-form">   
 
         <h1 class="govuk-heading-xl">
-          {{header1}}
+          {{header1}}          {{data['account-user'] }}
+
         </h1>
 
         <p>When the user signs in, we will send them a code as part of our two-factor authentication. This helps ensure that their account is kept safe and secure.</p>
@@ -56,7 +54,11 @@
                     {% else %}
                     {% if data['account-user'] =="rep-user1" %}
                       {{data['rep-email1']}}<br>
-                    {% endif %}  
+                      {% else %}
+                      {% if data['account-user'] =="new-customer" %}
+                        {{data['rep-email3']}} <br>
+                      {% endif %}
+                    {% endif %}    
                   {% endif %}  
                 {% endif %}
               {% endif %}

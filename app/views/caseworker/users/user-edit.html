@@ -1,20 +1,22 @@
 {% extends "layout.html" %}
 
-{% set header1 = "Edit user details" %}
+{% set header1 = "User details" %}
 
 {% block pageTitle %}
   {{header1}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+<!-- This sets a body class for the whole page, changing the standard width and indication which section the user is on in the navigation-->
+
+{% set bodyClasses = 'caseworker-width user-nav' %}
+
+
 {% block header %}
-  {% include "includes/header-public.html" %}
+ {% include "includes/header-caseworker.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html"%}
-
-<a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
-
+  <a class="govuk-back-link govuk-link--no-visited-state" href="javascript: history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -24,12 +26,17 @@
         {{header1}}
       </h1>
 
-      <form action="user-account#user-details" method="post" id="account-update-details-form"> 
+      {% if (data['account-user'] == "new-customer") %}
+        <form action="adduser-2fa" method="post" novalidate id="account-update-details-form"> 
+        {% else %}
+        <form action="user-account#user-details" novalidate method="post" id="account-update-details-form"> 
+      {% endif %}
+
         <!--Jane-->
         {% if (data['account-user'] == "party-user1") %}
           {{ govukInput({
             label: {
-              text: "User name",
+              text: "User's name",
               classes: "govuk-label--s",
               isPageHeading: false
             },
@@ -43,7 +50,7 @@
 
           {{ govukInput({
             label: {
-              text: "User email address",
+              text: "Email address",
               classes: "govuk-label--s"
             },
           
@@ -57,7 +64,7 @@
 
           {% call govukFieldset({
             legend: {
-              text: "User mobile number",
+              text: "Mobile number",
               classes: "govuk-fieldset__legend--s",
               isPageHeading: false
             }
@@ -84,7 +91,7 @@
           {% if (data['account-user'] == "party-user11") %}
             {{ govukInput({
               label: {
-                text: "Your name",
+                text: "User's name",
                 classes: "govuk-label--s",
                 isPageHeading: false
               },
@@ -98,7 +105,7 @@
 
             {{ govukInput({
               label: {
-                text: "Your email address",
+                text: "Email address",
                 classes: "govuk-label--s"
               },
             
@@ -112,7 +119,7 @@
 
             {% call govukFieldset({
               legend: {
-                text: "Your mobile number",
+                text: "Mobile number",
                 classes: "govuk-fieldset__legend--s",
                 isPageHeading: false
               }
@@ -139,7 +146,7 @@
             {% if (data['account-user'] == "party-user6") %}
               {{ govukInput({
                 label: {
-                  text: "Your name",
+                  text: "User's name",
                   classes: "govuk-label--s",
                   isPageHeading: false
                 },
@@ -153,7 +160,7 @@
 
               {{ govukInput({
                 label: {
-                  text: "Your email address",
+                  text: "Email address",
                   classes: "govuk-label--s"
                 },
               
@@ -167,7 +174,7 @@
 
               {% call govukFieldset({
                 legend: {
-                  text: "Your mobile number",
+                  text: "Mobile number",
                   classes: "govuk-fieldset__legend--s",
                   isPageHeading: false
                 }
@@ -193,7 +200,7 @@
               {% if (data['account-user'] == "rep-user1") %}
                 {{ govukInput({
                   label: {
-                    text: "Your name",
+                    text: "User's name",
                     classes: "govuk-label--s",
                     isPageHeading: false
                   },
@@ -207,7 +214,7 @@
 
                 {{ govukInput({
                   label: {
-                    text: "Your email address",
+                    text: "Email address",
                     classes: "govuk-label--s"
                   },
                   id: "rep-email1",
@@ -220,7 +227,7 @@
 
                 {% call govukFieldset({
                     legend: {
-                      text: "Your mobile number",
+                      text: "Mobile number",
                       classes: "govuk-fieldset__legend--s",
                       isPageHeading: false
                     }
@@ -242,11 +249,11 @@
                 {% endcall %} 
 
                 {% else %}
-                <!--Bob Hoskins-->
+                <!--Demi Moore-->
                 {% if (data['account-user'] == "rep-user3") %}
                   {{ govukInput({
                     label: {
-                      text: "Your name",
+                      text: "User's name",
                       classes: "govuk-label--s",
                       isPageHeading: false
                     },
@@ -260,7 +267,7 @@
 
                   {{ govukInput({
                     label: {
-                      text: "Your email address",
+                      text: "Email address",
                       classes: "govuk-label--s"
                     },
                     id: "rep-email3",
@@ -273,7 +280,7 @@
 
                   {% call govukFieldset({
                     legend: {
-                      text: "Your mobile number",
+                      text: "Mobile number",
                       classes: "govuk-fieldset__legend--s",
                       isPageHeading: false
                       }
@@ -293,20 +300,56 @@
                       value: data['rep-mobile3'] or "07821945034"
                     }) }}
                   {% endcall %} 
+
+                  {% else %}
+                  <!--New user-->
+                  {% if (data['account-user'] == "new-customer") %}
+                    {{ govukInput({
+                      label: {
+                        text: "User's name",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      classes: "govuk-input--width-20",
+                      id: "rep-user3",
+                      name: "rep-user3",
+                      type: "text",
+                      autocomplete: "name"
+                    }) }}
+
+                    {{ govukInput({
+                      label: {
+                        text: "Email address",
+                        classes: "govuk-label--s"
+                      },
+                      id: "rep-email3",
+                      name: "rep-email3",
+                      classes: "govuk-input--width-20",
+                      type: "email",
+                      autocomplete: "email"
+                    }) }}
+                  {% endif %}
                 {% endif %}
               {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}
   
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Submit"
-          }) }}    
-           
-        </div>
+        {% if (data['account-user'] == "new-customer") %}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}    
+          </div>
+          {% else %}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Submit"
+            }) }}    
+          </div>
+        {% endif %}
 
-        </form>
+      </form>
         
     </div>
   </div>

@@ -39,7 +39,7 @@
     {% set manageCustomersHTML %}
       <h2 class="govuk-heading-m">Customers
         <span class="govuk-body right-aligned-link">
-          <a href="user-add-customer" class="govuk-link--no-visited-state">Add customer</a>
+          <a href="user-edit?account-user=new-customer" class="govuk-link--no-visited-state">Add customer</a>
         </span>
       </h2> 
 
@@ -54,6 +54,7 @@
       <div id="filterbuttonContainer">
         <button class="govuk-button govuk-button--secondary active" onclick="filterSelection('all')"> All <span class="govuk-label govuk-visually-hidden">customers</span></button>
         <button class="govuk-button govuk-button--secondary" onclick="filterSelection('none')"><span class="govuk-label govuk-visually-hidden">Customers with </span> No case</button>
+        <button class="govuk-button govuk-button--secondary" onclick="filterSelection('invalid')"> Not validated <span class="govuk-label govuk-visually-hidden">customers</span></button>
         <button class="govuk-button govuk-button--secondary" onclick="filterSelection('inactive')"> Inactive <span class="govuk-label govuk-visually-hidden">customers</span></button>
       </div>
 
@@ -179,7 +180,7 @@
             </td>
           </tr>  
           <!--Demi - If the user Approved by TRA the invite move them from 'Invites' tab to Account users tab OR if you want to see all user states-->
-          {% if data['invite-rep-task'] == "Approved" or data['manage-user-states'] == "All" %}
+          {% if data['invite-rep-task'] == "Approved" or data['manage-user-states'] == "All" or data['show-demi'] == "yes" %}
             <tr class="govuk-table__row no-border hideTR all">
               <td class="govuk-table__cell text-overflow">
                 <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=invite-rep-name" class="govuk-link--no-visited-state">{{data['invite-rep-name'] or data['rep-user3'] }}</a>
@@ -325,7 +326,7 @@
             </td>
           </tr>  
           <!--Rodney -->
-          <tr class="govuk-table__row no-border hideTR all none inactive">
+          <tr class="govuk-table__row no-border hideTR all none inactive invalid">
             <td class="govuk-table__cell text-overflow">
               <span class="govuk-visually-hidden--desktop">User: </span><a href="user-account?account-user=party-user6" class="govuk-link govuk-link--no-visited-state">{{data['party-user6']}}</a>
             </td>

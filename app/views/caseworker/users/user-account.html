@@ -10,6 +10,7 @@
 
 {% set bodyClasses = 'caseworker-width user-nav' %}
 
+
 {% block header %}
  {% include "includes/header-caseworker.html" %}
 {% endblock %}
@@ -123,7 +124,7 @@
       {% if (data['account-user'] =="invite-user-name" or data['account-user'] =="party-user11") and (data['invite-case'] =="None" or data['invite-case'] == null) %}
         <p>This user is not involved in any cases</p>
         {% else %}
-        {% if (data['account-user'] =="party-user6") %}
+        {% if (data['account-user'] =="party-user6" or  data['account-user'] =="rep-user3") %}
          <p>This user is not involved in any cases</p>
           {% else %}
           <p>Manage the users case involvement.</p>
@@ -183,7 +184,7 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% if data['account-user'] =="party-user1" or data['account-user'] =="rep-user3"  %}
+              {% if data['account-user'] =="party-user1"  %}
                 <tr class="govuk-table__row no-border">
                   <td class="govuk-table__cell">
                     <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
@@ -393,43 +394,6 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['account-user'] =="party-user1" %}
-                  {{data['party-user1-email-valid'] or "Validated"}} 
-                  {% else %}
-                  {% if data['account-user'] =="party-user11" %}
-                    {{data['party-user11-email-valid'] or "Validated"}} 
-                    {% else %}
-                    {% if data['account-user'] =="party-user6" %}
-                      {{data['party-user6-email-valid'] or "Validated"}} 
-                      {% else %}
-                      {% if data['account-user'] =="rep-user3" %}
-                        {{data['rep-user3-email-valid'] or "Validated" }} 
-                        {% else %}
-                        {% if data['account-user'] =="rep-user1" %}
-                          {{data['rep-user1-email-valid'] or "Validated" }} 
-                        {% endif %}
-                      {% endif %}
-                    {% endif %}
-                  {% endif %}
-                {% endif %}    
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                {% if data['account-user'] =="party-user6" %}
-                  <a class="govuk-link--no-visited-state" href="user-account-valid">
-                    Change<span class="govuk-visually-hidden"> email validation status</span>
-                  </a>
-                  {% else %}
-                  <a class="govuk-link--no-visited-state" href="user-account-valid">
-                    Change<span class="govuk-visually-hidden"> email validation status</span>
-                  </a>
-                {% endif %}
-              </dd>
-            </div>  
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
                 Account permission
               </dt>
               <dd class="govuk-summary-list__value">
@@ -458,7 +422,7 @@
                 {% endif %}
               </dd>
             </div>
-             <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Status
               </dt>
@@ -494,7 +458,44 @@
                   </a>
                 {% endif %}
               </dd>
-            </div>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address validated
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['account-user'] =="party-user1" %}
+                  {{data['party-user1-email-valid'] or "Yes"}} 
+                  {% else %}
+                  {% if data['account-user'] =="party-user11" %}
+                    {{data['party-user11-email-valid'] or "Yes"}} 
+                    {% else %}
+                    {% if data['account-user'] =="party-user6" %}
+                      {{data['party-user6-email-valid'] or "Yes"}} 
+                      {% else %}
+                      {% if data['account-user'] =="rep-user3" %}
+                        {{data['rep-user3-email-valid'] or "Yes" }} 
+                        {% else %}
+                        {% if data['account-user'] =="rep-user1" %}
+                          {{data['rep-user1-email-valid'] or "Yes" }} 
+                        {% endif %}
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}    
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                {% if data['account-user'] =="party-user6" %}
+                  <a class="govuk-link--no-visited-state" href="user-account-valid">
+                    Change<span class="govuk-visually-hidden"> email validation status</span>
+                  </a>
+                  {% else %}
+                  <a class="govuk-link--no-visited-state" href="user-account-valid">
+                    Change<span class="govuk-visually-hidden"> email validation status</span>
+                  </a>
+                {% endif %}
+              </dd>
+            </div>                  
           </dl>
         </div>
       </div>
