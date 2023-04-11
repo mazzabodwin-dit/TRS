@@ -114,18 +114,27 @@
 
     {% set casesHtml %}
       <h2 class="govuk-heading-m clearfix">Cases
-      {% if data['account-user'] =="invite-rep-name" %}
+      <!-- {% if data['account-user'] =="invite-rep-name" %}
       {% else %}
         <span class="govuk-body right-aligned-link">
           <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
         </span>
       {% endif %}
+      -->
       </h2>
       {% if (data['account-user'] =="invite-user-name" or data['account-user'] =="party-user11") and (data['invite-case'] =="None" or data['invite-case'] == null) %}
-        <p>This user is not involved in any cases</p>
+        <p>This user has no active cases. You can delete them if required.</p>
+        {{ govukButton({
+          text: "Delete user",
+          href: "user-account-delete-confirm"
+        }) }}
         {% else %}
         {% if (data['account-user'] =="party-user6" or  data['account-user'] =="rep-user3") %}
-         <p>This user is not involved in any cases</p>
+        <p>This user has no active cases. You can delete them if required.</p>
+          {{ govukButton({
+            text: "Delete user",
+            href: "user-account-delete-confirm"
+          }) }}
           {% else %}
           <p>Manage the users case involvement.</p>
           <form>
@@ -431,7 +440,7 @@
                   {{data['party-user1-status'] or "Active"}} 
                   {% else %}
                   {% if data['account-user'] =="party-user11" %}
-                    {{data['iparty-user11-status'] or "Active"}} 
+                    {{data['party-user11-status'] or "Active"}} 
                     {% else %}
                     {% if data['account-user'] =="party-user6" %}
                       {{data['party-user6-status'] or "Inactive"}} 

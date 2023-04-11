@@ -27,7 +27,7 @@
       </h1>
 
       {% if data['account-user'] == "new-customer" or data['account-user'] == "new-invest" %}
-        <form action="adduser-2fa" method="post" novalidate id="account-update-details-form"> 
+        <form action="user-add-2fa" method="post" novalidate id="account-update-details-form"> 
         {% else %}
         <form action="user-account#user-details" novalidate method="post" id="account-update-details-form"> 
       {% endif %}
