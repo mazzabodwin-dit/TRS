@@ -30,14 +30,20 @@ module.exports = {
 
 
 //Key caseworker users - Investigator not Lead
+
   "caseworker-invest": "Jonanna Barton",
   "caseworker-invest-email": "Jonanna.Barton@tra.com",
+  "caseworker-invest-permiss": "Investigator",
+  "caseworker-invest-status": "Active",
   "caseworker-lead": "Natalie Inbruge",
   "caseworker-lead-email": "Natalie.Inbruge@tra.com",
+  "caseworker-lead-permiss": "Lead investigator",
   "caseworker-admin": "Simon Twizzel",
   "caseworker-admin-email": "Simon.Twizzel@tra.com",
-  "caseworker-head": "Philamonia Trumpet",
-  "caseworker-head-email": "Philamonia.Trumpet@tra.com",
+  "caseworker-admin-permiss": "Administrator",
+  "caseworker-head": "Philamonia Philamonia",
+  "caseworker-head-email": "Philamonia.Philamonia@tra.com",
+  "caseworker-head-permiss": "Head of investigation",
 
   "who-signin": "invest",
   
@@ -45,6 +51,7 @@ module.exports = {
   "party1": "Steel UK",
   "party-user1": "Jane Winder",
   "party-email1": "j.winder@steeluk.org",
+  "party-user1-permissions": "Active",
   "party-role1": "Interested party",
   "party-type1": "Importer",
   "party-submission1": "Registration of interest",
@@ -74,7 +81,7 @@ module.exports = {
   "rep-role1": "Representative",
   "rep-user1": "Bob Hoskins",
   "rep-email1": "bobhoskins@BlueSteelPartners.com",
-  "rep-user-role1": "Admin user",
+  "rep-user1-permission": "Admin user",
   "rep-mobile1": "+44 7854329445",
   "rep-mobile-national1": "07854329445",
   "rep-submission1": "Registration of interest received",

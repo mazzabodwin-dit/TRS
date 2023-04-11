@@ -22,7 +22,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['account-user'] == "new-customer" or data['account-user'] == "new-invest" %}
+      {% if data['account-user'] == "new-customer" or data['account-user'] == "new-caseworker" %}
           <form action="user-account?account-user=rep-user3&show-demi=yes#user-details" method="post" id="account-validated-form">
         {% else %}
           <form action="user-account#user-details" method="post" id="account-validated-form">

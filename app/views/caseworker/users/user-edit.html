@@ -26,7 +26,7 @@
         {{header1}}
       </h1>
 
-      {% if data['account-user'] == "new-customer" or data['account-user'] == "new-invest" %}
+      {% if data['account-user'] == "new-customer" or data['account-user'] == "new-caseworker" %}
         <form action="user-add-2fa" method="post" novalidate id="account-update-details-form"> 
         {% else %}
         <form action="user-account#user-details" novalidate method="post" id="account-update-details-form"> 
@@ -302,8 +302,8 @@
                   {% endcall %} 
 
                   {% else %}
-                  <!--New user-->
-                  {% if (data['account-user'] == "new-customer") %}
+                  <!--Jonanna-->
+                  {% if (data['account-user'] == "caseworker-invest") %}
                     {{ govukInput({
                       label: {
                         text: "User's name",
@@ -311,10 +311,11 @@
                         isPageHeading: false
                       },
                       classes: "govuk-input--width-20",
-                      id: "rep-user3",
-                      name: "rep-user3",
+                      id: "caseworker-invest",
+                      name: "caseworker-invest",
                       type: "text",
-                      autocomplete: "name"
+                      autocomplete: "name",
+                      value: data['caseworker-invest']
                     }) }}
 
                     {{ govukInput({
@@ -322,12 +323,94 @@
                         text: "Email address",
                         classes: "govuk-label--s"
                       },
-                      id: "rep-email3",
-                      name: "rep-email3",
+                      id: "caseworker-invest-email",
+                      name: "caseworker-invest-email",
                       classes: "govuk-input--width-20",
                       type: "email",
-                      autocomplete: "email"
+                      autocomplete: "email",
+                      value: data['caseworker-invest-email']
                     }) }}
+
+                    {% call govukFieldset({
+                      legend: {
+                        text: "Mobile number",
+                        classes: "govuk-fieldset__legend--s",
+                        isPageHeading: false
+                        }
+                      }) %}
+
+                      {% include "includes/country-code-list-selected.html" %}    
+
+                      {{ govukInput({
+                        id: "caseworker-invest-mobile",
+                        name: "caseworker-invest-mobile",
+                        type: "tel",
+                        autocomplete: "tel",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Mobile number"
+                        },
+                        value: data['caseworker-invest-mobile'] or "07821945034"
+                      }) }}
+                    {% endcall %} 
+
+                    {% else %} 
+
+                    <!--New customer-->
+                    {% if (data['account-user'] == "new-customer") %}
+                      {{ govukInput({
+                        label: {
+                          text: "User's name",
+                          classes: "govuk-label--s",
+                          isPageHeading: false
+                        },
+                        classes: "govuk-input--width-20",
+                        id: "rep-user3",
+                        name: "rep-user3",
+                        type: "text",
+                        autocomplete: "name"
+                      }) }}
+
+                      {{ govukInput({
+                        label: {
+                          text: "Email address",
+                          classes: "govuk-label--s"
+                        },
+                        id: "rep-email3",
+                        name: "rep-email3",
+                        classes: "govuk-input--width-20",
+                        type: "email",
+                        autocomplete: "email"
+                      }) }}
+                      {% else %}
+                      <!--New investigator-->
+                      {% if (data['account-user'] == "new-caseworker") %}
+                        {{ govukInput({
+                          label: {
+                            text: "User's name",
+                            classes: "govuk-label--s",
+                            isPageHeading: false
+                          },
+                          classes: "govuk-input--width-20",
+                          id: "caseworker-invest",
+                          name: "caseworker-invest",
+                          type: "text",
+                          autocomplete: "name"
+                        }) }}
+
+                        {{ govukInput({
+                          label: {
+                            text: "Email address",
+                            classes: "govuk-label--s"
+                          },
+                          id: "caseworker-invest-email",
+                          name: "caseworker-invest-email",
+                          classes: "govuk-input--width-20",
+                          type: "email",
+                          autocomplete: "email"
+                        }) }}
+                      {% endif %}
+                    {% endif %}
                   {% endif %}
                 {% endif %}
               {% endif %}
@@ -335,7 +418,7 @@
           {% endif %}
         {% endif %}
   
-        {% if (data['account-user'] == "new-customer") %}
+        {% if data['account-user'] == "new-customer" or data['account-user'] == "new-caseworker" %}
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Continue"

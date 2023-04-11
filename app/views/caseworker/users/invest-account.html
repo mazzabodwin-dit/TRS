@@ -37,6 +37,10 @@
             {% else %}
             {% if data['account-user'] =="caseworker-head" %}
               {{data['caseworker-head']}}
+              {% else %}
+              {% if data['account-user'] =="new-caseworker" %}
+                {{data['caseworker-name']}}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}
@@ -62,13 +66,17 @@
             {% else %}
             {% if data['account-user'] =="caseworker-head" %}
               {{data['caseworker-head']}}
+              {% else %}
+              {% if data['account-user'] =="new-caseworker" %}
+                {{data['caseworker-name']}}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endif %}
       {% endif %}
     </h1>
 
-    {% if (data['account-user'] =="caseworker-invest" and data['caseworker-invest-status'] =="Inactive") or (data['account-user'] =="caseworker-lead" and data['caseworker-lead-status'] =="Inactive") or (data['account-user'] =="caseworker-admin" and data['caseworker-admin-status'] =="Inactive")  or (data['account-user'] =="caseworker-head" and data['caseworker-head-status'] =="Inactive")  %}
+    {% if (data['account-user'] =="caseworker-invest" and data['caseworker-invest-status'] =="Inactive") or (data['account-user'] =="caseworker-lead" and data['caseworker-lead-status'] =="Inactive") or (data['account-user'] =="caseworker-admin" and data['caseworker-admin-status'] =="Inactive")  or (data['account-user'] =="caseworker-head" and data['caseworker-head-status'] =="Inactive") or (data['account-user'] =="caseworker-name" and data['caseworker-status'] =="Inactive")  %}
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <p class="govuk-warning-text__text">
@@ -86,7 +94,7 @@
           <a href="" class="govuk-link--no-visited-state">Assign user to case</a>
         </span>
       </h2>
-      {% if data['account-user'] =="caseworker-admin" %}
+      {% if data['account-user'] =="caseworker-admin" or data['account-user'] =="new-caseworker" %}
         <p>This user is not involved in any cases</p>
         {% else %}
         <p>Manage the user's case involvement.</p>
@@ -137,7 +145,7 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            {% if data['account-user'] =="caseworker-invest"  %}
+            {% if data['account-user'] =="caseworker-invest" %}
               <tr class="govuk-table__row no-border">
                 <td class="govuk-table__cell">
                   <span class="govuk-visually-hidden--desktop">Case No. </span><a href="#" class="govuk-link--no-visited-state">{{data['case-ref1']}}</a>
@@ -220,6 +228,12 @@
                         {{data['caseworker-head']}}<br>
                         {{data['caseworker-head-email']}}<br>
                         {{data['caseworker-head-mobile'] or "+447821945034"}}
+                        {% else %}
+                        {% if data['account-user'] =="new-caseworker" %}
+                          {{data['caseworker-name']}}<br>
+                          {{data['caseworker-email']}}<br>
+                          {{data['caseworker-mobile'] or "+447821945034"}}
+                        {% endif %}
                       {% endif %}
                     {% endif %}
                   {% endif %}
@@ -263,25 +277,29 @@
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['account-user'] =="caseworker-invest" %}
-                  {{data['caseworker-invest-permis'] or "Investigator"}} 
+                  {{data['caseworker-invest-permiss'] or "Investigator"}} 
                   {% else %}
                   {% if data['account-user'] =="caseworker-lead" %}
-                  {{data['caseworker-lead-permis'] or "Lead Investigator"}} 
+                  {{data['caseworker-lead-permiss'] or "Lead Investigator"}} 
                     {% else %}
                     {% if data['account-user'] =="caseworker-admin" %}
-                    {{data['caseworker-admin-permis'] or "Administrator"}} 
+                    {{data['caseworker-admin-permiss'] or "Administrator"}} 
                       {% else %}
                       {% if data['account-user'] =="caseworker-head" %}
-                      {{data['caseworker-head-permis'] or "Head of Investigation"}} 
+                      {{data['caseworker-head-permiss'] or "Head of Investigation"}}
+                       {% else %}
+                        {% if data['account-user'] =="new-caseworker" %}
+                        {{data['caseworker-permiss'] or "Investigator"}} 
+                        {% endif %}
                       {% endif %}
                     {% endif %}
                   {% endif %}
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                {% if (data['account-user'] =="caseworker-invest" and data['caseworker-invest-status'] == "Inactive") or (data['account-user'] =="caseworker-lead" and data['caseworker-lead-status'] == "Inactive") or (data['account-user'] =="caseworker-admin" and data['caseworker-admin-status'] == "Inactive") or (data['account-user'] =="caseworker-head" and data['caseworker-head-status'] == "Inactive") %} 
+                {% if (data['account-user'] =="caseworker-invest" and data['caseworker-invest-status'] == "Inactive") or (data['account-user'] =="caseworker-lead" and data['caseworker-lead-status'] == "Inactive") or (data['account-user'] =="caseworker-admin" and data['caseworker-admin-status'] == "Inactive") or (data['account-user'] =="caseworker-head" and data['caseworker-head-status'] == "Inactive") or (data['account-user'] =="caseworker-head" and data['caseworker-head-status'] == "Inactive")or (data['account-user'] =="new-caseworker" and data['caseworker-status'] == "Inactive") %} 
                   {% else %}
-                  <a class="govuk-link--no-visited-state" href="invest-account-permiss">
+                  <a class="govuk-link--no-visited-state" href="user-account-permiss-invest">
                     Change<span class="govuk-visually-hidden"> account permission</span>
                   </a>
                 {% endif %}
@@ -303,6 +321,10 @@
                       {% else %}
                       {% if data['account-user'] =="caseworker-head" %}
                         {{data['caseworker-head-status'] or "Active" }} 
+                        {% else %}
+                        {% if data['account-user'] =="new-caseworker" %}
+                          {{data['caseworker-status'] or "Active" }} 
+                        {% endif %}
                       {% endif %}
                     {% endif %}
                   {% endif %}

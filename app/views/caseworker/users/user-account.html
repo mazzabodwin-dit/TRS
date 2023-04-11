@@ -415,8 +415,12 @@
                     {% if data['account-user'] =="party-user6" %}
                       {{data['party-user6-permissions'] or "User"}} 
                       {% else %}
-                      {% if data['account-user'] =="rep-user1" or data['account-user'] =="rep-user3" %}
-                        Admin user
+                      {% if data['account-user'] =="rep-user1" %}
+                        {{data['rep-user1-permissions'] or "Admin user"}} 
+                        {% else %}
+                        {% if data['account-user'] =="rep-user3" %}
+                          {{data['rep-user3-permissions'] or "Admin user"}} 
+                        {% endif %}  
                       {% endif %}  
                     {% endif %}
                   {% endif %}

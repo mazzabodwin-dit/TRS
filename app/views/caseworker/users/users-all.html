@@ -350,7 +350,7 @@
     {% set manageInvestigatorsHTML %}
       <h2 class="govuk-heading-m">Investigators
         <span class="govuk-body right-aligned-link">
-          <a href="user-edit?account-user=new-invest" class="govuk-link--no-visited-state">Add investigator</a>
+          <a href="user-edit?account-user=new-caseworker" class="govuk-link--no-visited-state">Add investigator</a>
         </span>
       </h2>
 
@@ -371,7 +371,7 @@
           <select class="govuk-select" id="sort-investigator" name="sort-investigator">
             <option value="User" selected>User</option>
             <option value="Email">Email</option>
-            <option value="Account Account role">Account role</option>
+            <option value="Account permission">Account permission</option>
             <option value="Number of cases">Number of cases</option>
           </select>
         </div>
@@ -410,7 +410,7 @@
             </th>
             <th class="govuk-table__header">
               <button class="govuk-button govuk-button--secondary">
-                <span class="govuk-visually-hidden--desktop">Sort by: </span>Account role
+                <span class="govuk-visually-hidden--desktop">Sort by: </span>Account permission
                 <span class="indicator" aria-hidden="true"></span>
               </button>
             </th>
@@ -432,7 +432,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-invest-email']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Account role: </span>Investigator
+              <span class="govuk-visually-hidden--desktop">Account permission: </span>{{data['caseworker-invest-role']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>1
@@ -447,7 +447,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-lead-email']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Account role: </span>Lead Investigator
+              <span class="govuk-visually-hidden--desktop">Account permission: </span>{{data['caseworker-lead-role']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>3
@@ -461,7 +461,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-head-email']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Account role: </span>Head of Investigation
+              <span class="govuk-visually-hidden--desktop">Account permission: </span>{{data['caseworker-head-role']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>3
@@ -475,7 +475,7 @@
               <span class="govuk-visually-hidden--desktop">Email: </span>{{data['caseworker-admin-email']}}
             </td>
             <td class="govuk-table__cell">
-              <span class="govuk-visually-hidden--desktop">Account role: </span>Administrator
+              <span class="govuk-visually-hidden--desktop">Account permission: </span>{{data['caseworker-admin-role']}}
             </td>
             <td class="govuk-table__cell">
               <span class="govuk-visually-hidden--desktop">Cases: </span>0

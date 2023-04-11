@@ -22,8 +22,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <form action="user-account#user-details" method="post" id="users-profile-2fa-form">   
+      {% if data['account-user'] =="caseworker-invest" %}
+        <form action="invest-account#user-details" method="post" id="users-profile-2fa-form">  
+          {% else %}
+          <form action="user-account#user-details" method="post" id="users-profile-2fa-form"> 
+      {% endif %} 
 
         <h1 class="govuk-heading-xl">
           {{header1}}
@@ -54,8 +57,12 @@
                     {% if data['account-user'] =="rep-user1" %}
                       {{data['rep-email1']}}<br>
                       {% else %}
-                      {% if data['account-user'] =="new-customer" %}
-                        {{data['rep-email3']}} <br>
+                      {% if data['account-user'] =="caseworker-invest" %}
+                        {{data['caseworker-invest-email']}} <br>
+                        {% else %}
+                        {% if data['account-user'] =="new-customer" %}
+                          {{data['rep-email3']}} <br>
+                        {% endif %}
                       {% endif %}
                     {% endif %}    
                   {% endif %}  
