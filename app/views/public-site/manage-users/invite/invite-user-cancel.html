@@ -26,14 +26,14 @@ Cancel invite - {{ serviceName }} - GOV.UK
 
       {% if data['cancel-invite'] =="org" %}
         <p>{{data['invite-user-name'] or data['party-user11'] }} - {{data['invite-user-email'] or data['party-email11'] }}</p>
-        <form action="invite-user-cancel-confirm?show-invite-org=no#manage-team" method="post" id="cancel-invite-form">
+        <form action="invite-user-cancel-confirm?invite-org-task=cancel#manage-team" method="post" id="cancel-invite-form">
         {% else %}
         {% if (data['invite-rep-what-org'] == "new-org") %}
           <p>{{data['invite-rep-name'] or data['rep-user2'] }} - {{data['invite-rep-email'] or data['rep-email2'] }}</p>
           {% else %}
           <p>{{data['invite-rep-name'] or data['rep-user1'] }} - {{data['invite-rep-email'] or data['rep-email1'] }}</p>
         {% endif %}
-          <form action="invite-user-cancel-confirm?show-invite-rep=no" method="post" id="cancel-invite-form">
+          <form action="invite-user-cancel-confirm?invite-rep-task=cancel" method="post" id="cancel-invite-form">
       {% endif %}
 
       <p>Are you sure you want to cancel this invite?</p>

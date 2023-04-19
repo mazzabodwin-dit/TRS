@@ -93,15 +93,12 @@
         <a class="govuk-link govuk-link--no-visited-state" href="invite-delete-draft">Delete invite</a>
       {% endif %} 
     </div>
-    <div class="govuk-button-group">
       {% if data['invite-org-task'] == "Sent" %}
         {{ govukButton({
           text: "Cancel invite",
-          href: "invite-user-cancel"
+          href: "invite-user-cancel?cancel-invite=org"
         }) }}  
-         
       {% endif %} 
-    </div>  
   </div>
 </div>
 {% endblock %}
