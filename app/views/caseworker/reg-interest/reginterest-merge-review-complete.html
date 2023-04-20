@@ -28,34 +28,26 @@
 
     <p>The matching organisation(s) have been marked as not duplicate with the selected organisation.</p>
           
-    {% if data['verify-type'] =="rep-invite" %}
-      <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none&merge-rep-task=Complete" method="post" id="cancel-invite-form">
+    {% if data['verify-type'] =="merge-only" %}
+      <form action="/caseworker/cases/existing-orgs-duplicate" method="post" id="cancel-invite-form">
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Review representative invite"
+            text: "Back to organisation"
           }) }} 
         </div> 
       </form>
-      {% else %}
-      {% if data['verify-type'] =="reg-interest" %}
-        {% if data['duplicate-org'] =="both" and data['merge-int-task'] == "Complete" and data['merge-rep-task'] == "Complete" %}
-          <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
-            <div class="govuk-button-group">
-              {{ govukButton({
-                text: "Review registration of interest"
-              }) }} 
-            </div> 
-          </form>
-          {% else %}
-          {% if data['duplicate-org'] =="both" and (data['merge-rep-task'] == "Complete" or data['merge-int-task'] == "Complete")  %}
-            <form action="/caseworker/reg-interest/reginterest-tasks-dup" method="post" id="cancel-invite-form">
-              <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Review next organisation"
-                }) }} 
-              </div> 
-            </form>
-            {% else %}
+      {% else %}      
+      {% if data['verify-type'] =="rep-invite" %}
+        <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none&merge-rep-task=Complete" method="post" id="cancel-invite-form">
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Review representative invite"
+            }) }} 
+          </div> 
+        </form>
+        {% else %}
+        {% if data['verify-type'] =="reg-interest" %}
+          {% if data['duplicate-org'] =="both" and data['merge-int-task'] == "Complete" and data['merge-rep-task'] == "Complete" %}
             <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
               <div class="govuk-button-group">
                 {{ govukButton({
@@ -63,6 +55,24 @@
                 }) }} 
               </div> 
             </form>
+            {% else %}
+            {% if data['duplicate-org'] =="both" and (data['merge-rep-task'] == "Complete" or data['merge-int-task'] == "Complete")  %}
+              <form action="/caseworker/reg-interest/reginterest-tasks-dup" method="post" id="cancel-invite-form">
+                <div class="govuk-button-group">
+                  {{ govukButton({
+                    text: "Review next organisation"
+                  }) }} 
+                </div> 
+              </form>
+              {% else %}
+              <form action="/caseworker/reg-interest/reginterest-tasks?duplicate-org=none" method="post" id="cancel-invite-form">
+                <div class="govuk-button-group">
+                  {{ govukButton({
+                    text: "Review registration of interest"
+                  }) }} 
+                </div> 
+              </form>
+            {% endif %}
           {% endif %}
         {% endif %}
       {% endif %}

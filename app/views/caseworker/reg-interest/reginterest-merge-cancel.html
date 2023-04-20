@@ -26,12 +26,14 @@
       {% if data['verify-type'] =="reg-interest" %}
         <form action="/caseworker/reg-interest/reginterest-tasks-dup?duplicate-org=both&merge-duplicates=1of2&third-party=yes&loa-sufficient=yes" method="post" id="cancel-merge-form">
         {% else %}
-      {% if data['verify-type'] =="rep-invite" %}
+        {% if data['verify-type'] =="rep-invite" %}
           <form action="/caseworker/reg-interest/reginterest-tasks-dup?merge-duplicates=1of2&duplicate-org=rep&third-party=yes&loa-sufficient=yes" method="post" id="cancel-merge-form">
+          {% else %}
+          {% if data['verify-type'] =="merge-only" %}
+            <form action="/caseworker/cases/existing-orgs-duplicate" method="post" id="cancel-merge-form">
+          {% endif %}
         {% endif %}
       {% endif %}
-
-
 
       <input type="hidden" id="show-invite" name="show-invite" value="no">
       <div class="govuk-button-group">
