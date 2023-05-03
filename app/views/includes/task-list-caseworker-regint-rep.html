@@ -1,4 +1,4 @@
-<!-- Duplicate Representative only show if there is dup rep -->
+<!-- Duplicate Representative only show if there is dup rep 
 {% if (data['duplicate-org'] == "rep") or (data['duplicate-org'] == "both") %}
 
   {% if (data['merge-rep-task'] == "complete") %}
@@ -13,7 +13,6 @@
 
     {% else %}
     {% if (data['merge-rep-task'] == "pending") %}
-      <!-- If the user is an Invest not Lead and requested merge approval: -->
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-merge-rep-party?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
@@ -24,7 +23,6 @@
       </li>
       {% else %}
       {% if (data['merge-rep-task'] == "started") %}
-        <!-- if the user has started resolving dups: -->
         <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="reginterest-merge-rep-party" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
@@ -35,7 +33,6 @@
         </li>
       
         {% else %}
-        <!-- If the user has not started -->
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="reginterest-merge-rep-party?merge-duplicates=1of2" class="govuk-link--no-visited-state" aria-describedby="duplicate-status">
@@ -48,7 +45,7 @@
     {% endif %}
   {% endif %}
 {% endif %}
-
+-->
 <!-- Rep party -->
 <!-- If there are dups and the dups are not complete, Int Party cannot be started -->
 
