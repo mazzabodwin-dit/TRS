@@ -43,7 +43,7 @@
     <h2 class="govuk-heading-m">Status</h2>
     <div class="govuk-inset-text govuk-inset-text__reginterest">
         <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
-        <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes" class="govuk-link govuk-link--no-visited-state">registration of interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
+        <strong>{{data['representative1']}}</strong> has submitted a <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&third-party=yes" class="govuk-link govuk-link--no-visited-state">registration of interest</a> on behalf of <strong>{{data['party1']}}</strong><br>
         <strong>{{data['party1']}}</strong> has <a href="" class="govuk-link--no-visited-state">invited representative</a> <strong>{{data['representative1']}}</strong> to a case
     </div> 
     <form>
@@ -124,7 +124,7 @@
             <span class="govuk-visually-hidden--desktop">Party type: </span><strong class="govuk-tag govuk-tag--yellow">Pending</strong>
           </td>
           <td class="govuk-table__cell action">
-            <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['party1']}}</span></a>
+            <span class="govuk-visually-hidden--desktop">Action: </span><a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&third-party=yes&notify-contact=no" class="govuk-link--no-visited-state">Review <span class="govuk-visually-hidden">{{data['party1']}}</span></a>
           </td>             
         </tr>
       </body>

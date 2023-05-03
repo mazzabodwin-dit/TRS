@@ -38,7 +38,7 @@
       {% else %}
        <div class="govuk-inset-text govuk-inset-text__reginterest">
         <strong>{{data['party1']}}</strong> has not been approved on any cases<br>
-        <strong>{{data['dup-party1']}}</strong> has <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&duplicate-org=no&third-party=no" class="govuk-link govuk-link--no-visited-state">registered interest</a> in a case<br>
+        <strong>{{data['dup-party1']}}</strong> has <a href="/caseworker/reg-interest/reginterest-tasks?verify-type=reg-interest&third-party=no" class="govuk-link govuk-link--no-visited-state">registered interest</a> in a case<br>
       </div>
       <div class="address-card">
         {% include "includes/org-steeel-all.html" %}
