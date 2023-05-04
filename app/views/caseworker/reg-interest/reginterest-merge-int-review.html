@@ -195,21 +195,34 @@
       </div>
     {% endif %}
     <form action="reginterest-merge-int-is-dup" method="post" id="reginterest-review-merge-form">
-       {% if data['who-signin'] =="invest" %}
-        <div class="govuk-button-group">
+      <div class="govuk-button-group">
+        {% if data['who-signin'] =="invest" %}
           {{ govukButton({
             text: "Continue review",
             disabled: true
           }) }}
-           
-        </div>
-        {% else %}
-        <div class="govuk-button-group">
+          {% else %}
           {{ govukButton({
             text: "Continue review"
           }) }}
-        </div>
-      {% endif %}
+        {% endif %}
+
+        {% if data['verify-type'] =="merge-only" and data['duplicate-org'] =="int" %}
+          <a class="govuk-link" href="/caseworker/cases/existing-orgs-duplicate">Back to organisation</a>
+          {% else %}
+          {% if data['verify-type'] =="merge-only" and data['duplicate-org'] =="rep" %}
+            <a class="govuk-link govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterestv1-mergev2-rep-notstarted">Back to registration of interest</a>
+            {% else %}
+            {% if data['verify-type'] =="reg-interest" %}
+              <a class="govuk-link govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks-dup">Back to registration of interest</a>
+              {% else %}
+              {% if data['verify-type'] =="rep-invite" %}
+                <a class="govuk-link govuk-link--no-visited-state" href="/caseworker/reg-interest/reginterest-tasks-dup">Back to representative invite</a>
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </div>
     </form>
   </div>
 </div>
