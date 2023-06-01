@@ -67,6 +67,11 @@
              <a class="govuk-link govuk-link--no-visited-state" href="mailto:Submissionref@traderemedies.gov.uk">{{data['case-ref1']}}@traderemedies.gov.uk</a>
           </li>   
         </ul>
+         {% if data['signed-out'] == "no" %}
+      <p>To take part in the investigation, you need to <a href="/public-site/reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state">register interest.</a></p>
+      {% else %}
+      <p>To take part in the investigation, <a href="/public-site/create-account/createaccount-your-account" class="govuk-link--no-visited-state">create an account</a> and register your interest.</p>
+    {% endif %}
       </nav>
     </aside>
   </div>
@@ -77,6 +82,11 @@
 
     {% set SubmissionDetailsHTML %}
       <h2 class="govuk-heading-m">Case details</h2>
+      {% if data['signed-out'] == "no" %}
+        <p>To take part in the investigation, you need to <a href="/public-site/reg-interest/reginterest-tasks?tasklist-type=reg-interest" class="govuk-link--no-visited-state">register interest.</a></p>
+        {% else %}
+        <p>To take part in the investigation, <a href="/public-site/create-account/createaccount-your-account" class="govuk-link--no-visited-state">create an account</a> or <a href="/public-site/signin" class="govuk-link--no-visited-state">sign in</a> to register interest.</p>
+      {% endif %}
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
