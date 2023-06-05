@@ -52,7 +52,30 @@
       <p>Review the public file of our active investigations. For your organisation to take part in an investigation, <a href="/public-site/create-account/createaccount-your-account" class="govuk-link--no-visited-state">create an account</a> or <a href="/public-site/signin" class="govuk-link--no-visited-state">sign in</a> to register interest.</p>
     {% endif %}
 
+    <div class="govuk-form-group govuk-!-width-three-quarters">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="search-commodity">
+          Search for an investigation
+        </label>
+      </h2>
+      <select class="govuk-select autocomplete-select" id="search-commodity" name="search-commodity" autocomplete-placeholder="Enter case name, number or commodity code">
+        <option value="" class="selected"></option>
+        <option value="AD2224 - Steel plate from Russia" id="1">7222202100 </option>
+        <option value="AD2224 - Steel plate from Russia" id="2">7222202900</option>
+        <option value="AD2224 - Steel plate from Russia" id="3">7222203100</option>
+        <option value="AD2224 - Steel plate from Russia" id="single">AD2224 - Steel plate from Russia</option>
+        <option value="AD3245 - Steel balls from Murcia" id="4">AD3245 - Steel balls from Murcia</option>
+      </select>
+    </div>
 
+    <div class="govuk-inset-text" id="selected_commodity_wrapper" style="display:none;">
+      <ul class="govuk-list">
+        <li id="selected_commodity2" style="display:none;"><a href="case-overview" class="govuk-link--no-visited-state">AS0020 - Ironing Boards from Turkey</a></li>
+        <li><a href="case-overview" class="govuk-link--no-visited-state" id="selected_commodity"></a></li>
+      </ul>
+    </div>
+    <br>
+    <br>
   </div>
   
   <div class="govuk-grid-column-one-third">
@@ -173,7 +196,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Aluminium Extrusions
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>People's Republic of China
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="People's Republic of China">CN<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type8']}}
@@ -197,7 +220,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Optical fibre cables
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>People's Republic of China
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="People's Republic of China">CN<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type9']}}
@@ -221,7 +244,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Steel plate
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Russian Federation
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Russian Federation">RU<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type1']}}
@@ -245,7 +268,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Ironing boards
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Turkey
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Turkey">TU<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type10']}}
@@ -269,7 +292,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Farents
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Fabon
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Fabon">FA<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type3']}}
@@ -293,7 +316,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Garnets
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Gabbon
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Gabbon">GA<abbr>
           </td>
           <td class="govuk-table__cell ">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type5']}}
@@ -317,7 +340,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Barnets
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Tabon
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Tabon">TA<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type4']}}
@@ -340,7 +363,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Electric bikes
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Russian Federation / People's Republic of China
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Russian Federation">RU<abbr> / <abbr title="People's Republic of China">CN<abbr>
           </td>
           <td class="govuk-table__cell">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data ['case-type6']}}
@@ -452,7 +475,7 @@
             <span class="govuk-visually-hidden--desktop">Commodity: </span>Rainbow Trout
           </td>
           <td class="govuk-table__cell ">
-            <span class="govuk-visually-hidden--desktop">Country: </span>Turkey
+            <span class="govuk-visually-hidden--desktop">Country: </span><abbr title="Turkey">TU<abbr>
           </td>
           <td class="govuk-table__cell ">
             <span class="govuk-visually-hidden--desktop">Type: </span>{{data['case-type2']}}
